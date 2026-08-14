@@ -1,0 +1,53 @@
+================================================================================
+WATERS LEGACY TRUST - DUAL-LICENSING & OPEN-SOURCE DISCLOSURE AGREEEMENT
+================================================================================
+Copyright (c) 2026 Waters Legacy Trust. All Rights Reserved.
+
+This Software ecosystem, calculation models, and 114-node discrete matrix 
+architectures are managed under a strict dual-licensing compliance protocol.
+
+--------------------------------------------------------------------------------
+PART 1: PUBLIC USE UNDER GNU AFFERO GENERAL PUBLIC LICENSE (AGPL-3.0)
+--------------------------------------------------------------------------------
+For individuals, independent academic researchers, hobbyists, and non-profit 
+entities, this Software is distributed under the terms of the GNU Affero General 
+Public License as published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for details.
+
+NETWORK DISCLOSURE ENFORCEMENT: Under AGPL-3.0 compliance rules, if you modify 
+this Software or incorporate its matrix frameworks into a network service 
+(including SaaS apps, cloud portals, or remote APIs), you are legally obligated 
+to make your complete backend source code architecture available to the public 
+for free under these identical terms.
+
+--------------------------------------------------------------------------------
+PART 2: PROPRIETARY COMMERCIAL CLAUSE (WATERS LEGACY TRUST NOTICE)
+--------------------------------------------------------------------------------
+The copyright holder, Matthew Waters (via the Waters Legacy Trust), retains full, 
+exclusive ownership and intellectual property control over this Software framework, 
+underlying mathematical matrices, and coordinate processing mechanics.
+
+COMMERCIAL EXCLUSION: Any incorporation, execution, embedding, or hosting of this 
+Software within proprietary corporate infrastructure, commercial products, closed-source 
+platforms, or monetization pipelines is strictly prohibited under the public tier. 
+
+To bypass the AGPL-3.0 copyleft network disclosure mandates and clear the software for 
+commercial, closed-source implementation, corporate entities must execute a separate, 
+fully compensated Private Commercial License Agreement authorized directly by the Copyright Holder.
+
+For enterprise procurement, commercial compliance licensing, or custom settlement options, 
+contact the Waters Legacy Trust explicitly at: waterslegacytrust@gmail.com
+
+--------------------------------------------------------------------------------
+PART 3: DISCLAIMER OF WARRANTY AND LIMITATION OF LIABILITY
+--------------------------------------------------------------------------------
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

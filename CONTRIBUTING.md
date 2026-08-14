@@ -2,7 +2,7 @@
 
 We are excited that you want to contribute to this 114-node discrete matrix framework! By submitting code, mathematical models, or bug fixes, you help build a computationally stable alternative to standard physics.
 
-## 🚫 Hard Bounding Rules
+##  Hard Bounding Rules
 
 Our framework operates on strict mathematical limits. Any code changes or community additions that violate these foundational constraints will be automatically rejected during the continuous integration (CI) audit:
 
@@ -10,7 +10,7 @@ Our framework operates on strict mathematical limits. Any code changes or commun
 2.  **Discrete Processing Only:** All physical anomalies must be translated into discrete code refresh cycles, geometric refractions ($114/9$), or vector coordinate interactions ($3, 6, 9$).
 3.  **Preserve Mirroring Streams:** Code additions must respect the boundary constraints of the mirroring potential streams ($987654321 \longleftrightarrow 0 \longleftrightarrow 123456789$).
 
-## 🛠️ Step-by-Step Contribution Workflow
+##  Step-by-Step Contribution Workflow
 
 ### 1. Sign the Contributor License Agreement (CLA)
 Before you open a Pull Request, you must agree to the terms in `CLA.md`. 

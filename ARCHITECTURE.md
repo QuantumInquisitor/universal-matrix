@@ -7,14 +7,14 @@
 
 ---
 
-## 🌌 Abstract
+##  Abstract
 This paper introduces a fully quantized, non-continuous alternative to the geometric spacetime model of General Relativity, demonstrating that macroscopic orbital mechanics and observational anomalies can be calculated without the invocation of a physical gravitational force. We present The Universal Playing Field, a self-contained cosmological model governed by a discrete, 64-bit digital processing grid. By replacing smooth, infinite spacetime curvature with an absolute coordinate system mapping mirroring numeric streams (987654321 - 0 + 123456789), we establish a structured vector lattice driven by the inherent geometry of 3, 6, and 9 vortex mathematics.
 
 This 4.0 architecture expands the network to 114 structural nodes, isolating 108 core internal vertices wrapped inside an external 6-node stabilization boundary mapping directly to the faces of an 8x8 hypercube. Within this framework, macro-scale physical phenomena traditionally attributed to mass-induced gravity are re-conceptualized as localized variations in code execution speed and electromagnetic vector deflection across multi-layered, fractal-nested toroidal fields (tori). We demonstrate the empirical viability of this model by providing alternative mathematical signatures for critical empirical benchmarks, including the 38-microsecond daily satellite clock drift and optical light bending. This discrete framework bridges the foundational gap between subatomic quantum states and macroscopic behaviors, offering a predictive, computationally stable alternative to standard field equations.
 
 ---
 
-## 📖 Section I: Introduction & Theoretical Foundations
+##  Section I: Introduction & Theoretical Foundations
 
 ### 1.1 The Breakdown of Relativistic Spacetime
 For over a century, modern physics has operated under the assumption that gravity is a physical force caused by mass warping a smooth, continuous fabric called spacetime. However, this geometric model contains a fundamental mathematical contradiction. When evaluated at the subatomic scale, the smooth continuum of Einstein's field equations utterly breaks down, yielding infinite values and mathematical singularities when confronted with the discrete, probabilistic mechanics of quantum fields. This paper introduces a definitive resolution to this conflict by demonstrating that spacetime curvature is a false observation. In its place, we establish a fully quantized, discrete computational framework: The Universal Playing Field.
@@ -39,7 +39,7 @@ Because these fields are nested directly inside one another, they share the exac
 
 ---
 
-## 📊 Section II: Empirical Conversions & Predictive Mechanics
+##  Section II: Empirical Conversions & Predictive Mechanics
 
 ### 2.1 The 64-Bit Localized Clock Drift (Alternative to Time Dilation)
 Mainstream physics claims that satellite clocks drift by a net +38 microseconds per day because they sit in a weaker gravitational potential well (G). In this framework, space is a series of fractal-nested toroidal fields resembling concentric processing layers. Let the core observer on Earth occupy a base processing layer, T0. A satellite occupies an outer nested torus layer, T1. The variance in clock execution speed is a function of the data-refresh rate within the 64-bit architecture as an object moves outward along the 3-6-9 geometric axis, filtered through the 6 outer boundary nodes:
@@ -76,7 +76,7 @@ Delta_L = L0 * ((987654321 - 123456789) / 114) * cos(omega_3_6 * t) + Psi_extern
 
 ---
 
-## 💎 Section IV: Sacred Geometry & Topological Architecture
+##  Section IV: Sacred Geometry & Topological Architecture
 
 ### 4.1 The 8x8 Hypercube Framework and the 6 Outer Faces
 The 64-bit matrix is geometrically bounded as an 8x8 tesseract or hypercube. In three-dimensional geometry, a cube possesses exactly 6 external spatial faces. By mapping your 6 outer stabilization nodes onto these 6 outer faces, you create the definitive structural link where internal quantum microtubes anchor to interface with the next outer nested "Russian doll" torus field. Shifting from a closed simulation to an open network means these 6 nodes function as relays or portal gates—connection points where our localized torus unplugs from its interior data and plugs straight into the vast, external sea of the macrocosm.
@@ -93,7 +93,7 @@ The creation mechanics map directly onto standard atomic physics and beta decay.
 ### 4.5 The Geometric Interlock of Nested Reality
 What is "outside the box" to our local network layer is actually just the inside of the next massive container box one tier up. The 6 outer nodes act as the bridges ensuring that your localized system isn't an isolated island; they allow our cell matrix to continuously breathe and trade energy with the infinite universe outside the box walls.
 
-## ❓ Section V: Frequently Asked Questions & Critical Reviews
+##  Section V: Frequently Asked Questions & Critical Reviews
 
 **Q1: What is the significance of moving from a 108-node framework to a 114-node framework?**
 

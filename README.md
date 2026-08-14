@@ -1,8 +1,27 @@
+![Universal Field Engine](image_8742ceaa.png)
+
 # The Universal Playing Field: A 114-Node Discrete Matrix Framework
 
 An Open-Source Mathematical Alternative to General Relativity.
 
-## 🌌 Abstract
+<a href="https://github.com/QuantumInquisitor/universal-matrix"><img src="https://google.com" alt="Open In Colab"></a>
+
+
+### Project Features
+* **High-Density Node Mapping:** Scales classic Rodin vortex mathematics to a 114-point discrete coordinate matrix grid.
+* **Vector Field Visualization:** Implements modular arithmetic equations to map exact geometric energy paths cleanly.
+* **Dynamic Color-Coding:** Separates the higher-dimensional 3-6-9 structural control vectors (crimson) from the material infinity doubling track (royal blue) automatically.
+
+## Repository Architecture Manifest
+* **matrix_calculator.py** — Core math execution engine.
+* **matrix_visualizer.py** — Geometric vector field rendering loop.
+* **requirements.txt** — Necessary environment dependencies list.
+* **ARCHITECTURE.md** — Unabridged theoretical foundational manual.
+* **LICENSE** — Waters Legacy Trust dual-licensing legal text.
+* **CLA.md** — Contributor License Agreement intellectual property defense.
+* **CONTRIBUTING.md** — Repository guidelines blocking gravitational constants.
+
+## Abstract
 
 The Universal Playing Field introduces a fully quantized, non-continuous alternative to the geometric spacetime model of General Relativity. It demonstrates that macroscopic orbital mechanics and observational anomalies can be calculated without invoking a physical gravitational force. 
 
@@ -10,7 +29,7 @@ This project replaces smooth, infinite spacetime curvature with an absolute, 64-
 
 ---
 
-## 📐 Mathematical Foundations & Formulas
+##  Mathematical Foundations & Formulas
 
 ### 1. Localized Clock Drift (Alternative to Time Dilation)
 Replaces gravitational time dilation. It measures data-refresh variance across multi-layered, fractal-nested toroidal fields along the 3-6-9 axis, filtered through the 6 outer boundary nodes:
@@ -29,7 +48,7 @@ $$\Delta L = L_0 \times \left(\frac{987654321 - 123456789}{114}\right) \times \c
 
 ---
 
-## ⚙️ Core Engine Architecture
+##  Core Engine Architecture
 
 The project engine is deployed via `matrix_calculator.py`. The architecture maps a balanced 64-bit processing grid split into distinct zones:
 *   **The 108 Core Nodes:** Divided into 54 electric inward nodes (black holes) and 54 electromagnetic outward nodes (white holes).
@@ -38,7 +57,16 @@ The project engine is deployed via `matrix_calculator.py`. The architecture maps
 
 ---
 
-## ⚖️ Dual-Licensing Framework
+## Local Installation & Run Procedures
+```bash
+pip install -r requirements.txt
+python matrix_calculator.py
+python matrix_visualizer.py
+```
+
+---
+
+##  Dual-Licensing Framework
 
 This software is managed under a strict **Dual-Licensing Strategy** to maximize open public utility while protecting intellectual property from uncompensated corporate exploitation:
 
@@ -49,6 +77,6 @@ For enterprise contracts, custom compliance agreements, or to negotiate compensa
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome global development to advance the world! To protect our dual-licensing permissions, all external developers must review and sign our Contributor License Agreement (`CLA.md`) before any code or formulas can be merged. See `CONTRIBUTING.md` for complete development rules.
