@@ -1,4 +1,4 @@
-![Universal Field Engine](image_8742ceaa.png)
+![Universal Field Engine](https://githubusercontent.com)
 
 # The Universal Playing Field: A 114-Node Discrete Matrix Framework
 
