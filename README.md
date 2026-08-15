@@ -1,4 +1,4 @@
-![Universal Field Engine](https://githubusercontent.com)
+![Universal Field Engine](image_8742ceaa.png)
 
 # The Universal Playing Field: A 114-Node Discrete Matrix Framework
 
@@ -57,7 +57,7 @@ The project engine is deployed via `matrix_calculator.py`. The architecture maps
 
 ---
 
-## 🔮 Multi-Domain Practical Applications & Reverse-Engineering
+##  Multi-Domain Practical Applications & Reverse-Engineering
 
 Because the 114-node discrete coordinate grid maps the core geometric fabric behind physical manifestation, this architecture provides a foundational wireframe to reverse-engineer, simulate, and build technologies across multiple advanced industries:
 
