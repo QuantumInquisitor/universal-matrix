@@ -155,26 +155,25 @@ The latest architecture updates transition the Universal Field Engine from a sta
 * **Ambient Flux Diagnostics:** Utilizes the ambient macro-flux processing modules to analyze data streams entering our local container from the infinite universe.
 * **Predictive Diagnostics:** Serves as an alternative calculation engine to map macrocosmic orbital drift, localized atmospheric electromagnetic shifts, and environmental plasma pressure patterns.
 
----
-
 ##  Local Installation & Run Procedures
 
 ```bash
 # 1. Install system environment dependencies
 pip install -r requirements.txt
 
-# 2. Run core tensor calculation checks and render the visual grid
+# 2. Run core tensor calculations or launch the synchronized 3D aerospace matrix radar screen
 python src/matrix_calculator.py
 python src/matrix_visualizer.py
 
-# 3. Compile your 114-node field configuration into G-Code machine toolpaths
+# 3. Pull live orbital data streams and map hypercube gate calculations manually
+python src/satellite_tracker.py
+
+# 4. Compile your 114-node field configuration into G-Code machine toolpaths
 python src/gcode_compiler.py
 
-# 4. Spin up the network connection gateway and stream API endpoint logs
+# 5. Spin up the network connection gateway and stream API endpoint logs
 python src/matrix_api.py
 python src/data_logger.py
-```
-
 ```
 
 ---
@@ -183,8 +182,8 @@ python src/data_logger.py
 
 This software is managed under a strict **Dual-Licensing Strategy** to maximize open public utility while protecting intellectual property from uncompensated corporate exploitation:
 
-1.  **Open Source (GNU AGPLv3):** Free for individuals, hobbyists, academic researchers, and open-source applications. If you modify, distribute, or run this software on a server to offer services over a network, you are legally obligated to publish your entire infrastructure's source code for free under the same license terms.
-2.  **Commercial License:** If your business wishes to integrate this framework into proprietary stacks, closed-source cloud platforms, or commercial applications without triggering the AGPLv3 source code disclosure rules, you must buy a commercial license.
+1. **Open Source (GNU AGPLv3):** Free for individuals, hobbyists, academic researchers, and open-source applications. If you modify, distribute, or run this software on a server to offer services over a network, you are legally obligated to publish your entire infrastructure's source code for free under the same license terms.
+2. **Commercial License:** If your business wishes to integrate this framework into proprietary stacks, closed-source cloud platforms, or commercial applications without triggering the AGPLv3 source code disclosure rules, you must buy a commercial license.
 
 For enterprise contracts, custom compliance agreements, or to negotiate compensation models, please contact the **Waters Legacy Trust** directly at: `waterslegacytrust@gmail.com`.
 
