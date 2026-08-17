@@ -5,11 +5,10 @@ Wraps core matrix logic and Axiom VI variables inside a high-performance
 FastAPI microservice, exposing endpoints to return structured JSON payloads.
 """
 
-import os
-import sys
 from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse
 import uvicorn
+
 
 # Ensure the local path can import the verified matrix core cleanly
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
