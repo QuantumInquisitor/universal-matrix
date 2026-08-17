@@ -22,6 +22,9 @@ An Open-Source Mathematical Alternative to General Relativity.
   * *Navigation Keys:* Use `W` / `A` / `S` / `D` to physically fly your perspective through the 114-node field array cluster.
   * *Look Controls:* Hold **Right-Click** and drag your mouse to rotate your immersive tracking camera around the zero-point center.
   * *Hyper-Dimensional Scaling:* Hold `Q` or `E` to dynamically expand or contract the 4th-dimensional spatial matrix tensor weights in real-time.
+* **13-Dimensional Spatial Projection VR Interface (`src/vr_13d_space.py`):** Utilizes full 13D Givens rotation tensors and progressive cascade stereographic projections to slice and translate complex higher-dimensional datasets into an interactable 3D VR environment.
+  * *Axis Mapping Matrix:* Press keys `4` through `9` to dynamically shift your hardware controllers across the hidden dimensional degrees of freedom.
+  * *Hyper-Rotation Toggling:* Hold `Q` or `E` to rotate the 114-node field array through hyper-space coordinates, morphing the projected 3D geometries in real-time.
 
 
 ##  Repository Architecture Manifest
@@ -40,6 +43,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **CLA.md** — Contributor License Agreement intellectual property defense.
 * **CONTRIBUTING.md** — Repository guidelines blocking gravitational constants.
 * **src/vr_matrix_space.py** — Immersive Virtual Reality stereographic 4D projection matrix space engine.
+* **src/vr_13d_space.py** — Advanced 13-Dimensional rotation tensor and progressive cascade VR projection engine.
 
 
 
