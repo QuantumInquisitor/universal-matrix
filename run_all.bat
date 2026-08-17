@@ -35,12 +35,16 @@ start "Distributed Matrix Network API" cmd /k "python src/matrix_api.py"
 
 :: 4. Boot up your main tensor matrix core engine loops
 echo 🧮 Running Foundational Core Matrix Calculation Node...
-start "Core Tensor Calculation Engine" cmd /k "python src/matrix_calculator.py"
+start "Core Tensor Calculation Engine" cmd /k "python src/calculator.py"
 
 :: 5. Initialize your 3D live satellite aerospace mapping radar screen
 echo 🎨 Initializing Synchronized 3D Aerospace Radar Visualization Screen...
 timeout /t 2 >nul
-python src/matrix_visualizer.py
+start "Core Matrix Visualizer" cmd /k "python src/matrix_visualizer.py"
+
+:: 6. Launch the Immersive Virtual Reality multi-dimensional projection space
+echo 🕶️ Spawning Immersive Multi-Dimensional VR Space Framework...
+start "VR Matrix Spatial Interface" cmd /k "python src/vr_matrix_space.py"
 
 echo.
 echo =======================================================================
