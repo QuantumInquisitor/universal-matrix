@@ -2,6 +2,8 @@
 
 [![Matrix Verification Status](BADGE_IMAGE_URL)](https://github.com/QuantumInquisitor/universal-matrix)
 
+[![Matrix Verification Status](https://img.shields.io/badge/Matrix-Verified-brightgreen)](https://github.com/QuantumInquisitor/universal-matrix)
+
 # The Universal Playing Field: A 114-Node Discrete Matrix Framework
 
 An Open-Source Mathematical Alternative to General Relativity.
