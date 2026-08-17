@@ -1,6 +1,6 @@
 ![Universal Field Engine](image_8742ceaa.png)
 
-[![Matrix Verification Status](https://github.com/QuantumInquisitor/universal-matrix)(/actions/workflows/verify.yml/badge.svg) [source: 1.1.7]
+[![Matrix Verification Status](https://github.com/QuantumInquisitor/universal-matrix)
 
 # The Universal Playing Field: A 114-Node Discrete Matrix Framework
 
