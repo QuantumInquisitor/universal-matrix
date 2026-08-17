@@ -7,17 +7,21 @@ FastAPI microservice, exposing endpoints to return structured JSON payloads.
 
 import os
 import sys
-from fastapi import FastAPI, Query, HTTPException, Response
+from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse
 import uvicorn
 
 # Ensure the local path can import the verified matrix core cleanly
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
+    # Double-checked import alignment to match your v5.0 spec exactly
     import calculator as mc
 except ImportError:
-    print("CRITICAL ERROR: 'calculator.py' must be present in the same directory.")
-    sys.exit(1)
+    try:
+        import matrix_calculator as mc
+    except ImportError:
+        print("CRITICAL ERROR: Matrix core engine source file must be present in the same directory.")
+        sys.exit(1)
 
 # Initialize the FastAPI app container with custom metadata
 app = FastAPI(
@@ -44,7 +48,7 @@ async def home_index():
 @app.get('/api/status', status_code=200)
 async def get_system_status():
     """Exposes internal topological invariants and system configuration boundaries."""
-    # Fetch core baseline validations
+    # Fetch core baseline validations exactly as specified in your v5.0 profile
     _, core_val = mc.verify_axiom_1()
     _, boundary_val, matrix_tensor = mc.verify_axiom_2_and_3()
     _, speed_of_light = mc.verify_axiom_5()
@@ -75,7 +79,7 @@ async def calculate_matrix(psi: str = Query(default="0.0")):
         # Convert string input safely into a floating-point computational value
         user_psi = float(psi)
     except ValueError:
-        # Returns exact matching 400 Bad Request error layout structure
+        # Returns exact 400 Bad Request error structural footprint from your v5.0 spec
         return JSONResponse(
             status_code=400,
             content={
@@ -104,7 +108,7 @@ def main():
     print("  UPF ENGINE LOGIC microserver SPINNING UP...")
     print("  Host Local Processing Channel Address: http://127.0.0.1:5000")
     print("=" * 60)
-    # Launch local uvicorn server running on port 5000 to match file specifications
+    # Launch local uvicorn server running on port 5000 to maintain compatibility with your original specs
     uvicorn.run("matrix_api:app", host='127.0.0.1', port=5000, reload=False, access_log=True)
 
 
