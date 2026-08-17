@@ -152,25 +152,26 @@ The latest architecture updates transition the Universal Field Engine from a sta
 
 ---
 
-##  Local Installation & Run Procedures
+## 🚀 Local Installation & Run Procedures
 
 ```bash
 # 1. Install system environment dependencies
 pip install -r requirements.txt
 
-# 2. Run core tensor calculation checks and render the visual grid
+# 2. Run core tensor calculations or launch the synchronized 3D aerospace matrix radar screen
 python src/matrix_calculator.py
 python src/matrix_visualizer.py
 
-# 3. Compile your 114-node field configuration into G-Code machine toolpaths
+# 3. Pull live orbital data streams and map hypercube gate calculations manually
+python src/satellite_tracker.py
+
+# 4. Compile your 114-node field configuration into G-Code machine toolpaths
 python src/gcode_compiler.py
 
-# 4. Spin up the network connection gateway and stream API endpoint logs
+# 5. Spin up the network connection gateway and stream API endpoint logs
 python src/matrix_api.py
 python src/data_logger.py
-```
 
-```
 
 ---
 
