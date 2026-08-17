@@ -129,10 +129,6 @@ The latest architecture updates transition the Universal Field Engine from a loc
 * **Symmetry Breaking Checks:** Automatically verifies incoming code or data modifications against strict theoretical axioms (`src/test_axioms.py`).
 * **Zero-Float Maintenance:** Ensures that the universal internal-to-external grid scale ratio (18.0) remains uncorrupted by unauthorized floating-point multipliers during runtime execution.
 
-### 5. Macro-System Environmental Predictions
-* **Ambient Flux Diagnostics:** Utilizes the ambient macro-flux processing modules to analyze data streams entering our local container from the infinite universe.
-* **Predictive Diagnostics:** Serves as an alternative calculation engine to map macrocosmic orbital drift, localized atmospheric electromagnetic shifts, and environmental plasma pressure patterns.
-
 
 ---
 
@@ -154,6 +150,10 @@ The latest architecture updates transition the Universal Field Engine from a sta
 
 ### 4. Continuous Integration Checking (`tests/test_matrix.py`)
 * **Axiom Verification:** Automatically checks every code addition against the foundational mathematical axioms (`src/test_axioms.py`) to prevent float-multiplier drift or calculation symmetry breaking.
+
+### 5. Macro-System Environmental Predictions
+* **Ambient Flux Diagnostics:** Utilizes the ambient macro-flux processing modules to analyze data streams entering our local container from the infinite universe.
+* **Predictive Diagnostics:** Serves as an alternative calculation engine to map macrocosmic orbital drift, localized atmospheric electromagnetic shifts, and environmental plasma pressure patterns.
 
 ---
 
