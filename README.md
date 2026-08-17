@@ -1,5 +1,7 @@
 ![Universal Field Engine](image_8742ceaa.png)
 
+![Matrix Verification Status](https://github.com)
+
 # The Universal Playing Field: A 114-Node Discrete Matrix Framework
 
 An Open-Source Mathematical Alternative to General Relativity.

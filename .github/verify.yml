@@ -1,0 +1,41 @@
+# ========================================================================
+#   UNIVERSAL PLAYING FIELD: CONTINUOUS INTEGRATION MATRIX PIPELINE
+#   SPECIFICATION SPEC v5.0 PEER-REVIEW VALIDATION WORKFLOW
+# ========================================================================
+
+name: Matrix Core Invariant Verification Suite
+
+# Trigger the verification machine on any code push or pull request to the main branch channels
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-matrix-axioms:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Securely pull your source files directly onto the GitHub test machine container
+    - name: Checkout Repository Code Architecture
+      uses: actions/checkout@v4
+
+    # Step 2: Provision an isolated, clean execution platform running Python 3.13
+    - name: Instantiate Clean Python 3.13 Runtime Environment
+      uses: actions/setup-python@v5
+      with:
+        python-node-version: '3.13'
+        cache: 'pip' # Speeds up subsequent build automation passes
+
+    # Step 3: Automatically fetch mandatory plotting and routing library packages
+    - name: Deploy Core Environment Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install matplotlib flask
+
+    # Step 4: Fire up the logic engine suite and check your discrete 114-node numbers
+    - name: Execute Automated Mathematical Axiom Test Matrix
+      run: |
+        cd src
+        python test_axioms.py
