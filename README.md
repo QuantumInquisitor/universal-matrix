@@ -18,6 +18,10 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Hardware G-Code Translation:** Compiles abstract vector math paths directly into ready-to-run CNC machine and 3D printing paths.
 * **Real-Time Sensor Telemetry:** Features an automated logging pipeline built to swallow environmental flux data and track internal clock-drift.
 * **Network-Exposed Tensor Engine:** Integrates a localized REST API to stream core calculation grids across distributed external endpoints.
+* **Immersive VR 4D Projection Space (`src/vr_matrix_space.py`):** Casts high-density 4D hyperspherical coordinates down to a 3D stereographic viewing engine utilizing OpenXR mechanics.
+  * *Navigation Keys:* Use `W` / `A` / `S` / `D` to physically fly your perspective through the 114-node field array cluster.
+  * *Look Controls:* Hold **Right-Click** and drag your mouse to rotate your immersive tracking camera around the zero-point center.
+  * *Hyper-Dimensional Scaling:* Hold `Q` or `E` to dynamically expand or contract the 4th-dimensional spatial matrix tensor weights in real-time.
 
 
 ##  Repository Architecture Manifest
@@ -35,6 +39,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **LICENSE** — Waters Legacy Trust dual-licensing legal text.
 * **CLA.md** — Contributor License Agreement intellectual property defense.
 * **CONTRIBUTING.md** — Repository guidelines blocking gravitational constants.
+* **src/vr_matrix_space.py** — Immersive Virtual Reality stereographic 4D projection matrix space engine.
 
 
 
