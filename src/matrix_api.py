@@ -5,6 +5,8 @@ Wraps core matrix logic and Axiom VI variables inside a high-performance
 FastAPI microservice, exposing endpoints to return structured JSON payloads.
 """
 
+import os
+import sys
 from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse
 import uvicorn
