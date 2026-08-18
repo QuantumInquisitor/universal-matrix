@@ -1,4 +1,4 @@
-![Universal Field Engine](image_8742ceaa.png)
+﻿![Universal Field Engine](image_8742ceaa.png)
 
 [![Matrix Verification Status](https://img.shields.io/badge/Matrix-Verified-brightgreen)](https://github.com/QuantumInquisitor/universal-matrix)
 
@@ -181,11 +181,23 @@ python src/satellite_tracker.py
 
 # 4. Compile your 114-node field configuration into G-Code machine toolpaths
 python src/gcode_compiler.py
+\x60\x60\x60
 
-# 5. Spin up the network connection gateway and stream API endpoint logs
-python src/matrix_api.py
-python src/data_logger.py
-```
+
+
+### 3. Deploying the Dynamic REST API Layer
+To spin up the real-time asynchronous ASGI server layer and open communication endpoints for decentralized external network tracking queries, execute the module directly through the native Python environment pathing loop:
+\x60\x60\x60bash
+python -m uvicorn src.api:app --reload
+\x60\x60\x60
+
+#### Active API Endpoint Matrix:
+Once the terminal logs confirm \x60Application startup complete\x60, open your preferred web browser environment and traverse the following structural network locations:
+* **Interactive Swagger UI Dashboard:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+* **Root Matrix Network Verification Registry:** [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+* **64-Bit Integer Hardware Register Payload:** [http://127.0.0.1:8000/api/v1/registers](http://127.0.0.1:8000/api/v1/registers)
+* **Individual Node State Query:** \x60http://127.0.0.1:8000/api/v1/node/{node_id}\x60 *(Replace \x60{node_id}\x60 with an index from 0 to 113 to compute coordinates and bit states in real-time).*
 
 ---
 
@@ -203,3 +215,7 @@ For enterprise contracts, custom compliance agreements, or to negotiate compensa
 ##  Contributing
 
 We welcome global development to advance the world! To protect our dual-licensing permissions, all external developers must review and sign our Contributor License Agreement (`CLA.md`) before any code or formulas can be merged. See `CONTRIBUTING.md` for complete development rules.
+
+
+
+
