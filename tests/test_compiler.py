@@ -15,7 +15,6 @@ class TestGCodeCompiler(unittest.TestCase):
     def setUpClass(cls):
         """Runs once before testing to compile a fresh, uncorrupted G-Code file."""
         cls.compiler = GCodeCompiler()
-        # Save output path to instance variable reference
         cls.output_file = cls.compiler.generate_toroidal_gcode("test_toroid_toolpath.gcode")
 
     @classmethod
@@ -26,7 +25,6 @@ class TestGCodeCompiler(unittest.TestCase):
 
     def test_gcode_syntax_and_termination(self):
         """Verification: Confirms proper industrial initialization and termination codes."""
-        # Fixed: Changed from 'cls' to 'self' to respect correct test scoping
         with open(self.output_file, "r", encoding="utf-8") as f:
             lines = [line.strip() for line in f.readlines()]
 
@@ -37,17 +35,17 @@ class TestGCodeCompiler(unittest.TestCase):
 
     def test_complete_114_node_hardware_coverage(self):
         """Verification: Parses toolpath coordinates to guarantee 100% node coverage."""
-        # Fixed: Changed from 'cls' to 'self' to respect correct test scoping
         with open(self.output_file, "r", encoding="utf-8") as f:
             gcode_text = f.read()
 
         # Regular expression to extract target nodes logged inside code comments
         node_matches = re.findall(r"Move to Node (\d+)|External Face Gate \(Node (\d+)\)", gcode_text)
         
-        # Flatten regex match tuples and extract integers
+        # Flatten regex match tuples and extract integers cleanly
         visited_nodes = set()
         for match in node_matches:
-            node_id = match if match else match
+            # Fixed: Safely extract whichever regex capture group caught the string item
+            node_id = match[0] if match[0] else match[1]
             visited_nodes.add(int(node_id))
 
         # Re-include the starting origin point (Node 0)

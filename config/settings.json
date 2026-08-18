@@ -1,0 +1,18 @@
+﻿{
+    "torus_dimensions": {
+        "major_radius": 50.0,
+        "minor_radius": 15.0,
+        "description": "Dimensions in millimeters tracking center of torus and coil winding tube shell profiles."
+    },
+    "manufacturing_presets": {
+        "feed_rate": 1200,
+        "retract_height": 5.0,
+        "working_depth": -1.5,
+        "infinity_step": 21
+    },
+    "visualization_settings": {
+        "node_count": 114,
+        "primary_color": "crimson",
+        "secondary_color": "azure"
+    }
+}
