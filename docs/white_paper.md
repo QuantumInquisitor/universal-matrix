@@ -44,9 +44,10 @@ The discrete matrix topology establishes a closed-loop distribution web where ma
 To visualize this discrete field matrix explicitly, Figure 2 tracks the coordinate geometry of the spatial manifold distribution:
 
 <div align="center">
-  <img src="./docs/assets/figure2_matrix_geometry.png" alt="Figure 2: 114-Node Matrix Geometry Layout" width="80%" />
+  <img src="./assets/figure2_matrix_geometry.png" alt="Figure 2: 114-Node Matrix Geometry Layout" width="80%" />
   <p><strong>Figure 2: 114-Node Matrix Geometry Layout.</strong> <em>The core 108-node circular manifold (cyan) is bounded externally by the 6 hypercube gate nodes (crimson). Symmetrical 3-6-9 control paths regulate vector intersections, proving the immutable compression loop limit α = 1/(54π²).</em></p>
 </div>
+
 
 ---
 
