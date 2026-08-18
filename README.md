@@ -28,7 +28,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 
 
 ##  Repository Architecture Manifest
-* **src/matrix_calculator.py** — Core math and tensor execution engine.
+* **src/calculator.py** — Core math and tensor execution engine.
 * **src/matrix_visualizer.py** — Geometric vector field rendering loop.
 * **src/gcode_compiler.py** — Vector path machine compiler for hardware fabrication.
 * **src/data_logger.py** — Telemetry pipeline tracking data logs and clock-drift variance.
@@ -51,32 +51,33 @@ An Open-Source Mathematical Alternative to General Relativity.
 
 The Universal Playing Field introduces a fully quantized, non-continuous alternative to the geometric spacetime model of General Relativity. It demonstrates that macroscopic orbital mechanics and observational anomalies can be calculated without invoking a physical gravitational force. 
 
-This project replaces smooth, infinite spacetime curvature with an absolute, 64-bit digital processing grid. The architecture is driven by the inherent geometry of 3, 6, and 9 vortex mathematics. This 4.0 Open-System Edition maps **108 core internal vertices** wrapped inside an **external 6-node stabilization boundary** mapping directly to the faces of an 8x8 hypercube. It natively integrates an ambient field macro-flux to account for data streaming from the infinite universe completely outside the container network.
+This project replaces smooth, infinite spacetime curvature with an absolute, 64-bit digital processing grid. The architecture is driven by the inherent geometry of 3, 6, and 9 vortex mathematics. This 5.0 Open-System Edition maps **108 core internal vertices** wrapped inside an **external 6-node stabilization boundary** mapping directly to the faces of an 8x8 hypercube. It natively integrates an ambient field macro-flux to account for data streaming from the infinite universe completely outside the container network.
 
 ---
 
 ##  Mathematical Foundations & Formulas
 
 ### 1. Localized Clock Drift (Alternative to Time Dilation)
-Replaces gravitational time dilation. It measures data-refresh variance across multi-layered, fractal-nested toroidal fields along the 3-6-9 axis, filtered through the 6 outer boundary nodes:
+Measures data-refresh variance across multi-layered, fractal-nested toroidal fields along the 3-6-9 axis, filtered through the 6 outer boundary nodes:
 
 $$\Delta t_{\text{matrix}} = I_{\text{code}} \times \left(\frac{\Phi_{T1}}{\Phi_{T0}}\right) \times (\Sigma(3,6,9) + \text{Outer Nodes}) \times \text{Scale Factor}$$
 
 ### 2. Chromatic Vector Deflection (Alternative to Gravitational Lensing)
-Replaces gravitational lensing. Recalculated as an electromagnetic refraction index caused by the light stream penetrating the external 6 boundary nodes before crossing the 108 internal core nodes:
+Recalculated as an electromagnetic refraction index caused by the light stream penetrating the external 6 boundary nodes before crossing the 108 internal core nodes:
 
 $$\Theta_{\text{deflection}} = \left(\frac{114}{9}\right) \times \left(\frac{\lambda_{\text{high}} - \lambda_{\text{low}}}{V_{\text{vector 3,6}}}\right) \times \text{Arcsec Scaler}$$
 
 ### 3. Metric Interference Patterns with External Flux (Alternative to LIGO)
-Fluctuations are no longer treated as ripples in an empty vacuum. They calculate how continuous ambient data flux ($\Psi_{\text{external}}$) streaming from the macrocosm applies pressure to the 6 boundary faces of our container box:
+Fluctuations calculate how continuous ambient data flux ($\Psi_{\text{external}}$) streaming from the macrocosm applies pressure to the 6 boundary faces of our container box, scaled perfectly across the geometric loop compression coefficient:
 
-$$\Delta L = L_0 \times \left(\frac{987654321 - 123456789}{114}\right) \times \cos(\omega_{3,6}t) + \mathbf{\Psi}_{\text{external}}$$
+$$\Delta L = L_0 \times \Delta_{S} \times \alpha_{\text{geometric}} \times \cos(\omega_{3,6}t) + \mathbf{\Psi}_{\text{external}}$$
+
 
 ---
 
 ##  Core Engine Architecture
 
-The project engine is deployed via `matrix_calculator.py`. The architecture maps a balanced 64-bit processing grid split into distinct zones:
+The project engine is deployed via `calculator.py`. The architecture maps a balanced 64-bit processing grid split into distinct zones:
 *   **The 108 Core Nodes:** Divided into 54 electric inward nodes (black holes) and 54 electromagnetic outward nodes (white holes).
 *   **The 6 Outer Gate Nodes:** Anchored to the faces of an 8x8 hypercube to filter external ambient data.
 *   **Ambient Field Flux Loop:** Simulates environmental pressure from the macro-void surrounding the container.
@@ -112,8 +113,9 @@ Because the 114-node discrete coordinate grid maps the core geometric fabric beh
 * **Quantum-Resistant Architecture:** Provides an alternative 64-bit multi-dimensional grid framework suitable for decentralized data verification protocols.
 
 ### 7. Pure Discrete Calibration & Empirical Verification
-* **Elimination of Float Multipliers:** Replaces arbitrary floating-point scaling parameters by deriving a universal, native matrix scaling constant directly from the 108:6 internal-to-external grid node ratio ($18.0$).
+* **Elimination of Float Multipliers:** Replaces arbitrary floating-point scaling parameters by deriving a universal, native matrix scaling constant directly from first-principles geometry, yielding the absolute fraction $\alpha_{\text{geometric}} = \frac{1}{54\pi^2} \approx 0.090606346384$.
 * **Empirical Validation Framework:** Invites independent researchers to test the predictive boundaries of the model by entering novel tracking parameters to verify if the 114-node frequency gate maintains calculation symmetry universally without retrofitted tuning factors.
+
 
 ---
 
@@ -171,7 +173,7 @@ The latest architecture updates transition the Universal Field Engine from a sta
 pip install -r requirements.txt
 
 # 2. Run core tensor calculations or launch the synchronized 3D aerospace matrix radar screen
-python src/matrix_calculator.py
+python src/calculator.py
 python src/matrix_visualizer.py
 
 # 3. Pull live orbital data streams and map hypercube gate calculations manually

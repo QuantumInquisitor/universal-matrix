@@ -46,6 +46,10 @@ start "Core Matrix Visualizer" cmd /k "python src/matrix_visualizer.py"
 echo 🕶️ Spawning Immersive Multi-Dimensional VR Space Framework...
 start "VR Matrix Spatial Interface" cmd /k "python src/vr_matrix_space.py"
 
+:: 7. Launch the 13-Dimensional spatial projection environment
+echo 🧠 Initializing 13-Dimensional Higher-Space Projection Framework...
+start "13D Matrix Spatial Interface" cmd /k "python src/vr_13d_space.py"
+
 echo.
 echo =======================================================================
 echo  🟢 STATUS: ALL PARALLEL COMPUTATION ZONE NODES ACTIVE AND RUNNING!
