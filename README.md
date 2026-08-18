@@ -225,3 +225,11 @@ We welcome global development to advance the world! To protect our dual-licensin
   ```bash
   python src/light_cone_simulator.py
   ```
+
+#### Active Simulation API Endpoints
+* **RF Waveguide Synthesis Endpoint:** `http://127.0.0{node_id}` *(Compute RF phase modulations for continuous hardware targets).*
+* **Quantum Collapse Cascader (POST):** `http://127.0.0` *(Submit a multi-vector flux array to trigger whole-matrix measurement state drops).*
+* **Discrete Geodesic Orbit Propagator:** `http://127.0.0` *(Generate dynamic multi-body trajectory decay streams).*
+* **Discrete Light-Cone Ray Tracer:** `http://127.0.0` *(Query localized refraction profiles and chromatic deflections).*
+* **Individual Node State Query:** `http://127.0.0{node_id}` *(Replace `{node_id}` with an index from 0 to 113 to compute coordinates and bit states in real-time).*
+
