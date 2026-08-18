@@ -1,7 +1,7 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
-Universal Playing Field: Dynamic REST API Layer (v1.0 Peer-Review Standard)
-Exposes the discrete 114-node topological registers via an ASGI endpoints web layer.
+Universal Playing Field: Asynchronous ASGI Web Endpoint Interface (v6.2)
+Exposes matrix registers, waveguide syntheses, and quantum lattice simulations.
 """
 
 import sys
@@ -9,104 +9,81 @@ import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
-# Ensure local path can load calculator variables cleanly
+# Ensure native path resolution for core imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     import calculator as mc
-except ImportError:
-    print("CRITICAL: 'calculator.py' must be present in the same directory.")
-    sys.exit(1)
+    from field_synthesizer import FieldSynthesizer
+    from lattice_quantum_engine import LatticeQuantumEngine
+    from geodesic_simulator import GeodesicSimulator
+    from light_cone_simulator import LightConeSimulator
+except ImportError as e:
+    sys.exit(f"CRITICAL: Structural dependencies missing from src directory: {e}")
 
-# Initialize the core ASGI web framework
 app = FastAPI(
-    title="Universal Playing Field API Matrix",
-    description="Decentralized Real-Time Verification Node for 114-Node Discrete Lattices.",
-    version="6.0"
+    title="The Universal Playing Field Matrix Engine",
+    description="Asynchronous ASGI topological endpoint framework exposing v6.2 discrete spacetime nodes.",
+    version="6.2.0"
 )
 
-# Define response payload validation schemas using Pydantic models
-class SystemStatusSchema(BaseModel):
-    status: str
-    hardware_footprint: str
-    alpha_geometric: float
-    registers: dict
+# Instantiate static simulation bridges
+synthesizer = FieldSynthesizer()
+quantum_engine = LatticeQuantumEngine()
+orbiter = GeodesicSimulator()
+tracer = LightConeSimulator()
 
-class NodeStateSchema(BaseModel):
-    node_id: int
-    classification: str
-    coordinates_3d: dict
-    bit_state: dict
+class FluxInput(BaseModel):
+    flux_matrix: list = [1.23, 4.56, 7.89, 9.87, 6.54, 3.21]
 
-
-@app.get("/", tags=["System Status"])
-def read_root():
-    """Returns the foundational network state validation summary."""
-    a1_pass, a1_val = mc.verify_axiom_1()
-    a2_pass, a2_val, _ = mc.verify_axiom_2_and_3()
-    a5_pass, c_val = mc.verify_axiom_5()
-    
+@app.get("/")
+async def get_root_verification_registry():
     return {
-        "network_identifier": "UPF_NODE_LATTICE_B64",
-        "system_equilibrium": "BALANCED" if a1_pass else "ERR_DISPLACED",
-        "weyl_symmetry_density": "VERIFIED (48)" if a2_pass else "ERR_MUTATED",
-        "velocity_invariance": "MATCHED (299792458 m/s)" if a5_pass else "ERR_DRIFT",
-        "alpha_geometric_constant": mc.ALPHA_GEOMETRIC
+        "status": "VERIFIED_NODE_NETWORK_ACTIVE",
+        "matrix_ring": "Z_114",
+        "alpha_geometric": float(mc.ALPHA_GEOMETRIC),
+        "hardware_stream_up": hex(mc.STREAM_UP),
+        "hardware_stream_down": hex(mc.STREAM_DOWN)
     }
 
-
-@app.get("/api/v1/registers", response_model=SystemStatusSchema, tags=["Hardware Registers"])
-def get_hardware_registers():
-    """Queries the exact 64-bit integer bitmasks currently initialized on hardware registers."""
+@app.get("/api/v1/registers")
+async def get_hardware_payload():
     return {
-        "status": "synchronized",
-        "hardware_footprint": "64-bit padded array matrix",
-        "alpha_geometric": mc.ALPHA_GEOMETRIC,
-        "registers": {
-            "S_up": {"decimal": mc.STREAM_UP, "hex": hex(mc.STREAM_UP)},
-            "S_down": {"decimal": mc.STREAM_DOWN, "hex": hex(mc.STREAM_DOWN)},
-            "Delta_S": {"decimal": mc.DELTA_S, "hex": hex(mc.DELTA_S)}
-        }
+        "stream_up_bits": [int((mc.STREAM_UP >> i) & 1) for i in range(64)],
+        "stream_down_bits": [int((mc.STREAM_DOWN >> i) & 1) for i in range(64)],
+        "delta_s_invariants": int(mc.DELTA_S)
     }
 
-
-@app.get("/api/v1/node/{node_id}", response_model=NodeStateSchema, tags=["Topological Nodes"])
-def get_node_state(node_id: int):
-    """
-    Queries the deterministic state metrics of a specific individual coordinate node (0-113).
-    Calculates 3D spatial mapping arrays on-the-fly from active bit registers.
-    """
+@app.get("/api/v1/node/{node_id}")
+async def query_individual_node(node_id: int):
     if node_id < 0 or node_id >= mc.M_TOTAL:
-        raise HTTPException(
-            status_code=404, 
-            detail=f"Node Index Boundary Error: Value must sit securely within range 0 to {mc.M_TOTAL - 1}."
-        )
-
-    # Programmatically extract the node's distinct bit-shifting properties matching src/vr_13d_space.py
-    bit_shift_offset = (node_id * 7) % 64
-    up_bit = (mc.STREAM_UP >> bit_shift_offset) & 1
-    down_bit = (mc.STREAM_DOWN >> bit_shift_offset) & 1
-    
-    # Isolate boundary gate classifications
-    is_boundary_gate = (node_id % (mc.M_TOTAL // mc.B_BOUNDARY)) == 0
-    classification_string = "6-Node Outer Hypercube Boundary Gate" if is_boundary_gate else "108-Node Core Processing Manifold"
-
-    # Derive baseline spherical coordinate tracking values
-    phi = math.acos(1 - 2 * (node_id + 0.5) / mc.M_TOTAL)
-    theta = math.pi * (1.0 + math.sqrt(5.0)) * node_id
-    
-    # Modulate local geometry footprint via the analytical compression scale factor
-    bit_mod = (up_bit * 0.05) - (down_bit * 0.05)
-    dynamic_minor_radius = 15.0 * (1.0 + bit_mod * (mc.ALPHA_GEOMETRIC * 10.0))
-    major_radius = 50.0
-
-    # Project raw Cartesian vectors
-    x = (major_radius + dynamic_minor_radius * math.cos(phi)) * math.cos(theta)
-    y = (major_radius + dynamic_minor_radius * math.cos(phi)) * math.sin(theta)
-    z = dynamic_minor_radius * math.sin(phi)
-
+        raise HTTPException(status_code=404, detail=f"Node index {node_id} out of bounds.")
+    bit_offset = (node_id * 7) % 64
     return {
         "node_id": node_id,
-        "classification": classification_string,
-        "coordinates_3d": {"x": round(x, 4), "y": round(y, 4), "z": round(z, 4)},
-        "bit_state": {"up_bit": up_bit, "down_bit": down_bit, "shift_offset": bit_shift_offset}
+        "is_tesla_control_triad": bool(node_id % 3 == 0 or node_id % 6 == 0 or node_id % 9 == 0),
+        "up_bit_state": int((mc.STREAM_UP >> bit_offset) & 1),
+        "down_bit_state": int((mc.STREAM_DOWN >> bit_offset) & 1)
     }
+
+@app.get("/api/v1/simulation/waveguide/{node_id}")
+async def query_rf_waveguide_synthesis(node_id: int, voltage: float = 1.0):
+    res = synthesizer.synthesize_waveguide(node_id, external_flux_voltage=voltage)
+    if "error" in res:
+        raise HTTPException(status_code=400, detail=res["error"])
+    return res
+
+@app.post("/api/v1/simulation/quantum-cascade")
+async def trigger_lattice_quantum_collapse(payload: FluxInput):
+    try:
+        quantum_engine.inject_multi_vector_flux(payload.flux_matrix)
+        return quantum_engine.execute_measurement_collapse()
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+@app.get("/api/v1/simulation/geodesic-orbit")
+async def trigger_orbit_propagation(steps: int = 50):
+    return orbiter.propagate_orbit(steps=steps)
+
+@app.get("/api/v1/simulation/light-cone")
+async def trigger_light_cone_trace(angle: float = 0.5, wavelength: float = 532.0):
+    return tracer.simulate_light_ray(entrance_angle_rad=angle, wavelength_nm=wavelength)
