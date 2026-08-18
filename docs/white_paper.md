@@ -1,6 +1,6 @@
 # The Universal Playing Field: An Invariant 114-Node Topological Discrete Ring Framework and the Geometric Attenuation Dynamics of 3-6-9 Vortex Symmetry
 
-**Waters Lgacy Trust Development Group**  
+**Waters Legacy Trust Development Group**  
 *Institutional Working Preprint — Open Review Initiative*  
 
 ---
