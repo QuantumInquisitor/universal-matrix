@@ -219,3 +219,9 @@ We welcome global development to advance the world! To protect our dual-licensin
 
 
 
+
+### Advanced Simulation Suite Modules
+* **Discrete Light-Cone Ray Tracer:** Models continuous optical wave vectors splitting, refracting, and calculating chromatic deflection values across the 114-node frequency grid:
+  ```bash
+  python src/light_cone_simulator.py
+  ```
