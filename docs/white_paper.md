@@ -126,6 +126,10 @@ The precise register configurations for the system parameters are mapped below:
 ### 5.3 Computational Core Stability Verification Loop
 The systemic delta invariant balances the internal field vectors via a rigid modulo loop calculation, preventing integer overflow and halting floating-point degradation across continuous calculations:
 
+$$\text{(Eq. 5)} \quad \sum_{n=1}^{54} \left[ \left(-1 \times (S_{\text{down}} \pmod n)\right) + \left(1 \times (S_{\text{up}} \pmod n)\right) \right] - (\Delta_{S} \pmod{31}) + 18 = 0$$
+
+By enforcing this check directly within hardware registers, the matrix proves that 3-6-9 field transformations are deterministic, repeatable state changes rather than observational approximations.
+
 ### 5.4 Algorithmic Complexity and Scalability Analysis
 The bitwise processing architecture presents an execution footprint of \(\mathcal{O}(N)\) inside the standard 54-node inversion check loop, bypassing the costly polynomial metrics (\(\mathcal{O}(N^3)\)) typical of continuous spacetime coordinate metric tensor matrices. By computing physical boundary values across discrete bitmasks, the 114-node framework maintains absolute numerical scale efficiency. This structure offers a foundation to construct parallel compute nodes across distributed systems without risk of floating-point drift or cluster memory segmentation.
 
@@ -160,6 +164,3 @@ Future research initiatives will focus on scaling this discrete lattice architec
 [5] Riemann, B. (1854). "On the Hypotheses Which Lie at the Bases of Geometry: Continuous Manifolds vs. Discrete Spatial Structures." Historical Academic Translation Series, Vol. VII.
 ```
 
-$$\text{(Eq. 5)} \quad \sum_{n=1}^{54} \left[ \left(-1 \times (S_{\text{down}} \pmod n)\right) + \left(1 \times (S_{\text{up}} \pmod n)\right) \right] - (\Delta_{S} \pmod{31}) + 18 = 0$$
-
-By enforcing this check directly within hardware registers, the matrix proves that 3-6-9 field transformations are deterministic, repeatable state changes rather than observational approximations.
