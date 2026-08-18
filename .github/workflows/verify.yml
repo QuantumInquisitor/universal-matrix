@@ -1,0 +1,30 @@
+﻿name: Universal Matrix Validation Suite
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-matrix:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository Codebase
+      uses: actions/checkout@v4
+
+    - name: Set Up Python Hardware Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install System Architecture Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install numpy matplotlib ursina
+
+    - name: Execute Automated 114-Node Equilibrium Tests
+      run: |
+        python -m unittest tests/test_matrix.py
