@@ -78,6 +78,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **k8s/deployment.yml** — Enterprise Kubernetes Deployment and ClusterIP Service manifest with automated health probes and resource limits.
 * **prometheus.yml** — Time-series metrics scraping configuration targeting the matrix microservice.
 * **grafana/provisioning/** — Automated Grafana provisioning scripts for Prometheus datasources and pre-configured telemetry dashboards.
+* **scripts/load_test.py** — Synthetic SSE stream load generator for benchmarking API throughput and handling concurrent subscriber traffic.
 
 ---
 
@@ -365,4 +366,4 @@ We welcome global development to advance the world! To protect our dual-licensin
 When referencing this discrete mathematical framework or utilizing toolpath compilation profiles in peer-reviewed publications, preprint tracking manuscripts, or collaborative literature reviews, please cite the following authoritative records:
 
 * **Theoretical Framework:** Waters, M. (2026). *The Universal Playing Field: A 114-Node Discrete Matrix Framework Alternative to Continuum Geometries*. Waters Legacy Trust Academic Press.
-* **Computational Architecture:** Quantum Inquisitor Open-Source Research Group. (2026). *The Universal Playing Field Matrix Engine: Real-Time Multi-Dimensional ASGI Routing Pipelines and Toolpath Compilation Framework (v6.4.0)*. GitHub Repository: `https://github.com`.
+* **Computational Architecture:** Quantum Inquisitor Open-Source Research Group. (2026). *The Universal Playing Field Matrix Engine: Real-Time Multi-Dimensional ASGI Routing Pipelines and Toolpath Compilation Framework (v6.4.0)*. GitHub Repository: `https://github.com/QuantumInquisitor/universal-matrix`.
