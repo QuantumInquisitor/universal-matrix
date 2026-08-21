@@ -86,3 +86,69 @@ async def telemetry_stream():
             await asyncio.sleep(0.5)
 
     return StreamingResponse(event_generator(), media_type="text/event-stream")
+
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
+from pydantic import BaseModel
+import json
+import asyncio
+
+# Global runtime engine parameters
+engine_config = {
+    "rotation_angle": 0.042,
+    "matrix_dampening": 1.0,
+    "step_delay": 0.05
+}
+
+class ControlPayload(BaseModel):
+    rotation_angle: float | None = None
+    matrix_dampening: float | None = None
+    step_delay: float | None = None
+
+@app.post("/api/v1/control")
+async def update_control_parameters(payload: ControlPayload):
+    """Update runtime simulation physics parameters dynamically."""
+    if payload.rotation_angle is not None:
+        engine_config["rotation_angle"] = payload.rotation_angle
+    if payload.matrix_dampening is not None:
+        engine_config["matrix_dampening"] = payload.matrix_dampening
+    if payload.step_delay is not None:
+        engine_config["step_delay"] = payload.step_delay
+    return {"status": "success", "config": engine_config}
+
+@app.websocket("/ws/telemetry")
+async def websocket_telemetry_endpoint(websocket: WebSocket):
+    """Bi-directional WebSocket streaming telemetry and accepting control inputs."""
+    await websocket.accept()
+    try:
+        while True:
+            # Broadcast state packet to client
+            telemetry_data = {
+                "step": getattr(app.state, "step", 0),
+                "clock_drift_ns": getattr(app.state, "clock_drift_ns", 0.0),
+                "config": engine_config,
+                "nodes": [
+                    {
+                        "id": i,
+                        "x": float((i % 12) - 6),
+                        "y": float((i // 12) - 5),
+                        "z": float((i * 0.1) % 5 - 2.5),
+                        "vx": float((i * engine_config["rotation_angle"]) % 1.0),
+                        "vy": float((i * engine_config["matrix_dampening"]) % 1.0)
+                    }
+                    for i in range(114)
+                ]
+            }
+            await websocket.send_text(json.dumps(telemetry_data))
+            
+            # Non-blocking check for incoming client control messages
+            try:
+                incoming = await asyncio.wait_for(websocket.receive_text(), timeout=engine_config["step_delay"])
+                data = json.loads(incoming)
+                if "rotation_angle" in data:
+                    engine_config["rotation_angle"] = float(data["rotation_angle"])
+                if "step_delay" in data:
+                    engine_config["step_delay"] = float(data["step_delay"])
+            except asyncio.TimeoutError:
+                pass
+    except WebSocketDisconnect:
+        print("[WS] Client disconnected from /ws/telemetry")

@@ -2,160 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Matrix Engine | Telemetry Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Universal Matrix Engine - 3D WebGL Telemetry</title>
     <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: #111827;
-            --accent-green: #10b981;
-            --accent-blue: #3b82f6;
-            --text-main: #f9fafb;
-            --text-sub: #9ca3af;
-            --border-color: #1f2937;
+        body { margin: 0; overflow: hidden; background-color: #05050a; font-family: monospace; color: #00ffcc; }
+        #canvas-container { width: 100vw; height: 100vh; display: block; }
+        #ui-panel {
+            position: absolute; top: 15px; left: 15px; background: rgba(10, 15, 30, 0.85);
+            padding: 20px; border: 1px solid #00ffcc; border-radius: 8px; width: 280px;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
         }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-        .header h1 { margin: 0; font-size: 1.5rem; letter-spacing: 1px; }
-        .status-badge {
-            background-color: rgba(16, 185, 129, 0.2);
-            color: var(--accent-green);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            border: 1px solid var(--accent-green);
-        }
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-        }
-        .card h3 { margin: 0 0 10px 0; color: var(--text-sub); font-size: 0.85rem; text-transform: uppercase; }
-        .card .metric { font-size: 1.8rem; font-weight: bold; color: var(--text-main); }
-        .chart-container {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            height: 380px;
-        }
+        .control-group { margin-bottom: 12px; }
+        label { display: block; font-size: 11px; text-transform: uppercase; margin-bottom: 4px; }
+        input[type=range] { width: 100%; accent-color: #00ffcc; }
+        .stats { font-size: 12px; margin-top: 10px; border-top: 1px solid #334455; padding-top: 8px; }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-
-    <div class="header">
-        <h1>🌌 UNIVERSAL MATRIX ENGINE TELEMETRY</h1>
-        <div id="connection-status" class="status-badge">CONNECTING...</div>
-    </div>
-
-    <div class="metrics-grid">
-        <div class="card">
-            <h3>Matrix Step Count</h3>
-            <div id="metric-step" class="metric">0</div>
+    <div id="canvas-container"></div>
+    <div id="ui-panel">
+        <h3>🌌 SO(13) 3D Viewport</h3>
+        <div class="control-group">
+            <label>Rotation Angle (<span id="angle-val">0.042</span>)</label>
+            <input type="range" id="angle-slider" min="0.001" max="0.2" step="0.001" value="0.042">
         </div>
-        <div class="card">
-            <h3>Active Matrix Nodes</h3>
-            <div id="metric-nodes" class="metric">114</div>
+        <div class="control-group">
+            <label>Step Delay (<span id="delay-val">0.05</span>s)</label>
+            <input type="range" id="delay-slider" min="0.01" max="0.5" step="0.01" value="0.05">
         </div>
-        <div class="card">
-            <h3>Current Clock Drift</h3>
-            <div id="metric-drift" class="metric">0.0000 ns</div>
+        <div class="stats">
+            <div>Step: <span id="stat-step">0</span></div>
+            <div>Clock Drift: <span id="stat-drift">0</span> ns</div>
+            <div>Active Nodes: <span>114</span></div>
         </div>
-        <div class="card">
-            <h3>Lattice Normalization</h3>
-            <div id="metric-norm" class="metric">1.0000</div>
-        </div>
-    </div>
-
-    <div class="chart-container">
-        <canvas id="driftChart"></canvas>
     </div>
 
     <script>
-        const ctx = document.getElementById('driftChart').getContext('2d');
-        const driftChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: [],
-                datasets: [{
-                    label: 'Clock Drift Variance (ns)',
-                    data: [],
-                    borderColor: '#3b82f6',
-                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                    borderWidth: 2,
-                    fill: true,
-                    tension: 0.3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: { grid: { color: '#1f2937' }, ticks: { color: '#9ca3af' } },
-                    y: { grid: { color: '#1f2937' }, ticks: { color: '#9ca3af' } }
-                },
-                plugins: {
-                    legend: { labels: { color: '#f9fafb' } }
-                }
-            }
-        });
+        // --- Three.js Scene Setup ---
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
 
-        const eventSource = new EventSource('/api/v1/telemetry/stream');
+        camera.position.set(0, 0, 15);
 
-        eventSource.onopen = () => {
-            const badge = document.getElementById('connection-status');
-            badge.innerText = 'SSE STREAM LIVE';
-            badge.style.color = '#10b981';
-            badge.style.borderColor = '#10b981';
-        };
+        // Grid & Node Mesh Generation (114 Nodes)
+        const nodeGeometry = new THREE.SphereGeometry(0.15, 16, 16);
+        const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ffcc, wireframe: true });
+        const nodesGroup = new THREE.Group();
+        const nodeMeshes = [];
 
-        eventSource.onmessage = (event) => {
+        for (let i = 0; i < 114; i++) {
+            const mesh = new THREE.Mesh(nodeGeometry, nodeMaterial);
+            nodesGroup.add(mesh);
+            nodeMeshes.push(mesh);
+        }
+        scene.add(nodesGroup);
+
+        // --- WebSocket Telemetry & Control ---
+        const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        const socket = new WebSocket(`${wsProtocol}//${window.location.host}/ws/telemetry`);
+
+        socket.onmessage = (event) => {
             const data = JSON.parse(event.data);
+            document.getElementById('stat-step').innerText = data.step;
+            document.getElementById('stat-drift').innerText = data.clock_drift_ns.toFixed(2);
 
-            document.getElementById('metric-step').innerText = data.step;
-            document.getElementById('metric-nodes').innerText = data.active_nodes;
-            document.getElementById('metric-drift').innerText = data.clock_drift_ns + ' ns';
-            document.getElementById('metric-norm').innerText = data.norm_sum.toFixed(4);
-
-            driftChart.data.labels.push('Step ' + data.step);
-            driftChart.data.datasets[0].data.push(data.clock_drift_ns);
-
-            if (driftChart.data.labels.length > 20) {
-                driftChart.data.labels.shift();
-                driftChart.data.datasets[0].data.shift();
+            // Update 3D node positions from SO(13) matrix telemetry
+            if (data.nodes) {
+                data.nodes.forEach((node, i) => {
+                    if (nodeMeshes[i]) {
+                        nodeMeshes[i].position.set(node.x, node.y, node.z);
+                    }
+                });
             }
-
-            driftChart.update('none');
         };
 
-        eventSource.onerror = () => {
-            const badge = document.getElementById('connection-status');
-            badge.innerText = 'STREAM DISCONNECTED';
-            badge.style.color = '#ef4444';
-            badge.style.borderColor = '#ef4444';
+        // --- Interactive Controls ---
+        const angleSlider = document.getElementById('angle-slider');
+        const delaySlider = document.getElementById('delay-slider');
+
+        angleSlider.oninput = () => {
+            document.getElementById('angle-val').innerText = angleSlider.value;
+            socket.send(JSON.stringify({ rotation_angle: angleSlider.value }));
         };
+
+        delaySlider.oninput = () => {
+            document.getElementById('delay-val').innerText = delaySlider.value;
+            socket.send(JSON.stringify({ step_delay: delaySlider.value }));
+        };
+
+        // Render Loop
+        function animate() {
+            requestAnimationFrame(animate);
+            nodesGroup.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
     </script>
 </body>
 </html>
