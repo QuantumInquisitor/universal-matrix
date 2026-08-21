@@ -44,3 +44,16 @@ services:
 
 volumes:
   matrix_data:
+
+nginx:
+    image: nginx:alpine
+    container_name: matrix_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      - matrix_engine
+    restart: unless-stopped
