@@ -48,6 +48,8 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Bi-Directional WebSockets:** Live control channel (`/ws/telemetry`) allowing users to adjust rotation angles, matrix dampening factors, and step delays dynamically from the UI.
 * **Advanced Wavefunction Decoherence & Light-Cone Physics:** Invariant spatial-temporal light-cone projections ($ds^2 = -c^2 dt^2 + \sum dx_i^2$) combined with non-unitary wavefunction collapse normalization operators ($\sum P = 1.0$).
 * **Distributed Redis State Cache:** Shared multi-replica state synchronization via Redis (`matrix_engine_state`) with automatic local snapshot fallback to prevent file-locking race conditions in Kubernetes clusters.
+* **TLS / HTTPS Termination & Reverse Proxy:** Production-ready NGINX gateway providing SSL/TLS encryption (`https://`), HTTP-to-HTTPS redirects, and header proxying.
+* **Encrypted WebSocket & Streaming Proxy:** Optimized NGINX routing for secure bi-directional WebSockets (`wss://`) and unbuffered Server-Sent Events (`/api/v1/telemetry/stream`).
 
 ---
 
@@ -89,6 +91,11 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **`requirements.txt`** — Core dependency manifest including `redis>=5.0.0` for distributed caching.
 * **`docker-compose.yml`** — Multi-container orchestration spec launching Matrix Engine, Redis, Prometheus, and Grafana containers.
 * **`tests/test_redis_persistence.py`** — Unit tests validating Redis payload serialization, schema integrity, and fallback state recovery.
+* **`nginx/`**
+  * `nginx.conf` — NGINX reverse proxy configuration for 443 SSL termination, WSS upgrading, and SSE stream buffering overrides.
+  * `certs/` — Storage directory for SSL/TLS certificates (`server.crt`, `server.key`).
+* **`docker-compose.yml`** — Orchestration spec mounting NGINX alongside Matrix Engine, Redis, Prometheus, and Grafana containers.
+* **`tests/test_security_tls.py`** — Unit test suite validating NGINX configuration directives, SSL port bindings, and proxy headers.
 
 ---
 
@@ -502,6 +509,19 @@ py -m unittest discover -s tests -p "test_*.py"
 
 # 3. Spin up local multi-service stack with Redis container
 docker compose up --build -d
+
+###  Production Security, TLS & Reverse Proxy Operations
+
+# 1. Execute unit test suite (including TLS and Security verification)
+py -m unittest discover -s tests -p "test_*.py"
+
+# 2. Spin up multi-container infrastructure with NGINX TLS Termination
+docker compose up --build -d
+
+# Encrypted Access Points:
+# - Secure 3D WebGL Dashboard:  https://localhost
+# - Secure WebSocket Stream:    wss://localhost/ws/telemetry
+# - Secure SSE Telemetry Feed:  https://localhost/api/v1/telemetry/stream
 
 ---
 
