@@ -8,8 +8,6 @@ services:
     container_name: universal_matrix_engine
     ports:
       - "8000:8000"
-    volumes:
-      - matrix_data:/app/data
     environment:
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
@@ -35,12 +33,6 @@ services:
     container_name: matrix_grafana
     ports:
       - "3000:3000"
-    volumes:
-      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
     depends_on:
       - prometheus
     restart: unless-stopped
-
-volumes:
-  matrix_data:

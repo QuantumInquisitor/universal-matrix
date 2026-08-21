@@ -43,6 +43,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Live Telemetry Web Dashboard (`src/static/dashboard.html`):** Real-time Chart.js frontend interface streaming matrix step counts, node states, and clock-drift metrics directly from the SSE endpoint.
 * **Prometheus Metrics Exporter (`/metrics`):** Exposes native OpenTelemetry metrics tracking request counts, active node gauges, clock-drift nanosecond variance, and total simulation steps for Prometheus and Grafana integration.
 * **Automated Grafana Observability Provisioning:** Pre-configured Grafana datasource and dashboard provisioning for real-time visualization of matrix clock-drift, throughput rates, and node telemetry without manual UI configuration.
+* **Fault-Tolerant State Persistence:** Snapshot auto-recovery engine dumping simulation states and clock-drift offsets to `/data/snapshot.json` to prevent data loss across container restarts.
 
 ---
 

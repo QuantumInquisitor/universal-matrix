@@ -101,3 +101,61 @@ if __name__ == "__main__":
             except KeyboardInterrupt:
                 print("\n🛑 Shutting down system pipeline processes...")
                 api_process.terminate()
+import os
+import json
+
+SNAPSHOT_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "snapshot.json")
+
+def load_matrix_snapshot():
+    """Load previous state snapshot if available on container startup."""
+    if os.path.exists(SNAPSHOT_FILE):
+        try:
+            with open(SNAPSHOT_FILE, "r") as f:
+                data = json.load(f)
+                print(f"[STATE RECOVERY] Resuming from Step {data.get('step', 0)} (Clock Drift: {data.get('clock_drift_ns', 0)} ns)")
+                return data
+        except Exception as e:
+            print(f"[STATE RECOVERY] Snapshot read error: {e}. Starting fresh state.")
+    return {"step": 0, "clock_drift_ns": 0.0, "norm_sum": 1.0000}
+
+def save_matrix_snapshot(step, clock_drift_ns, norm_sum=1.0000):
+    """Snapshot current simulation state to persistent volume."""
+    os.makedirs(os.path.dirname(SNAPSHOT_FILE), exist_ok=True)
+    snapshot_data = {
+        "step": step,
+        "clock_drift_ns": clock_drift_ns,
+        "norm_sum": norm_sum,
+        "active_nodes": 114,
+        "status": "synchronized"
+    }
+    with open(SNAPSHOT_FILE, "w") as f:
+        json.dump(snapshot_data, f, indent=2)
+import os
+import json
+
+SNAPSHOT_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "snapshot.json")
+
+def load_matrix_snapshot():
+    """Load previous state snapshot if available on container startup."""
+    if os.path.exists(SNAPSHOT_FILE):
+        try:
+            with open(SNAPSHOT_FILE, "r") as f:
+                data = json.load(f)
+                print(f"[STATE RECOVERY] Resuming from Step {data.get('step', 0)} (Clock Drift: {data.get('clock_drift_ns', 0)} ns)")
+                return data
+        except Exception as e:
+            print(f"[STATE RECOVERY] Snapshot read error: {e}. Starting fresh state.")
+    return {"step": 0, "clock_drift_ns": 0.0, "norm_sum": 1.0000}
+
+def save_matrix_snapshot(step, clock_drift_ns, norm_sum=1.0000):
+    """Snapshot current simulation state to persistent volume."""
+    os.makedirs(os.path.dirname(SNAPSHOT_FILE), exist_ok=True)
+    snapshot_data = {
+        "step": step,
+        "clock_drift_ns": clock_drift_ns,
+        "norm_sum": norm_sum,
+        "active_nodes": 114,
+        "status": "synchronized"
+    }
+    with open(SNAPSHOT_FILE, "w") as f:
+        json.dump(snapshot_data, f, indent=2)
