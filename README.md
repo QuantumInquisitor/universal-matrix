@@ -73,6 +73,8 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Dockerfile** — Production container build specification for Python 3.11 with system-level rendering libraries.
 * **docker-compose.yml** — Orchestration configuration with built-in healthchecks for running the matrix engine as a microservice.
 * **.dockerignore** — Build context optimization filter excluding caches, virtual environments, and local assets.
+* **k8s/deployment.yml** — Enterprise Kubernetes Deployment and ClusterIP Service manifest with automated health probes and resource limits.
+* **prometheus.yml** — Time-series metrics scraping configuration targeting the matrix microservice.
 
 ---
 

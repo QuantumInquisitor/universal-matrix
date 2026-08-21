@@ -1,0 +1,77 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "title": "Matrix Clock Drift Variance (ns)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "matrix_clock_drift_nanoseconds",
+          "legendFormat": "Clock Drift (ns)"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": { "drawStyle": "line", "lineInterpolation": "smooth" },
+          "unit": "ns",
+          "color": { "mode": "palette-classic" }
+        }
+      }
+    },
+    {
+      "title": "Simulation Throughput (Steps/sec)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "rate(matrix_simulation_steps_total[1m])",
+          "legendFormat": "Throughput"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": { "drawStyle": "bars" },
+          "color": { "fixedColor": "green", "mode": "fixed" }
+        }
+      }
+    },
+    {
+      "title": "Active Matrix Nodes",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 12, "x": 0, "y": 8 },
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "matrix_active_nodes_count"
+        }
+      ]
+    },
+    {
+      "title": "Total API Requests",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 12, "x": 12, "y": 8 },
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "sum(matrix_api_requests_total)"
+        }
+      ]
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["matrix", "telemetry"],
+  "time": { "from": "now-15m", "to": "now" },
+  "title": "Universal Matrix System Observability",
+  "uid": "matrix-telemetry-v1"
+}
