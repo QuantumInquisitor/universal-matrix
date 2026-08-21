@@ -116,3 +116,55 @@ def save_matrix_snapshot(step, clock_drift_ns, norm_sum=1.0000):
     os.makedirs(os.path.dirname(SNAPSHOT_FILE), exist_ok=True)
     with open(SNAPSHOT_FILE, "w") as f:
         json.dump(snapshot_data, f, indent=2)
+
+import torch
+import numpy as np
+import time
+
+# Auto-detect CUDA GPU availability
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"[ACCELERATION CORE] Initialized HighDimensionalMatrixEngine using device: {DEVICE}")
+
+class GPUMatrixEngine:
+    def __init__(self, num_nodes=10000, dim=13):
+        self.num_nodes = num_nodes
+        self.dim = dim
+        self.device = DEVICE
+        
+        # Initialize high-dimensional state tensors on target compute device
+        self.state_matrix = torch.eye(dim, dtype=torch.float64, device=self.device)
+        self.node_states = torch.randn(num_nodes, dim, dtype=torch.float64, device=self.device)
+        self.probabilities = torch.ones(num_nodes, dtype=torch.float64, device=self.device) / num_nodes
+
+    def compute_so13_givens_rotation_gpu(self, theta=0.042, i=0, j=1):
+        """Executes a 13D Givens rotation matrix multiplication using CUDA GPU Tensors."""
+        G = torch.eye(self.dim, dtype=torch.float64, device=self.device)
+        c, s = torch.cos(torch.tensor(theta, device=self.device)), torch.sin(torch.tensor(theta, device=self.device))
+        G[i, i], G[i, j] = c, -s
+        G[j, i], G[j, j] = s, c
+
+        # GPU-accelerated matrix multiplication across 10,000+ node state vectors
+        self.node_states = torch.matmul(self.node_states, G.T)
+        self.state_matrix = torch.matmul(self.state_matrix, G)
+        return G
+
+    def compute_lightcone_raytrace_gpu(self, c=1.0):
+        """GPU tensor-based Minkowski light-cone spatial bound calculations."""
+        spatial_norms = torch.norm(self.node_states[:, 1:], dim=1)
+        temporal_coords = self.node_states[:, 0]
+        lightcone_intervals = (spatial_norms ** 2) - ((c * temporal_coords) ** 2)
+        return lightcone_intervals
+
+    def step_simulation(self, step_idx, theta=0.042):
+        t0 = time.perf_counter_ns()
+        self.compute_so13_givens_rotation_gpu(theta=theta)
+        lightcone = self.compute_lightcone_raytrace_gpu()
+        t1 = time.perf_counter_ns()
+
+        return {
+            "step": step_idx,
+            "device": str(self.device),
+            "clock_drift_ns": float(t1 - t0),
+            "node_count": self.num_nodes,
+            "lightcone_mean": float(torch.mean(lightcone).cpu().item())
+        }
