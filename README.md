@@ -40,6 +40,8 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Real-Time Telemetry SSE Stream (`/api/v1/telemetry/stream`):** Live Server-Sent Events channel streaming real-time matrix clock-drift metrics, active node statuses, and quantum normalization states to external endpoints.
 * **Docker Microservice Containerization:** Complete `Dockerfile` and `docker-compose.yml` configuration enabling seamless containerized deployment of the FastAPI engine and headless simulation pipelines.
 * **Real-Time Telemetry SSE Stream (`/api/v1/telemetry/stream`):** Live Server-Sent Events channel streaming matrix clock-drift metrics, active node statuses, and quantum normalization states in real time.
+* **Live Telemetry Web Dashboard (`src/static/dashboard.html`):** Real-time Chart.js frontend interface streaming matrix step counts, node states, and clock-drift metrics directly from the SSE endpoint.
+* **Prometheus Metrics Exporter (`/metrics`):** Exposes native OpenTelemetry metrics tracking request counts, active node gauges, clock-drift nanosecond variance, and total simulation steps for Prometheus and Grafana integration.
 
 ---
 
@@ -276,6 +278,20 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/v1/telemetry/stream"
 
 # Stop container service
 docker compose down
+
+### Container Registry & Remote Image Usage
+
+The CI/CD pipeline automatically builds and publishes production container images to GitHub Container Registry (GHCR).
+
+```bash
+# 1. Pull the latest pre-built microservice image from GHCR
+docker pull ghcr.io/<YOUR_GITHUB_USERNAME>/universal-matrix:latest
+
+# 2. Execute the containerized matrix microservice locally
+docker run -d -p 8000:8000 --name matrix_service ghcr.io/<YOUR_GITHUB_USERNAME>/universal-matrix:latest
+
+# 3. Query telemetry metrics or Prometheus scraper endpoint
+curl [http://127.0.0.1:8000/metrics](http://127.0.0.1:8000/metrics)
 
 ---
 
