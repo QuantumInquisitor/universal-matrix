@@ -59,6 +59,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **CLA.md** — Contributor License Agreement intellectual property defense.
 * **CONTRIBUTING.md** — Repository guidelines blocking gravitational constants.
 * **src/run_field_simulation.py** — Unified pipeline launcher coordinating API background processes, quantum/optical verification, and visualizer loops.
+* **scripts/verify_env.py** — Automated environment auditor checking Python versions, package dependencies, port 8000 bindings, and hardware drivers before pipeline startup.
 
 ---
 
@@ -230,6 +231,15 @@ python -m uvicorn src.api:app --reload
 Once the terminal logs confirm `Application startup complete`, open your preferred web browser environment and traverse the following structural network locations:
 * **Interactive Swagger UI Dashboard:** [http://127.0.0](http://127.0.0)
 * **Root Matrix Network Verification Registry:** [http://127.0.0](http://127.0.0)
+
+# 1. Install system environment dependencies
+pip install -r requirements.txt
+
+# 2. Run system environment verification check
+python scripts/verify_env.py
+
+# 3. Launch the complete unified system pipeline (Math Engines + REST API + VR 13D Visualizer)
+python src/run_field_simulation.py
 
 ---
 
