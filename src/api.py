@@ -152,3 +152,60 @@ async def websocket_telemetry_endpoint(websocket: WebSocket):
                 pass
     except WebSocketDisconnect:
         print("[WS] Client disconnected from /ws/telemetry")
+
+import jwt
+import datetime
+from fastapi import FastAPI, Depends, HTTPException, status, WebSocket, WebSocketDisconnect
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+
+SECRET_KEY = "universal_matrix_super_secret_jwt_key_change_in_prod"
+ALGORITHM = "HS256"
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/token")
+
+# Simulated Operator Credentials Database
+USERS_DB = {
+    "operator": {
+        "username": "operator",
+        "password": "matrix_secure_password_2026",
+        "role": "admin"
+    }
+}
+
+def verify_token(token: str = Depends(oauth2_scheme)):
+    """Decodes JWT tokens and verifies admin operator privileges."""
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        username: str = payload.get("sub")
+        role: str = payload.get("role")
+        if username is None or role != "admin":
+            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Insufficient RBAC permissions")
+        return payload
+    except jwt.PyJWTError:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired Bearer token")
+
+@app.post("/api/v1/auth/token")
+async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
+    """OAuth2 compatible token login endpoint generating JWT Bearer tokens."""
+    user = USERS_DB.get(form_data.username)
+    if not user or user["password"] != form_data.password:
+        raise HTTPException(status_code=400, detail="Incorrect username or password")
+    
+    token_expires = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=1)
+    access_token = jwt.encode(
+        {"sub": user["username"], "role": user["role"], "exp": token_expires},
+        SECRET_KEY,
+        algorithm=ALGORITHM
+    )
+    return {"access_token": access_token, "token_type": "bearer"}
+
+@app.post("/api/v1/control")
+async def update_control_parameters(payload: ControlPayload, current_user: dict = Depends(verify_token)):
+    """Protected control endpoint requiring valid OAuth2 Admin JWT Token."""
+    if payload.rotation_angle is not None:
+        engine_config["rotation_angle"] = payload.rotation_angle
+    if payload.matrix_dampening is not None:
+        engine_config["matrix_dampening"] = payload.matrix_dampening
+    if payload.step_delay is not None:
+        engine_config["step_delay"] = payload.step_delay
+    return {"status": "success", "config": engine_config, "modified_by": current_user["sub"]}
