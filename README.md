@@ -42,6 +42,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Real-Time Telemetry SSE Stream (`/api/v1/telemetry/stream`):** Live Server-Sent Events channel streaming matrix clock-drift metrics, active node statuses, and quantum normalization states in real time.
 * **Live Telemetry Web Dashboard (`src/static/dashboard.html`):** Real-time Chart.js frontend interface streaming matrix step counts, node states, and clock-drift metrics directly from the SSE endpoint.
 * **Prometheus Metrics Exporter (`/metrics`):** Exposes native OpenTelemetry metrics tracking request counts, active node gauges, clock-drift nanosecond variance, and total simulation steps for Prometheus and Grafana integration.
+* **Automated Grafana Observability Provisioning:** Pre-configured Grafana datasource and dashboard provisioning for real-time visualization of matrix clock-drift, throughput rates, and node telemetry without manual UI configuration.
 
 ---
 
@@ -75,6 +76,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **.dockerignore** — Build context optimization filter excluding caches, virtual environments, and local assets.
 * **k8s/deployment.yml** — Enterprise Kubernetes Deployment and ClusterIP Service manifest with automated health probes and resource limits.
 * **prometheus.yml** — Time-series metrics scraping configuration targeting the matrix microservice.
+* **grafana/provisioning/** — Automated Grafana provisioning scripts for Prometheus datasources and pre-configured telemetry dashboards.
 
 ---
 
@@ -294,6 +296,19 @@ docker run -d -p 8000:8000 --name matrix_service ghcr.io/<YOUR_GITHUB_USERNAME>/
 
 # 3. Query telemetry metrics or Prometheus scraper endpoint
 curl [http://127.0.0.1:8000/metrics](http://127.0.0.1:8000/metrics)
+
+### Complete Observability Stack (Docker Compose)
+
+Spin up the Matrix Engine, Prometheus server, and Grafana dashboard simultaneously:
+
+```bash
+# Launch the full microservice and monitoring stack
+docker compose up --build -d
+
+# Access Points:
+# - Matrix Dashboard:   http://localhost:8000
+# - Prometheus UI:      http://localhost:9090
+# - Grafana Dashboards: http://localhost:3000 (Login: admin / admin)
 
 ---
 
