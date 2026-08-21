@@ -36,6 +36,6 @@ jobs:
       run: |
         python -m unittest discover -s tests -p "test_*.py"
 
-    - name: Headless Pipeline Smoke Test
+    - name: Headless Pipeline Smoke Test & Quantum Normalization Check
       run: |
         python src/run_field_simulation.py --headless --no-api
