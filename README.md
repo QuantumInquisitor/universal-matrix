@@ -37,6 +37,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Interactive Orchestrator CLI Flags:** Supports dynamic runtime configurations (`--no-api`, `--layer [0-14]`, `--headless`) to facilitate both automated testing and targeted multi-layer torus debugging.
 * **Automated Environment Verification (`scripts/verify_env.py`):** Pre-flight auditor validating Python version constraints, package dependencies, open socket ports (`8000`), and hardware acceleration drivers before initialization.
 * **Continuous Integration & Automated Testing (`.github/workflows/pipeline_test.yml`):** GitHub Actions workflow executing syntax compilation checks, environment audits, unit test suites, and headless pipeline smoke tests on every push.
+* **Real-Time Telemetry SSE Stream (`/api/v1/telemetry/stream`):** Live Server-Sent Events channel streaming real-time matrix clock-drift metrics, active node statuses, and quantum normalization states to external endpoints.
 
 ---
 
@@ -44,7 +45,6 @@ An Open-Source Mathematical Alternative to General Relativity.
 
 * **config/settings.json** — Centralized global workspace parameters unifying physical torus dimensions and machine feed rates.
 * **src/calculator.py** — Core math, register bitmasks, and tensor execution engine.
-* **src/api.py** — Concurrent ASGI REST web framework streaming real-time node datasets and multi-variable solvers.
 * **src/gcode_compiler.py** — Winding toolpath compiler transforming coordinates into 3-phase CNC layouts using configuration metrics.
 * **src/field_synthesizer.py** — RF waveguide module translating discrete node registers into real-world continuous carrier phase frequencies.
 * **src/lattice_quantum_engine.py** — Superposition, field interference, and measurement wave-function collapse simulation engine.
@@ -65,6 +65,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **scripts/verify_env.py** — Automated environment auditor checking Python versions, package dependencies, port 8000 bindings, and hardware drivers before pipeline startup.
 * **.github/workflows/pipeline_test.yml** — Automated CI/CD pipeline running headless smoke tests, syntax compilation checks, and unit tests on GitHub.
 * **scripts/verify_env.py** — System environment auditor verifying dependencies, port 8000 socket availability, and hardware drivers before pipeline launch.
+* **src/api.py** — FastAPI/ASGI REST server providing matrix endpoints and live SSE telemetry streaming (`/api/v1/telemetry/stream`).
 
 ---
 
@@ -258,6 +259,9 @@ python src/run_field_simulation.py
 # 4. Optional CLI runtime execution modes:
 python src/run_field_simulation.py --layer 5        # Launch direct focus on Torus Layer 5
 python src/run_field_simulation.py --headless --no-api # Run in headless mode for CI/CD benchmarks
+
+* **Real-Time Telemetry Stream Channel:** `GET` `http://127.0.0.1:8000/api/v1/telemetry/stream`
+  * *Description:* Continuous Server-Sent Events (SSE) feed outputting matrix step counts, clock-drift variance (`ns`), and quantum probability normalization values in real time.
 
 ---
 
