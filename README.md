@@ -10,6 +10,20 @@ An Open-Source Mathematical Alternative to General Relativity.
 
 ## Project Features
 
+#  Universal Matrix Engine
+
+A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulation and VR visualization engine. The platform maps high-dimensional vector dynamics to physical reality using **Walter Russell's 9-octave wave mechanics**, gyroscopic atomic plane modeling, and real-time GPU tensor operations.
+
+---
+
+##  Core Features
+
+* **$SO(13)$ High-Dimensional Physics Core:** Vectorized Givens matrix rotation engine running on a 114-node lattice with PyTorch GPU acceleration and Minkowski light-cone ray tracing.
+* **Walter Russell Octave Wave Engine:** Maps atomic elements ($Z=1 \rightarrow 118$) to gyroscopic plane tilts ($0^\circ \rightarrow 90^\circ$ Carbon amplitude peak) and harmonic frequencies ($432\text{ Hz}$ base).
+* **14-Layer 13D VR Visualizer:** OpenXR and WebGL spatial projection pipeline transforming $13\text{D}$ state tensors into dynamic $3\text{D}$ VR meshes with layer-specific color palettes.
+* **OAuth2 / JWT Authentication & RBAC:** Secured control routes (`/api/v1/control`) requiring valid Bearer tokens with admin privileges.
+* **Multi-Region Cluster Synchronization:** Distributed Redis Pub/Sub broadcasting channel (`matrix_cluster_sync_channel`) syncing real-time engine overrides across edge nodes.
+* **Production NGINX TLS Reverse Proxy:** SSL/TLS termination gateway (`https://`, `wss://`) handling HTTP-to-HTTPS redirection, WebSocket upgrades, and unbuffered SSE telemetry feeds (`/api/v1/telemetry/stream`).
 * **High-Density Node Mapping:** Scales classic Marko Rodin vortex mathematics to a 114-point discrete coordinate matrix grid.
 * **Vector Field Visualization:** Implements modular doubling arithmetic ($2n \pmod{114}$) to cleanly track mathematical energy circuits.
 * **Dynamic Color-Coding:** Automatically isolates the higher-dimensional 3-6-9 Tesla control triad (crimson vectors) from the material infinity paths (royal blue).
@@ -58,6 +72,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 
 ## Repository Architecture Manifest
 
+
 * **config/settings.json** — Centralized global workspace parameters unifying physical torus dimensions and machine feed rates.
 * **src/calculator.py** — Core math, register bitmasks, and tensor execution engine.
 * **src/gcode_compiler.py** — Winding toolpath compiler transforming coordinates into 3-phase CNC layouts using configuration metrics.
@@ -104,6 +119,12 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **`requirements.txt`** — Updated core dependencies including `torch>=2.0.0` for GPU tensor acceleration.
 * **`src/run_field_simulation.py`** — Enhanced core engine featuring `GPUMatrixEngine` with CUDA tensor processing and legacy `HighDimensionalMatrixEngine` compatibility.
 * **`tests/test_gpu_acceleration.py`** — Unit test suite validating PyTorch tensor device allocations, matrix shapes, and $SO(13)$ Givens rotation orthogonality.
+* **`src/russell_periodic_mapper.py`** — Walter Russell 9-octave wave & gyroscopic periodic element engine mapping atomic numbers ($Z=1 \rightarrow 118$) to plane tilt angles ($0^\circ \rightarrow 90^\circ$) and $432\text{ Hz}$ base harmonic frequencies.
+* **`src/vr_13d_space.py`** — 13D-to-VR spatial projection engine updated to bind Walter Russell periodic element state properties, dynamic layer RGB palettes, and gyroscopic tilt angles.
+* **`tests/__init__.py`** — Package interface enabling automated unit test discovery across all test modules.
+* **`tests/test_cluster_sync.py`** — Unit test suite validating multi-region Redis Pub/Sub cluster state message formatting and JSON payload serialization.
+* **`tests/test_russell_periodic.py`** — Unit test suite verifying Walter Russell Carbon peak compression ($90^\circ$ at $Z=6$), octave frequency scaling, and 114-node field grid mappings.
+* **`tests/test_vr_13d_integration.py`** — Integration test suite verifying 13D $SO(13)$ state tensor projections into 3D VR spatial coordinates and layer transform generations.
 
 ---
 
@@ -564,6 +585,15 @@ py -m pip install -r requirements.txt
 
 # 2. Run the complete test suite (15 unit tests including GPU Tensor checks)
 py -m unittest discover -s tests -p "test_*.py"
+
+# 1. Execute the Walter Russell periodic mapper engine standalone
+python src/russell_periodic_mapper.py
+
+# 2. Run automated test discovery for Russell periodic mechanics, 13D VR integration, and cluster sync
+python -m unittest discover -s tests -p "test_*.py"
+
+# 3. Launch the complete 14-Layer 13D VR visualizer bound to Russell frequency dynamics
+python src/run_field_simulation.py --layer 0
 
 ---
 
