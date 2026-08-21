@@ -10,3 +10,5 @@ pyjwt>=2.8.0
 passlib[bcrypt]>=1.7.4
 
 torch>=2.0.0
+
+Add-Content -Path "requirements.txt" -Value "python-multipart"python-multipart

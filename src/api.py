@@ -209,3 +209,84 @@ async def update_control_parameters(payload: ControlPayload, current_user: dict 
     if payload.step_delay is not None:
         engine_config["step_delay"] = payload.step_delay
     return {"status": "success", "config": engine_config, "modified_by": current_user["sub"]}
+
+import json
+import asyncio
+from fastapi import FastAPI, Depends, HTTPException, status, WebSocket, WebSocketDisconnect
+import redis.asyncio as aioredis
+
+# Redis Cluster Synchronization Channel
+REDIS_CLUSTER_CHANNEL = "matrix_cluster_sync_channel"
+
+async def broadcast_cluster_state(state_payload: dict):
+    """Broadcasts updated engine state across all distributed regional cluster nodes."""
+    try:
+        r = aioredis.from_url("redis://localhost:6379", decode_responses=True)
+        await r.publish(REDIS_CLUSTER_CHANNEL, json.dumps(state_payload))
+        await r.close()
+    except Exception as e:
+        # Fallback for isolated single-node mode
+        pass
+
+@app.post("/api/v1/control")
+async def update_control_parameters(payload: ControlPayload, current_user: dict = Depends(verify_token)):
+    """Protected control endpoint publishing updates to Redis Pub/Sub for multi-region sync."""
+    if payload.rotation_angle is not None:
+        engine_config["rotation_angle"] = payload.rotation_angle
+    if payload.matrix_dampening is not None:
+        engine_config["matrix_dampening"] = payload.matrix_dampening
+    if payload.step_delay is not None:
+        engine_config["step_delay"] = payload.step_delay
+
+    # Broadcast updated configuration across regional VR cluster nodes
+    await broadcast_cluster_state({
+        "event": "CONFIG_UPDATE",
+        "config": engine_config,
+        "operator": current_user["sub"]
+    })
+
+    return {"status": "success", "config": engine_config, "modified_by": current_user["sub"]}
+
+from pydantic import BaseModel, Field
+from src.dna_bio_mapper import DNABioMapper
+
+# Instantiate DNA Bio-Mapper
+dna_mapper = DNABioMapper(base_freq=432.0)
+
+class DNASequencePayload(BaseModel):
+    sequence: str = Field(..., description="Raw nucleotide sequence (A, T, C, G)", example="ATGCGATCG")
+
+@app.post("/api/v1/dna/map")
+async def map_dna_sequence(payload: DNASequencePayload, current_user: dict = Depends(verify_token)):
+    """
+    Translates a nucleotide sequence into SO(13) helical state tensors,
+    elemental base breakdowns, and weighted Walter Russell frequencies.
+    """
+    try:
+        seq = payload.sequence.strip().upper()
+        
+        # Calculate base pair property metrics
+        base_metrics = [dna_mapper.map_base_to_frequency(base) for base in seq]
+        
+        # Generate 13D SO(13) helical state tensor
+        tensor_13d = dna_mapper.sequence_to_13d_tensor(seq)
+        
+        # Broadcast DNA visualization event across multi-region cluster
+        await broadcast_cluster_state({
+            "event": "DNA_MAPPING_LOADED",
+            "sequence_length": len(seq),
+            "torus_target_layer": 8,
+            "operator": current_user["sub"]
+        })
+
+        return {
+            "status": "success",
+            "sequence": seq,
+            "length": len(seq),
+            "torus_target_layer": 8,
+            "base_metrics": base_metrics,
+            "tensor_13d_shape": list(tensor_13d.shape),
+            "tensor_13d_sample": tensor_13d[:2].tolist()  # Sample first two base pair 13D vectors
+        }
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
