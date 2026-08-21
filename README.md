@@ -34,6 +34,9 @@ An Open-Source Mathematical Alternative to General Relativity.
   * *Mouse Right-Click + Drag:* Rotate 3D viewport perspective camera around the center matrix origin.
   * *Axis Mapping Matrix:* Press keys `4` through `9` to dynamically shift your hardware controllers across the hidden dimensional degrees of freedom.
   * *Look / Spin Controls:* Hold `Q` or `E` to rotate the 114-node field array through hyperspace coordinates, morphing the projected 3D geometries in real-time.
+* **Interactive Orchestrator CLI Flags:** Supports dynamic runtime configurations (`--no-api`, `--layer [0-14]`, `--headless`) to facilitate both automated testing and targeted multi-layer torus debugging.
+* **Automated Environment Verification (`scripts/verify_env.py`):** Pre-flight auditor validating Python version constraints, package dependencies, open socket ports (`8000`), and hardware acceleration drivers before initialization.
+* **Continuous Integration & Automated Testing (`.github/workflows/pipeline_test.yml`):** GitHub Actions workflow executing syntax compilation checks, environment audits, unit test suites, and headless pipeline smoke tests on every push.
 
 ---
 
@@ -60,6 +63,8 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **CONTRIBUTING.md** — Repository guidelines blocking gravitational constants.
 * **src/run_field_simulation.py** — Unified pipeline launcher coordinating API background processes, quantum/optical verification, and visualizer loops.
 * **scripts/verify_env.py** — Automated environment auditor checking Python versions, package dependencies, port 8000 bindings, and hardware drivers before pipeline startup.
+* **.github/workflows/pipeline_test.yml** — Automated CI/CD pipeline running headless smoke tests, syntax compilation checks, and unit tests on GitHub.
+* **scripts/verify_env.py** — System environment auditor verifying dependencies, port 8000 socket availability, and hardware drivers before pipeline launch.
 
 ---
 
@@ -240,6 +245,19 @@ python scripts/verify_env.py
 
 # 3. Launch the complete unified system pipeline (Math Engines + REST API + VR 13D Visualizer)
 python src/run_field_simulation.py
+
+# 1. Install system environment dependencies
+pip install -r requirements.txt
+
+# 2. Execute automated pre-flight system audit
+python scripts/verify_env.py
+
+# 3. Launch full unified simulation pipeline (Math Engines + REST API + VR 13D Visualizer)
+python src/run_field_simulation.py
+
+# 4. Optional CLI runtime execution modes:
+python src/run_field_simulation.py --layer 5        # Launch direct focus on Torus Layer 5
+python src/run_field_simulation.py --headless --no-api # Run in headless mode for CI/CD benchmarks
 
 ---
 

@@ -3,10 +3,11 @@ import json
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 
-# Initialize FastAPI App (or use your existing app instance)
 app = FastAPI(title="Universal Matrix System API", version="6.4.0")
 
-# --- (Keep any existing endpoints you already have in src/api.py) ---
+@app.get("/")
+def read_root():
+    return {"status": "online", "system": "114-Node Discrete Matrix Framework"}
 
 @app.get("/api/v1/telemetry/stream")
 async def telemetry_stream():
@@ -26,3 +27,4 @@ async def telemetry_stream():
             await asyncio.sleep(0.5)
 
     return StreamingResponse(event_generator(), media_type="text/event-stream")
+    
