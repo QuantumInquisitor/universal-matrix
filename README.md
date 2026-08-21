@@ -50,6 +50,8 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Distributed Redis State Cache:** Shared multi-replica state synchronization via Redis (`matrix_engine_state`) with automatic local snapshot fallback to prevent file-locking race conditions in Kubernetes clusters.
 * **TLS / HTTPS Termination & Reverse Proxy:** Production-ready NGINX gateway providing SSL/TLS encryption (`https://`), HTTP-to-HTTPS redirects, and header proxying.
 * **Encrypted WebSocket & Streaming Proxy:** Optimized NGINX routing for secure bi-directional WebSockets (`wss://`) and unbuffered Server-Sent Events (`/api/v1/telemetry/stream`).
+* **OAuth2 / JWT Authentication & RBAC:** Secured runtime control endpoints (`/api/v1/control`) requiring valid Bearer tokens with admin operator privileges.
+* **Token Issuance Gateway:** Interactive OAuth2 token generation route (`/api/v1/auth/token`) validating operator credentials and enforcing payload expirations.
 
 ---
 
@@ -96,6 +98,9 @@ An Open-Source Mathematical Alternative to General Relativity.
   * `certs/` — Storage directory for SSL/TLS certificates (`server.crt`, `server.key`).
 * **`docker-compose.yml`** — Orchestration spec mounting NGINX alongside Matrix Engine, Redis, Prometheus, and Grafana containers.
 * **`tests/test_security_tls.py`** — Unit test suite validating NGINX configuration directives, SSL port bindings, and proxy headers.
+* **`requirements.txt`** — Core dependency manifest updated with `pyjwt>=2.8.0` and `passlib[bcrypt]>=1.7.4` for authentication.
+* **`src/api.py`** — ASGI server updated with JWT verification dependencies, `/api/v1/auth/token` authentication routes, and protected control endpoints.
+* **`tests/test_security_rbac.py`** — Unit test suite verifying JWT token signing, payload decoding, role attribution, and token expiration validation.
 
 ---
 
@@ -522,6 +527,26 @@ docker compose up --build -d
 # - Secure 3D WebGL Dashboard:  https://localhost
 # - Secure WebSocket Stream:    wss://localhost/ws/telemetry
 # - Secure SSE Telemetry Feed:  https://localhost/api/v1/telemetry/stream
+
+### 🔐 OAuth2 JWT Token Generation & Protected API Controls
+
+# 1. Install updated dependencies
+py -m pip install -r requirements.txt
+
+# 2. Run unit tests (including JWT & RBAC verification)
+py -m unittest discover -s tests -p "test_*.py"
+
+# 3. Request an OAuth2 Bearer Token (PowerShell)
+$response = Invoke-RestMethod -Uri "https://localhost/api/v1/auth/token" -Method Post -Body @{
+    username = "operator"
+    password = "matrix_secure_password_2026"
+}
+$token = $response.access_token
+
+# 4. Dispatch a protected dynamic control payload using the Bearer Token
+Invoke-RestMethod -Uri "https://localhost/api/v1/control" -Method Post -Headers @{
+    Authorization = "Bearer $token"
+} -ContentType "application/json" -Body '{"rotation_angle": 0.084, "step_delay": 0.02}'
 
 ---
 
