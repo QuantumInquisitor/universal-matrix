@@ -197,3 +197,101 @@ class VR13DSpatialEngine:
             })
 
         return frame_data
+
+import numpy as np
+import torch
+from src.russell_periodic_mapper import RussellPeriodicEngine
+from src.dna_bio_mapper import DNABioMapper
+
+class VR13DSpatialEngine:
+    """
+    13-Dimensional Spatial Projection Engine rendering 14 nested Toroidal planes
+    mapped dynamically to Walter Russell's periodic elemental frequencies and DNA biological meshes.
+    """
+    def __init__(self, num_nodes=114, dim=13):
+        self.num_nodes = num_nodes
+        self.dim = dim
+        self.russell_engine = RussellPeriodicEngine(base_freq=432.0)
+        self.dna_mapper = DNABioMapper(base_freq=432.0)
+        self.node_mappings = self.russell_engine.map_matrix_nodes_to_periodic_grid(num_nodes)
+        self.active_layer = 0  # 0 = All 14 Layers, 8 = DNA/Biological Layer Focus
+
+    def get_layer_spatial_transform(self, layer_idx: int):
+        """
+        Derives gyroscopic rotation tensors and element color palettes
+        based on active Torus Layer T_1 -> T_14.
+        """
+        z_target = max(1, min(118, layer_idx * 8))
+        elem_props = self.russell_engine.calculate_element_properties(z_target)
+        
+        tilt_deg = elem_props["gyroscopic_tilt_deg"]
+        freq_hz = elem_props["resonant_frequency_hz"]
+        
+        tilt_factor = tilt_deg / 90.0
+        color_rgb = (
+            float(tilt_factor),
+            float(1.0 - abs(tilt_factor - 0.5)),
+            float(1.0 - tilt_factor)
+        )
+
+        return {
+            "layer_idx": layer_idx,
+            "gyroscopic_tilt_deg": tilt_deg,
+            "resonant_frequency_hz": freq_hz,
+            "element_classification": elem_props["classification"],
+            "color_rgb": color_rgb
+        }
+
+    def render_dna_sequence_mesh(self, dna_sequence: str):
+        """
+        Renders a genetic sequence as a 3D stereographic double-helix mesh
+        focused on Torus Layer 8 (Biological Crystallography).
+        """
+        tensor_13d = self.dna_mapper.sequence_to_13d_tensor(dna_sequence)
+        seq_clean = dna_sequence.upper()
+        
+        mesh_nodes = []
+        for idx, base in enumerate(seq_clean):
+            base_info = self.dna_mapper.map_base_to_frequency(base)
+            pos_3d = tensor_13d[idx, :3].tolist()
+            
+            # Hydrogen bond color signature: 2 bonds = Cyan/Blue, 3 bonds = Crimson/Red
+            bonds = base_info["hydrogen_bonds"]
+            color_rgb = (1.0, 0.2, 0.2) if bonds == 3 else (0.2, 0.8, 1.0)
+            
+            mesh_nodes.append({
+                "sequence_index": idx,
+                "base": base,
+                "position": pos_3d,
+                "hydrogen_bonds": bonds,
+                "frequency_hz": base_info["weighted_frequency_hz"],
+                "color_rgb": color_rgb,
+                "target_layer": 8
+            })
+
+        return {
+            "active_layer": 8,
+            "sequence_length": len(seq_clean),
+            "mesh_nodes": mesh_nodes
+        }
+
+    def render_13d_to_vr_mesh(self, state_matrix: torch.Tensor):
+        if isinstance(state_matrix, torch.Tensor):
+            state_np = state_matrix.cpu().numpy() if state_matrix.is_cuda else state_matrix.numpy()
+        else:
+            state_np = np.array(state_matrix)
+
+        coords_3d = state_np[:, :3] / (1.0 + np.abs(state_np[:, 3:4]))
+        
+        frame_data = []
+        for i in range(min(len(coords_3d), self.num_nodes)):
+            node_info = self.node_mappings[i]
+            frame_data.append({
+                "node_id": i,
+                "position": coords_3d[i].tolist() if i < len(coords_3d) else [0.0, 0.0, 0.0],
+                "tilt_deg": node_info.get("gyroscopic_tilt_deg", 0.0),
+                "freq_hz": node_info.get("resonant_frequency_hz", 432.0),
+                "type": node_info.get("node_type", "Internal Vortex Core")
+            })
+
+        return frame_data
