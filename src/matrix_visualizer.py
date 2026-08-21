@@ -1,100 +1,110 @@
-import sys
-import os
-import math
+import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+from matplotlib.animation import FuncAnimation
+import calculator as mc
+from lattice_quantum_engine import LatticeQuantumEngine
 
-# Ensure local imports work cleanly from the root directory context
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+class Nested14TorusQuantumVisualizer:
+    def __init__(self):
+        self.fig = plt.figure(figsize=(14, 10), facecolor='black')
+        self.ax = self.fig.add_subplot(111, projection='3d', facecolor='black')
+        self.total_nodes = mc.TOTAL_NODES
+        self.core_nodes = mc.N_CORE
+        
+        # Instantiate Quantum Engine for Live Wave-Function Collapse Data
+        self.quantum_engine = LatticeQuantumEngine()
+        
+        # Build 14 Nested Torus Shells
+        self.num_layers = 14
+        self.time = 0.0
+        
+        self.ax.set_axis_off()
+        self.fig.canvas.manager.set_window_title('Universal Matrix - 14-Layer Fractal Torus & Quantum Lattice Visualizer')
 
-# Import the projection system directly from your new tracker script
-try:
-    from satellite_tracker import compute_hypercube_gate_projections
-except ImportError:
-    # Fallback placeholder if modules are executed outside of source layout
-    def compute_hypercube_gate_projections(lat, lon):
-        return [1.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    def _generate_nested_layer_nodes(self, layer_idx, time_shift):
+        # Scale radii geometrically across 14 nested layers
+        phi_scale = mc.GOLDEN_RATIO_RESONANCE ** (layer_idx / 4.0)
+        R = 0.5 * phi_scale
+        r = 0.18 * phi_scale
+        
+        coords = []
+        nodes_per_layer = self.core_nodes // 2  # Distribution across layers
+        
+        for i in range(nodes_per_layer):
+            theta = 2 * np.pi * i / nodes_per_layer + (layer_idx * 0.1) + time_shift
+            phi = 2 * np.pi * ((i * 2) % nodes_per_layer) / nodes_per_layer + (layer_idx * 0.05)
+            
+            x = (R + r * np.cos(phi)) * np.cos(theta)
+            y = (R + r * np.cos(phi)) * np.sin(theta)
+            z = r * np.sin(phi)
+            coords.append([x, y, z])
+            
+        return np.array(coords)
 
-def generate_base_matrix_nodes():
-    """Generates standard 114-node field coordinate matrix."""
-    nodes = []
-    for i in range(114):
-        # Golden spiral / spherical distribution across the universal grid layout
-        phi = math.acos(1 - 2 * (i + 0.5) / 114)
-        theta = math.pi * (1 + 5**0.5) * i
+    def animate(self, frame):
+        self.ax.clear()
+        self.ax.set_axis_off()
+        self.time += 0.02
         
-        x = math.sin(phi) * math.cos(theta)
-        y = math.sin(phi) * math.sin(theta)
-        z = math.cos(phi)
-        nodes.append((x, y, z))
-    return nodes
+        # Run Quantum Wave-Function Superposition & Collapse
+        q_states = self.quantum_engine.run_superposition_cascade(flux_input=np.sin(self.time))
+        
+        # Dynamic Camera Orbit
+        self.ax.view_init(elev=20 + 10 * np.sin(self.time * 0.4), azim=frame * 0.4)
+        
+        # Render 14 Concentric Torus Shells
+        for layer in range(self.num_layers):
+            layer_nodes = self._generate_nested_layer_nodes(layer, self.time * (1.0 + layer * 0.05))
+            
+            # Layer Wireframe Ring Visualization
+            alpha_layer = max(0.05, 0.35 - (layer * 0.02))
+            
+            # Determine Node Colors & Probability Sizes from Quantum Engine
+            colors = []
+            sizes = []
+            for idx, pt in enumerate(layer_nodes):
+                node_id = (idx + layer * 7) % self.total_nodes
+                prob = q_states[node_id] if node_id < len(q_states) else 0.01
+                
+                if (node_id + 1) % 3 == 0:
+                    colors.append('#FF0055')  # 3-6-9 Tesla Controls (Crimson)
+                    sizes.append(40 + prob * 120)
+                else:
+                    colors.append('#0088FF')  # Material Infinity Circuit (Royal Blue)
+                    sizes.append(10 + prob * 60)
+            
+            # Scatter Plot for current Torus Layer
+            x, y, z = layer_nodes[:, 0], layer_nodes[:, 1], layer_nodes[:, 2]
+            self.ax.scatter(x, y, z, c=colors, s=sizes, alpha=alpha_layer + 0.3, edgecolors='white', linewidths=0.1)
+            
+            # Render Inter-Layer Doubling Vectors
+            if layer < self.num_layers - 1:
+                step = max(1, len(layer_nodes) // 6)
+                for v in range(0, len(layer_nodes), step):
+                    p1 = layer_nodes[v]
+                    p2 = layer_nodes[(v * 2) % len(layer_nodes)]
+                    self.ax.plot([p1[0], p2[0]], [p1[1], p2[1]], [p1[2], p2[2]], 
+                                 color='#FF0055' if v % 3 == 0 else '#0044AA', 
+                                 alpha=alpha_layer, linewidth=0.5)
 
-def render_dynamic_field(satellite_coords=None):
-    """
-    Renders the 114-node matrix layout and injects a prominent orbital 
-    vector marker tracking the live position of the nearest satellite.
-    """
-    print("🎨 Generating 3D Vector Matrix Grid Layout...")
-    nodes = generate_base_matrix_nodes()
-    
-    fig = plt.figure(figsize=(10, 8))
-    ax = fig.add_subplot(111, projection='3d')
-    
-    # 1. Unpack base node clusters
-    xs = [n[0] for n in nodes]
-    ys = [n[1] for n in nodes]
-    zs = [n[2] for n in nodes]
-    
-    # Plot standard nodes as royal blue structural anchors
-    ax.scatter(xs, ys, zs, c='royalblue', s=20, alpha=0.6, label='114-Node Core Matrix')
-    
-    # 2. Extract and highlight the 3-6-9 control vectors (Crimson Nodes)
-    # Using index subsets representing Tesla node steps
-    crimson_xs, crimson_ys, crimson_zs = [], [], []
-    for idx in range(0, 114, 3):
-        crimson_xs.append(nodes[idx][0])
-        crimson_ys.append(nodes[idx][1])
-        crimson_zs.append(nodes[idx][2])
-    ax.scatter(crimson_xs, crimson_ys, crimson_zs, c='crimson', s=45, alpha=0.9, label='3-6-9 Control Triad')
+        # Plot Outer Hypercube Gate Face Nodes (Nodes 108-113)
+        gate_dist = 4.5
+        gates = np.array([
+            [gate_dist, 0, 0], [-gate_dist, 0, 0],
+            [0, gate_dist, 0], [0, -gate_dist, 0],
+            [0, 0, gate_dist], [0, 0, -gate_dist]
+        ])
+        
+        self.ax.scatter(gates[:, 0], gates[:, 1], gates[:, 2], c='#00FFFF', s=120, marker='s', alpha=0.9, label='External Gates')
+        for g in gates:
+            self.ax.plot([0, g[0]], [0, g[1]], [0, g[2]], color='#00FFFF', alpha=0.12, linestyle='--')
 
-    # 3. Dynamic Live Satellite Vector Injection
-    if satellite_coords:
-        lat, lon = satellite_coords
-        print(f"🛰️ Projecting tracking coordinates into 3D Vector Space: Lat {lat:.4f}, Lon {lon:.4f}")
-        
-        # Translate geodetic coordinates to matching 3D matrix space
-        rad_lat = math.radians(lat)
-        rad_lon = math.radians(lon)
-        
-        # Scale slightly outside the base sphere radius (1.25) so it floats clearly above the core grid
-        sat_x = 1.25 * math.cos(rad_lat) * math.cos(rad_lon)
-        sat_y = 1.25 * math.cos(rad_lat) * math.sin(rad_lon)
-        sat_z = 1.25 * math.sin(rad_lat)
-        
-        # Plot the satellite as a large, bright emerald green marker
-        ax.scatter([sat_x], [sat_y], [sat_z], c='#00FF66', s=150, marker='*', 
-                   edgecolors='black', linewidths=1.5, label='Live Satellite Intercept')
-        
-        # Draw a targeting vector line from the center of your matrix out to the satellite point
-        ax.plot([0, sat_x], [0, sat_y], [0, sat_z], c='#00FF66', linestyle='--', alpha=0.8, linewidth=2)
-        
-    # Visual Layout Polish
-    ax.set_title("Universal Field Engine — Live Orbital Intercept Tracking", fontsize=14, pad=20)
-    ax.set_xlabel("X Axis Face Gates")
-    ax.set_ylabel("Y Axis Face Gates")
-    ax.set_zlabel("Z Axis Face Gates")
-    ax.legend(loc='upper right')
-    
-    # Set uniform bounds to keep geometry crisp and balanced
-    ax.set_xlim([-1.5, 1.5])
-    ax.set_ylim([-1.5, 1.5])
-    ax.set_zlim([-1.5, 1.5])
-    
-    print("📈 Rendering localized UI canvas loops successfully.")
-    plt.show()
+        self.ax.set_title(f'14-LAYER FRACTAL TORUS FIELD | Quantum Cascade Active | Time: {self.time:.2f}s', color='white', fontsize=11, pad=10)
 
-if __name__ == "__main__":
-    # Mocking standard target coordinate loop point if tracking script is offline
-    # Example coordinates: Lat 30.2672 (Austin, TX Node anchor boundary point), Lon -97.7431
-    active_target_coordinates = (30.2672, -97.7431)
-    render_dynamic_field(satellite_coords=active_target_coordinates)
+    def run(self):
+        anim = FuncAnimation(self.fig, self.animate, frames=720, interval=30, blit=False)
+        plt.show()
+
+if __name__ == '__main__':
+    vis = Nested14TorusQuantumVisualizer()
+    vis.run()

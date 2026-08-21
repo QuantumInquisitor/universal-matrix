@@ -1,10 +1,10 @@
-import unittest
+﻿import unittest
 import sys
 import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from m_theory_router import MTheoryRouter
+from src.m_theory_router import MTheoryRouter
 
 class TestAdvancedSimulations(unittest.TestCase):
     def test_waveguide_synthesis_bounds(self):

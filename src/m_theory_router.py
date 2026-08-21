@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Universal Playing Field: 11D M-Theory Super-Lattice & Omnidirectional VR Router
 Maps discrete 11-dimensional string/brane vibrations directly to 64-bit hardware

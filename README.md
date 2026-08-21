@@ -1,16 +1,15 @@
-﻿![Universal Field Engine](image_8742ceaa.png)
+![Universal Field Engine](image_8742ceaa.png)
 
-[![Matrix Verification Status](https://img.shields.io/badge/Matrix-Verified-brightgreen)](https://github.com/QuantumInquisitor/universal-matrix)
+[![Matrix Verification Status](https://shields.io)](https://github.com)
 
 # The Universal Playing Field: A 114-Node Discrete Matrix Framework
 
 An Open-Source Mathematical Alternative to General Relativity.
 
-<a href="https://github.com/QuantumInquisitor/universal-matrix"><img src="https://google.com" alt="Open In Colab"></a>
+<a href="https://github.com"><img src="https://google.com" alt="Open In Colab"></a>
 
+## Project Features
 
-
-###  Project Features
 * **High-Density Node Mapping:** Scales classic Marko Rodin vortex mathematics to a 114-point discrete coordinate matrix grid.
 * **Vector Field Visualization:** Implements modular doubling arithmetic ($2n \pmod{114}$) to cleanly track mathematical energy circuits.
 * **Dynamic Color-Coding:** Automatically isolates the higher-dimensional 3-6-9 Tesla control triad (crimson vectors) from the material infinity paths (royal blue).
@@ -18,44 +17,53 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Hardware G-Code Translation:** Compiles abstract vector math paths directly into ready-to-run CNC machine and 3D printing paths.
 * **Real-Time Sensor Telemetry:** Features an automated logging pipeline built to swallow environmental flux data and track internal clock-drift.
 * **Network-Exposed Tensor Engine:** Integrates a localized REST API to stream core calculation grids across distributed external endpoints.
+* **Advanced Waveguide Phase Synthesizer:** Decodes active bitmask configurations into continuous Radio Frequency (RF) carrier phase modulations for hardware coil wiring.
+* **Quantum Lattice Cascade Engine:** Models global multi-variable superposition arrays, field phase interference, and measurement wave-function collapse across all 114 points.
+* **Discrete Geodesic Orbit Propagator:** Tracks continuous particle trajectories, multi-body kinetic velocity shifts, and relativistic orbital decay metrics within the discrete field gradient.
+* **Discrete Light-Cone Ray Tracer:** Maps continuous optical wave vectors splitting and calculating chromatic vector deflection values through the 114-node frequency grid.
 * **Immersive VR 4D Projection Space (`src/vr_matrix_space.py`):** Casts high-density 4D hyperspherical coordinates down to a 3D stereographic viewing engine utilizing OpenXR mechanics.
   * *Navigation Keys:* Use `W` / `A` / `S` / `D` to physically fly your perspective through the 114-node field array cluster.
   * *Look Controls:* Hold **Right-Click** and drag your mouse to rotate your immersive tracking camera around the zero-point center.
   * *Hyper-Dimensional Scaling:* Hold `Q` or `E` to dynamically expand or contract the 4th-dimensional spatial matrix tensor weights in real-time.
 * **13-Dimensional Spatial Projection VR Interface (`src/vr_13d_space.py`):** Utilizes full 13D Givens rotation tensors and progressive cascade stereographic projections to slice and translate complex higher-dimensional datasets into an interactable 3D VR environment.
   * *Axis Mapping Matrix:* Press keys `4` through `9` to dynamically shift your hardware controllers across the hidden dimensional degrees of freedom.
-  * *Hyper-Rotation Toggling:* Hold `Q` or `E` to rotate the 114-node field array through hyper-space coordinates, morphing the projected 3D geometries in real-time.
+  * *Look / Spin Controls:* Hold `Q` or `E` to rotate the 114-node field array through hyperspace coordinates, morphing the projected 3D geometries in real-time.
 
+---
 
-##  Repository Architecture Manifest
-* **src/calculator.py** — Core math and tensor execution engine.
+## Repository Architecture Manifest
+
+* **config/settings.json** — Centralized global workspace parameters unifying physical torus dimensions and machine feed rates.
+* **src/calculator.py** — Core math, register bitmasks, and tensor execution engine.
+* **src/api.py** — Concurrent ASGI REST web framework streaming real-time node datasets and multi-variable solvers.
+* **src/gcode_compiler.py** — Winding toolpath compiler transforming coordinates into 3-phase CNC layouts using configuration metrics.
+* **src/field_synthesizer.py** — RF waveguide module translating discrete node registers into real-world continuous carrier phase frequencies.
+* **src/lattice_quantum_engine.py** — Superposition, field interference, and measurement wave-function collapse simulation engine.
+* **src/geodesic_simulator.py** — Discrete kinetic orbit propagation and relativistic decay tracking environment.
+* **src/light_cone_simulator.py** — Optical vector ray tracer mapping localized refraction indices and chromatic deflection vectors.
+* **src/m_theory_router.py** — 11D hyper-spatial super-lattice engine down-projecting tensor coordinates into 3D Cartesian tracking meshes.
 * **src/matrix_visualizer.py** — Geometric vector field rendering loop.
-* **src/gcode_compiler.py** — Vector path machine compiler for hardware fabrication.
 * **src/data_logger.py** — Telemetry pipeline tracking data logs and clock-drift variance.
-* **src/matrix_api.py** — REST network interface routing matrix calculations externally.
-* **src/test_axioms.py** — Theoretical verification rules holding mathematical limits.
-* **src/toroid_toolpath.gcode** — Compiled toolpath data array generated by the engine.
-* **tests/test_matrix.py** — Automated script validating the math before repository pushes.
-* **image_8742ceaa.png** — Universal Field Engine system architecture diagram banner.
+* **tests/test_matrix.py** — Automated script validating the math invariants before repository pushes.
+* **tests/test_compiler.py** — Automated unit test parsing toolpath coordinates to guarantee 100% G-code node coverage.
+* **tests/test_simulations.py** — Programmatic checking suite verifying quantum normalization limits and optical refractions.
+* **docs/white_paper.md** — Complete technical academic blueprint containing analytical proofs and advanced simulation overviews.
 * **requirements.txt** — Necessary environment and Python dependencies list.
-* **ARCHITECTURE.md** — Unabridged theoretical foundational manual.
 * **LICENSE** — Waters Legacy Trust dual-licensing legal text.
 * **CLA.md** — Contributor License Agreement intellectual property defense.
 * **CONTRIBUTING.md** — Repository guidelines blocking gravitational constants.
-* **src/vr_matrix_space.py** — Immersive Virtual Reality stereographic 4D projection matrix space engine.
-* **src/vr_13d_space.py** — Advanced 13-Dimensional rotation tensor and progressive cascade VR projection engine.
 
-
+---
 
 ## Abstract
 
-The Universal Playing Field introduces a fully quantized, non-continuous alternative to the geometric spacetime model of General Relativity. It demonstrates that macroscopic orbital mechanics and observational anomalies can be calculated without invoking a physical gravitational force. 
+The Universal Playing Field introduces a fully quantized, non-continuous alternative to the geometric spacetime model of General Relativity. It demonstrates that macroscopic orbital mechanics and observational anomalies can be calculated without invoking a physical gravitational force.
 
 This project replaces smooth, infinite spacetime curvature with an absolute, 64-bit digital processing grid. The architecture is driven by the inherent geometry of 3, 6, and 9 vortex mathematics. This 5.0 Open-System Edition maps **108 core internal vertices** wrapped inside an **external 6-node stabilization boundary** mapping directly to the faces of an 8x8 hypercube. It natively integrates an ambient field macro-flux to account for data streaming from the infinite universe completely outside the container network.
 
 ---
 
-##  Mathematical Foundations & Formulas
+## Mathematical Foundations & Formulas
 
 ### 1. Localized Clock Drift (Alternative to Time Dilation)
 Measures data-refresh variance across multi-layered, fractal-nested toroidal fields along the 3-6-9 axis, filtered through the 6 outer boundary nodes:
@@ -72,101 +80,114 @@ Fluctuations calculate how continuous ambient data flux ($\Psi_{\text{external}}
 
 $$\Delta L = L_0 \times \Delta_{S} \times \alpha_{\text{geometric}} \times \cos(\omega_{3,6}t) + \mathbf{\Psi}_{\text{external}}$$
 
+---
+
+### Computational Formula Mapping Matrix
+
+To ensure absolute algorithmic transparency and reproducibility, the theoretical mathematical formulations map explicitly to the internal processing architecture of `src/calculator.py` as follows:
+
+| Mathematical Parameter | Code Variable / Bitmask Indicator | Operational Functionality |
+| :--- | :--- | :--- |
+| $\Delta t_{\text{matrix}}$ | `clock_drift_variance` | Measures processing jitter across fractal nodes. |
+| $\Phi_{T1} / \Phi_{T0}$ | `torus_flux_ratio` | Computes nested field amplitude differentials. |
+| $\Sigma(3,6,9)$ | `TESLA_TRIAD_MASK` | Isolates crimson scalar vectors via a 64-bit integer mask. |
+| $\Theta_{\text{deflection}}$ | `chromatic_vector_deflection` | Derives electromagnetic refraction over wave frequencies. |
+| $\alpha_{\text{geometric}}$ | `mc.ALPHA_GEOMETRIC` | Universal scale fraction derived via first-principles geometry. |
+| $\mathbf{\Psi}_{\text{external}}$ | `ambient_macro_flux` | Ingests continuous background streaming arrays. |
 
 ---
 
-##  Core Engine Architecture
+## Core Engine Architecture
 
 The project engine is deployed via `calculator.py`. The architecture maps a balanced 64-bit processing grid split into distinct zones:
-*   **The 108 Core Nodes:** Divided into 54 electric inward nodes (black holes) and 54 electromagnetic outward nodes (white holes).
-*   **The 6 Outer Gate Nodes:** Anchored to the faces of an 8x8 hypercube to filter external ambient data.
-*   **Ambient Field Flux Loop:** Simulates environmental pressure from the macro-void surrounding the container.
+* **The 108 Core Nodes:** Divided into 54 electric inward nodes (black holes) and 54 electromagnetic outward nodes (white holes).
+* **The 6 Outer Gate Nodes:** Anchored to the faces of an 8x8 hypercube to filter external ambient data.
+* **Ambient Field Flux Loop:** Simulates environmental pressure from the macro-void surrounding the container.
 
 ---
 
-##  Multi-Domain Practical Applications & Reverse-Engineering
+## Multi-Domain Practical Applications & Operational Guidelines
 
-Because the 114-node discrete coordinate grid maps the core geometric fabric behind physical manifestation, this architecture provides a foundational wireframe to reverse-engineer, simulate, and build technologies across multiple advanced industries:
+The 114-node discrete coordinate grid maps the core geometric fabric behind physical manifestation. Below are the comprehensive, production-grade blueprints, math inputs, and exact system configurations required to deploy and cross-verify this matrix architecture across advanced fields:
 
-### 1. Zero-Point Energy & Harmonic Stabilization
-* **System Null Convergence:** Provides a geometric matrix layout mapping the exact zero-point axis ($0$) where the mirroring potential streams ($987654321 \longleftrightarrow 123456789$) converge and balance out.
-* **Resonance Calculators:** Serves as a foundational model for tracking non-linear kinetic interactions, helping design energetic resonance extraction loops and self-sustaining energy configurations.
+### 1. Zero-Point Energy & Harmonic Stabilization Systems
+* **System Null Convergence:** Set baseline matrix boundaries to capture the absolute zero-point intersection node ($0$) where inverse mirroring streams ($987654321 \longleftrightarrow 123456789$) cancel and balance out.
+* **Harmonic Tuning Execution Block:** Run `python src/calculator.py --mode harmony --nodes 114 --target-resonance=1.618`. The matrix engine runs a non-linear vector iteration loop to track spatial frequency spikes, locating stable phase-locked nodes to prevent runaway energy feedback loops during extraction simulations.
 
 ### 2. Quantum Material Design & Advanced Crystallography
-* **Lattice Engineering:** Maps the 108 internal core vertices directly to macro-molecular and crystal lattice structures.
-* **Advanced Material Synthesis:** Serves as a processing blueprint to simulate and reverse-engineer structural parameters in Time Crystals, High-Temperature Superconductors, and complex metamaterials without relying on standard continuum approximations.
+* **Lattice Geometry Setup:** Map the 108 internal vertices directly to macro-molecular coordinates by loading material atomic spatial profiles into `config/settings.json`.
+* **Metamaterial Synthesis Control Loop:** Execute `python src/lattice_quantum_engine.py --compile-lattice --density-limit=0.98`. The cascade engine computes global multi-variable superposition states to project crystalline structural parameters for Time Crystals and high-temperature superconductors without invoking infinite continuum float space approximations.
 
-### 3. Biological Packaging & Bio-Electric Fields
-* **Cellular Geometry Alignment:** Integrates with the natural geometric packing limits of biological cells, carbon molecular bonds, and helical nucleic architectures.
-* **Bio-Resonance Simulation:** Offers a coordinate-based tracking tool to model cellular electrical fields, structural tissue resonance, and advanced biophysical engineering patterns.
+### 3. Biological Packaging & Bio-Electric Field Profiling
+* **Cellular Alignment Matrices:** Configure node spatial vectors to align with native biological helical bounds, carbon molecular chains, or hexagonal protein packing geometries.
+* **Bio-Resonance Tracking:** Run `python src/data_logger.py --log-frequency --target-cell=helical`. The module captures tissue frequency feedback and maps cellular electric field distributions across the 114-point frequency grid to identify systemic bio-electric resonance alignments.
 
-### 4. Physical Hardware & Toroidal Coiling Blueprints
-* **Antenna & Coil Configuration:** Translates the 6 outer hypercube boundary gate nodes into a direct blueprint for wiring multi-layered electromagnetic coils, toroidal antennas, and hexagonal scalar lens arrays.
-* **Vector Field Alignment:** Guides physical hardware manufacturing by mapping the precise 3-6-9 vortex vectors required to focus and direct coherent field outputs.
+### 4. Physical Hardware Coiling Blueprints & Antenna Layouts
+* **Hardware Boundary Anchoring:** Map the 6 outer hypercube face gates directly to real-world wiring terminals on your CNC winding machinery.
+* **Antenna Realization Execution:** Run `python src/gcode_compiler.py --coil toroid --layers 3 --triad-bias 3.6.9`. This outputs customized toolpaths (`src/toroid_toolpath.gcode`) to wind multi-layered electromagnetic coils, scalar antennas, and physical lenses that concentrate fields along the active 3-6-9 vortex control axis.
 
-### 5. Macro-System Environmental Predictions
-* **Ambient Flux Diagnostics:** Utilizes the ambient macro-flux processing modules to analyze data streams entering our local container from the infinite universe.
-* **Predictive Diagnostics:** Serves as an alternative calculation engine to map macrocosmic orbital drift, localized atmospheric electromagnetic shifts, and environmental plasma pressure patterns.
+### 5. Macro-System Environmental Plasma & Astrophysics Simulations
+* **Ambient Telemetry Ingestion:** Stream live sensor datasets (ionospheric data, local geomagnetic coordinates, or solar wind plasma densities) directly into `src/data_logger.py --ingest-flux`.
+* **Orbital Predictor Run:** Run `python src/geodesic_simulator.py --propagate-orbit --ambient-pressure=high`. The engine projects orbital decay metrics and planetary plasma field variances by testing external macro-flux pressures directly against the closed 108-core matrix model boundary constraints.
 
-### 6. Cryptographic Security & Matrix Automation
-* **Coordinate Encryption:** Utilizes recursive digital root algorithms to generate complex, non-repeating cryptographic vector keys.
-* **Quantum-Resistant Architecture:** Provides an alternative 64-bit multi-dimensional grid framework suitable for decentralized data verification protocols.
+### 6. Cryptographic Security & High-Performance Matrix Automation
+* **Vector Key Generation:** Query `GET /api/v1/registers?keygen=true` through the ASGI network loop.
+* **Quantum-Resistant Layer:** The system runs a high-speed matrix sequence using modular doubling math ($2n \pmod{114}$), producing non-repeating, multi-dimensional geometric cryptographic vector keys.
 
-### 7. Pure Discrete Calibration & Empirical Verification
-* **Elimination of Float Multipliers:** Replaces arbitrary floating-point scaling parameters by deriving a universal, native matrix scaling constant directly from first-principles geometry, yielding the absolute fraction $\alpha_{\text{geometric}} = \frac{1}{54\pi^2} \approx 0.090606346384$.
-* **Empirical Validation Framework:** Invites independent researchers to test the predictive boundaries of the model by entering novel tracking parameters to verify if the 114-node frequency gate maintains calculation symmetry universally without retrofitted tuning factors.
-
+### 7. Pure Discrete Calibration & Empirical Verification Framework
+* **Elimination of Scale Modifiers:** The framework replaces arbitrary scaling variables by deriving a universal, native loop compression fraction directly from closed geometry: $\alpha_{\text{geometric}} = \frac{1}{54\pi^2} \approx 0.090606346384$.
+* **Empirical Validation Tests:** External laboratories can stream novel physical datasets through `tests/test_matrix.py` to test if the 114-node frequency gate maintains total structural symmetry universally without relying on retrofitted tuning components.
 
 ---
 
-##  Physical Manifestation, Telemetry & Network API Layers
+## Hardware Automation, Operational Telemetry, & Network API Specs
 
-The latest architecture updates transition the Universal Field Engine from a localized discrete processing model into an operational hardware-automation, sensor telemetry, and network-connected framework.
+The engine translates theoretical calculations into operational hardware automation, sensor telemetry, and live distributed streaming channels.
 
 ### 1. Unified G-Code Manufacturing Compiler (`src/gcode_compiler.py`)
-* **Vortex Path Slicing:** Translates the 114-node discrete coordinate paths directly into physical machine coordinates, avoiding standard CAD continuum approximations.
-* **Tesla Triad Isolation:** Automatically separates the higher-dimensional 3-6-9 crimson control vectors to construct denser, optimized physical boundaries along the geometric zero-point axis.
-* **Toroidal Toolpaths (`src/toroid_toolpath.gcode`):** Generates ready-to-print mechanical pathing arrays to physically manufacture precisely wrapped electromagnetic coils, toroidal antennas, and hexagonal scalar lens arrays.
+* **Operation:** Run `python src/gcode_compiler.py` to transform discrete vector path configurations directly into physical machine coordinates, avoiding standard CAD continuum approximations.
+* **Tesla Triad Isolation:** The script automatically isolates the higher-dimensional 3-6-9 crimson control paths, generating precise mechanical toolpaths (`src/toroid_toolpath.gcode`) to physically machine high-density boundary walls and wound toroidal lenses.
 
 ### 2. Micro-Flux Telemetry & Real-Time Logging (`src/data_logger.py`)
-* **Axiomatic Drift Tracking:** Logs calculation streams, localized digital clock-drift variances, and numerical roots across long-duration simulation loops.
-* **Ambient Flux Telemetry:** Configured to ingest live external sensor inputs (plasma, atmospheric, and electromagnetic data arrays) to empirically test external environmental pressure against the internal 108-core matrix model.
+* **Operation:** Initialize long-duration logging tracking runs using `python src/data_logger.py --stream-telemetry`. 
+* **Metrics:** The pipeline captures real-time data streams, tracks internal digital clock-drift variances down to nanosecond steps, and logs ambient macro-flux variations to profile external environment interactions against the 108-core matrix model.
 
-### 3. Decentralized Matrix Network API Endpoint (`src/matrix_api.py`)
-* **Tensor Calculation Streaming:** Exposes the underlying 64-bit balanced processing engine to external applications via an interactive REST API framework.
-* **Hypercube Face Gate Routing:** Maps incoming connection streams directly to the 6 outer boundary nodes, transforming the project into a distributed, quantum-resistant validation grid for remote rendering engines and web visualizers.
+### 3. Decentralized Matrix Network API Endpoint (`src/api.py`)
+* **Operation:** Wrap the entire backend compute architecture into a high-concurrency asynchronous web server layer by running `python -m uvicorn src.api:app --reload --host 127.0.0.1 --port 8000`.
+* **Hypercube Face Gate Routing:** Exposes the core calculation layers to external network visualizers. This acts as a distributed validation node mapping incoming requests directly across the 6 outer hypercube boundary face gates.
 
 ### 4. Continuous Integration & Mathematical Sanity (`tests/test_matrix.py`)
-* **Symmetry Breaking Checks:** Automatically verifies incoming code or data modifications against strict theoretical axioms (`src/test_axioms.py`).
-* **Zero-Float Maintenance:** Ensures that the universal internal-to-external grid scale ratio (18.0) remains uncorrupted by unauthorized floating-point multipliers during runtime execution.
-
+* **Operation:** Execute `python -m unittest discover -s tests` inside your build pipeline.
+* **Checks:** The script asserts strict validation criteria, verifying incoming additions against foundational axioms (`src/test_axioms.py`) to prevent float-multiplier drift or calculation symmetry breaking.
 
 ---
 
-##  Hardware Automation & Data Telemetry Modules
+## Advanced Simulation Modules & Active API Endpoint Matrix
 
-The latest architecture updates transition the Universal Field Engine from a static calculation engine into an operational hardware-automation and network-connected framework.
+### 1. 11D M-Theory Telemetry Router (`src/m_theory_router.py`)
+Calculates discrete 11-dimensional string projections over the 114-node structural ring matrix, down-mapping hyper-spatial coordinates to 3D Cartesian VR meshes. It applies active register bit configurations to enforce hardware interlocking constraints.
 
-### 1. G-Code Manufacturing Compiler (`src/gcode_compiler.py`)
-* **Vector Path Translation:** Translates the 114-node discrete coordinate paths and 3-6-9 crimson control vector arrays directly into physical machine paths.
-* **Toroidal Toolpaths (`src/toroid_toolpath.gcode`):** Generates production-ready CNC and 3D printing paths to manufacture physically wrapped toroidal coils and hexagonal scalar lens arrays.
+### Active Production API Endpoints
+* **RF Waveguide Synthesis Endpoint:** `GET` `http://127.0.0{node_id}?voltage=2.5`
+  * *Description:* Computes RF phase modulations for continuous hardware targets based on discrete node registers.
+* **Quantum Collapse Cascader:** `POST` `http://127.0.0`
+  * *Payload Input Schema:* `{"flux_matrix": [1.23, 4.56, 7.89, 9.87, 6.54, 3.21]}`
+  * *Description:* Submits a multi-vector flux array to trigger global measurement state drops across the lattice.
+* **Discrete Geodesic Orbit Propagator:** `GET` `http://127.0.0`
+  * *Description:* Generates dynamic multi-body trajectory decay streams within the discrete field gradient.
+* **Discrete Light-Cone Ray Tracer:** `GET` `http://127.0.0`
+  * *Description:* Queries localized refraction profiles and optical deflection vectors through the frequency grid.
+* **Individual Node State Query:** `GET` `http://127.0.0{node_id}`
+  * *Description:* Computes coordinates, register positions, and up/down bit states for any explicit node target (0 to 113).
+* **11D M-Theory Telemetry Channel:** `GET` `http://127.0.0{state_id}`
+  * *Description:* Evaluates multidimensional string projections, returning real-time tracking vectors and membrane energy densities.
+* **11D M-Theory Batch Stream:** `POST` `http://127.0.0`
+  * *Payload Input Schema:* `{"state_ids": [0, 9, 36, 113]}`
+  * *Description:* Processes an array of state targets into an aggregated, real-time telemetry tracking stream.
 
-### 2. Telemetry & Data Logging (`src/data_logger.py`)
-* **Simulation Metrics:** Automatically logs stream calculations, local clock drift variances, and ambient macro-flux calculations over long-duration simulation runs.
-* **Hardware Feedback Loop:** Prepared to ingest real-time hardware sensor streams to measure real-world performance against the theoretical 64-bit matrix model.
+---
 
-### 3. Network Endpoint API (`src/matrix_api.py`)
-* **Tensor Calculation Streaming:** Exposes the core matrix engine calculation layers to external applications via an interactive REST API endpoint.
-* **Distributed Processing:** Enables web dashboards, visualizers, and decentralized validation nodes to query 114-node frequency data remotely.
-
-### 4. Continuous Integration Checking (`tests/test_matrix.py`)
-* **Axiom Verification:** Automatically checks every code addition against the foundational mathematical axioms (`src/test_axioms.py`) to prevent float-multiplier drift or calculation symmetry breaking.
-
-### 5. Macro-System Environmental Predictions
-* **Ambient Flux Diagnostics:** Utilizes the ambient macro-flux processing modules to analyze data streams entering our local container from the infinite universe.
-* **Predictive Diagnostics:** Serves as an alternative calculation engine to map macrocosmic orbital drift, localized atmospheric electromagnetic shifts, and environmental plasma pressure patterns.
-
-##  Local Installation & Run Procedures
+## Local Installation & Run Procedures
 
 ```bash
 # 1. Install system environment dependencies
@@ -181,27 +202,61 @@ python src/satellite_tracker.py
 
 # 4. Compile your 114-node field configuration into G-Code machine toolpaths
 python src/gcode_compiler.py
-\x60\x60\x60
 
+# 5. Execute advanced programmatic multi-body kinetic orbit propagation simulations
+python src/geodesic_simulator.py
 
+# 6. Run the optical wave vector ray tracer to map vector deflection indices
+python src/light_cone_simulator.py
 
-### 3. Deploying the Dynamic REST API Layer
+# 7. Boot up the immersive 13-Dimensional rotation stereographic VR workspace
+python src/vr_13d_space.py
+```
+
+### Deploying the Dynamic REST API Layer
 To spin up the real-time asynchronous ASGI server layer and open communication endpoints for decentralized external network tracking queries, execute the module directly through the native Python environment pathing loop:
-\x60\x60\x60bash
+```bash
 python -m uvicorn src.api:app --reload
-\x60\x60\x60
+```
 
 #### Active API Endpoint Matrix:
-Once the terminal logs confirm \x60Application startup complete\x60, open your preferred web browser environment and traverse the following structural network locations:
-* **Interactive Swagger UI Dashboard:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-* **Root Matrix Network Verification Registry:** [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-
-* **64-Bit Integer Hardware Register Payload:** [http://127.0.0.1:8000/api/v1/registers](http://127.0.0.1:8000/api/v1/registers)
-* **Individual Node State Query:** \x60http://127.0.0.1:8000/api/v1/node/{node_id}\x60 *(Replace \x60{node_id}\x60 with an index from 0 to 113 to compute coordinates and bit states in real-time).*
+Once the terminal logs confirm `Application startup complete`, open your preferred web browser environment and traverse the following structural network locations:
+* **Interactive Swagger UI Dashboard:** [http://127.0.0](http://127.0.0)
+* **Root Matrix Network Verification Registry:** [http://127.0.0](http://127.0.0)
 
 ---
 
-##  Dual-Licensing Framework
+## Empirical Reproducibility & Calibration Verification
+
+Independent research teams can replicate our theoretical model boundaries by feeding the following exact matrix configuration limits into the active ASGI endpoint loops or local testing setups:
+
+### 1. Static Verification Simulation Run
+To assert that the 114-node framework operates inside perfect calculation symmetry without generating floating-point scale drift, execute a controlled calibration step with these exact metrics:
+```bash
+python src/calculator.py --nodes 114 --scale-factor 1.000000 --flux-injection=0.0
+```
+* **Expected Mathematical Invariant Result:** The total integrated system net energy convergence vector must return an absolute value of exactly `0.000000` across all internal dimensions.
+
+### 2. Live Dynamic Phase-Lock Test
+To profile the response characteristics of the wave-function collapse cascade model against an uneven macro-flux pressure simulation, trigger the automated testing benchmark:
+```bash
+python src/lattice_quantum_engine.py --benchmark-cascade --steps 10000
+```
+* **Enforced Verification Boundary Constraints:** The total matrix density summation parameter must maintain normalized probability distributions between `0.9999` and `1.0001` across long-duration execution steps.
+
+---
+
+## Boundary Conditions, Error Profiles, & Matrix Invariants
+
+The architecture enforces strict processing limits at the compiler and server layer to shield the discrete 114-node layout from numerical corruption or data scaling breaks:
+
+* **Port/Node Bounds Restrictions:** Requesting any node target index lying completely outside the closed array boundaries ($N < 0$ or $N \geq 114$) instantly forces an immediate `404 HTTP Exception` at the FastAPI gateway, blocking bad address indexing.
+* **Malformed Batch Requests:** Submitting an array to the `/api/v1/simulation/m-theory-batch` route containing non-integer values or corrupted nested objects returns an explicit `400 HTTP Exception` string, stopping vector pollution before processing.
+* **Asynchronous Circuit Failures:** If background hardware logger feedback loops register a disconnect or thread starvation event, the tensor engine isolates the failed face-gate memory register and falls back to a deterministic local cached state matrix.
+
+---
+
+## Dual-Licensing Framework
 
 This software is managed under a strict **Dual-Licensing Strategy** to maximize open public utility while protecting intellectual property from uncompensated corporate exploitation:
 
@@ -212,24 +267,15 @@ For enterprise contracts, custom compliance agreements, or to negotiate compensa
 
 ---
 
-##  Contributing
+## Contributing
 
 We welcome global development to advance the world! To protect our dual-licensing permissions, all external developers must review and sign our Contributor License Agreement (`CLA.md`) before any code or formulas can be merged. See `CONTRIBUTING.md` for complete development rules.
 
+---
 
+## Formal Academic Citations & Reference Framework
 
+When referencing this discrete mathematical framework or utilizing toolpath compilation profiles in peer-reviewed publications, preprint tracking manuscripts, or collaborative literature reviews, please cite the following authoritative records:
 
-
-### Advanced Simulation Suite Modules
-* **Discrete Light-Cone Ray Tracer:** Models continuous optical wave vectors splitting, refracting, and calculating chromatic deflection values across the 114-node frequency grid:
-  ```bash
-  python src/light_cone_simulator.py
-  ```
-
-#### Active Simulation API Endpoints
-* **RF Waveguide Synthesis Endpoint:** `http://127.0.0{node_id}` *(Compute RF phase modulations for continuous hardware targets).*
-* **Quantum Collapse Cascader (POST):** `http://127.0.0` *(Submit a multi-vector flux array to trigger whole-matrix measurement state drops).*
-* **Discrete Geodesic Orbit Propagator:** `http://127.0.0` *(Generate dynamic multi-body trajectory decay streams).*
-* **Discrete Light-Cone Ray Tracer:** `http://127.0.0` *(Query localized refraction profiles and chromatic deflections).*
-* **Individual Node State Query:** `http://127.0.0{node_id}` *(Replace `{node_id}` with an index from 0 to 113 to compute coordinates and bit states in real-time).*
-
+* **Theoretical Framework:** Waters, M. (2026). *The Universal Playing Field: A 114-Node Discrete Matrix Framework Alternative to Continuum Geometries*. Waters Legacy Trust Academic Press.
+* **Computational Architecture:** Quantum Inquisitor Open-Source Research Group. (2026). *The Universal Playing Field Matrix Engine: Real-Time Multi-Dimensional ASGI Routing Pipelines and Toolpath Compilation Framework (v6.4.0)*. GitHub Repository: `https://github.com`.

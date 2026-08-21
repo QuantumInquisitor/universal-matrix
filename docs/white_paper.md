@@ -137,7 +137,33 @@ The bitwise processing architecture presents an execution footprint of \(\mathca
 
 ## Section VI: Conclusion and Structural Outlook
 
-### 6.1 Summary of Framework Achievements
+## 6. Numerical Simulations & Computational Verification Framework
+
+To validate the predictive capacity of the non-continuous $\mathbb{Z}_{114}$ topological lattice framework against standard continuous spacetime models, a functional computational layer was constructed and integrated directly into the core matrix engine registers.
+
+### 6.1 Multi-Node Quantum Superposition & Lattice Phase Interference
+Rather than modeling fields as smooth, continuous spatial coordinates, the lattice maps complex state vectors $\Psi(n)$ directly across the 108 internal processing manifold vertices, anchored by a multi-vector macro-flux vector $\mathbf{\Psi}_{\text{external}}$ entering across the 6 hypercube boundary face gates. The global wave function propagates according to the adjacent boundary gate distance weights, modulated by the $3\text{-}6\text{-}9$ active control triad and 64-bit hardware bitmask arrays:
+
+$$\Psi(node) = \left[ \frac{\Psi_{\text{LeftGate}}}{d_L + 1} + \frac{\Psi_{\text{RightGate}}}{d_R + 1} \right] \times \left( \Phi_{\text{Tesla}} \cdot \alpha_{\text{geometric}} \cdot \mathbf{M}_{\text{mask}} \right)$$
+
+Applying a discrete variant of the Born rule collapses the global complex array into real-world probability amplitudes, programmatically isolating localized field density wells (the discrete alternative to gravitational space-time contraction points) without relying on mass-based gravity inputs.
+
+### 6.2 Discrete Geodesic Orbit Propagation & Kinetic Velocity Drift
+Object kinematics are computed by mapping particles passing through the discrete matrix grid. Particle acceleration vectors are dictated strictly by localized register potentials at the nearest overlapping lattice node, directed toward the zero-point center ($0$). To account for orbital stability without continuous spacetime geodesics, an analytical quantum decay coefficient tied to the geometric compression scale factor $\alpha_{\text{geometric}}$ is applied to the velocity tensors at each discrete time increment $\Delta t$:
+
+$$\mathbf{V}(t + \Delta t) = \left[ \mathbf{V}(t) + \mathbf{A}_{\text{potential}}(t)\Delta t \right] \times \left(1.0 - \alpha_{\text{geometric}} \cdot \delta_{\text{decay}}\right)$$
+
+Simulations confirm that stable elliptical trajectories decay programmatically into high-density vector sinks, providing a completely non-continuous, force-free alternative to standard Newtonian and Relativistic orbital mechanics.
+
+### 6.3 Light-Cone Ray Tracing & Chromatic Vector Deflection
+The alternative to relativistic gravitational lensing is calculated as an electromagnetic refraction loop as a wavefront cuts across the discrete 114-node field gradient. Localized optical density metrics are computed from active 64-bit hardware registers, where the chromatic deflection delta ($\Theta_{\text{deflection}}$) inversely scales with the squared wavelength ($\lambda^2$), causing shorter wave frequencies to refract more intensely when crossing the boundary face gates:
+
+$$\Delta \theta = (n_{\text{refraction}} - 1.0) \times \sin(\theta_{\text{heading}}) \times \left(\frac{\lambda_{\text{reference}}}{\lambda_{\text{target}}}\right)^2$$
+
+### 6.4 Continuous Phase Waveguide Synthesis
+To bridge the discrete topological ring space with physical hardware manufacturing layouts, a real-time waveguide synthesizer decodes active bitmask configurations into continuous Radio Frequency (RF) carrier phase modulations. This enables physical multi-layered electromagnetic coils and toroidal antennas to be wired and driven at the exact frequencies required to target and focus coherent 3-6-9 vortex vectors in real-world empirical settings.
+
+### 6.5 Summary of Framework Achievements
 This paper has successfully demonstrated a complete mathematical formalization of the Universal Playing Field inside the discrete topological ring space of \(\mathbb{Z}_{114}\). By separating the spatial framework into an internal 108-node core computing manifold and an external 6-node hypercube gate configuration, we establish a balanced coordinate system governed entirely by the rules of 3-6-9 vortex mathematics. 
 
 The analytical derivation of the loop compression attenuation coefficient as an exact geometric fraction:
@@ -166,28 +192,3 @@ Future research initiatives will focus on scaling this discrete lattice architec
 
 
 
-## 6. Numerical Simulations & Computational Verification Framework
-
-To validate the predictive capacity of the non-continuous $\mathbb{Z}_{114}$ topological lattice framework against standard continuous spacetime models, a functional computational layer was constructed and integrated directly into the core matrix engine registers.
-
-### 6.1 Multi-Node Quantum Superposition & Lattice Phase Interference
-Rather than modeling fields as smooth, continuous spatial coordinates, the lattice maps complex state vectors $\Psi(n)$ directly across the 108 internal processing manifold vertices, anchored by a multi-vector macro-flux vector $\mathbf{\Psi}_{\text{external}}$ entering across the 6 hypercube boundary face gates. The global wave function propagates according to the adjacent boundary gate distance weights, modulated by the $3\text{-}6\text{-}9$ active control triad and 64-bit hardware bitmask arrays:
-
-$$\Psi(node) = \left[ \frac{\Psi_{\text{LeftGate}}}{d_L + 1} + \frac{\Psi_{\text{RightGate}}}{d_R + 1} \right] \times \left( \Phi_{\text{Tesla}} \cdot \alpha_{\text{geometric}} \cdot \mathbf{M}_{\text{mask}} \right)$$
-
-Applying a discrete variant of the Born rule collapses the global complex array into real-world probability amplitudes, programmatically isolating localized field density wells (the discrete alternative to gravitational space-time contraction points) without relying on mass-based gravity inputs.
-
-### 6.2 Discrete Geodesic Orbit Propagation & Kinetic Velocity Drift
-Object kinematics are computed by mapping particles passing through the discrete matrix grid. Particle acceleration vectors are dictated strictly by localized register potentials at the nearest overlapping lattice node, directed toward the zero-point center ($0$). To account for orbital stability without continuous spacetime geodesics, an analytical quantum decay coefficient tied to the geometric compression scale factor $\alpha_{\text{geometric}}$ is applied to the velocity tensors at each discrete time increment $\Delta t$:
-
-$$\mathbf{V}(t + \Delta t) = \left[ \mathbf{V}(t) + \mathbf{A}_{\text{potential}}(t)\Delta t \right] \times \left(1.0 - \alpha_{\text{geometric}} \cdot \delta_{\text{decay}}\right)$$
-
-Simulations confirm that stable elliptical trajectories decay programmatically into high-density vector sinks, providing a completely non-continuous, force-free alternative to standard Newtonian and Relativistic orbital mechanics.
-
-### 6.3 Light-Cone Ray Tracing & Chromatic Vector Deflection
-The alternative to relativistic gravitational lensing is calculated as an electromagnetic refraction loop as a wavefront cuts across the discrete 114-node field gradient. Localized optical density metrics are computed from active 64-bit hardware registers, where the chromatic deflection delta ($\Theta_{\text{deflection}}$) inversely scales with the squared wavelength ($\lambda^2$), causing shorter wave frequencies to refract more intensely when crossing the boundary face gates:
-
-$$\Delta \theta = (n_{\text{refraction}} - 1.0) \times \sin(\theta_{\text{heading}}) \times \left(\frac{\lambda_{\text{reference}}}{\lambda_{\text{target}}}\right)^2$$
-
-### 6.4 Continuous Phase Waveguide Synthesis
-To bridge the discrete topological ring space with physical hardware manufacturing layouts, a real-time waveguide synthesizer decodes active bitmask configurations into continuous Radio Frequency (RF) carrier phase modulations. This enables physical multi-layered electromagnetic coils and toroidal antennas to be wired and driven at the exact frequencies required to target and focus coherent 3-6-9 vortex vectors in real-world empirical settings.

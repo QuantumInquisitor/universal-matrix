@@ -1,152 +1,130 @@
-#!/usr/bin/env python3
-"""
-Universal Field Engine — 13-Dimensional Spatial Projection (v6.0 Peer-Review Standard)
-Anchored directly to the 64-bit integer invariants and alpha_geometric constraints.
-"""
-
-import sys
-import os
-import math
 import numpy as np
-from ursina import *
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+import calculator as mc
+from lattice_quantum_engine import LatticeQuantumEngine
 
-# Ensure local imports locate calculator dependencies cleanly
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-try:
-    from calculator import STREAM_UP, STREAM_DOWN, DELTA_S, ALPHA_GEOMETRIC
-except ImportError:
-    # Strict fallback initializations matching Section V register invariants if run standalone
-    STREAM_UP = int("0000000000000000000000000000000000000111010110111100110100010101", 2)
-    STREAM_DOWN = int("0000000000000000000000000000000000111010110111100110100010110001", 2)
-    DELTA_S = STREAM_DOWN - STREAM_UP
-    ALPHA_GEOMETRIC = 1.0 / (54.0 * (math.pi ** 2))
+# Fallback for Golden Ratio Resonance
+PHI = getattr(mc, 'GOLDEN_RATIO_RESONANCE', getattr(mc, 'PHI', (1.0 + np.sqrt(5.0)) / 2.0))
 
-class Space13DVR(Ursina):
+class VR13DTorusSpace:
     def __init__(self):
-        super().__init__(title="Universal Field Engine — 13-Dimensional Spatial Projection", vsync=True)
+        self.fig = plt.figure(figsize=(14, 10), facecolor='black')
+        self.ax = self.fig.add_subplot(111, projection='3d', facecolor='black')
         
-        # Configure deep-space visual profile
-        Sky(color=color.black)
-        window.fps_counter.enabled = True
-        self.player = EditorCamera()
-        self.player.position = (0, 0, -5)
+        self.total_nodes = getattr(mc, 'TOTAL_NODES', 114)
+        self.core_nodes = getattr(mc, 'N_CORE', 108)
+        self.quantum_engine = LatticeQuantumEngine()
+        
+        # 14 Toroidal Layers & 13 Dimensions Setup
+        self.num_layers = 14
+        self.active_layer = 0  # 0 = All Layers, 1-14 = Specific Layer focus
+        self.active_dims = [0, 1, 2, 3]  # Active 13D axis keys (4-9)
+        self.hyper_scale = 1.0
+        self.time = 0.0
 
-        # Initialize tracking matrices
-        self.node_entities = []
-        self.rotation_matrix_13d = np.eye(13)  # Start with an unrotated 13D Identity Matrix
-        self.active_dimension_dial = 3         # Default higher dimension control focus
-        self.base_angle = 0.0
+        # Event Key Bindings for VR / Keyboard Stepping
+        self.fig.canvas.mpl_connect('key_press_event', self.on_key_press)
+        self.ax.set_axis_off()
+        self.fig.canvas.manager.set_window_title('Universal Matrix - VR 13D 14-Layer Torus Space')
 
-        print("🧠 Synthesizing 13-Dimensional Hyper-Node Vector Space from 64-Bit Bitmasks...")
-        self.generate_and_project_13d_matrix()
-        print("🟢 13D VR Engine Active! Use numbers 4-9 to select a higher dimension, and hold 'Q'/'E' to rotate it.")
-
-    def generate_and_project_13d_matrix(self):
-        """
-        Generates nodes based on discrete bit patterns in a 13-dimensional vector space,
-        applies a full 13D rotation tensor, and cascades the projection down using ALPHA_GEOMETRIC.
-        """
-        # Clear out old entities to redraw the spatial coordinates
-        for entity in self.node_entities:
-            destroy(entity)
-        self.node_entities.clear()
-
-        # Generate a balanced distribution governed by 64-bit integer register patterns
-        for i in range(114):
-            # Programmatically extract local node-bit states to drive deterministic initialization
-            # Bitwise isolation masks determine discrete structural distribution vectors
-            bit_shift_offset = (i * 7) % 64
-            up_bit = (STREAM_UP >> bit_shift_offset) & 1
-            down_bit = (STREAM_DOWN >> bit_shift_offset) & 1
-            delta_bit = (DELTA_S >> bit_shift_offset) & 1
-
-            # Base phase distributions bound to vortex constants
-            phi = math.acos(1 - 2 * (i + 0.5) / 114)
-            theta = math.pi * (1.0 + math.sqrt(5.0)) * i
-            
-            # Construct coordinate values for all 13 dimensions from register footprints
-            vec_13d = np.zeros(13)
-            for d in range(13):
-                # Integer bit modulation step ensures base-independent spatial seeding
-                bit_mod_weight = 1.0 + (up_bit * 0.1) - (down_bit * 0.1) + (delta_bit * 0.05)
-                phasing_factor = (i * (d + 1) * 137.5) * (math.pi / 180.0) * bit_mod_weight
-                
-                if d % 2 == 0:
-                    vec_13d[d] = math.sin(phi) * math.cos(theta + phasing_factor)
-                else:
-                    vec_13d[d] = math.cos(phi) * math.sin(phasing_factor)
-
-            # Apply our active 13-dimensional rotation tensor matrix
-            rotated_vec_13d = np.dot(self.rotation_matrix_13d, vec_13d)
-
-            # Cascade Projection: Repeatedly project from 13D -> 12D -> 11D ... down to 3D
-            # Each cascade layer uses ALPHA_GEOMETRIC to systematically scale spatial attenuation
-            current_vector = rotated_vec_13d
-            for d in range(12, 2, -1):
-                # Stereographic projection step bounded by the geometric compression loop limit
-                scale_weight = 1.0 / (2.0 - current_vector[d])
-                current_vector = current_vector[:d] * scale_weight * (ALPHA_GEOMETRIC * 16.5)
-
-            # Extract renderable 3D Cartesian coordinates cleanly via absolute array indexing
-            x_3d = current_vector[0]
-            y_3d = current_vector[1]
-            z_3d = current_vector[2]
-
-            # Differentiate the 3-6-9 control vectors visually (Symmetry Tracking)
-            if i % 3 == 0:
-                node_color = color.crimson
-                node_scale = 0.12
+    def on_key_press(self, event):
+        if event.key in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+            val = int(event.key)
+            if val <= 3:
+                self.active_layer = val
             else:
-                node_color = color.azure
-                node_scale = 0.06
+                self.active_dims = [(val + i) % 13 for i in range(4)]
+        elif event.key == 'up':
+            self.active_layer = min(14, self.active_layer + 1)
+        elif event.key == 'down':
+            self.active_layer = max(0, self.active_layer - 1)
+        elif event.key == 'q':
+            self.hyper_scale *= 1.15
+        elif event.key == 'e':
+            self.hyper_scale /= 1.15
 
-            # Render the 13D slice as an interactive node inside the VR view space
-            node = Entity(
-                model='sphere',
-                color=node_color,
-                scale=node_scale,
-                position=(x_3d, y_3d, z_3d)
-            )
-            self.node_entities.append(node)
+    def _generate_13d_torus_layer(self, layer_idx):
+        phi_scale = (PHI ** (layer_idx / 4.0)) * self.hyper_scale
+        R, r = 0.6 * phi_scale, 0.22 * phi_scale
+        
+        nodes_13d = []
+        for i in range(self.core_nodes // 2):
+            theta = 2 * np.pi * i / (self.core_nodes // 2)
+            phi = 2 * np.pi * ((i * 2) % (self.core_nodes // 2)) / (self.core_nodes // 2)
+            
+            x = (R + r * np.cos(phi)) * np.cos(theta)
+            y = (R + r * np.cos(phi)) * np.sin(theta)
+            z = r * np.sin(phi)
+            
+            vec_13d = [0.0] * 13
+            vec_13d[0], vec_13d[1], vec_13d[2] = x, y, z
+            for d in range(3, 13):
+                vec_13d[d] = 0.05 * np.sin(theta * (d + 1))
+            nodes_13d.append(vec_13d)
+            
+        return np.array(nodes_13d)
 
-    def apply_higher_dimensional_rotation(self, dim_a, dim_b, angle_rad):
-        """Constructs a precise localized 13D Givens rotation matrix frame."""
-        g_rot = np.eye(13)
-        c = math.cos(angle_rad)
-        s = math.sin(angle_rad)
-        g_rot[dim_a, dim_a] = c
-        g_rot[dim_a, dim_b] = -s
-        g_rot[dim_b, dim_a] = s
-        g_rot[dim_b, dim_b] = c
-        # Update the main system matrix tensor over time
-        self.rotation_matrix_13d = np.dot(self.rotation_matrix_13d, g_rot)
+    def _apply_13d_rotations(self, nodes_13d, t):
+        rotated = nodes_13d.copy()
+        d1, d2 = self.active_dims[0], self.active_dims[1]
+        c, s = np.cos(t), np.sin(t)
+        
+        x1, x2 = rotated[:, d1].copy(), rotated[:, d2].copy()
+        rotated[:, d1] = x1 * c - x2 * s
+        rotated[:, d2] = x1 * s + x2 * c
+        return rotated
 
-    def update(self):
-        """Continuous input polling loop executed every frame."""
-        # 1. Listen for user picking which higher dimension they want to manipulate
-        for num in range(4, 10):
-            if held_keys[str(num)]:
-                self.active_dimension_dial = num - 1
-                print(f"🎯 Selected Higher Dimension Axis: {num}")
+    def _get_quantum_states(self, flux_val):
+        if hasattr(self.quantum_engine, 'run_superposition_cascade'):
+            return self.quantum_engine.run_superposition_cascade(flux_input=flux_val)
+        elif hasattr(self.quantum_engine, 'simulate_superposition'):
+            return self.quantum_engine.simulate_superposition(flux_input=flux_val)
+        elif hasattr(self.quantum_engine, 'step'):
+            return self.quantum_engine.step()
+        else:
+            return getattr(self.quantum_engine, 'state', {i: 1.0 / 114 for i in range(114)})
 
-        # 2. Rotate the selected higher-dimensional axis when Q or E are held
-        rotation_triggered = False
-        if held_keys['e']:
-            self.apply_higher_dimensional_rotation(0, self.active_dimension_dial, time.dt * 0.5)
-            rotation_triggered = True
-        if held_keys['q']:
-            self.apply_higher_dimensional_rotation(0, self.active_dimension_dial, -time.dt * 0.5)
-            rotation_triggered = True
+    def animate(self, frame):
+        self.ax.clear()
+        self.ax.set_axis_off()
+        self.time += 0.03
+        
+        q_states = self._get_quantum_states(np.sin(self.time))
+        self.ax.view_init(elev=20 + 10 * np.sin(self.time * 0.3), azim=frame * 0.5)
 
-        # Redraw the system layout only if a higher spatial vector shifted
-        if rotation_triggered:
-            self.generate_and_project_13d_matrix()
+        render_layers = range(1, 15) if self.active_layer == 0 else [self.active_layer]
 
-        # Apply a gentle baseline spin to the standard 3D viewing box over time
-        self.base_angle += time.dt * 5
-        for entity in self.node_entities:
-            entity.rotation_y = self.base_angle
+        for layer in render_layers:
+            raw_13d = self._generate_13d_torus_layer(layer - 1)
+            rot_13d = self._apply_13d_rotations(raw_13d, self.time * (1.0 + layer * 0.03))
+            
+            coords_3d = rot_13d[:, :3]
+            alpha_layer = 0.9 if self.active_layer == layer else max(0.1, 0.4 - (layer * 0.02))
+            
+            colors, sizes = [], []
+            for idx, pt in enumerate(coords_3d):
+                node_id = (idx + layer * 7) % self.total_nodes
+                prob = q_states[node_id] if isinstance(q_states, dict) and node_id in q_states else 0.01
+                if (node_id + 1) % 3 == 0:
+                    colors.append('#FF0055')
+                    sizes.append(50 + prob * 100)
+                else:
+                    colors.append('#0088FF')
+                    sizes.append(15 + prob * 50)
+                    
+            self.ax.scatter(coords_3d[:, 0], coords_3d[:, 1], coords_3d[:, 2], 
+                            c=colors, s=sizes, alpha=alpha_layer, edgecolors='white', linewidths=0.2)
 
-if __name__ == "__main__":
-    app = Space13DVR()
-    app.run()
+        focus_str = f'LAYER {self.active_layer} FOCUS' if self.active_layer > 0 else 'ALL 14 LAYERS ACTIVE'
+        self.ax.set_title(f'VR 13D SPACE | {focus_str} | Controls: 4-9 (13D Planes), Q/E (Scale), UP/DN (Step Layers)', 
+                          color='white', fontsize=10, pad=10)
+
+    def run(self):
+        anim = FuncAnimation(self.fig, self.animate, frames=720, interval=25, blit=False)
+        plt.show()
+
+if __name__ == '__main__':
+    space = VR13DTorusSpace()
+    space.run()
+    
