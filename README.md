@@ -47,6 +47,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Interactive 3D WebGL Viewport:** Built-in Three.js frontend interface rendering live rotational vectors and 114-node spatial matrix projections in real time.
 * **Bi-Directional WebSockets:** Live control channel (`/ws/telemetry`) allowing users to adjust rotation angles, matrix dampening factors, and step delays dynamically from the UI.
 * **Advanced Wavefunction Decoherence & Light-Cone Physics:** Invariant spatial-temporal light-cone projections ($ds^2 = -c^2 dt^2 + \sum dx_i^2$) combined with non-unitary wavefunction collapse normalization operators ($\sum P = 1.0$).
+* **Distributed Redis State Cache:** Shared multi-replica state synchronization via Redis (`matrix_engine_state`) with automatic local snapshot fallback to prevent file-locking race conditions in Kubernetes clusters.
 
 ---
 
@@ -85,6 +86,9 @@ An Open-Source Mathematical Alternative to General Relativity.
 **`src/static/dashboard.html`** — Interactive Three.js 3D WebGL viewport with real-time UI sliders and WebSocket parameter streaming.
 * **`tests/test_advanced_math.py`** — Unit test suite verifying SO(13) matrix orthogonality, light-cone interval bounds, and non-unitary decoherence normalization limits.
 **`src/run_field_simulation.py`** — Vectorized `HighDimensionalMatrixEngine` core with SO(13) Givens rotations, light-cone ray tracing, and state persistence recovery logic.
+* **`requirements.txt`** — Core dependency manifest including `redis>=5.0.0` for distributed caching.
+* **`docker-compose.yml`** — Multi-container orchestration spec launching Matrix Engine, Redis, Prometheus, and Grafana containers.
+* **`tests/test_redis_persistence.py`** — Unit tests validating Redis payload serialization, schema integrity, and fallback state recovery.
 
 ---
 
@@ -486,6 +490,18 @@ python src/run_field_simulation.py
 # Access Points:
 # - Interactive 3D WebGL Viewport: http://localhost:8000
 # - Bi-Directional WebSocket Stream: ws://localhost:8000/ws/telemetry
+
+### Distributed Redis Caching & Environment Setup
+
+```bash
+# 1. Install updated environment dependencies (including redis)
+py -m pip install -r requirements.txt
+
+# 2. Run full test suite including Redis schema verification
+py -m unittest discover -s tests -p "test_*.py"
+
+# 3. Spin up local multi-service stack with Redis container
+docker compose up --build -d
 
 ---
 
