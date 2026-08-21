@@ -1,6 +1,6 @@
 ﻿![Universal Field Engine](image_8742ceaa.png)
 
-[![Matrix Verification Status](https://shields.io)](https://github.com)
+[![Matrix Verification Status](https://img.shields.io/badge/Matrix-Verified-brightgreen)](https://github.com/QuantumInquisitor/universal-matrix)
 
 # The Universal Playing Field: A 114-Node Discrete Matrix Framework
 
@@ -35,7 +35,6 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Quantum Lattice Cascade Engine:** Models global multi-variable superposition arrays, field phase interference, and measurement wave-function collapse across all 114 points.
 * **Discrete Geodesic Orbit Propagator:** Tracks continuous particle trajectories, multi-body kinetic velocity shifts, and relativistic orbital decay metrics within the discrete field gradient.
 * **Discrete Light-Cone Ray Tracer:** Maps continuous optical wave vectors splitting and calculating chromatic vector deflection values through the 114-node frequency grid.
-* **Unified Field Simulation Pipeline (`src/run_field_simulation.py`):** Orchestrates concurrent background math engines (Quantum Cascade & Optical Light-Cone Ray Tracer), boots the ASGI REST API process, and launches the 14-Layer VR 13D Visualizer on the main interactive thread.
 * **Immersive VR 4D Projection Space (`src/vr_matrix_space.py`):** Casts high-density 4D hyperspherical coordinates down to a 3D stereographic viewing engine utilizing OpenXR mechanics.
   * *Navigation Keys:* Use `W` / `A` / `S` / `D` to physically fly your perspective through the 114-node field array cluster.
   * *Look Controls:* Hold **Right-Click** and drag your mouse to rotate your immersive tracking camera around the zero-point center.
