@@ -1,4 +1,4 @@
-![Universal Field Engine](image_8742ceaa.png)
+﻿![Universal Field Engine](image_8742ceaa.png)
 
 [![Matrix Verification Status](https://shields.io)](https://github.com)
 
@@ -42,8 +42,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
   * *Hyper-Dimensional Scaling:* Hold `Q` or `E` to dynamically expand or contract the 4th-dimensional spatial matrix tensor weights in real-time.
 * **Unified Field Simulation Pipeline (`src/run_field_simulation.py`):** Orchestrates concurrent background math engines (Quantum Cascade & Optical Light-Cone Ray Tracer), boots the ASGI REST API process, and launches the 14-Layer VR 13D Visualizer on the main interactive thread.
 * **13-Dimensional Spatial Projection VR Interface (`src/vr_13d_space.py`):** Utilizes full $\text{SO}(13)$ Givens rotation tensors and progressive cascade projections to translate complex higher-dimensional datasets into an interactable 3D VR environment.
-  * *`1` – `3` / `UP` / `DOWN` Arrow Keys:* Step focus between individual torus layers ($T_1 \rightarrow T_{14}$) or reset to `0` to view all 14 layers simultaneously.
-  * *`4` – `9` Keys:* Shift active 13-dimensional rotation planes across the orthogonal tensor axes in real time.
+  * *`1` â€“ `3` / `UP` / `DOWN` Arrow Keys:* Step focus between individual torus layers ($T_1 \rightarrow T_{14}$) or reset to `0` to view all 14 layers simultaneously.
+  * *`4` â€“ `9` Keys:* Shift active 13-dimensional rotation planes across the orthogonal tensor axes in real time.
   * *`Q` / `E` Keys:* Dynamically expand or contract high-dimensional spatial tensor scale factors.
   * *Mouse Right-Click + Drag:* Rotate 3D viewport perspective camera around the center matrix origin.
   * *Axis Mapping Matrix:* Press keys `4` through `9` to dynamically shift your hardware controllers across the hidden dimensional degrees of freedom.
@@ -73,58 +73,58 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 ## Repository Architecture Manifest
 
 
-* **config/settings.json** — Centralized global workspace parameters unifying physical torus dimensions and machine feed rates.
-* **src/calculator.py** — Core math, register bitmasks, and tensor execution engine.
-* **src/gcode_compiler.py** — Winding toolpath compiler transforming coordinates into 3-phase CNC layouts using configuration metrics.
-* **src/field_synthesizer.py** — RF waveguide module translating discrete node registers into real-world continuous carrier phase frequencies.
-* **src/lattice_quantum_engine.py** — Superposition, field interference, and measurement wave-function collapse simulation engine.
-* **src/geodesic_simulator.py** — Discrete kinetic orbit propagation and relativistic decay tracking environment.
-* **src/light_cone_simulator.py** — Optical vector ray tracer mapping localized refraction indices and chromatic deflection vectors.
-* **src/m_theory_router.py** — 11D hyper-spatial super-lattice engine down-projecting tensor coordinates into 3D Cartesian tracking meshes.
-* **src/matrix_visualizer.py** — Geometric vector field rendering loop.
-* **src/data_logger.py** — Telemetry pipeline tracking data logs and clock-drift variance.
-* **tests/test_matrix.py** — Automated script validating the math invariants before repository pushes.
-* **tests/test_compiler.py** — Automated unit test parsing toolpath coordinates to guarantee 100% G-code node coverage.
-* **tests/test_simulations.py** — Programmatic checking suite verifying quantum normalization limits and optical refractions.
-* **docs/white_paper.md** — Complete technical academic blueprint containing analytical proofs and advanced simulation overviews.
-* **requirements.txt** — Necessary environment and Python dependencies list.
-* **LICENSE** — Waters Legacy Trust dual-licensing legal text.
-* **CLA.md** — Contributor License Agreement intellectual property defense.
-* **CONTRIBUTING.md** — Repository guidelines blocking gravitational constants.
-* **src/run_field_simulation.py** — Unified pipeline launcher coordinating API background processes, quantum/optical verification, and visualizer loops.
-* **scripts/verify_env.py** — Automated environment auditor checking Python versions, package dependencies, port 8000 bindings, and hardware drivers before pipeline startup.
-* **.github/workflows/pipeline_test.yml** — Automated CI/CD pipeline running headless smoke tests, syntax compilation checks, and unit tests on GitHub.
-* **scripts/verify_env.py** — System environment auditor verifying dependencies, port 8000 socket availability, and hardware drivers before pipeline launch.
-* **src/api.py** — FastAPI/ASGI REST server providing matrix endpoints and live SSE telemetry streaming (`/api/v1/telemetry/stream`).
-* **Dockerfile** — Production container build specification for Python 3.11 with system-level rendering libraries.
-* **docker-compose.yml** — Orchestration configuration with built-in healthchecks for running the matrix engine as a microservice.
-* **.dockerignore** — Build context optimization filter excluding caches, virtual environments, and local assets.
-* **k8s/deployment.yml** — Enterprise Kubernetes Deployment and ClusterIP Service manifest with automated health probes and resource limits.
-* **prometheus.yml** — Time-series metrics scraping configuration targeting the matrix microservice.
-* **grafana/provisioning/** — Automated Grafana provisioning scripts for Prometheus datasources and pre-configured telemetry dashboards.
-* **scripts/load_test.py** — Synthetic SSE stream load generator for benchmarking API throughput and handling concurrent subscriber traffic.
-**`src/static/dashboard.html`** — Interactive Three.js 3D WebGL viewport with real-time UI sliders and WebSocket parameter streaming.
-* **`tests/test_advanced_math.py`** — Unit test suite verifying SO(13) matrix orthogonality, light-cone interval bounds, and non-unitary decoherence normalization limits.
-* **`requirements.txt`** — Core dependency manifest including `redis>=5.0.0` for distributed caching.
-* **`docker-compose.yml`** — Multi-container orchestration spec launching Matrix Engine, Redis, Prometheus, and Grafana containers.
-* **`tests/test_redis_persistence.py`** — Unit tests validating Redis payload serialization, schema integrity, and fallback state recovery.
+* **config/settings.json** â€” Centralized global workspace parameters unifying physical torus dimensions and machine feed rates.
+* **src/calculator.py** â€” Core math, register bitmasks, and tensor execution engine.
+* **src/gcode_compiler.py** â€” Winding toolpath compiler transforming coordinates into 3-phase CNC layouts using configuration metrics.
+* **src/field_synthesizer.py** â€” RF waveguide module translating discrete node registers into real-world continuous carrier phase frequencies.
+* **src/lattice_quantum_engine.py** â€” Superposition, field interference, and measurement wave-function collapse simulation engine.
+* **src/geodesic_simulator.py** â€” Discrete kinetic orbit propagation and relativistic decay tracking environment.
+* **src/light_cone_simulator.py** â€” Optical vector ray tracer mapping localized refraction indices and chromatic deflection vectors.
+* **src/m_theory_router.py** â€” 11D hyper-spatial super-lattice engine down-projecting tensor coordinates into 3D Cartesian tracking meshes.
+* **src/matrix_visualizer.py** â€” Geometric vector field rendering loop.
+* **src/data_logger.py** â€” Telemetry pipeline tracking data logs and clock-drift variance.
+* **tests/test_matrix.py** â€” Automated script validating the math invariants before repository pushes.
+* **tests/test_compiler.py** â€” Automated unit test parsing toolpath coordinates to guarantee 100% G-code node coverage.
+* **tests/test_simulations.py** â€” Programmatic checking suite verifying quantum normalization limits and optical refractions.
+* **docs/white_paper.md** â€” Complete technical academic blueprint containing analytical proofs and advanced simulation overviews.
+* **requirements.txt** â€” Necessary environment and Python dependencies list.
+* **LICENSE** â€” Waters Legacy Trust dual-licensing legal text.
+* **CLA.md** â€” Contributor License Agreement intellectual property defense.
+* **CONTRIBUTING.md** â€” Repository guidelines blocking gravitational constants.
+* **src/run_field_simulation.py** â€” Unified pipeline launcher coordinating API background processes, quantum/optical verification, and visualizer loops.
+* **scripts/verify_env.py** â€” Automated environment auditor checking Python versions, package dependencies, port 8000 bindings, and hardware drivers before pipeline startup.
+* **.github/workflows/pipeline_test.yml** â€” Automated CI/CD pipeline running headless smoke tests, syntax compilation checks, and unit tests on GitHub.
+* **scripts/verify_env.py** â€” System environment auditor verifying dependencies, port 8000 socket availability, and hardware drivers before pipeline launch.
+* **src/api.py** â€” FastAPI/ASGI REST server providing matrix endpoints and live SSE telemetry streaming (`/api/v1/telemetry/stream`).
+* **Dockerfile** â€” Production container build specification for Python 3.11 with system-level rendering libraries.
+* **docker-compose.yml** â€” Orchestration configuration with built-in healthchecks for running the matrix engine as a microservice.
+* **.dockerignore** â€” Build context optimization filter excluding caches, virtual environments, and local assets.
+* **k8s/deployment.yml** â€” Enterprise Kubernetes Deployment and ClusterIP Service manifest with automated health probes and resource limits.
+* **prometheus.yml** â€” Time-series metrics scraping configuration targeting the matrix microservice.
+* **grafana/provisioning/** â€” Automated Grafana provisioning scripts for Prometheus datasources and pre-configured telemetry dashboards.
+* **scripts/load_test.py** â€” Synthetic SSE stream load generator for benchmarking API throughput and handling concurrent subscriber traffic.
+**`src/static/dashboard.html`** â€” Interactive Three.js 3D WebGL viewport with real-time UI sliders and WebSocket parameter streaming.
+* **`tests/test_advanced_math.py`** â€” Unit test suite verifying SO(13) matrix orthogonality, light-cone interval bounds, and non-unitary decoherence normalization limits.
+* **`requirements.txt`** â€” Core dependency manifest including `redis>=5.0.0` for distributed caching.
+* **`docker-compose.yml`** â€” Multi-container orchestration spec launching Matrix Engine, Redis, Prometheus, and Grafana containers.
+* **`tests/test_redis_persistence.py`** â€” Unit tests validating Redis payload serialization, schema integrity, and fallback state recovery.
 * **`nginx/`**
-  * `nginx.conf` — NGINX reverse proxy configuration for 443 SSL termination, WSS upgrading, and SSE stream buffering overrides.
-  * `certs/` — Storage directory for SSL/TLS certificates (`server.crt`, `server.key`).
-* **`docker-compose.yml`** — Orchestration spec mounting NGINX alongside Matrix Engine, Redis, Prometheus, and Grafana containers.
-* **`tests/test_security_tls.py`** — Unit test suite validating NGINX configuration directives, SSL port bindings, and proxy headers.
-* **`requirements.txt`** — Core dependency manifest updated with `pyjwt>=2.8.0` and `passlib[bcrypt]>=1.7.4` for authentication.
-* **`src/api.py`** — ASGI server updated with JWT verification dependencies, `/api/v1/auth/token` authentication routes, and protected control endpoints.
-* **`tests/test_security_rbac.py`** — Unit test suite verifying JWT token signing, payload decoding, role attribution, and token expiration validation.
-* **`requirements.txt`** — Updated core dependencies including `torch>=2.0.0` for GPU tensor acceleration.
-* **`src/run_field_simulation.py`** — Enhanced core engine featuring `GPUMatrixEngine` with CUDA tensor processing and legacy `HighDimensionalMatrixEngine` compatibility.
-* **`tests/test_gpu_acceleration.py`** — Unit test suite validating PyTorch tensor device allocations, matrix shapes, and $SO(13)$ Givens rotation orthogonality.
-* **`src/russell_periodic_mapper.py`** — Walter Russell 9-octave wave & gyroscopic periodic element engine mapping atomic numbers ($Z=1 \rightarrow 118$) to plane tilt angles ($0^\circ \rightarrow 90^\circ$) and $432\text{ Hz}$ base harmonic frequencies.
-* **`src/vr_13d_space.py`** — 13D-to-VR spatial projection engine updated to bind Walter Russell periodic element state properties, dynamic layer RGB palettes, and gyroscopic tilt angles.
-* **`tests/__init__.py`** — Package interface enabling automated unit test discovery across all test modules.
-* **`tests/test_cluster_sync.py`** — Unit test suite validating multi-region Redis Pub/Sub cluster state message formatting and JSON payload serialization.
-* **`tests/test_russell_periodic.py`** — Unit test suite verifying Walter Russell Carbon peak compression ($90^\circ$ at $Z=6$), octave frequency scaling, and 114-node field grid mappings.
-* **`tests/test_vr_13d_integration.py`** — Integration test suite verifying 13D $SO(13)$ state tensor projections into 3D VR spatial coordinates and layer transform generations.
+  * `nginx.conf` â€” NGINX reverse proxy configuration for 443 SSL termination, WSS upgrading, and SSE stream buffering overrides.
+  * `certs/` â€” Storage directory for SSL/TLS certificates (`server.crt`, `server.key`).
+* **`docker-compose.yml`** â€” Orchestration spec mounting NGINX alongside Matrix Engine, Redis, Prometheus, and Grafana containers.
+* **`tests/test_security_tls.py`** â€” Unit test suite validating NGINX configuration directives, SSL port bindings, and proxy headers.
+* **`requirements.txt`** â€” Core dependency manifest updated with `pyjwt>=2.8.0` and `passlib[bcrypt]>=1.7.4` for authentication.
+* **`src/api.py`** â€” ASGI server updated with JWT verification dependencies, `/api/v1/auth/token` authentication routes, and protected control endpoints.
+* **`tests/test_security_rbac.py`** â€” Unit test suite verifying JWT token signing, payload decoding, role attribution, and token expiration validation.
+* **`requirements.txt`** â€” Updated core dependencies including `torch>=2.0.0` for GPU tensor acceleration.
+* **`src/run_field_simulation.py`** â€” Enhanced core engine featuring `GPUMatrixEngine` with CUDA tensor processing and legacy `HighDimensionalMatrixEngine` compatibility.
+* **`tests/test_gpu_acceleration.py`** â€” Unit test suite validating PyTorch tensor device allocations, matrix shapes, and $SO(13)$ Givens rotation orthogonality.
+* **`src/russell_periodic_mapper.py`** â€” Walter Russell 9-octave wave & gyroscopic periodic element engine mapping atomic numbers ($Z=1 \rightarrow 118$) to plane tilt angles ($0^\circ \rightarrow 90^\circ$) and $432\text{ Hz}$ base harmonic frequencies.
+* **`src/vr_13d_space.py`** â€” 13D-to-VR spatial projection engine updated to bind Walter Russell periodic element state properties, dynamic layer RGB palettes, and gyroscopic tilt angles.
+* **`tests/__init__.py`** â€” Package interface enabling automated unit test discovery across all test modules.
+* **`tests/test_cluster_sync.py`** â€” Unit test suite validating multi-region Redis Pub/Sub cluster state message formatting and JSON payload serialization.
+* **`tests/test_russell_periodic.py`** â€” Unit test suite verifying Walter Russell Carbon peak compression ($90^\circ$ at $Z=6$), octave frequency scaling, and 114-node field grid mappings.
+* **`tests/test_vr_13d_integration.py`** â€” Integration test suite verifying 13D $SO(13)$ state tensor projections into 3D VR spatial coordinates and layer transform generations.
 
 ---
 
@@ -414,7 +414,7 @@ v                             v                             v
 
 ---
 
-## 🛠 Complete Operations & Deployment Manual
+## ðŸ›  Complete Operations & Deployment Manual
 
 ### Option 1: Local Development & Unit Testing
 
@@ -492,29 +492,29 @@ Total Failed Connections: 0
  Repository Architecture Manifest
 src/
 
-api.py — FastAPI server serving SSE stream, /metrics endpoint, and dashboard.
+api.py â€” FastAPI server serving SSE stream, /metrics endpoint, and dashboard.
 
-run_field_simulation.py — Pipeline orchestrator with CLI flags and state recovery logic.
+run_field_simulation.py â€” Pipeline orchestrator with CLI flags and state recovery logic.
 
-static/dashboard.html — Live Chart.js single-page telemetry interface.
+static/dashboard.html â€” Live Chart.js single-page telemetry interface.
 
-charts/universal-matrix/ — Production Kubernetes Helm Chart (Templates, Values, Ingress).
+charts/universal-matrix/ â€” Production Kubernetes Helm Chart (Templates, Values, Ingress).
 
-grafana/provisioning/ — Automated Grafana datasource and metric dashboard definitions.
+grafana/provisioning/ â€” Automated Grafana datasource and metric dashboard definitions.
 
-k8s/ — Kubernetes deployment, service, and NGINX long-polling ingress manifests.
+k8s/ â€” Kubernetes deployment, service, and NGINX long-polling ingress manifests.
 
 scripts/
 
-verify_env.py — Pre-flight environment and dependency audit script.
+verify_env.py â€” Pre-flight environment and dependency audit script.
 
-load_test.py — Async HTTP synthetic SSE streaming load generator.
+load_test.py â€” Async HTTP synthetic SSE streaming load generator.
 
-tests/ — Unit test suite verifying SO(13) Givens rotation orthogonality and normalization.
+tests/ â€” Unit test suite verifying SO(13) Givens rotation orthogonality and normalization.
 
-prometheus.yml — Target scraping configuration for Prometheus metrics collector.
+prometheus.yml â€” Target scraping configuration for Prometheus metrics collector.
 
-docker-compose.yml — Multi-container composition spec for local development.
+docker-compose.yml â€” Multi-container composition spec for local development.
 ### 3D WebGL, WebSockets & Advanced Physics Operations
 
 # 1. Run full unit test suite (Orthogonality, Light-Cone Bounds, and Normalization)
@@ -552,7 +552,7 @@ docker compose up --build -d
 # - Secure WebSocket Stream:    wss://localhost/ws/telemetry
 # - Secure SSE Telemetry Feed:  https://localhost/api/v1/telemetry/stream
 
-### 🔐 OAuth2 JWT Token Generation & Protected API Controls
+### ðŸ” OAuth2 JWT Token Generation & Protected API Controls
 
 # 1. Install updated dependencies
 py -m pip install -r requirements.txt
@@ -572,13 +572,13 @@ Invoke-RestMethod -Uri "https://localhost/api/v1/control" -Method Post -Headers 
     Authorization = "Bearer $token"
 } -ContentType "application/json" -Body '{"rotation_angle": 0.084, "step_delay": 0.02}'
 
-### ⚡ GPU Acceleration & PyTorch Setup
+### âš¡ GPU Acceleration & PyTorch Setup
 
 ```bash
 # 1. Install PyTorch and application dependencies
 py -m pip install -r requirements.txt
 
-# Note for Windows Users: PyTorch requires the Microsoft Visual C++ 2015–2022 Redistributable (x64).
+# Note for Windows Users: PyTorch requires the Microsoft Visual C++ 2015â€“2022 Redistributable (x64).
 # If encountering c10.dll/DLL load errors, install via PowerShell:
 # Invoke-WebRequest -Uri "[https://aka.ms/vs/17/release/vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)" -OutFile "vc_redist.x64.exe"
 # Start-Process -FilePath ".\vc_redist.x64.exe" -ArgumentList "/passive" -Wait
@@ -650,3 +650,4 @@ When referencing this discrete mathematical framework or utilizing toolpath comp
 
 * **Theoretical Framework:** Waters, M. (2026). *The Universal Playing Field: A 114-Node Discrete Matrix Framework Alternative to Continuum Geometries*. Waters Legacy Trust Academic Press.
 * **Computational Architecture:** Quantum Inquisitor Open-Source Research Group. (2026). *The Universal Playing Field Matrix Engine: Real-Time Multi-Dimensional ASGI Routing Pipelines and Toolpath Compilation Framework (v6.4.0)*. GitHub Repository: `https://github.com/QuantumInquisitor/universal-matrix`.
+
