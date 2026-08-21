@@ -38,6 +38,8 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Automated Environment Verification (`scripts/verify_env.py`):** Pre-flight auditor validating Python version constraints, package dependencies, open socket ports (`8000`), and hardware acceleration drivers before initialization.
 * **Continuous Integration & Automated Testing (`.github/workflows/pipeline_test.yml`):** GitHub Actions workflow executing syntax compilation checks, environment audits, unit test suites, and headless pipeline smoke tests on every push.
 * **Real-Time Telemetry SSE Stream (`/api/v1/telemetry/stream`):** Live Server-Sent Events channel streaming real-time matrix clock-drift metrics, active node statuses, and quantum normalization states to external endpoints.
+* **Docker Microservice Containerization:** Complete `Dockerfile` and `docker-compose.yml` configuration enabling seamless containerized deployment of the FastAPI engine and headless simulation pipelines.
+* **Real-Time Telemetry SSE Stream (`/api/v1/telemetry/stream`):** Live Server-Sent Events channel streaming matrix clock-drift metrics, active node statuses, and quantum normalization states in real time.
 
 ---
 
@@ -66,6 +68,9 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **.github/workflows/pipeline_test.yml** — Automated CI/CD pipeline running headless smoke tests, syntax compilation checks, and unit tests on GitHub.
 * **scripts/verify_env.py** — System environment auditor verifying dependencies, port 8000 socket availability, and hardware drivers before pipeline launch.
 * **src/api.py** — FastAPI/ASGI REST server providing matrix endpoints and live SSE telemetry streaming (`/api/v1/telemetry/stream`).
+* **Dockerfile** — Production container build specification for Python 3.11 with system-level rendering libraries.
+* **docker-compose.yml** — Orchestration configuration with built-in healthchecks for running the matrix engine as a microservice.
+* **.dockerignore** — Build context optimization filter excluding caches, virtual environments, and local assets.
 
 ---
 
@@ -262,6 +267,15 @@ python src/run_field_simulation.py --headless --no-api # Run in headless mode fo
 
 * **Real-Time Telemetry Stream Channel:** `GET` `http://127.0.0.1:8000/api/v1/telemetry/stream`
   * *Description:* Continuous Server-Sent Events (SSE) feed outputting matrix step counts, clock-drift variance (`ns`), and quantum probability normalization values in real time.
+
+# Execute local Docker container microservice
+docker compose up --build -d
+
+# Test real-time SSE telemetry stream output (PowerShell)
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/v1/telemetry/stream"
+
+# Stop container service
+docker compose down
 
 ---
 
