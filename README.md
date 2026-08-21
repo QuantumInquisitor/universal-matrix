@@ -44,6 +44,9 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Prometheus Metrics Exporter (`/metrics`):** Exposes native OpenTelemetry metrics tracking request counts, active node gauges, clock-drift nanosecond variance, and total simulation steps for Prometheus and Grafana integration.
 * **Automated Grafana Observability Provisioning:** Pre-configured Grafana datasource and dashboard provisioning for real-time visualization of matrix clock-drift, throughput rates, and node telemetry without manual UI configuration.
 * **Fault-Tolerant State Persistence:** Snapshot auto-recovery engine dumping simulation states and clock-drift offsets to `/data/snapshot.json` to prevent data loss across container restarts.
+* **Interactive 3D WebGL Viewport:** Built-in Three.js frontend interface rendering live rotational vectors and 114-node spatial matrix projections in real time.
+* **Bi-Directional WebSockets:** Live control channel (`/ws/telemetry`) allowing users to adjust rotation angles, matrix dampening factors, and step delays dynamically from the UI.
+* **Advanced Wavefunction Decoherence & Light-Cone Physics:** Invariant spatial-temporal light-cone projections ($ds^2 = -c^2 dt^2 + \sum dx_i^2$) combined with non-unitary wavefunction collapse normalization operators ($\sum P = 1.0$).
 
 ---
 
@@ -79,6 +82,9 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **prometheus.yml** — Time-series metrics scraping configuration targeting the matrix microservice.
 * **grafana/provisioning/** — Automated Grafana provisioning scripts for Prometheus datasources and pre-configured telemetry dashboards.
 * **scripts/load_test.py** — Synthetic SSE stream load generator for benchmarking API throughput and handling concurrent subscriber traffic.
+**`src/static/dashboard.html`** — Interactive Three.js 3D WebGL viewport with real-time UI sliders and WebSocket parameter streaming.
+* **`tests/test_advanced_math.py`** — Unit test suite verifying SO(13) matrix orthogonality, light-cone interval bounds, and non-unitary decoherence normalization limits.
+**`src/run_field_simulation.py`** — Vectorized `HighDimensionalMatrixEngine` core with SO(13) Givens rotations, light-cone ray tracing, and state persistence recovery logic.
 
 ---
 
@@ -311,6 +317,175 @@ docker compose up --build -d
 # - Matrix Dashboard:   http://localhost:8000
 # - Prometheus UI:      http://localhost:9090
 # - Grafana Dashboards: http://localhost:3000 (Login: admin / admin)
+
+### Kubernetes Helm Deployment
+
+Deploy the engine using Helm:
+
+```bash
+# Dry-run render templates locally
+helm template release-test ./charts/universal-matrix
+
+# Install to active Kubernetes cluster
+helm install matrix-release ./charts/universal-matrix
+
+---
+
+#  Universal Matrix Engine
+
+A production-grade, containerized simulation engine for high-dimensional matrix operations and SO(13) rotations with enterprise observability, real-time SSE telemetry, and fault-tolerant state recovery.
+
+---
+
+##  Production Infrastructure & Observability
+
+The Universal Matrix Engine is designed as a cloud-native, containerized microservice with zero-downtime streaming and multi-tiered observability.
+
+### Real-Time Telemetry & Monitoring Architecture
+
+                   +-------------------------------+
+                   |   Chart.js Web Dashboard      |
+                   |    (http://localhost:8000)    |
+                   +---------------+---------------+
+                                   ^
+                                   | SSE Stream
+                                   v
++------------------+         +-------------------+         +-------------------+
+|  Prometheus UI   | <------ |  FastAPI Micro-   | <------ | Matrix Engine     |
+| (port 9090)      | /metrics|  service (Uvicorn)| State   | (114-Node State)  |
++--------+---------+         +-------------------+         +---------+---------+
+|                             |                             |
+v                             v                             v
++------------------+         +-------------------+         +-------------------+
+| Grafana Dashboard|         | NGINX / Kubernetes|         | Local Persistence |
+| (port 3000)      |         | Ingress (HTTPS)   |         | (/app/data/)      |
++------------------+         +-------------------+         +-------------------+
+
+---
+
+##  Core Features
+
+* **High-Dimensional Simulation Core:** Simulates SO(13) Givens rotation matrices across a 114-node discrete lattice model.
+* **Fault-Tolerant State Persistence:** Auto-recovery engine dumping simulation states and clock-drift offsets to `/app/data/snapshot.json` to prevent data loss across container restarts.
+* **Real-Time Telemetry Streaming:** Low-latency Server-Sent Events (SSE) streaming engine metrics to connected subscribers.
+* **Live Web Visualizer:** Built-in single-page Chart.js frontend interface tracking clock-drift variance and step counts in real time.
+* **Prometheus Metrics Exporter:** Exposes native OpenTelemetry metrics at `/metrics` tracking request counts, active node gauges, clock-drift nanosecond variance, and throughput.
+* **Automated Grafana Observability:** Zero-touch provisioning scripts for Prometheus datasources and pre-configured telemetry dashboards.
+
+---
+
+## 🛠 Complete Operations & Deployment Manual
+
+### Option 1: Local Development & Unit Testing
+
+Run pre-flight checks, test mathematical rotation invariants, and execute the engine:
+
+```bash
+# 1. Execute pre-flight environment checks
+python scripts/verify_env.py
+
+# 2. Run automated unit test suite (Orthogonality, Normalization, Clock-Drift)
+python -m unittest discover -s tests -p "test_*.py"
+
+# 3. Launch field simulation orchestrator in headless mode
+python src/run_field_simulation.py --headless
+
+---
+
+### Block 3: Docker Compose & Kubernetes Options
+
+```markdown
+### Option 2: Docker Compose Full Observability Stack
+
+Spin up the microservice along with Prometheus metric collection and Grafana dashboard provisioning using a single command:
+
+```bash
+# Launch Engine, Prometheus, and Grafana containers
+docker compose up --build -d
+
+# Verify Container Health
+docker compose ps
+Live Web Dashboard: http://localhost:8000
+
+Prometheus Metrics UI: http://localhost:9090
+
+Provisioned Grafana Dashboard: http://localhost:3000 (Default Auth: admin / admin)
+
+Option 3: Kubernetes Deployment via Helm
+Deploy to any Kubernetes cluster (EKS, GKE, AKS, or local Minikube/k3s) using the packaged Helm chart:
+
+Bash
+# 1. Preview template output
+helm template matrix-release ./charts/universal-matrix
+
+# 2. Install to active cluster namespace
+helm install matrix-release ./charts/universal-matrix
+
+# 3. Verify pods and long-lived SSE ingress route
+kubectl get pods -l app=universal-matrix
+kubectl get ingress
+
+---
+
+### Block 4: Load Testing & Architecture Manifest
+
+```markdown
+---
+
+##  Synthetic Load Generator & Throughput Benchmarking
+
+Test the SSE streaming capacity under concurrent subscriber loads using the asynchronous benchmark utility:
+
+```bash
+# Run 50 concurrent SSE subscribers for 30 seconds
+python scripts/load_test.py --clients 50 --duration 30 --url [http://127.0.0.1:8000/api/v1/telemetry/stream](http://127.0.0.1:8000/api/v1/telemetry/stream)
+Expected Benchmark Output
+--------------------------------------------------
+LOAD TEST RESULTS SUMMARY
+--------------------------------------------------
+Total Duration          : 30.02 s
+Messages Delivered      : 3000
+Data Transferred        : 312.45 KB
+Message Throughput      : 100.00 msgs/sec
+Total Failed Connections: 0
+==================================================
+ Repository Architecture Manifest
+src/
+
+api.py — FastAPI server serving SSE stream, /metrics endpoint, and dashboard.
+
+run_field_simulation.py — Pipeline orchestrator with CLI flags and state recovery logic.
+
+static/dashboard.html — Live Chart.js single-page telemetry interface.
+
+charts/universal-matrix/ — Production Kubernetes Helm Chart (Templates, Values, Ingress).
+
+grafana/provisioning/ — Automated Grafana datasource and metric dashboard definitions.
+
+k8s/ — Kubernetes deployment, service, and NGINX long-polling ingress manifests.
+
+scripts/
+
+verify_env.py — Pre-flight environment and dependency audit script.
+
+load_test.py — Async HTTP synthetic SSE streaming load generator.
+
+tests/ — Unit test suite verifying SO(13) Givens rotation orthogonality and normalization.
+
+prometheus.yml — Target scraping configuration for Prometheus metrics collector.
+
+docker-compose.yml — Multi-container composition spec for local development.
+### 3D WebGL, WebSockets & Advanced Physics Operations
+
+# 1. Run full unit test suite (Orthogonality, Light-Cone Bounds, and Normalization)
+python -m unittest discover -s tests -p "test_*.py"
+
+# 2. Launch engine with 3D WebGL & WebSocket server layer
+python src/run_field_simulation.py
+
+# Access Points:
+# - Interactive 3D WebGL Viewport: http://localhost:8000
+# - Bi-Directional WebSocket Stream: ws://localhost:8000/ws/telemetry
 
 ---
 
