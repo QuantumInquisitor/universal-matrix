@@ -21,11 +21,17 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **Quantum Lattice Cascade Engine:** Models global multi-variable superposition arrays, field phase interference, and measurement wave-function collapse across all 114 points.
 * **Discrete Geodesic Orbit Propagator:** Tracks continuous particle trajectories, multi-body kinetic velocity shifts, and relativistic orbital decay metrics within the discrete field gradient.
 * **Discrete Light-Cone Ray Tracer:** Maps continuous optical wave vectors splitting and calculating chromatic vector deflection values through the 114-node frequency grid.
+* **Unified Field Simulation Pipeline (`src/run_field_simulation.py`):** Orchestrates concurrent background math engines (Quantum Cascade & Optical Light-Cone Ray Tracer), boots the ASGI REST API process, and launches the 14-Layer VR 13D Visualizer on the main interactive thread.
 * **Immersive VR 4D Projection Space (`src/vr_matrix_space.py`):** Casts high-density 4D hyperspherical coordinates down to a 3D stereographic viewing engine utilizing OpenXR mechanics.
   * *Navigation Keys:* Use `W` / `A` / `S` / `D` to physically fly your perspective through the 114-node field array cluster.
   * *Look Controls:* Hold **Right-Click** and drag your mouse to rotate your immersive tracking camera around the zero-point center.
   * *Hyper-Dimensional Scaling:* Hold `Q` or `E` to dynamically expand or contract the 4th-dimensional spatial matrix tensor weights in real-time.
-* **13-Dimensional Spatial Projection VR Interface (`src/vr_13d_space.py`):** Utilizes full 13D Givens rotation tensors and progressive cascade stereographic projections to slice and translate complex higher-dimensional datasets into an interactable 3D VR environment.
+* **Unified Field Simulation Pipeline (`src/run_field_simulation.py`):** Orchestrates concurrent background math engines (Quantum Cascade & Optical Light-Cone Ray Tracer), boots the ASGI REST API process, and launches the 14-Layer VR 13D Visualizer on the main interactive thread.
+* **13-Dimensional Spatial Projection VR Interface (`src/vr_13d_space.py`):** Utilizes full $\text{SO}(13)$ Givens rotation tensors and progressive cascade projections to translate complex higher-dimensional datasets into an interactable 3D VR environment.
+  * *`1` – `3` / `UP` / `DOWN` Arrow Keys:* Step focus between individual torus layers ($T_1 \rightarrow T_{14}$) or reset to `0` to view all 14 layers simultaneously.
+  * *`4` – `9` Keys:* Shift active 13-dimensional rotation planes across the orthogonal tensor axes in real time.
+  * *`Q` / `E` Keys:* Dynamically expand or contract high-dimensional spatial tensor scale factors.
+  * *Mouse Right-Click + Drag:* Rotate 3D viewport perspective camera around the center matrix origin.
   * *Axis Mapping Matrix:* Press keys `4` through `9` to dynamically shift your hardware controllers across the hidden dimensional degrees of freedom.
   * *Look / Spin Controls:* Hold `Q` or `E` to rotate the 114-node field array through hyperspace coordinates, morphing the projected 3D geometries in real-time.
 
@@ -52,6 +58,7 @@ An Open-Source Mathematical Alternative to General Relativity.
 * **LICENSE** — Waters Legacy Trust dual-licensing legal text.
 * **CLA.md** — Contributor License Agreement intellectual property defense.
 * **CONTRIBUTING.md** — Repository guidelines blocking gravitational constants.
+* **src/run_field_simulation.py** — Unified pipeline launcher coordinating API background processes, quantum/optical verification, and visualizer loops.
 
 ---
 
