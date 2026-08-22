@@ -1,4 +1,5 @@
-﻿import os
+﻿import numpy as np
+import os
 import json
 import asyncio
 import datetime
@@ -266,3 +267,41 @@ async def get_field_coherence(current_user: dict = Depends(verify_token)):
         "status": "success",
         "resonance": field_data
     }
+
+# --- Phase 8: Dynamic Resonance WebSocket Stream ---
+@app.websocket("/ws/resonance/stream")
+async def websocket_resonance_endpoint(websocket: WebSocket):
+    """
+    Bi-directional WebSocket streaming live toroidal field coherence, 
+    harmonic oscillations, and accepting real-time frequency modulation inputs.
+    """
+    await websocket.accept()
+    current_freq = 432.0
+    phase_shift = 0.0
+
+    try:
+        while True:
+            phase_shift += 0.042
+            coherence = round(0.5 + 0.5 * np.sin(phase_shift), 4)
+            resonant_hz = round(current_freq * (1.0 + 0.01 * np.cos(phase_shift)), 2)
+
+            telemetry_packet = {
+                "status": "synchronized",
+                "phase_coherence": coherence,
+                "resonant_frequency_hz": resonant_hz,
+                "field_stability": "Harmonic" if coherence > 0.5 else "Turbulent",
+                "phase_shift_rad": round(phase_shift, 4)
+            }
+            await websocket.send_text(json.dumps(telemetry_packet))
+
+            # Non-blocking reception for live operator overrides
+            try:
+                incoming = await asyncio.wait_for(websocket.receive_text(), timeout=0.05)
+                data = json.loads(incoming)
+                if "base_freq" in data:
+                    current_freq = float(data["base_freq"])
+            except asyncio.TimeoutError:
+                pass
+    except WebSocketDisconnect:
+        print("[WS] Client disconnected from /ws/resonance/stream")
+
