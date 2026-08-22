@@ -696,3 +696,15 @@ python -m unittest discover -s tests -p "test_*.py"
 ## Phase 12: Continuous Integration & GitHub Actions Pipeline
 
 * **CI/CD Workflow (\.github/workflows/ci.yml\):** Automated build pipeline running full automated test discovery, package verification, and API integrity checks on every commit.
+
+## Operational Summary & API Endpoint Map
+
+Active system routes served at http://127.0.0.1:8000:
+
+* **\GET /\** — Interactive WebGL Telemetry Dashboard & Coherence HUD
+* **\POST /api/v1/auth/token\** — Admin JWT Authentication & Session Key Issuance
+* **\POST /api/v1/dna/map\** — Biological Nucleotide \\$ Mapping Engine
+* **\GET /api/v1/lattice/energetic\** — 19-Node Subtle Energetic & Anatomical Lattice (\ \rightarrow T_{12}\$)
+* **\GET /api/v1/resonance/coherence\** — Real-Time Phase Coherence & Standing Wave Metrics
+* **\WS /ws/resonance/stream\** — Bi-Directional Harmonic Modulation Streamer
+* **\GET /metrics\** — Prometheus System Observability & Field Stability Exposition Route
