@@ -7,13 +7,10 @@
     <style>
         body { margin: 0; background-color: #0a0a10; color: #00ffff; font-family: 'Courier New', Courier, monospace; overflow: hidden; }
         #canvas-container { width: 100vw; height: 75vh; background: radial-gradient(circle, #101025 0%, #050508 100%); position: relative; }
-        
-        /* Resonance HUD Overlay */
         .hud-overlay { position: absolute; top: 20px; right: 20px; background: rgba(15, 15, 26, 0.85); border: 1px solid #00ffff; padding: 15px; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 255, 255, 0.2); pointer-events: none; }
         .hud-title { font-weight: bold; margin-bottom: 8px; color: #00ffaa; border-bottom: 1px solid #00ffaa44; padding-bottom: 4px; }
         .hud-metric { margin: 4px 0; font-size: 0.9em; }
         .hud-value { color: #ffffff; font-weight: bold; }
-
         .control-panel { padding: 15px; display: flex; gap: 20px; align-items: center; background: #0f0f1a; border-top: 1px solid #00ffff33; height: 25vh; box-sizing: border-box; }
         input, button { background: #1a1a2e; color: #00ffff; border: 1px solid #00ffff; padding: 8px 12px; font-family: inherit; cursor: pointer; }
         button:hover { background: #00ffff; color: #050508; }
@@ -29,7 +26,6 @@
             <div class="hud-metric">Resonant Freq: <span class="hud-value" id="hudFreq">432.00 Hz</span></div>
         </div>
     </div>
-
     <div class="control-panel">
         <div>
             <label>DNA Sequence (T8):</label>
@@ -44,39 +40,29 @@
             <span class="status-badge" id="systemStatus">System: Online</span>
         </div>
     </div>
-
     <script>
         async function submitDNA() {
             const seq = document.getElementById('dnaInput').value;
             const token = localStorage.getItem('token') || '';
             const res = await fetch('/api/v1/dna/map', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': Bearer \
-                },
+                headers: { 'Content-Type': 'application/json', 'Authorization': Bearer \ },
                 body: JSON.stringify({ sequence: seq })
             });
             const data = await res.json();
             document.getElementById('systemStatus').innerText = DNA Loaded: \ Base Pairs;
             fetchCoherence();
         }
-
         async function loadEnergeticLattice() {
             const token = localStorage.getItem('token') || '';
-            const res = await fetch('/api/v1/lattice/energetic', {
-                headers: { 'Authorization': Bearer \ }
-            });
+            const res = await fetch('/api/v1/lattice/energetic', { headers: { 'Authorization': Bearer \ } });
             const data = await res.json();
             document.getElementById('systemStatus').innerText = Energetic Grid: \ Nodes Active;
             fetchCoherence();
         }
-
         async function fetchCoherence() {
             const token = localStorage.getItem('token') || '';
-            const res = await fetch('/api/v1/resonance/coherence', {
-                headers: { 'Authorization': Bearer \ }
-            });
+            const res = await fetch('/api/v1/resonance/coherence', { headers: { 'Authorization': Bearer \ } });
             if (res.ok) {
                 const data = await res.json();
                 const resData = data.resonance;
