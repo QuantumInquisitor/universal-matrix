@@ -110,3 +110,49 @@
     </script>
 </body>
 </html>
+
+<!-- Insert into src/static/dashboard.html inside the controls container -->
+<div class="control-card">
+  <h3>🧬 Genetic Sequence Bio-Mapper (Layer T8 Focus)</h3>
+  <div class="input-group">
+    <label for="dnaSequenceInput">Nucleotide Sequence (A, T, C, G):</label>
+    <input type="text" id="dnaSequenceInput" value="ATGCGATCG" placeholder="Enter DNA Sequence...">
+  </div>
+  <button id="btnRenderDNA" onclick="submitDNASequence()">Render Helical Mesh in 3D</button>
+  <div id="dnaStats" class="stats-output">
+    <p>Target Layer: <span id="targetLayer">T8 (Biological)</span></p>
+    <p>Active Base Pairs: <span id="bpCount">9</span></p>
+    <p>Resonant Frequency: <span id="avgFreq">432.0 Hz</span></p>
+  </div>
+</div>
+
+<script>
+async function submitDNASequence() {
+  const sequence = document.getElementById('dnaSequenceInput').value.trim();
+  const token = localStorage.getItem('jwt_token');
+  
+  const response = await fetch('/api/v1/dna/map', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({ sequence: sequence })
+  });
+  
+  if (response.ok) {
+    const data = await response.json();
+    document.getElementById('bpCount').innerText = data.length;
+    // Broadcast sequence update to WebSocket 3D WebGL Viewport
+    if (window.ws && window.ws.readyState === WebSocket.OPEN) {
+      window.ws.send(JSON.stringify({
+        action: 'LOAD_DNA_MESH',
+        sequence: sequence,
+        target_layer: 8
+      }));
+    }
+  } else {
+    alert('Invalid Nucleotide Base Sequence');
+  }
+}
+</script>
