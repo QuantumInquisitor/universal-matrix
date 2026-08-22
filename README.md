@@ -687,3 +687,8 @@ python -m unittest discover -s tests -p "test_*.py"
 * **\src/scalar_harmonics.py\** — Core module for octave calculations and 13D scalar tensor transformations.
 * **\	ests/test_scalar_harmonics.py\** — Unit test suite validating octave math and state vector transformation shapes.
 * **\	ests/test_api_ws_resonance.py\** — Integration test suite verifying bi-directional WebSocket communication and dynamic frequency overrides.
+
+## Phase 10: Multi-Cluster Redis State Synchronization
+
+* **Cluster State Synchronization (\src/cluster_sync.py\):** Pub/Sub event router delivering multi-instance state propagation across distributed reality engine nodes.
+* **\	ests/test_cluster_sync.py\** — Unit test suite validating async broadcast listeners and state payload transmission.
