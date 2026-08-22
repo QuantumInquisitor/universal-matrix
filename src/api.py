@@ -1,14 +1,31 @@
-import os
-import asyncio
+﻿import os
 import json
-from fastapi import FastAPI, Response
+import asyncio
+import datetime
+import jwt
+from typing import Optional
+from pydantic import BaseModel, Field
+
+from fastapi import FastAPI, Response, Depends, HTTPException, status, WebSocket, WebSocketDisconnect
 from fastapi.responses import StreamingResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from prometheus_client import Counter, Gauge, generate_latest, CONTENT_TYPE_LATEST
+import redis.asyncio as aioredis
+
+from src.macro_lattice_mapper import MacroLatticeMapper
+from src.dna_bio_mapper import DNABioMapper
+
+# --- App Initialization & Constants ---
+SECRET_KEY = "universal_matrix_super_secret_jwt_key_change_in_prod"
+ALGORITHM = "HS256"
+REDIS_CLUSTER_CHANNEL = "matrix_cluster_sync_channel"
 
 app = FastAPI(title="Universal Matrix System API", version="6.4.0")
 
-# --- Prometheus Observability Metrics ---
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/token")
+
+# --- Observability Metrics ---
 SYSTEM_REQUESTS_TOTAL = Counter(
     "matrix_api_requests_total",
     "Total HTTP requests handled by the Matrix API",
@@ -30,10 +47,9 @@ ACTIVE_NODES_GAUGE = Gauge(
     "Number of active matrix nodes in the 114-Node Discrete Framework"
 )
 
-# Initialize static gauge baseline
 ACTIVE_NODES_GAUGE.set(114)
 
-# Determine path to 'static' directory
+# --- Subsystem Initialization ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 
@@ -42,128 +58,16 @@ if not os.path.exists(STATIC_DIR):
 
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
+macro_mapper = MacroLatticeMapper(base_freq=432.0)
+dna_mapper = DNABioMapper(base_freq=432.0)
 
-@app.get("/")
-def read_root():
-    """Serve the Telemetry Web Dashboard as the primary interface."""
-    SYSTEM_REQUESTS_TOTAL.labels(method="GET", endpoint="/").inc()
-    dashboard_path = os.path.join(STATIC_DIR, "dashboard.html")
-    if os.path.exists(dashboard_path):
-        return FileResponse(dashboard_path)
-    return {"status": "online", "system": "114-Node Discrete Matrix Framework"}
-
-
-@app.get("/metrics")
-def get_prometheus_metrics():
-    """Expose standard OpenTelemetry / Prometheus metrics endpoint for Grafana scraping."""
-    SYSTEM_REQUESTS_TOTAL.labels(method="GET", endpoint="/metrics").inc()
-    return Response(content=generate_latest(), media_type=CONTENT_TYPE_LATEST)
-
-
-@app.get("/api/v1/telemetry/stream")
-async def telemetry_stream():
-    """Real-time SSE channel streaming matrix clock-drift and node probability states."""
-    SYSTEM_REQUESTS_TOTAL.labels(method="GET", endpoint="/api/v1/telemetry/stream").inc()
-
-    async def event_generator():
-        step = 0
-        while True:
-            step += 1
-            clock_drift = round(0.042 * step, 4)
-
-            # Update Prometheus Gauges and Counters
-            MATRIX_STEP_COUNTER.inc()
-            MATRIX_CLOCK_DRIFT.set(clock_drift)
-
-            data = {
-                "step": step,
-                "status": "synchronized",
-                "clock_drift_ns": clock_drift,
-                "active_nodes": 114,
-                "norm_sum": 1.0000
-            }
-            yield f"data: {json.dumps(data)}\n\n"
-            await asyncio.sleep(0.5)
-
-    return StreamingResponse(event_generator(), media_type="text/event-stream")
-
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
-from pydantic import BaseModel
-import json
-import asyncio
-
-# Global runtime engine parameters
 engine_config = {
     "rotation_angle": 0.042,
     "matrix_dampening": 1.0,
     "step_delay": 0.05
 }
 
-class ControlPayload(BaseModel):
-    rotation_angle: float | None = None
-    matrix_dampening: float | None = None
-    step_delay: float | None = None
-
-@app.post("/api/v1/control")
-async def update_control_parameters(payload: ControlPayload):
-    """Update runtime simulation physics parameters dynamically."""
-    if payload.rotation_angle is not None:
-        engine_config["rotation_angle"] = payload.rotation_angle
-    if payload.matrix_dampening is not None:
-        engine_config["matrix_dampening"] = payload.matrix_dampening
-    if payload.step_delay is not None:
-        engine_config["step_delay"] = payload.step_delay
-    return {"status": "success", "config": engine_config}
-
-@app.websocket("/ws/telemetry")
-async def websocket_telemetry_endpoint(websocket: WebSocket):
-    """Bi-directional WebSocket streaming telemetry and accepting control inputs."""
-    await websocket.accept()
-    try:
-        while True:
-            # Broadcast state packet to client
-            telemetry_data = {
-                "step": getattr(app.state, "step", 0),
-                "clock_drift_ns": getattr(app.state, "clock_drift_ns", 0.0),
-                "config": engine_config,
-                "nodes": [
-                    {
-                        "id": i,
-                        "x": float((i % 12) - 6),
-                        "y": float((i // 12) - 5),
-                        "z": float((i * 0.1) % 5 - 2.5),
-                        "vx": float((i * engine_config["rotation_angle"]) % 1.0),
-                        "vy": float((i * engine_config["matrix_dampening"]) % 1.0)
-                    }
-                    for i in range(114)
-                ]
-            }
-            await websocket.send_text(json.dumps(telemetry_data))
-            
-            # Non-blocking check for incoming client control messages
-            try:
-                incoming = await asyncio.wait_for(websocket.receive_text(), timeout=engine_config["step_delay"])
-                data = json.loads(incoming)
-                if "rotation_angle" in data:
-                    engine_config["rotation_angle"] = float(data["rotation_angle"])
-                if "step_delay" in data:
-                    engine_config["step_delay"] = float(data["step_delay"])
-            except asyncio.TimeoutError:
-                pass
-    except WebSocketDisconnect:
-        print("[WS] Client disconnected from /ws/telemetry")
-
-import jwt
-import datetime
-from fastapi import FastAPI, Depends, HTTPException, status, WebSocket, WebSocketDisconnect
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-
-SECRET_KEY = "universal_matrix_super_secret_jwt_key_change_in_prod"
-ALGORITHM = "HS256"
-
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/token")
-
-# Simulated Operator Credentials Database
+# --- Authentication & Verification ---
 USERS_DB = {
     "operator": {
         "username": "operator",
@@ -184,9 +88,40 @@ def verify_token(token: str = Depends(oauth2_scheme)):
     except jwt.PyJWTError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired Bearer token")
 
+async def broadcast_cluster_state(state_payload: dict):
+    """Broadcasts updated engine state across all distributed regional cluster nodes."""
+    try:
+        r = aioredis.from_url("redis://localhost:6379", decode_responses=True)
+        await r.publish(REDIS_CLUSTER_CHANNEL, json.dumps(state_payload))
+        await r.close()
+    except Exception:
+        pass
+
+# --- Data Models ---
+class ControlPayload(BaseModel):
+    rotation_angle: Optional[float] = None
+    matrix_dampening: Optional[float] = None
+    step_delay: Optional[float] = None
+
+class DNASequencePayload(BaseModel):
+    sequence: str = Field(..., description="Raw nucleotide sequence (A, T, C, G)", example="ATGCGATCG")
+
+# --- System & Authentication Endpoints ---
+@app.get("/")
+def read_root():
+    SYSTEM_REQUESTS_TOTAL.labels(method="GET", endpoint="/").inc()
+    dashboard_path = os.path.join(STATIC_DIR, "dashboard.html")
+    if os.path.exists(dashboard_path):
+        return FileResponse(dashboard_path)
+    return {"status": "online", "system": "114-Node Discrete Matrix Framework"}
+
+@app.get("/metrics")
+def get_prometheus_metrics():
+    SYSTEM_REQUESTS_TOTAL.labels(method="GET", endpoint="/metrics").inc()
+    return Response(content=generate_latest(), media_type=CONTENT_TYPE_LATEST)
+
 @app.post("/api/v1/auth/token")
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
-    """OAuth2 compatible token login endpoint generating JWT Bearer tokens."""
     user = USERS_DB.get(form_data.username)
     if not user or user["password"] != form_data.password:
         raise HTTPException(status_code=400, detail="Incorrect username or password")
@@ -199,38 +134,68 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
     )
     return {"access_token": access_token, "token_type": "bearer"}
 
-@app.post("/api/v1/control")
-async def update_control_parameters(payload: ControlPayload, current_user: dict = Depends(verify_token)):
-    """Protected control endpoint requiring valid OAuth2 Admin JWT Token."""
-    if payload.rotation_angle is not None:
-        engine_config["rotation_angle"] = payload.rotation_angle
-    if payload.matrix_dampening is not None:
-        engine_config["matrix_dampening"] = payload.matrix_dampening
-    if payload.step_delay is not None:
-        engine_config["step_delay"] = payload.step_delay
-    return {"status": "success", "config": engine_config, "modified_by": current_user["sub"]}
+# --- Matrix Simulation & Streaming Endpoints ---
+@app.get("/api/v1/telemetry/stream")
+async def telemetry_stream():
+    SYSTEM_REQUESTS_TOTAL.labels(method="GET", endpoint="/api/v1/telemetry/stream").inc()
 
-import json
-import asyncio
-from fastapi import FastAPI, Depends, HTTPException, status, WebSocket, WebSocketDisconnect
-import redis.asyncio as aioredis
+    async def event_generator():
+        step = 0
+        while True:
+            step += 1
+            clock_drift = round(0.042 * step, 4)
+            MATRIX_STEP_COUNTER.inc()
+            MATRIX_CLOCK_DRIFT.set(clock_drift)
 
-# Redis Cluster Synchronization Channel
-REDIS_CLUSTER_CHANNEL = "matrix_cluster_sync_channel"
+            data = {
+                "step": step,
+                "status": "synchronized",
+                "clock_drift_ns": clock_drift,
+                "active_nodes": 114,
+                "norm_sum": 1.0000
+            }
+            yield f"data: {json.dumps(data)}\n\n"
+            await asyncio.sleep(0.5)
 
-async def broadcast_cluster_state(state_payload: dict):
-    """Broadcasts updated engine state across all distributed regional cluster nodes."""
+    return StreamingResponse(event_generator(), media_type="text/event-stream")
+
+@app.websocket("/ws/telemetry")
+async def websocket_telemetry_endpoint(websocket: WebSocket):
+    await websocket.accept()
     try:
-        r = aioredis.from_url("redis://localhost:6379", decode_responses=True)
-        await r.publish(REDIS_CLUSTER_CHANNEL, json.dumps(state_payload))
-        await r.close()
-    except Exception as e:
-        # Fallback for isolated single-node mode
-        pass
+        while True:
+            telemetry_data = {
+                "step": getattr(app.state, "step", 0),
+                "clock_drift_ns": getattr(app.state, "clock_drift_ns", 0.0),
+                "config": engine_config,
+                "nodes": [
+                    {
+                        "id": i,
+                        "x": float((i % 12) - 6),
+                        "y": float((i // 12) - 5),
+                        "z": float((i * 0.1) % 5 - 2.5),
+                        "vx": float((i * engine_config["rotation_angle"]) % 1.0),
+                        "vy": float((i * engine_config["matrix_dampening"]) % 1.0)
+                    }
+                    for i in range(114)
+                ]
+            }
+            await websocket.send_text(json.dumps(telemetry_data))
+            
+            try:
+                incoming = await asyncio.wait_for(websocket.receive_text(), timeout=engine_config["step_delay"])
+                data = json.loads(incoming)
+                if "rotation_angle" in data:
+                    engine_config["rotation_angle"] = float(data["rotation_angle"])
+                if "step_delay" in data:
+                    engine_config["step_delay"] = float(data["step_delay"])
+            except asyncio.TimeoutError:
+                pass
+    except WebSocketDisconnect:
+        print("[WS] Client disconnected from /ws/telemetry")
 
 @app.post("/api/v1/control")
 async def update_control_parameters(payload: ControlPayload, current_user: dict = Depends(verify_token)):
-    """Protected control endpoint publishing updates to Redis Pub/Sub for multi-region sync."""
     if payload.rotation_angle is not None:
         engine_config["rotation_angle"] = payload.rotation_angle
     if payload.matrix_dampening is not None:
@@ -238,7 +203,6 @@ async def update_control_parameters(payload: ControlPayload, current_user: dict 
     if payload.step_delay is not None:
         engine_config["step_delay"] = payload.step_delay
 
-    # Broadcast updated configuration across regional VR cluster nodes
     await broadcast_cluster_state({
         "event": "CONFIG_UPDATE",
         "config": engine_config,
@@ -247,31 +211,14 @@ async def update_control_parameters(payload: ControlPayload, current_user: dict 
 
     return {"status": "success", "config": engine_config, "modified_by": current_user["sub"]}
 
-from pydantic import BaseModel, Field
-from src.dna_bio_mapper import DNABioMapper
-
-# Instantiate DNA Bio-Mapper
-dna_mapper = DNABioMapper(base_freq=432.0)
-
-class DNASequencePayload(BaseModel):
-    sequence: str = Field(..., description="Raw nucleotide sequence (A, T, C, G)", example="ATGCGATCG")
-
+# --- Biological & Energetic Mapping Endpoints ---
 @app.post("/api/v1/dna/map")
 async def map_dna_sequence(payload: DNASequencePayload, current_user: dict = Depends(verify_token)):
-    """
-    Translates a nucleotide sequence into SO(13) helical state tensors,
-    elemental base breakdowns, and weighted Walter Russell frequencies.
-    """
     try:
         seq = payload.sequence.strip().upper()
-        
-        # Calculate base pair property metrics
         base_metrics = [dna_mapper.map_base_to_frequency(base) for base in seq]
-        
-        # Generate 13D SO(13) helical state tensor
         tensor_13d = dna_mapper.sequence_to_13d_tensor(seq)
         
-        # Broadcast DNA visualization event across multi-region cluster
         await broadcast_cluster_state({
             "event": "DNA_MAPPING_LOADED",
             "sequence_length": len(seq),
@@ -286,7 +233,18 @@ async def map_dna_sequence(payload: DNASequencePayload, current_user: dict = Dep
             "torus_target_layer": 8,
             "base_metrics": base_metrics,
             "tensor_13d_shape": list(tensor_13d.shape),
-            "tensor_13d_sample": tensor_13d[:2].tolist()  # Sample first two base pair 13D vectors
+            "tensor_13d_sample": tensor_13d[:2].tolist()
         }
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+@app.get("/api/v1/lattice/energetic")
+async def get_energetic_lattice(current_user: dict = Depends(verify_token)):
+    """Returns the 19-node subtle-energetic and macro-anatomical SO(13) field grid."""
+    lattice_nodes = macro_mapper.map_full_energetic_lattice()
+    return {
+        "status": "success",
+        "total_nodes": len(lattice_nodes),
+        "target_layers": [9, 10, 11, 12],
+        "lattice": lattice_nodes
+    }
