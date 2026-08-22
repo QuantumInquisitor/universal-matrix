@@ -14,6 +14,7 @@ from prometheus_client import Counter, Gauge, generate_latest, CONTENT_TYPE_LATE
 import redis.asyncio as aioredis
 
 from src.macro_lattice_mapper import MacroLatticeMapper
+from src.toroidal_resonance_engine import ToroidalResonanceEngine
 from src.dna_bio_mapper import DNABioMapper
 
 # --- App Initialization & Constants ---
@@ -247,4 +248,21 @@ async def get_energetic_lattice(current_user: dict = Depends(verify_token)):
         "total_nodes": len(lattice_nodes),
         "target_layers": [9, 10, 11, 12],
         "lattice": lattice_nodes
+    }
+
+# --- Resonance Engine Instance ---
+resonance_engine = ToroidalResonanceEngine(base_freq=432.0)
+
+@app.get("/api/v1/resonance/coherence")
+async def get_field_coherence(current_user: dict = Depends(verify_token)):
+    """
+    Returns real-time phase coherence, harmonic standing wave metrics,
+    and field stability across active toroidal lattice nodes.
+    """
+    chakra_nodes = macro_mapper.map_full_energetic_lattice()
+    tensors = [macro_mapper.get_chakra_torus_tensor(node["name"]) for node in chakra_nodes if node["category"] == "Chakra"]
+    field_data = resonance_engine.compute_lattice_resonance_field(tensors)
+    return {
+        "status": "success",
+        "resonance": field_data
     }
