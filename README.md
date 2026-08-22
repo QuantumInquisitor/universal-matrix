@@ -660,3 +660,20 @@ When referencing this discrete mathematical framework or utilizing toolpath comp
 
 
 
+
+## Usage & Operation Guide
+
+### 1. Launching the WebGL Telemetry Dashboard
+python -m uvicorn src.api:app --reload --host 127.0.0.1 --port 8000
+
+Navigate to http://127.0.0.1:8000/ in any WebGL-compatible browser to access the 13D spatial viewport, DNA sequence injection controls, and real-time Toroidal Field Coherence HUD.
+
+### 2. Fetching Toroidal Resonance & Field Coherence via API
+# Obtain Admin JWT Bearer Token
+curl -X POST "http://127.0.0.1:8000/api/v1/auth/token" -H "Content-Type: application/x-www-form-urlencoded" -d "username=operator&password=matrix_secure_password_2026"
+
+# Query Real-Time Coherence Metrics
+curl -X GET "http://127.0.0.1:8000/api/v1/resonance/coherence" -H "Authorization: Bearer <YOUR_JWT_TOKEN>"
+
+### 3. Running Automated Test Verification
+python -m unittest discover -s tests -p "test_*.py"
