@@ -5,16 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micro-to-Macro Reality Engine Dashboard</title>
     <style>
-        body { margin: 0; background-color: #0a0a10; color: #00ffff; font-family: 'Courier New', Courier, monospace; }
-        #canvas-container { width: 100vw; height: 75vh; background: radial-gradient(circle, #101025 0%, #050508 100%); }
-        .control-panel { padding: 15px; display: flex; gap: 20px; align-items: center; background: #0f0f1a; border-top: 1px solid #00ffff33; }
+        body { margin: 0; background-color: #0a0a10; color: #00ffff; font-family: 'Courier New', Courier, monospace; overflow: hidden; }
+        #canvas-container { width: 100vw; height: 75vh; background: radial-gradient(circle, #101025 0%, #050508 100%); position: relative; }
+        
+        /* Resonance HUD Overlay */
+        .hud-overlay { position: absolute; top: 20px; right: 20px; background: rgba(15, 15, 26, 0.85); border: 1px solid #00ffff; padding: 15px; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 255, 255, 0.2); pointer-events: none; }
+        .hud-title { font-weight: bold; margin-bottom: 8px; color: #00ffaa; border-bottom: 1px solid #00ffaa44; padding-bottom: 4px; }
+        .hud-metric { margin: 4px 0; font-size: 0.9em; }
+        .hud-value { color: #ffffff; font-weight: bold; }
+
+        .control-panel { padding: 15px; display: flex; gap: 20px; align-items: center; background: #0f0f1a; border-top: 1px solid #00ffff33; height: 25vh; box-sizing: border-box; }
         input, button { background: #1a1a2e; color: #00ffff; border: 1px solid #00ffff; padding: 8px 12px; font-family: inherit; cursor: pointer; }
         button:hover { background: #00ffff; color: #050508; }
         .status-badge { padding: 4px 8px; border-radius: 4px; background: #00ffaa22; border: 1px solid #00ffaa; }
     </style>
 </head>
 <body>
-    <div id="canvas-container"></div>
+    <div id="canvas-container">
+        <div class="hud-overlay">
+            <div class="hud-title">TOROIDAL FIELD HUD</div>
+            <div class="hud-metric">Phase Coherence: <span class="hud-value" id="hudCoherence">1.0000</span></div>
+            <div class="hud-metric">Field Stability: <span class="hud-value" id="hudStability">Harmonic</span></div>
+            <div class="hud-metric">Resonant Freq: <span class="hud-value" id="hudFreq">432.00 Hz</span></div>
+        </div>
+    </div>
+
     <div class="control-panel">
         <div>
             <label>DNA Sequence (T8):</label>
@@ -23,6 +38,7 @@
         </div>
         <div>
             <button onclick="loadEnergeticLattice()">Load Energetic Lattice (T9-T12)</button>
+            <button onclick="fetchCoherence()">Calculate Resonance</button>
         </div>
         <div>
             <span class="status-badge" id="systemStatus">System: Online</span>
@@ -43,6 +59,7 @@
             });
             const data = await res.json();
             document.getElementById('systemStatus').innerText = DNA Loaded: \ Base Pairs;
+            fetchCoherence();
         }
 
         async function loadEnergeticLattice() {
@@ -52,6 +69,22 @@
             });
             const data = await res.json();
             document.getElementById('systemStatus').innerText = Energetic Grid: \ Nodes Active;
+            fetchCoherence();
+        }
+
+        async function fetchCoherence() {
+            const token = localStorage.getItem('token') || '';
+            const res = await fetch('/api/v1/resonance/coherence', {
+                headers: { 'Authorization': Bearer \ }
+            });
+            if (res.ok) {
+                const data = await res.json();
+                const resData = data.resonance;
+                document.getElementById('hudCoherence').innerText = resData.mean_coherence;
+                document.getElementById('hudStability').innerText = resData.field_stability;
+                document.getElementById('hudStability').style.color = resData.field_stability === 'Harmonic' ? '#00ffaa' : '#ff4444';
+                document.getElementById('hudFreq').innerText = \ Hz;
+            }
         }
     </script>
 </body>
