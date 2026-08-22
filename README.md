@@ -677,3 +677,13 @@ curl -X GET "http://127.0.0.1:8000/api/v1/resonance/coherence" -H "Authorization
 
 ### 3. Running Automated Test Verification
 python -m unittest discover -s tests -p "test_*.py"
+
+## Phase 8 & Phase 9 Architectural Updates
+
+* **Scalar Harmonics Synthesizer (\src/scalar_harmonics.py\):** Computes octave scaling factors, Solfeggio frequency ratios (UT/396Hz through LA/852Hz), and non-linear scalar harmonic transformations on 13D \(13)\$ state vectors.
+* **Bi-Directional WebSocket Resonance Streamer (\/ws/resonance/stream\):** Streams real-time phase-coherence metrics and harmonic oscillations to WebGL viewports while processing operator frequency overrides on the fly.
+
+### File Manifest Additions
+* **\src/scalar_harmonics.py\** — Core module for octave calculations and 13D scalar tensor transformations.
+* **\	ests/test_scalar_harmonics.py\** — Unit test suite validating octave math and state vector transformation shapes.
+* **\	ests/test_api_ws_resonance.py\** — Integration test suite verifying bi-directional WebSocket communication and dynamic frequency overrides.
