@@ -1,158 +1,58 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Universal Matrix Engine - 3D WebGL Telemetry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-to-Macro Reality Engine Dashboard</title>
     <style>
-        body { margin: 0; overflow: hidden; background-color: #05050a; font-family: monospace; color: #00ffcc; }
-        #canvas-container { width: 100vw; height: 100vh; display: block; }
-        #ui-panel {
-            position: absolute; top: 15px; left: 15px; background: rgba(10, 15, 30, 0.85);
-            padding: 20px; border: 1px solid #00ffcc; border-radius: 8px; width: 280px;
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
-        }
-        .control-group { margin-bottom: 12px; }
-        label { display: block; font-size: 11px; text-transform: uppercase; margin-bottom: 4px; }
-        input[type=range] { width: 100%; accent-color: #00ffcc; }
-        .stats { font-size: 12px; margin-top: 10px; border-top: 1px solid #334455; padding-top: 8px; }
+        body { margin: 0; background-color: #0a0a10; color: #00ffff; font-family: 'Courier New', Courier, monospace; }
+        #canvas-container { width: 100vw; height: 75vh; background: radial-gradient(circle, #101025 0%, #050508 100%); }
+        .control-panel { padding: 15px; display: flex; gap: 20px; align-items: center; background: #0f0f1a; border-top: 1px solid #00ffff33; }
+        input, button { background: #1a1a2e; color: #00ffff; border: 1px solid #00ffff; padding: 8px 12px; font-family: inherit; cursor: pointer; }
+        button:hover { background: #00ffff; color: #050508; }
+        .status-badge { padding: 4px 8px; border-radius: 4px; background: #00ffaa22; border: 1px solid #00ffaa; }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
     <div id="canvas-container"></div>
-    <div id="ui-panel">
-        <h3>🌌 SO(13) 3D Viewport</h3>
-        <div class="control-group">
-            <label>Rotation Angle (<span id="angle-val">0.042</span>)</label>
-            <input type="range" id="angle-slider" min="0.001" max="0.2" step="0.001" value="0.042">
+    <div class="control-panel">
+        <div>
+            <label>DNA Sequence (T8):</label>
+            <input type="text" id="dnaInput" value="ATGCGATCG" placeholder="Enter Sequence...">
+            <button onclick="submitDNA()">Inject DNA</button>
         </div>
-        <div class="control-group">
-            <label>Step Delay (<span id="delay-val">0.05</span>s)</label>
-            <input type="range" id="delay-slider" min="0.01" max="0.5" step="0.01" value="0.05">
+        <div>
+            <button onclick="loadEnergeticLattice()">Load Energetic Lattice (T9-T12)</button>
         </div>
-        <div class="stats">
-            <div>Step: <span id="stat-step">0</span></div>
-            <div>Clock Drift: <span id="stat-drift">0</span> ns</div>
-            <div>Active Nodes: <span>114</span></div>
+        <div>
+            <span class="status-badge" id="systemStatus">System: Online</span>
         </div>
     </div>
 
     <script>
-        // --- Three.js Scene Setup ---
-        const container = document.getElementById('canvas-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        container.appendChild(renderer.domElement);
-
-        camera.position.set(0, 0, 15);
-
-        // Grid & Node Mesh Generation (114 Nodes)
-        const nodeGeometry = new THREE.SphereGeometry(0.15, 16, 16);
-        const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ffcc, wireframe: true });
-        const nodesGroup = new THREE.Group();
-        const nodeMeshes = [];
-
-        for (let i = 0; i < 114; i++) {
-            const mesh = new THREE.Mesh(nodeGeometry, nodeMaterial);
-            nodesGroup.add(mesh);
-            nodeMeshes.push(mesh);
+        async function submitDNA() {
+            const seq = document.getElementById('dnaInput').value;
+            const token = localStorage.getItem('token') || '';
+            const res = await fetch('/api/v1/dna/map', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': Bearer \
+                },
+                body: JSON.stringify({ sequence: seq })
+            });
+            const data = await res.json();
+            document.getElementById('systemStatus').innerText = DNA Loaded: \ Base Pairs;
         }
-        scene.add(nodesGroup);
 
-        // --- WebSocket Telemetry & Control ---
-        const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-        const socket = new WebSocket(`${wsProtocol}//${window.location.host}/ws/telemetry`);
-
-        socket.onmessage = (event) => {
-            const data = JSON.parse(event.data);
-            document.getElementById('stat-step').innerText = data.step;
-            document.getElementById('stat-drift').innerText = data.clock_drift_ns.toFixed(2);
-
-            // Update 3D node positions from SO(13) matrix telemetry
-            if (data.nodes) {
-                data.nodes.forEach((node, i) => {
-                    if (nodeMeshes[i]) {
-                        nodeMeshes[i].position.set(node.x, node.y, node.z);
-                    }
-                });
-            }
-        };
-
-        // --- Interactive Controls ---
-        const angleSlider = document.getElementById('angle-slider');
-        const delaySlider = document.getElementById('delay-slider');
-
-        angleSlider.oninput = () => {
-            document.getElementById('angle-val').innerText = angleSlider.value;
-            socket.send(JSON.stringify({ rotation_angle: angleSlider.value }));
-        };
-
-        delaySlider.oninput = () => {
-            document.getElementById('delay-val').innerText = delaySlider.value;
-            socket.send(JSON.stringify({ step_delay: delaySlider.value }));
-        };
-
-        // Render Loop
-        function animate() {
-            requestAnimationFrame(animate);
-            nodesGroup.rotation.y += 0.005;
-            renderer.render(scene, camera);
+        async function loadEnergeticLattice() {
+            const token = localStorage.getItem('token') || '';
+            const res = await fetch('/api/v1/lattice/energetic', {
+                headers: { 'Authorization': Bearer \ }
+            });
+            const data = await res.json();
+            document.getElementById('systemStatus').innerText = Energetic Grid: \ Nodes Active;
         }
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
     </script>
 </body>
 </html>
-
-<!-- Insert into src/static/dashboard.html inside the controls container -->
-<div class="control-card">
-  <h3>🧬 Genetic Sequence Bio-Mapper (Layer T8 Focus)</h3>
-  <div class="input-group">
-    <label for="dnaSequenceInput">Nucleotide Sequence (A, T, C, G):</label>
-    <input type="text" id="dnaSequenceInput" value="ATGCGATCG" placeholder="Enter DNA Sequence...">
-  </div>
-  <button id="btnRenderDNA" onclick="submitDNASequence()">Render Helical Mesh in 3D</button>
-  <div id="dnaStats" class="stats-output">
-    <p>Target Layer: <span id="targetLayer">T8 (Biological)</span></p>
-    <p>Active Base Pairs: <span id="bpCount">9</span></p>
-    <p>Resonant Frequency: <span id="avgFreq">432.0 Hz</span></p>
-  </div>
-</div>
-
-<script>
-async function submitDNASequence() {
-  const sequence = document.getElementById('dnaSequenceInput').value.trim();
-  const token = localStorage.getItem('jwt_token');
-  
-  const response = await fetch('/api/v1/dna/map', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    },
-    body: JSON.stringify({ sequence: sequence })
-  });
-  
-  if (response.ok) {
-    const data = await response.json();
-    document.getElementById('bpCount').innerText = data.length;
-    // Broadcast sequence update to WebSocket 3D WebGL Viewport
-    if (window.ws && window.ws.readyState === WebSocket.OPEN) {
-      window.ws.send(JSON.stringify({
-        action: 'LOAD_DNA_MESH',
-        sequence: sequence,
-        target_layer: 8
-      }));
-    }
-  } else {
-    alert('Invalid Nucleotide Base Sequence');
-  }
-}
-</script>
