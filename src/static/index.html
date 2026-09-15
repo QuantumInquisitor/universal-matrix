@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenXR Spatial Telemetry Dashboard - Reality Engine</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #050508; font-family: monospace; color: #00ffcc; }
+        #hud { position: absolute; top: 15px; left: 15px; z-index: 100; background: rgba(5, 5, 12, 0.85); padding: 15px; border: 1px solid #00ffcc; border-radius: 5px; }
+        .hud-metric { margin-bottom: 8px; font-size: 14px; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="hud">
+        <div style="font-weight: bold; font-size: 16px; margin-bottom: 10px; color: #ffffff;">SPATIAL TELEMETRY</div>
+        <div class="hud-metric">Status: <span id="status">Connecting...</span></div>
+        <div class="hud-metric">Phase Coherence: <span id="coherence">0.0000</span></div>
+        <div class="hud-metric">Resonant Frequency: <span id="frequency">432.00</span> Hz</div>
+        <div class="hud-metric">Field Stability: <span id="stability">Initializing</span></div>
+    </div>
+
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const geometry = new THREE.TorusKnotGeometry(2, 0.6, 100, 16);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ffcc, wireframe: true });
+        const torusKnot = new THREE.Mesh(geometry, material);
+        scene.add(torusKnot);
+
+        camera.position.z = 6;
+
+        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        const ws = new WebSocket(${protocol}///ws/resonance/stream);
+
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            document.getElementById('status').innerText = data.status;
+            document.getElementById('coherence').innerText = data.phase_coherence.toFixed(4);
+            document.getElementById('frequency').innerText = data.resonant_frequency_hz.toFixed(2);
+            document.getElementById('stability').innerText = data.field_stability;
+
+            const coherenceVal = data.phase_coherence;
+            torusKnot.material.color.setHSL(coherenceVal * 0.33, 1.0, 0.5);
+            torusKnot.rotation.x += 0.01;
+            torusKnot.rotation.y += 0.02 * (coherenceVal + 0.1);
+        };
+
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>

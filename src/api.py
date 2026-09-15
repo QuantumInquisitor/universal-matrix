@@ -305,3 +305,15 @@ async def websocket_resonance_endpoint(websocket: WebSocket):
     except WebSocketDisconnect:
         print("[WS] Client disconnected from /ws/resonance/stream")
 
+
+from fastapi.responses import HTMLResponse
+import os
+
+@app.get("/", response_class=HTMLResponse)
+async def get_spatial_telemetry_dashboard():
+    """Serves the OpenXR spatial 3D telemetry dashboard and WebXR viewport."""
+    html_file = os.path.join("src", "static", "index.html")
+    if os.path.exists(html_file):
+        with open(html_file, "r", encoding="utf-8") as f:
+            return f.read()
+    return "<h1>Reality Engine Spatial Viewport File Not Found</h1>"

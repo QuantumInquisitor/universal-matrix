@@ -1,0 +1,27 @@
+replicaCount: 2
+
+image:
+  repository: ghcr.io/water/universal-matrix
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 8000
+
+ingress:
+  enabled: true
+  className: "nginx"
+  host: "matrix.local"
+
+resources:
+  limits:
+    cpu: 1000m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+persistence:
+  enabled: true
+  size: 1Gi

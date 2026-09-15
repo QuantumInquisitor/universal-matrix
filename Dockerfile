@@ -36,3 +36,15 @@ services:
     depends_on:
       - prometheus
     restart: unless-stopped
+
+redis:
+    image: redis:7-alpine
+    container_name: matrix_redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5

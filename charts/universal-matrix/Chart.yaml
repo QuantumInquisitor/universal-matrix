@@ -1,0 +1,6 @@
+apiVersion: v2
+name: universal-matrix
+description: Helm chart for Universal Matrix Engine microservice and telemetry stack
+type: application
+version: 1.0.0
+appVersion: "6.4.0"
