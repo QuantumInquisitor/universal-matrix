@@ -66,6 +66,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **OAuth2 / JWT Authentication & RBAC:** Secured runtime control endpoints (`/api/v1/control`) requiring valid Bearer tokens with admin operator privileges.
 * **Token Issuance Gateway:** Interactive OAuth2 token generation route (`/api/v1/auth/token`) validating operator credentials and enforcing payload expirations.
 * **PyTorch GPU Tensor Acceleration:** High-performance $SO(13)$ matrix transformation kernel scaling node capacity from 114 to 10,000+ nodes using PyTorch CUDA tensors with seamless CPU fallback.
+* **OpenXR & WebXR 3D Spatial Viewport (Phase 14):** Interactive Three.js stereographic VR/WebGL dashboard rendering real-time toroidal field wireframes and live phase-coherence metrics streamed over WebSockets (`/ws/resonance/stream`).
 
 ---
 
@@ -124,6 +125,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_cluster_sync.py`** â€” Unit test suite validating multi-region Redis Pub/Sub cluster state message formatting and JSON payload serialization.
 * **`tests/test_russell_periodic.py`** â€” Unit test suite verifying Walter Russell Carbon peak compression ($90^\circ$ at $Z=6$), octave frequency scaling, and 114-node field grid mappings.
 * **`tests/test_vr_13d_integration.py`** â€” Integration test suite verifying 13D $SO(13)$ state tensor projections into 3D VR spatial coordinates and layer transform generations.
+* **`src/static/index.html`** — Real-time Three.js WebGL/OpenXR spatial telemetry dashboard and HUD interface.
+* **`tests/test_spatial_dashboard.py`** — Unit test suite validating OpenXR spatial viewport HTML delivery, route response codes, and static asset delivery.
 
 ---
 
