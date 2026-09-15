@@ -317,3 +317,34 @@ async def get_spatial_telemetry_dashboard():
         with open(html_file, "r", encoding="utf-8") as f:
             return f.read()
     return "<h1>Reality Engine Spatial Viewport File Not Found</h1>"
+
+# --- Phase 15: Biometrics Telemetry Ingestion Endpoints ---
+from src.biometric_ingestion import BiometricTelemetryPayload, BiometricLatticeTransformer
+
+transformer = BiometricLatticeTransformer()
+
+@app.post("/api/v1/biometrics/ingest", tags=["Biometrics"])
+async def ingest_biometric_telemetry(
+    payload: BiometricTelemetryPayload,
+    current_user: str = Depends(get_current_user)
+):
+    """Processes real-time biometric telemetry and returns updated lattice coherence metrics."""
+    metrics = transformer.compute_coherence_index(payload)
+    return {
+        "status": "success",
+        "operator": current_user,
+        "telemetry_metrics": metrics
+    }
+
+@app.websocket("/ws/biometrics/ingest")
+async def websocket_biometrics_ingest(websocket: WebSocket):
+    """Live bi-directional WebSocket stream for hardware biometric sensor streams."""
+    await websocket.accept()
+    try:
+        while True:
+            data = await websocket.receive_json()
+            payload = BiometricTelemetryPayload(**data)
+            metrics = transformer.compute_coherence_index(payload)
+            await websocket.send_json({"type": "BIOMETRIC_LATTICE_UPDATE", "data": metrics})
+    except WebSocketDisconnect:
+        logger.info("[WS] Biometric telemetry client disconnected.")

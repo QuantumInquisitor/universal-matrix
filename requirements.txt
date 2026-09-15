@@ -1,14 +1,8 @@
-fastapi>=0.100.0
-uvicorn>=0.22.0
-numpy>=1.24.0
-pydantic>=2.0.0
-prometheus-client
-
-redis>=5.0.0
-
-pyjwt>=2.8.0
-passlib[bcrypt]>=1.7.4
-
-torch>=2.0.0
-
-Add-Content -Path "requirements.txt" -Value "python-multipart"python-multipart
+﻿fastapi
+uvicorn[standard]
+pydantic
+torch
+redis
+pyjwt
+passlib[bcrypt]
+python-multipart
