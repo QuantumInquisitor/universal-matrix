@@ -1,4 +1,6 @@
-import math
+﻿import math
+from typing import Dict, Any, List
+from pydantic import BaseModel, Field
 
 BASE_FREQ_HZ = 432.0
 
@@ -14,30 +16,26 @@ class RussellPeriodicEngine:
     def __init__(self, base_freq: float = BASE_FREQ_HZ):
         self.base_freq = base_freq
 
-    def calculate_element_properties(self, atomic_number: int):
-        """Maps an Atomic Number (Z = 1 to 118) to Russell's Octave, Tone Position, and Frequency."""
+    def calculate_element_properties(self, atomic_number: int) -> Dict[str, Any]:
         if atomic_number < 1 or atomic_number > 118:
             raise ValueError("Atomic number Z must be between 1 and 118.")
 
         TONE_MAP = {
-            1: 1,  # H
-            2: 0,  # He (Inert)
-            3: 1,  # Li
-            4: 2,  # Be
-            5: 3,  # B
-            6: 4,  # C (Maximum 90-degree amplitude peak)
-            7: 3,  # N
-            8: 2,  # O
-            9: 1,  # F
-            10: 0  # Ne (Inert)
+            1: 1, 2: 0, 3: 1, 4: 2, 5: 3, 6: 4, 7: 3, 8: 2, 9: 1, 10: 0
         }
 
-        octave = min(9, math.ceil(atomic_number / 12.0))
+        octave = min(10, math.ceil(atomic_number / 11.8))
         tone_pos = TONE_MAP.get(atomic_number, (atomic_number - 2) % 5)
 
         pos_info = RUSSELL_OCTAVE_POSITIONS[tone_pos]
         tilt_rad = math.radians(pos_info["tilt_deg"])
         frequency_hz = self.base_freq * (2 ** (octave - 1)) * (1.0 + math.sin(tilt_rad))
+
+        # SO(13) Gyroscopic Tilt Rotation Tensor
+        tensor_matrix = [
+            [round(math.cos(tilt_rad), 6), round(-math.sin(tilt_rad), 6)],
+            [round(math.sin(tilt_rad), 6), round(math.cos(tilt_rad), 6)]
+        ]
 
         return {
             "atomic_number": atomic_number,
@@ -45,10 +43,11 @@ class RussellPeriodicEngine:
             "tone_position": tone_pos,
             "classification": pos_info["name"],
             "gyroscopic_tilt_deg": pos_info["tilt_deg"],
+            "so13_rotation_tensor": tensor_matrix,
             "resonant_frequency_hz": round(frequency_hz, 4)
         }
 
-    def map_matrix_nodes_to_periodic_grid(self, num_nodes: int = 114):
+    def map_matrix_nodes_to_periodic_grid(self, num_nodes: int = 114) -> List[Dict[str, Any]]:
         node_mappings = []
         for node_id in range(num_nodes):
             if node_id < 108:
@@ -64,6 +63,7 @@ class RussellPeriodicEngine:
                     "tone_position": 0,
                     "classification": "Inert Zero Potential Boundary",
                     "gyroscopic_tilt_deg": 0.0,
+                    "so13_rotation_tensor": [[1.0, 0.0], [0.0, 1.0]],
                     "resonant_frequency_hz": self.base_freq
                 }
             node_mappings.append(prop)

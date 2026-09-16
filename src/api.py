@@ -1,4 +1,6 @@
-﻿async def get_current_user():
+﻿
+from src.russell_periodic_mapper import RussellPeriodicEngine
+async def get_current_user():
     return "operator"
 
 import numpy as np
@@ -359,3 +361,12 @@ async def websocket_biometrics_ingest(websocket: WebSocket):
         logger.info("[WS] Biometric telemetry client disconnected.")
 
 
+
+# Phase 16: Walter Russell 10-Octave Periodic API Route
+russell_engine = RussellPeriodicEngine()
+
+@app.get("/api/v1/russell/element/{atomic_number}")
+async def get_russell_element_properties(atomic_number: int):
+    if atomic_number < 1 or atomic_number > 118:
+        raise HTTPException(status_code=400, detail="Atomic number must be between 1 and 118.")
+    return russell_engine.calculate_element_properties(atomic_number)
