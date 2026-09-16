@@ -85,6 +85,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Multi-Axis CNC Toolpath & Toroidal Winding Engine (Phase 28):** Parametric 5-axis G-code compiler translating $SO(13)$ matrix tensors and Tesla triad geometries into continuous CNC toolpaths for winding scalar and non-inductive toroidal field coils (`/api/v1/hardware/cnc/winding-toolpath`).
 * **Optical & Laser Field Interferometer Integration (Phase 29):** Sub-nanometer optical displacement monitoring parser detecting chassis micro-deformation and thermal expansion during active electromagnetic emissions to auto-correct $SO(13)$ tensor phase offsets (`/api/v1/hardware/sensors/interferometer`).
 * **Cryptographic Hardware Root-of-Trust & HSM Enclave (Phase 30):** TPM 2.0 cryptographic signing gateway preventing hardware command tampering, payload spoofing, and unauthorized serial actuation across physical edge drivers (`/api/v1/hardware/security/verify`).
+* **Emergency Physical Hardware Interlock & Thermal Kill-Switch (Phase 31):** Sub-millisecond safety kernel driver monitoring thermal runaway, coil over-current, and laser displacement to issue immediate emergency hardware stops (`M112`) and power cuts (`/api/v1/hardware/safety/evaluate`).
 
 ---
 
@@ -179,6 +180,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_laser_interferometer.py`** — Automated unit test suite validating optical fringe-shift calculations and phase compensation logic.
 * **`src/hardware_tpm_enclave.py`** — TPM 2.0 / HSM root-of-trust enclave manager and HMAC signature verification engine.
 * **`tests/test_tpm_enclave.py`** — Automated unit test suite verifying payload cryptographic signatures and tamper detection.
+* **`src/hardware_kill_switch.py`** — Safety interlock kernel driver and threshold breach evaluator.
+* **`tests/test_kill_switch.py`** — Automated unit test suite verifying nominal telemetry pass-through and emergency trip conditions.
 
 ---
 
@@ -1042,3 +1045,14 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/security/verify](http://127
     "enclave_signature": "<SIGNATURE_STRING>"
   }'
   
+  ### Emergency Hardware Interlock & Safety Evaluation (Phase 31)
+
+```powershell
+# Evaluate Real-Time Thermal & Current Telemetry Against Safety Thresholds
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/safety/evaluate](http://127.0.0.1:8000/api/v1/hardware/safety/evaluate)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "coil_temp_c": 92.0,
+    "current_amps": 25.0,
+    "chassis_displacement_nm": 10.0
+  }'

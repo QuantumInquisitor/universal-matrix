@@ -1,4 +1,6 @@
 ﻿
+from src.hardware_kill_switch import SafetyInterlockKernel, TelemetrySnapshot
+
 from src.hardware_tpm_enclave import TPM2HardwareEnclave, HardwareCommandEnvelope
 
 from src.laser_interferometer import OpticalFieldInterferometer, InterferometerTelemetry
@@ -520,3 +522,15 @@ async def sign_hardware_command(envelope: HardwareCommandEnvelope):
 @app.post("/api/v1/hardware/security/verify")
 async def verify_hardware_command(envelope: HardwareCommandEnvelope):
     return tpm_enclave.verify_enclave_signature(envelope)
+
+# Phase 31: Emergency Physical Hardware Interlock Routes
+safety_kernel = SafetyInterlockKernel()
+
+@app.post("/api/v1/hardware/safety/evaluate")
+async def evaluate_hardware_safety(telemetry: TelemetrySnapshot):
+    return safety_kernel.evaluate_safety(telemetry)
+
+@app.post("/api/v1/hardware/safety/reset")
+async def reset_hardware_interlock():
+    safety_kernel.reset_interlock()
+    return {"status": "INTERLOCK_RESET", "interlock_tripped": False}
