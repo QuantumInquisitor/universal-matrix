@@ -77,6 +77,9 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Autonomous Multi-Node Hardware Swarm Controller (Phase 22):** Distributed node orchestration engine synchronizing SDR transceivers, CNC drivers, and sensor arrays across physical edge clusters with nanosecond-level timekeeping (`/api/v1/hardware/swarm/dispatch`).
 * **ML Micro-Flux Anomaly & Quantum Drift Predictor (Phase 23):** Automated real-time ML auditing module monitoring clock drift velocity, magnetometer variance, and $SO(13)$ phase shifts to forecast quantum decoherence events and prevent state collapse (`/api/v1/hardware/ml/predict-drift`).
 * **Enterprise Multi-Tenant Auth Gateway (Phase 24):** JWT authentication, hardware session key validation, and role-based access control (RBAC) enabling multi-tenant isolation and secure hardware access for commercial licensees (`/api/v1/auth/token`).
+* **Prometheus Operational Metrics Exporter (Phase 25):** Real-time operational telemetry exporter reporting system CPU/RAM usage, $SO(13)$ calculation latencies, and active hardware driver states via a Prometheus-compatible route (`/metrics`).
+* **Enterprise Multi-Tenant Auth Gateway (Phase 24):** JWT authentication, hardware session key validation, and role-based access control (RBAC) enabling multi-tenant isolation and secure hardware access for commercial licensees (`/api/v1/auth/token`).
+* **Prometheus Operational Metrics Exporter (Phase 25):** Real-time operational telemetry exporter reporting system CPU allocation, $SO(13)$ calculation latencies, and active hardware driver states via a Prometheus-compatible route (`/metrics`).
 
 ---
 
@@ -155,6 +158,12 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_drift_predictor.py`** — Automated unit test suite verifying ML drift forecasting and threshold alerts.
 * **`src/auth_gateway.py`** — Enterprise JWT auth manager, payload validator, and multi-tenant hardware access controller.
 * **`tests/test_auth_gateway.py`** — Unit test suite verifying token signatures, token expiration, and hardware RBAC authorization.
+* **`src/metrics_exporter.py`** — Prometheus telemetry exporter for resource monitoring and hardware transformation latencies.
+* **`tests/test_metrics_exporter.py`** — Unit test suite verifying Prometheus metric format compliance and latency tracking.
+* **`src/auth_gateway.py`** — Enterprise JWT auth manager, payload validator, and multi-tenant hardware access controller.
+* **`tests/test_auth_gateway.py`** — Unit test suite verifying token signatures, token expiration, and hardware RBAC authorization.
+* **`src/metrics_exporter.py`** — Prometheus telemetry exporter for resource monitoring and hardware transformation latencies.
+* **`tests/test_metrics_exporter.py`** — Unit test suite verifying Prometheus metric format compliance and latency tracking.
 
 ---
 
@@ -916,6 +925,27 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/ml/predict-drift](http://12
     "clock_drift_series_ns": [0.0, 1.2, 2.5, 5.1, 10.4],
     "magnetic_delta_series_uT": [0.1, 0.2, 0.5, 1.2, 2.8]
   }'
+
+### Enterprise JWT & Multi-Tenant Authentication (Phase 24)
+
+```powershell
+# 1. Request Tenant Access Token with Hardware RBAC Keys
+curl -X POST "[http://127.0.0.1:8000/api/v1/auth/token](http://127.0.0.1:8000/api/v1/auth/token)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "tenant_id": "enterprise_licensee_01",
+    "role": "admin",
+    "hardware_access_keys": ["SDR", "CNC", "SWARM"]
+  }'
+
+# 2. Verify Active JWT Token Signature & Claims
+curl -X GET "[http://127.0.0.1:8000/api/v1/auth/verify?token=](http://127.0.0.1:8000/api/v1/auth/verify?token=)<YOUR_JWT_TOKEN>"
+
+### Prometheus Operational Telemetry Scraping (Phase 25)
+
+```powershell
+# Scrape Prometheus Operational & Hardware Telemetry
+curl -X GET "[http://127.0.0.1:8000/metrics](http://127.0.0.1:8000/metrics)"
 
 ### Enterprise JWT & Multi-Tenant Authentication (Phase 24)
 
