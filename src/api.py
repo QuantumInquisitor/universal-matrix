@@ -1,4 +1,6 @@
 ﻿
+from src.closed_loop_bio_driver import ClosedLoopBioDriver
+
 from src.sdr_rf_synthesizer import SDRRFSynthesizer, RFSignalConfig
 
 from src.cnc_hardware_controller import CNCGRBLController, MachinePosition
@@ -406,3 +408,10 @@ sdr_synthesizer = SDRRFSynthesizer(mock_mode=True)
 async def transmit_rf_signal(config: RFSignalConfig, num_samples: int = 1024):
     engine = SDRRFSynthesizer(config=config, mock_mode=True)
     return engine.transmit_carrier_burst(num_samples=num_samples)
+
+# Phase 20: Closed-Loop Biometric Driver Route
+bio_driver = ClosedLoopBioDriver()
+
+@app.post("/api/v1/hardware/bio-loop/adapt")
+async def process_closed_loop_bio(payload: BiometricPayload):
+    return bio_driver.process_and_adapt(payload)

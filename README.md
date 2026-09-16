@@ -72,6 +72,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **CUDA / GPU Hardware Acceleration Kernel (Phase 17):** High-performance PyTorch GPU batch execution engine providing vectorized $SO(13)$ matrix transformation scaling with seamless CPU fallback (`/api/v1/hardware/gpu-batch`).
 * **Live Physical CNC / GRBL Hardware Controller (Phase 18):** Direct OS serial/USB interface (`pySerial`) providing real-time G-code toolpath streaming, closed-loop machine position telemetry (`?` status polling), and encoder feedback with automated mock-mode fallbacks (`/api/v1/hardware/cnc/gcode`).
 * **Physical SDR RF Carrier Signal Generator (Phase 19):** Real-time Software Defined Radio (SDR) transmission engine generating complex I/Q sample arrays and driving electromagnetic carrier wave emissions across physical transceivers (HackRF, LimeSDR, USRP) tied to $3\text{-}6\text{-}9$ Tesla triad frequencies (`/api/v1/hardware/sdr/transmit`).
+* **Real-Time Closed-Loop Biometric Driver (Phase 20):** Adaptive feedback engine linking real-time EEG, HRV, and GSR biometrics directly to SDR RF carrier wave frequencies and spatial visualizer pulse rates to drive phase-locked physiological resonance (`/api/v1/hardware/bio-loop/adapt`).
 
 ---
 
@@ -140,6 +141,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_cnc_controller.py`** — Automated unit tests for G-code command transmission and telemetry parser validation.
 * **`src/sdr_rf_synthesizer.py`** — Software Defined Radio I/Q complex signal synthesis and RF carrier wave driver.
 * **`tests/test_sdr_synthesizer.py`** — Unit test suite validating I/Q array generation and virtual transmission bursts.
+* **`src/closed_loop_bio_driver.py`** — Closed-loop bio-adaptive engine translating biometric telemetry into RF frequency adjustments and visual pulse rates.
+* **`tests/test_closed_loop_bio.py`** — Unit test suite verifying adaptive resonance calculations and threshold locking.
 
 ---
 
@@ -851,5 +854,19 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/sdr/transmit?num_samples=10
     "tx_gain_db": 14.0,
     "waveform_type": "sine",
     "triad_phase_offset_rad": 0.0
+  }'
+
+### Real-Time Closed-Loop Biometric Adaptation (Phase 20)
+
+```powershell
+# Adapt RF Frequencies and Visual Pulse Rates via Live Biometric Telemetry
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/bio-loop/adapt](http://127.0.0.1:8000/api/v1/hardware/bio-loop/adapt)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "hrv_rr_interval_ms": 900.0,
+    "gsr_microsiemens": 3.5,
+    "eeg_alpha_power": 18.0,
+    "eeg_theta_power": 12.0,
+    "eeg_beta_power": 5.0
   }'
   
