@@ -1,4 +1,6 @@
 ﻿
+from src.auth_gateway import HardwareAuthGateway, TenantCredentials
+
 from src.drift_predictor import QuantumDriftPredictor, TelemetryHistoryPayload
 
 from src.swarm_controller import SwarmClusterOrchestrator, HardwareNodeStatus, SwarmCommandPayload
@@ -446,3 +448,15 @@ drift_predictor = QuantumDriftPredictor()
 @app.post("/api/v1/hardware/ml/predict-drift")
 async def predict_quantum_drift(payload: TelemetryHistoryPayload):
     return drift_predictor.predict_decoherence_risk(payload)
+
+# Phase 24: Enterprise JWT & Multi-Tenant Authentication Routes
+auth_gateway = HardwareAuthGateway()
+
+@app.post("/api/v1/auth/token")
+async def request_tenant_token(creds: TenantCredentials):
+    token = auth_gateway.generate_token(creds)
+    return {"access_token": token, "token_type": "bearer", "expires_in": 3600}
+
+@app.get("/api/v1/auth/verify")
+async def verify_tenant_token(token: str):
+    return auth_gateway.verify_token(token)
