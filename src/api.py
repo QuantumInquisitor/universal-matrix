@@ -1,4 +1,6 @@
 ﻿
+from src.plasma_shader_pipeline import PlasmaShaderCompiler, ShaderUniformsPayload
+
 from src.webxr_haptic_controller import WebXRHapticController, SpatialXRState
 
 from src.metrics_exporter import PrometheusMetricsExporter
@@ -480,3 +482,10 @@ xr_controller = WebXRHapticController()
 @app.post("/api/v1/hardware/xr/process-frame")
 async def process_xr_spatial_frame(state: SpatialXRState):
     return xr_controller.process_xr_frame(state)
+
+# Phase 27: Volumetric Plasma & Waveguide Shader Route
+shader_compiler = PlasmaShaderCompiler()
+
+@app.post("/api/v1/hardware/shaders/compile")
+async def compile_plasma_shader_uniforms(payload: ShaderUniformsPayload):
+    return shader_compiler.compile_uniforms(payload)

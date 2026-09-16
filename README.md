@@ -81,6 +81,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Enterprise Multi-Tenant Auth Gateway (Phase 24):** JWT authentication, hardware session key validation, and role-based access control (RBAC) enabling multi-tenant isolation and secure hardware access for commercial licensees (`/api/v1/auth/token`).
 * **Prometheus Operational Metrics Exporter (Phase 25):** Real-time operational telemetry exporter reporting system CPU allocation, $SO(13)$ calculation latencies, and active hardware driver states via a Prometheus-compatible route (`/metrics`).
 * **WebXR Haptic & Spatial Controller Integration (Phase 26):** OpenXR/WebXR spatial interaction engine processing 6-DoF hand pose transforms, dynamic $SO(13)$ plane rotation mapping, and coherence-driven haptic pulse triggers (`/api/v1/hardware/xr/process-frame`).
+* **Volumetric Plasma & Waveguide Shader Pipeline (Phase 27):** GLSL uniform compilation engine translating $SO(13)$ plane angles, field frequencies, and atomic element tilts into real-time WebGL volumetric plasma shader parameters (`/api/v1/hardware/shaders/compile`).
 
 ---
 
@@ -167,6 +168,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_metrics_exporter.py`** — Unit test suite verifying Prometheus metric format compliance and latency tracking.
 * **`src/webxr_haptic_controller.py`** — WebXR 6-DoF spatial pose processor and bio-adaptive haptic pulse generator.
 * **`tests/test_webxr_controller.py`** — Unit test suite verifying spatial pose distance transformations and haptic threshold logic.
+* **`src/plasma_shader_pipeline.py`** — Volumetric plasma GLSL shader uniform compiler and WebGL color spectrum mapping engine.
+* **`tests/test_plasma_shader.py`** — Unit test suite validating GLSL uniform structure, RGB color vectors, and waveguide velocity calculations.
 
 ---
 
@@ -975,5 +978,18 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/process-frame](http://12
     "left_hand": {"position_xyz": [-0.5, 0.0, 0.0]},
     "right_hand": {"position_xyz": [0.5, 0.0, 0.0]},
     "toroidal_coherence": 0.40
+  }'
+
+### Volumetric Plasma Shader Uniform Compilation (Phase 27)
+
+```powershell
+# Compile GLSL Shader Uniforms for Spatial WebGL Rendering
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/shaders/compile](http://127.0.0.1:8000/api/v1/hardware/shaders/compile)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "so13_rotation_angle_rad": 0.7854,
+    "field_frequency_hz": 432000000.0,
+    "toroidal_coherence": 0.90,
+    "element_plane_tilt_deg": 45.0
   }'
   
