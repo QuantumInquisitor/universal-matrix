@@ -1,4 +1,6 @@
 ﻿
+from src.swarm_controller import SwarmClusterOrchestrator, HardwareNodeStatus, SwarmCommandPayload
+
 from src.sensor_network_gateway import PhysicalFieldCorrector, SensorTelemetryPayload
 
 from src.closed_loop_bio_driver import ClosedLoopBioDriver
@@ -424,3 +426,14 @@ sensor_corrector = PhysicalFieldCorrector()
 @app.post("/api/v1/hardware/sensors/ingest")
 async def ingest_hardware_sensors(payload: SensorTelemetryPayload):
     return sensor_corrector.process_sensor_feed(payload)
+
+# Phase 22: Autonomous Multi-Node Swarm Controller Routes
+swarm_orchestrator = SwarmClusterOrchestrator()
+
+@app.post("/api/v1/hardware/swarm/register")
+async def register_swarm_node(node: HardwareNodeStatus):
+    return swarm_orchestrator.register_node(node)
+
+@app.post("/api/v1/hardware/swarm/dispatch")
+async def dispatch_swarm_command(command: SwarmCommandPayload):
+    return swarm_orchestrator.dispatch_swarm_command(command)
