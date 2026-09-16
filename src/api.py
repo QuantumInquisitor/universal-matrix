@@ -1,4 +1,6 @@
 ﻿
+from src.gpu_batch_accelerator import GPUBatchAccelerator
+
 from src.russell_periodic_mapper import RussellPeriodicEngine
 async def get_current_user():
     return "operator"
@@ -370,3 +372,12 @@ async def get_russell_element_properties(atomic_number: int):
     if atomic_number < 1 or atomic_number > 118:
         raise HTTPException(status_code=400, detail="Atomic number must be between 1 and 118.")
     return russell_engine.calculate_element_properties(atomic_number)
+
+# Phase 17: CUDA / GPU Hardware Acceleration Batch Route
+gpu_accelerator = GPUBatchAccelerator()
+
+@app.post("/api/v1/hardware/gpu-batch")
+async def execute_gpu_batch(batch: List[List[List[float]]], angle_rad: float = 0.0):
+    if not batch:
+        raise HTTPException(status_code=400, detail="Matrix batch payload cannot be empty.")
+    return gpu_accelerator.execute_so13_batch_rotation(batch, angle_rad)

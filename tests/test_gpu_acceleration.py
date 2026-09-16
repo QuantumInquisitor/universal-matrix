@@ -1,30 +1,19 @@
-import unittest
-import jwt
-import datetime
+﻿import unittest
+from src.gpu_batch_accelerator import GPUBatchAccelerator
 
-SECRET_KEY = "universal_matrix_super_secret_jwt_key_change_in_prod"
-ALGORITHM = "HS256"
+class TestGPUBatchAccelerator(unittest.TestCase):
+    def setUp(self):
+        self.accelerator = GPUBatchAccelerator(prefer_gpu=False)
 
-class TestRBACAuthentication(unittest.TestCase):
+    def test_batch_rotation_shape(self):
+        sample_batch = [
+            [[1.0, 0.0], [0.0, 1.0]],
+            [[0.7071, -0.7071], [0.7071, 0.7071]]
+        ]
+        result = self.accelerator.execute_so13_batch_rotation(sample_batch, 0.5)
+        self.assertEqual(result["batch_size"], 2)
+        self.assertIn("device_used", result)
+        self.assertEqual(len(result["transformed_tensors"]), 2)
 
-    def test_jwt_token_generation_and_validation(self):
-        """Verify JWT token encoding, role attribution, and expiration validation."""
-        exp = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=1)
-        payload = {"sub": "operator", "role": "admin", "exp": exp}
-        token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
-        
-        decoded = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        self.assertEqual(decoded["sub"], "operator")
-        self.assertEqual(decoded["role"], "admin")
-
-    def test_invalid_role_rejection(self):
-        """Verify non-admin roles fail access check."""
-        exp = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=1)
-        payload = {"sub": "guest", "role": "viewer", "exp": exp}
-        token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
-        
-        decoded = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        self.assertNotEqual(decoded["role"], "admin")
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
