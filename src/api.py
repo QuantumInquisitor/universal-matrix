@@ -1,4 +1,6 @@
 ﻿
+from src.cnc_hardware_controller import CNCGRBLController, MachinePosition
+
 from src.gpu_batch_accelerator import GPUBatchAccelerator
 
 from src.russell_periodic_mapper import RussellPeriodicEngine
@@ -381,3 +383,16 @@ async def execute_gpu_batch(batch: List[List[List[float]]], angle_rad: float = 0
     if not batch:
         raise HTTPException(status_code=400, detail="Matrix batch payload cannot be empty.")
     return gpu_accelerator.execute_so13_batch_rotation(batch, angle_rad)
+
+# Phase 18: CNC / GRBL Hardware Control Routes
+cnc_controller = CNCGRBLController(mock_mode=True)
+
+@app.post("/api/v1/hardware/cnc/gcode")
+async def execute_cnc_gcode(command: str):
+    if not command:
+        raise HTTPException(status_code=400, detail="G-code command cannot be empty.")
+    return cnc_controller.send_gcode_line(command)
+
+@app.get("/api/v1/hardware/cnc/telemetry", response_model=MachinePosition)
+async def get_cnc_telemetry():
+    return cnc_controller.poll_telemetry()

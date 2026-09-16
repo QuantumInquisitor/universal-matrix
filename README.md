@@ -69,6 +69,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **OpenXR & WebXR 3D Spatial Viewport :** Interactive Three.js stereographic VR/WebGL dashboard rendering real-time toroidal field wireframes and live phase-coherence metrics streamed over WebSockets (`/ws/resonance/stream`).
 * **Real-Time Physical Biometrics Ingestion & Telemetry Mapping Engine :** High-throughput ingestion gateway transforming Heart Rate Variability (HRV), Galvanic Skin Response (GSR), and EEG frequency ratios into dynamic $SO(13)$ toroidal phase coherence and 19-node energetic lattice states.
 * **Walter Russell 10-Octave Periodic & Tensor Engine :** Extended periodic mapping engine translating atomic elements into 10-octave spiral mechanics, gyroscopic $SO(13)$ rotation tensors, and dedicated REST routes (`/api/v1/russell/element/{Z}`).
+* **CUDA / GPU Hardware Acceleration Kernel (Phase 17):** High-performance PyTorch GPU batch execution engine providing vectorized $SO(13)$ matrix transformation scaling with seamless CPU fallback (`/api/v1/hardware/gpu-batch`).
+* **Live Physical CNC / GRBL Hardware Controller (Phase 18):** Direct OS serial/USB interface (`pySerial`) providing real-time G-code toolpath streaming, closed-loop machine position telemetry (`?` status polling), and encoder feedback with automated mock-mode fallbacks (`/api/v1/hardware/cnc/gcode`).
 
 ---
 
@@ -131,6 +133,10 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_spatial_dashboard.py`** — Unit test suite validating OpenXR spatial viewport HTML delivery, route response codes, and static asset delivery.
 * **`src/biometric_ingestion.py`** — Real-time biometric payload validation, signal normalization, and $SO(13)$ lattice phase modulation engine.
 * **`tests/test_biometrics.py`** — Automated unit tests verifying biometric range boundaries, signal normalization, and phase coherence transformations.
+* **`src/gpu_batch_accelerator.py`** — PyTorch CUDA matrix batch accelerator for high-density $SO(13)$ tensor transformations.
+* **`tests/test_gpu_acceleration.py`** — Unit test suite verifying tensor batch dimensions, hardware device selection, and transformation matrices.
+* **`src/cnc_hardware_controller.py`** — Direct OS serial controller for streaming G-code and parsing GRBL real-time machine telemetry.
+* **`tests/test_cnc_controller.py`** — Automated unit tests for G-code command transmission and telemetry parser validation.
 
 ---
 
@@ -821,3 +827,11 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/biometrics/ingest](http://127.0.0.1:
 # 2. Query Walter Russell Element Properties & SO(13) Tensor (Phase 16)
 curl -X GET "[http://127.0.0.1:8000/api/v1/russell/element/6](http://127.0.0.1:8000/api/v1/russell/element/6)"
 
+### Live Physical CNC / GRBL Machine Control (Phase 18)
+
+```powershell
+# 1. Stream G-Code Toolpath to Physical Machine / Mock Interface
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/cnc/gcode?command=G0%20X10%20Y10%20Z0](http://127.0.0.1:8000/api/v1/hardware/cnc/gcode?command=G0%20X10%20Y10%20Z0)"
+
+# 2. Poll Real-Time Machine Position Telemetry & Encoder Feedback
+curl -X GET "[http://127.0.0.1:8000/api/v1/hardware/cnc/telemetry](http://127.0.0.1:8000/api/v1/hardware/cnc/telemetry)"
