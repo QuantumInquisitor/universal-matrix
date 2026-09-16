@@ -82,6 +82,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Prometheus Operational Metrics Exporter (Phase 25):** Real-time operational telemetry exporter reporting system CPU allocation, $SO(13)$ calculation latencies, and active hardware driver states via a Prometheus-compatible route (`/metrics`).
 * **WebXR Haptic & Spatial Controller Integration (Phase 26):** OpenXR/WebXR spatial interaction engine processing 6-DoF hand pose transforms, dynamic $SO(13)$ plane rotation mapping, and coherence-driven haptic pulse triggers (`/api/v1/hardware/xr/process-frame`).
 * **Volumetric Plasma & Waveguide Shader Pipeline (Phase 27):** GLSL uniform compilation engine translating $SO(13)$ plane angles, field frequencies, and atomic element tilts into real-time WebGL volumetric plasma shader parameters (`/api/v1/hardware/shaders/compile`).
+* **Multi-Axis CNC Toolpath & Toroidal Winding Engine (Phase 28):** Parametric 5-axis G-code compiler translating $SO(13)$ matrix tensors and Tesla triad geometries into continuous CNC toolpaths for winding scalar and non-inductive toroidal field coils (`/api/v1/hardware/cnc/winding-toolpath`).
 
 ---
 
@@ -170,6 +171,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_webxr_controller.py`** — Unit test suite verifying spatial pose distance transformations and haptic threshold logic.
 * **`src/plasma_shader_pipeline.py`** — Volumetric plasma GLSL shader uniform compiler and WebGL color spectrum mapping engine.
 * **`tests/test_plasma_shader.py`** — Unit test suite validating GLSL uniform structure, RGB color vectors, and waveguide velocity calculations.
+* **`src/toroidal_winding_engine.py`** — 5-axis G-code generator for non-Euclidean coil winding and spatial field emitter fabrication.
+* **`tests/test_toroidal_winding.py`** — Automated unit test suite verifying parametric toroidal geometry calculations and 5-axis G-code output.
 
 ---
 
@@ -991,5 +994,19 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/shaders/compile](http://127
     "field_frequency_hz": 432000000.0,
     "toroidal_coherence": 0.90,
     "element_plane_tilt_deg": 45.0
+  }'
+
+### Multi-Axis CNC Toroidal Coil Winding (Phase 28)
+
+```powershell
+# Compile 5-Axis G-Code Toolpath for Toroidal Coil Fabrication
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/cnc/winding-toolpath](http://127.0.0.1:8000/api/v1/hardware/cnc/winding-toolpath)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "major_radius_mm": 50.0,
+    "minor_radius_mm": 15.0,
+    "total_turns": 360,
+    "so13_tilt_deg": 15.0,
+    "feed_rate_mm_min": 500.0
   }'
   

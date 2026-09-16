@@ -1,4 +1,6 @@
 ﻿
+from src.toroidal_winding_engine import ToroidalWindingEngine, WindingParameters
+
 from src.plasma_shader_pipeline import PlasmaShaderCompiler, ShaderUniformsPayload
 
 from src.webxr_haptic_controller import WebXRHapticController, SpatialXRState
@@ -489,3 +491,10 @@ shader_compiler = PlasmaShaderCompiler()
 @app.post("/api/v1/hardware/shaders/compile")
 async def compile_plasma_shader_uniforms(payload: ShaderUniformsPayload):
     return shader_compiler.compile_uniforms(payload)
+
+# Phase 28: Multi-Axis CNC Toroidal Winding Route
+winding_engine = ToroidalWindingEngine()
+
+@app.post("/api/v1/hardware/cnc/winding-toolpath")
+async def generate_toroidal_winding_toolpath(params: WindingParameters):
+    return winding_engine.generate_5axis_gcode(params)
