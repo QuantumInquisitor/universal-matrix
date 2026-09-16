@@ -1,8 +1,12 @@
 ﻿fastapi
 uvicorn[standard]
 pydantic
+numpy
 torch
 redis
 pyjwt
 passlib[bcrypt]
 python-multipart
+httpx
+matplotlib
+prometheus_client
