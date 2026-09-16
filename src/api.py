@@ -1,4 +1,6 @@
 ﻿
+from src.drift_predictor import QuantumDriftPredictor, TelemetryHistoryPayload
+
 from src.swarm_controller import SwarmClusterOrchestrator, HardwareNodeStatus, SwarmCommandPayload
 
 from src.sensor_network_gateway import PhysicalFieldCorrector, SensorTelemetryPayload
@@ -437,3 +439,10 @@ async def register_swarm_node(node: HardwareNodeStatus):
 @app.post("/api/v1/hardware/swarm/dispatch")
 async def dispatch_swarm_command(command: SwarmCommandPayload):
     return swarm_orchestrator.dispatch_swarm_command(command)
+
+# Phase 23: Machine Learning Quantum Drift Predictor Route
+drift_predictor = QuantumDriftPredictor()
+
+@app.post("/api/v1/hardware/ml/predict-drift")
+async def predict_quantum_drift(payload: TelemetryHistoryPayload):
+    return drift_predictor.predict_decoherence_risk(payload)

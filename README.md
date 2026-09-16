@@ -74,6 +74,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Physical SDR RF Carrier Signal Generator (Phase 19):** Real-time Software Defined Radio (SDR) transmission engine generating complex I/Q sample arrays and driving electromagnetic carrier wave emissions across physical transceivers (HackRF, LimeSDR, USRP) tied to $3\text{-}6\text{-}9$ Tesla triad frequencies (`/api/v1/hardware/sdr/transmit`).
 * **Real-Time Closed-Loop Biometric Driver (Phase 20):** Adaptive feedback engine linking real-time EEG, HRV, and GSR biometrics directly to SDR RF carrier wave frequencies and spatial visualizer pulse rates to drive phase-locked physiological resonance (`/api/v1/hardware/bio-loop/adapt`).
 * **Hardware Sensor Network & Micro-Flux Ingestion Gateway (Phase 21):** Continuous hardware ingestion processing live telemetry from magnetometers, Hall-effect arrays, and atomic clock drift monitors to inject real-time physical field compensation matrices into $SO(13)$ state tensors (`/api/v1/hardware/sensors/ingest`).
+* **Autonomous Multi-Node Hardware Swarm Controller (Phase 22):** Distributed node orchestration engine synchronizing SDR transceivers, CNC drivers, and sensor arrays across physical edge clusters with nanosecond-level timekeeping (`/api/v1/hardware/swarm/dispatch`).
+* **ML Micro-Flux Anomaly & Quantum Drift Predictor (Phase 23):** Automated real-time ML auditing module monitoring clock drift velocity, magnetometer variance, and $SO(13)$ phase shifts to forecast quantum decoherence events and prevent state collapse (`/api/v1/hardware/ml/predict-drift`).
 
 ---
 
@@ -146,6 +148,10 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_closed_loop_bio.py`** — Unit test suite verifying adaptive resonance calculations and threshold locking.
 * **`src/sensor_network_gateway.py`** — Hardware sensor telemetry ingestion gateway and physical field correction processor.
 * **`tests/test_sensor_gateway.py`** — Automated unit test suite verifying magnetometer vector calculations and compensation shifts.
+* **`src/swarm_controller.py`** — Distributed multi-node hardware swarm orchestrator and timestamp synchronization engine.
+* **`tests/test_swarm_controller.py`** — Unit test suite validating edge node registration and synchronized command dispatching.
+* **`src/drift_predictor.py`** — Anomaly detection engine calculating decoherence risk scores and time-to-collapse windows.
+* **`tests/test_drift_predictor.py`** — Automated unit test suite verifying ML drift forecasting and threshold alerts.
 
 ---
 
@@ -885,3 +891,25 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/sensors/ingest](http://127.
     "clock_drift_nanoseconds": 12.5
   }'
   
+  ### Autonomous Multi-Node Hardware Swarm Control (Phase 22)
+
+```powershell
+# Dispatch Synchronized Emission Command Across Distributed Hardware Nodes
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/swarm/dispatch](http://127.0.0.1:8000/api/v1/hardware/swarm/dispatch)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "target_node_ids": ["node_alpha_sdr", "node_beta_cnc"],
+    "so13_rotation_angle_rad": 0.7854,
+    "rf_carrier_freq_hz": 432000000.0
+  }'
+
+  ### ML Quantum Drift & Decoherence Forecasting (Phase 23)
+
+```powershell
+# Predict Decoherence Risk & Time-to-Collapse Window
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/ml/predict-drift](http://127.0.0.1:8000/api/v1/hardware/ml/predict-drift)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "clock_drift_series_ns": [0.0, 1.2, 2.5, 5.1, 10.4],
+    "magnetic_delta_series_uT": [0.1, 0.2, 0.5, 1.2, 2.8]
+  }'
