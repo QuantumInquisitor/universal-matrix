@@ -1,4 +1,6 @@
 ﻿
+from src.hardware_tpm_enclave import TPM2HardwareEnclave, HardwareCommandEnvelope
+
 from src.laser_interferometer import OpticalFieldInterferometer, InterferometerTelemetry
 
 from src.toroidal_winding_engine import ToroidalWindingEngine, WindingParameters
@@ -507,3 +509,14 @@ interferometer_engine = OpticalFieldInterferometer()
 @app.post("/api/v1/hardware/sensors/interferometer")
 async def process_laser_interferometry(payload: InterferometerTelemetry):
     return interferometer_engine.process_interferometry(payload)
+
+# Phase 30: Cryptographic TPM 2.0 / HSM Hardware Enclave Routes
+tpm_enclave = TPM2HardwareEnclave()
+
+@app.post("/api/v1/hardware/security/sign")
+async def sign_hardware_command(envelope: HardwareCommandEnvelope):
+    return tpm_enclave.sign_command_payload(envelope)
+
+@app.post("/api/v1/hardware/security/verify")
+async def verify_hardware_command(envelope: HardwareCommandEnvelope):
+    return tpm_enclave.verify_enclave_signature(envelope)
