@@ -1,4 +1,6 @@
 ﻿
+from src.sensor_network_gateway import PhysicalFieldCorrector, SensorTelemetryPayload
+
 from src.closed_loop_bio_driver import ClosedLoopBioDriver
 
 from src.sdr_rf_synthesizer import SDRRFSynthesizer, RFSignalConfig
@@ -415,3 +417,10 @@ bio_driver = ClosedLoopBioDriver()
 @app.post("/api/v1/hardware/bio-loop/adapt")
 async def process_closed_loop_bio(payload: BiometricPayload):
     return bio_driver.process_and_adapt(payload)
+
+# Phase 21: Hardware Sensor Network Route
+sensor_corrector = PhysicalFieldCorrector()
+
+@app.post("/api/v1/hardware/sensors/ingest")
+async def ingest_hardware_sensors(payload: SensorTelemetryPayload):
+    return sensor_corrector.process_sensor_feed(payload)
