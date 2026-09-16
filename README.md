@@ -71,6 +71,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Walter Russell 10-Octave Periodic & Tensor Engine :** Extended periodic mapping engine translating atomic elements into 10-octave spiral mechanics, gyroscopic $SO(13)$ rotation tensors, and dedicated REST routes (`/api/v1/russell/element/{Z}`).
 * **CUDA / GPU Hardware Acceleration Kernel (Phase 17):** High-performance PyTorch GPU batch execution engine providing vectorized $SO(13)$ matrix transformation scaling with seamless CPU fallback (`/api/v1/hardware/gpu-batch`).
 * **Live Physical CNC / GRBL Hardware Controller (Phase 18):** Direct OS serial/USB interface (`pySerial`) providing real-time G-code toolpath streaming, closed-loop machine position telemetry (`?` status polling), and encoder feedback with automated mock-mode fallbacks (`/api/v1/hardware/cnc/gcode`).
+* **Physical SDR RF Carrier Signal Generator (Phase 19):** Real-time Software Defined Radio (SDR) transmission engine generating complex I/Q sample arrays and driving electromagnetic carrier wave emissions across physical transceivers (HackRF, LimeSDR, USRP) tied to $3\text{-}6\text{-}9$ Tesla triad frequencies (`/api/v1/hardware/sdr/transmit`).
 
 ---
 
@@ -137,6 +138,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_gpu_acceleration.py`** — Unit test suite verifying tensor batch dimensions, hardware device selection, and transformation matrices.
 * **`src/cnc_hardware_controller.py`** — Direct OS serial controller for streaming G-code and parsing GRBL real-time machine telemetry.
 * **`tests/test_cnc_controller.py`** — Automated unit tests for G-code command transmission and telemetry parser validation.
+* **`src/sdr_rf_synthesizer.py`** — Software Defined Radio I/Q complex signal synthesis and RF carrier wave driver.
+* **`tests/test_sdr_synthesizer.py`** — Unit test suite validating I/Q array generation and virtual transmission bursts.
 
 ---
 
@@ -835,3 +838,18 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/cnc/gcode?command=G0%20X10%
 
 # 2. Poll Real-Time Machine Position Telemetry & Encoder Feedback
 curl -X GET "[http://127.0.0.1:8000/api/v1/hardware/cnc/telemetry](http://127.0.0.1:8000/api/v1/hardware/cnc/telemetry)"
+
+### Physical SDR RF Carrier Wave Generation (Phase 19)
+
+```powershell
+# Transmit Synthesized RF Carrier Burst (432 MHz Base Frequency)
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/sdr/transmit?num_samples=1024](http://127.0.0.1:8000/api/v1/hardware/sdr/transmit?num_samples=1024)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "center_freq_hz": 432000000.0,
+    "sample_rate_hz": 2000000.0,
+    "tx_gain_db": 14.0,
+    "waveform_type": "sine",
+    "triad_phase_offset_rad": 0.0
+  }'
+  

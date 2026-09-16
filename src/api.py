@@ -1,4 +1,6 @@
 ﻿
+from src.sdr_rf_synthesizer import SDRRFSynthesizer, RFSignalConfig
+
 from src.cnc_hardware_controller import CNCGRBLController, MachinePosition
 
 from src.gpu_batch_accelerator import GPUBatchAccelerator
@@ -396,3 +398,11 @@ async def execute_cnc_gcode(command: str):
 @app.get("/api/v1/hardware/cnc/telemetry", response_model=MachinePosition)
 async def get_cnc_telemetry():
     return cnc_controller.poll_telemetry()
+
+# Phase 19: SDR RF Signal Transmission Route
+sdr_synthesizer = SDRRFSynthesizer(mock_mode=True)
+
+@app.post("/api/v1/hardware/sdr/transmit")
+async def transmit_rf_signal(config: RFSignalConfig, num_samples: int = 1024):
+    engine = SDRRFSynthesizer(config=config, mock_mode=True)
+    return engine.transmit_carrier_burst(num_samples=num_samples)
