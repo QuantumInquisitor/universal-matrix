@@ -1,4 +1,6 @@
 ﻿
+from src.laser_interferometer import OpticalFieldInterferometer, InterferometerTelemetry
+
 from src.toroidal_winding_engine import ToroidalWindingEngine, WindingParameters
 
 from src.plasma_shader_pipeline import PlasmaShaderCompiler, ShaderUniformsPayload
@@ -498,3 +500,10 @@ winding_engine = ToroidalWindingEngine()
 @app.post("/api/v1/hardware/cnc/winding-toolpath")
 async def generate_toroidal_winding_toolpath(params: WindingParameters):
     return winding_engine.generate_5axis_gcode(params)
+
+# Phase 29: Optical Laser Field Interferometer Route
+interferometer_engine = OpticalFieldInterferometer()
+
+@app.post("/api/v1/hardware/sensors/interferometer")
+async def process_laser_interferometry(payload: InterferometerTelemetry):
+    return interferometer_engine.process_interferometry(payload)
