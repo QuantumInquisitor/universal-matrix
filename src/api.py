@@ -1,4 +1,9 @@
 ﻿
+from src.webxr_haptic_controller import WebXRHapticController, SpatialXRState
+
+from src.metrics_exporter import PrometheusMetricsExporter
+from fastapi import Response
+
 from src.auth_gateway import HardwareAuthGateway, TenantCredentials
 
 from src.drift_predictor import QuantumDriftPredictor, TelemetryHistoryPayload
@@ -460,3 +465,18 @@ async def request_tenant_token(creds: TenantCredentials):
 @app.get("/api/v1/auth/verify")
 async def verify_tenant_token(token: str):
     return auth_gateway.verify_token(token)
+
+# Phase 25: Prometheus Metrics Exporter Route
+metrics_exporter = PrometheusMetricsExporter()
+
+@app.get("/metrics")
+async def get_prometheus_metrics():
+    content = metrics_exporter.generate_prometheus_metrics()
+    return Response(content=content, media_type="text/plain")
+
+# Phase 26: WebXR Haptic & Spatial Controller Route
+xr_controller = WebXRHapticController()
+
+@app.post("/api/v1/hardware/xr/process-frame")
+async def process_xr_spatial_frame(state: SpatialXRState):
+    return xr_controller.process_xr_frame(state)

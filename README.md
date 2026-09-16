@@ -80,6 +80,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Prometheus Operational Metrics Exporter (Phase 25):** Real-time operational telemetry exporter reporting system CPU/RAM usage, $SO(13)$ calculation latencies, and active hardware driver states via a Prometheus-compatible route (`/metrics`).
 * **Enterprise Multi-Tenant Auth Gateway (Phase 24):** JWT authentication, hardware session key validation, and role-based access control (RBAC) enabling multi-tenant isolation and secure hardware access for commercial licensees (`/api/v1/auth/token`).
 * **Prometheus Operational Metrics Exporter (Phase 25):** Real-time operational telemetry exporter reporting system CPU allocation, $SO(13)$ calculation latencies, and active hardware driver states via a Prometheus-compatible route (`/metrics`).
+* **WebXR Haptic & Spatial Controller Integration (Phase 26):** OpenXR/WebXR spatial interaction engine processing 6-DoF hand pose transforms, dynamic $SO(13)$ plane rotation mapping, and coherence-driven haptic pulse triggers (`/api/v1/hardware/xr/process-frame`).
 
 ---
 
@@ -164,6 +165,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_auth_gateway.py`** — Unit test suite verifying token signatures, token expiration, and hardware RBAC authorization.
 * **`src/metrics_exporter.py`** — Prometheus telemetry exporter for resource monitoring and hardware transformation latencies.
 * **`tests/test_metrics_exporter.py`** — Unit test suite verifying Prometheus metric format compliance and latency tracking.
+* **`src/webxr_haptic_controller.py`** — WebXR 6-DoF spatial pose processor and bio-adaptive haptic pulse generator.
+* **`tests/test_webxr_controller.py`** — Unit test suite verifying spatial pose distance transformations and haptic threshold logic.
 
 ---
 
@@ -961,3 +964,16 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/auth/token](http://127.0.0.1:8000/ap
 
 # 2. Verify Active JWT Token Signature & Claims
 curl -X GET "[http://127.0.0.1:8000/api/v1/auth/verify?token=](http://127.0.0.1:8000/api/v1/auth/verify?token=)<YOUR_JWT_TOKEN>"
+
+### WebXR Spatial Pose Processing & Haptics (Phase 26)
+
+```powershell
+# Process 6-DoF Controller Pose & Retrieve Haptic Pulse Telemetry
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/process-frame](http://127.0.0.1:8000/api/v1/hardware/xr/process-frame)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "left_hand": {"position_xyz": [-0.5, 0.0, 0.0]},
+    "right_hand": {"position_xyz": [0.5, 0.0, 0.0]},
+    "toroidal_coherence": 0.40
+  }'
+  
