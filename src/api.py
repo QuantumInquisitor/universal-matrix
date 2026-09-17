@@ -1,4 +1,6 @@
 ﻿
+from src.coil_geometry_optimizer import CoilGeometryOptimizer, OptimizationTargetPayload
+
 from src.fea_stress_twin import FEAStressTwinEngine, FEAToolpathPayload
 
 from src.hardware_kill_switch import SafetyInterlockKernel, TelemetrySnapshot
@@ -543,3 +545,10 @@ fea_engine = FEAStressTwinEngine()
 @app.post("/api/v1/hardware/fea/simulate")
 async def simulate_fea_stress(payload: FEAToolpathPayload):
     return fea_engine.simulate_toolpath_stress(payload)
+
+# Phase 33: Autonomous AI Coil Geometry Optimizer Route
+coil_optimizer = CoilGeometryOptimizer()
+
+@app.post("/api/v1/hardware/ai/optimize-coil")
+async def optimize_coil_topology(payload: OptimizationTargetPayload):
+    return coil_optimizer.optimize_geometry(payload)
