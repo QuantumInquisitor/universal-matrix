@@ -733,3 +733,18 @@ def submit_dao_vote_endpoint(payload: dict):
         "vote_details": result
     }
 
+
+
+# Phase 53: RL Field Optimizer Route
+from src.rl_field_optimizer import RLFieldOptimizer
+
+rl_optimizer = RLFieldOptimizer(learning_rate=0.001)
+
+@app.post("/api/v1/hardware/optimize/rl-field")
+def optimize_rl_field_endpoint(payload: dict):
+    result = rl_optimizer.optimize_field_trajectory(payload)
+    return {
+        "status": result["status"],
+        "optimization_telemetry": result
+    }
+
