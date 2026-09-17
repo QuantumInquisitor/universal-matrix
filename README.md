@@ -90,6 +90,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`src/coil_geometry_optimizer.py`** — AI topology search engine optimizing non-Euclidean coil geometries for target frequency bands.
 * **`tests/test_coil_optimizer.py`** — Automated unit test suite validating optimization convergence, Q-factor scoring, and inductance modeling.
 * **Apple Vision Pro / WebGPU Spatial Field Visualizer (Phase 34):** WebGPU WGSL compute pipeline compiler generating real-time 3D volumetric magnetic flux maps and $SO(13)$ field overlays for AR passthrough rendering (`/api/v1/hardware/xr/webgpu-pipeline`).
+* **Edge-Deployed ONNX Quantum Drift Inference Engine (Phase 35):** Ultra-low-latency INT8 quantized ONNX inference engine forecasting decoherence events and state collapse in microseconds directly on embedded edge microcontrollers (`/api/v1/hardware/edge/onnx-predict`).
 
 ---
 
@@ -190,6 +191,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_fea_twin.py`** — Automated unit test suite validating Von Mises stress calculations and structural safety factors.
 * **`src/webgpu_spatial_visualizer.py`** — WebGPU WGSL compute shader generator for spatial AR flux density overlay rendering.
 * **`tests/test_webgpu_visualizer.py`** — Automated unit test suite validating WGSL shader syntax and spatial viewport payload processing.
+* **`src/onnx_edge_drift_engine.py`** — Micro-quantized ONNX runtime edge engine for embedded quantum drift predictions.
+* **`tests/test_onnx_edge_engine.py`** — Automated unit test suite validating INT8 quantized matrix scoring and microsecond prediction triggers.
 
 ---
 
@@ -1102,4 +1105,15 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/webgpu-pipeline](http://
     "field_coherence_index": 0.88,
     "ar_passthrough_enabled": true
   }'
-  
+
+  ### Edge ONNX Quantized Decoherence Prediction (Phase 35)
+
+```powershell
+# Execute Microsecond ONNX Quantum Drift Prediction on Edge Microcontroller
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/edge/onnx-predict](http://127.0.0.1:8000/api/v1/hardware/edge/onnx-predict)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "clock_drift_vector": [0.1, 0.3, 0.7, 1.2],
+    "magnetic_delta_vector": [0.05, 0.1, 0.2, 0.4],
+    "quantized_int8_mode": true
+  }'

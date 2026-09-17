@@ -1,4 +1,6 @@
 ﻿
+from src.onnx_edge_drift_engine import ONNXEdgeDriftEngine, EdgeInferenceInput
+
 from src.webgpu_spatial_visualizer import WebGPUSpatialVisualizer, SpatialViewportPayload
 
 from src.coil_geometry_optimizer import CoilGeometryOptimizer, OptimizationTargetPayload
@@ -561,3 +563,10 @@ webgpu_visualizer = WebGPUSpatialVisualizer()
 @app.post("/api/v1/hardware/xr/webgpu-pipeline")
 async def generate_webgpu_xr_pipeline(payload: SpatialViewportPayload):
     return webgpu_visualizer.generate_wgsl_pipeline(payload)
+
+# Phase 35: Edge-Deployed ONNX Quantum Drift Route
+onnx_edge_engine = ONNXEdgeDriftEngine()
+
+@app.post("/api/v1/hardware/edge/onnx-predict")
+async def predict_edge_quantized_drift(payload: EdgeInferenceInput):
+    return onnx_edge_engine.predict_edge_decoherence(payload)
