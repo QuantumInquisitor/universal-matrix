@@ -764,3 +764,18 @@ def transpile_fpga_hdl_endpoint(payload: dict):
         "synthesis_report": result
     }
 
+
+
+# Phase 55: RAFT Consensus Engine Route
+from src.raft_consensus_engine import RAFTConsensusEngine
+
+raft_engine = RAFTConsensusEngine(node_id="node_us_east_1", cluster_nodes=["node_us_east_1", "node_eu_central_1", "node_ap_east_1"])
+
+@app.post("/api/v1/cluster/raft/election")
+def start_raft_election_endpoint():
+    result = raft_engine.start_election()
+    return {
+        "status": "ELECTION_EXECUTED",
+        "raft_state": result
+    }
+
