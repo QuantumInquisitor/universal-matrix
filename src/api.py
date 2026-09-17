@@ -1,4 +1,8 @@
-﻿
+﻿from src.can_bus_driver import CANBusDriver, CANFramePayload
+from src.physics_verifier import SymbolicPhysicsVerifier, FieldInvariantPayload
+from src.marx_gate_array import MarxGateArrayController, MarxArrayConfig
+from src.qiskit_quantum_bridge import QiskitQuantumBridge, QuantumCircuitRequest
+
 from src.license_usage_metering import LicenseUsageMeteringEngine, UsageEventPayload
 
 from src.spatial_teleoperation_gateway import SpatialTeleoperationGateway, TeleoperationPacket
@@ -646,3 +650,57 @@ async def record_tenant_usage(payload: UsageEventPayload):
 @app.get("/api/v1/commercial/billing-summary")
 async def get_tenant_billing(tenant_id: str):
     return metering_engine.get_tenant_billing_summary(tenant_id)
+
+# Phases 45, 47, 48, 50 API Endpoints
+can_driver = CANBusDriver()
+physics_verifier = SymbolicPhysicsVerifier()
+marx_controller = MarxGateArrayController()
+qiskit_bridge = QiskitQuantumBridge()
+
+@app.post("/api/v1/hardware/bus/can-compile")
+async def compile_can_bus_frame(payload: CANFramePayload):
+    return can_driver.compile_can_frame(payload)
+
+@app.post("/api/v1/hardware/physics/verify")
+async def verify_field_physics(payload: FieldInvariantPayload):
+    return physics_verifier.verify_invariants(payload)
+
+@app.post("/api/v1/hardware/pemf/marx-schedule")
+async def schedule_marx_gate_array(config: MarxArrayConfig):
+    return marx_controller.compute_gate_delays(config)
+
+@app.post("/api/v1/hardware/quantum/qiskit-compile")
+async def compile_qiskit_circuit(req: QuantumCircuitRequest):
+    return qiskit_bridge.generate_quantum_circuit_manifest(req)
+
+# =====================================================================
+# Phase 46 & Phase 49 Endpoints
+# =====================================================================
+from src.natural_units_converter import NaturalUnitsConverter
+from src.grid_power_manager import GridPowerManager
+
+converter = NaturalUnitsConverter(node_count=114)
+power_mgr = GridPowerManager(max_bus_voltage_v=48.0, max_current_amps=50.0)
+
+@app.post("/api/v1/hardware/physics/natural-units")
+def convert_units(payload: dict):
+    energy_j = payload.get("energy_joules", 1.602176634e-19)
+    freq_hz = payload.get("frequency_hz", 432000000.0)
+    
+    energy_res = converter.si_to_natural_energy(energy_j)
+    wave_res = converter.frequency_to_wavelength_natural(freq_hz)
+    
+    return {
+        "status": "CONVERTED",
+        "energy_conversion": energy_res,
+        "wave_conversion": wave_res
+    }
+
+@app.post("/api/v1/hardware/power/evaluate")
+def evaluate_power_grid(payload: dict):
+    result = power_mgr.evaluate_power_state(payload)
+    return {
+        "status": result["status"],
+        "power_telemetry": result
+    }
+    

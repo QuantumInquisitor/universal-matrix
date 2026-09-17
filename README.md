@@ -103,8 +103,10 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_spatial_teleoperation.py`** — Automated unit test suite validating command vector processing and latency safety constraints.
 * **Automated IP Licensing & Cryptographic Usage Metering (Phase 44):** Enterprise usage tracker recording hardware machine-hours, execution pulses, and $SO(13)$ compute operations with SHA-256 audit proofs for automated commercial billing (`/api/v1/commercial/meter-usage`).
 * **Symbolic Physics Conservation Verifier (Phase 45):** Field invariant engine calculating electromagnetic energy densities and Maxwell/Lorentz invariants (`/api/v1/hardware/physics/verify`).
+* **Universal Physical Natural Units Converter (Phase 46):**  (`src/natural_units_converter.py`):** Invariant unit translation engine mapping SI metric parameters (Joules, Hertz, meters) to Planck units, electronvolts, and $SO(13)$ discrete lattice bounds (`/api/v1/hardware/physics/natural-units`).
 * **Direct Industrial CAN Bus & Modbus RTU Driver (Phase 47):** Industrial CAN frame compiler generating binary payloads for PLC motor drives (`/api/v1/hardware/bus/can-compile`).
 * **High-Power Solid-State Marx Generator Gate Array (Phase 48):** Precision nanosecond gate timing controller for erected high-voltage discharges (`/api/v1/hardware/pemf/marx-schedule`).
+* **Phase 49 — Autonomous Micro-Grid Power & Battery Manager (`src/grid_power_manager.py`):** Real-time power distribution supervisor monitoring bus voltages, current draw, and battery thermal thresholds to throttle duty cycles or trip overload cutoffs (`/api/v1/hardware/power/evaluate`).
 * **Qiskit Quantum Circuit Hardware Bridge (Phase 50):** Transpiles $SO(13)$ matrix rotation angles into OpenQASM 2.0 quantum gate circuits (`/api/v1/hardware/quantum/qiskit-compile`).
 
 ---
@@ -227,6 +229,10 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`src/marx_gate_array.py`** — Nanosecond-precision gate timing controller for Marx generator capacitor banks.
 * **`src/qiskit_quantum_bridge.py`** — Quantum gate circuit compiler generating OpenQASM manifests from matrix tensors.
 * **`tests/test_phase_45_47_48_50.py`** — Unit test suite validating all four modules.
+* **`src/natural_units_converter.py`** — Universal physical constants and SI-to-matrix natural units converter.
+* **`tests/test_phase_46_49.py`** — Automated unit test suite verifying unit transformations, lattice spacing math, and power grid safety thresholds.
+* **`src/grid_power_manager.py`** — Micro-grid power supervisor, over-current evaluator, and battery thermal throttling driver.
+* **`tests/test_phase_46_49.py`** — Automated unit test suite verifying unit transformations, lattice spacing math, and power grid safety thresholds.
 
 ---
 
@@ -1308,5 +1314,23 @@ curl.exe -X POST "http://127.0.0.1:8000/api/v1/dao/vote" `
     "voter_address": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
     "vote_decision": "YES",
     "staking_power_wei": 5000000
+  }'
+
+#### Phase 46: Universal Physical Natural Units Converter
+```powershell
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/physics/natural-units](http://127.0.0.1:8000/api/v1/hardware/physics/natural-units)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "energy_joules": 1.602176634e-19,
+    "frequency_hz": 432000000.0
+  }'
+  #### Phase 49: Micro-Grid Power & Battery Thermal Evaluator
+```powershell
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/power/evaluate](http://127.0.0.1:8000/api/v1/hardware/power/evaluate)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "bus_voltage_v": 24.0,
+    "bus_current_amps": 15.0,
+    "battery_temp_c": 38.5
   }'
   
