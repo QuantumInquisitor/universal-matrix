@@ -811,3 +811,18 @@ def simulate_photonic_multiplication_endpoint(payload: dict):
         "photonic_telemetry": result
     }
 
+
+
+# Phase 58: Zero-Trust Hardware Attestation Route
+from src.zero_trust_attestation import ZeroTrustAttestationEngine
+
+attestation_engine = ZeroTrustAttestationEngine()
+
+@app.post("/api/v1/security/attest")
+def verify_hardware_attestation_endpoint(payload: dict):
+    result = attestation_engine.verify_tpm_quote(payload)
+    return {
+        "status": result["status"],
+        "attestation_report": result
+    }
+

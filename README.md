@@ -115,6 +115,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Phase 55 — Distributed RAFT Consensus & Leader Election Engine (`src/raft_consensus_engine.py`):** High-availability quorum driver executing RAFT state transitions (Follower, Candidate, Leader), term numbering, and automated leader election during node isolation (`/api/v1/cluster/raft/election`).
 * **Phase 56 — EVM Smart Contract & Royalty Ledger Bridge (`src/evm_contract_bridge.py`):** Enterprise licensing and execution proof engine compiling compute unit telemetry into EVM-compatible smart contract payloads for automated, trustless royalty fee calculations and immutable transaction hashing (`/api/v1/ledger/evm/royalty-proof`).
 * **Phase 57 — Photonic Tensor Co-Processor Simulation (`src/photonic_tensor_coprocessor.py`):** Coherent optical waveguide simulator modeling Mach-Zehnder interferometer arrays for zero-latency SO(13) matrix transformations using optical wave superposition (`/api/v1/hardware/photonic/multiply`).
+* **Phase 58 — Zero-Trust Hardware Attestation (`src/zero_trust_attestation.py`):** Cryptographic platform configuration register (PCR) quote verifier interfacing with remote TPM 2.0 modules to validate hardware firmware and kernel integrity before physical execution (`/api/v1/security/attest`).
 
 ---
 
@@ -254,6 +255,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_phase_56.py`** — Automated unit test suite verifying compute fee math, WEI royalty calculations, and transaction hash compilation.
 * **`src/photonic_tensor_coprocessor.py`** — Optical interference mesh simulator and phase-shift tensor coprocessor for SO(13) matrix operations.
 * **`tests/test_phase_57.py`** — Automated unit test suite verifying optical amplitude calculations, wavelength configurations, and vector dimension validation.
+* **`src/zero_trust_attestation.py`** — Remote TPM 2.0 PCR quote verifier and cryptographic attestation token generator.
+* **`tests/test_phase_58.py`** — Automated unit test suite verifying PCR quote hash matching, untrusted platform rejection, and attestation token hashing.
 
 ---
 
@@ -1414,4 +1417,14 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/photonic/multiply](http
   -d '{
     "input_vector": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
     "phase_shifts": [0.0, 45.0, 90.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  }'
+
+#### Phase 58: Zero-Trust Hardware Attestation
+```powershell
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/security/attest](http://127.0.0.1:8000/api/v1/security/attest)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "node_id": "edge_node_01",
+    "pcr_quote_hash": "0x8f3c7d1e0b2a4f6e8d0c1b3a5f7e9d2c",
+    "nonce": "session_nonce_99"
   }'
