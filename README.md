@@ -102,6 +102,10 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`src/spatial_teleoperation_gateway.py`** — Teleoperation command parser and real-time WebXR spatial digital twin gateway.
 * **`tests/test_spatial_teleoperation.py`** — Automated unit test suite validating command vector processing and latency safety constraints.
 * **Automated IP Licensing & Cryptographic Usage Metering (Phase 44):** Enterprise usage tracker recording hardware machine-hours, execution pulses, and $SO(13)$ compute operations with SHA-256 audit proofs for automated commercial billing (`/api/v1/commercial/meter-usage`).
+* **Symbolic Physics Conservation Verifier (Phase 45):** Field invariant engine calculating electromagnetic energy densities and Maxwell/Lorentz invariants (`/api/v1/hardware/physics/verify`).
+* **Direct Industrial CAN Bus & Modbus RTU Driver (Phase 47):** Industrial CAN frame compiler generating binary payloads for PLC motor drives (`/api/v1/hardware/bus/can-compile`).
+* **High-Power Solid-State Marx Generator Gate Array (Phase 48):** Precision nanosecond gate timing controller for erected high-voltage discharges (`/api/v1/hardware/pemf/marx-schedule`).
+* **Qiskit Quantum Circuit Hardware Bridge (Phase 50):** Transpiles $SO(13)$ matrix rotation angles into OpenQASM 2.0 quantum gate circuits (`/api/v1/hardware/quantum/qiskit-compile`).
 
 ---
 
@@ -218,6 +222,11 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_self_healing.py`** — Automated unit test suite validating thermal coolant scaling, cavitation damping, and RF drift compensation.
 * **`src/license_usage_metering.py`** — Enterprise usage ledger, cryptographic audit proof generator, and commercial billing engine.
 * **`tests/test_license_metering.py`** — Automated unit test suite validating operation accumulation, audit hashes, and billable USD calculations.
+* **`src/physics_verifier.py`** — Conservation law verifier and field energy density calculator.
+* **`src/can_bus_driver.py`** — Industrial CAN bus frame compiler for PLC integration.
+* **`src/marx_gate_array.py`** — Nanosecond-precision gate timing controller for Marx generator capacitor banks.
+* **`src/qiskit_quantum_bridge.py`** — Quantum gate circuit compiler generating OpenQASM manifests from matrix tensors.
+* **`tests/test_phase_45_47_48_50.py`** — Unit test suite validating all four modules.
 
 ---
 
@@ -387,8 +396,8 @@ python -m uvicorn src.api:app --reload
 
 #### Active API Endpoint Matrix:
 Once the terminal logs confirm `Application startup complete`, open your preferred web browser environment and traverse the following structural network locations:
-* **Interactive Swagger UI Dashboard:** [http://127.0.0](http://127.0.0)
-* **Root Matrix Network Verification Registry:** [http://127.0.0](http://127.0.0)
+* **Interactive Swagger UI Dashboard:** http://127.0.0
+* **Root Matrix Network Verification Registry:** http://127.0.0
 
 # 1. Install system environment dependencies
 pip install -r requirements.txt
@@ -436,7 +445,7 @@ docker pull ghcr.io/<YOUR_GITHUB_USERNAME>/universal-matrix:latest
 docker run -d -p 8000:8000 --name matrix_service ghcr.io/<YOUR_GITHUB_USERNAME>/universal-matrix:latest
 
 # 3. Query telemetry metrics or Prometheus scraper endpoint
-curl [http://127.0.0.1:8000/metrics](http://127.0.0.1:8000/metrics)
+curl http://127.0.0.1:8000/metrics
 
 ### Complete Observability Stack (Docker Compose)
 
@@ -571,7 +580,7 @@ Test the SSE streaming capacity under concurrent subscriber loads using the asyn
 
 ```bash
 # Run 50 concurrent SSE subscribers for 30 seconds
-python scripts/load_test.py --clients 50 --duration 30 --url [http://127.0.0.1:8000/api/v1/telemetry/stream](http://127.0.0.1:8000/api/v1/telemetry/stream)
+python scripts/load_test.py --clients 50 --duration 30 --url http://127.0.0.1:8000/api/v1/telemetry/stream
 Expected Benchmark Output
 --------------------------------------------------
 LOAD TEST RESULTS SUMMARY
@@ -673,7 +682,7 @@ py -m pip install -r requirements.txt
 
 # Note for Windows Users: PyTorch requires the Microsoft Visual C++ 2015â€“2022 Redistributable (x64).
 # If encountering c10.dll/DLL load errors, install via PowerShell:
-# Invoke-WebRequest -Uri "[https://aka.ms/vs/17/release/vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)" -OutFile "vc_redist.x64.exe"
+# Invoke-WebRequest -Uri "https://aka.ms/vs/17/release/vc_redist.x64.exe" -OutFile "vc_redist.x64.exe"
 # Start-Process -FilePath ".\vc_redist.x64.exe" -ArgumentList "/passive" -Wait
 
 # 2. Run the complete test suite (15 unit tests including GPU Tensor checks)
@@ -879,7 +888,7 @@ curl -X GET "http://127.0.0.1:8000/metrics"
 ### Biometric Ingestion CLI Example (PowerShell)
 
 `powershell
-curl -X POST "[http://127.0.0.1:8000/api/v1/biometrics/ingest](http://127.0.0.1:8000/api/v1/biometrics/ingest)" 
+curl -X POST "http://127.0.0.1:8000/api/v1/biometrics/ingest" 
   -H "Authorization: Bearer <YOUR_JWT_TOKEN>" 
   -H "Content-Type: application/json" 
   -d '{
@@ -894,7 +903,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/biometrics/ingest](http://127.0.0.1:
 
 ```powershell
 # 1. Ingest Physical Biometrics Telemetry (Phase 15)
-curl -X POST "[http://127.0.0.1:8000/api/v1/biometrics/ingest](http://127.0.0.1:8000/api/v1/biometrics/ingest)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/biometrics/ingest" `
   -H "Authorization: Bearer <YOUR_JWT_TOKEN>" `
   -H "Content-Type: application/json" `
   -d '{
@@ -906,22 +915,22 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/biometrics/ingest](http://127.0.0.1:
   }'
 
 # 2. Query Walter Russell Element Properties & SO(13) Tensor (Phase 16)
-curl -X GET "[http://127.0.0.1:8000/api/v1/russell/element/6](http://127.0.0.1:8000/api/v1/russell/element/6)"
+curl -X GET "http://127.0.0.1:8000/api/v1/russell/element/6"
 
 ### Live Physical CNC / GRBL Machine Control (Phase 18)
 
 ```powershell
 # 1. Stream G-Code Toolpath to Physical Machine / Mock Interface
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/cnc/gcode?command=G0%20X10%20Y10%20Z0](http://127.0.0.1:8000/api/v1/hardware/cnc/gcode?command=G0%20X10%20Y10%20Z0)"
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/cnc/gcode?command=G0%20X10%20Y10%20Z0"
 
 # 2. Poll Real-Time Machine Position Telemetry & Encoder Feedback
-curl -X GET "[http://127.0.0.1:8000/api/v1/hardware/cnc/telemetry](http://127.0.0.1:8000/api/v1/hardware/cnc/telemetry)"
+curl -X GET "http://127.0.0.1:8000/api/v1/hardware/cnc/telemetry"
 
 ### Physical SDR RF Carrier Wave Generation (Phase 19)
 
 ```powershell
 # Transmit Synthesized RF Carrier Burst (432 MHz Base Frequency)
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/sdr/transmit?num_samples=1024](http://127.0.0.1:8000/api/v1/hardware/sdr/transmit?num_samples=1024)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/sdr/transmit?num_samples=1024" `
   -H "Content-Type: application/json" `
   -d '{
     "center_freq_hz": 432000000.0,
@@ -935,7 +944,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/sdr/transmit?num_samples=10
 
 ```powershell
 # Adapt RF Frequencies and Visual Pulse Rates via Live Biometric Telemetry
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/bio-loop/adapt](http://127.0.0.1:8000/api/v1/hardware/bio-loop/adapt)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/bio-loop/adapt" `
   -H "Content-Type: application/json" `
   -d '{
     "hrv_rr_interval_ms": 900.0,
@@ -949,7 +958,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/bio-loop/adapt](http://127.
 
 ```powershell
 # Ingest Live Magnetometer, Hall-Effect, and Atomic Clock Drift Telemetry
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/sensors/ingest](http://127.0.0.1:8000/api/v1/hardware/sensors/ingest)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/sensors/ingest" `
   -H "Content-Type: application/json" `
   -d '{
     "magnetometer_uT": [30.0, 40.0, 0.0],
@@ -961,7 +970,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/sensors/ingest](http://127.
 
 ```powershell
 # Dispatch Synchronized Emission Command Across Distributed Hardware Nodes
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/swarm/dispatch](http://127.0.0.1:8000/api/v1/hardware/swarm/dispatch)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/swarm/dispatch" `
   -H "Content-Type: application/json" `
   -d '{
     "target_node_ids": ["node_alpha_sdr", "node_beta_cnc"],
@@ -973,7 +982,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/swarm/dispatch](http://127.
 
 ```powershell
 # Predict Decoherence Risk & Time-to-Collapse Window
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/ml/predict-drift](http://127.0.0.1:8000/api/v1/hardware/ml/predict-drift)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/ml/predict-drift" `
   -H "Content-Type: application/json" `
   -d '{
     "clock_drift_series_ns": [0.0, 1.2, 2.5, 5.1, 10.4],
@@ -984,7 +993,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/ml/predict-drift](http://12
 
 ```powershell
 # 1. Request Tenant Access Token with Hardware RBAC Keys
-curl -X POST "[http://127.0.0.1:8000/api/v1/auth/token](http://127.0.0.1:8000/api/v1/auth/token)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/auth/token" `
   -H "Content-Type: application/json" `
   -d '{
     "tenant_id": "enterprise_licensee_01",
@@ -993,19 +1002,19 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/auth/token](http://127.0.0.1:8000/ap
   }'
 
 # 2. Verify Active JWT Token Signature & Claims
-curl -X GET "[http://127.0.0.1:8000/api/v1/auth/verify?token=](http://127.0.0.1:8000/api/v1/auth/verify?token=)<YOUR_JWT_TOKEN>"
+curl -X GET "http://127.0.0.1:8000/api/v1/auth/verify?token=<YOUR_JWT_TOKEN>"
 
 ### Prometheus Operational Telemetry Scraping (Phase 25)
 
 ```powershell
 # Scrape Prometheus Operational & Hardware Telemetry
-curl -X GET "[http://127.0.0.1:8000/metrics](http://127.0.0.1:8000/metrics)"
+curl -X GET "http://127.0.0.1:8000/metrics"
 
 ### Enterprise JWT & Multi-Tenant Authentication (Phase 24)
 
 ```powershell
 # 1. Request Tenant Access Token with Hardware RBAC Keys
-curl -X POST "[http://127.0.0.1:8000/api/v1/auth/token](http://127.0.0.1:8000/api/v1/auth/token)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/auth/token" `
   -H "Content-Type: application/json" `
   -d '{
     "tenant_id": "enterprise_licensee_01",
@@ -1014,13 +1023,13 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/auth/token](http://127.0.0.1:8000/ap
   }'
 
 # 2. Verify Active JWT Token Signature & Claims
-curl -X GET "[http://127.0.0.1:8000/api/v1/auth/verify?token=](http://127.0.0.1:8000/api/v1/auth/verify?token=)<YOUR_JWT_TOKEN>"
+curl -X GET "http://127.0.0.1:8000/api/v1/auth/verify?token=<YOUR_JWT_TOKEN>"
 
 ### WebXR Spatial Pose Processing & Haptics (Phase 26)
 
 ```powershell
 # Process 6-DoF Controller Pose & Retrieve Haptic Pulse Telemetry
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/process-frame](http://127.0.0.1:8000/api/v1/hardware/xr/process-frame)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/xr/process-frame" `
   -H "Content-Type: application/json" `
   -d '{
     "left_hand": {"position_xyz": [-0.5, 0.0, 0.0]},
@@ -1032,7 +1041,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/process-frame](http://12
 
 ```powershell
 # Compile GLSL Shader Uniforms for Spatial WebGL Rendering
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/shaders/compile](http://127.0.0.1:8000/api/v1/hardware/shaders/compile)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/shaders/compile" `
   -H "Content-Type: application/json" `
   -d '{
     "so13_rotation_angle_rad": 0.7854,
@@ -1045,7 +1054,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/shaders/compile](http://127
 
 ```powershell
 # Compile 5-Axis G-Code Toolpath for Toroidal Coil Fabrication
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/cnc/winding-toolpath](http://127.0.0.1:8000/api/v1/hardware/cnc/winding-toolpath)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/cnc/winding-toolpath" `
   -H "Content-Type: application/json" `
   -d '{
     "major_radius_mm": 50.0,
@@ -1059,7 +1068,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/cnc/winding-toolpath](http:
 
 ```powershell
 # Ingest Laser Fringe Shift Telemetry & Receive Phase Compensation Matrix
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/sensors/interferometer](http://127.0.0.1:8000/api/v1/hardware/sensors/interferometer)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/sensors/interferometer" `
   -H "Content-Type: application/json" `
   -d '{
     "wavelength_nm": 632.8,
@@ -1072,7 +1081,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/sensors/interferometer](htt
 
 ```powershell
 # Verify Cryptographic Enclave Signature Prior to Physical Actuation
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/security/verify](http://127.0.0.1:8000/api/v1/hardware/security/verify)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/security/verify" `
   -H "Content-Type: application/json" `
   -d '{
     "command_payload": "G1 X10 Y10 Z0 A15 C30",
@@ -1085,7 +1094,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/security/verify](http://127
 
 ```powershell
 # Evaluate Real-Time Thermal & Current Telemetry Against Safety Thresholds
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/safety/evaluate](http://127.0.0.1:8000/api/v1/hardware/safety/evaluate)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/safety/evaluate" `
   -H "Content-Type: application/json" `
   -d '{
     "coil_temp_c": 92.0,
@@ -1097,7 +1106,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/safety/evaluate](http://127
 
 ```powershell
 # Simulate Toolpath Stress & Thermal Profiles Prior to CNC Dispatch
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/fea/simulate](http://127.0.0.1:8000/api/v1/hardware/fea/simulate)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/fea/simulate" `
   -H "Content-Type: application/json" `
   -d '{
     "toolpath_length_mm": 500.0,
@@ -1110,7 +1119,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/fea/simulate](http://127.0.
 
 ```powershell
 # Evolve Optimal Coil Winding Topology for 432 MHz Resonance
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/ai/optimize-coil](http://127.0.0.1:8000/api/v1/hardware/ai/optimize-coil)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/ai/optimize-coil" `
   -H "Content-Type: application/json" `
   -d '{
     "target_frequency_hz": 432000000.0,
@@ -1123,7 +1132,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/ai/optimize-coil](http://12
 
 ```powershell
 # Compile WGSL Spatial Compute Shader for Vision Pro AR Passthrough
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/webgpu-pipeline](http://127.0.0.1:8000/api/v1/hardware/xr/webgpu-pipeline)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/xr/webgpu-pipeline" `
   -H "Content-Type: application/json" `
   -d '{
     "viewport_resolution_wh": [1920, 1080],
@@ -1135,7 +1144,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/webgpu-pipeline](http://
 
 ```powershell
 # Compute Lorentz Force Density and Directional Vector for Conductive Fluids
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/mhd/actuate](http://127.0.0.1:8000/api/v1/hardware/mhd/actuate)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/mhd/actuate" `
   -H "Content-Type: application/json" `
   -d '{
     "current_density_amps_m2": 1000.0,
@@ -1148,7 +1157,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/mhd/actuate](http://127.0.0
 
 ```powershell
 # Synchronize Sub-Nanosecond Phase Parity Between Spatially Separated Nodes
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/quantum/entangle-sync](http://127.0.0.1:8000/api/v1/hardware/quantum/entangle-sync)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/quantum/entangle-sync" `
   -H "Content-Type: application/json" `
   -d '{
     "node_a": {
@@ -1167,7 +1176,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/quantum/entangle-sync](http
 
 ```powershell
 # Compute 6-DoF Joint Angles for Spatial Robotic Emitter Positioning
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/robotics/trajectory](http://127.0.0.1:8000/api/v1/hardware/robotics/trajectory)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/robotics/trajectory" `
   -H "Content-Type: application/json" `
   -d '{
     "robot_id": "kuka_arm_alpha",
@@ -1180,7 +1189,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/robotics/trajectory](http:/
 
 ```powershell
 # Synthesize High-Voltage Microsecond Pulse Train for Tesla Triad Emitters
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/pemf/synthesize-pulse](http://127.0.0.1:8000/api/v1/hardware/pemf/synthesize-pulse)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/pemf/synthesize-pulse" `
   -H "Content-Type: application/json" `
   -d '{
     "peak_voltage_kv": 15.0,
@@ -1194,7 +1203,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/pemf/synthesize-pulse](http
 
 ```powershell
 # Evaluate Environmental Stress Telemetry & Trigger Self-Healing Adjustments
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/safety/self-heal](http://127.0.0.1:8000/api/v1/hardware/safety/self-heal)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/safety/self-heal" `
   -H "Content-Type: application/json" `
   -d '{
     "chassis_displacement_nm": 150.0,
@@ -1207,7 +1216,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/safety/self-heal](http://12
 
 ```powershell
 # Simulate Plasma Arc Breakdown Voltage & Magnetic Pinch Dynamics
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/plasma/simulate-discharge](http://127.0.0.1:8000/api/v1/hardware/plasma/simulate-discharge)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/plasma/simulate-discharge" `
   -H "Content-Type: application/json" `
   -d '{
     "gap_distance_mm": 5.0,
@@ -1220,7 +1229,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/plasma/simulate-discharge](
 
 ```powershell
 # Dispatch Spatial 3D Teleoperation Vector to Physical Hardware Node
-curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/teleop](http://127.0.0.1:8000/api/v1/hardware/xr/teleop)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/hardware/xr/teleop" `
   -H "Content-Type: application/json" `
   -d '{
     "session_id": "xr_session_88",
@@ -1234,7 +1243,7 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/teleop](http://127.0.0.1
 
 ```powershell
 # 1. Record Hardware Usage Event & Generate Cryptographic Audit Proof
-curl -X POST "[http://127.0.0.1:8000/api/v1/commercial/meter-usage](http://127.0.0.1:8000/api/v1/commercial/meter-usage)" `
+curl -X POST "http://127.0.0.1:8000/api/v1/commercial/meter-usage" `
   -H "Content-Type: application/json" `
   -d '{
     "tenant_id": "enterprise_licensee_01",
@@ -1244,4 +1253,60 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/commercial/meter-usage](http://127.0
   }'
 
 # 2. Retrieve Tenant Commercial Billing Summary
-curl -X GET "[http://127.0.0.1:8000/api/v1/commercial/billing-summary?tenant_id=enterprise_licensee_01](http://127.0.0.1:8000/api/v1/commercial/billing-summary?tenant_id=enterprise_licensee_01)"
+curl -X GET "http://127.0.0.1:8000/api/v1/commercial/billing-summary?tenant_id=enterprise_licensee_01"
+
+### Industrial Bus, Physics Guardrails, High-Voltage, Quantum & Governance Integration (Phases 45, 47, 48, 50, 51, 52)
+
+#### 1. Compile Industrial CAN Bus / Modbus Frame (Phase 47)
+curl.exe -X POST "http://127.0.0.1:8000/api/v1/hardware/bus/can-compile" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "arbitration_id": 291,
+    "data_bytes": [1, 2, 3, 4, 5, 6, 7, 8],
+    "extended_id": false
+  }'
+
+#### 2. Validate Symbolic Field Invariants & Physics Conservation (Phase 45)
+curl.exe -X POST "http://127.0.0.1:8000/api/v1/hardware/physics/verify" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "electric_field_v_m": 100.0,
+    "magnetic_field_tesla": 0.5,
+    "frequency_hz": 432000000.0
+  }'
+
+#### 3. Schedule High-Voltage Solid-State Marx Gate Delays (Phase 48)
+curl.exe -X POST "http://127.0.0.1:8000/api/v1/hardware/pemf/marx-schedule" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "stage_count": 5,
+    "charge_voltage_kv": 10.0,
+    "gate_trigger_delay_ns": 12.5
+  }'
+
+#### 4. Transpile SO(13) Matrix State to OpenQASM Quantum Circuit (Phase 50)
+curl.exe -X POST "http://127.0.0.1:8000/api/v1/hardware/quantum/qiskit-compile" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "qubit_count": 3,
+    "so13_rotation_angle_rad": 0.7854
+  }'
+
+#### 5. Evaluate Multi-Region Cluster Quorum & Hot Failover (Phase 51)
+curl.exe -X POST "http://127.0.0.1:8000/api/v1/cluster/health-check" `
+  -H "Content-Type: application/json" `
+  -d '[
+    {"node_id": "node_us_east_1", "is_alive": true, "heartbeat_latency_ms": 12.0},
+    {"node_id": "node_eu_central_1", "is_alive": false, "heartbeat_latency_ms": 999.0}
+  ]'
+
+#### 6. Submit Decentralized IP Governance Vote (Phase 52)
+curl.exe -X POST "http://127.0.0.1:8000/api/v1/dao/vote" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "proposal_id": "prop_001_parameter_update",
+    "voter_address": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+    "vote_decision": "YES",
+    "staking_power_wei": 5000000
+  }'
+  
