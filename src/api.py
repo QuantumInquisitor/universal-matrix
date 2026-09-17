@@ -1,4 +1,6 @@
 ﻿
+from src.acoustic_resonance_synthesizer import AcousticResonanceSynthesizer, AcousticFieldConfig
+
 from src.onnx_edge_drift_engine import ONNXEdgeDriftEngine, EdgeInferenceInput
 
 from src.webgpu_spatial_visualizer import WebGPUSpatialVisualizer, SpatialViewportPayload
@@ -570,3 +572,10 @@ onnx_edge_engine = ONNXEdgeDriftEngine()
 @app.post("/api/v1/hardware/edge/onnx-predict")
 async def predict_edge_quantized_drift(payload: EdgeInferenceInput):
     return onnx_edge_engine.predict_edge_decoherence(payload)
+
+# Phase 36: Real-Time Acoustic & Ultrasound Synthesizer Route
+acoustic_synthesizer = AcousticResonanceSynthesizer()
+
+@app.post("/api/v1/hardware/acoustic/synthesize")
+async def synthesize_acoustic_resonance(config: AcousticFieldConfig):
+    return acoustic_synthesizer.synthesize_phase_delays(config)

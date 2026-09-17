@@ -91,7 +91,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_coil_optimizer.py`** — Automated unit test suite validating optimization convergence, Q-factor scoring, and inductance modeling.
 * **Apple Vision Pro / WebGPU Spatial Field Visualizer (Phase 34):** WebGPU WGSL compute pipeline compiler generating real-time 3D volumetric magnetic flux maps and $SO(13)$ field overlays for AR passthrough rendering (`/api/v1/hardware/xr/webgpu-pipeline`).
 * **Edge-Deployed ONNX Quantum Drift Inference Engine (Phase 35):** Ultra-low-latency INT8 quantized ONNX inference engine forecasting decoherence events and state collapse in microseconds directly on embedded edge microcontrollers (`/api/v1/hardware/edge/onnx-predict`).
-
+* **Real-Time Acoustic & Ultrasound Harmonic Synthesizer (Phase 36):** Ultrasonic transducer array phase generator transforming $SO(13)$ matrix phase angles and $3\text{-}6\text{-}9$ Tesla triad harmonics into acoustic pressure fields and levitation nodes (`/api/v1/hardware/acoustic/synthesize`).
 ---
 
 ## Repository Architecture Manifest
@@ -193,6 +193,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_webgpu_visualizer.py`** — Automated unit test suite validating WGSL shader syntax and spatial viewport payload processing.
 * **`src/onnx_edge_drift_engine.py`** — Micro-quantized ONNX runtime edge engine for embedded quantum drift predictions.
 * **`tests/test_onnx_edge_engine.py`** — Automated unit test suite validating INT8 quantized matrix scoring and microsecond prediction triggers.
+* **`src/acoustic_resonance_synthesizer.py`** — Ultrasonic transducer phase delay compiler for spatial acoustic pressure fields.
+* **`tests/test_acoustic_synthesizer.py`** — Automated unit test suite validating acoustic wavelength calculations and phase delay array synthesis.
 
 ---
 
