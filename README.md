@@ -89,6 +89,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Real-Time FEA Stress & Thermal Twin (Phase 32):** Multi-physics FEA simulation engine calculating Von Mises stress profiles, thermal dissipation, and safety factors along toolpaths prior to physical execution (`/api/v1/hardware/fea/simulate`).
 * **`src/coil_geometry_optimizer.py`** — AI topology search engine optimizing non-Euclidean coil geometries for target frequency bands.
 * **`tests/test_coil_optimizer.py`** — Automated unit test suite validating optimization convergence, Q-factor scoring, and inductance modeling.
+* **Autonomous AI Coil Geometry Optimizer (Phase 33):** Evolutionary reinforcement learning engine optimizing coil winding radiuses, turn counts, and Q-factors to maximize inductance and minimize parasitic capacitance (`/api/v1/hardware/ai/optimize-coil`).
 * **Apple Vision Pro / WebGPU Spatial Field Visualizer (Phase 34):** WebGPU WGSL compute pipeline compiler generating real-time 3D volumetric magnetic flux maps and $SO(13)$ field overlays for AR passthrough rendering (`/api/v1/hardware/xr/webgpu-pipeline`).
 * **Edge-Deployed ONNX Quantum Drift Inference Engine (Phase 35):** Ultra-low-latency INT8 quantized ONNX inference engine forecasting decoherence events and state collapse in microseconds directly on embedded edge microcontrollers (`/api/v1/hardware/edge/onnx-predict`).
 * **Real-Time Acoustic & Ultrasound Harmonic Synthesizer (Phase 36):** Ultrasonic transducer array phase generator transforming $SO(13)$ matrix phase angles and $3\text{-}6\text{-}9$ Tesla triad harmonics into acoustic pressure fields and levitation nodes (`/api/v1/hardware/acoustic/synthesize`).
@@ -96,6 +97,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Autonomous Closed-Loop Swarm Robotics Controller (Phase 39):** 6-DoF inverse kinematics feedforward controller translating $SO(13)$ matrix tensors into synchronized joint trajectories for robotic arm emitter positioning (`/api/v1/hardware/robotics/trajectory`).
 * **High-Voltage Pulsed Electromagnetic Field (PEMF) Driver Interface (Phase 40):** Solid-state high-voltage discharge trigger protocol synthesizing microsecond PWM pulse trains aligned with $3\text{-}6\text{-}9$ Tesla triad harmonics and $SO(13)$ phase states (`/api/v1/hardware/pemf/synthesize-pulse`).
 * **Real-Time Hydro-Thermal-Acoustic Self-Healing Engine (Phase 41):** Closed-loop self-recovery engine calculating real-time coolant flow ramps, acoustic phase damping, and RF frequency offsets to counteract chassis stress and thermal cavitation (`/api/v1/hardware/safety/self-heal`).
+* **Non-Linear Plasma Discharge & Arc Dynamics Twin (Phase 42):** Multi-physics spark breakdown simulator modeling Paschen's Law thresholds, electron temperatures, and magnetic pinch ratios prior to high-voltage discharge (`/api/v1/hardware/plasma/simulate-discharge`).
 
 ---
 
@@ -194,6 +196,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_kill_switch.py`** — Automated unit test suite verifying nominal telemetry pass-through and emergency trip conditions.
 * **`src/fea_stress_twin.py`** — Multi-physics FEA simulation engine for thermal and structural stress analysis.
 * **`tests/test_fea_twin.py`** — Automated unit test suite validating Von Mises stress calculations and structural safety factors.
+* **`src/coil_geometry_optimizer.py`** — AI topology search engine optimizing non-Euclidean coil geometries for target frequency bands.
+* **`tests/test_coil_optimizer.py`** — Automated unit test suite validating optimization convergence, Q-factor scoring, and inductance modeling.
 * **`src/webgpu_spatial_visualizer.py`** — WebGPU WGSL compute shader generator for spatial AR flux density overlay rendering.
 * **`tests/test_webgpu_visualizer.py`** — Automated unit test suite validating WGSL shader syntax and spatial viewport payload processing.
 * **`src/onnx_edge_drift_engine.py`** — Micro-quantized ONNX runtime edge engine for embedded quantum drift predictions.
@@ -1191,5 +1195,18 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/safety/self-heal](http://12
     "coil_temp_c": 65.0,
     "acoustic_cavitation_index": 0.6,
     "rf_carrier_drift_hz": 12.5
+  }'
+
+### Non-Linear Plasma Discharge Simulation (Phase 42)
+
+```powershell
+# Simulate Plasma Arc Breakdown Voltage & Magnetic Pinch Dynamics
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/plasma/simulate-discharge](http://127.0.0.1:8000/api/v1/hardware/plasma/simulate-discharge)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "gap_distance_mm": 5.0,
+    "gas_pressure_torr": 760.0,
+    "applied_voltage_kv": 25.0,
+    "magnetic_pinch_field_tesla": 1.2
   }'
   

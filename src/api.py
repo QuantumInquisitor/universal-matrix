@@ -1,4 +1,6 @@
 ﻿
+from src.plasma_arc_twin import PlasmaArcTwinEngine, ArcSimulationPayload
+
 from src.self_healing_engine import SelfHealingEngine, EnvironmentalStressTelemetry
 
 from src.pemf_driver_interface import PEMFDriverInterface, PEMFPulseConfig
@@ -615,3 +617,10 @@ self_healing_engine = SelfHealingEngine()
 @app.post("/api/v1/hardware/safety/self-heal")
 async def execute_self_healing_loop(telemetry: EnvironmentalStressTelemetry):
     return self_healing_engine.compute_healing_adjustments(telemetry)
+
+# Phase 42: Non-Linear Plasma Discharge & Arc Dynamics Twin Route
+plasma_twin = PlasmaArcTwinEngine()
+
+@app.post("/api/v1/hardware/plasma/simulate-discharge")
+async def simulate_plasma_arc_discharge(payload: ArcSimulationPayload):
+    return plasma_twin.simulate_plasma_discharge(payload)
