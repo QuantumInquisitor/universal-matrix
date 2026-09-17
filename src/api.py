@@ -1,4 +1,6 @@
 ﻿
+from src.license_usage_metering import LicenseUsageMeteringEngine, UsageEventPayload
+
 from src.spatial_teleoperation_gateway import SpatialTeleoperationGateway, TeleoperationPacket
 
 from src.plasma_arc_twin import PlasmaArcTwinEngine, ArcSimulationPayload
@@ -633,3 +635,14 @@ teleop_gateway = SpatialTeleoperationGateway()
 @app.post("/api/v1/hardware/xr/teleop")
 async def process_spatial_teleop_packet(packet: TeleoperationPacket):
     return teleop_gateway.process_teleop_command(packet)
+
+# Phase 44: Automated IP Licensing & Usage Metering Routes
+metering_engine = LicenseUsageMeteringEngine()
+
+@app.post("/api/v1/commercial/meter-usage")
+async def record_tenant_usage(payload: UsageEventPayload):
+    return metering_engine.record_usage_event(payload)
+
+@app.get("/api/v1/commercial/billing-summary")
+async def get_tenant_billing(tenant_id: str):
+    return metering_engine.get_tenant_billing_summary(tenant_id)

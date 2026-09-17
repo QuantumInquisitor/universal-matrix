@@ -101,6 +101,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Spatial Digital Twin & Remote Teleoperation Gateway (Phase 43):** Low-latency WebXR spatial gateway processing bi-directional 3D pose vectors and telemetry packets for live spatial teleoperation (`/api/v1/hardware/xr/teleop`).
 * **`src/spatial_teleoperation_gateway.py`** — Teleoperation command parser and real-time WebXR spatial digital twin gateway.
 * **`tests/test_spatial_teleoperation.py`** — Automated unit test suite validating command vector processing and latency safety constraints.
+* **Automated IP Licensing & Cryptographic Usage Metering (Phase 44):** Enterprise usage tracker recording hardware machine-hours, execution pulses, and $SO(13)$ compute operations with SHA-256 audit proofs for automated commercial billing (`/api/v1/commercial/meter-usage`).
 
 ---
 
@@ -215,6 +216,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_pemf_driver.py`** — Automated unit test suite validating microsecond timing logic, duty cycle math, and overvoltage limits.
 * **`src/self_healing_engine.py`** — Closed-loop multi-physics self-healing orchestration engine.
 * **`tests/test_self_healing.py`** — Automated unit test suite validating thermal coolant scaling, cavitation damping, and RF drift compensation.
+* **`src/license_usage_metering.py`** — Enterprise usage ledger, cryptographic audit proof generator, and commercial billing engine.
+* **`tests/test_license_metering.py`** — Automated unit test suite validating operation accumulation, audit hashes, and billable USD calculations.
 
 ---
 
@@ -1226,3 +1229,19 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/teleop](http://127.0.0.1
     "teleop_command_type": "POSITION_DELTA",
     "command_vector": [0.01, -0.02, 0.05]
   }'
+
+### Commercial Usage Metering & IP Billing (Phase 44)
+
+```powershell
+# 1. Record Hardware Usage Event & Generate Cryptographic Audit Proof
+curl -X POST "[http://127.0.0.1:8000/api/v1/commercial/meter-usage](http://127.0.0.1:8000/api/v1/commercial/meter-usage)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "tenant_id": "enterprise_licensee_01",
+    "hardware_resource": "CNC_WINDING",
+    "operation_count": 100,
+    "execution_duration_sec": 1800.0
+  }'
+
+# 2. Retrieve Tenant Commercial Billing Summary
+curl -X GET "[http://127.0.0.1:8000/api/v1/commercial/billing-summary?tenant_id=enterprise_licensee_01](http://127.0.0.1:8000/api/v1/commercial/billing-summary?tenant_id=enterprise_licensee_01)"
