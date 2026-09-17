@@ -1,4 +1,6 @@
 ﻿
+from src.swarm_robotics_controller import SwarmRoboticsController, RobotTargetPose
+
 from src.quantum_entanglement_emulator import QuantumEntanglementEmulator, NodeStatePayload
 
 from src.acoustic_resonance_synthesizer import AcousticResonanceSynthesizer, AcousticFieldConfig
@@ -588,3 +590,10 @@ entanglement_emulator = QuantumEntanglementEmulator()
 @app.post("/api/v1/hardware/quantum/entangle-sync")
 async def synchronize_quantum_nodes(node_a: NodeStatePayload, node_b: NodeStatePayload):
     return entanglement_emulator.synchronize_entangled_nodes(node_a, node_b)
+
+# Phase 39: Autonomous Swarm Robotics Controller Route
+robotics_controller = SwarmRoboticsController()
+
+@app.post("/api/v1/hardware/robotics/trajectory")
+async def calculate_robot_trajectory(pose: RobotTargetPose):
+    return robotics_controller.compute_inverse_kinematics_6dof(pose)

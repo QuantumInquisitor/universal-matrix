@@ -93,6 +93,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Edge-Deployed ONNX Quantum Drift Inference Engine (Phase 35):** Ultra-low-latency INT8 quantized ONNX inference engine forecasting decoherence events and state collapse in microseconds directly on embedded edge microcontrollers (`/api/v1/hardware/edge/onnx-predict`).
 * **Real-Time Acoustic & Ultrasound Harmonic Synthesizer (Phase 36):** Ultrasonic transducer array phase generator transforming $SO(13)$ matrix phase angles and $3\text{-}6\text{-}9$ Tesla triad harmonics into acoustic pressure fields and levitation nodes (`/api/v1/hardware/acoustic/synthesize`).
 * **Quantum Entanglement Emulation & Multi-Node Synchronization (Phase 38):** Sub-nanosecond cross-node phase synchronization engine calculating non-local coherence factors and Bell state fidelity across distributed physical hardware rigs (`/api/v1/hardware/quantum/entangle-sync`).
+* **Autonomous Closed-Loop Swarm Robotics Controller (Phase 39):** 6-DoF inverse kinematics feedforward controller translating $SO(13)$ matrix tensors into synchronized joint trajectories for robotic arm emitter positioning (`/api/v1/hardware/robotics/trajectory`).
 
 ---
 
@@ -199,6 +200,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_acoustic_synthesizer.py`** — Automated unit test suite validating acoustic wavelength calculations and phase delay array synthesis.
 * **`src/quantum_entanglement_emulator.py`** — Sub-nanosecond phase synchronization engine and Bell state fidelity evaluator for multi-node hardware clusters.
 * **`tests/test_quantum_entanglement.py`** — Automated unit test suite validating non-local coherence calculations, latency skew tracking, and parity criteria.
+* **`src/swarm_robotics_controller.py`** — 6-DoF inverse kinematics engine calculating robotic arm joint angles for spatial physical emitters.
+* **`tests/test_swarm_robotics.py`** — Automated unit test suite validating joint angle calculations and reachability constraints.
 
 ---
 
@@ -1143,3 +1146,17 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/quantum/entangle-sync](http
       "phase_offset_rad": 0.0
     }
   }'
+
+### Autonomous Swarm Robotics Trajectory Synthesis (Phase 39)
+
+```powershell
+# Compute 6-DoF Joint Angles for Spatial Robotic Emitter Positioning
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/robotics/trajectory](http://127.0.0.1:8000/api/v1/hardware/robotics/trajectory)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "robot_id": "kuka_arm_alpha",
+    "target_xyz": [0.4, 0.2, 0.5],
+    "target_rpy_deg": [0.0, 45.0, 90.0],
+    "so13_rotation_angle_rad": 0.7854
+  }'
+  
