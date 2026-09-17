@@ -98,6 +98,9 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **High-Voltage Pulsed Electromagnetic Field (PEMF) Driver Interface (Phase 40):** Solid-state high-voltage discharge trigger protocol synthesizing microsecond PWM pulse trains aligned with $3\text{-}6\text{-}9$ Tesla triad harmonics and $SO(13)$ phase states (`/api/v1/hardware/pemf/synthesize-pulse`).
 * **Real-Time Hydro-Thermal-Acoustic Self-Healing Engine (Phase 41):** Closed-loop self-recovery engine calculating real-time coolant flow ramps, acoustic phase damping, and RF frequency offsets to counteract chassis stress and thermal cavitation (`/api/v1/hardware/safety/self-heal`).
 * **Non-Linear Plasma Discharge & Arc Dynamics Twin (Phase 42):** Multi-physics spark breakdown simulator modeling Paschen's Law thresholds, electron temperatures, and magnetic pinch ratios prior to high-voltage discharge (`/api/v1/hardware/plasma/simulate-discharge`).
+* **Spatial Digital Twin & Remote Teleoperation Gateway (Phase 43):** Low-latency WebXR spatial gateway processing bi-directional 3D pose vectors and telemetry packets for live spatial teleoperation (`/api/v1/hardware/xr/teleop`).
+* **`src/spatial_teleoperation_gateway.py`** — Teleoperation command parser and real-time WebXR spatial digital twin gateway.
+* **`tests/test_spatial_teleoperation.py`** — Automated unit test suite validating command vector processing and latency safety constraints.
 
 ---
 
@@ -1209,4 +1212,17 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/plasma/simulate-discharge](
     "applied_voltage_kv": 25.0,
     "magnetic_pinch_field_tesla": 1.2
   }'
-  
+
+  ### Spatial Teleoperation & Digital Twin Gateway (Phase 43)
+
+```powershell
+# Dispatch Spatial 3D Teleoperation Vector to Physical Hardware Node
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/teleop](http://127.0.0.1:8000/api/v1/hardware/xr/teleop)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "session_id": "xr_session_88",
+    "operator_id": "operator_admin_01",
+    "target_hardware_node": "node_kuka_arm",
+    "teleop_command_type": "POSITION_DELTA",
+    "command_vector": [0.01, -0.02, 0.05]
+  }'

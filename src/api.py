@@ -1,4 +1,6 @@
 ﻿
+from src.spatial_teleoperation_gateway import SpatialTeleoperationGateway, TeleoperationPacket
+
 from src.plasma_arc_twin import PlasmaArcTwinEngine, ArcSimulationPayload
 
 from src.self_healing_engine import SelfHealingEngine, EnvironmentalStressTelemetry
@@ -624,3 +626,10 @@ plasma_twin = PlasmaArcTwinEngine()
 @app.post("/api/v1/hardware/plasma/simulate-discharge")
 async def simulate_plasma_arc_discharge(payload: ArcSimulationPayload):
     return plasma_twin.simulate_plasma_discharge(payload)
+
+# Phase 43: Spatial Digital Twin & Remote Teleoperation Route
+teleop_gateway = SpatialTeleoperationGateway()
+
+@app.post("/api/v1/hardware/xr/teleop")
+async def process_spatial_teleop_packet(packet: TeleoperationPacket):
+    return teleop_gateway.process_teleop_command(packet)
