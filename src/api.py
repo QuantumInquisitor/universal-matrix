@@ -779,3 +779,18 @@ def start_raft_election_endpoint():
         "raft_state": result
     }
 
+
+
+# Phase 56: EVM Smart Contract Bridge Route
+from src.evm_contract_bridge import EVMContractBridge
+
+evm_bridge = EVMContractBridge(royalty_rate_pct=2.5)
+
+@app.post("/api/v1/ledger/evm/royalty-proof")
+def generate_evm_royalty_proof_endpoint(payload: dict):
+    result = evm_bridge.generate_royalty_proof_payload(payload)
+    return {
+        "status": result["status"],
+        "evm_payload": result
+    }
+
