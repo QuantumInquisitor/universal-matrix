@@ -108,6 +108,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **High-Power Solid-State Marx Generator Gate Array (Phase 48):** Precision nanosecond gate timing controller for erected high-voltage discharges (`/api/v1/hardware/pemf/marx-schedule`).
 * **Phase 49 — Autonomous Micro-Grid Power & Battery Manager (`src/grid_power_manager.py`):** Real-time power distribution supervisor monitoring bus voltages, current draw, and battery thermal thresholds to throttle duty cycles or trip overload cutoffs (`/api/v1/hardware/power/evaluate`).
 * **Qiskit Quantum Circuit Hardware Bridge (Phase 50):** Transpiles $SO(13)$ matrix rotation angles into OpenQASM 2.0 quantum gate circuits (`/api/v1/hardware/quantum/qiskit-compile`).
+* **Phase 51 — Multi-Region Cluster Health Evaluator (`src/cluster_sync.py`):** Real-time node quorum supervisor monitoring multi-region heartbeat latencies and node health to automatically trigger hot-failover routing during network partitioning (`/api/v1/cluster/health-check`).
+* **Phase 52 — Decentralized DAO Governance Voter (`src/dao_governance.py`):** EVM-compatible governance voting engine verifying minimum WEI staking power thresholds and generating cryptographic SHA-256 state hashes for immutable ledger execution (`/api/v1/dao/vote`).
 
 ---
 
@@ -233,6 +235,10 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_phase_46_49.py`** — Automated unit test suite verifying unit transformations, lattice spacing math, and power grid safety thresholds.
 * **`src/grid_power_manager.py`** — Micro-grid power supervisor, over-current evaluator, and battery thermal throttling driver.
 * **`tests/test_phase_46_49.py`** — Automated unit test suite verifying unit transformations, lattice spacing math, and power grid safety thresholds.
+* **`src/cluster_sync.py`** — Multi-region cluster sync manager and real-time node quorum health evaluator.
+* **`tests/test_phase_51.py`** — Automated test suite validating cluster quorum thresholds and high-latency degradation flags.
+* **`src/dao_governance.py`** — EVM staking-power verifier and cryptographic DAO governance vote hash compiler.
+* **`tests/test_phase_52.py`** — Automated unit test suite verifying WEI staking thresholds and vote hashing.
 
 ---
 
@@ -1333,4 +1339,22 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/power/evaluate](http://
     "bus_current_amps": 15.0,
     "battery_temp_c": 38.5
   }'
-  
+
+#### Phase 51: Multi-Region Cluster Health Evaluator
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/cluster/health-check](http://127.0.0.1:8000/api/v1/cluster/health-check)" `
+  -H "Content-Type: application/json" `
+  -d '[
+    {"node_id": "us-east-1a", "is_alive": true, "heartbeat_latency_ms": 18.5},
+    {"node_id": "eu-central-1b", "is_alive": true, "heartbeat_latency_ms": 42.1},
+    {"node_id": "ap-northeast-1c", "is_alive": false, "heartbeat_latency_ms": 999.0}]' 
+
+#### Phase 52: Decentralized DAO Governance Voter
+```powershell
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/dao/vote](http://127.0.0.1:8000/api/v1/dao/vote)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "proposal_id": "PROP-SO13-052",
+    "voter_address": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+    "vote_decision": "YES",
+    "staking_power_wei": 5000000
+  }'

@@ -704,3 +704,32 @@ def evaluate_power_grid(payload: dict):
         "power_telemetry": result
     }
     
+
+# Phase 51: Cluster Health Evaluator Route
+from src.cluster_sync import ClusterHealthEvaluator
+
+cluster_evaluator = ClusterHealthEvaluator(max_latency_ms=200.0, minimum_quorum_ratio=0.5)
+
+@app.post("/api/v1/cluster/health-check")
+def evaluate_cluster_health_endpoint(payload: list):
+    health_report = cluster_evaluator.evaluate_cluster_health(payload)
+    return {
+        "status": health_report["status"],
+        "report": health_report
+    }
+
+
+
+# Phase 52: DAO Governance Voter Route
+from src.dao_governance import DAOGovernanceVoter
+
+dao_voter = DAOGovernanceVoter(min_staking_power_wei=1000000)
+
+@app.post("/api/v1/dao/vote")
+def submit_dao_vote_endpoint(payload: dict):
+    result = dao_voter.process_vote(payload)
+    return {
+        "status": result["status"],
+        "vote_details": result
+    }
+
