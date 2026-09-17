@@ -87,6 +87,9 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Cryptographic Hardware Root-of-Trust & HSM Enclave (Phase 30):** TPM 2.0 cryptographic signing gateway preventing hardware command tampering, payload spoofing, and unauthorized serial actuation across physical edge drivers (`/api/v1/hardware/security/verify`).
 * **Emergency Physical Hardware Interlock & Thermal Kill-Switch (Phase 31):** Sub-millisecond safety kernel driver monitoring thermal runaway, coil over-current, and laser displacement to issue immediate emergency hardware stops (`M112`) and power cuts (`/api/v1/hardware/safety/evaluate`).
 * **Real-Time FEA Stress & Thermal Twin (Phase 32):** Multi-physics FEA simulation engine calculating Von Mises stress profiles, thermal dissipation, and safety factors along toolpaths prior to physical execution (`/api/v1/hardware/fea/simulate`).
+* **`src/coil_geometry_optimizer.py`** — AI topology search engine optimizing non-Euclidean coil geometries for target frequency bands.
+* **`tests/test_coil_optimizer.py`** — Automated unit test suite validating optimization convergence, Q-factor scoring, and inductance modeling.
+* **Apple Vision Pro / WebGPU Spatial Field Visualizer (Phase 34):** WebGPU WGSL compute pipeline compiler generating real-time 3D volumetric magnetic flux maps and $SO(13)$ field overlays for AR passthrough rendering (`/api/v1/hardware/xr/webgpu-pipeline`).
 
 ---
 
@@ -185,6 +188,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_kill_switch.py`** — Automated unit test suite verifying nominal telemetry pass-through and emergency trip conditions.
 * **`src/fea_stress_twin.py`** — Multi-physics FEA simulation engine for thermal and structural stress analysis.
 * **`tests/test_fea_twin.py`** — Automated unit test suite validating Von Mises stress calculations and structural safety factors.
+* **`src/webgpu_spatial_visualizer.py`** — WebGPU WGSL compute shader generator for spatial AR flux density overlay rendering.
+* **`tests/test_webgpu_visualizer.py`** — Automated unit test suite validating WGSL shader syntax and spatial viewport payload processing.
 
 ---
 
@@ -1071,5 +1076,30 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/fea/simulate](http://127.0.
     "current_load_amps": 10.0,
     "material_yield_stress_mpa": 250.0,
     "ambient_temp_c": 20.0
+  }'
+
+  ### Autonomous AI Coil Topology Optimization (Phase 33)
+
+```powershell
+# Evolve Optimal Coil Winding Topology for 432 MHz Resonance
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/ai/optimize-coil](http://127.0.0.1:8000/api/v1/hardware/ai/optimize-coil)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "target_frequency_hz": 432000000.0,
+    "max_major_radius_mm": 100.0,
+    "max_turns": 500,
+    "iterations": 50
+  }'
+
+### WebGPU Spatial AR Flux Pipeline Compilation (Phase 34)
+
+```powershell
+# Compile WGSL Spatial Compute Shader for Vision Pro AR Passthrough
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/xr/webgpu-pipeline](http://127.0.0.1:8000/api/v1/hardware/xr/webgpu-pipeline)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "viewport_resolution_wh": [1920, 1080],
+    "field_coherence_index": 0.88,
+    "ar_passthrough_enabled": true
   }'
   

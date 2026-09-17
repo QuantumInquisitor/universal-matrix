@@ -1,4 +1,6 @@
 ﻿
+from src.webgpu_spatial_visualizer import WebGPUSpatialVisualizer, SpatialViewportPayload
+
 from src.coil_geometry_optimizer import CoilGeometryOptimizer, OptimizationTargetPayload
 
 from src.fea_stress_twin import FEAStressTwinEngine, FEAToolpathPayload
@@ -552,3 +554,10 @@ coil_optimizer = CoilGeometryOptimizer()
 @app.post("/api/v1/hardware/ai/optimize-coil")
 async def optimize_coil_topology(payload: OptimizationTargetPayload):
     return coil_optimizer.optimize_geometry(payload)
+
+# Phase 34: WebGPU Spatial Field Visualizer Route
+webgpu_visualizer = WebGPUSpatialVisualizer()
+
+@app.post("/api/v1/hardware/xr/webgpu-pipeline")
+async def generate_webgpu_xr_pipeline(payload: SpatialViewportPayload):
+    return webgpu_visualizer.generate_wgsl_pipeline(payload)
