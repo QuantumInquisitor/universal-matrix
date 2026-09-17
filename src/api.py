@@ -1,4 +1,6 @@
 ﻿
+from src.pemf_driver_interface import PEMFDriverInterface, PEMFPulseConfig
+
 from src.swarm_robotics_controller import SwarmRoboticsController, RobotTargetPose
 
 from src.quantum_entanglement_emulator import QuantumEntanglementEmulator, NodeStatePayload
@@ -597,3 +599,10 @@ robotics_controller = SwarmRoboticsController()
 @app.post("/api/v1/hardware/robotics/trajectory")
 async def calculate_robot_trajectory(pose: RobotTargetPose):
     return robotics_controller.compute_inverse_kinematics_6dof(pose)
+
+# Phase 40: High-Voltage PEMF Driver Route
+pemf_driver = PEMFDriverInterface()
+
+@app.post("/api/v1/hardware/pemf/synthesize-pulse")
+async def synthesize_pemf_pulse(config: PEMFPulseConfig):
+    return pemf_driver.synthesize_pulse_train(config)
