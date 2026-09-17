@@ -1,4 +1,6 @@
 ﻿
+from src.self_healing_engine import SelfHealingEngine, EnvironmentalStressTelemetry
+
 from src.pemf_driver_interface import PEMFDriverInterface, PEMFPulseConfig
 
 from src.swarm_robotics_controller import SwarmRoboticsController, RobotTargetPose
@@ -606,3 +608,10 @@ pemf_driver = PEMFDriverInterface()
 @app.post("/api/v1/hardware/pemf/synthesize-pulse")
 async def synthesize_pemf_pulse(config: PEMFPulseConfig):
     return pemf_driver.synthesize_pulse_train(config)
+
+# Phase 41: Real-Time Self-Healing Engine Route
+self_healing_engine = SelfHealingEngine()
+
+@app.post("/api/v1/hardware/safety/self-heal")
+async def execute_self_healing_loop(telemetry: EnvironmentalStressTelemetry):
+    return self_healing_engine.compute_healing_adjustments(telemetry)

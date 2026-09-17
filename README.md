@@ -95,6 +95,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Quantum Entanglement Emulation & Multi-Node Synchronization (Phase 38):** Sub-nanosecond cross-node phase synchronization engine calculating non-local coherence factors and Bell state fidelity across distributed physical hardware rigs (`/api/v1/hardware/quantum/entangle-sync`).
 * **Autonomous Closed-Loop Swarm Robotics Controller (Phase 39):** 6-DoF inverse kinematics feedforward controller translating $SO(13)$ matrix tensors into synchronized joint trajectories for robotic arm emitter positioning (`/api/v1/hardware/robotics/trajectory`).
 * **High-Voltage Pulsed Electromagnetic Field (PEMF) Driver Interface (Phase 40):** Solid-state high-voltage discharge trigger protocol synthesizing microsecond PWM pulse trains aligned with $3\text{-}6\text{-}9$ Tesla triad harmonics and $SO(13)$ phase states (`/api/v1/hardware/pemf/synthesize-pulse`).
+* **Real-Time Hydro-Thermal-Acoustic Self-Healing Engine (Phase 41):** Closed-loop self-recovery engine calculating real-time coolant flow ramps, acoustic phase damping, and RF frequency offsets to counteract chassis stress and thermal cavitation (`/api/v1/hardware/safety/self-heal`).
 
 ---
 
@@ -205,6 +206,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_swarm_robotics.py`** — Automated unit test suite validating joint angle calculations and reachability constraints.
 * **`src/pemf_driver_interface.py`** — Embedded high-voltage PEMF pulse train synthesizer and gate trigger controller.
 * **`tests/test_pemf_driver.py`** — Automated unit test suite validating microsecond timing logic, duty cycle math, and overvoltage limits.
+* **`src/self_healing_engine.py`** — Closed-loop multi-physics self-healing orchestration engine.
+* **`tests/test_self_healing.py`** — Automated unit test suite validating thermal coolant scaling, cavitation damping, and RF drift compensation.
 
 ---
 
@@ -1176,3 +1179,17 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/pemf/synthesize-pulse](http
     "tesla_triad_harmonic": 3,
     "so13_phase_angle_rad": 0.0
   }'
+
+### Closed-Loop Multi-Physics Self-Healing (Phase 41)
+
+```powershell
+# Evaluate Environmental Stress Telemetry & Trigger Self-Healing Adjustments
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/safety/self-heal](http://127.0.0.1:8000/api/v1/hardware/safety/self-heal)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "chassis_displacement_nm": 150.0,
+    "coil_temp_c": 65.0,
+    "acoustic_cavitation_index": 0.6,
+    "rf_carrier_drift_hz": 12.5
+  }'
+  
