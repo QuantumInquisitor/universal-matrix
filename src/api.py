@@ -748,3 +748,19 @@ def optimize_rl_field_endpoint(payload: dict):
         "optimization_telemetry": result
     }
 
+
+
+# Phase 54: FPGA Bitstream Compiler Route
+from src.fpga_bitstream_compiler import FPGABitstreamCompiler
+
+fpga_compiler = FPGABitstreamCompiler(target_vendor="XILINX")
+
+@app.post("/api/v1/hardware/fpga/transpile")
+def transpile_fpga_hdl_endpoint(payload: dict):
+    wgsl_code = payload.get("wgsl_code", "@compute @workgroup_size(64) fn main() {}")
+    result = fpga_compiler.transpile_wgsl_to_hdl(wgsl_code)
+    return {
+        "status": result["status"],
+        "synthesis_report": result
+    }
+
