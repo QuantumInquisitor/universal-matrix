@@ -794,3 +794,20 @@ def generate_evm_royalty_proof_endpoint(payload: dict):
         "evm_payload": result
     }
 
+
+
+# Phase 57: Photonic Tensor Co-Processor Route
+from src.photonic_tensor_coprocessor import PhotonicTensorCoprocessor
+
+photonic_coprocessor = PhotonicTensorCoprocessor(wavelength_nm=1550.0, mesh_size=13)
+
+@app.post("/api/v1/hardware/photonic/multiply")
+def simulate_photonic_multiplication_endpoint(payload: dict):
+    input_vector = payload.get("input_vector", [1.0] * 13)
+    phase_shifts = payload.get("phase_shifts", [0.0] * 13)
+    result = photonic_coprocessor.simulate_optical_matrix_multiplication(input_vector, phase_shifts)
+    return {
+        "status": result["status"],
+        "photonic_telemetry": result
+    }
+
