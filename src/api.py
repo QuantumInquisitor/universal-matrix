@@ -1,4 +1,6 @@
 ﻿
+from src.fea_stress_twin import FEAStressTwinEngine, FEAToolpathPayload
+
 from src.hardware_kill_switch import SafetyInterlockKernel, TelemetrySnapshot
 
 from src.hardware_tpm_enclave import TPM2HardwareEnclave, HardwareCommandEnvelope
@@ -534,3 +536,10 @@ async def evaluate_hardware_safety(telemetry: TelemetrySnapshot):
 async def reset_hardware_interlock():
     safety_kernel.reset_interlock()
     return {"status": "INTERLOCK_RESET", "interlock_tripped": False}
+
+# Phase 32: Real-Time FEA Stress Twin Route
+fea_engine = FEAStressTwinEngine()
+
+@app.post("/api/v1/hardware/fea/simulate")
+async def simulate_fea_stress(payload: FEAToolpathPayload):
+    return fea_engine.simulate_toolpath_stress(payload)

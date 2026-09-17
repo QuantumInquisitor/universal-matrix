@@ -86,6 +86,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Optical & Laser Field Interferometer Integration (Phase 29):** Sub-nanometer optical displacement monitoring parser detecting chassis micro-deformation and thermal expansion during active electromagnetic emissions to auto-correct $SO(13)$ tensor phase offsets (`/api/v1/hardware/sensors/interferometer`).
 * **Cryptographic Hardware Root-of-Trust & HSM Enclave (Phase 30):** TPM 2.0 cryptographic signing gateway preventing hardware command tampering, payload spoofing, and unauthorized serial actuation across physical edge drivers (`/api/v1/hardware/security/verify`).
 * **Emergency Physical Hardware Interlock & Thermal Kill-Switch (Phase 31):** Sub-millisecond safety kernel driver monitoring thermal runaway, coil over-current, and laser displacement to issue immediate emergency hardware stops (`M112`) and power cuts (`/api/v1/hardware/safety/evaluate`).
+* **Real-Time FEA Stress & Thermal Twin (Phase 32):** Multi-physics FEA simulation engine calculating Von Mises stress profiles, thermal dissipation, and safety factors along toolpaths prior to physical execution (`/api/v1/hardware/fea/simulate`).
 
 ---
 
@@ -182,6 +183,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_tpm_enclave.py`** — Automated unit test suite verifying payload cryptographic signatures and tamper detection.
 * **`src/hardware_kill_switch.py`** — Safety interlock kernel driver and threshold breach evaluator.
 * **`tests/test_kill_switch.py`** — Automated unit test suite verifying nominal telemetry pass-through and emergency trip conditions.
+* **`src/fea_stress_twin.py`** — Multi-physics FEA simulation engine for thermal and structural stress analysis.
+* **`tests/test_fea_twin.py`** — Automated unit test suite validating Von Mises stress calculations and structural safety factors.
 
 ---
 
@@ -1056,3 +1059,17 @@ curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/safety/evaluate](http://127
     "current_amps": 25.0,
     "chassis_displacement_nm": 10.0
   }'
+
+### Real-Time FEA Multi-Physics Simulation (Phase 32)
+
+```powershell
+# Simulate Toolpath Stress & Thermal Profiles Prior to CNC Dispatch
+curl -X POST "[http://127.0.0.1:8000/api/v1/hardware/fea/simulate](http://127.0.0.1:8000/api/v1/hardware/fea/simulate)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "toolpath_length_mm": 500.0,
+    "current_load_amps": 10.0,
+    "material_yield_stress_mpa": 250.0,
+    "ambient_temp_c": 20.0
+  }'
+  
