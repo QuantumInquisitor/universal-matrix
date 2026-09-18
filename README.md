@@ -8,11 +8,16 @@ An Open-Source Mathematical Alternative to General Relativity.
 
 <a href="https://github.com"><img src="https://google.com" alt="Open In Colab"></a>
 
+# Universal Matrix Engine
+
+A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulation and spatial visualization framework. The platform maps high-dimensional vector dynamics to physical reality using bare-metal GPU acceleration, real-time spatial WebXR interfaces, and non-synthetic Hardware-in-the-Loop (HITL) physical drivers.
+
 ## Project Features
 
-#  Universal Matrix Engine
-
-A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulation and VR visualization engine. The platform maps high-dimensional vector dynamics to physical reality using **Walter Russell's 9-octave wave mechanics**, gyroscopic atomic plane modeling, and real-time GPU tensor operations.
+* **13D ($SO(13)$) Native Tensor Processing:** Non-synthetic high-dimensional matrix execution via bare-metal CUDA tensor cores (`cuda:0`) and vectorized C-level math.
+* **Dual-Mode Hardware Abstraction Layer (HAL):** Unified orchestrator across 10+ hardware domains including CAN bus, CNC G-code, QPU quantum circuits, ROS 2 DDS robotics, and satellite telemetry.
+* **Real-Time WebXR & WebGPU Compute:** Low-latency spatial viewports streaming 13D transform vectors straight to client GPU shaders and physical actuator loops at 120 FPS.
+* **Deterministic Safety & Conservation Cores:** Integrated Hardware-in-the-Loop velocity interlocks (E-STOP) and Physics-Informed Neural Operator (PINO) energy conservation validation.
 
 ---
 
