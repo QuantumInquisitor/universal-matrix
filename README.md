@@ -136,6 +136,7 @@ $env:PYTHONPATH="."
 $env:PYTHONPATH="."
 .\venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py"
 * **Phase 75 — Dual-Mode Quantum Processor Unit Driver (`src/drivers/qpu_driver.py`):** Live remote QPU backend integration (IBM Quantum / AWS Braket) with Qiskit statevector fallback execution (`/api/v1/hardware/quantum/exec`).
+* **Phase 76 — Dual-Mode CNC Motion Driver (`src/drivers/cnc_driver.py`):** Real-world industrial CNC motion controller binding over RS-232/USB serial interfaces (`pyserial`) for G-code trajectory dispatches with synthetic coordinate simulation fallback (`/api/v1/hardware/cnc/exec`).
 
 ---
 
@@ -324,6 +325,8 @@ This project replaces smooth, infinite spacetime curvature with an absolute, 64-
 * **`tests/test_phase_72.py`** — Automated unit test suite verifying GPU device initialization, fallback execution pathways, and numerical tensor transformation accuracy.
 * **`src/drivers/qpu_driver.py`** — QPU driver managing remote quantum provider authentication, backend selection, circuit execution, and shot measurement aggregation.
 * **`tests/test_phase_75.py`** — Automated unit test suite verifying quantum provider initialization, fallback simulation pathways, and circuit output schemas.
+* **`src/drivers/cnc_driver.py`** — CNC motion driver managing serial controller connections, baud rate handshakes, G-code transmission, and axis coordinate parsing.
+* **`tests/test_phase_76.py`** — Automated unit test suite verifying serial interface initialization, G-code dispatch schemas, and driver state transitions.
 
 ---
 
@@ -1590,4 +1593,10 @@ curl.exe "[http://127.0.0.1:8000/api/v1/cloud/k8s/pods?namespace=default](http:/
 curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/quantum/exec](http://127.0.0.1:8000/api/v1/hardware/quantum/exec)" `
   -H "Content-Type: application/json" `
   -d '{"num_qubits": 2, "shots": 1024}'
+
+#### Phase 76: CNC Motion Controller Driver Execution
+```powershell
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/cnc/exec](http://127.0.0.1:8000/api/v1/hardware/cnc/exec)" `
+  -H "Content-Type: application/json" `
+  -d '{"gcode": "G01 X10.5 Y20.0 Z-1.2 F1500"}'
   

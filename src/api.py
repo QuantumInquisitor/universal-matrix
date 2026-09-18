@@ -1043,3 +1043,19 @@ def execute_qpu_circuit_endpoint(payload: dict):
         "result": result
     }
 
+
+
+# Phase 76: Dual-Mode CNC Driver Endpoint
+from src.drivers.cnc_driver import CNCMotionDriver
+
+cnc_driver_instance = CNCMotionDriver()
+
+@app.post("/api/v1/hardware/cnc/exec")
+def execute_cnc_gcode_endpoint(payload: dict):
+    gcode = payload.get("gcode", "G00 X0 Y0 Z0")
+    result = cnc_driver_instance.execute_gcode_command(gcode)
+    return {
+        "status": "CNC_EXECUTION_COMPLETE",
+        "result": result
+    }
+
