@@ -945,3 +945,20 @@ def hal_status_endpoint():
         "operational_mode": HALFactory.get_driver_mode()
     }
 
+
+
+# Phase 71: Dual-Mode CAN Bus Driver Endpoint
+from src.drivers.can_driver import CANDriver
+
+can_driver_instance = CANDriver()
+
+@app.post("/api/v1/hardware/can/send")
+def send_can_frame_endpoint(payload: dict):
+    arb_id = payload.get("arbitration_id", 0x123)
+    data = payload.get("data", [0x11, 0x22, 0x33, 0x44])
+    result = can_driver_instance.send_telemetry_frame(arb_id, data)
+    return {
+        "status": "CAN_TRANSMISSION_COMPLETE",
+        "result": result
+    }
+
