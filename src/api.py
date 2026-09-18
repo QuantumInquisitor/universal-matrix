@@ -883,3 +883,20 @@ def run_hil_integration_endpoint(payload: dict):
         "hil_report": result
     }
 
+
+
+# Phase 67: WebXR Spatial Viewport Endpoint
+from src.spatial_viewport import SpatialViewportEngine
+
+spatial_engine = SpatialViewportEngine()
+
+@app.post("/api/v1/spatial/render")
+def render_spatial_viewport_endpoint(payload: dict):
+    frame_id = payload.get("frame_id", 1)
+    camera_pose = payload.get("camera_pose", [0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+    result = spatial_engine.render_spatial_frame(frame_id, camera_pose)
+    return {
+        "status": "SPATIAL_RENDER_COMPLETE",
+        "viewport": result
+    }
+

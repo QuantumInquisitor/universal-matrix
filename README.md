@@ -125,7 +125,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Phase 65 — Live Integration & Production Smoke Tests (`tests/test_e2e_live_server.py`):** In-process ASGI integration test suite utilizing FastAPI TestClient to execute end-to-end request/response assertions across health endpoints, autonomous agent orchestration, and developer SDK route catalogs.
 $env:PYTHONPATH="."
 .\venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py"
-
+* **Phase 66 — EVM Smart Contract Licensing Deployment Scripts (`scripts/deploy_licensing.js`):** Hardhat deployment automation for compiling and publishing the `UniversalMatrixLicensing` contract to EVM-compatible networks (Sepolia, Arbitrum).
+* **Phase 67 — WebXR Spatial Viewport Engine (`src/spatial_viewport.py`):** Hardware-accelerated WebGPU compute and WebXR rendering pipeline for real-time 3D spatial field projection (`/api/v1/spatial/render`).
 ---
 
 ## Repository Architecture Manifest
@@ -284,6 +285,8 @@ $env:PYTHONPATH="."
 * **`hardhat.config.js`** — Hardhat environment configuration defining EVM network RPC endpoints and compiler settings.
 * **`scripts/deploy_licensing.js`** — Asynchronous deployment automation script for smart contract initialization on EVM networks.
 * **`tests/test_phase_66.py`** — Automated unit test verifying deployment script existence and structure.
+* **`src/spatial_viewport.py`** — WebGPU compute shader host and WebXR spatial coordinate translation engine.
+* **`tests/test_phase_67.py`** — Automated unit test suite validating WebGPU pipeline initialization and 90 FPS frame rendering outputs.
 
 ---
 
@@ -1506,3 +1509,9 @@ $env:PYTHONPATH="."
 ```powershell
 # Deploy contract locally or to Sepolia via Hardhat
 npx hardhat run scripts/deploy_licensing.js --network sepolia
+
+#### Phase 67: WebXR Spatial Viewport Integration
+```powershell
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/spatial/render](http://127.0.0.1:8000/api/v1/spatial/render)" `
+  -H "Content-Type: application/json" `
+  -d '{"frame_id": 101, "camera_pose": [0.0, 1.5, 3.0, 0.0, 0.0, 0.0]}'
