@@ -837,3 +837,19 @@ def prometheus_metrics_endpoint():
     data, content_type = MetricsManager.export_metrics()
     return Response(content=data, media_type=content_type)
 
+
+
+# Phase 60: Autonomous AI Agent Layer Route
+from src.autonomous_agent import AutonomousAgentLayer
+
+autonomous_agent = AutonomousAgentLayer(latency_threshold_ms=50.0)
+
+@app.post("/api/v1/agent/evaluate")
+def evaluate_autonomous_agent_endpoint(payload: dict):
+    nodes_data = payload.get("nodes", [])
+    result = autonomous_agent.evaluate_and_remediate(nodes_data)
+    return {
+        "status": result["status"],
+        "agent_report": result
+    }
+

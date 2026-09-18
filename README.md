@@ -117,6 +117,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Phase 57 — Photonic Tensor Co-Processor Simulation (`src/photonic_tensor_coprocessor.py`):** Coherent optical waveguide simulator modeling Mach-Zehnder interferometer arrays for zero-latency SO(13) matrix transformations using optical wave superposition (`/api/v1/hardware/photonic/multiply`).
 * **Phase 58 — Zero-Trust Hardware Attestation (`src/zero_trust_attestation.py`):** Cryptographic platform configuration register (PCR) quote verifier interfacing with remote TPM 2.0 modules to validate hardware firmware and kernel integrity before physical execution (`/api/v1/security/attest`).
 * **Phase 59 — Hardware Telemetry Dashboards via Prometheus & Grafana (`src/metrics.py`):** Real-time system instrumentation exposing native Prometheus metrics primitives (Gauges, Counters, Histograms) for tracking compute load, cluster latency, RL reward convergence, and FPGA synthesis events (`/metrics`).
+* **Phase 60 — Autonomous AI Agent Layer (`src/autonomous_agent.py`):** Self-healing orchestrator that continuously evaluates cluster health telemetry to automatically trigger RL field optimizations (`src/rl_field_optimizer.py`) or FPGA bitstream re-synthesis (`src/fpga_bitstream_compiler.py`) without human intervention (`/api/v1/agent/evaluate`).
 
 ---
 
@@ -260,6 +261,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_phase_58.py`** — Automated unit test suite verifying PCR quote hash matching, untrusted platform rejection, and attestation token hashing.
 * **`src/metrics.py`** — Promethean metrics manager defining system counters and gauges for real-time telemetry extraction.
 * **`tests/test_phase_59.py`** — Automated unit test suite verifying metrics recording, label application, and exposition format consistency.
+* **`src/autonomous_agent.py`** — Closed-loop AI agent orchestrator driving dynamic cluster remediation and hardware re-synthesis workflows.
+* **`tests/test_phase_60.py`** — Automated unit test suite verifying latency threshold breaches, degraded node detection, and autonomous action execution.
 
 ---
 
@@ -1435,3 +1438,15 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/security/attest](http://127.0.0.
   #### Phase 59: Hardware Telemetry Dashboards (Prometheus)
 ```powershell
 curl.exe "[http://127.0.0.1:8000/metrics](http://127.0.0.1:8000/metrics)"
+
+#### Phase 60: Autonomous AI Agent Layer
+```powershell
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/agent/evaluate](http://127.0.0.1:8000/api/v1/agent/evaluate)" `
+  -H "Content-Type: application/json" `
+  -d '{
+    "nodes": [
+      {"node_id": "edge_01", "region": "us-east", "latency_ms": 65.0, "status": "DEGRADED"},
+      {"node_id": "edge_02", "region": "us-west", "latency_ms": 12.0, "status": "HEALTHY"}
+    ]
+  }'
+  
