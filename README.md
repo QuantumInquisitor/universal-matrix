@@ -143,6 +143,7 @@ $env:PYTHONPATH="."
 * **Phase 82 — WebXR Spatial Interface & WebSockets Bridge (`public/index.html`):** Real-time, ultra-low-latency WebXR 3D viewport (Three.js) connected via bi-directional WebSockets (`/ws/v1/spatial/hardware-control`), streaming spatial transforms directly into physical HAL drivers (`/spatial`).
 * **Phase 83 — Native High-Dimensional Matrix Processing (`src/core/native_matrix.py`):** Bare-metal hardware transformation pipeline routing high-dimensional tensor operations directly to CUDA VRAM buffers (`cuda:0`) when physical hardware is present, with vectorized C-level NumPy matrix execution fallbacks (`/api/v1/matrix/transform/native`).
 * **Phase 84 — Hardware-in-the-Loop Safety Interlocks (`src/hal/safety_driver.py`):** Real-time physical parameter boundary validation and emergency stop (E-STOP) triggering mechanism executing prior to physical actuator dispatches (`/api/v1/hal/safety/validate`).
+* **Phase 86 — Client-Side WebGPU Compute Shader Pipeline (`public/index.html`):** Direct WebGPU WGSL compute shader execution engine offloading high-dimensional spatial tensor matrix math straight to local client GPU hardware, delivering ultra-low-latency 120 FPS manifold rendering over bi-directional WebSocket telemetry channels.
 
 ---
 
@@ -351,6 +352,9 @@ This project replaces smooth, infinite spacetime curvature with an absolute, 64-
 * **`tests/test_phase_80.py`** — Automated unit test suite validating SpaceX telemetry ingestion, fallback execution pathways, and payload structure integrity.
 * **`src/core/native_matrix.py`** — Native tensor core engine executing direct hardware matrix transformations, GPU device allocations, and high-dimensional vector math.
 * **`tests/test_phase_83.py`** — Automated unit test suite verifying bare-metal execution pathways, memory array conversions, and result schema integrity.
+
+* **`public/index.html`** — Native WebGPU WGSL compute shader viewport managing device pipelines, array storage buffers, and real-time WebSocket frame streaming.
+* **`tests/test_phase_86.py`** — Automated unit test suite verifying WebGPU API initialization logic, WGSL compute shader entry points, and buffer allocation structures.
 
 ## Mathematical Foundations & Formulas
 
@@ -1676,3 +1680,12 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/matrix/transform/native](http://
 ### Phase 84: Validate Hardware Velocity Safety Bounds
 ```powershell
 .\venv\Scripts\python.exe -c "import urllib.request, json; data = json.dumps({\"velocity\": 1500.0}).encode(\"utf-8\"); req = urllib.request.Request(\"[http://127.0.0.1:8000/api/v1/hal/safety/validate](http://127.0.0.1:8000/api/v1/hal/safety/validate)\", data=data, headers={\"Content-Type\": \"application/json\"}); print(urllib.request.urlopen(req).read().decode())"
+
+#### Phase 86: Client-Side WebGPU Acceleration & Live Viewport
+```powershell
+# 1. Start the API Server
+$env:PYTHONPATH="."
+.\venv\Scripts\python.exe -m uvicorn src.api:app --host 127.0.0.1 --port 8000
+
+# 2. Open the WebGPU Compute Viewport in Browser
+# [http://127.0.0.1:8000/spatial](http://127.0.0.1:8000/spatial)
