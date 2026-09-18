@@ -1447,3 +1447,20 @@ def dispatch_mesh_workload(payload: dict):
         "result": res
     }
 
+
+
+# Phase 91: Photonic Compute & Optical Tensor Execution
+from src.core.photonic_engine import PhotonicTensorEngine
+
+photonic_engine_instance = PhotonicTensorEngine()
+
+@app.post("/api/v1/matrix/transform/photonic")
+def compute_photonic_transform(payload: dict):
+    matrix_data = payload.get("matrix", [[1.0, 0.0], [0.0, 1.0]])
+    phase_shift = payload.get("phase_shift", 0.785)
+    res = photonic_engine_instance.execute_optical_transform(matrix_data, phase_shift)
+    return {
+        "status": "PHOTONIC_EVALUATION_COMPLETE",
+        "result": res
+    }
+

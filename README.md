@@ -153,6 +153,7 @@ $env:PYTHONPATH="."
 * **Phase 88 — Autonomous Spatial Anomaly & Drift Correction (`src/hal/anomaly_driver.py`):** Real-time sensor-fusion feedback loop comparing requested spatial vectors against physical telemetry, automatically detecting mechanical drift and applying dynamic offset matrix corrections (`/api/v1/hal/anomaly/correct`).
 * **Phase 89 — Quantum-Classical Hybrid Tensor Core (`src/core/quantum_hybrid.py`):** Variational Quantum Eigensolver (VQE) and QAOA execution pipeline modulating high-dimensional CUDA tensor transformations with live quantum expectation values (`/api/v1/quantum/hybrid/compute`).
 * **Phase 90 — Distributed Edge-Cluster Mesh Orchestration (`src/hal/mesh_orchestrator.py`):** Multi-node Kubernetes/K3s edge-mesh orchestrator dynamically distributing high-dimensional matrix workloads across edge hardware clusters with automated load-balancing and failover routing (`/api/v1/hal/mesh/dispatch`).
+* **Phase 91 — Photonic Compute & Optical Tensor Execution (`src/core/photonic_engine.py`):** Mach-Zehnder interferometer (MZI) array engine executing light-speed matrix transformations via optical phase modulation and photonic integrated circuit (PIC) simulation (`/api/v1/matrix/transform/photonic`).
 
 ---
 
@@ -352,6 +353,8 @@ $env:PYTHONPATH="."
 * **`tests/test_phase_89.py`** — Automated unit test suite verifying VQE theta parameter mapping, quantum expectation values, and hybrid tensor scalar modulation.
 * **`src/hal/mesh_orchestrator.py`** — Distributed edge orchestrator managing node capacity, active workloads, and health heartbeat failover.
 * **`tests/test_phase_90.py`** — Automated unit test suite verifying edge workload dispatch, task balancing, and cluster state validation.
+* **`src/core/photonic_engine.py`** — Photonic compute core managing unitary transfer matrices, phase shifts, and optical power attenuation metrics.
+* **`tests/test_phase_91.py`** — Automated unit test suite verifying phase modulation vectors, matrix outputs, and optical attenuation boundaries.
 
 ---
 
@@ -1744,3 +1747,13 @@ $env:PYTHONPATH="."
 ```powershell
 # Dispatch Tensor Workload to Edge Mesh Cluster
 .\venv\Scripts\python.exe -c "import urllib.request, json; data = json.dumps({\"workload_id\": \"task-spatial-90\", \"tensor_size\": 4096}).encode(\"utf-8\"); req = urllib.request.Request(\"[http://127.0.0.1:8000/api/v1/hal/mesh/dispatch](http://127.0.0.1:8000/api/v1/hal/mesh/dispatch)\", data=data, headers={\"Content-Type\": \"application/json\"}); print(urllib.request.urlopen(req).read().decode())"
+
+#### Phase 91: Execute Photonic Optical Matrix Transformation
+* **Core Module:** `src/core/photonic_engine.py`
+* **Test Suite:** `tests/test_phase_91.py`
+* **API Route:** `POST /api/v1/matrix/transform/photonic`
+* **Description:** Dispatches matrix transformations to optical waveguide hardware or photonic simulator cores.
+
+```powershell
+# Run Photonic Optical Matrix Transformation
+.\venv\Scripts\python.exe -c "import urllib.request, json; data = json.dumps({\"matrix\": [[1.0, 0.0], [0.0, 1.0]], \"phase_shift\": 0.785}).encode(\"utf-8\"); req = urllib.request.Request(\"[http://127.0.0.1:8000/api/v1/matrix/transform/photonic](http://127.0.0.1:8000/api/v1/matrix/transform/photonic)\", data=data, headers={\"Content-Type\": \"application/json\"}); print(urllib.request.urlopen(req).read().decode())"
