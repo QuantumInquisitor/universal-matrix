@@ -1091,3 +1091,20 @@ def fire_marx_pulse_endpoint(payload: dict):
         "result": result
     }
 
+
+
+# Phase 78: Dual-Mode Photonic Coprocessor Driver Endpoint
+from src.drivers.photonic_driver import PhotonicCoprocessorDriver
+
+photonic_driver_instance = PhotonicCoprocessorDriver()
+
+@app.post("/api/v1/hardware/photonic/process")
+def process_photonic_matrix_endpoint(payload: dict):
+    matrix = payload.get("matrix_data", [[1.0, 2.0], [3.0, 4.0]])
+    phase = payload.get("phase_shift", 0.5)
+    result = photonic_driver_instance.process_optical_matrix(matrix, phase)
+    return {
+        "status": "OPTICAL_PROCESSING_COMPLETE",
+        "result": result
+    }
+
