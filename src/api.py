@@ -1379,3 +1379,20 @@ def physics_validated_transform(payload: dict):
         "result": res
     }
 
+
+
+# Phase 87: ROS 2 DDS Autonomous Robotics Bridge
+from src.hal.ros2_bridge import ROS2BridgeDriver
+
+ros2_driver_instance = ROS2BridgeDriver()
+
+@app.post("/api/v1/hal/ros2/telemetry")
+def send_ros2_telemetry(payload: dict):
+    linear = payload.get("linear", [0.0, 0.0, 0.0])
+    angular = payload.get("angular", [0.0, 0.0, 0.0])
+    res = ros2_driver_instance.publish_spatial_twist(linear, angular)
+    return {
+        "status": "ROS2_DISPATCH_COMPLETE",
+        "result": res
+    }
+
