@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Universal-Matrix 13D WebXR UI</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden; background: #000;">
+  <script>
+    const socket = new WebSocket("ws://" + window.location.host + "/ws/v1/spatial/hardware-control");
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
+    const hardwareTarget = new THREE.Mesh(geometry, material);
+    scene.add(hardwareTarget);
+    camera.position.z = 5;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      hardwareTarget.rotation.x += 0.01;
+      hardwareTarget.rotation.y += 0.01;
+
+      if (socket.readyState === WebSocket.OPEN) {
+        socket.send(JSON.stringify({
+          event: "SPATIAL_TRANSFORM",
+          axis_vector: {
+            X: hardwareTarget.position.x.toFixed(3),
+            Y: hardwareTarget.position.y.toFixed(3),
+            Z: hardwareTarget.position.z.toFixed(3)
+          }
+        }));
+      }
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+</body>
+</html>

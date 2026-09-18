@@ -1,4 +1,4 @@
-﻿from src.can_bus_driver import CANBusDriver, CANFramePayload
+from src.can_bus_driver import CANBusDriver, CANFramePayload
 from src.physics_verifier import SymbolicPhysicsVerifier, FieldInvariantPayload
 from src.marx_gate_array import MarxGateArrayController, MarxArrayConfig
 from src.qiskit_quantum_bridge import QiskitQuantumBridge, QuantumCircuitRequest
@@ -1164,4 +1164,170 @@ def hal_system_health_endpoint():
         "status": "HAL_ORCHESTRATION_HEALTH_CHECK_COMPLETE",
         "result": result
     }
+
+
+
+# Phase 82: Real-Time WebXR Spatial Hardware Control & Static UI
+from fastapi.staticfiles import StaticFiles
+from fastapi import WebSocket, WebSocketDisconnect
+import json
+
+app.mount("/spatial", StaticFiles(directory="public", html=True), name="public")
+
+class SpatialHardwareBridge:
+    def __init__(self):
+        self.active_connections: list[WebSocket] = []
+
+    async def connect(self, websocket: WebSocket):
+        await websocket.accept()
+        self.active_connections.append(websocket)
+
+    def disconnect(self, websocket: WebSocket):
+        if websocket in self.active_connections:
+            self.active_connections.remove(websocket)
+
+spatial_bridge = SpatialHardwareBridge()
+
+@app.websocket("/ws/v1/spatial/hardware-control")
+async def spatial_hardware_control_endpoint(websocket: WebSocket):
+    await spatial_bridge.connect(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            payload = json.loads(data)
+            target_axis = payload.get("axis_vector", {"X": 0.0, "Y": 0.0, "Z": 0.0})
+            cnc_response = cnc_driver_instance.execute_gcode_command(
+            )
+            await websocket.send_json({
+                "status": "HARDWARE_POS_UPDATED",
+                "feedback": cnc_response
+            })
+    except WebSocketDisconnect:
+        spatial_bridge.disconnect(websocket)
+
+
+
+# Phase 82: Real-Time WebXR Spatial Hardware Control & Static UI
+from fastapi.staticfiles import StaticFiles
+from fastapi import WebSocket, WebSocketDisconnect
+import json
+
+app.mount("/spatial", StaticFiles(directory="public", html=True), name="public")
+
+class SpatialHardwareBridge:
+    def __init__(self):
+        self.active_connections: list[WebSocket] = []
+
+    async def connect(self, websocket: WebSocket):
+        await websocket.accept()
+        self.active_connections.append(websocket)
+
+    def disconnect(self, websocket: WebSocket):
+        if websocket in self.active_connections:
+            self.active_connections.remove(websocket)
+
+spatial_bridge = SpatialHardwareBridge()
+
+@app.websocket("/ws/v1/spatial/hardware-control")
+async def spatial_hardware_control_endpoint(websocket: WebSocket):
+    await spatial_bridge.connect(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            payload = json.loads(data)
+            target_axis = payload.get("axis_vector", {"X": 0.0, "Y": 0.0, "Z": 0.0})
+            cnc_response = cnc_driver_instance.execute_gcode_command(
+            )
+            await websocket.send_json({
+                "status": "HARDWARE_POS_UPDATED",
+                "feedback": cnc_response
+            })
+    except WebSocketDisconnect:
+        spatial_bridge.disconnect(websocket)
+
+
+
+# Phase 82: Real-Time WebXR Spatial Hardware Control & Static UI
+from fastapi.staticfiles import StaticFiles
+from fastapi import WebSocket, WebSocketDisconnect
+import json
+
+app.mount("/spatial", StaticFiles(directory="public", html=True), name="public")
+
+class SpatialHardwareBridge:
+    def __init__(self):
+        self.active_connections: list[WebSocket] = []
+
+    async def connect(self, websocket: WebSocket):
+        await websocket.accept()
+        self.active_connections.append(websocket)
+
+    def disconnect(self, websocket: WebSocket):
+        if websocket in self.active_connections:
+            self.active_connections.remove(websocket)
+
+spatial_bridge = SpatialHardwareBridge()
+
+@app.websocket("/ws/v1/spatial/hardware-control")
+async def spatial_hardware_control_endpoint(websocket: WebSocket):
+    await spatial_bridge.connect(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            payload = json.loads(data)
+            target_axis = payload.get("axis_vector", {})
+            x = target_axis.get("X", 0)
+            y = target_axis.get("Y", 0)
+            z = target_axis.get("Z", 0)
+            gcode_cmd = f"G01 X{x} Y{y} Z{z}"
+            cnc_response = cnc_driver_instance.execute_gcode_command(gcode_cmd)
+            await websocket.send_json({
+                "status": "HARDWARE_POS_UPDATED",
+                "feedback": cnc_response
+            })
+    except WebSocketDisconnect:
+        spatial_bridge.disconnect(websocket)
+
+
+
+# Phase 82: Real-Time WebXR Spatial Hardware Control & Static UI
+from fastapi.staticfiles import StaticFiles
+from fastapi import WebSocket, WebSocketDisconnect
+import json
+
+app.mount("/spatial", StaticFiles(directory="public", html=True), name="public")
+
+class SpatialHardwareBridge:
+    def __init__(self):
+        self.active_connections = []
+
+    async def connect(self, websocket: WebSocket):
+        await websocket.accept()
+        self.active_connections.append(websocket)
+
+    def disconnect(self, websocket: WebSocket):
+        if websocket in self.active_connections:
+            self.active_connections.remove(websocket)
+
+spatial_bridge = SpatialHardwareBridge()
+
+@app.websocket("/ws/v1/spatial/hardware-control")
+async def spatial_hardware_control_endpoint(websocket: WebSocket):
+    await spatial_bridge.connect(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            payload = json.loads(data)
+            target_axis = payload.get("axis_vector", {})
+            x = target_axis.get("X", 0)
+            y = target_axis.get("Y", 0)
+            z = target_axis.get("Z", 0)
+            gcode_cmd = "G01 X" + str(x) + " Y" + str(y) + " Z" + str(z)
+            cnc_response = cnc_driver_instance.execute_gcode_command(gcode_cmd)
+            await websocket.send_json({
+                "status": "HARDWARE_POS_UPDATED",
+                "feedback": cnc_response
+            })
+    except WebSocketDisconnect:
+        spatial_bridge.disconnect(websocket)
 
