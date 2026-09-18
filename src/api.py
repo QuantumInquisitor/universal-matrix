@@ -1464,3 +1464,20 @@ def compute_photonic_transform(payload: dict):
         "result": res
     }
 
+
+
+# Phase 92: Multi-Agent Autonomous Swarm Consensus
+from src.hal.swarm_consensus import SwarmConsensusEngine
+
+swarm_engine_instance = SwarmConsensusEngine()
+
+@app.post("/api/v1/hal/swarm/consensus")
+def evaluate_swarm_consensus(payload: dict):
+    vector = payload.get("vector", [0.0, 0.0, 0.0])
+    agent_id = payload.get("agent_id", "agent-01")
+    res = swarm_engine_instance.propose_trajectory_consensus(vector, agent_id)
+    return {
+        "status": "SWARM_CONSENSUS_EVALUATION_COMPLETE",
+        "result": res
+    }
+
