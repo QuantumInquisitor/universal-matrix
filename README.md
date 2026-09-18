@@ -132,6 +132,7 @@ $env:PYTHONPATH="."
 * **Phase 70 — Dynamic Hardware Abstraction Layer & Dual-Mode Config (`src/hal/`, `src/config.py`):** Centralized HAL driver architecture implementing Abstract Base Classes to dynamically negotiate runtime mode (`REAL_WORLD_BARE_METAL` vs. `SIMULATED_MOCK_HIL`) via system environment variables (`/api/v1/hal/status`).
 * **Phase 71 — Dual-Mode SocketCAN Hardware Driver (`src/drivers/can_driver.py`):** Real-world SocketCAN interface binding using `python-can` with dynamic fallback to synthetic frame generation (`/api/v1/hardware/can/send`).
 * **Phase 72 — Dual-Mode PyTorch CUDA Driver (`src/drivers/cuda_driver.py`):** Bare-metal NVIDIA GPU acceleration binding via PyTorch (`cuda:0`) with automatic vectorized CPU fallback for hardware-independent execution (`/api/v1/hardware/cuda/exec`).
+* **Phase 73 — Dual-Mode EVM RPC Driver (`src/drivers/evm_driver.py`):** On-chain Ethereum/EVM JSON-RPC provider integration via `web3.py` for live block query and account state verification with synthetic mock fallback (`/api/v1/blockchain/evm/state`).
 
 ---
 
@@ -301,6 +302,8 @@ $env:PYTHONPATH="."
 * **`tests/test_phase_70.py`** — Automated unit test suite validating system mode resolution, configuration overrides, and HAL status endpoints.
 * **`src/drivers/can_driver.py`** — Dual-mode CAN bus hardware driver communicating via physical Linux SocketCAN sockets (`can0`) or simulated frame buffers.
 * **`tests/test_phase_71.py`** — Automated unit test suite verifying CAN telemetry transmission and HAL mode resolution.
+* **`src/drivers/evm_driver.py`** — EVM RPC driver managing Web3 provider connections, block state inspection, and balance queries.
+* **`tests/test_phase_73.py`** — Automated unit test suite validating Web3 RPC node initialization, fallback execution pathways, and chain state responses.
 
 ---
 
@@ -1566,4 +1569,7 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/can/send](http://127.0.
 curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/cuda/exec](http://127.0.0.1:8000/api/v1/hardware/cuda/exec)" `
   -H "Content-Type: application/json" `
   -d '{"input_tensor": [1.0, 2.0, 3.0, 4.0], "scale_factor": 2.0}'
-  
+
+#### Phase 73: EVM RPC Driver Execution
+```powershell
+curl.exe [http://127.0.0.1:8000/api/v1/blockchain/evm/state](http://127.0.0.1:8000/api/v1/blockchain/evm/state)

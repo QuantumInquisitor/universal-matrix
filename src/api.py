@@ -996,3 +996,18 @@ def execute_cuda_kernel_endpoint(payload: dict):
         "result": result
     }
 
+
+
+# Phase 73: Dual-Mode EVM Driver Endpoint
+from src.drivers.evm_driver import EVMDriver
+
+evm_driver_instance = EVMDriver()
+
+@app.get("/api/v1/blockchain/evm/state")
+def evm_state_endpoint(address: str = None):
+    result = evm_driver_instance.query_chain_state(address)
+    return {
+        "status": "EVM_QUERY_COMPLETE",
+        "result": result
+    }
+
