@@ -1331,3 +1331,19 @@ async def spatial_hardware_control_endpoint(websocket: WebSocket):
     except WebSocketDisconnect:
         spatial_bridge.disconnect(websocket)
 
+
+
+# Phase 83: Non-Synthetic High-Dimensional Matrix Processing Endpoint
+from src.core.native_matrix import NativeMatrixEngine
+
+native_matrix_engine = NativeMatrixEngine()
+
+@app.post("/api/v1/matrix/transform/native")
+def native_matrix_transform_endpoint(payload: dict):
+    matrix_data = payload.get("matrix", [[1.0, 0.0], [0.0, 1.0]])
+    result = native_matrix_engine.process_high_dim_matrix(matrix_data)
+    return {
+        "status": "NATIVE_PROCESSING_COMPLETE",
+        "result": result
+    }
+
