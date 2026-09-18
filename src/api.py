@@ -1481,3 +1481,20 @@ def evaluate_swarm_consensus(payload: dict):
         "result": res
     }
 
+
+
+# Phase 93: Closed-Loop Digital Twin Telemetry Engine
+from src.core.digital_twin import DigitalTwinEngine
+
+digital_twin_instance = DigitalTwinEngine()
+
+@app.post("/api/v1/twin/telemetry/sync")
+def sync_digital_twin_telemetry(payload: dict):
+    thermal = payload.get("thermal_celsius", 25.0)
+    vibration = payload.get("vibration_tensor", [0.1, 0.1, 0.1])
+    res = digital_twin_instance.update_twin_state(thermal, vibration)
+    return {
+        "status": "DIGITAL_TWIN_SYNC_COMPLETE",
+        "result": res
+    }
+
