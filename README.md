@@ -116,6 +116,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Phase 56 — EVM Smart Contract & Royalty Ledger Bridge (`src/evm_contract_bridge.py`):** Enterprise licensing and execution proof engine compiling compute unit telemetry into EVM-compatible smart contract payloads for automated, trustless royalty fee calculations and immutable transaction hashing (`/api/v1/ledger/evm/royalty-proof`).
 * **Phase 57 — Photonic Tensor Co-Processor Simulation (`src/photonic_tensor_coprocessor.py`):** Coherent optical waveguide simulator modeling Mach-Zehnder interferometer arrays for zero-latency SO(13) matrix transformations using optical wave superposition (`/api/v1/hardware/photonic/multiply`).
 * **Phase 58 — Zero-Trust Hardware Attestation (`src/zero_trust_attestation.py`):** Cryptographic platform configuration register (PCR) quote verifier interfacing with remote TPM 2.0 modules to validate hardware firmware and kernel integrity before physical execution (`/api/v1/security/attest`).
+* **Phase 59 — Hardware Telemetry Dashboards via Prometheus & Grafana (`src/metrics.py`):** Real-time system instrumentation exposing native Prometheus metrics primitives (Gauges, Counters, Histograms) for tracking compute load, cluster latency, RL reward convergence, and FPGA synthesis events (`/metrics`).
 
 ---
 
@@ -257,6 +258,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`tests/test_phase_57.py`** — Automated unit test suite verifying optical amplitude calculations, wavelength configurations, and vector dimension validation.
 * **`src/zero_trust_attestation.py`** — Remote TPM 2.0 PCR quote verifier and cryptographic attestation token generator.
 * **`tests/test_phase_58.py`** — Automated unit test suite verifying PCR quote hash matching, untrusted platform rejection, and attestation token hashing.
+* **`src/metrics.py`** — Promethean metrics manager defining system counters and gauges for real-time telemetry extraction.
+* **`tests/test_phase_59.py`** — Automated unit test suite verifying metrics recording, label application, and exposition format consistency.
 
 ---
 
@@ -1428,3 +1431,7 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/security/attest](http://127.0.0.
     "pcr_quote_hash": "0x8f3c7d1e0b2a4f6e8d0c1b3a5f7e9d2c",
     "nonce": "session_nonce_99"
   }'
+
+  #### Phase 59: Hardware Telemetry Dashboards (Prometheus)
+```powershell
+curl.exe "[http://127.0.0.1:8000/metrics](http://127.0.0.1:8000/metrics)"

@@ -826,3 +826,14 @@ def verify_hardware_attestation_endpoint(payload: dict):
         "attestation_report": result
     }
 
+
+
+# Hardware Telemetry Dashboards (Prometheus/Grafana) Route
+from fastapi import Response
+from src.metrics import MetricsManager
+
+@app.get("/metrics")
+def prometheus_metrics_endpoint():
+    data, content_type = MetricsManager.export_metrics()
+    return Response(content=data, media_type=content_type)
+
