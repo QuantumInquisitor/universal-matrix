@@ -142,6 +142,7 @@ $env:PYTHONPATH="."
 * **Phase 81 — Universal Multi-Driver Orchestrator (`src/hal/orchestrator.py`):** Unified control plane aggregating real-time diagnostics, active hardware modes, and health metrics across all 10 dual-mode drivers (`/api/v1/hal/health`).
 * **Phase 82 — WebXR Spatial Interface & WebSockets Bridge (`public/index.html`):** Real-time, ultra-low-latency WebXR 3D viewport (Three.js) connected via bi-directional WebSockets (`/ws/v1/spatial/hardware-control`), streaming spatial transforms directly into physical HAL drivers (`/spatial`).
 * **Phase 83 — Native High-Dimensional Matrix Processing (`src/core/native_matrix.py`):** Bare-metal hardware transformation pipeline routing high-dimensional tensor operations directly to CUDA VRAM buffers (`cuda:0`) when physical hardware is present, with vectorized C-level NumPy matrix execution fallbacks (`/api/v1/matrix/transform/native`).
+* **Phase 84 — Hardware-in-the-Loop Safety Interlocks (`src/hal/safety_driver.py`):** Real-time physical parameter boundary validation and emergency stop (E-STOP) triggering mechanism executing prior to physical actuator dispatches (`/api/v1/hal/safety/validate`).
 
 ---
 
@@ -325,6 +326,8 @@ $env:PYTHONPATH="."
 * **`tests/test_phase_81.py`** — Automated unit test suite verifying multi-driver instantiation, unified system health checks, and aggregated status payload schemas.
 * **`public/index.html`** — Interactive Three.js WebXR spatial interface emitting real-time 13D coordinate vectors over WebSocket connections.
 * **`tests/test_phase_82.py`** — Automated unit test suite verifying spatial static mounts, WebXR viewport asset paths, and WebSocket routing contracts.
+* **`src/hal/safety_driver.py`** — Hardware safety driver evaluating incoming spatial velocity vectors against operational physical boundaries and managing system-wide hardware lockout states.
+* **`tests/test_phase_84.py`** — Automated test suite validating velocity threshold checks, normal state passage, and E-STOP lock triggers.
 
 ---
 
@@ -1659,7 +1662,7 @@ uvicorn src.api:app --host 0.0.0.0 --port 8000
 curl.exe -X POST "[http://127.0.0.1:8000/api/v1/matrix/transform/native](http://127.0.0.1:8000/api/v1/matrix/transform/native)" `
   -H "Content-Type: application/json" `
   -d '{"matrix": [[1.0, 2.0], [3.0, 4.0]]}'
-  
+
   #### Phase 83: Native High-Dimensional Matrix Processing Engine
 * **Core Module:** `src/core/native_matrix.py`
 * **Test Suite:** `tests/test_phase_83.py`
@@ -1669,3 +1672,7 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/matrix/transform/native](http://
 ```powershell
 # Execute 10D Metric Transformation Endpoint
 .\venv\Scripts\python.exe -c "import urllib.request, json; data = json.dumps({\"matrix\": [[-1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1]]}).encode(\"utf-8\"); req = urllib.request.Request(\"[http://127.0.0.1:8000/api/v1/matrix/transform/native](http://127.0.0.1:8000/api/v1/matrix/transform/native)\", data=data, headers={\"Content-Type\": \"application/json\"}); print(urllib.request.urlopen(req).read().decode())"
+
+### Phase 84: Validate Hardware Velocity Safety Bounds
+```powershell
+.\venv\Scripts\python.exe -c "import urllib.request, json; data = json.dumps({\"velocity\": 1500.0}).encode(\"utf-8\"); req = urllib.request.Request(\"[http://127.0.0.1:8000/api/v1/hal/safety/validate](http://127.0.0.1:8000/api/v1/hal/safety/validate)\", data=data, headers={\"Content-Type\": \"application/json\"}); print(urllib.request.urlopen(req).read().decode())"

@@ -1347,3 +1347,19 @@ def native_matrix_transform_endpoint(payload: dict):
         "result": result
     }
 
+
+
+# Phase 84: Hardware-in-the-Loop Safety Interlocks
+from src.hal.safety_driver import SafetyInterlockDriver
+
+safety_driver_instance = SafetyInterlockDriver()
+
+@app.post("/api/v1/hal/safety/validate")
+def validate_safety_interlock(payload: dict):
+    velocity = payload.get("velocity", 0.0)
+    result = safety_driver_instance.validate_spatial_vector(velocity)
+    return {
+        "status": "SAFETY_CHECK_COMPLETE",
+        "result": result
+    }
+
