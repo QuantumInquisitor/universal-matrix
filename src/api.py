@@ -933,3 +933,15 @@ def calibrate_topology_endpoint(payload: dict):
         "report": result
     }
 
+
+
+# Phase 70: Hardware Abstraction Layer Endpoint
+from src.hal.factory import HALFactory
+
+@app.get("/api/v1/hal/status")
+def hal_status_endpoint():
+    return {
+        "status": "HAL_OPERATIONAL",
+        "operational_mode": HALFactory.get_driver_mode()
+    }
+
