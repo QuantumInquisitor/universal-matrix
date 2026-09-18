@@ -1108,3 +1108,19 @@ def process_photonic_matrix_endpoint(payload: dict):
         "result": result
     }
 
+
+
+# Phase 79: Dual-Mode FPGA Driver Endpoint
+from src.drivers.fpga_driver import FPGADriver
+
+fpga_driver_instance = FPGADriver()
+
+@app.post("/api/v1/hardware/fpga/flash")
+def flash_fpga_hdl_endpoint(payload: dict):
+    hdl = payload.get("hdl_source", "module main(); endmodule")
+    result = fpga_driver_instance.compile_and_flash_hdl(hdl)
+    return {
+        "status": "FPGA_COMPILATION_COMPLETE",
+        "result": result
+    }
+
