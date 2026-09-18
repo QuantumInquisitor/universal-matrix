@@ -131,6 +131,7 @@ $env:PYTHONPATH="."
 * **Phase 69 — Automated Matrix Field Topology Calibration (`src/topology_calibrator.py`):** Real-time field phase drift analysis and resonance frequency auto-tuning engine applying adaptive compensation factors to maintain matrix alignment (`/api/v1/topology/calibrate`).
 * **Phase 70 — Dynamic Hardware Abstraction Layer & Dual-Mode Config (`src/hal/`, `src/config.py`):** Centralized HAL driver architecture implementing Abstract Base Classes to dynamically negotiate runtime mode (`REAL_WORLD_BARE_METAL` vs. `SIMULATED_MOCK_HIL`) via system environment variables (`/api/v1/hal/status`).
 * **Phase 71 — Dual-Mode SocketCAN Hardware Driver (`src/drivers/can_driver.py`):** Real-world SocketCAN interface binding using `python-can` with dynamic fallback to synthetic frame generation (`/api/v1/hardware/can/send`).
+* **Phase 72 — Dual-Mode PyTorch CUDA Driver (`src/drivers/cuda_driver.py`):** Bare-metal NVIDIA GPU acceleration binding via PyTorch (`cuda:0`) with automatic vectorized CPU fallback for hardware-independent execution (`/api/v1/hardware/cuda/exec`).
 
 ---
 
@@ -311,6 +312,8 @@ This project replaces smooth, infinite spacetime curvature with an absolute, 64-
 * **Phase 66 — EVM Smart Contract Licensing Deployment Scripts (`scripts/deploy_licensing.js`):** Hardhat deployment automation for compiling and publishing the `UniversalMatrixLicensing` contract to EVM-compatible networks (Sepolia, Arbitrum).
 * **`src/topology_calibrator.py`** — Topology calibration engine calculating field phase drift and dynamic signal compensation factors.
 * **`tests/test_phase_69.py`** — Automated unit test suite verifying telemetry ingestion, phase drift calculation, and state transition integrity.
+* **`src/drivers/cuda_driver.py`** — CUDA hardware driver managing device context selection, VRAM tensor allocation, and vectorized scaling kernel dispatches.
+* **`tests/test_phase_72.py`** — Automated unit test suite verifying GPU device initialization, fallback execution pathways, and numerical tensor transformation accuracy.
 
 ---
 
@@ -1558,4 +1561,9 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/can/send](http://127.0.
   -H "Content-Type: application/json" `
   -d '{"arbitration_id": 416, "data": [17, 34, 51, 68]}'
 
+#### Phase 72: CUDA Acceleration Driver Execution
+```powershell
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/cuda/exec](http://127.0.0.1:8000/api/v1/hardware/cuda/exec)" `
+  -H "Content-Type: application/json" `
+  -d '{"input_tensor": [1.0, 2.0, 3.0, 4.0], "scale_factor": 2.0}'
   

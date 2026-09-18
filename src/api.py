@@ -962,3 +962,37 @@ def send_can_frame_endpoint(payload: dict):
         "result": result
     }
 
+
+
+# Phase 72: Dual-Mode CUDA Driver Endpoint
+from src.drivers.cuda_driver import CUDADriver
+
+cuda_driver_instance = CUDADriver()
+
+@app.post("/api/v1/hardware/cuda/exec")
+def execute_cuda_kernel_endpoint(payload: dict):
+    input_tensor = payload.get("input_tensor", [1.0, 2.0, 3.0, 4.0])
+    scale_factor = payload.get("scale_factor", 2.0)
+    result = cuda_driver_instance.execute_tensor_transform(input_tensor, scale_factor)
+    return {
+        "status": "CUDA_EXECUTION_COMPLETE",
+        "result": result
+    }
+
+
+
+# Phase 72: Dual-Mode CUDA Driver Endpoint
+from src.drivers.cuda_driver import CUDADriver
+
+cuda_driver_instance = CUDADriver()
+
+@app.post("/api/v1/hardware/cuda/exec")
+def execute_cuda_kernel_endpoint(payload: dict):
+    input_tensor = payload.get("input_tensor", [1.0, 2.0, 3.0, 4.0])
+    scale_factor = payload.get("scale_factor", 2.0)
+    result = cuda_driver_instance.execute_tensor_transform(input_tensor, scale_factor)
+    return {
+        "status": "CUDA_EXECUTION_COMPLETE",
+        "result": result
+    }
+
