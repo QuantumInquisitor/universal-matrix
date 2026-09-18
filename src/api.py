@@ -1059,3 +1059,35 @@ def execute_cnc_gcode_endpoint(payload: dict):
         "result": result
     }
 
+
+
+# Phase 77: Dual-Mode Marx Generator Driver Endpoint
+from src.drivers.marx_driver import MarxGeneratorDriver
+
+marx_driver_instance = MarxGeneratorDriver()
+
+@app.post("/api/v1/hardware/marx/fire")
+def fire_marx_pulse_endpoint(payload: dict):
+    voltage = payload.get("voltage_kv", 25.0)
+    result = marx_driver_instance.trigger_discharge_pulse(voltage)
+    return {
+        "status": "MARX_DISCHARGE_COMPLETE",
+        "result": result
+    }
+
+
+
+# Phase 77: Dual-Mode Marx Generator Driver Endpoint
+from src.drivers.marx_driver import MarxGeneratorDriver
+
+marx_driver_instance = MarxGeneratorDriver()
+
+@app.post("/api/v1/hardware/marx/fire")
+def fire_marx_pulse_endpoint(payload: dict):
+    voltage = payload.get("voltage_kv", 25.0)
+    result = marx_driver_instance.trigger_discharge_pulse(voltage)
+    return {
+        "status": "MARX_DISCHARGE_COMPLETE",
+        "result": result
+    }
+

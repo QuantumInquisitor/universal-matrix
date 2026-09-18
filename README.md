@@ -137,6 +137,7 @@ $env:PYTHONPATH="."
 .\venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py"
 * **Phase 75 — Dual-Mode Quantum Processor Unit Driver (`src/drivers/qpu_driver.py`):** Live remote QPU backend integration (IBM Quantum / AWS Braket) with Qiskit statevector fallback execution (`/api/v1/hardware/quantum/exec`).
 * **Phase 76 — Dual-Mode CNC Motion Driver (`src/drivers/cnc_driver.py`):** Real-world industrial CNC motion controller binding over RS-232/USB serial interfaces (`pyserial`) for G-code trajectory dispatches with synthetic coordinate simulation fallback (`/api/v1/hardware/cnc/exec`).
+* **Phase 77 — Dual-Mode Marx Generator Driver (`src/drivers/marx_driver.py`):** High-voltage pulsed power discharge driver interfacing with physical GPIO triggers (`RPi.GPIO`) and high-voltage DAQs, featuring dynamic synthetic waveform fallback (`/api/v1/hardware/marx/fire`).
 
 ---
 
@@ -327,6 +328,8 @@ This project replaces smooth, infinite spacetime curvature with an absolute, 64-
 * **`tests/test_phase_75.py`** — Automated unit test suite verifying quantum provider initialization, fallback simulation pathways, and circuit output schemas.
 * **`src/drivers/cnc_driver.py`** — CNC motion driver managing serial controller connections, baud rate handshakes, G-code transmission, and axis coordinate parsing.
 * **`tests/test_phase_76.py`** — Automated unit test suite verifying serial interface initialization, G-code dispatch schemas, and driver state transitions.
+* **`src/drivers/marx_driver.py`** — Marx bank driver managing physical GPIO pin assignments, pulse width modulation, discharge firing routines, and synthetic waveform calculations.
+* **`tests/test_phase_77.py`** — Automated unit test suite validating pulse firing commands, driver state transitions, and high-voltage parameter checks.
 
 ---
 
@@ -1599,4 +1602,9 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/quantum/exec](http://12
 curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/cnc/exec](http://127.0.0.1:8000/api/v1/hardware/cnc/exec)" `
   -H "Content-Type: application/json" `
   -d '{"gcode": "G01 X10.5 Y20.0 Z-1.2 F1500"}'
-  
+
+#### Phase 77: Marx Generator Discharge Driver Execution
+```powershell
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/marx/fire](http://127.0.0.1:8000/api/v1/hardware/marx/fire)" `
+  -H "Content-Type: application/json" `
+  -d '{"voltage_kv": 30.0}'
