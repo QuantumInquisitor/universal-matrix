@@ -853,3 +853,33 @@ def evaluate_autonomous_agent_endpoint(payload: dict):
         "agent_report": result
     }
 
+
+
+# Phase 61: Developer SDK Catalog Endpoint
+@app.get("/api/v1/sdk/info")
+def get_sdk_info():
+    return {
+        "status": "SDK_CATALOG_AVAILABLE",
+        "supported_languages": ["python", "javascript"],
+        "sdks": {
+            "python": "sdk/python/universal_matrix_sdk.py",
+            "javascript": "sdk/js/universalMatrixSdk.js"
+        }
+    }
+
+
+
+# Phase 62: Hardware-in-the-Loop Mock Integration Endpoint
+from src.hardware_mocks import HardwareIntegrationTestFixture
+
+hil_fixture = HardwareIntegrationTestFixture()
+
+@app.post("/api/v1/hardware/hil/test")
+def run_hil_integration_endpoint(payload: dict):
+    initial_state = payload.get("initial_state", [1.0, 2.0, 3.0, 0.0, 0.0, 0.0])
+    result = hil_fixture.run_end_to_end_loop(initial_state)
+    return {
+        "status": result["status"],
+        "hil_report": result
+    }
+
