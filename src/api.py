@@ -1124,3 +1124,18 @@ def flash_fpga_hdl_endpoint(payload: dict):
         "result": result
     }
 
+
+
+# Phase 80: Dual-Mode SpaceX Driver Endpoint
+from src.drivers.spacex_driver import SpaceXDriver
+
+spacex_driver_instance = SpaceXDriver()
+
+@app.get("/api/v1/aerospace/spacex/starlink")
+def spacex_telemetry_endpoint(limit: int = 5):
+    result = spacex_driver_instance.get_constellation_telemetry(limit)
+    return {
+        "status": "SPACEX_TELEMETRY_COMPLETE",
+        "result": result
+    }
+

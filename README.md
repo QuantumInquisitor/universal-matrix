@@ -138,6 +138,7 @@ $env:PYTHONPATH="."
 * **Phase 77 — Dual-Mode Marx Generator Driver (`src/drivers/marx_driver.py`):** High-voltage pulsed power discharge driver interfacing with physical GPIO triggers (`RPi.GPIO`) and high-voltage DAQs, featuring dynamic synthetic waveform fallback (`/api/v1/hardware/marx/fire`).
 * **Phase 78 — Dual-Mode Photonic Coprocessor Driver (`src/drivers/photonic_driver.py`):** Low-level optical matrix transformation driver interfacing with PCIe photonic hardware SDKs and synthetic array phase-shift fallbacks (`/api/v1/hardware/photonic/process`).
 * **Phase 79 — Dual-Mode FPGA Bitstream Driver (`src/drivers/fpga_driver.py`):** Bare-metal FPGA bitstream compiler and JTAG flashing interface calling vendor CLI toolchains (AMD Vivado / Intel Quartus) with synthetic HDL byte-stream fallback (`/api/v1/hardware/fpga/flash`).
+* **Phase 80 — Dual-Mode SpaceX Starlink Driver (`src/drivers/spacex_driver.py`):** Live aerospace constellation telemetry integration fetching real-time Starlink orbital positions, velocities, and spaceTrack metadata with synthetic orbital simulation fallbacks (`/api/v1/aerospace/spacex/starlink`).
 
 ---
 
@@ -336,6 +337,8 @@ This project replaces smooth, infinite spacetime curvature with an absolute, 64-
 * **`tests/test_phase_76.py`** — Automated unit test suite verifying serial interface initialization, G-code dispatch schemas, and driver state transitions.
 * **`src/drivers/marx_driver.py`** — Marx bank driver managing physical GPIO pin assignments, pulse width modulation, discharge firing routines, and synthetic waveform calculations.
 * **`tests/test_phase_77.py`** — Automated unit test suite validating pulse firing commands, driver state transitions, and high-voltage parameter checks.
+* **`src/drivers/spacex_driver.py`** — SpaceX driver managing REST API connections to live Starlink constellation feeds, coordinate parsing (latitude, longitude, altitude, velocity), and simulated satellite fallbacks.
+* **`tests/test_phase_80.py`** — Automated unit test suite validating SpaceX telemetry ingestion, fallback execution pathways, and payload structure integrity.
 
 ---
 
@@ -1626,4 +1629,7 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/photonic/process](http:
 curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/fpga/flash](http://127.0.0.1:8000/api/v1/hardware/fpga/flash)" `
   -H "Content-Type: application/json" `
   -d '{"hdl_source": "module top(input clk, output reg led); endmodule"}'
-  
+
+#### Phase 80: SpaceX Starlink Constellation Driver Execution
+```powershell
+curl.exe "[http://127.0.0.1:8000/api/v1/aerospace/spacex/starlink?limit=5](http://127.0.0.1:8000/api/v1/aerospace/spacex/starlink?limit=5)"
