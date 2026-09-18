@@ -1396,3 +1396,20 @@ def send_ros2_telemetry(payload: dict):
         "result": res
     }
 
+
+
+# Phase 88: Autonomous Spatial Anomaly & Drift Correction
+from src.hal.anomaly_driver import SpatialAnomalyDriver
+
+anomaly_driver_instance = SpatialAnomalyDriver()
+
+@app.post("/api/v1/hal/anomaly/correct")
+def evaluate_spatial_anomaly(payload: dict):
+    target = payload.get("target", [0.0, 0.0, 0.0])
+    feedback = payload.get("feedback", [0.0, 0.0, 0.0])
+    res = anomaly_driver_instance.evaluate_and_correct(target, feedback)
+    return {
+        "status": "ANOMALY_EVALUATION_COMPLETE",
+        "result": res
+    }
+
