@@ -139,6 +139,7 @@ $env:PYTHONPATH="."
 * **Phase 78 — Dual-Mode Photonic Coprocessor Driver (`src/drivers/photonic_driver.py`):** Low-level optical matrix transformation driver interfacing with PCIe photonic hardware SDKs and synthetic array phase-shift fallbacks (`/api/v1/hardware/photonic/process`).
 * **Phase 79 — Dual-Mode FPGA Bitstream Driver (`src/drivers/fpga_driver.py`):** Bare-metal FPGA bitstream compiler and JTAG flashing interface calling vendor CLI toolchains (AMD Vivado / Intel Quartus) with synthetic HDL byte-stream fallback (`/api/v1/hardware/fpga/flash`).
 * **Phase 80 — Dual-Mode SpaceX Starlink Driver (`src/drivers/spacex_driver.py`):** Live aerospace constellation telemetry integration fetching real-time Starlink orbital positions, velocities, and spaceTrack metadata with synthetic orbital simulation fallbacks (`/api/v1/aerospace/spacex/starlink`).
+* **Phase 81 — Universal Multi-Driver Orchestrator (`src/hal/orchestrator.py`):** Unified control plane aggregating real-time diagnostics, active hardware modes, and health metrics across all 10 dual-mode drivers (`/api/v1/hal/health`).
 
 ---
 
@@ -318,6 +319,8 @@ $env:PYTHONPATH="."
 * **`tests/test_phase_78.py`** — Automated unit test suite verifying optical matrix transformations, fallback execution paths, and phase shift output accuracy.
 * **`src/drivers/fpga_driver.py`** — FPGA driver managing vendor toolchain CLI subprocess invocations, bitstream compilation routines, and JTAG flashing procedures.
 * **`tests/test_phase_79.py`** — Automated unit test suite validating toolchain detection, HDL string compilation, and fallback output contracts.
+* **`src/hal/orchestrator.py`** — Orchestrator module instantiating, managing, and inspecting all registered dual-mode hardware drivers across CAN, CUDA, EVM, K8s, QPU, CNC, Marx, Photonic, FPGA, and SpaceX domains.
+* **`tests/test_phase_81.py`** — Automated unit test suite verifying multi-driver instantiation, unified system health checks, and aggregated status payload schemas.
 
 ---
 
@@ -1633,3 +1636,6 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/fpga/flash](http://127.
 #### Phase 80: SpaceX Starlink Constellation Driver Execution
 ```powershell
 curl.exe "[http://127.0.0.1:8000/api/v1/aerospace/spacex/starlink?limit=5](http://127.0.0.1:8000/api/v1/aerospace/spacex/starlink?limit=5)"
+
+* **`src/hal/orchestrator.py`** — Orchestrator module instantiating, managing, and inspecting all registered dual-mode hardware drivers across CAN, CUDA, EVM, K8s, QPU, CNC, Marx, Photonic, FPGA, and SpaceX domains.
+* **`tests/test_phase_81.py`** — Automated unit test suite verifying multi-driver instantiation, unified system health checks, and aggregated status payload schemas.

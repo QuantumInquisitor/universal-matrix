@@ -1150,3 +1150,18 @@ def spacex_dishy_endpoint():
         "result": result
     }
 
+
+
+# Phase 81: Universal HAL Orchestrator Endpoint
+from src.hal.orchestrator import UniversalHALOrchestrator
+
+orchestrator_instance = UniversalHALOrchestrator()
+
+@app.get("/api/v1/hal/health")
+def hal_system_health_endpoint():
+    result = orchestrator_instance.get_system_wide_status()
+    return {
+        "status": "HAL_ORCHESTRATION_HEALTH_CHECK_COMPLETE",
+        "result": result
+    }
+
