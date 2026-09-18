@@ -121,6 +121,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Phase 61 — Python & JavaScript SDK Client Libraries (`sdk/python/`, `sdk/js/`):** Standardized, lightweight client libraries enabling third-party developers to seamlessly interact with system REST API endpoints (`/api/v1/sdk/info`).
 * **Phase 62 — Simulated Hardware Test Fixtures (`src/hardware_mocks.py`):** Virtual hardware-in-the-loop (HIL) integration environment bridging the RL Field Optimizer (`src/rl_field_optimizer.py`), CAN Bus driver, and Marx Gate Array pulse generators (`/api/v1/hardware/hil/test`).
 * **Phase 63 — Containerization & Kubernetes Helm Deployment (`Dockerfile`, `charts/`):** Full microservice packaging via Docker multi-stage builds and Kubernetes orchestration using standard Helm v3 deployment charts.
+* **Phase 64 — Automated GitHub Actions CI/CD Pipeline (`.github/workflows/ci-cd.yml`):** Continuous Integration & Deployment pipeline executing automated unit test discovery, Docker image verification, and Helm chart linting on every push to `main`.
 
 ---
 
@@ -274,6 +275,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`Dockerfile`** — Container build specification configuring Python runtime, application environment variables, and Uvicorn server entry point.
 * **`charts/universal-matrix/`** — Helm v3 chart directory containing parameterizable deployment templates (`deployment.yaml`, `service.yaml`, `values.yaml`).
 * **`tests/test_phase_63.py`** — Automated unit test suite verifying containerization configuration and manifest integrity.
+* **`.github/workflows/ci-cd.yml`** — GitHub Actions automation script defining multi-stage test, container build, and Helm validation jobs.
+* **`tests/test_phase_64.py`** — Automated unit test suite verifying CI/CD workflow existence and YAML step integrity.
 
 ---
 
@@ -1482,3 +1485,6 @@ docker build -t universal-matrix-api:latest .
 
 # Deploy via Helm
 helm install universal-matrix ./charts/universal-matrix
+
+#### Phase 64: CI/CD Pipeline Execution
+Automated pipeline runs automatically on push to GitHub `main` branch.
