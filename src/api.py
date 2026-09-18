@@ -1139,3 +1139,14 @@ def spacex_telemetry_endpoint(limit: int = 5):
         "result": result
     }
 
+
+
+# Phase 80 Expansion: Dishy gRPC Terminal Endpoint
+@app.get("/api/v1/aerospace/spacex/dishy")
+def spacex_dishy_endpoint():
+    result = spacex_driver_instance.query_dishy_grpc_status()
+    return {
+        "status": "DISHY_QUERY_COMPLETE",
+        "result": result
+    }
+
