@@ -152,6 +152,7 @@ $env:PYTHONPATH="."
 * **Phase 87 — ROS 2 / DDS Autonomous Robotics Bridge (`src/hal/ros2_bridge.py`):** Real-time Data Distribution Service (DDS) messaging bridge translating high-dimensional spatial transform matrices into ROS 2 `geometry_msgs/Twist` velocity commands and accepting sensor node telemetry (`/api/v1/hal/ros2/telemetry`).
 * **Phase 88 — Autonomous Spatial Anomaly & Drift Correction (`src/hal/anomaly_driver.py`):** Real-time sensor-fusion feedback loop comparing requested spatial vectors against physical telemetry, automatically detecting mechanical drift and applying dynamic offset matrix corrections (`/api/v1/hal/anomaly/correct`).
 * **Phase 89 — Quantum-Classical Hybrid Tensor Core (`src/core/quantum_hybrid.py`):** Variational Quantum Eigensolver (VQE) and QAOA execution pipeline modulating high-dimensional CUDA tensor transformations with live quantum expectation values (`/api/v1/quantum/hybrid/compute`).
+* **Phase 90 — Distributed Edge-Cluster Mesh Orchestration (`src/hal/mesh_orchestrator.py`):** Multi-node Kubernetes/K3s edge-mesh orchestrator dynamically distributing high-dimensional matrix workloads across edge hardware clusters with automated load-balancing and failover routing (`/api/v1/hal/mesh/dispatch`).
 
 ---
 
@@ -349,6 +350,8 @@ $env:PYTHONPATH="."
 * **`tests/test_phase_88.py`** — Automated unit test suite verifying zero-drift alignment checks, drift threshold triggering, and corrective offset math.
 * **`src/core/quantum_hybrid.py`** — Quantum-classical hybrid engine mapping parameterized circuit rotations onto native hardware tensor spaces.
 * **`tests/test_phase_89.py`** — Automated unit test suite verifying VQE theta parameter mapping, quantum expectation values, and hybrid tensor scalar modulation.
+* **`src/hal/mesh_orchestrator.py`** — Distributed edge orchestrator managing node capacity, active workloads, and health heartbeat failover.
+* **`tests/test_phase_90.py`** — Automated unit test suite verifying edge workload dispatch, task balancing, and cluster state validation.
 
 ---
 
@@ -1731,3 +1734,13 @@ $env:PYTHONPATH="."
 ```powershell
 # Execute Quantum-Classical VQE Tensor Pipeline
 .\venv\Scripts\python.exe -c "import urllib.request, json; data = json.dumps({\"thetas\": [1.57, 0.0], \"matrix\": [[1.0, 2.0], [3.0, 4.0]]}).encode(\"utf-8\"); req = urllib.request.Request(\"[http://127.0.0.1:8000/api/v1/quantum/hybrid/compute](http://127.0.0.1:8000/api/v1/quantum/hybrid/compute)\", data=data, headers={\"Content-Type\": \"application/json\"}); print(urllib.request.urlopen(req).read().decode())"
+
+#### Phase 90: Dispatch Edge Cluster Workload
+* **Core Module:** `src/hal/mesh_orchestrator.py`
+* **Test Suite:** `tests/test_phase_90.py`
+* **API Route:** `POST /api/v1/hal/mesh/dispatch`
+* **Description:** Balances tensor compute jobs across distributed Kubernetes edge nodes.
+
+```powershell
+# Dispatch Tensor Workload to Edge Mesh Cluster
+.\venv\Scripts\python.exe -c "import urllib.request, json; data = json.dumps({\"workload_id\": \"task-spatial-90\", \"tensor_size\": 4096}).encode(\"utf-8\"); req = urllib.request.Request(\"[http://127.0.0.1:8000/api/v1/hal/mesh/dispatch](http://127.0.0.1:8000/api/v1/hal/mesh/dispatch)\", data=data, headers={\"Content-Type\": \"application/json\"}); print(urllib.request.urlopen(req).read().decode())"

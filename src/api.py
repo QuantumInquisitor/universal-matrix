@@ -1430,3 +1430,20 @@ def compute_quantum_hybrid_tensor(payload: dict):
         "result": res
     }
 
+
+
+# Phase 90: Distributed Edge-Cluster Mesh Orchestration
+from src.hal.mesh_orchestrator import EdgeMeshOrchestrator
+
+mesh_orchestrator_instance = EdgeMeshOrchestrator()
+
+@app.post("/api/v1/hal/mesh/dispatch")
+def dispatch_mesh_workload(payload: dict):
+    workload_id = payload.get("workload_id", "task-001")
+    tensor_size = payload.get("tensor_size", 1024)
+    res = mesh_orchestrator_instance.dispatch_workload(workload_id, tensor_size)
+    return {
+        "status": "MESH_DISPATCH_COMPLETE",
+        "result": res
+    }
+
