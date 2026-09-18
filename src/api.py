@@ -900,3 +900,20 @@ def render_spatial_viewport_endpoint(payload: dict):
         "viewport": result
     }
 
+
+
+# Phase 68: CUDA Field Accelerator Endpoint
+from src.cuda_accelerator import CUDAFieldAccelerator
+
+cuda_accelerator = CUDAFieldAccelerator()
+
+@app.post("/api/v1/hardware/cuda/transform")
+def cuda_transform_endpoint(payload: dict):
+    input_tensor = payload.get("input_tensor", [1.0, 2.0, 3.0, 4.0])
+    scale_factor = payload.get("scale_factor", 2.5)
+    result = cuda_accelerator.execute_matrix_transform(input_tensor, scale_factor)
+    return {
+        "status": "CUDA_COMPUTE_COMPLETE",
+        "acceleration_report": result
+    }
+
