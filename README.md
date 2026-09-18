@@ -123,6 +123,8 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **Phase 63 — Containerization & Kubernetes Helm Deployment (`Dockerfile`, `charts/`):** Full microservice packaging via Docker multi-stage builds and Kubernetes orchestration using standard Helm v3 deployment charts.
 * **Phase 64 — Automated GitHub Actions CI/CD Pipeline (`.github/workflows/ci-cd.yml`):** Continuous Integration & Deployment pipeline executing automated unit test discovery, Docker image verification, and Helm chart linting on every push to `main`.
 * **Phase 65 — Live Integration & Production Smoke Tests (`tests/test_e2e_live_server.py`):** In-process ASGI integration test suite utilizing FastAPI TestClient to execute end-to-end request/response assertions across health endpoints, autonomous agent orchestration, and developer SDK route catalogs.
+$env:PYTHONPATH="."
+.\venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py"
 
 ---
 
@@ -279,6 +281,9 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 * **`.github/workflows/ci-cd.yml`** — GitHub Actions automation script defining multi-stage test, container build, and Helm validation jobs.
 * **`tests/test_phase_64.py`** — Automated unit test suite verifying CI/CD workflow existence and YAML step integrity.
 * **`tests/test_e2e_live_server.py`** — Automated end-to-end integration smoke test suite validating HTTP route behavior and payload parsing without subprocess overhead.
+* **`hardhat.config.js`** — Hardhat environment configuration defining EVM network RPC endpoints and compiler settings.
+* **`scripts/deploy_licensing.js`** — Asynchronous deployment automation script for smart contract initialization on EVM networks.
+* **`tests/test_phase_66.py`** — Automated unit test verifying deployment script existence and structure.
 
 ---
 
@@ -287,6 +292,7 @@ A containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) field simulati
 The Universal Playing Field introduces a fully quantized, non-continuous alternative to the geometric spacetime model of General Relativity. It demonstrates that macroscopic orbital mechanics and observational anomalies can be calculated without invoking a physical gravitational force.
 
 This project replaces smooth, infinite spacetime curvature with an absolute, 64-bit digital processing grid. The architecture is driven by the inherent geometry of 3, 6, and 9 vortex mathematics. This 5.0 Open-System Edition maps **108 core internal vertices** wrapped inside an **external 6-node stabilization boundary** mapping directly to the faces of an 8x8 hypercube. It natively integrates an ambient field macro-flux to account for data streaming from the infinite universe completely outside the container network.
+* **Phase 66 — EVM Smart Contract Licensing Deployment Scripts (`scripts/deploy_licensing.js`):** Hardhat deployment automation for compiling and publishing the `UniversalMatrixLicensing` contract to EVM-compatible networks (Sepolia, Arbitrum).
 
 ---
 
@@ -1495,3 +1501,8 @@ Automated pipeline runs automatically on push to GitHub `main` branch.
 ```powershell
 $env:PYTHONPATH="."
 .\venv\Scripts\python.exe -m unittest discover -s tests -p "test_e2e_live_server.py"
+
+#### Phase 66: Smart Contract Deployment
+```powershell
+# Deploy contract locally or to Sepolia via Hardhat
+npx hardhat run scripts/deploy_licensing.js --network sepolia
