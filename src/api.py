@@ -1413,3 +1413,20 @@ def evaluate_spatial_anomaly(payload: dict):
         "result": res
     }
 
+
+
+# Phase 89: Quantum-Classical Hybrid Tensor Core
+from src.core.quantum_hybrid import QuantumClassicalEngine
+
+quantum_engine_instance = QuantumClassicalEngine()
+
+@app.post("/api/v1/quantum/hybrid/compute")
+def compute_quantum_hybrid_tensor(payload: dict):
+    thetas = payload.get("thetas", [0.5, 1.0, 1.5, 2.0])
+    matrix = payload.get("matrix", [[1.0, 0.0], [0.0, 1.0]])
+    res = quantum_engine_instance.execute_hybrid_vqe(thetas, matrix)
+    return {
+        "status": "QUANTUM_HYBRID_COMPUTE_COMPLETE",
+        "result": res
+    }
+

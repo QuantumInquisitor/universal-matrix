@@ -151,6 +151,7 @@ $env:PYTHONPATH="."
 * **Phase 86 — Client-Side WebGPU Compute Shader Pipeline (`public/index.html`):** Direct WebGPU WGSL compute shader execution engine offloading high-dimensional spatial tensor matrix math straight to local client GPU hardware, delivering ultra-low-latency 120 FPS manifold rendering over bi-directional WebSocket telemetry channels.
 * **Phase 87 — ROS 2 / DDS Autonomous Robotics Bridge (`src/hal/ros2_bridge.py`):** Real-time Data Distribution Service (DDS) messaging bridge translating high-dimensional spatial transform matrices into ROS 2 `geometry_msgs/Twist` velocity commands and accepting sensor node telemetry (`/api/v1/hal/ros2/telemetry`).
 * **Phase 88 — Autonomous Spatial Anomaly & Drift Correction (`src/hal/anomaly_driver.py`):** Real-time sensor-fusion feedback loop comparing requested spatial vectors against physical telemetry, automatically detecting mechanical drift and applying dynamic offset matrix corrections (`/api/v1/hal/anomaly/correct`).
+* **Phase 89 — Quantum-Classical Hybrid Tensor Core (`src/core/quantum_hybrid.py`):** Variational Quantum Eigensolver (VQE) and QAOA execution pipeline modulating high-dimensional CUDA tensor transformations with live quantum expectation values (`/api/v1/quantum/hybrid/compute`).
 
 ---
 
@@ -346,6 +347,8 @@ $env:PYTHONPATH="."
 * **`tests/test_phase_87.py`** — Automated unit test suite verifying spatial twist serialization, topic target delivery, and sequence ID increments.
 * **`src/hal/anomaly_driver.py`** — Anomaly detection engine calculating spatial vector Euclidean drift and outputting real-time compensation transforms.
 * **`tests/test_phase_88.py`** — Automated unit test suite verifying zero-drift alignment checks, drift threshold triggering, and corrective offset math.
+* **`src/core/quantum_hybrid.py`** — Quantum-classical hybrid engine mapping parameterized circuit rotations onto native hardware tensor spaces.
+* **`tests/test_phase_89.py`** — Automated unit test suite verifying VQE theta parameter mapping, quantum expectation values, and hybrid tensor scalar modulation.
 
 ---
 
@@ -1718,3 +1721,13 @@ $env:PYTHONPATH="."
 ```powershell
 # Evaluate Drift Error between Target Command and Hardware Feedback
 .\venv\Scripts\python.exe -c "import urllib.request, json; data = json.dumps({\"target\": [1.0, 0.0, 0.0], \"feedback\": [0.8, 0.0, 0.0]}).encode(\"utf-8\"); req = urllib.request.Request(\"[http://127.0.0.1:8000/api/v1/hal/anomaly/correct](http://127.0.0.1:8000/api/v1/hal/anomaly/correct)\", data=data, headers={\"Content-Type\": \"application/json\"}); print(urllib.request.urlopen(req).read().decode())"
+
+#### Phase 89: Quantum-Classical Hybrid VQE Tensor Execution
+* **Core Module:** `src/core/quantum_hybrid.py`
+* **Test Suite:** `tests/test_phase_89.py`
+* **API Route:** `POST /api/v1/quantum/hybrid/compute`
+* **Description:** Binds parameterized quantum state expectations directly to native matrix transformations.
+
+```powershell
+# Execute Quantum-Classical VQE Tensor Pipeline
+.\venv\Scripts\python.exe -c "import urllib.request, json; data = json.dumps({\"thetas\": [1.57, 0.0], \"matrix\": [[1.0, 2.0], [3.0, 4.0]]}).encode(\"utf-8\"); req = urllib.request.Request(\"[http://127.0.0.1:8000/api/v1/quantum/hybrid/compute](http://127.0.0.1:8000/api/v1/quantum/hybrid/compute)\", data=data, headers={\"Content-Type\": \"application/json\"}); print(urllib.request.urlopen(req).read().decode())"
