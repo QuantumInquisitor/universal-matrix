@@ -917,3 +917,19 @@ def cuda_transform_endpoint(payload: dict):
         "acceleration_report": result
     }
 
+
+
+# Phase 69: Topology Calibrator Endpoint
+from src.topology_calibrator import TopologyCalibratorEngine
+
+calibrator_engine = TopologyCalibratorEngine()
+
+@app.post("/api/v1/topology/calibrate")
+def calibrate_topology_endpoint(payload: dict):
+    telemetry = payload.get("telemetry_vector", [1.02, 0.98, 1.05, 1.01])
+    result = calibrator_engine.calibrate_field_topology(telemetry)
+    return {
+        "status": "CALIBRATION_COMPLETE",
+        "report": result
+    }
+

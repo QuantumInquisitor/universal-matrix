@@ -128,6 +128,7 @@ $env:PYTHONPATH="."
 * **Phase 66 — EVM Smart Contract Licensing Deployment Scripts (`scripts/deploy_licensing.js`):** Hardhat deployment automation for compiling and publishing the `UniversalMatrixLicensing` contract to EVM-compatible networks (Sepolia, Arbitrum).
 * **Phase 67 — WebXR Spatial Viewport Engine (`src/spatial_viewport.py`):** Hardware-accelerated WebGPU compute and WebXR rendering pipeline for real-time 3D spatial field projection (`/api/v1/spatial/render`).
 * **Phase 68 — Distributed CUDA GPU Acceleration Engine (`src/cuda_accelerator.py`):** High-throughput CUDA parallel kernel acceleration and host tensor memory management for real-time matrix field scale transformations (`/api/v1/hardware/cuda/transform`).
+* **Phase 69 — Automated Matrix Field Topology Calibration (`src/topology_calibrator.py`):** Real-time field phase drift analysis and resonance frequency auto-tuning engine applying adaptive compensation factors to maintain matrix alignment (`/api/v1/topology/calibrate`).
 
 ---
 
@@ -300,6 +301,8 @@ The Universal Playing Field introduces a fully quantized, non-continuous alterna
 
 This project replaces smooth, infinite spacetime curvature with an absolute, 64-bit digital processing grid. The architecture is driven by the inherent geometry of 3, 6, and 9 vortex mathematics. This 5.0 Open-System Edition maps **108 core internal vertices** wrapped inside an **external 6-node stabilization boundary** mapping directly to the faces of an 8x8 hypercube. It natively integrates an ambient field macro-flux to account for data streaming from the infinite universe completely outside the container network.
 * **Phase 66 — EVM Smart Contract Licensing Deployment Scripts (`scripts/deploy_licensing.js`):** Hardhat deployment automation for compiling and publishing the `UniversalMatrixLicensing` contract to EVM-compatible networks (Sepolia, Arbitrum).
+* **`src/topology_calibrator.py`** — Topology calibration engine calculating field phase drift and dynamic signal compensation factors.
+* **`tests/test_phase_69.py`** — Automated unit test suite verifying telemetry ingestion, phase drift calculation, and state transition integrity.
 
 ---
 
@@ -1525,4 +1528,10 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/spatial/render](http://127.0.0.1
 curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/cuda/transform](http://127.0.0.1:8000/api/v1/hardware/cuda/transform)" `
   -H "Content-Type: application/json" `
   -d '{"input_tensor": [1.0, 2.0, 3.0, 4.0], "scale_factor": 2.5}'
+
+#### Phase 69: Field Topology Calibration
+```powershell
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/topology/calibrate](http://127.0.0.1:8000/api/v1/topology/calibrate)" `
+  -H "Content-Type: application/json" `
+  -d '{"telemetry_vector": [1.02, 0.98, 1.05, 1.01]}'
   
