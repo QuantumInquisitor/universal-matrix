@@ -1011,3 +1011,18 @@ def evm_state_endpoint(address: str = None):
         "result": result
     }
 
+
+
+# Phase 74: Dual-Mode Kubernetes Driver Endpoint
+from src.drivers.k8s_driver import KubernetesDriver
+
+k8s_driver_instance = KubernetesDriver()
+
+@app.get("/api/v1/cloud/k8s/pods")
+def k8s_pods_endpoint(namespace: str = "default"):
+    result = k8s_driver_instance.get_cluster_pod_status(namespace)
+    return {
+        "status": "K8S_ORCHESTRATION_COMPLETE",
+        "result": result
+    }
+

@@ -133,6 +133,8 @@ $env:PYTHONPATH="."
 * **Phase 71 — Dual-Mode SocketCAN Hardware Driver (`src/drivers/can_driver.py`):** Real-world SocketCAN interface binding using `python-can` with dynamic fallback to synthetic frame generation (`/api/v1/hardware/can/send`).
 * **Phase 72 — Dual-Mode PyTorch CUDA Driver (`src/drivers/cuda_driver.py`):** Bare-metal NVIDIA GPU acceleration binding via PyTorch (`cuda:0`) with automatic vectorized CPU fallback for hardware-independent execution (`/api/v1/hardware/cuda/exec`).
 * **Phase 73 — Dual-Mode EVM RPC Driver (`src/drivers/evm_driver.py`):** On-chain Ethereum/EVM JSON-RPC provider integration via `web3.py` for live block query and account state verification with synthetic mock fallback (`/api/v1/blockchain/evm/state`).
+$env:PYTHONPATH="."
+.\venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py"
 
 ---
 
@@ -304,6 +306,8 @@ $env:PYTHONPATH="."
 * **`tests/test_phase_71.py`** — Automated unit test suite verifying CAN telemetry transmission and HAL mode resolution.
 * **`src/drivers/evm_driver.py`** — EVM RPC driver managing Web3 provider connections, block state inspection, and balance queries.
 * **`tests/test_phase_73.py`** — Automated unit test suite validating Web3 RPC node initialization, fallback execution pathways, and chain state responses.
+* **`src/drivers/k8s_driver.py`** — Kubernetes cluster driver managing in-cluster/kubeconfig authentication, namespace scoping, and pod list queries.
+* **`tests/test_phase_74.py`** — Automated unit test suite verifying Kubernetes client initialization, fallback execution pathways, and namespace payload responses.
 
 ---
 
@@ -1573,3 +1577,7 @@ curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/cuda/exec](http://127.0
 #### Phase 73: EVM RPC Driver Execution
 ```powershell
 curl.exe [http://127.0.0.1:8000/api/v1/blockchain/evm/state](http://127.0.0.1:8000/api/v1/blockchain/evm/state)
+
+#### Phase 74: Kubernetes Cluster Driver Execution
+```powershell
+curl.exe "[http://127.0.0.1:8000/api/v1/cloud/k8s/pods?namespace=default](http://127.0.0.1:8000/api/v1/cloud/k8s/pods?namespace=default)"
