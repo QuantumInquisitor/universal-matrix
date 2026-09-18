@@ -1026,3 +1026,20 @@ def k8s_pods_endpoint(namespace: str = "default"):
         "result": result
     }
 
+
+
+# Phase 75: Dual-Mode QPU Driver Endpoint
+from src.drivers.qpu_driver import QPUDriver
+
+qpu_driver_instance = QPUDriver()
+
+@app.post("/api/v1/hardware/quantum/exec")
+def execute_qpu_circuit_endpoint(payload: dict):
+    qubits = payload.get("num_qubits", 2)
+    shots = payload.get("shots", 1024)
+    result = qpu_driver_instance.execute_quantum_circuit(qubits, shots)
+    return {
+        "status": "QPU_EXECUTION_COMPLETE",
+        "result": result
+    }
+

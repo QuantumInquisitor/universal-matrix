@@ -135,6 +135,7 @@ $env:PYTHONPATH="."
 * **Phase 73 — Dual-Mode EVM RPC Driver (`src/drivers/evm_driver.py`):** On-chain Ethereum/EVM JSON-RPC provider integration via `web3.py` for live block query and account state verification with synthetic mock fallback (`/api/v1/blockchain/evm/state`).
 $env:PYTHONPATH="."
 .\venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py"
+* **Phase 75 — Dual-Mode Quantum Processor Unit Driver (`src/drivers/qpu_driver.py`):** Live remote QPU backend integration (IBM Quantum / AWS Braket) with Qiskit statevector fallback execution (`/api/v1/hardware/quantum/exec`).
 
 ---
 
@@ -321,6 +322,8 @@ This project replaces smooth, infinite spacetime curvature with an absolute, 64-
 * **`tests/test_phase_69.py`** — Automated unit test suite verifying telemetry ingestion, phase drift calculation, and state transition integrity.
 * **`src/drivers/cuda_driver.py`** — CUDA hardware driver managing device context selection, VRAM tensor allocation, and vectorized scaling kernel dispatches.
 * **`tests/test_phase_72.py`** — Automated unit test suite verifying GPU device initialization, fallback execution pathways, and numerical tensor transformation accuracy.
+* **`src/drivers/qpu_driver.py`** — QPU driver managing remote quantum provider authentication, backend selection, circuit execution, and shot measurement aggregation.
+* **`tests/test_phase_75.py`** — Automated unit test suite verifying quantum provider initialization, fallback simulation pathways, and circuit output schemas.
 
 ---
 
@@ -1581,3 +1584,10 @@ curl.exe [http://127.0.0.1:8000/api/v1/blockchain/evm/state](http://127.0.0.1:80
 #### Phase 74: Kubernetes Cluster Driver Execution
 ```powershell
 curl.exe "[http://127.0.0.1:8000/api/v1/cloud/k8s/pods?namespace=default](http://127.0.0.1:8000/api/v1/cloud/k8s/pods?namespace=default)"
+
+#### Phase 75: Quantum Processor Unit Driver Execution
+```powershell
+curl.exe -X POST "[http://127.0.0.1:8000/api/v1/hardware/quantum/exec](http://127.0.0.1:8000/api/v1/hardware/quantum/exec)" `
+  -H "Content-Type: application/json" `
+  -d '{"num_qubits": 2, "shots": 1024}'
+  
