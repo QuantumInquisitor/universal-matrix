@@ -1,50 +1,24 @@
-version: '3.8'
+FROM python:3.11-slim
 
-services:
-  matrix-engine:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: universal_matrix_engine
-    ports:
-      - "8000:8000"
-    environment:
-      - PYTHONUNBUFFERED=1
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
+WORKDIR /app
 
-  prometheus:
-    image: prom/prometheus:latest
-    container_name: matrix_prometheus
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    ports:
-      - "9090:9090"
-    depends_on:
-      - matrix-engine
-    restart: unless-stopped
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
-  grafana:
-    image: grafana/grafana:latest
-    container_name: matrix_grafana
-    ports:
-      - "3000:3000"
-    depends_on:
-      - prometheus
-    restart: unless-stopped
+# Copy dependency requirements and install
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-redis:
-    image: redis:7-alpine
-    container_name: matrix_redis
-    ports:
-      - "6379:6379"
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 5s
-      timeout: 3s
-      retries: 5
+# Copy source code and SDKs
+COPY src/ ./src/
+COPY sdk/ ./sdk/
+
+EXPOSE 8000
+
+ENV PYTHONPATH=/app
+
+CMD ["uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "8000"]
+

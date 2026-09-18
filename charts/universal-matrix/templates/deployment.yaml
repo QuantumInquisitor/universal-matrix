@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-engine
+  name: {{ .Release.Name }}-api
   labels:
-    app: {{ .Release.Name }}
+    app: {{ .Release.Name }}-api
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: {{ .Release.Name }}-api
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: {{ .Release.Name }}-api
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -22,9 +22,4 @@ spec:
             - containerPort: 8000
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8000
-            initialDelaySeconds: 5
-            periodSeconds: 10
+
