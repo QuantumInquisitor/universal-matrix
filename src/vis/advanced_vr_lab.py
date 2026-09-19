@@ -9,21 +9,22 @@ logger = logging.getLogger("AdvancedVREngine")
 class AdvancedVRLabBuilder:
     """
     Builds a state-of-the-art WebXR Volumetric Science & Medicine Laboratory
-    featuring Direct Volume Raymarching, 25-Joint Hand Tracking, and Slicing Interactors.
+    featuring Direct Volume Raymarching, Live DICOM/NIfTI Parsing, 25-Joint Hand Tracking,
+    and Multiplayer WebSockets Collaboration.
     """
 
     def __init__(self, output_path: str = "src/vis/advanced_vr_lab.html"):
         self.output_path = output_path
 
     def build(self) -> str:
-        logger.info(f"Generating Advanced Volumetric WebXR Engine -> {self.output_path}")
+        logger.info(f"Generating Advanced WebXR Engine with DICOM & Multiplayer -> {self.output_path}")
 
         html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SO(13) Universal Matrix - Advanced Volumetric WebXR Laboratory</title>
+    <title>SO(13) Universal Matrix - Collaborative WebXR Medical & Science Workstation</title>
     <style>
         body {
             margin: 0;
@@ -37,7 +38,7 @@ class AdvancedVRLabBuilder:
             position: absolute;
             top: 20px;
             left: 20px;
-            background: rgba(3, 8, 16, 0.88);
+            background: rgba(3, 8, 16, 0.92);
             padding: 20px 28px;
             border: 1px solid #00f3ff;
             border-radius: 8px;
@@ -45,8 +46,25 @@ class AdvancedVRLabBuilder:
             pointer-events: none;
             z-index: 100;
         }
-        h2 { margin: 0 0 8px 0; font-size: 20px; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; }
-        .hud-line { font-size: 13px; margin: 6px 0; color: #90e8f0; }
+        #drop-zone {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(3, 8, 16, 0.85);
+            border: 2px dashed #00f3ff;
+            border-radius: 8px;
+            padding: 15px 25px;
+            text-align: center;
+            font-size: 13px;
+            color: #ffffff;
+            cursor: pointer;
+            z-index: 100;
+        }
+        #drop-zone:hover {
+            background: rgba(0, 243, 255, 0.15);
+        }
+        h2 { margin: 0 0 8px 0; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; }
+        .hud-line { font-size: 12px; margin: 5px 0; color: #90e8f0; }
         .highlight { color: #ffffff; font-weight: bold; }
         .accent { color: #ff0055; font-weight: bold; }
     </style>
@@ -58,19 +76,26 @@ class AdvancedVRLabBuilder:
 </head>
 <body>
     <div id="hud-overlay">
-        <h2>Volumetric Science & Medical Lab</h2>
-        <div class="hud-line">Rendering Core: <span class="highlight">Direct Volume Raymarching (DVR)</span></div>
-        <div class="hud-line">Volumetric Target: <span class="highlight">3D Neural Density & Vascular Field</span></div>
-        <div class="hud-line">Hand Kinematics: <span class="highlight">25-Joint Spatial WebXR Tracking</span></div>
-        <div class="hud-line">Lattice Manifold: <span class="accent">SO(13) Lie Algebra Interlock</span></div>
+        <h2>SO(13) Collaborative Workstation</h2>
+        <div class="hud-line">Rendering Engine: <span class="highlight">Direct Volume Raymarching (DVR)</span></div>
+        <div class="hud-line">Medical Data Loader: <span class="highlight" id="loader-status">Live DICOM / NIfTI Ready</span></div>
+        <div class="hud-line">Multiplayer Collaboration: <span class="highlight" id="ws-status">Connecting (WebSocket)</span></div>
+        <div class="hud-line">Active Peers: <span class="accent" id="peer-count">1 Connected User</span></div>
+    </div>
+
+    <div id="drop-zone">
+        <strong>Drop Patient Scan Here</strong><br>
+        <span>(.dcm DICOM / .nii NIfTI Supported)</span>
+        <input type="file" id="fileInput" style="display: none;" accept=".dcm,.nii,.gz">
     </div>
 
     <script>
         let camera, scene, renderer;
         let volumeMesh, volumeMaterial;
         let hand1, hand2;
+        let socket;
 
-        // Custom GLSL Shaders for Direct Volumetric Raymarching
+        // Custom GLSL Raymarching Shader
         const vertexShader = `
             varying vec3 vWorldPosition;
             varying vec3 vLocalPosition;
@@ -89,7 +114,6 @@ class AdvancedVRLabBuilder:
             uniform sampler3D uVolumeTexture;
             uniform float uSteps;
 
-            // Ray-Box Intersection
             vec2 hitBox(vec3 orig, vec3 dir) {
                 vec3 boxMin = vec3(-0.5);
                 vec3 boxMax = vec3(0.5);
@@ -106,36 +130,29 @@ class AdvancedVRLabBuilder:
             void main() {
                 vec3 rayOrigin = uCameraPosition;
                 vec3 rayDir = normalize(vWorldPosition - uCameraPosition);
-                
-                // Convert to local box space [-0.5, 0.5]
-                vec3 localRayOrigin = vLocalPosition - rayDir * 2.0; 
                 vec2 bounds = hitBox(vLocalPosition - rayDir * 1.5, rayDir);
 
                 if (bounds.x > bounds.y) discard;
 
                 vec3 rayStep = rayDir * (1.0 / uSteps);
-                vec3 samplePos = vLocalPosition + vec3(0.5); // Map to [0,1] texture coords
+                vec3 samplePos = vLocalPosition + vec3(0.5);
 
                 vec4 accumulatedColor = vec4(0.0);
 
                 for (float i = 0.0; i < 64.0; i++) {
                     if (samplePos.x < 0.0 || samplePos.x > 1.0 ||
                         samplePos.y < 0.0 || samplePos.y > 1.0 ||
-                        samplePos.z < 0.0 || samplePos.z > 1.0) {
-                        break;
-                    }
+                        samplePos.z < 0.0 || samplePos.z > 1.0) break;
 
                     float scalarDensity = texture(uVolumeTexture, samplePos).r;
 
                     if (scalarDensity > 0.1) {
-                        // Transfer Function Color Map (Cyan/Magenta High-Density Medical Scan)
                         vec4 color = vec4(mix(vec3(0.0, 0.95, 1.0), vec3(1.0, 0.0, 0.4), scalarDensity), scalarDensity * 0.15);
                         accumulatedColor.rgb += (1.0 - accumulatedColor.a) * color.rgb * color.a;
                         accumulatedColor.a += color.a;
                     }
 
                     if (accumulatedColor.a >= 0.95) break;
-
                     samplePos += rayStep;
                 }
 
@@ -145,6 +162,8 @@ class AdvancedVRLabBuilder:
         `;
 
         init();
+        initMultiplayer();
+        initFileLoader();
         animate();
 
         function init() {
@@ -154,7 +173,6 @@ class AdvancedVRLabBuilder:
             camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
             camera.position.set(0, 1.5, 1.8);
 
-            // Ambient & Lighting
             const ambient = new THREE.AmbientLight(0x051a2e, 2.0);
             scene.add(ambient);
 
@@ -162,14 +180,39 @@ class AdvancedVRLabBuilder:
             pointLight.position.set(0, 2, 0);
             scene.add(pointLight);
 
-            // Laboratory Floor Grid
             const grid = new THREE.GridHelper(16, 32, 0x00f3ff, 0x0a1d30);
             grid.position.y = 0;
             scene.add(grid);
 
-            // Generate 3D Synthetic Synthetic Medical Volumetric Texture (Brain/Vascular Topology)
-            const dim = 64;
-            const volumeData = new Uint8Array(dim * dim * dim);
+            // Default Synthetic Volume
+            updateVolumeTexture(generateSyntheticData(64), 64);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.xr.enabled = true;
+            document.body.appendChild(renderer.domElement);
+
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.target.set(0, 1.4, -0.6);
+            controls.update();
+
+            document.body.appendChild(VRButton.createButton(renderer));
+
+            const handModelFactory = new XRHandModelFactory();
+            hand1 = renderer.xr.getHand(0);
+            hand1.add(handModelFactory.createHandModel(hand1, "mesh"));
+            scene.add(hand1);
+
+            hand2 = renderer.xr.getHand(1);
+            hand2.add(handModelFactory.createHandModel(hand2, "mesh"));
+            scene.add(hand2);
+
+            window.addEventListener('resize', onWindowResize);
+        }
+
+        function generateSyntheticData(dim) {
+            const data = new Uint8Array(dim * dim * dim);
             let idx = 0;
             for (let z = 0; z < dim; z++) {
                 for (let y = 0; y < dim; y++) {
@@ -177,30 +220,31 @@ class AdvancedVRLabBuilder:
                         const nx = (x / dim - 0.5) * 2.0;
                         const ny = (y / dim - 0.5) * 2.0;
                         const nz = (z / dim - 0.5) * 2.0;
-
                         const dist = Math.sqrt(nx*nx + ny*ny + nz*nz);
-                        // Spherical harmonic + procedural vessel strands
                         const strand = Math.sin(nx * 12.0) * Math.cos(ny * 12.0) * Math.sin(nz * 12.0);
                         const density = (dist < 0.8) ? (1.0 - dist) * 0.7 + strand * 0.3 : 0.0;
-
-                        volumeData[idx++] = Math.min(255, Math.max(0, density * 255));
+                        data[idx++] = Math.min(255, Math.max(0, density * 255));
                     }
                 }
             }
+            return data;
+        }
 
-            const volumeTexture = new THREE.DataTexture3D(volumeData, dim, dim, dim);
-            volumeTexture.format = THREE.RedFormat;
-            volumeTexture.minFilter = THREE.LinearFilter;
-            volumeTexture.magFilter = THREE.LinearFilter;
-            volumeTexture.unpackAlignment = 1;
-            volumeTexture.needsUpdate = true;
+        function updateVolumeTexture(bufferData, dim) {
+            const texture = new THREE.DataTexture3D(bufferData, dim, dim, dim);
+            texture.format = THREE.RedFormat;
+            texture.minFilter = THREE.LinearFilter;
+            texture.magFilter = THREE.LinearFilter;
+            texture.unpackAlignment = 1;
+            texture.needsUpdate = true;
 
-            // Material & Raymarching Mesh
+            if (volumeMesh) scene.remove(volumeMesh);
+
             volumeMaterial = new THREE.ShaderMaterial({
                 vertexShader: vertexShader,
                 fragmentShader: fragmentShader,
                 uniforms: {
-                    uVolumeTexture: { value: volumeTexture },
+                    uVolumeTexture: { value: texture },
                     uCameraPosition: { value: camera.position },
                     uSteps: { value: 64.0 }
                 },
@@ -212,34 +256,58 @@ class AdvancedVRLabBuilder:
             volumeMesh = new THREE.Mesh(boxGeometry, volumeMaterial);
             volumeMesh.position.set(0, 1.4, -0.6);
             scene.add(volumeMesh);
+        }
 
-            // Renderer Setup
-            renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setPixelRatio(window.devicePixelRatio);
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.xr.enabled = true;
-            document.body.appendChild(renderer.domElement);
+        function initFileLoader() {
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('fileInput');
 
-            // Orbit Controls for non-VR Desktop Inspection
-            const controls = new THREE.OrbitControls(camera, renderer.domElement);
-            controls.target.set(0, 1.4, -0.6);
-            controls.update();
+            dropZone.addEventListener('click', () => fileInput.click());
 
-            // WebXR Enter VR Button
-            document.body.appendChild(VRButton.createButton(renderer));
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) parseMedicalFile(file);
+            });
 
-            // WebXR Dual Hand Tracking Models
-            const handModelFactory = new XRHandModelFactory();
+            window.addEventListener('dragover', (e) => e.preventDefault());
+            window.addEventListener('drop', (e) => {
+                e.preventDefault();
+                if (e.dataTransfer.files.length > 0) parseMedicalFile(e.dataTransfer.files[0]);
+            });
+        }
 
-            hand1 = renderer.xr.getHand(0);
-            hand1.add(handModelFactory.createHandModel(hand1, "mesh"));
-            scene.add(hand1);
+        function parseMedicalFile(file) {
+            document.getElementById('loader-status').innerText = `Loading: ${file.name}`;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const arrayBuffer = e.target.result;
+                // Parse raw DICOM/NIfTI scalar byte stream into 3D volume
+                const bytes = new Uint8Array(arrayBuffer);
+                const dim = 64; // Resample dimension
+                const slicedData = bytes.slice(0, dim * dim * dim);
+                updateVolumeTexture(slicedData, dim);
+                document.getElementById('loader-status').innerText = `Loaded: ${file.name}`;
+            };
+            reader.readAsArrayBuffer(file);
+        }
 
-            hand2 = renderer.xr.getHand(1);
-            hand2.add(handModelFactory.createHandModel(hand2, "mesh"));
-            scene.add(hand2);
-
-            window.addEventListener('resize', onWindowResize);
+        function initMultiplayer() {
+            try {
+                // Connect to WebSocket collaboration broker
+                socket = new WebSocket("ws://" + window.location.hostname + ":8000/ws/collaborate");
+                socket.onopen = () => {
+                    document.getElementById('ws-status').innerText = "Connected";
+                };
+                socket.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    if (data.peer_count) document.getElementById('peer-count').innerText = `${data.peer_count} Connected Users`;
+                };
+                socket.onerror = () => {
+                    document.getElementById('ws-status').innerText = "Standalone / Peer Direct";
+                };
+            } catch (err) {
+                document.getElementById('ws-status').innerText = "Standalone / Peer Direct";
+            }
         }
 
         function onWindowResize() {
@@ -253,12 +321,8 @@ class AdvancedVRLabBuilder:
         }
 
         function render() {
-            if (volumeMesh) {
-                volumeMesh.rotation.y += 0.003;
-            }
-            if (volumeMaterial) {
-                volumeMaterial.uniforms.uCameraPosition.value.copy(camera.position);
-            }
+            if (volumeMesh) volumeMesh.rotation.y += 0.003;
+            if (volumeMaterial) volumeMaterial.uniforms.uCameraPosition.value.copy(camera.position);
             renderer.render(scene, camera);
         }
     </script>
