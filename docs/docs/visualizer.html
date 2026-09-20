@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Matrix Engine — 3D Lattice & Dispersion Visualizer</title>
+    <!-- Three.js for 3D WebGL Rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- Chart.js for Quantitative Dispersion Plotting -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --panel-bg: rgba(16, 23, 42, 0.85);
+            --border-color: #1e293b;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --accent-gold: #f59e0b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow: hidden;
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Viewport Layout */
+        #viewport-container {
+            flex: 1;
+            position: relative;
+            height: 100%;
+        }
+
+        #canvas3d {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Sidebar Control Panel */
+        #sidebar {
+            width: 420px;
+            background: var(--panel-bg);
+            backdrop-filter: blur(12px);
+            border-left: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 20px;
+            overflow-y: auto;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--accent-cyan);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: rgba(30, 41, 59, 0.4);
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .control-group label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .control-group label span.val {
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent-cyan);
+            cursor: pointer;
+        }
+
+        /* Metrics Overlay */
+        #overlay-stats {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--panel-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px 20px;
+            display: flex;
+            gap: 25px;
+            pointer-events: none;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .stat-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--accent-cyan);
+        }
+
+        /* Chart Canvas */
+        #chart-container {
+            height: 240px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 8px 12px;
+            background: #1e293b;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--accent-cyan);
+            color: #000;
+            border-color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 3D WebGL Canvas Container -->
+    <div id="viewport-container">
+        <canvas id="canvas3d"></canvas>
+        
+        <!-- Live HUD Stats -->
+        <div id="overlay-stats">
+            <div class="stat-item">
+                <span class="stat-label">Core Nodes (N_core)</span>
+                <span class="stat-value" style="color: var(--accent-cyan)">108</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Boundary Vector (B)</span>
+                <span class="stat-value" style="color: var(--accent-gold)">6 (∑=117)</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">System Topology</span>
+                <span class="stat-value" style="color: var(--accent-purple)">SO(13) Toroidal</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Predicted 100 GeV Delay</span>
+                <span class="stat-value" id="hud-delay">15.8336 µs</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Control & Plot Panel -->
+    <div id="sidebar">
+        <h1>Universal Matrix visualizer</h1>
+
+        <!-- Controls -->
+        <div class="control-group">
+            <label>Cosmological Distance <span class="val" id="val-dist">1.0e9 ly</span></label>
+            <input type="range" id="slider-dist" min="6" max="10" step="0.1" value="9.0">
+        </div>
+
+        <div class="control-group">
+            <label>Photon Energy Range <span class="val" id="val-energy">100 GeV</span></label>
+            <input type="range" id="slider-energy" min="1" max="500" step="1" value="100">
+        </div>
+
+        <div class="control-group">
+            <label>Toroid Rotation Speed</label>
+            <input type="range" id="slider-speed" min="0" max="0.05" step="0.002" value="0.01">
+        </div>
+
+        <div class="btn-group">
+            <button id="btn-toggle-wireframe">Toggle Torus Mesh</button>
+            <button id="btn-reset-cam">Reset View</button>
+        </div>
+
+        <!-- Chart -->
+        <div class="control-group" style="flex: 1; min-height: 260px;">
+            <label>Photon Arrival Dispersion (Δτ vs Energy)</label>
+            <div id="chart-container">
+                <canvas id="dispersionChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. PHYSICAL CONSTANTS & CALCULATION ENGINE ---
+        const E_PLANCK = 1.9561e9;          // Joules
+        const LIGHT_SPEED = 299792458.0;    // m/s
+        const LY_TO_METERS = 9.46073e15;
+        const GEV_TO_JOULES = 1.60218e-10;
+        const ALPHA_GEOMETRIC = 1.0 / (54.0 * Math.PI * Math.PI);
+        const B_BOUNDARY = 6;
+        const N_CORE = 108;
+
+        function calculateDelayUs(energyGev, distanceLy) {
+            const distanceMeters = distanceLy * LY_TO_METERS;
+            const energyJoules = energyGev * GEV_TO_JOULES;
+            const energyRatio = energyJoules / E_PLANCK;
+            const boundaryRatio = Math.pow(B_BOUNDARY / N_CORE, 2);
+            const timeOfFlight = distanceMeters / LIGHT_SPEED;
+            const delaySeconds = energyRatio * boundaryRatio * ALPHA_GEOMETRIC * timeOfFlight * 10.0;
+            return delaySeconds * 1.0e6; // Convert to microseconds
+        }
+
+        // --- 2. THREE.JS 3D SCENE SETUP ---
+        const container = document.getElementById('viewport-container');
+        const canvas = document.getElementById('canvas3d');
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x0b0f19, 0.015);
+
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.set(0, 15, 30);
+
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambientLight);
+
+        const pointLight1 = new THREE.PointLight(0x06b6d4, 2, 50);
+        pointLight1.position.set(0, 10, 0);
+        scene.add(pointLight1);
+
+        const pointLight2 = new THREE.PointLight(0xf59e0b, 2, 50);
+        pointLight2.position.set(0, -10, 0);
+        scene.add(pointLight2);
+
+        // --- 3. BUILD 114-NODE DISCRETE TOPOLOGY ---
+        const groupSup = new THREE.Group();   // S_up Torus (54 Nodes)
+        const groupSdown = new THREE.Group(); // S_down Torus (54 Nodes)
+        const groupAxis = new THREE.Group();  // Central Vortex Axis (6 Boundary Nodes)
+        const sceneGroup = new THREE.Group();
+
+        // Node Geometries & Materials
+        const coreGeo = new THREE.SphereGeometry(0.35, 16, 16);
+        const axisGeo = new THREE.CylinderGeometry(0.4, 0.4, 0.6, 16);
+
+        const matSup = new THREE.MeshStandardMaterial({ color: 0x06b6d4, roughness: 0.2, metalness: 0.8, emissive: 0x0284c7, emissiveIntensity: 0.3 });
+        const matSdown = new THREE.MeshStandardMaterial({ color: 0x8b5cf6, roughness: 0.2, metalness: 0.8, emissive: 0x6d28d9, emissiveIntensity: 0.3 });
+        const matAxis = new THREE.MeshStandardMaterial({ color: 0xf59e0b, roughness: 0.1, metalness: 0.9, emissive: 0xd97706, emissiveIntensity: 0.6 });
+
+        // Generate 54 Nodes for S_up Torus (R=8, r=2.5)
+        const R = 8.0, r = 2.5;
+        for (let i = 0; i < 54; i++) {
+            const u = (i / 54) * Math.PI * 2;
+            const v = (i % 9 / 9) * Math.PI * 2;
+            const x = (R + r * Math.cos(v)) * Math.cos(u);
+            const y = r * Math.sin(v);
+            const z = (R + r * Math.cos(v)) * Math.sin(u);
+
+            const node = new THREE.Mesh(coreGeo, matSup);
+            node.position.set(x, y, z);
+            groupSup.add(node);
+        }
+
+        // Generate 54 Nodes for S_down Torus (Counter-rotating, inverted geometry)
+        for (let i = 0; i < 54; i++) {
+            const u = (i / 54) * Math.PI * 2;
+            const v = (i % 9 / 9) * Math.PI * 2;
+            const x = (R + r * Math.cos(v + Math.PI)) * Math.cos(-u);
+            const y = -r * Math.sin(v);
+            const z = (R + r * Math.cos(v + Math.PI)) * Math.sin(-u);
+
+            const node = new THREE.Mesh(coreGeo, matSdown);
+            node.position.set(x, y, z);
+            groupSdown.add(node);
+        }
+
+        // Generate 6 Central Axis Boundary Vector Nodes
+        for (let i = 0; i < 6; i++) {
+            const y = (i - 2.5) * 2.2;
+            const node = new THREE.Mesh(axisGeo, matAxis);
+            node.position.set(0, y, 0);
+            groupAxis.add(node);
+        }
+
+        // Wireframe Torus Overlay Mesh
+        const torusMeshGeo = new THREE.TorusGeometry(R, r, 16, 50);
+        const torusWireMat = new THREE.MeshBasicMaterial({ color: 0x1e293b, wireframe: true, transparent: true, opacity: 0.25 });
+        const torusMesh = new THREE.Mesh(torusMeshGeo, torusWireMat);
+        torusMesh.rotation.x = Math.PI / 2;
+
+        sceneGroup.add(groupSup);
+        sceneGroup.add(groupSdown);
+        sceneGroup.add(groupAxis);
+        sceneGroup.add(torusMesh);
+        scene.add(sceneGroup);
+
+        // --- 4. CHART.JS DISPERSION PLOT ---
+        const ctx = document.getElementById('dispersionChart').getContext('2d');
+        const dispersionChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [1, 10, 25, 50, 75, 100, 200, 300, 400, 500],
+                datasets: [
+                    {
+                        label: '114-Node Matrix Model (µs)',
+                        data: [],
+                        borderColor: '#06b6d4',
+                        backgroundColor: 'rgba(6, 182, 212, 0.1)',
+                        fill: true,
+                        tension: 0.1,
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'General Relativity (Δτ = 0)',
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        borderColor: '#f59e0b',
+                        borderDash: [5, 5],
+                        borderWidth: 1.5,
+                        pointRadius: 0
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Photon Energy (GeV)', color: '#94a3b8', font: { size: 10 } },
+                        ticks: { color: '#94a3b8', font: { size: 9 } },
+                        grid: { color: '#1e293b' }
+                    },
+                    y: {
+                        title: { display: true, text: 'Delay Δτ (µs)', color: '#94a3b8', font: { size: 10 } },
+                        ticks: { color: '#94a3b8', font: { size: 9 } },
+                        grid: { color: '#1e293b' }
+                    }
+                },
+                plugins: {
+                    legend: { labels: { color: '#f8fafc', font: { size: 10 } } }
+                }
+            }
+        });
+
+        // --- 5. INTERACTIVE CONTROLS & UPDATES ---
+        let rotationSpeed = 0.01;
+
+        function updateSimulation() {
+            const expDist = parseFloat(document.getElementById('slider-dist').value);
+            const distanceLy = Math.pow(10, expDist);
+            const currentEnergy = parseFloat(document.getElementById('slider-energy').value);
+
+            // Update UI Labels
+            document.getElementById('val-dist').innerText = distanceLy.toExponential(2) + ' ly';
+            document.getElementById('val-energy').innerText = currentEnergy + ' GeV';
+
+            // Calculate current benchmark delay
+            const currentDelay = calculateDelayUs(currentEnergy, distanceLy);
+            document.getElementById('hud-delay').innerText = currentDelay.toFixed(4) + ' µs';
+
+            // Update Chart Dataset
+            const energies = [1, 10, 25, 50, 75, 100, 200, 300, 400, 500];
+            const delays = energies.map(e => calculateDelayUs(e, distanceLy));
+            dispersionChart.data.datasets[0].data = delays;
+            dispersionChart.update();
+        }
+
+        // Event Listeners
+        document.getElementById('slider-dist').addEventListener('input', updateSimulation);
+        document.getElementById('slider-energy').addEventListener('input', updateSimulation);
+        document.getElementById('slider-speed').addEventListener('input', (e) => {
+            rotationSpeed = parseFloat(e.target.value);
+        });
+
+        document.getElementById('btn-toggle-wireframe').addEventListener('click', () => {
+            torusMesh.visible = !torusMesh.visible;
+        });
+
+        document.getElementById('btn-reset-cam').addEventListener('click', () => {
+            camera.position.set(0, 15, 30);
+            controls.target.set(0, 0, 0);
+        });
+
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+
+        // --- 6. ANIMATION LOOP ---
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Counter-rotate the toroidal layers
+            groupSup.rotation.y += rotationSpeed;
+            groupSdown.rotation.y -= rotationSpeed;
+            groupAxis.rotation.y += rotationSpeed * 1.5;
+
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        // Initial launch
+        updateSimulation();
+        animate();
+    </script>
+</body>
+</html>

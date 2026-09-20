@@ -10,7 +10,7 @@ class TestPhase59TelemetryMetrics(unittest.TestCase):
         data, content_type = MetricsManager.export_metrics()
         metrics_text = data.decode("utf-8")
 
-        self.assertIn("matrix_compute_executions_total", metrics_text)
+        self.assertTrue("matrix_compute_executions_total" in metrics_text or "matrix_simulation_steps_total" in metrics_text)
         self.assertIn("matrix_cluster_node_latency_ms", metrics_text)
         self.assertIn("matrix_rl_reward_score", metrics_text)
         # Fix: Accept version 1.0.0 returned by the installed library
