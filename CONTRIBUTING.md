@@ -33,4 +33,4 @@ Submit your branch changes back to our main tree. Ensure your PR description cle
 *   The specific node interaction layer modified ($108$ core nodes vs. $6$ outer gate nodes).
 *   A brief confirmation that no standard field equations or continuums were reintroduced.
 
-Thank you for helping us scale this discrete open-system matrix framework!
+Thank you for helping us scale this open-system matrix framework!
