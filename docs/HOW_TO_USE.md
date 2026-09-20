@@ -123,3 +123,33 @@ helm install matrix-release ./charts/universal-matrix
 
 # Inspect active pod health and ingress routes
 kubectl get pods -l app=universal-matrix
+
+---
+
+## 7. Running the Physics Prediction & Verification Suite
+
+To verify the mathematical proofs, continuum limit convergence, and falsifiable quantum gravity dispersion predictions against baseline General Relativity:
+
+```bash
+# 1. Run the physics prediction test suite (GRB time delay & continuum limit convergence)
+python tests/test_experimental_predictions.py
+
+# 2. Run the core mathematical reconciliation test suite
+python tests/test_math_reconciliation.py
+
+# 3. Run all repository tests simultaneously
+python -m unittest discover -s tests -p "test_*.py"
+
+##8. Running Observational Analysis & Hardware Telemetry Drivers
+
+To execute the empirical data pipeline and hardware abstraction layer (HAL) drivers for real-world or synthetic testing:
+
+```bash
+# 1. Run the GRB astronomical event analysis pipeline (evaluates photon arrival dispersion)
+python scripts/analyze_grb_data.py --distance-ly 1.0e9
+
+# 2. Run the GRB analysis pipeline testing the null General Relativity hypothesis
+python scripts/analyze_grb_data.py --inject-null
+
+# 3. Execute the toroidal laser interferometry HAL driver (synthetic/hardware telemetry mode)
+python src/hal/interferometer_driver.py
