@@ -120,11 +120,20 @@ The core architecture operates across a 114-node discrete lattice—comprising 1
 
 The platform operates on a 114-node discrete coordinate lattice, providing a deterministic mathematical framework for high-dimensional spatial compute and hardware orchestration:
 
-* **Bare-Metal $SO(13)$ Native Tensor Core (`src/core/native_matrix.py`)**: Direct CUDA VRAM memory buffer management executing 13D Givens matrix rotations with zero-copy vectorized CPU fallbacks.
+* **Bare-Metal $SO(13)$ Native Tensor Core (`src/core/native_matrix.py`)**: Operating on a 64-bit integer coordinate addressing space with vectorized float32/float64 CUDA GPU acceleration, executing 13D Givens matrix rotations with zero-copy vectorized CPU fallbacks.
 * **Dual-Mode Hardware Abstraction Layer (HAL) (`src/hal/`)**: Centralized driver orchestrator negotiating real-world bare-metal hardware execution vs. synthetic HIL simulations across 10 hardware domains (CAN bus, CNC G-code, QPU quantum circuits, ROS 2 DDS, and SpaceX Starlink telemetry).
 * **Deterministic Physics-Informed Neural Operator (PINO) (`src/core/pino_engine.py`)**: Energy conservation and kinematic boundary enforcement engine that validates tensor state transitions against physical invariants before actuator dispatch.
 * **Quantum-Classical Hybrid Tensor Core (`src/core/quantum_hybrid.py`)**: Variational Quantum Eigensolver (VQE) and QAOA execution pipeline modulating CUDA spatial tensors with live quantum expectation values.
 * **High-Availability Edge Cluster Mesh (`src/hal/mesh_orchestrator.py`)**: Multi-node Kubernetes edge mesh distributing spatial compute workloads with automated failover and zero-downtime streaming.
+
+---
+
+## Core Engine Architecture
+
+The project engine is deployed via `calculator.py`. The architecture maps a balanced 64-bit processing grid split into distinct zones:
+* **The 108 Core Nodes:** Divided into 54 electric inward nodes (black holes) and 54 electromagnetic outward nodes (white holes).
+* **The 6 Outer Gate Nodes:** Anchored to the faces of an 8x8 hypercube to filter external ambient data.
+* **Ambient Field Flux Loop:** Simulates environmental pressure from the macro-void surrounding the container.
 
 ---
 
