@@ -164,6 +164,32 @@ Detailed operational procedures and architecture manifests are organized across 
 * Repository Architecture Manifest (docs/REPOSITORY_MANIFEST.md): Exhaustive file-by-file map of all core math engines, HAL drivers, API routes, and test suites.
 * Core Feature Implementation Log (docs/FEATURE_HISTORY.md): Historical milestone register covering the complete development lifecycle.
 
+--- 
+
+## Commercial Licensing & Legal Framework
+
+This project is governed under a Dual-Licensing Strategy:
+1. Open Source (GNU AGPLv3): Free for individual developers, academic research, and open-source applications requiring public infrastructure disclosure.
+2. Enterprise Commercial License: Required for proprietary cloud deployments, OEM embedding, or closed-source commercial hardware integration.
+
+Contact Waters Legacy Trust: waterslegacytrust@gmail.com
+
+---
+
+## Contributing
+
+We welcome global development to advance the world! To protect our dual-licensing permissions, all external developers must review and sign our Contributor License Agreement (`CLA.md`) before any code or formulas can be merged. See `CONTRIBUTING.md` for complete development rules.
+
+---
+
+## Formal Academic Citations & Reference Framework
+
+When referencing this discrete mathematical framework or utilizing toolpath compilation profiles in peer-reviewed publications, preprint tracking manuscripts, or collaborative literature reviews, please cite the following authoritative records:
+
+* **Mathematical & Applied Framework:** Waters, M. (2026). *The Universal Playing Field: A 114-Node Discrete SO(13) Matrix Framework for Physical Field Simulation*. Waters Legacy Trust Academic Press.
+* **Computational Architecture & Hardware Platform:** Quantum Inquisitor Open-Source Research Group. (2026). *The Universal Matrix Engine: Enterprise High-Dimensional Spatial Compute Framework and Industrial Hardware Control Systems (v93.0.0)*. GitHub Repository: https://github.com/QuantumInquisitor/universal-matrix.
+
+
 ---
 
 ## Quickstart & Verification Commands
@@ -198,28 +224,3 @@ Start-Process "src/vis/advanced_vr_lab.html"
 # Micro-to-Macro Scale-Invariant Explorer
 .\venv\Scripts\python.exe src/vis/micro_macro_vr.py
 Start-Process "src/vis/micro_macro_vr.html"
-
----
-
-## Commercial Licensing & Legal Framework
-
-This project is governed under a Dual-Licensing Strategy:
-1. Open Source (GNU AGPLv3): Free for individual developers, academic research, and open-source applications requiring public infrastructure disclosure.
-2. Enterprise Commercial License: Required for proprietary cloud deployments, OEM embedding, or closed-source commercial hardware integration.
-
-Contact Waters Legacy Trust: waterslegacytrust@gmail.com
-
----
-
-## Contributing
-
-We welcome global development to advance the world! To protect our dual-licensing permissions, all external developers must review and sign our Contributor License Agreement (`CLA.md`) before any code or formulas can be merged. See `CONTRIBUTING.md` for complete development rules.
-
----
-
-## Formal Academic Citations & Reference Framework
-
-When referencing this discrete mathematical framework or utilizing toolpath compilation profiles in peer-reviewed publications, preprint tracking manuscripts, or collaborative literature reviews, please cite the following authoritative records:
-
-* **Mathematical & Applied Framework:** Waters, M. (2026). *The Universal Playing Field: A 114-Node Discrete SO(13) Matrix Framework for Physical Field Simulation*. Waters Legacy Trust Academic Press.
-* **Computational Architecture & Hardware Platform:** Quantum Inquisitor Open-Source Research Group. (2026). *The Universal Matrix Engine: Enterprise High-Dimensional Spatial Compute Framework and Industrial Hardware Control Systems (v93.0.0)*. GitHub Repository: https://github.com/QuantumInquisitor/universal-matrix.
