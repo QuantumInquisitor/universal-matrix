@@ -21,7 +21,7 @@ class TestExperimentalPredictions(unittest.TestCase):
         delta_tau = (E_photon / self.E_planck) * ratio_b_core * alpha_geo * (L_meters / self.c)
         
         # Must be non-zero (divergence from standard GR) and within expected physical bounds
-        self.assertGreaterThan(delta_tau, 0.0)
+        self.assertGreater(delta_tau, 0.0)
         self.assertAlmostEqual(delta_tau * 1e7, 1.503, places=2)
 
     def test_continuum_limit_metric_convergence(self):
