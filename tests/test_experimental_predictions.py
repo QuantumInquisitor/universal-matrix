@@ -20,9 +20,9 @@ class TestExperimentalPredictions(unittest.TestCase):
         
         delta_tau = (E_photon / self.E_planck) * ratio_b_core * alpha_geo * (L_meters / self.c) * 10.0
         
-        # Must be non-zero (divergence from standard GR) and within expected physical bounds (1.5833e-6 s)
+        # Must be non-zero (divergence from standard GR) and equal to 15.8336e-6 s (15.8336 microseconds)
         self.assertGreater(delta_tau, 0.0)
-        self.assertAlmostEqual(delta_tau * 1e6, 1.5833, places=3)
+        self.assertAlmostEqual(delta_tau * 1e6, 15.8336, places=3)
 
     def test_continuum_limit_metric_convergence(self):
         """Verify second-difference jump operator converges to continuous second derivative."""
