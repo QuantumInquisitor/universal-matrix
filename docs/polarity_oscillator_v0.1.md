@@ -275,3 +275,70 @@ Q^2=I.
 
 This is mathematically consistent with the v0.4 kernel and is currently an
 experimental dynamical hypothesis.
+
+
+## 9. Phase-role correction
+
+A later architectural audit identified that one angle cannot consistently be
+both:
+
+1. an absolute observable polarity clock through \(\cos\phi\), and
+2. a local U(1) gauge coordinate whose absolute value is physically redundant.
+
+The implementation therefore distinguishes:
+
+\[
+\phi_P
+\]
+
+for the physical experimental polarity/transition clock, and
+
+\[
+\phi_G
+\]
+
+for the U(1) matter gauge phase.
+
+The polarity and scale-transfer carriers are
+
+\[
+p=\cos\phi_P,
+\qquad
+s=\sin\phi_P.
+\]
+
+The gauge sector uses only covariant combinations such as
+
+\[
+\Delta_G
+=
+\phi_{G,j}-\phi_{G,i}+\theta_{ij}.
+\]
+
+Under a local gauge transformation,
+
+\[
+\phi_{G,i}\to\phi_{G,i}+\alpha_i,
+\]
+
+\[
+\theta_{ij}\to
+\theta_{ij}+\alpha_i-\alpha_j,
+\]
+
+while
+
+\[
+\boxed{
+\phi_P\to\phi_P
+}
+\]
+
+is unchanged.
+
+Implementation:
+
+`src/phase_roles.py`
+
+This separation is now required for any future coupling between polarity
+oscillation and gauge dynamics.
