@@ -11,7 +11,9 @@ import numpy as np
 
 class PhysicsInformedOperator:
     def __init__(self, threshold: float = 500.0, *args, **kwargs):
-        _ = args, kwargs
+        _ = args
+        if "energy_threshold" in kwargs:
+            threshold = kwargs["energy_threshold"]
         self.threshold = float(threshold)
 
     def enforce_conservation_laws(self, move):
