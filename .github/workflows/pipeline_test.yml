@@ -1,51 +1,71 @@
-name: Universal Matrix CI/CD Pipeline & Registry Build
+name: Universal Matrix Container Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: container-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  verify-matrix-pipeline:
+  container-smoke:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
 
     steps:
-    - name: Checkout Code Repository
-      uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-    - name: Set up Python Environment
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
 
-    - name: Install System Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - uses: astral-sh/setup-uv@v10.1.0
+        with:
+          version: "latest-known"
+          enable-cache: true
 
-    - name: Syntax & Compilation Checks (py_compile)
-      run: |
-        python -m compileall src/ scripts/
+      - name: Install API verification environment
+        run: uv sync --group test --extra api --extra scientific
 
-    - name: Run Environment Auditor
-      run: |
-        python scripts/verify_env.py
+      - name: Compile
+        run: uv run python -m compileall -q src scripts tests
 
-    - name: Execute Automated Unit Tests
-      run: |
-        python -m unittest discover -s tests -p "test_*.py"
+      - name: API import smoke test
+        env:
+          UNIVERSAL_MATRIX_API_KEYS: "ci-only-key:CI"
+        run: |
+          uv run python -c "from src.api_server import app; assert app.title"
+          uv run python -c "from src.unified_engine import UnifiedMatrixGaugeEngine; print('unified engine import ok')"
 
-    - name: Headless Pipeline Smoke Test & Quantum Normalization Check
-      run: |
-        python src/run_field_simulation.py --headless --no-api
+      - name: Build research API container
+        run: docker build --pull -t universal-matrix:test .
+
+      - name: Container health smoke test
+        run: |
+          docker run -d --rm             --name universal-matrix-test             -e UNIVERSAL_MATRIX_API_KEYS="ci-only-key:CI"             -p 127.0.0.1:18000:8000             universal-matrix:test
+          trap 'docker stop universal-matrix-test >/dev/null 2>&1 || true' EXIT
+          for i in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:18000/health >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          docker logs universal-matrix-test
+          exit 1
 
   publish-container-image:
-    needs: verify-matrix-pipeline
+    needs: container-smoke
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
@@ -53,29 +73,31 @@ jobs:
       packages: write
 
     steps:
-    - name: Checkout Code Repository
-      uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-    - name: Log in to GitHub Container Registry (GHCR)
-      uses: docker/login-action@v3
-      with:
-        registry: ${{ env.REGISTRY }}
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Log in to GHCR
+        uses: docker/login-action@v4
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Extract Docker Metadata
-      id: meta
-      uses: docker/metadata-action@v5
-      with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-        tags: |
-          type=raw,value=latest
-          type=sha,format=short
+      - name: Extract immutable image metadata
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,format=long
+            type=ref,event=tag
+            type=raw,value=latest,enable=${{ is_default_branch }}
 
-    - name: Build and Push Docker Image
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
+      - name: Build and push
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          provenance: mode=max
+          sbom: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
