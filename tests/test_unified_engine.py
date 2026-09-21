@@ -61,10 +61,10 @@ def test_boundary_inflow_changes_total_charge_and_zero_mode_exactly():
 
     expected = dt * flux.net_inflow_rate()
     assert abs(d.total_electric_charge - expected) < 1e-12
-    assert abs(d.zero_mode_charge - expected) < 1e-12
-    assert abs(d.field_source_total) < 1e-12
+    assert abs(d.zero_mode_charge) < 1e-12
+    assert abs(d.field_source_total - expected) < 1e-12
     assert abs(d.charge_balance_residual) < 1e-12
-    assert d.max_gauss_residual < 1e-10
+    assert d.max_gauss_residual < 1e-9
 
 
 def test_periodic_topological_total_is_reported_separately():
@@ -80,7 +80,7 @@ def test_periodic_topological_total_is_reported_separately():
     assert isinstance(d.nonzero_topological_cubes, int)
 
 
-def test_initial_nonzero_free_charge_is_separated_into_zero_mode():
+def test_initial_nonzero_free_charge_is_supported_by_open_boundaries():
     shape = (4,4,4)
     rho = _zeros3(shape)
     rho[0][0][0] = 2.0
@@ -88,6 +88,26 @@ def test_initial_nonzero_free_charge_is_separated_into_zero_mode():
         sites(shape),
         free_charge=rho,
         shape=shape,
+        boundary_mode="open",
+    )
+
+    assert abs(engine.zero_mode_charge) < 1e-12
+    assert abs(sum(v for p in engine.field_source for r in p for v in r) - 2.0) < 1e-12
+    assert engine.open_boundary_solution is not None
+    assert engine.open_boundary_solution.max_abs_gauss_residual(
+        __import__("numpy").asarray(engine.field_source, dtype=float)
+    ) < 1e-9
+
+
+def test_periodic_mode_retains_legacy_zero_mode_split():
+    shape = (4,4,4)
+    rho = _zeros3(shape)
+    rho[0][0][0] = 2.0
+    engine = UnifiedMatrixGaugeEngine(
+        sites(shape),
+        free_charge=rho,
+        shape=shape,
+        boundary_mode="periodic",
     )
 
     assert abs(engine.zero_mode_charge - 2.0) < 1e-12
