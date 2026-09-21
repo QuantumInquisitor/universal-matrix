@@ -108,7 +108,7 @@ class U1CylinderField:
     def wilson_action(self) -> float:
         """Compact U(1) Wilson action beta*sum(1-cos(F_p))."""
         return self.beta * sum(
-            1.0 - math.cos(angle)
+            2.0 * math.sin(0.5 * angle) ** 2
             for row in self.plaquettes()
             for angle in row
         )
@@ -186,6 +186,41 @@ class U1CylinderField:
                 km = (k - 1) % ROUTING_PERIOD
                 scale_grad[l][k] = self.beta * (
                     math.sin(p[l][km]) - math.sin(p[l][k])
+                )
+
+        return routing_grad, scale_grad
+
+    def linearized_euler_lagrange_residuals(
+        self,
+    ) -> tuple[list[list[float]], list[list[float]]]:
+        """Derivatives of the quadratic weak-field action.
+
+        This is the exact linear operator used by the analytic dispersion
+        relation. It replaces sin(F) by F and must not be confused with the
+        nonlinear compact Wilson equations.
+        """
+        p = self.plaquettes()
+
+        routing_grad = [
+            [0.0] * ROUTING_PERIOD for _ in range(self.layer_count)
+        ]
+        for l in range(self.layer_count):
+            for k in range(ROUTING_PERIOD):
+                value = 0.0
+                if l < self.layer_count - 1:
+                    value += p[l][k]
+                if l > 0:
+                    value -= p[l - 1][k]
+                routing_grad[l][k] = self.beta * value
+
+        scale_grad = [
+            [0.0] * ROUTING_PERIOD for _ in range(self.layer_count - 1)
+        ]
+        for l in range(self.layer_count - 1):
+            for k in range(ROUTING_PERIOD):
+                km = (k - 1) % ROUTING_PERIOD
+                scale_grad[l][k] = self.beta * (
+                    p[l][km] - p[l][k]
                 )
 
         return routing_grad, scale_grad
