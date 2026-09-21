@@ -69,3 +69,27 @@ def test_positive_sextic_keeps_large_amplitude_energy_positive():
         ),
     )
     assert candidate.energy > 0
+
+
+def test_free_matter_potential_is_allowed():
+    potential = MatterPotential(
+        mass2=1.0,
+        lambda4=0.0,
+        lambda6=0.0,
+    )
+    assert potential.free_mass == 1.0
+
+
+def test_negative_quartic_without_sextic_stabilization_is_rejected():
+    try:
+        MatterPotential(
+            mass2=1.0,
+            lambda4=-0.1,
+            lambda6=0.0,
+        )
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(
+            "negative quartic without sextic stabilization must be rejected"
+        )
