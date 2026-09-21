@@ -232,3 +232,69 @@ Implementation:
 
 This is now a REQUIRED constraint for any claim that the content sector
 reproduces solar-system gravity.
+
+
+---
+
+## 7. Strong-field shadow/ring constraint
+
+The simplest point-source reciprocity exponential metric predicts
+
+[
+b_c
+=
+2e,mu,
+]
+
+while Schwarzschild gives
+
+[
+b_{c,m Schw}
+=
+3sqrt3,mu.
+]
+
+The fractional difference is approximately
+
+[
+rac{2e}{3sqrt3}-1
+approx
+4.6%.
+]
+
+The Event Horizon Telescope Collaboration reports that the observed Sgr A*
+image size is within approximately 10 percent of Kerr predictions after
+calibrating the relation between the observed emission ring and the geometric
+shadow.
+
+Reference:
+
+Event Horizon Telescope Collaboration, "First Sagittarius A* Event Horizon
+Telescope Results. VI. Testing the Black Hole Metric," ApJL 930, L17 (2022).
+
+https://eventhorizontelescope.org/publications/first-sagittarius-event-horizon-telescope-results-vi-testing-black-hole-metric
+
+### Current implication
+
+The 4.6 percent critical-impact-parameter difference is not obviously excluded
+by image-size agreement alone at that quoted level.
+
+This is **not** evidence that the exponential metric is correct.
+
+A proper comparison requires:
+
+- ray tracing through the exact candidate geometry;
+- accretion-flow/plasma emission models;
+- mass-to-distance uncertainty propagation;
+- spin dependence;
+- comparison to M87* and Sgr A* simultaneously;
+- horizonless/throat boundary conditions.
+
+The EHT analysis also constrains alternatives to an event horizon; thermal
+surfaces are ruled out in their Sgr A* analysis and fully reflective surfaces
+are disfavored.
+
+A throat geometry therefore needs its own physically specified absorption,
+transmission, or reflection law before it can be compared fairly with EHT data.
+
+Status: TARGET / STRONG-FIELD TEST.
