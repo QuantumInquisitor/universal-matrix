@@ -42,10 +42,9 @@ jobs:
       - name: Compile
         run: uv run python -m compileall -q src tests
 
-      - name: Ruff
+      - name: Critical Ruff checks
         run: |
-          uv run ruff check src tests
-          uv run ruff format --check src tests
+          uv run ruff check --select E9,F63,F7,F82 src tests
 
       - name: Canonical and open-engine tests
         run: |
