@@ -1038,3 +1038,121 @@ The next highest-priority gaps are now:
    kernel rather than experimental calibration;
 6. observational testing of the post-post-Newtonian and strong-field
    reciprocity predictions.
+
+
+---
+
+## September 21 continuation — analytic and dynamical Dirac backreaction
+
+### Analytic Dirac geometry source
+
+Status: **DERIVED-CORRESPONDENCE + ORACLE-VERIFIED**
+
+Modules:
+
+- `src/reciprocity_dirac_geometry_source.py`
+- `tests/test_reciprocity_dirac_geometry_source.py`
+
+The local geometry source for the Hermitian reciprocity Dirac Hamiltonian now
+has an explicit lattice form,
+
+[
+S_psi(x)
+=
+m e^{-psi(x)}
+operatorname{Re}!left[
+chi^dagger(x)etachi(x)
+ight]
++
+2e^{-2psi(x)}
+sum_i
+operatorname{Re}!left[
+chi^dagger(x)alpha_i p_ichi(x)
+ight].
+]
+
+This is the exact derivative of the existing finite-lattice Dirac energy with
+respect to the local reciprocity scalar.
+
+The prior finite-difference source remains in the repository as an independent
+small-lattice oracle. Random nonuniform-field tests compare the analytic source
+pointwise against that oracle.
+
+### Coupled Dirac + reciprocity geometry dynamics
+
+Status: **SEMICLASSICAL HAMILTONIAN PROTOTYPE**
+
+Modules:
+
+- `src/reciprocity_dirac_backreaction.py`
+- `tests/test_reciprocity_dirac_backreaction.py`
+
+The prescribed-background loop is now closed at the one-particle /
+semiclassical level with
+
+[
+H_{m total}
+=
+H_{m geometry}
++
+operatorname{Re}
+langlechi|H_D[psi]|chiangle.
+]
+
+The coupled equations are
+
+[
+idotchi
+=
+H_D[psi]chi,
+]
+
+[
+dotpsi
+=
+kappa e^{-4psi}P_psi,
+]
+
+and
+
+[
+dot P_psi
+=
+rac{
+abla^2psi}{kappa}
++
+2kappa e^{-4psi}P_psi^2
++
+S_psi.
+]
+
+The same Hamiltonian therefore controls both the geometry acting on the spinor
+and the spinor source acting back on the geometry.
+
+The tests verify:
+
+- correct source sign for a positive-energy rest spinor;
+- vanishing Dirac source when the spinor is zero;
+- spinor-norm conservation over short coupled evolutions;
+- small total-Hamiltonian drift under RK4 evolution.
+
+### Revised highest-priority open problems
+
+The Dirac backreaction gap is no longer first on the list.
+
+The current highest-priority gaps are now:
+
+1. replace the one-particle semiclassical fermion source with a genuine
+   second-quantized stress-energy expectation value;
+2. construct chiral projectors, Weyl determinants, and anomaly accounting on
+   the reciprocity-coupled lattice;
+3. extend overlap/chiral fermions to SU(2) and SU(3) gauge backgrounds;
+4. derive the absolute dimensional scale and couplings from the finite kernel
+   instead of calibrating them from experiment;
+5. derive the reciprocity premises themselves from the canonical
+   (mathbb Z_{108}sqcup B_6) structure;
+6. confront the 2PN, second-order lensing, ISCO, compact-object, and
+   strong-field reciprocity predictions with current observational constraints.
+
+The project remains a classical/semiclassical research architecture rather than
+a complete quantum fundamental theory.
