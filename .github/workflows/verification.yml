@@ -1,6 +1,8 @@
 name: Universal Matrix Verification
 
 on:
+  push:
+    branches: [ canonical-kernel-v0.3 ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
