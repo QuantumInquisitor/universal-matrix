@@ -7,9 +7,10 @@ import secrets
 import time
 from typing import Any
 
-from fastapi import Depends, FastAPI, HTTPException, Security, status
+from fastapi import Depends, FastAPI, HTTPException, Response, Security, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import APIKeyHeader
+from prometheus_client import CONTENT_TYPE_LATEST, Counter, Histogram, generate_latest
 from pydantic import BaseModel, ConfigDict, Field
 
 from src.audit_ledger import CryptographicAuditLedger
@@ -107,6 +108,18 @@ audit_ledger = CryptographicAuditLedger(
 )
 
 
+API_REQUESTS = Counter(
+    "universal_matrix_api_requests_total",
+    "Research API requests by endpoint and outcome.",
+    ["endpoint", "outcome"],
+)
+API_LATENCY = Histogram(
+    "universal_matrix_api_latency_seconds",
+    "Research API handler latency.",
+    ["endpoint"],
+)
+
+
 class MatrixEvalRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -159,6 +172,14 @@ def health_check() -> dict[str, Any]:
     }
 
 
+@app.get("/metrics", include_in_schema=False)
+def metrics() -> Response:
+    return Response(
+        content=generate_latest(),
+        media_type=CONTENT_TYPE_LATEST,
+    )
+
+
 @app.post(
     "/api/v1/matrix/evaluate",
     response_model=MatrixEvalResponse,
@@ -174,7 +195,10 @@ def evaluate_matrix_state(
     energy_norm = 1.0 / (1.0 + math.exp(-max(-700.0, min(700.0, val))))
     safety_flag = 1.0 if energy_norm > 0.85 else 0.0
 
-    latency_ms = (time.perf_counter() - start_time) * 1000.0
+    elapsed = time.perf_counter() - start_time
+    latency_ms = elapsed * 1000.0
+    API_REQUESTS.labels(endpoint="matrix_evaluate", outcome="ok").inc()
+    API_LATENCY.labels(endpoint="matrix_evaluate").observe(elapsed)
 
     audit_ledger.record_event(
         "API_MATRIX_EVALUATE",
@@ -220,6 +244,7 @@ def compile_gcode_path(
         compiled_lines.append(line)
 
     gcode_str = "\n".join(compiled_lines)
+    API_REQUESTS.labels(endpoint="gcode_compile", outcome="ok").inc()
 
     audit_ledger.record_event(
         "API_GCODE_COMPILE",
