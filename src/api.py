@@ -215,6 +215,31 @@ def verify_token(token: str = Depends(oauth2_scheme)):
     except jwt.PyJWTError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired Bearer token")
 
+async def verify_websocket_token(websocket: WebSocket) -> dict | None:
+    """Authenticate legacy WebSocket connections before accepting them."""
+    authorization = websocket.headers.get("authorization", "")
+    token = ""
+    if authorization.startswith("Bearer "):
+        token = authorization[7:].strip()
+    elif websocket.query_params.get("token"):
+        # Query-token support is legacy compatibility only. Prefer Authorization.
+        token = websocket.query_params["token"]
+
+    if not token:
+        await websocket.close(code=1008, reason="Bearer token required")
+        return None
+
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+    except jwt.PyJWTError:
+        await websocket.close(code=1008, reason="Invalid or expired token")
+        return None
+
+    if payload.get("role") not in {"admin", "operator", "read_only"}:
+        await websocket.close(code=1008, reason="Insufficient role")
+        return None
+    return payload
+
 async def broadcast_cluster_state(state_payload: dict):
     """Broadcasts updated engine state across all distributed regional cluster nodes."""
     try:
@@ -302,6 +327,8 @@ async def telemetry_stream():
 
 @app.websocket("/ws/telemetry")
 async def websocket_telemetry_endpoint(websocket: WebSocket):
+    if await verify_websocket_token(websocket) is None:
+        return
     await websocket.accept()
     try:
         while True:
@@ -410,10 +437,9 @@ async def get_field_coherence(current_user: dict = Depends(verify_token)):
 # --- Phase 8: Dynamic Resonance WebSocket Stream ---
 @app.websocket("/ws/resonance/stream")
 async def websocket_resonance_endpoint(websocket: WebSocket):
-    """
-    Bi-directional WebSocket streaming live toroidal field coherence, 
-    harmonic oscillations, and accepting real-time frequency modulation inputs.
-    """
+    """Legacy resonance visualization WebSocket."""
+    if await verify_websocket_token(websocket) is None:
+        return
     await websocket.accept()
     current_freq = 432.0
     phase_shift = 0.0
@@ -477,7 +503,9 @@ async def ingest_biometric_telemetry(
 
 @app.websocket("/ws/biometrics/ingest")
 async def websocket_biometrics_ingest(websocket: WebSocket):
-    """Live bi-directional WebSocket stream for hardware biometric sensor streams."""
+    """Legacy biometric visualization WebSocket."""
+    if await verify_websocket_token(websocket) is None:
+        return
     await websocket.accept()
     try:
         while True:
