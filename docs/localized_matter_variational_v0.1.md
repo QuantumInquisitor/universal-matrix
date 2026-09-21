@@ -178,3 +178,23 @@ solver.
 
 The repository now contains a concrete classical localized-matter candidate
 sector rather than a particle analogy.
+
+
+## 7. Nonlinear-solver update
+
+A subsequent boundary-value calculation solves the radial Euler-Lagrange
+equation directly.
+
+Representative converged nonlinear solutions can have
+
+[
+E/Q>m_{m free}.
+]
+
+Therefore the Gaussian (E/Q<m_{m free}) configurations are search
+heuristics only and must not be cited as proof of a stable localized matter
+state.
+
+See:
+
+`docs/radial_matter_solver_v0.1.md`
