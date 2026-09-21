@@ -63,7 +63,7 @@ try:
     from .su2_hamiltonian_reference import (
         GENERATORS,
         algebra_components,
-        algebra_matrix,
+        electric_matrix,
         backward_index,
     )
     from .su2_lattice_gauge import AXES, wilson_action
@@ -75,7 +75,7 @@ except ImportError:
     from su2_hamiltonian_reference import (
         GENERATORS,
         algebra_components,
-        algebra_matrix,
+        electric_matrix,
         backward_index,
     )
     from su2_lattice_gauge import AXES, wilson_action
@@ -248,12 +248,12 @@ def pure_gauge_gauss_components(
     for idx in np.ndindex(shape):
         total = np.zeros((2,2), dtype=complex)
         for axis in AXES:
-            outgoing = algebra_matrix(
+            outgoing = electric_matrix(
                 electric[(axis,) + idx]
             )
             xm = backward_index(idx, axis, shape)
             u_in = links[(axis,) + xm]
-            incoming = algebra_matrix(
+            incoming = electric_matrix(
                 electric[(axis,) + xm]
             )
             total += (
@@ -325,7 +325,7 @@ def gauge_transform_state(
                 @ site_transform[xp].conj().T
             )
 
-            e_matrix = algebra_matrix(
+            e_matrix = electric_matrix(
                 electric[(axis,) + idx]
             )
             electric_out[(axis,) + idx] = (
