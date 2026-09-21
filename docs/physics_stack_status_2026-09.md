@@ -375,3 +375,92 @@ It does not yet constitute a complete experimentally validated fundamental
 theory.
 
 That distinction should remain explicit in all future public materials.
+
+
+---
+
+## 13. September 21 update — reciprocity action and source universality
+
+The gravity-like sector has advanced beyond the earlier status summary.
+
+### Self-consistent scalar-geometry action
+
+A common action now determines:
+
+- complex scalar matter dynamics;
+- the geometry-scalar equation;
+- the stress-energy source of the geometry scalar.
+
+The source is
+
+[
+ho+p_x+p_y+p_z
+]
+
+rather than an independently assigned matter charge.
+
+### Stationary scalar source universality
+
+For exact stationary localized time-harmonic scalar solutions,
+
+[
+G+3(V-K)=0
+]
+
+implies
+
+[
+oxed{
+M_{m active}=E.
+}
+]
+
+Equivalently,
+
+[
+M_{m active}-E
+=
+-Delta_{m virial}.
+]
+
+Thus integrated gravitational/source universality follows automatically for
+this solution class when the virial equation is satisfied.
+
+### Exact static spherical vacuum exterior
+
+For the proposed scalar action,
+
+[
+dotpsi=0,
+qquad
+S_m=0
+]
+
+implies exactly
+
+[
+
+abla^2psi=0.
+]
+
+Spherical symmetry and asymptotic flatness give
+
+[
+oxed{
+psi=mu/r.
+}
+]
+
+Therefore the exponential static exterior is now derived within the proposed
+action rather than treated only as a strong-field extrapolation.
+
+### Updated highest-priority open problems
+
+The primary remaining gravity-side questions are now:
+
+1. derive the reciprocity premises themselves from the finite canonical kernel;
+2. extend source-universality analysis to fermions, gauge-bound states, and
+   non-Abelian composites;
+3. confront the exact static exterior with strong-field observations;
+4. derive the dimensional coupling (kappa) rather than calibrating it from
+   measured (G).
