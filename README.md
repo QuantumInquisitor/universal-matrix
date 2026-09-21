@@ -1,297 +1,216 @@
-﻿![Universal Matrix Engine](image_8742ceaa.png)
+# Universal Matrix
 
-[![Matrix Verification Status](https://img.shields.io/badge/Matrix-Verified-brightgreen)](https://github.com/QuantumInquisitor/universal-matrix)
+**Author:** Malakhiyah  
+**Status:** mathematical kernel v0.4 with experimental physical extensions
 
+Universal Matrix is a research codebase built around a finite discrete kernel with a 108-state core, six external boundary orientations, and a 64-address projection. The repository also contains experimental gauge, polarity, source, and multi-scale adapters that are intentionally separated from the proven finite kernel.
 
-<a href="https://github.com"><img src="https://google.com" alt="Open In Colab"></a>
+The project does **not** currently claim an experimental replacement for General Relativity, quantum mechanics, string theory, M-theory, or Maxwell electromagnetism. Physical adapters are research hypotheses whose value depends on independent parameter identification and experimental testing.
 
-# Universal Matrix Engine
+## Canonical mathematical kernel
 
-**An Enterprise-Grade High-Dimensional Spatial Compute Framework and Closed-Loop Hardware Control Engine.**
+The executable authority is:
 
-`universal-matrix` is a containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) spatial simulation and hardware control engine. It bridges high-dimensional vector dynamics directly to physical industrial systems—delivering bare-metal CUDA tensor acceleration (`cuda:0`), sub-millisecond hardware safety interlocks, 120 FPS WebXR/WebGPU spatial viewports, and closed-loop Hardware-in-the-Loop (HITL) physical actuation across robotics, additive manufacturing, and sensor networks.
+- `src/canonical_kernel.py`
+- `tests/test_canonical_kernel.py`
+- `docs/canonical_spec_v0.4.md`
 
-## Solved Real-World Industrial Remedies
+The canonical architecture is
 
-The framework includes complete end-to-end verification suites proving real-world industrial problem resolution:
+[
+mathcal A=mathbb Z_{108}sqcup B_6
+]
 
-### 1. Precision CNC Direct-to-Actuator (DTA) Winding
-* Problem: Conventional CAD/CAM software relies on smooth float approximations that accumulate spatial discretization drift during non-Euclidean coil winding.
-* Solution: Compiles discrete SO(13) tensor matrices directly into 5-axis GRBL G-code routines (`src/gcode_compiler.py`, `src/hal/cnc_driver.py`) for manufacturing high-density scalar and toroidal coils.
+with
 
-### 2. Autonomous Robot PINO Guardrail Safety
-* Problem: Black-box Machine Learning trajectory models in autonomous robotics can predict non-physical or dangerous kinematic commands under edge-case sensor noise.
-* Solution: Embedded Physics-Informed Neural Operator core (`src/core/pino_engine.py`) evaluates real-time energy norms and trips hardware emergency stop drivers (`src/hal/safety_driver.py`) in <1ms prior to motor execution (`tests/test_pino_guardrail_remedy.py`).
+[
+B_6={+X,-X,+Y,-Y,+Z,-Z}.
+]
 
-### 3. Sub-Nanometer Thermal Expansion & Vibration Stabilization
-* Problem: Sub-micron semiconductor and micro-fabrication CNC tools suffer position drift due to chassis thermal expansion and high-frequency structural vibration.
-* Solution: Laser interferometry feedback engine (`src/hal/anomaly_driver.py`) measures real-time displacement down to sub-nanometers and dynamically applies SO(13) phase offset matrix corrections (`tests/test_thermal_stability_remedy.py`).
+Important exact operators include:
 
-### 4. Edge Cluster Spatial Telemetry Failover
-* Problem: Multi-agent drone swarms and spatial WebXR streams drop frames during edge hardware node isolation or network partitioning.
-* Solution: Multi-node Kubernetes mesh orchestrator (`src/hal/mesh_orchestrator.py`) detects node failures via heartbeat quorums and seamlessly re-routes high-dimensional spatial workloads without stream interruption (`tests/test_mesh_failover_remedy.py`).
+[
+E=T_9,qquad P=T_{54},qquad F(n)=107-n,
+]
 
-### 5. Quantum-Classical HITL Trajectory Optimization
-* Problem: Multi-agent swarm trajectory convergence in complex obstacle fields exceeds classical real-time compute limits.
-* Solution: Hybrid Variational Quantum Eigensolver (VQE) expectation tensor transformations (`src/core/quantum_hybrid.py`) modulate CUDA spatial trajectories for real-time human-in-the-loop swarm convergence (`tests/test_quantum_hitl_remedy.py`).
+and the canonical routing convention
 
----
+[
+T=T_{21}
+]
 
-## Enterprise Microservices & Edge Infrastructure
+selected from the synchronized class
 
-### 1. Enterprise FastAPI Microservice (`src/api_server.py`)
-* **Production REST API**: High-performance REST microservice wrapping PINO state evaluations, 5-axis G-code compilation, and audit ledger queries.
-* **Authentication & CORS**: Built-in API key header security (`X-API-Key`) with automated OpenAPI (Swagger UI) documentation at `/docs`.
+[
+{21,57,93}
+]
 
-### 2. Sub-200µs Edge ML Optimization (`scripts/optimize_edge_models.py`)
-* **ONNX & Dynamic INT8 Quantization**: Converts PINO safety models to ONNX FP32 and INT8 formats.
-* **Sub-Millisecond Benchmark**: Achieves sub-200µs E-STOP safety evaluation (~79.8µs FP32 / ~118.5µs INT8) for real-time micro-PLC deployments.
+by the minimal-positive-lift convention.
 
-### 3. Multi-Physics MHD PDE & SAC RL Control (`src/core/multiphysics_rl_engine.py`)
-* **Coupled MHD Solver**: Models magnetic vectors ($\mathbf{B}$), current densities ($\mathbf{J}$), Lorentz forces ($\mathbf{F}_L = \mathbf{J} \times \mathbf{B}$), and Joule heating across the 114-node manifold.
-* **Soft Actor-Critic (SAC) Agent**: Closed-loop reinforcement learning agent that dynamically adjusts actuation states to prevent thermal spikes and divergence.
+The register projection is
 
-### 4. SHA-256 Cryptographic Audit Ledger (`src/audit_ledger.py`)
-* **Tamper-Evident Chaining**: Immutable append-only cryptographic ledger tracking hardware E-STOPs, matrix state changes, and enterprise license checks for non-repudiable compliance.
+[
+pi(n)=7nmod64.
+]
 
----
+The 64-address register is a **64-state / 6-bit-style address layer where explicitly modeled as binary channels**, not a 64-bit physical spacetime claim.
 
-## Multi-Domain Hardware & Operational Execution Guide
+## Experimental physical stack
 
-The 114-node discrete $SO(13)$ coordinate grid provides a deterministic mathematical framework for real-world physical actuation, sub-nanometer closed-loop feedback, and enterprise cloud orchestration. Below are the operational workflows, CLI inputs, and hardware integration endpoints required to deploy and verify the matrix architecture across advanced industrial domains:
+The current experimental stack is layered so assumptions remain visible.
 
-### 1. Direct-to-Actuator (DTA) CNC Toroidal Winding & Toolpath Generation
-* Hardware Anchoring: Map the 6 outer hypercube boundary face gates directly to physical motor step/dir pins or CAN bus motor drives (`src/drivers/can_driver.py`).
-* Toolpath Compilation: Execute `python src/gcode_compiler.py --coil toroid --layers 3 --triad-bias 3.6.9`.
-* Execution Pipeline: Generates non-Euclidean 5-axis G-code toolpaths (`src/toroidal_winding_engine.py`) to wind high-density scalar coils, toroidal inductors, and spatial field emitters along active $SO(13)$ rotation axes.
+### Nested polarity dynamics
 
-### 2. Autonomous Robotics & PINO Safety Guardrails
-* Kinematic Boundary Enforcement: Real-time Physics-Informed Neural Operator core (`src/core/pino_engine.py`) continuously monitors state transitions against momentum and energy conservation invariants.
-* Sub-Millisecond Interlock Execution: Run `python -m unittest tests/test_pino_guardrail_remedy.py`.
-* Hardware Action: If Machine Learning anomaly models or external disturbance inputs predict non-physical state divergence, the safety driver (`src/hal/safety_driver.py`) trips a hardware emergency stop (`M112`) in <1ms to prevent physical actuator damage.
+`src/nested_polarity_dynamics.py`
 
-### 3. Sub-Nanometer Thermal Drift & Vibration Compensation
-* Closed-Loop Feedback Ingestion: Laser interferometer engine (`src/laser_interferometer.py`) parses real-time sub-nanometer optical displacement telemetry from high-precision CNC chassis and optical benches.
-* Phase Offset Matrix Calculation: Execute `python -m unittest tests/test_thermal_stability_remedy.py`.
-* Real-Time Compensation: Calculates Euclidean spatial drift vectors and dynamically injects closed-loop $SO(13)$ phase offset matrix transforms into active motion drivers to eliminate sub-micron structural deformation.
+Explores polarity reversal, signed routing, phase evolution, self-similar scale layers, and conservative inter-layer exchange.
 
-### 4. Quantum-Classical Hybrid Optimization & Swarm Robotics
-* Hardware QPU Integration: Quantum processor driver (`src/drivers/qpu_driver.py`) bridges remote QPUs (IBM Quantum / AWS Braket via Qiskit) with bare-metal CUDA tensor pipelines.
-* Execution Loop: Run `python -m unittest tests/test_quantum_hitl_remedy.py`.
-* Swarm Control: Modulates high-dimensional CUDA spatial trajectories with live Variational Quantum Eigensolver (VQE) expectation values, driving decentralized multi-agent swarm trajectory consensus (`src/hal/swarm_consensus.py`).
+### Gauge theory bridge
 
-### 5. Multi-Node Kubernetes Edge Cluster Failover
-* Infrastructure Orchestration: Multi-node edge mesh orchestrator (`src/hal/mesh_orchestrator.py`) manages workload distribution across Kubernetes edge clusters (`src/drivers/k8s_driver.py`).
-* Resiliency Verification: Run `python -m unittest tests/test_mesh_failover_remedy.py`.
-* Fault Recovery: Raft consensus engines (`src/raft_consensus_engine.py`) monitor node health via heartbeat quorums and execute zero-downtime spatial stream re-routing upon edge node dropouts.
+`src/gauge_dynamics.py`  
+`src/gauge_hamiltonian.py`  
+`src/gauge_dispersion.py`
 
-### 6. Bio-Electric Field Profiling & SDR RF Field Synthesis
-* Biometric Telemetry Ingestion: High-throughput ingestion driver (`src/biometric_ingestion.py`) processes physical HRV, GSR, and EEG telemetry streams.
-* Software-Defined Radio Emission: Run `python src/sdr_rf_synthesizer.py --frequency-mode adaptive`.
-* Closed-Loop Bio-Driver: Translates dynamic biometrics into phase-coherence matrices, driving physical transceivers (HackRF, LimeSDR, USRP) (`src/closed_loop_bio_driver.py`) to emit real-time electromagnetic carrier waves.
+Implements compact U(1) link variables, Wilson-loop/plaquette structure, Hamiltonian evolution, Gauss constraints, and weak-field lattice dispersion.
 
-### 7. Native Invariant Calibration & Unit Translation
-* Non-Continuous Unit Conversion: Invariant unit translation engine (`src/natural_units_converter.py`) maps standard SI metric parameters (Joules, Hertz, meters) directly to Planck units and $SO(13)$ discrete lattice bounds.
-* Geometric Compression Derivation: Eliminates empirical scale modifiers by deriving native loop compression fractions directly from closed 114-node geometry:
-  $$\alpha_{\text{geometric}} = \frac{1}{54\pi^2} \approx 0.090606346384$$
-* Symbolic Physics Verification: Symbolic verifier (`src/physics_verifier.py`) calculates electromagnetic energy densities and verifies Maxwell/Lorentz field invariants across all 114 internal vertices.
+### 3D and open-boundary field adapters
 
----
+`src/gauge_3d.py`  
+`src/open_gauge_dynamics.py`  
+`src/open_boundary_solver.py`
 
-## Commercial Applications & Licensing Opportunities
+The newest default physical adapter uses an open cubical discrete-exterior-calculus complex tied to the six signed boundary orientations. It supports open finite-volume Gauss solves, nonzero enclosed charge, and a matrix-free projected PCG solver.
 
-The platform is engineered to drive immediate commercial value and IP licensing across high-tech enterprise sectors:
+### Source sectors
 
-* **Advanced Manufacturing & Industrial Robotics**: Licensing Direct-to-Actuator (DTA) 5-axis G-code compilation (`src/gcode_compiler.py`) and sub-millisecond PINO E-STOP safety kernels (`src/core/pino_engine.py`) to OEM equipment manufacturers.
-* **Semiconductor Lithography & Precision Optics**: Integrating closed-loop sub-nanometer laser interferometry drift compensation (`src/hal/anomaly_driver.py`) into high-precision micro-fabrication tools and optical benches.
-* **Autonomous Vehicle Swarms & Aerospace**: Deploying high-availability edge cluster mesh orchestration (`src/hal/mesh_orchestrator.py`) and ROS 2 DDS bridges for defense contractors, space systems, and autonomous drone swarms.
-* **Quantum Software Infrastructure**: Offering unified QPU abstraction drivers (`src/drivers/qpu_driver.py`) and hybrid VQE/QAOA quantum-classical tensor modulation frameworks (`src/core/quantum_hybrid.py`).
-* **Medical Simulation & Surgical VR Workstations**: Enterprise licensing of Direct Volume Raymarching (DVR) WebXR suites (`src/vis/advanced_vr_lab.py`) with DICOM/NIfTI parsing and multiplayer WebSockets collaboration for medical device manufacturers and surgical training platforms.
-* **Edge ML & Micro-PLC Safety Guardrails**: Providing ONNX/INT8 quantized sub-200µs safety models (`scripts/optimize_edge_models.py`) and SHA-256 cryptographic audit ledgers (`src/audit_ledger.py`) for regulatory compliance in industrial automation.
-* **Enterprise Cloud & SaaS Orchestration**: Commercial API packaging via high-throughput FastAPI microservice endpoints (`src/api_server.py`) for low-latency REST/gRPC integration into existing SCADA and enterprise cloud infrastructures.
+`src/polarity_sources.py`  
+`src/open_polarity_sources.py`  
+`src/source_channels.py`  
+`src/source_interaction.py`
 
----
+These distinguish:
 
-## Abstract
+- polarization-induced electric source,
+- free electric charge,
+- six-gate boundary exchange,
+- compact U(1) topological magnetic defects.
 
-The Universal Matrix Engine introduces a fully quantized, non-continuous alternative to continuous spacetime metrics and black-box Machine Learning control pipelines. It proves that complex physical field dynamics, spatial coordinate transformations, and macroscopic actuator kinematics can be calculated deterministically on an absolute, 64-bit digital coordinate grid without relying on smooth float approximations or empirical gravitational/kinematic parameters.
+Electric and topological magnetic source channels are not conflated.
 
-The core architecture operates across a 114-node discrete lattice—comprising 108 internal tensor vertices wrapped within a 6-node hypercube boundary—executing high-dimensional Lie algebra transformations in SO(13) space. Bypassing theoretical abstraction, this framework functions as an enterprise-grade spatial compute platform and non-synthetic Hardware-in-the-Loop (HITL) control engine. Through a dual-mode Hardware Abstraction Layer (HAL), Physics-Informed Neural Operators (PINO), and bare-metal CUDA acceleration (cuda:0), the engine translates high-dimensional field states directly into verified industrial actuation. These capabilities are demonstrated across sub-millisecond safety interlocks, direct-to-actuator 5-axis CNC G-code toolpath generation, closed-loop sub-nanometer thermal drift compensation, and zero-downtime edge cluster spatial telemetry streaming.
+### Unified engine
 
-The platform operates on a 114-node discrete coordinate lattice, providing a deterministic mathematical framework for high-dimensional spatial compute and hardware orchestration:
+`src/unified_engine.py`
 
-* **Bare-Metal $SO(13)$ Native Tensor Core (`src/core/native_matrix.py`)**: Operating on a 64-bit integer coordinate addressing space with vectorized float32/float64 CUDA GPU acceleration, executing 13D Givens matrix rotations with zero-copy vectorized CPU fallbacks.
-* **Dual-Mode Hardware Abstraction Layer (HAL) (`src/hal/`)**: Centralized driver orchestrator negotiating real-world bare-metal hardware execution vs. synthetic HIL simulations across 10 hardware domains (CAN bus, CNC G-code, QPU quantum circuits, ROS 2 DDS, and SpaceX Starlink telemetry).
-* **Deterministic Physics-Informed Neural Operator (PINO) (`src/core/pino_engine.py`)**: Energy conservation and kinematic boundary enforcement engine that validates tensor state transitions against physical invariants before actuator dispatch.
-* **Quantum-Classical Hybrid Tensor Core (`src/core/quantum_hybrid.py`)**: Variational Quantum Eigensolver (VQE) and QAOA execution pipeline modulating CUDA spatial tensors with live quantum expectation values.
-* **High-Availability Edge Cluster Mesh (`src/hal/mesh_orchestrator.py`)**: Multi-node Kubernetes edge mesh distributing spatial compute workloads with automated failover and zero-downtime streaming.
+Synchronizes source continuity, open gauge evolution, six-gate flux accounting, Gauss projection, and topological diagnostics.
 
----
+## Comparative theory adapters
 
-## Scientific Rigor & Theoretical Verification Matrix
+`src/theory_bridge.py`
 
-| # | Scientific Criterion | Status | Verification & Proof Level |
-|---|---|---|---|
-| 1 | **Derivation of Equations** | **MATHEMATICALLY DERIVED** | Direct discrete integer derivation in `src/calculator.py`. |
-| 2 | **Known-Limit Recovery** | **ALGEBRAICALLY PROVEN** | Continuous field reduction ($N \to \infty$) proven via Taylor expansion in `docs/physics_proofs/continuum_limit_proof.md`. |
-| 3 | **Dimensional Consistency** | **CODE VERIFIED** | Natural-to-SI unit conversion pipeline validated in `src/natural_units_converter.py`. |
-| 4 | **Numerical Predictions** | **CODE VERIFIED** | Reproducible values ($c = 299,792,458\text{ m/s}$, $\Delta \tau = 15.8336\ \mu\text{s}$) generated in unit tests. |
-| 5 | **Falsifiable Predictions** | **FORMALLY DEFINED** | Explicit kill conditions defined in `docs/physics_proofs/falsifiable_predictions.md`. |
-| 6 | **Comparison with General Relativity** | **THEORETICALLY CONTRASTED** | Discrete drag model mapped against GR baseline ($\Delta \tau = 0.0\text{ s}$). |
-| 7 | **Comparison with Quantum Theory** | **CODE INTEGRATED** | Quantum operators embedded in $SO(13)$ coordinate transformations in `src/core/quantum_hybrid.py`. |
-| 8 | **Independently Reproducible Results** | **CI/CD PASSING** | Automated test suites (`tests/`) run and pass locally on any machine. |
-| 9 | **Comparison Against Astronomical Data** | **PIPELINE OPERATIONAL (PENDING REAL DATA)** | Execution pipeline active in `scripts/analyze_grb_data.py`; awaiting direct ingestion of raw NASA Fermi/H.E.S.S. FITS files. |
-| 10 | **Experimental Physical Evidence** | **HAL DRIVER OPERATIONAL (PENDING HARDWARE)** | Hardware driver active in `src/hal/interferometer_driver.py`; awaiting serial/USB coupling to physical optical DAQ bench. |
+The repository contains mathematically limited bridges to structures used in:
 
----
+- compact-mode / Kaluza-Klein-style Fourier decompositions,
+- lattice gauge theory,
+- causal histories,
+- scale-network / tensor-network analogies,
+- loop-quantum-gravity graph substrates,
+- string/M-theory comparisons.
 
-## Core Engine Architecture
+These adapters do not assert equivalence to the external theories. See:
 
-The project engine is deployed via `calculator.py`. The architecture maps a balanced 64-bit processing grid split into distinct zones:
-* **The 108 Core Nodes:** Divided into 54 electric inward nodes (black holes) and 54 electromagnetic outward nodes (white holes).
-* **The 6 Outer Gate Nodes:** Anchored to the faces of an 8x8 hypercube to filter external ambient data.
-* **Ambient Field Flux Loop:** Simulates environmental pressure from the macro-void surrounding the container.
+`docs/comparative_theory_bridge_audit_v0.1.md`
 
----
+## Scientific status
 
-## WebXR Spatial & Medical Visualization Suite
+### Established inside the project
 
-### 1. Direct Volume Raymarching (DVR) Medical Lab (`src/vis/advanced_vr_lab.py`)
-* **Volumetric WebGL/WebGPU Rendering**: Renders 3D scalar density fields (CT/MRI medical scans or quantum wavefunctions) using custom GLSL fragment raymarching shaders.
-* **Live DICOM/NIfTI File Parsing**: Drag-and-drop support for `.dcm` and `.nii` files for real-time WebXR micro-dissection and surgical planning.
-* **Multiplayer WebSockets Collaboration**: Real-time kinematic and spatial synchronization across distributed researchers and surgeons.
+The following are finite mathematical or software results once the stated definitions are accepted:
 
-### 2. Scale-Invariant Micro-to-Macro Explorer (`src/vis/micro_macro_vr.py`)
-* **Logarithmic Spatial Zoom ($10^{-18}\text{m}$ to $10^{21}\text{m}$)**: Seamless multi-resolution spatial traversal across 9 hierarchical tiers:
-  * *Sub-Nuclear ($10^{-18}\text{m}$)*: Quarks, gluon fields, and color-charge confinement.
-  * *Atomic & DNA ($10^{-10}\text{m}$ to $10^{-8}\text{m}$)*: Electron orbitals and double-helix structures.
-  * *Macroscopic & Planetary ($10^{-2}\text{m}$ to $10^{3}\text{m}$)*: Organ topology, physiology, and Earth's magnetosphere.
-  * *Cosmological ($10^{12}\text{m}$ to $10^{21}\text{m}$)*: Heliosphere, constellations, and cosmic dark matter scaffolding.
+- canonical (mathbb Z_{108}) operator identities,
+- routing-cycle structure,
+- 64-address projection/carry relations,
+- mixed-radix decomposition,
+- U(1) gauge invariance of the implemented link/plaquette system,
+- discrete-exterior-calculus identity (d_1d_0=0),
+- source continuity identities,
+- open finite-volume Gauss compatibility,
+- weak-field lattice dispersion.
 
-### 3. WebGPU 5-Axis G-Code Visualizer (`src/vis/gcode_visualizer.py`)
-* **Interactive Toolpath Viewport**: Browser-based Three.js rendering dashboard (`src/vis/gcode_viewport.html`) visualizing 5-axis toolhead trajectories and multi-layered toroidal coil geometries.
+### Experimental / unestablished
 
----
+The following remain hypotheses or adapters:
 
-## Technical Documentation Index
+- identification of Matrix layers with physical toroidal fields,
+- interpretation of polarity as a measured physical quantity,
+- mapping Matrix phase rate to physical clock frequency,
+- mapping lattice units to SI distance/time/field strength,
+- physical meaning of amplitude variables,
+- identification with biological, chakra, meridian, consciousness, black-hole, or white-hole structures,
+- physical replacement of General Relativity or quantum mechanics.
 
-Detailed operational procedures and architecture manifests are organized across dedicated reference guides:
+## Modern development workflow
 
-* How To Use & API Guide (docs/HOW_TO_USE.md): Complete setup instructions, CLI execution flags, REST/WebSocket API examples, and Docker/Kubernetes deployment guides.
-* Repository Architecture Manifest (docs/REPOSITORY_MANIFEST.md): Exhaustive file-by-file map of all core math engines, HAL drivers, API routes, and test suites.
-* Core Feature Implementation Log (docs/FEATURE_HISTORY.md): Historical milestone register covering the complete development lifecycle.
+The project uses `pyproject.toml` as the authoritative dependency/tool configuration.
 
---- 
-
-## Commercial Licensing & Legal Framework
-
-This project is governed under a Dual-Licensing Strategy:
-1. Open Source (GNU AGPLv3): Free for individual developers, academic research, and open-source applications requiring public infrastructure disclosure.
-2. Enterprise Commercial License: Required for proprietary cloud deployments, OEM embedding, or closed-source commercial hardware integration.
-
-Contact Waters Legacy Trust: waterslegacytrust@gmail.com
-
----
-
-## Contributing
-
-We welcome global development to advance the world! To protect our dual-licensing permissions, all external developers must review and sign our Contributor License Agreement (`CLA.md`) before any code or formulas can be merged. See `CONTRIBUTING.md` for complete development rules.
-
----
-
-## Formal Academic Citations & Reference Framework
-
-When referencing this discrete mathematical framework or utilizing toolpath compilation profiles in peer-reviewed publications, preprint tracking manuscripts, or collaborative literature reviews, please cite the following authoritative records:
-
-* **Mathematical & Applied Framework:** Waters, M. (2026). *The Universal Playing Field: A 114-Node Discrete SO(13) Matrix Framework for Physical Field Simulation*. Waters Legacy Trust Academic Press.
-* **Computational Architecture & Hardware Platform:** Quantum Inquisitor Open-Source Research Group. (2026). *The Universal Matrix Engine: Enterprise High-Dimensional Spatial Compute Framework and Industrial Hardware Control Systems (v93.0.0)*. GitHub Repository: https://github.com/QuantumInquisitor/universal-matrix.
-
-# Universal Matrix Engine (v6.1.0-Enterprise)
-
-> **Enterprise Spatial Computing, Physics-Informed Neural Operator (PINO) Safety Framework, and High-Dimensional $SO(13)$ Topological Substrate.**
-
----
-
-## I. Executive Overview & System Architecture
-
-The **Universal Matrix Engine** is a containerized, cloud-native 14-layer, 13-dimensional ($SO(13)$) spatial simulation, hardware control, and theoretical testing engine. It unifies discrete integer geometry with continuous field mechanics, serving as an industrial control framework, real-time spatial engine, and universal physics evaluation platform.
-
-```text
-┌─────────────────────────────────────────────────────────────────────────┐
-│                      Universal Matrix Topology System                   │
-├──────────────────────────┬──────────────────────┬───────────────────────┤
-│    N_CORE = 108 Nodes    │ B_BOUNDARY = 6 Nodes │  M_TOTAL = 114 Nodes  │
-│  (Internal Space-Time)   │  (External Hyper-B) │  (Complete Manifold)  │
-└──────────────────────────┴──────────────────────┴───────────────────────┘
-
-### 1. Falsifiable Quantum Gravity Dispersion ($\Delta \tau$)
-Unlike continuous General Relativity (which assumes vacuum space is continuous with energy-independent propagation $\Delta \tau = 0.0\text{ s}$), the 114-node discrete lattice predicts a specific, energy-dependent time-of-flight phase delay for ultra-high-energy photons crossing cosmological distances ($L$):
-
-$$\Delta \tau = \left( \frac{E}{E_{\text{Planck}}} \right) \cdot \left( \frac{\mathcal{B}_{\text{boundary}}}{\mathcal{N}_{\text{core}}} \right)^2 \cdot \alpha_{\text{geometric}} \cdot \left( \frac{L}{c} \right) \times 10.0$$
-
-* **Quantitative Prediction**: A $100\text{ GeV}$ photon emitted from a Gamma-Ray Burst (GRB) crossing $10^9\text{ light-years}$ exhibits a discrete phase delay of exactly **$15.8336\ \mu\text{s}$** ($1.58336 \times 10^{-5}\text{ s}$).
-* **Falsification Kill Condition**: If Cherenkov telescope arrays (CTA/H.E.S.S.) measure multi-TeV GRBs with zero phase dispersion ($\Delta \tau < 10^{-12}\text{ s}$) or unquantized delays, the 114-node $\mathbb{Z}_{114}$ lattice topology is empirically disproved.
-* *Detailed Documentation*: `docs/physics_proofs/falsifiable_predictions.md`
-
-### 2. Continuum Limit Proof ($N \to \infty$)
-The framework proves via Taylor expansion that as the discrete lattice step size $\Delta x \to 0$ and total core nodes $N \to \infty$, the discrete $21$-step shift operator contracts directly into continuous differential operators:
-
-$$\lim_{\Delta x \to 0} \frac{\Psi(x + 21\Delta x) - 2\Psi(x) + \Psi(x - 21\Delta x)}{(\Delta x)^2} = 441 \frac{\partial^2 \Psi}{\partial x^2}$$
-
-Mapping the $SO(13)$ Lie algebra rotation generators and boundary tensor $\mathbf{B}_f = [0, 9, 18, 9, 36, 45]^T$ recovers the continuous metric tensor $g_{\mu\nu}$ and Einstein Field Equations ($G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$).
-* *Detailed Documentation*: `docs/physics_proofs/continuum_limit_proof.md`
-
-### 3. Hardware Test Bench & Toroidal Interferometry
-Physical verification is operationalized using dual counter-rotating toroidal coils driven at 3-6-9 resonant frequencies ($S_{\text{up}} = 123456789\text{ Hz}$, $S_{\text{down}} = 987654321\text{ Hz}$) to measure optical fringe shifts along the central vortex axis via laser interferometry.
-
----
-
-## VIII. Running the Physics Verification & Test Suite
-
-To execute the full test suite—including mathematical ground truth reconciliation, industrial remedies, and physical predictions—run the following commands from your IDE or terminal:
+Recommended development setup:
 
 ```bash
-# 1. Verify mathematical constants, Axiom I, scale factor, and speed of light
-python tests/test_math_reconciliation.py
+uv sync --group dev --extra scientific
+uv run ruff check src tests
+uv run ruff format --check src tests
+uv run pytest
+```
 
-# 2. Verify falsifiable quantum gravity dispersion and continuum metric convergence
-python tests/test_experimental_predictions.py
+Property-based invariant tests are in:
 
-# 3. Execute entire repository test suite
-python -m unittest discover -s tests -p "test_*.py"
+`tests/test_property_invariants.py`
 
----
+CI tests Python 3.12 and 3.14 for the canonical/open engine and keeps a Python 3.12 full-suite compatibility job for legacy modules.
 
-## Quickstart & Verification Commands
+## API security
 
-### Environment Setup
-```powershell
-$env:PYTHONPATH="."
-.\venv\Scripts\python.exe -m pip install -r requirements.txt
-.\venv\Scripts\python.exe -m pip install fastapi uvicorn pydantic torch onnx onnxruntime
+`src/api_server.py` no longer ships hard-coded API credentials.
 
-##Launch Enterprise API Server
+Set credentials with:
 
-.\venv\Scripts\python.exe -m uvicorn src.api_server:app --reload --port 8000
-Interactive Swagger UI: http://127.0.0.1:8000/docs
+```bash
+export UNIVERSAL_MATRIX_API_KEYS="your-secret-key:RESEARCH"
+```
 
-##Run Hardware Tests & Multi-Physics RL Training
+Optional allowed CORS origins:
 
-# Run HIL Hardware Stress Suite
-.\venv\Scripts\python.exe -m unittest tests/test_hil_hardware_suite.py
+```bash
+export UNIVERSAL_MATRIX_CORS_ORIGINS="https://example.org"
+```
 
-# Run Multi-Physics MHD PDE + SAC Training
-.\venv\Scripts\python.exe src/core/multiphysics_rl_engine.py
+Wildcard credentialed CORS is intentionally rejected.
 
-# Run Cryptographic Audit Verification
-.\venv\Scripts\python.exe src/audit_ledger.py
-Launch WebXR Spatial Workstations
-PowerShell
-# Advanced Volumetric VR Lab
-.\venv\Scripts\python.exe src/vis/advanced_vr_lab.py
-Start-Process "src/vis/advanced_vr_lab.html"
+## Documentation
 
-# Micro-to-Macro Scale-Invariant Explorer
-.\venv\Scripts\python.exe src/vis/micro_macro_vr.py
-Start-Process "src/vis/micro_macro_vr.html"
+Start with:
 
+- `docs/white_paper.md`
+- `docs/canonical_spec_v0.4.md`
+- `docs/physical_extension_v0.1.md`
+- `docs/gauge_dynamics_v0.1.md`
+- `docs/gauge_hamiltonian_v0.1.md`
+- `docs/gauge_dispersion_v0.1.md`
+- `docs/gauge_3d_v0.1.md`
+- `docs/open_boundary_solver_v0.1.md`
+- `docs/unified_engine_v0.1.md`
+
+Older documents and modules may preserve historical design language. Where they conflict with the canonical specification or current white paper, the canonical specification and current executable tests take precedence.
+
+## Repository policy
+
+New physical claims should provide:
+
+1. a precise mathematical definition,
+2. units or a dimensionless observable,
+3. independently fixed parameters,
+4. an executable prediction,
+5. uncertainty/error handling,
+6. a falsification condition,
+7. comparison with existing measurements or theories.
+
+Calibration to a known result must be labeled as calibration, not derivation.
