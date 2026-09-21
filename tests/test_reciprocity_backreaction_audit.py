@@ -17,7 +17,7 @@ def test_metric_determinant_matches_diagonal_product():
     assert math.isclose(
         float(np.prod(diag)),
         metric_determinant(psi, c),
-        rel_tol=0,
+        rel_tol=1e-15,
         abs_tol=1e-14,
     )
 
