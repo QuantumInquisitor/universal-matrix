@@ -67,7 +67,8 @@ class MacroLatticeMapper:
             lattice_nodes.append({
                 "id": f"chakra_{idx+1}",
                 "name": name,
-                "category": "Traditional symbolic chakra label",
+                "category": "Chakra",
+                "category_description": "Traditional symbolic chakra label",
                 "model_status": "symbolic_visualization_only",
                 "frequency_hz": details["freq_hz"],
                 "target_layer": details["layer"],
@@ -80,7 +81,8 @@ class MacroLatticeMapper:
             lattice_nodes.append({
                 "id": f"meridian_{idx+1}",
                 "name": f"{m_name} Meridian",
-                "category": "Traditional meridian analogy",
+                "category": "Meridian",
+                "category_description": "Traditional meridian analogy",
                 "model_status": "symbolic_visualization_only",
                 "element": m_details["element"],
                 "polarity": m_details["type"],
