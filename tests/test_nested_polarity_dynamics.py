@@ -114,3 +114,19 @@ def test_independent_parameter_identification_helpers():
     assert maxwell_similarity_exponent() == 1.0
     kappa = normalized_coupling_from_mode_split(99.0, 101.0)
     assert math.isclose(kappa, 0.01, rel_tol=0, abs_tol=1e-12)
+
+
+def test_gauge_covariant_injection_is_invariant():
+    a = make_layer(0, 0, 1, 1.2, phase=0.4)
+    b = make_layer(1, 9, -1, 0.8, phase=-0.7)
+    link = 0.3
+    before = injection_flux(a, b, 0.05, link_phase=link)
+
+    alpha_a = 1.1
+    alpha_b = -0.2
+    a2 = make_layer(0, 0, 1, 1.2, phase=a.phase + alpha_a)
+    b2 = make_layer(1, 9, -1, 0.8, phase=b.phase + alpha_b)
+    link2 = link + alpha_a - alpha_b
+    after = injection_flux(a2, b2, 0.05, link_phase=link2)
+
+    assert math.isclose(before, after, rel_tol=0, abs_tol=1e-12)
