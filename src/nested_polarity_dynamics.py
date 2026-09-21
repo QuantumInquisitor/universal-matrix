@@ -62,15 +62,25 @@ def relative_polarity(a: ToroidalLayerState, b: ToroidalLayerState) -> int:
     return a.polarity * b.polarity
 
 
-def phase_coupling(a: ToroidalLayerState, b: ToroidalLayerState) -> float:
-    """Bounded phase relation in [-1,1]."""
-    return math.cos(a.phase - b.phase)
+def phase_coupling(
+    a: ToroidalLayerState,
+    b: ToroidalLayerState,
+    link_phase: float = 0.0,
+) -> float:
+    """Gauge-covariant bounded phase relation in [-1,1].
+
+    Uses cos(phi_b - phi_a + theta_ab). With theta_ab=0 this reduces to the
+    earlier raw relative-phase model. Under a local U(1) transformation, this
+    combination is invariant when the link transforms covariantly.
+    """
+    return math.cos(b.phase - a.phase + link_phase)
 
 
 def injection_flux(
     source: ToroidalLayerState,
     target: ToroidalLayerState,
     coupling: float,
+    link_phase: float = 0.0,
 ) -> float:
     """Directed Russell-inspired inter-layer exchange ansatz.
 
@@ -93,7 +103,9 @@ def injection_flux(
         raise ValueError("coupling must be non-negative")
     magnitude = coupling * math.sqrt(source.amplitude * target.amplitude)
     polarity_gradient = 0.5 * (source.polarity - target.polarity)
-    return magnitude * polarity_gradient * phase_coupling(source, target)
+    return magnitude * polarity_gradient * phase_coupling(
+        source, target, link_phase=link_phase
+    )
 
 
 def self_similar_scale(
@@ -137,6 +149,7 @@ def neighbor_phase_shift(
     state: ToroidalLayerState,
     neighbor: ToroidalLayerState,
     coupling: float,
+    link_phase: float = 0.0,
 ) -> float:
     """Dimensionless phase-rate correction from one neighboring layer.
 
@@ -158,7 +171,7 @@ def neighbor_phase_shift(
         * coupling
         * relative
         * amplitude_ratio
-        * phase_coupling(state, neighbor)
+        * phase_coupling(state, neighbor, link_phase=link_phase)
     )
 
 
