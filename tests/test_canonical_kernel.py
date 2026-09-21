@@ -18,6 +18,7 @@ from src.canonical_kernel import (
     routing_channel,
     routing_orbit,
     verify_kernel,
+    synchronized_routing_steps,
 )
 
 
@@ -43,6 +44,14 @@ def test_mixed_radix_bijection():
 def test_interface_order_12():
     assert all(interface(n, 12) == n for n in range(108))
     assert any(interface(n, 6) != n for n in range(108))
+
+
+def test_synchronized_routing_lifts_and_minimal_convention():
+    assert synchronized_routing_steps() == (21, 57, 93)
+    for step in synchronized_routing_steps():
+        assert math.gcd(step, 108) == 3
+        assert (3 * step) % 108 == 63
+    assert min(synchronized_routing_steps()) == 21
 
 
 def test_routing_three_cycles_of_36():
