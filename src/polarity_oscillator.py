@@ -50,7 +50,18 @@ TAU = 2.0 * math.pi
 
 
 def half_cycle_index(phase: float) -> int:
-    return math.floor(phase / math.pi)
+    """Return the half-cycle index with robust snapping at exact pi boundaries.
+
+    Routing-tick evolution reaches mathematical boundaries such as pi after a
+    finite number of pi/18 increments. Floating addition can place the stored
+    value a few ulps below the exact boundary, so values numerically equal to an
+    integer multiple of pi are snapped before flooring.
+    """
+    quotient = phase / math.pi
+    nearest = round(quotient)
+    if math.isclose(quotient, nearest, rel_tol=0.0, abs_tol=1e-12):
+        quotient = float(nearest)
+    return math.floor(quotient)
 
 
 def half_cycle_parity(phase: float) -> int:
