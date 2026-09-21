@@ -257,7 +257,11 @@ class ControlPayload(BaseModel):
     step_delay: Optional[float] = None
 
 class DNASequencePayload(BaseModel):
-    sequence: str = Field(..., description="Raw nucleotide sequence (A, T, C, G)", example="ATGCGATCG")
+    sequence: str = Field(
+        ...,
+        description="Raw nucleotide sequence (A, T, C, G)",
+        json_schema_extra={"example": "ATGCGATCG"},
+    )
 
 # --- System & Authentication Endpoints ---
 @app.get("/")
