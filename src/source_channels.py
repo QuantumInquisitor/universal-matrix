@@ -109,6 +109,16 @@ class BoundaryFlux:
             + self.z_pos + self.z_neg
         )
 
+    def as_dict(self) -> dict[str, float]:
+        return {
+            "x_pos": self.x_pos,
+            "x_neg": self.x_neg,
+            "y_pos": self.y_pos,
+            "y_neg": self.y_neg,
+            "z_pos": self.z_pos,
+            "z_neg": self.z_neg,
+        }
+
 
 def apply_boundary_flux(
     rho,
