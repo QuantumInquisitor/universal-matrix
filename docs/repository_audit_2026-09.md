@@ -257,3 +257,68 @@ Avoid the word **verified** without one of those qualifiers.
 The current canonical/open-DEC path is now the strongest technical part of the repository.
 
 The largest remaining weakness is **not the new kernel**. It is the volume of historical modules whose names and comments still imply physical validation, enterprise performance, or external-theory equivalence that the implementations do not establish.
+
+
+## Audit update: modernization pass completed
+
+The following additional corrections were completed after the initial audit.
+
+### Deployment and supply chain
+
+- Docker runtime moved to Python 3.14 with uv-managed dependencies.
+- Default container now runs the smaller secured research API, not the legacy hardware API.
+- Container runs as a non-root user with a reduced build context.
+- Compose syntax and service dependencies were corrected.
+- Prometheus, Grafana, and nginx images were pinned to current stable releases instead of moving latest tags.
+- Container CI now uses current GitHub Actions majors and emits image provenance plus SBOM metadata.
+- Dependabot coverage was added for Python, GitHub Actions, and Docker.
+- CodeQL v4 Python scanning was added.
+
+### API and runtime security
+
+- A second legacy API stack was found with a hard-coded JWT secret and operator password.
+- JWT configuration was centralized in runtime environment configuration.
+- Legacy operator login is disabled unless an explicit environment password is supplied.
+- Hardware/control HTTP routes are deny-by-default without bearer authorization.
+- Legacy WebSocket routes now require authentication.
+- Redis URL is runtime-configured.
+- The small research API now exposes Prometheus metrics so the secured default container remains observable.
+
+### Hardware fail-closed behavior
+
+- Real hardware now requires both REAL system mode and an explicit hardware-arm environment flag.
+- CNC defaults to mock/fail-closed and requires an explicit connected serial port for real I/O.
+- FPGA probing has a timeout and no longer reports a flash operation that never occurred.
+- QPU execution requires an explicit external executor before any real-job status can be returned.
+- SDR real transmission requires an explicit transmitter backend.
+- The software safety interlock now reports an emergency-stop request rather than claiming it physically cut power.
+- HAL health no longer reports unconditional ALL_SYSTEMS_OPERATIONAL.
+
+### Scientific cleanup
+
+- Historical GRB photon-delay scripts no longer contain a fixed Matrix target.
+- The public dispersion plot now visualizes the actually derived dimensionless lattice dispersion.
+- Old tests asserting the retired 15.8336 microsecond value were replaced by neutral regression and lattice-dispersion tests.
+- Public historical documents were marked superseded.
+- The public visualizer now marks the old photon-delay claim as retired.
+- Biometric coherence is explicitly labeled an experimental software feature, not a clinical metric.
+- Biometric feedback is advisory only and does not transmit RF.
+- 3/6/9 signal synthesis is labeled a legacy simulation profile.
+- Fake PINO, QPU, quantum-entanglement, physics-verification, and M-theory status language has been replaced with implementation-accurate terminology.
+
+### Numerical verification
+
+- Manufactured open-Gauss solutions were added. These test recovery of a known potential for both zero-flux and six-gate nonzero-flux cases.
+- Property-based tests remain part of the canonical/open-engine verification suite.
+- The custom matrix-free PCG solver remains the baseline until benchmark evidence justifies changing numerical backends.
+
+## Remaining highest-priority work after this pass
+
+1. Obtain and inspect an observed CI run from GitHub Actions.
+2. Generate and commit a uv lockfile from a network-enabled development environment.
+3. Benchmark the open PCG solver versus SciPy Krylov and PETSc/GAMG on increasing grids before selecting a production-scale backend.
+4. Complete migration of remaining historical SO(13), torus, scalar-harmonic, photonic, and visualization modules.
+5. Add explicit authentication to any future WebSocket or hardware endpoint at definition time rather than relying only on global middleware.
+6. Introduce a release/version policy distinguishing canonical kernel releases from experimental physical adapters.
+7. Add quantitative mesh/timestep convergence studies before any physical comparison.
+8. Derive six-gate field-flux weighting from the nested boundary dynamics instead of the current adapter policy.
