@@ -464,3 +464,222 @@ The primary remaining gravity-side questions are now:
 3. confront the exact static exterior with strong-field observations;
 4. derive the dimensional coupling (kappa) rather than calibrating it from
    measured (G).
+
+
+---
+
+## 14. September 21 update — action-level gravity/gauge unification
+
+### Reciprocity metric conditional uniqueness
+
+The exponential metric is now conditionally derived from explicit premises:
+
+1. full six-gate spatial isotropy;
+2. additive scalar-potential composition;
+3. clock factor (N=e^{-psi});
+4. local causal-speed reciprocity.
+
+Together these imply
+
+[
+S=e^psi
+]
+
+and therefore
+
+[
+ds^2
+=
+-e^{-2psi}c_*^2dt^2
++
+e^{2psi}dmathbf x^2.
+]
+
+### Self-consistent matter + geometry-scalar action
+
+A common action now gives both the matter equation and geometry-scalar equation.
+
+The geometry source is
+
+[
+T^{00}+T^{11}+T^{22}+T^{33}.
+]
+
+For stationary isolated systems, stress-energy conservation plus the von Laue
+condition gives
+
+[
+oxed{
+M_{m active}=E.
+}
+]
+
+Thus integrated source universality is no longer restricted to the scalar
+soliton sector.
+
+### Newton normalization
+
+The weak Newton limit fixes
+
+[
+oxed{
+kappa
+=
+rac{4pi G}{c_*^4}
+}
+]
+
+for the current scalar-action convention.
+
+The measured numerical value of (G) is still an external calibration, not a
+kernel derivation.
+
+### Exact static exterior
+
+The static spherical vacuum equation is exactly
+
+[
+
+abla^2psi=0,
+]
+
+so
+
+[
+psi=mu/r
+]
+
+is the exact exterior solution within the proposed scalar action.
+
+### Gauge fields on the reciprocity geometry
+
+U(1) and generic Yang-Mills actions now give the same coordinate characteristic
+speed as the geometry scalar and metric null cone:
+
+[
+oxed{
+c_{m U(1)}
+=
+c_{m YM}
+=
+c_psi
+=
+c_{m null}
+=
+e^{-2psi}.
+}
+]
+
+### Exact geometric difference from GR vacuum
+
+The reciprocity exterior is not Ricci-flat:
+
+[
+R
+=
+-rac{2mu^2}{r^4}e^{-2mu/r}.
+]
+
+Thus
+
+[
+	ext{reciprocity scalar vacuum}
+
+eq
+	ext{Einstein vacuum}.
+]
+
+### Higher-order weak-field signature
+
+The first-post-Newtonian parameters still satisfy
+
+[
+eta=gamma=1.
+]
+
+Using the isotropic 2PN spatial convention,
+
+[
+oxed{
+delta_{m reciprocity}
+=
+rac43,
+qquad
+delta_{m GR}=1.
+}
+]
+
+### Second-order light deflection
+
+[
+oxed{
+alpha_{m reciprocity}
+=
+4rac{mu}{b}
++
+4pi
+left(
+rac{mu}{b}
+ight)^2
++cdots
+}
+]
+
+versus
+
+[
+oxed{
+alpha_{m GR}
+=
+4rac{mu}{b}
++
+rac{15pi}{4}
+left(
+rac{mu}{b}
+ight)^2
++cdots.
+}
+]
+
+### Circular orbits and ISCO
+
+[
+oxed{
+r_{m ISCO}
+=
+(3+sqrt5)mu
+}
+]
+
+with
+
+[
+oxed{
+R_{m ISCO}
+approx
+6.337940264856347,mu
+}
+]
+
+and
+
+[
+oxed{
+Omega_{m ISCO}mu
+approx
+0.06333263135.
+}
+]
+
+These are direct strong-field predictions of the current reciprocity exterior.
+
+### Updated central open questions
+
+1. derive the reciprocity premises from the finite canonical kernel;
+2. derive the dimensional coupling rather than calibrating it from (G);
+3. extend the evolving reciprocity geometry into the fully coupled lattice
+   matter + U(1) + SU(2) + SU(3) engines;
+4. construct a consistent chiral fermion sector;
+5. compare the 2PN, second-order lensing, ISCO, and strong-field predictions
+   against current observations;
+6. construct a genuine quantum theory rather than a classical field analogue.
