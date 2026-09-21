@@ -2,6 +2,8 @@ import math
 import numpy as np
 
 from src.reciprocity_dirac_geometry_source import (
+    analytic_geometry_source,
+    analytic_reference_residual,
     dirac_energy,
     local_geometry_source_reference,
     rest_mode_source_energy,
@@ -75,3 +77,53 @@ def test_positive_uniform_rest_spinor_has_positive_geometry_source():
     )
 
     assert np.all(source>0)
+
+
+def test_analytic_source_matches_finite_difference_oracle():
+    rng=np.random.default_rng(1702)
+    shape=(3,3,3)
+    spinor=(
+        rng.normal(scale=0.08,size=shape+(4,))
+        +1j*rng.normal(scale=0.08,size=shape+(4,))
+    )
+    psi=rng.normal(scale=0.15,size=shape)
+
+    analytic=analytic_geometry_source(
+        spinor,
+        psi,
+        mass=0.9,
+        spacing=0.7,
+    )
+    reference=local_geometry_source_reference(
+        spinor,
+        psi,
+        mass=0.9,
+        spacing=0.7,
+        epsilon=2e-6,
+    )
+
+    assert np.allclose(
+        analytic,
+        reference,
+        atol=3e-8,
+        rtol=0,
+    )
+
+
+def test_analytic_residual_helper_is_small():
+    rng=np.random.default_rng(1703)
+    shape=(2,3,2)
+    spinor=(
+        rng.normal(scale=0.05,size=shape+(4,))
+        +1j*rng.normal(scale=0.05,size=shape+(4,))
+    )
+    psi=rng.normal(scale=0.1,size=shape)
+
+    residual=analytic_reference_residual(
+        spinor,
+        psi,
+        mass=1.1,
+        spacing=1.0,
+        epsilon=2e-6,
+    )
+    assert residual<2e-8
