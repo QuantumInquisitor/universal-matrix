@@ -37,6 +37,7 @@ try:
         total_scalar,
     )
     from .source_interaction import solve_minimum_energy_field
+    from .open_boundary_solver import GateFieldFlux, balanced_gate_flux, solve_open_gauss
 except ImportError:
     from gauge_3d import AXES, U13DHamiltonian, _zeros3
     from gauge_matter import sourced_weak_step
@@ -54,6 +55,7 @@ except ImportError:
         total_scalar,
     )
     from source_interaction import solve_minimum_energy_field
+    from open_boundary_solver import GateFieldFlux, balanced_gate_flux, solve_open_gauss
 
 
 def copy_scalar(field):
@@ -155,6 +157,7 @@ class UnifiedMatrixGaugeEngine:
         free_charge=None,
         shape=None,
         beta: float = 1.0,
+        boundary_mode: str = "open",
     ):
         inferred_shape = (
             len(polarity_sites),
@@ -165,6 +168,9 @@ class UnifiedMatrixGaugeEngine:
         if self.shape != inferred_shape:
             raise ValueError("polarity site shape mismatch")
 
+        if boundary_mode not in ("open", "periodic"):
+            raise ValueError("boundary_mode must be 'open' or 'periodic'")
+        self.boundary_mode = boundary_mode
         self.gauge = U13DHamiltonian.zeros(self.shape, beta=beta)
         self.polarization = polarization_field(polarity_sites)
         self.polarization_charge = induced_charge_density(
@@ -176,10 +182,22 @@ class UnifiedMatrixGaugeEngine:
         self.total_electric_source = add_scalar_fields(
             self.polarization_charge, self.free.rho
         )
-        self.field_source, self.zero_mode_charge = neutralize_periodic_source(
-            self.total_electric_source
-        )
-        gauss_project(self.gauge, self.field_source)
+        if self.boundary_mode == "periodic":
+            self.field_source, self.zero_mode_charge = neutralize_periodic_source(
+                self.total_electric_source
+            )
+            gauss_project(self.gauge, self.field_source)
+            self.open_boundary_solution = None
+            self.open_boundary_flux = None
+        else:
+            total_q = total_scalar(self.total_electric_source)
+            self.field_source = copy_scalar(self.total_electric_source)
+            self.zero_mode_charge = 0.0
+            self.open_boundary_flux = balanced_gate_flux(total_q)
+            self.open_boundary_solution = solve_open_gauss(
+                np.asarray(self.field_source, dtype=float),
+                self.open_boundary_flux,
+            )
         self.topological_magnetic_charge = magnetic_monopole_density(
             self.gauge.field
         )
@@ -229,11 +247,40 @@ class UnifiedMatrixGaugeEngine:
             self.polarization_charge,
             self.free.rho,
         )
-        self.field_source, self.zero_mode_charge = neutralize_periodic_source(
-            self.total_electric_source
-        )
 
-        max_gauss = gauss_project(self.gauge, self.field_source)
+        if self.boundary_mode == "periodic":
+            self.field_source, self.zero_mode_charge = neutralize_periodic_source(
+                self.total_electric_source
+            )
+            max_gauss = gauss_project(self.gauge, self.field_source)
+            self.open_boundary_flux = None
+            self.open_boundary_solution = None
+        else:
+            self.field_source = copy_scalar(self.total_electric_source)
+            self.zero_mode_charge = 0.0
+            total_q = total_scalar(self.total_electric_source)
+
+            # Convert the user's charge inflow convention to outward electric
+            # flux. The internal Gauss solve needs total outward flux = total
+            # enclosed charge. We retain the user's gate proportions when
+            # possible, otherwise use equal six-gate weighting.
+            rates = boundary_flux.as_dict()
+            magnitudes = {name: abs(value) for name, value in rates.items()}
+            if sum(magnitudes.values()) > 0:
+                self.open_boundary_flux = balanced_gate_flux(
+                    total_q,
+                    weights=magnitudes,
+                )
+            else:
+                self.open_boundary_flux = balanced_gate_flux(total_q)
+
+            self.open_boundary_solution = solve_open_gauss(
+                np.asarray(self.field_source, dtype=float),
+                self.open_boundary_flux,
+            )
+            max_gauss = self.open_boundary_solution.max_abs_gauss_residual(
+                np.asarray(self.field_source, dtype=float)
+            )
 
         self.topological_magnetic_charge = magnetic_monopole_density(
             self.gauge.field
