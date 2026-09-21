@@ -249,3 +249,65 @@ Candidate sources for (omega_ell) and (kappa_T) include:
 
 The correct dependence should be selected by symmetry, conservation, and
 experimental falsifiability rather than numerical convenience.
+
+
+## 10. Content-dependent physical tick duration
+
+A later extension preserves the exact canonical phase increment
+
+[
+Deltaphi_P=rac{pi}{18}
+]
+
+per routing tick while allowing the physical duration assigned to that tick to
+depend on the layer's local quadratic content.
+
+For layer (ell),
+
+[
+mathcal C_ell=a_ell^2.
+]
+
+The current experimental lapse family is
+
+[
+L_ell
+=
+expleft[
+g(mathcal C_ell-mathcal C_{m ref})
+ight].
+]
+
+Therefore
+
+[
+	au_ell
+=
+	au_0 L_ell.
+]
+
+All layers still advance by the same canonical state increment per routing
+tick, but layers with different content require different modeled physical
+durations to complete that tick.
+
+This should be read as
+
+[
+oxed{
+	ext{same canonical tick count}
+
+eq
+	ext{same modeled physical duration}
+}
+]
+
+when local content differs.
+
+The implementation deliberately does **not** call this General Relativistic
+proper time. Establishing a gravitational interpretation would require deriving
+clock comparison, trajectory propagation, and experimentally correct weak-field
+limits from the same law.
+
+Implementation:
+
+`OscillatoryScaleHierarchy.step_routing_tick(...)`
