@@ -87,38 +87,42 @@ class U13DField:
             beta=beta,
         )
 
-    def plaquette(self, plane: tuple[str, str], idx: tuple[int, int, int]) -> float:
-        """F_ij = A_i(x)+A_j(x+i)-A_i(x+j)-A_j(x)."""
+    def raw_plaquette(self, plane: tuple[str, str], idx: tuple[int, int, int]) -> float:
+        """Unwrapped oriented curvature used by the weak quadratic theory."""
         a, b = plane
         xp_a = _shift(idx, a, 1, self.shape)
         xp_b = _shift(idx, b, 1, self.shape)
-        return wrap_angle(
+        return (
             _get(self.links[a], idx)
             + _get(self.links[b], xp_a)
             - _get(self.links[a], xp_b)
             - _get(self.links[b], idx)
         )
 
+    def plaquette(self, plane: tuple[str, str], idx: tuple[int, int, int]) -> float:
+        """Principal compact U(1) plaquette angle."""
+        return wrap_angle(self.raw_plaquette(plane, idx))
+
     def magnetic_components(self):
         """Return Bx=F_yz, By=F_zx, Bz=F_xy."""
         return {
             "x": [
                 [
-                    [self.plaquette(("y", "z"), (i, j, k)) for k in range(self.shape[2])]
+                    [self.raw_plaquette(("y", "z"), (i, j, k)) for k in range(self.shape[2])]
                     for j in range(self.shape[1])
                 ]
                 for i in range(self.shape[0])
             ],
             "y": [
                 [
-                    [self.plaquette(("z", "x"), (i, j, k)) for k in range(self.shape[2])]
+                    [self.raw_plaquette(("z", "x"), (i, j, k)) for k in range(self.shape[2])]
                     for j in range(self.shape[1])
                 ]
                 for i in range(self.shape[0])
             ],
             "z": [
                 [
-                    [self.plaquette(("x", "y"), (i, j, k)) for k in range(self.shape[2])]
+                    [self.raw_plaquette(("x", "y"), (i, j, k)) for k in range(self.shape[2])]
                     for j in range(self.shape[1])
                 ]
                 for i in range(self.shape[0])
@@ -133,7 +137,7 @@ class U13DField:
                 for j in range(ny):
                     for k in range(nz):
                         f = self.plaquette(plane, (i, j, k))
-                        total += self.beta * (1.0 - math.cos(f))
+                        total += self.beta * 2.0 * math.sin(0.5 * f) ** 2
         return total
 
     def weak_magnetic_energy(self) -> float:
@@ -143,7 +147,7 @@ class U13DField:
             for i in range(nx):
                 for j in range(ny):
                     for k in range(nz):
-                        f = self.plaquette(plane, (i, j, k))
+                        f = self.raw_plaquette(plane, (i, j, k))
                         total += 0.5 * self.beta * f * f
         return total
 
@@ -233,9 +237,9 @@ class U13DHamiltonian:
                                 plane = (other, axis)
                                 sign = -1.0
 
-                            f_here = sign * self.field.plaquette(plane, idx)
+                            f_here = sign * self.field.raw_plaquette(plane, idx)
                             xm = _shift(idx, other, -1, shape)
-                            f_prev = sign * self.field.plaquette(plane, xm)
+                            f_prev = sign * self.field.raw_plaquette(plane, xm)
                             total += f_here - f_prev
 
                         _set(force[axis], idx, -self.field.beta * total)
@@ -304,6 +308,28 @@ def divergence(field_components: dict[str, list[list[list[float]]]], shape):
                 _set(out, idx, value)
     return out
 
+
+
+def forward_divergence(field_components: dict[str, list[list[list[float]]]], shape):
+    """Forward-difference divergence for plaquette-derived magnetic components.
+
+    With Bx=F_yz, By=F_zx, Bz=F_xy built from forward-oriented plaquettes,
+    the discrete Bianchi identity is Δ_x^+ Bx + Δ_y^+ By + Δ_z^+ Bz = 0.
+    """
+    out = _zeros3(shape)
+    nx, ny, nz = shape
+    for i in range(nx):
+        for j in range(ny):
+            for k in range(nz):
+                idx = (i, j, k)
+                value = 0.0
+                for axis in AXES:
+                    xp = _shift(idx, axis, 1, shape)
+                    value += _get(field_components[axis], xp) - _get(
+                        field_components[axis], idx
+                    )
+                _set(out, idx, value)
+    return out
 
 def max_abs_scalar(field) -> float:
     return max(abs(v) for plane in field for row in plane for v in row)
