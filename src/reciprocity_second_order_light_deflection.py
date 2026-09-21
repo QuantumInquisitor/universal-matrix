@@ -28,7 +28,9 @@ Turning point:
     x_t^2 = exp(4 epsilon x_t)
 
 gives
-    x_t = 1 + 2 epsilon + 6 epsilon^2 + ...
+    x_t
+      = 1 + 2 epsilon + 6 epsilon^2
+        + (64/3) epsilon^3 + ...
 
 Orders:
 
@@ -71,7 +73,18 @@ import math
 
 
 def turning_point_series(epsilon: float) -> float:
-    return 1.0 + 2.0*epsilon + 6.0*epsilon**2
+    """Turning-point series with a cubic remainder-control term.
+
+    The observable deflection calculation remains second order. Including the
+    exact cubic turning-point coefficient suppresses the O(epsilon^3)
+    residual in the algebraic turning-point constraint.
+    """
+    return (
+        1.0
+        + 2.0*epsilon
+        + 6.0*epsilon**2
+        + (64.0/3.0)*epsilon**3
+    )
 
 
 def orbit_x0(phi: float) -> float:
