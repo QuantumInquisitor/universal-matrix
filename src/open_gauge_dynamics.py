@@ -224,3 +224,34 @@ def restrict_full_current_to_open(full_current, shape):
         "y": np.asarray(full_current["y"], dtype=float)[:, : ny - 1, :],
         "z": np.asarray(full_current["z"], dtype=float)[:, :, : nz - 1],
     }
+
+
+def principal_angle(angle):
+    return (angle + np.pi) % (2.0 * np.pi) - np.pi
+
+
+def face_winding_numbers(faces):
+    """Integer compact winding n=(F-principal(F))/2pi on open faces."""
+    out = {}
+    for plane in PLANES:
+        raw = np.asarray(faces[plane], dtype=float)
+        principal = principal_angle(raw)
+        out[plane] = np.rint((raw - principal) / (2.0 * np.pi)).astype(int)
+    return out
+
+
+def topological_magnetic_charge(links, shape):
+    """Integer compact-U(1) magnetic charge on interior cubes.
+
+    For each cube, compute the oriented discrete divergence of face winding.
+    Result shape is (nx-1, ny-1, nz-1).
+    """
+    winding = face_winding_numbers(curl(links))
+    nxy, nyz, nzx = winding["xy"], winding["yz"], winding["zx"]
+
+    # Outward flux difference through opposite cube faces:
+    # +x/-x uses yz, +y/-y uses zx, +z/-z uses xy.
+    mx = nyz[1:, :, :] - nyz[:-1, :, :]
+    my = nzx[:, 1:, :] - nzx[:, :-1, :]
+    mz = nxy[:, :, 1:] - nxy[:, :, :-1]
+    return mx + my + mz
