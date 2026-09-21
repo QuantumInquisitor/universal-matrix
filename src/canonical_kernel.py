@@ -11,7 +11,10 @@ M_TOTAL = N_CORE + BOUNDARY_COUNT
 REGISTER_SIZE = 64
 
 INTERFACE_STEP = 9
-ROUTING_STEP = 21
+SYNCHRONIZED_ROUTING_STEPS = (21, 57, 93)
+# T^3 = E^7 permits all three lifts above. 21 is the canonical minimal-positive
+# lift (reduced step 7 rather than 19 or 31), not a uniqueness theorem.
+ROUTING_STEP = SYNCHRONIZED_ROUTING_STEPS[0]
 POLARITY_STEP = 54
 REGISTER_MULTIPLIER = 7
 
@@ -93,6 +96,11 @@ def projection_delta_theorem(n: int, step: int) -> int:
     n = _core(n)
     wrap = 1 if d and n >= N_CORE - d else 0
     return (REGISTER_MULTIPLIER * d + 12 * wrap) % REGISTER_SIZE
+
+
+def synchronized_routing_steps() -> tuple[int, ...]:
+    """Return all positive routing lifts satisfying the current synchronization constraints."""
+    return SYNCHRONIZED_ROUTING_STEPS
 
 
 def routing_orbit(start: int) -> tuple[int, ...]:
