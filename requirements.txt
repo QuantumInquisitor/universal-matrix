@@ -1,12 +1,24 @@
-﻿fastapi
-uvicorn[standard]
-pydantic
-numpy
-torch
-redis
-pyjwt
-passlib[bcrypt]
-python-multipart
-httpx
-matplotlib
-prometheus_client
+# Compatibility requirements file.
+#
+# Authoritative dependency metadata now lives in pyproject.toml and the
+# recommended workflow is:
+#
+#   uv sync --group dev --all-extras
+#
+# This file remains for legacy pip-based environments only.
+
+numpy>=2.2
+scipy>=1.18
+fastapi>=0.116
+uvicorn[standard]>=0.34
+pydantic>=2.10
+pydantic-settings>=2.7
+redis>=5.2
+PyJWT>=2.10
+python-multipart>=0.0.20
+httpx>=0.28
+matplotlib>=3.10
+prometheus-client>=0.21
+torch>=2.10
+pytest>=9
+hypothesis[numpy]>=6.168
