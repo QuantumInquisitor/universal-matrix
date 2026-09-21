@@ -1156,3 +1156,243 @@ The current highest-priority gaps are now:
 
 The project remains a classical/semiclassical research architecture rather than
 a complete quantum fundamental theory.
+
+
+---
+
+## September 21 continuation — Weyl measure geometry and determinant
+
+### Ginsparg-Wilson chiral projectors
+
+Status: **DERIVED-ALGEBRAIC + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/ginsparg_wilson_chirality.py`
+- `tests/test_ginsparg_wilson_chirality.py`
+
+The overlap operator now feeds the exact modified chirality operator
+
+[
+\widehat{\gamma}_5
+=
+\gamma_5
+\left(
+I-\frac{D}{\rho}
+\right),
+]
+
+with
+
+[
+\widehat{\gamma}_5^2=I.
+]
+
+This gives exact finite-lattice chiral projectors
+
+[
+\widehat P_\pm
+=
+\frac12
+\left(
+I\pm\widehat{\gamma}_5
+\right).
+]
+
+The repository also computes the finite-lattice overlap index in the equivalent
+forms
+
+[
+\operatorname{index}(D)
+=
+\operatorname{Tr}
+\left[
+\gamma_5
+\left(
+I-\frac{D}{2\rho}
+\right)
+\right]
+=
+\frac12
+\operatorname{Tr}\widehat{\gamma}_5.
+]
+
+### Weyl projector-bundle curvature
+
+Status: **DERIVED-GEOMETRIC + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/weyl_measure_curvature.py`
+- `tests/test_weyl_measure_curvature.py`
+
+For a family of admissible gauge backgrounds, the modified Weyl projector
+defines a vector bundle over gauge-field configuration space.
+
+The local basis-independent curvature is
+
+[
+\boxed{
+\mathcal F_{ab}
+=
+i\operatorname{Tr}
+\left[
+P
+\left(
+\partial_aP\,\partial_bP
+-
+\partial_bP\,\partial_aP
+\right)
+\right].
+}
+]
+
+The implementation verifies gauge covariance of the Weyl subspace and gauge
+invariance, antisymmetry, and numerical reality of this curvature diagnostic.
+
+### Discrete Weyl holonomy
+
+Status: **DERIVED-GEOMETRIC + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/weyl_measure_holonomy.py`
+- `tests/test_weyl_measure_holonomy.py`
+
+Neighboring Weyl frames are connected through the unitary polar factor of their
+overlap.
+
+The closed-loop transport product
+
+[
+\mathcal H
+=
+Q_{0,N-1}\cdots Q_{2,1}Q_{1,0}
+]
+
+changes only by conjugation under arbitrary internal frame rotations.
+
+Therefore
+
+[
+\boxed{
+\Theta_{\rm loop}
+=
+\arg\det\mathcal H
+}
+]
+
+is independent of arbitrary eigensolver basis choices.
+
+The tests verify frame invariance, orientation reversal, unitarity, and the
+contractible-loop limit.
+
+### Curvature-holonomy consistency
+
+Status: **NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/weyl_measure_stokes.py`
+- `tests/test_weyl_measure_stokes.py`
+
+For sufficiently small rectangular loops,
+
+[
+\boxed{
+\Theta_{\rm loop}
+\simeq
+\mathcal F_{ab}
+\,\Delta\lambda^a
+\,\Delta\lambda^b.
+}
+]
+
+The independently constructed differential curvature and discrete loop
+holonomy agree in the shrinking-loop limit.
+
+This supplies a finite-lattice Stokes consistency check for the chiral measure
+geometry.
+
+### Finite Weyl determinant
+
+Status: **DERIVED-ALGEBRAIC + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/weyl_determinant.py`
+- `tests/test_weyl_determinant.py`
+
+For a GW-modified Weyl basis (V) and opposite ordinary barred chiral basis
+(overline V),
+
+[
+M
+=
+\overline V^\dagger D V.
+]
+
+Under internal basis rotations,
+
+[
+V\to VU,
+\qquad
+\overline V\to\overline V\overline U,
+]
+
+the finite Weyl block transforms as
+
+[
+M
+\to
+\overline U^\dagger M U.
+]
+
+Thus
+
+[
+|\det M|
+]
+
+is basis independent, while
+
+[
+\arg\det M
+]
+
+shifts by the internal basis determinant phases.
+
+The code verifies this transformation law explicitly.
+
+This makes the remaining measure problem precise rather than hiding it.
+
+### Revised chiral frontier
+
+The repository has now advanced through:
+
+[
+D_{\rm overlap}
+\rightarrow
+\widehat P_\pm
+\rightarrow
+\text{Weyl subspace}
+\rightarrow
+\mathcal F
+\rightarrow
+\mathcal H
+\rightarrow
+\det M.
+]
+
+The next genuinely unresolved chiral tasks are:
+
+1. construct a globally consistent fermion-measure section over admissible
+   gauge-field configuration space;
+2. compute the infinitesimal gauge variation of that measure;
+3. extract local anomaly coefficients;
+4. test anomaly cancellation for complete chiral representation sets;
+5. investigate global/topological anomalies;
+6. extend the overlap/Weyl construction to SU(2) and SU(3).
+
+No current repository result should yet be described as a completed anomaly-free
+chiral gauge theory.
