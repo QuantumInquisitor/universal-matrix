@@ -60,14 +60,52 @@ gauge fields.
 
 No independent "fermion gravitational charge" is introduced.
 
-## 3. Reference implementation
+## 3. Analytic lattice source and reference oracle
 
-The current implementation evaluates the local derivative by symmetric finite
-differences in (psi(x)).
+The local derivative now has an explicit analytic lattice form.
 
-This is intentionally a correctness oracle for small lattices.
+For
 
-A future analytic source can be derived and compared against this oracle.
+[
+V=e^{-psi},
+qquad
+F=e^{-2psi},
+]
+
+and the discrete Hermitian central momentum operator (p_i),
+
+[
+H_D
+=
+eta m V
++
+rac12sum_i{alpha_i p_i,F},
+]
+
+the local geometry source is
+
+[
+oxed{
+S_psi(x)
+=
+mV(x),operatorname{Re}
+left[
+chi^dagger(x)etachi(x)
+ight]
++
+2F(x)sum_i
+operatorname{Re}
+left[
+chi^dagger(x)alpha_i p_ichi(x)
+ight].
+}
+]
+
+The finite-difference implementation is retained as an independent correctness
+oracle for small lattices.
+
+The test suite verifies pointwise agreement between the analytic expression and
+the finite-difference derivative on nonuniform random geometries.
 
 ## 4. Source-sum identity
 
@@ -153,18 +191,77 @@ curved Dirac Hamiltonian.
 A quantum field theory treatment would require the expectation value of the
 renormalized stress-energy operator.
 
-## 8. Next step
+## 8. Coupled backreaction dynamics
 
-The immediate next improvement is an analytic lattice expression for
+The analytic source is now used in
+
+`src/reciprocity_dirac_backreaction.py`
+
+with tests in
+
+`tests/test_reciprocity_dirac_backreaction.py`.
+
+The coupled Hamiltonian is
 
 [
-S_psi(x)
+H_{m total}
+=
+H_{m geometry}
++
+operatorname{Re}
+langle
+chi|H_D[psi]|chi
+angle,
 ]
 
-that can be verified against the finite-difference oracle and used efficiently
-inside dynamical geometry evolution.
+with
+
+[
+H_{m geometry}
+=
+sum_x
+left[
+rac{kappa}{2}e^{-4psi}P_psi^2
++
+rac{|
+ablapsi|^2}{2kappa}
+ight].
+]
+
+The spinor evolves through
+
+[
+ipartial_tchi
+=
+H_D[psi]chi,
+]
+
+while the geometry momentum evolves with the same analytic source,
+
+[
+dot P_psi
+=
+rac{
+abla^2psi}{kappa}
++
+2kappa e^{-4psi}P_psi^2
++
+S_psi.
+]
+
+This is an Ehrenfest-type semiclassical backreaction system generated from one
+shared Hamiltonian. The tests check short-time spinor-norm conservation and
+small total-energy drift.
+
+## 9. Remaining limitation
+
+This still does not constitute second-quantized fermion backreaction.
+
+A quantum field treatment requires a renormalized expectation value of the
+stress-energy operator and a consistent vacuum prescription.
 
 ## Status
 
-The Dirac sector now has an action-derived reciprocity geometry source at the
-small-lattice semiclassical level.
+The Dirac sector now has both an analytic action-derived reciprocity geometry
+source and a dynamically coupled one-particle / semiclassical backreaction
+prototype.
