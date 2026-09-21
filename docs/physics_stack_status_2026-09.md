@@ -853,3 +853,188 @@ The highest-priority gaps are now:
 5. derivation of the absolute dimensional scale rather than calibration;
 6. experimental discrimination of the reciprocity geometry from GR in
    post-post-Newtonian and strong-field regimes.
+
+
+---
+
+## September 21 continuation — SU(3) geometry, full Dirac background, and chiral lattice reference
+
+### Dynamic SU(3) reciprocity geometry
+
+Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/reciprocity_dynamic_su3_geometry.py`
+
+The spatially weighted SU(3) Hamiltonian now evolves jointly with the reciprocity
+geometry scalar.
+
+The gauge Hamiltonian is
+
+[
+H_{SU(3)}
+=
+rac12sum_ell
+w_ell E_ell^aE_ell^a
++
+etasum_p
+w_p
+left[
+1-rac13operatorname{ReTr}U_p
+ight].
+]
+
+The local source satisfies
+
+[
+S_psi(x)
+=
+-rac{partial H_{SU(3)}}{partialpsi(x)}
+]
+
+and the exact lattice identity
+
+[
+oxed{
+sum_x S_psi(x)=2H_{SU(3)}.
+}
+]
+
+The analytic weighted SU(3) staple force is checked against group-direction
+finite differences.
+
+### Unified SU(3) matter + gauge + reciprocity geometry
+
+Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/reciprocity_su3_matter_geometry.py`
+
+The matter Hamiltonian on the reciprocity geometry is
+
+[
+H_{m matter}
+=
+e^{-4psi}|Pi|^2
++
+|D_iPsi|^2
++
+e^{2psi}V.
+]
+
+The geometry source is additive:
+
+[
+oxed{
+S_psi^{m total}
+=
+S_psi^{m matter}
++
+S_psi^{SU(3)}.
+}
+]
+
+The matter term is
+
+[
+oxed{
+S_psi^{m matter}
+=
+4e^{-4psi}|Pi|^2
+-
+2e^{2psi}V.
+}
+]
+
+The implementation verifies this full source against a direct finite-difference
+derivative of the non-geometry Hamiltonian.
+
+### Time-dependent and full prescribed reciprocity Dirac propagation
+
+Status: **DERIVED-CORRESPONDENCE + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/reciprocity_dirac_time_background.py`
+- `src/reciprocity_dirac_spacetime_background.py`
+
+For homogeneous time dependence,
+
+[
+chi=e^{3psi/2}Psi
+]
+
+removes the temporal volume-dilution spin-connection term.
+
+For general prescribed
+
+[
+psi=psi(t,mathbf x),
+]
+
+the rescaled spinor evolves with the instantaneous Hermitian operator
+
+[
+oxed{
+H(t)
+=
+eta m e^{-psi}
++
+rac12
+left{
+oldsymbolalphacdotmathbf p,
+e^{-2psi}
+ight}.
+}
+]
+
+The spatial anticommutator contains the geometry-gradient connection term,
+while the local (e^{3psi/2}) rescaling handles the temporal volume term.
+
+The tests verify Hermiticity and norm conservation for genuinely
+time-and-space-dependent prescribed geometry.
+
+### Chiral lattice reference
+
+Status: **CORRESPONDENCE + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/overlap_dirac_reference.py`
+- `src/u1_overlap_dirac_lattice.py`
+
+The overlap operator satisfies
+
+[
+oxed{
+gamma_5D+Dgamma_5
+=
+rac1ho Dgamma_5D
+}
+]
+
+and
+
+[
+oxed{
+D^dagger=gamma_5Dgamma_5.
+}
+]
+
+The finite-lattice U(1) implementation is locally gauge covariant and retains
+one physical zero-momentum mode rather than the naive doubled set.
+
+### Revised highest-priority open problems
+
+The next highest-priority gaps are now:
+
+1. Dirac stress-energy backreaction into the dynamical reciprocity scalar;
+2. chiral projectors, Weyl determinants, and anomaly accounting;
+3. SU(2)/SU(3) overlap-fermion gauge coupling;
+4. genuine second quantization and quantum state space;
+5. derivation of the absolute dimensional scale and couplings from the finite
+   kernel rather than experimental calibration;
+6. observational testing of the post-post-Newtonian and strong-field
+   reciprocity predictions.
