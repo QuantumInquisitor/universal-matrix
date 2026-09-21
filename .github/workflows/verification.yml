@@ -2,51 +2,74 @@ name: Universal Matrix Verification
 
 on:
   push:
-    branches: [ canonical-kernel-v0.3 ]
+    branches: [canonical-kernel-v0.3]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: verification-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  core-and-extensions:
+  core:
+    name: Core / Python ${{ matrix.python }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.12", "3.14"]
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
-          python-version: "3.12"
-          cache: pip
+          python-version: ${{ matrix.python }}
 
-      - name: Install verification dependencies
-        run: python -m pip install --upgrade pip pytest numpy
+      - uses: astral-sh/setup-uv@v10.1.0
+        with:
+          version: "latest-known"
+          enable-cache: true
 
-      - name: Compile source and tests
-        run: python -m compileall -q src tests
+      - name: Install core verification environment
+        run: uv sync --group test --group lint --extra scientific
 
-      - name: Run canonical and reconstructed engine tests
+      - name: Compile
+        run: uv run python -m compileall -q src tests
+
+      - name: Ruff
         run: |
-          python -m pytest -q             tests/test_canonical_kernel.py             tests/test_math_reconciliation.py             tests/test_compiler.py             tests/test_lattice_quantum_engine.py             tests/test_nested_polarity_dynamics.py             tests/test_theory_bridge.py             tests/test_gauge_dynamics.py             tests/test_gauge_hamiltonian.py             tests/test_gauge_dispersion.py             tests/test_gauge_3d.py             tests/test_gauge_matter.py             tests/test_source_interaction.py             tests/test_polarity_sources.py             tests/test_source_channels.py             tests/test_open_boundary_solver.py             tests/test_unified_engine.py
+          uv run ruff check src tests
+          uv run ruff format --check src tests
+
+      - name: Canonical and open-engine tests
+        run: |
+          uv run pytest -q             tests/test_canonical_kernel.py             tests/test_math_reconciliation.py             tests/test_compiler.py             tests/test_lattice_quantum_engine.py             tests/test_nested_polarity_dynamics.py             tests/test_theory_bridge.py             tests/test_gauge_dynamics.py             tests/test_gauge_hamiltonian.py             tests/test_gauge_dispersion.py             tests/test_gauge_3d.py             tests/test_gauge_matter.py             tests/test_source_interaction.py             tests/test_polarity_sources.py             tests/test_source_channels.py             tests/test_open_boundary_solver.py             tests/test_open_gauge_dynamics.py             tests/test_open_polarity_sources.py             tests/test_unified_engine.py             tests/test_property_invariants.py
 
   full-suite:
+    name: Full legacy compatibility suite
     runs-on: ubuntu-latest
-    timeout-minutes: 35
-    steps:
-      - uses: actions/checkout@v4
+    timeout-minutes: 40
 
-      - uses: actions/setup-python@v5
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-          cache: pip
 
-      - name: Install repository dependencies
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt pytest
+      - uses: astral-sh/setup-uv@v10.1.0
+        with:
+          version: "latest-known"
+          enable-cache: true
 
-      - name: Run full test suite
-        run: python -m pytest -q
+      - name: Install all optional runtime groups
+        run: uv sync --group test --all-extras
+
+      - name: Full pytest suite
+        run: uv run pytest -q
