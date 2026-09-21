@@ -11,7 +11,11 @@ class QuantumClassicalEngine:
 
     def __init__(self, num_qubits: int = 4):
         self.num_qubits = num_qubits
-        self.mode = "REAL_QPU" if config.USE_REAL_HARDWARE else "SIMULATED_QUANTUM"
+        self.mode = (
+            "CLASSICAL_ADAPTER_HARDWARE_CONFIG_ENABLED"
+            if config.USE_REAL_HARDWARE
+            else "CLASSICAL_ADAPTER"
+        )
 
     def execute_hybrid_vqe(self, theta_parameters: list, classical_matrix: list) -> dict:
         # Classical trigonometric parameter transform.
