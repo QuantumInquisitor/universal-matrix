@@ -9,6 +9,7 @@ except ImportError: sys.exit("CRITICAL: calculator.py missing.")
 class FieldSynthesizer:
     def __init__(self):
         self.major_radius, self.minor_radius = 50.0, 15.0
+        self.calculator = mc.UniversalMatrixCalculator()
     def calculate_digital_root(self, n):
         return 0 if n == 0 else (9 if n % 9 == 0 else n % 9)
     def synthesize_waveguide(self, node_id, external_flux_voltage=1.0):
