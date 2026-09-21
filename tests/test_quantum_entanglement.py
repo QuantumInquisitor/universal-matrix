@@ -22,9 +22,9 @@ class TestQuantumEntanglementEmulator(unittest.TestCase):
         )
 
         res = self.emulator.synchronize_entangled_nodes(node_a, node_b)
-        self.assertEqual(res["status"], "ENTANGLEMENT_SYNC_ACTIVE")
+        self.assertEqual(res["status"], "CLASSICAL_PHASE_SYNC_ACTIVE")
         self.assertEqual(res["entanglement_coherence"], 1.0)
-        self.assertEqual(res["bell_state_fidelity"], 1.0)
+        self.assertEqual(res["state_overlap_squared"], 1.0)
         self.assertTrue(res["sub_nanosecond_parity_achieved"])
 
 if __name__ == '__main__':
