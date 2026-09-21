@@ -14,6 +14,7 @@ import json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     import calculator as mc
+    import canonical_kernel as ck
 except ImportError:
     print("CRITICAL: 'calculator.py' must be present in the same directory.")
     sys.exit(1)
@@ -22,7 +23,10 @@ except ImportError:
 class GeodesicSimulator:
     def __init__(self, time_step=0.01):
         """Initializes system invariants and the configuration metrics matrix."""
-        self.total_nodes = mc.M_TOTAL          # 114 Target Grid Base
+        self.total_nodes = ck.M_TOTAL
+        self.core_nodes = ck.N_CORE
+        self.boundary_gate_ids = frozenset(ck.BOUNDARY_GATES.values())
+        self.calculator = mc.UniversalMatrixCalculator()
         self.time_step = time_step
         self.alpha = mc.ALPHA_GEOMETRIC        # Invariant spatial scale factor
         
@@ -32,13 +36,19 @@ class GeodesicSimulator:
 
     def _get_node_potential(self, node_id: int) -> float:
         """Calculates localized field potential from active 64-bit hardware bitmasks."""
-        bit_offset = (node_id * 7) % 64
-        up_bit = (mc.STREAM_UP >> bit_offset) & 1
-        down_bit = (mc.STREAM_DOWN >> bit_offset) & 1
+        bit_offset = ck.register_address(node_id)
+        up_bit = (self.calculator.STREAM_UP >> bit_offset) & 1
+        down_bit = (self.calculator.STREAM_DOWN >> bit_offset) & 1
         
         # Enforce 3-6-9 frequency scaling multipliers
-        vortex_scale = 3.0 if node_id % 3 == 0 else (6.0 if node_id % 6 == 0 else 1.0)
-        if node_id % 9 == 0: vortex_scale = 9.0
+        if node_id % 9 == 0:
+            vortex_scale = 9.0
+        elif node_id % 6 == 0:
+            vortex_scale = 6.0
+        elif node_id % 3 == 0:
+            vortex_scale = 3.0
+        else:
+            vortex_scale = 1.0
         
         # Combine states with the exact alpha geometric scaling coefficient
         potential = (up_bit * 2.0 - down_bit * 0.5) * self.alpha * vortex_scale
@@ -52,7 +62,7 @@ class GeodesicSimulator:
         for node_id in range(self.total_nodes):
             # Basic geometric torus projection approximation tracking
             theta = (2.0 * math.pi * node_id) / self.total_nodes
-            phi = (2.0 * math.pi * (node_id * mc.S_AXIS)) / mc.N_CORE
+            phi = (2.0 * math.pi * (node_id * ck.REGISTER_MULTIPLIER)) / self.core_nodes
             
             tx = (self.major_radius + self.minor_radius * math.cos(phi)) * math.cos(theta)
             ty = (self.major_radius + self.minor_radius * math.cos(phi)) * math.sin(theta)
