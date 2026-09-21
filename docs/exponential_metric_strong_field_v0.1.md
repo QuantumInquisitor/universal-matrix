@@ -263,3 +263,54 @@ b_c=2e,mu
 for the simplest point-source exponential continuation.
 
 This is testable and differs from Schwarzschild.
+
+
+---
+
+## 8. Update: exact static exterior from the reciprocity action
+
+A later self-consistent matter + geometry-scalar action changes the status of
+the point-source profile.
+
+For a static vacuum exterior, the scalar equation derived from that action is
+
+[
+
+abla^2psi=0.
+]
+
+Spherical symmetry and asymptotic flatness therefore give
+
+[
+psi=rac{mu}{r}
+]
+
+exactly within the proposed action.
+
+Therefore the metric analyzed in this document,
+
+[
+ds^2
+=
+-e^{-2mu/r}c_*^2dt^2
++
+e^{2mu/r}
+left(
+dr^2+r^2dOmega^2
+ight),
+]
+
+is no longer merely an arbitrary strong-field continuation of a weak-field
+potential.
+
+It is the exact static spherical vacuum exterior of the current reciprocity
+scalar action, conditional on the reciprocity metric assumptions.
+
+See:
+
+`docs/self_consistent_reciprocity_action_v0.1.md`
+
+`docs/static_vacuum_reciprocity_exterior_v0.1.md`
+
+This strengthens the model's internal prediction and therefore also strengthens
+the significance of any future observational disagreement.
