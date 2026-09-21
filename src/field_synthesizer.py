@@ -7,6 +7,13 @@ try:
 except ImportError: sys.exit("CRITICAL: calculator.py missing.")
 
 class FieldSynthesizer:
+    """Legacy signal-profile generator.
+
+    Digital-root and 3/6/9 classifications are exploratory metadata, not
+    canonical transition laws or validated electromagnetic resonances.
+    Generated frequency/amplitude values are simulation profiles only.
+    """
+
     def __init__(self):
         self.major_radius, self.minor_radius = 50.0, 15.0
         self.calculator = mc.UniversalMatrixCalculator()
@@ -18,13 +25,14 @@ class FieldSynthesizer:
         up_bit = (self.calculator.STREAM_UP >> bit_offset) & 1
         down_bit = (self.calculator.STREAM_DOWN >> bit_offset) & 1
         d_root = self.calculate_digital_root(node_id)
-        is_tesla_vector = d_root in [3, 6, 9]
+        is_tesla_vector = d_root in [3, 6, 9]  # legacy classification only
         base_phase = (2.0 * math.pi * node_id) / mc.M_TOTAL
         phase_modulation = base_phase + (mc.ALPHA_GEOMETRIC * external_flux_voltage * (1.0 if up_bit else -1.0))
         target_frequency_hz = 114.0 * (d_root + 1) * (100.0 if is_tesla_vector else 10.0)
         amplitude_ratio = 1.0 + (mc.ALPHA_GEOMETRIC * (self.calculator.DELTA_S % 7)) if not is_tesla_vector else 3.0
         return {
-            "node_id": node_id, "vortex_root": d_root, "control_path": "Crimson Active Triad" if is_tesla_vector else "Blue Material Path",
+            "model_status": "legacy_signal_profile_not_physical_field_law",
+            "node_id": node_id, "vortex_root": d_root, "control_path": "Legacy 3-6-9 class" if is_tesla_vector else "Legacy general class",
             "rf_synthesis": {"frequency_hz": round(target_frequency_hz, 2), "amplitude_volts": round(amplitude_ratio * external_flux_voltage, 4), "phase_radians": round(phase_modulation % (2 * math.pi), 6)}
         }
 
