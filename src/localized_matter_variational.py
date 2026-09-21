@@ -12,7 +12,8 @@ Matter potential:
 
     U(f) = m2 f^2 + lambda4 f^4 + lambda6 f^6
 
-with lambda6 > 0 for large-amplitude boundedness.
+with either lambda6 > 0, or lambda6 = 0 and lambda4 >= 0, for
+large-amplitude boundedness.
 
 For the Gaussian ansatz in 3D:
 
@@ -68,8 +69,12 @@ class MatterPotential:
     def __post_init__(self) -> None:
         if self.mass2 <= 0:
             raise ValueError("mass2 must be positive")
-        if self.lambda6 <= 0:
-            raise ValueError("lambda6 must be positive")
+        if self.lambda6 < 0:
+            raise ValueError("lambda6 must be non-negative")
+        if self.lambda6 == 0 and self.lambda4 < 0:
+            raise ValueError(
+                "negative lambda4 requires positive lambda6 stabilization"
+            )
 
     @property
     def free_mass(self) -> float:
