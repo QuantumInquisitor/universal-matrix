@@ -3,8 +3,7 @@ import jwt
 from typing import Dict, Any, Optional
 from pydantic import BaseModel, Field
 
-SECRET_KEY = "UNIVERSAL_MATRIX_SECRET_KEY_CHANGE_IN_PRODUCTION"
-ALGORITHM = "HS256"
+from src.security_config import JWT_ALGORITHM as ALGORITHM, JWT_SECRET as SECRET_KEY
 
 class TenantCredentials(BaseModel):
     tenant_id: str
