@@ -71,3 +71,36 @@ def test_profile_decays_outward_on_representative_branch():
     )
     sample = np.abs(solution.profile)
     assert sample[-1] < sample[0] * 1e-6
+
+
+
+def test_radial_solution_source_energy_mismatch_equals_minus_virial_residual():
+    solution = solve_radial_matter(
+        central_amplitude=0.5,
+        potential=POTENTIAL,
+        omega_guess=0.95,
+        radius_max=20.0,
+        radial_points=300,
+        tolerance=2e-5,
+    )
+    assert solution.solver_status == 0
+    assert math.isclose(
+        solution.source_energy_difference,
+        -solution.virial_residual,
+        rel_tol=1e-12,
+        abs_tol=1e-10,
+    )
+
+
+def test_converged_radial_solution_has_finite_source_energy_ratio():
+    solution = solve_radial_matter(
+        central_amplitude=0.5,
+        potential=POTENTIAL,
+        omega_guess=0.95,
+        radius_max=20.0,
+        radial_points=300,
+        tolerance=2e-5,
+    )
+    assert solution.solver_status == 0
+    assert math.isfinite(solution.source_energy_ratio)
+    assert solution.active_geometry_source > 0
