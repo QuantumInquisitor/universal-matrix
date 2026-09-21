@@ -1,194 +1,866 @@
-# The Universal Playing Field: An Invariant 114-Node Topological Discrete Ring Framework and the Geometric Attenuation Dynamics of 3-6-9 Vortex Symmetry
+# The Universal Matrix: A Finite Discrete Architecture with a 108-State Core, Six Boundary Gates, and a 64-Address Projection
 
-**Waters Legacy Trust Development Group**  
-*Institutional Working Preprint — Open Review Initiative*  
-
----
-
-### Abstract
-This paper presents a formalization of the Universal Playing Field, an invariant 114-node discrete ring manifold mapped onto the modular topological space $\mathbb{Z}_{114}$. We establish the geometric structural distribution rules separating the internal computational field from boundary structures. By isolating a core processing framework of 108 nodes and mapping a secondary surrounding ring of 6 hypercube boundary gate nodes, the system constructs a highly symmetric, discrete coordinate architecture. We demonstrate that vector energy trajectories are completely governed by 3-6-9 vortex mathematics, tracing predictive closed paths that eliminate the necessity for arbitrary continuous approximations. Furthermore, we analytically derive the spatial loop compression attenuation coefficient $\alpha_{\text{geometric}}$ from the precise ratio of boundary orthotope footprints to the bounded core toroidal spatial volume, arriving at the exact geometric fraction $\frac{1}{54\pi^2}$ (approximately $0.090606346384$). This invariant fraction removes empirical curve-fitting requirements. Finally, we map the entire state distribution framework directly onto 64-bit integer bitmasks, confirming that the underlying state space transitions occur as discrete hardware register shifts. This work offers a rigorous alternative to continuous general relativity calculations by validating a testable, base-independent, fully discrete mathematical lattice model.
+**Malakhiyah**  
+*Working Mathematical Preprint — Version 0.4*
 
 ---
 
-## Section I: Introduction and Foundational Topology
+## Abstract
 
-### 1.1 Mathematical Discretization Challenges
-Modern theoretical physics continues to wrestle with the structural singularities and mathematical infinities that emerge when field interactions are projected onto continuous manifolds. General Relativity relies heavily on smooth, differentiable Riemann manifolds to represent space-time curvature. However, at deep computational boundaries and localized high-density regions, continuous mathematics collapses into unresolvable division-by-zero singularities. This paper resolves these limits by replacing continuous geometric fields with an absolute, discrete spatial framework: the 114-Node Universal Playing Field. This framework models field mechanics through modular topological loops and fixed coordinate mappings, treating space-time as an integrated, self-balancing calculation grid.
-
-### 1.2 Architectural Framework and Base-Independent Invariance
-The primary space of our network is mapped onto a discrete ring structure defined by 114 specific node coordinates, operating within the modular group arithmetic layer of $\mathbb{Z}_{114}$. The system splits this distribution into two rigid functional layers: an internal core processing engine comprised of exactly 108 nodes, and an external boundary gating ring composed of exactly 6 hypercube boundary nodes. To prevent observer dependency artifacts, the network constants are mapped explicitly onto a 64-bit binary integer architecture. Field transitions are executed as low-level bitwise operations rather than base-10 approximations, ensuring absolute architectural invariance across any chosen base notation system.
+This paper defines a finite discrete architecture consisting of a 108-state cyclic internal core and six external oriented boundary gates. The core is labeled by the cyclic group (mathbb{Z}_{108}); the six boundary states are separate from that routing group and are associated with the orientations (+X,-X,+Y,-Y,+Z,-Z). The architecture includes an order-12 interface translation (E=T_9), an order-two polarity translation (P=T_{54}), a reflection (F(n)=107-n), and a 64-address projection (pi(n)=7nmod 64). A routing synchronization condition admits three positive routing lifts, (21,57,93); the present implementation selects (21) by a minimal-positive-lift convention, giving three disjoint routing cycles of length 36. We derive the carry-aware projection law, the exact register-collision multiplicities, a mixed-radix coordinate representation of the 108 core states, and the order-48 abstract symmetry of the six oriented boundary directions. The purpose of this paper is to state the finite mathematics precisely and to separate proved properties from conventions and physical hypotheses. No claim is made here that the discrete architecture replaces established gravitational, quantum, or other physical theories.
 
 ---
 
-## Section II: The Winding Topology and Spatial Layout
+## 1. Scope and Mathematical Status
 
-### 2.1 Structural Node Separation
-The topological layout relies on an absolute division of structural domains. The 108 internal nodes form a highly dense, continuous ring that handles core processing, loop feedback, and internal matrix transformations. Bounding this core area is an outer cluster of 6 hypercube gate nodes, which function as external processing junctions. These gates manage spatial boundaries, inject external boundary conditions, and direct computational flux back into the internal manifold.
+The Universal Matrix is treated here as a finite mathematical model. Its canonical architecture is
 
-### 2.2 Material Infinity Routing and Node Stepping
-Flux transit through the 108 core nodes follows a rigid, non-sequential step routine. Instead of incrementing one node at a time, the vector field performs 21-step jumps across the manifold, establishing a continuous, self-locking winding loop known as the Material Infinity Path. The jump increment is selected because 21 is a coprime value relative to the core 108 topology ($\gcd(21, 108) = 3$), forcing the tracking vector to sweep through specialized balance zones before returning to its point of origin. This technique distributes computational load evenly across the coordinate domain.
+[
+mathcal{A}=mathbb{Z}_{108}sqcup B_6,
+]
 
-### 2.3 Spatial Distribution Flows
-The discrete matrix topology establishes a closed-loop distribution web where mathematical energy nodes balance symmetrically across opposing vectors.
+where
+
+[
+B_6={+X,-X,+Y,-Y,+Z,-Z}.
+]
+
+The symbol (sqcup) is important: the six boundary states are not additional elements of the cyclic routing group. The complete implementation therefore contains 114 labeled positions, but its internal routing algebra is (mathbb{Z}_{108}), not (mathbb{Z}_{114}).
+
+This distinction removes an ambiguity present in earlier versions of the framework. Internal translations are evaluated modulo 108. The six external states form a boundary interface with the core rather than extending its cyclic modulus.
+
+Throughout this paper, statements are classified implicitly by their mathematical role:
+
+- a **definition** introduces an object or coordinate convention;
+- a **theorem/proposition** follows from stated definitions and assumptions;
+- a **convention** selects one representative when the mathematics admits more than one;
+- a **computational observation** records a finite property verified exhaustively;
+- a **physical hypothesis** would require independent empirical validation and is not part of the canonical kernel.
+
+---
+
+## 2. Boundary Architecture
+
+### 2.1 Six Oriented Gates
+
+Let the boundary orientations be represented by the six unit vectors
+
+[
+B_6={pm e_x,pm e_y,pm e_z}.
+]
+
+In the reference implementation these are assigned the external labels 108 through 113:
+
+[
+108leftrightarrow +X,quad
+109leftrightarrow -X,quad
+110leftrightarrow +Y,quad
+111leftrightarrow -Y,quad
+112leftrightarrow +Z,quad
+113leftrightarrow -Z.
+]
+
+The numerical labels are implementation coordinates. The mathematical boundary object is the six-element oriented set itself.
+
+### 2.2 Boundary Symmetry
+
+The six vectors ({pm e_x,pm e_y,pm e_z}) are the vertices of a regular octahedral configuration. A signed permutation of three coordinate axes consists of:
+
+1. an arbitrary permutation of the three axes, giving (3!) possibilities; and
+2. an independent sign reversal on each axis, giving (2^3) possibilities.
+
+Therefore the full signed-permutation group acting on the boundary has order
+
+[
+|G_B|=2^3,3!=48.
+]
+
+This is the hyperoctahedral group in three dimensions,
+
+[
+G_Bcong C_2^3times S_3,
+]
+
+also identifiable with the Weyl group (W(B_3)cong W(C_3)).
+
+The number 48 therefore follows directly from the six-direction boundary geometry. No decimal-stream remainder calculation is required to obtain it.
+
+---
+
+## 3. The 108-State Core
+
+Let
+
+[
+C=mathbb{Z}_{108}.
+]
+
+For any integer (d), define the translation
+
+[
+T_d(n)=n+dpmod{108}.
+]
+
+Composition satisfies
+
+[
+T_aT_b=T_{a+b},
+]
+
+and
+
+[
+T_d^{-1}=T_{-d}.
+]
+
+### 3.1 Interface Translation
+
+Define
+
+[
+E=T_9.
+]
+
+Because
+
+[
+rac{108}{gcd(108,9)}=12,
+]
+
+(E) has order 12:
+
+[
+E^{12}=I.
+]
+
+The sequence generated from any state by repeated application of (E) therefore closes after 12 steps.
+
+### 3.2 Polarity Translation
+
+Define
+
+[
+P=T_{54}.
+]
+
+Since
+
+[
+2(54)=108,
+]
+
+we have
+
+[
+P^2=I.
+]
+
+Moreover,
+
+[
+E^6=T_{6cdot9}=T_{54}=P.
+]
+
+Thus the interface cycle contains a distinguished half-cycle involution.
+
+The map (P) has no fixed state in (mathbb{Z}_{108}). Consequently it partitions the core into exactly
+
+[
+108/2=54
+]
+
+unordered antipodal pairs
+
+[
+{n,n+54}.
+]
+
+This provides a mathematically exact 54-pair structure. Terms such as inward/outward may be assigned to the two orientations of each pair as an additional interpretation, but the pairing itself is purely algebraic.
+
+---
+
+## 4. Routing
+
+### 4.1 Three Routing Channels
+
+Any translation whose step is divisible by 3 preserves the residue
+
+[
+ho(n)=nmod3.
+]
+
+Thus the core decomposes into the three channel sets
+
+[
+O_r={ninmathbb{Z}_{108}:nequiv rpmod3},
+qquad r=0,1,2.
+]
+
+Each contains 36 states.
+
+### 4.2 Synchronization Constraint
+
+We require a routing translation (T=T_t) to satisfy:
+
+1. it preserves the three channels;
+2. each channel is traversed as one 36-state cycle;
+3. three routing steps equal seven interface steps:
+
+[
+T^3=E^7.
+]
+
+Since
+
+[
+E^7=T_{63},
+]
+
+condition 3 requires
+
+[
+3tequiv63pmod{108}.
+]
+
+Together with the 36-cycle requirement, the positive solutions below 108 are
+
+[
+oxed{tin{21,57,93}}.
+]
+
+Therefore the synchronization equation does not uniquely derive (t=21).
+
+### 4.3 Minimal-Positive-Lift Convention
+
+Divide the three candidates by the channel factor 3:
+
+[
+21/3=7,qquad57/3=19,qquad93/3=31.
+]
+
+These satisfy
+
+[
+7equiv19equiv31pmod{12}.
+]
+
+The reference architecture chooses the smallest positive representative,
+
+[
+oxed{t=21},
+]
+
+and therefore
+
+[
+T=T_{21}.
+]
+
+This is a convention selecting a canonical representative from the synchronization class, not a uniqueness theorem.
+
+### 4.4 Exact Routing Identities
+
+For (T=T_{21}),
+
+[
+gcd(21,108)=3.
+]
+
+Hence (T) has exactly three cycles, each of length
+
+[
+108/3=36.
+]
+
+The exact identities are
+
+[
+T^{36}=I,
+]
+
+[
+T^3=E^7,
+]
+
+and
+
+[
+T^{18}=T_{378}=T_{54}=P.
+]
+
+Since (E^6=P),
+
+[
+oxed{T^{18}=E^6=P}.
+]
+
+The forward and reverse routing operators satisfy
+
+[
+T^{-1}=T_{87},
+qquad
+T^{-1}T=I.
+]
+
+This gives an exact operator triad consisting of forward translation, inverse translation, and identity.
+
+---
+
+## 5. Routing Winding
+
+One routing step advances by the fraction
+
+[
+rac{21}{108}=rac{7}{36}
+]
+
+of a full cyclic turn. Its angular representation is therefore
+
+[
+	heta=rac{2pi(21)}{108}=rac{7pi}{18}=70^circ.
+]
+
+After 36 routing steps,
+
+[
+36(70^circ)=2520^circ=7(360^circ).
+]
+
+Thus each 36-state routing orbit performs seven complete angular windings before closure.
+
+A convenient geometric visualization is
+
+[
+H(k)=
+left(
+Rcosrac{7pi k}{18},
+Rsinrac{7pi k}{18},
+kh
+ight),
+]
+
+where (R) and (h) are visualization parameters. This is a helix. It is not, by itself, a derivation of a physical torus.
+
+The number seven here denotes winding number. It should not be conflated automatically with any unrelated seven-element physical or symbolic system.
+
+---
+
+## 6. The 64-Address Projection
+
+Define
+
+[
+pi:Cightarrowmathbb{Z}_{64}
+]
+
+on canonical representatives (0le n<108) by
+
+[
+oxed{pi(n)=7npmod{64}}.
+]
+
+Because
+
+[
+gcd(7,64)=1,
+]
+
+multiplication by 7 permutes the 64 register addresses.
+
+However, (pi) is not a group homomorphism from (mathbb{Z}_{108}) to (mathbb{Z}_{64}), because changing a representative by 108 changes (7n) by
+
+[
+7(108)=756equiv52
+otequiv0pmod{64}.
+]
+
+The projection is therefore defined using canonical core representatives.
+
+### 6.1 Interface Projection
+
+For a nonwrapping (+9) step,
+
+[
+7(9)=63equiv-1pmod{64}.
+]
+
+Thus the interface operator moves locally by one register address in the reverse direction.
+
+This relation determines the multiplier 7 if one adopts the convention that a nonwrapping interface step should correspond to the minimal reverse register displacement:
+
+[
+9gequiv-1pmod{64}
+]
+
+has the unique solution
+
+[
+gequiv7pmod{64}.
+]
+
+The reverse-unit requirement itself is an architectural convention; once adopted, the value 7 follows uniquely.
+
+---
+
+## 7. Projection Carry Theorem
+
+Let (0le d<108), and define
+
+[
+w_d(n)=
+egin{cases}
+1,&nge108-d,\
+0,&n<108-d.
+end{cases}
+]
+
+Then the canonical translation is
+
+[
+T_d(n)=n+d-108w_d(n).
+]
+
+Applying the register projection,
+
+[
+egin{aligned}
+pi(T_d(n))-pi(n)
+&equiv7[d-108w_d(n)]pmod{64}\
+&equiv7d+12w_d(n)pmod{64},
+end{aligned}
+]
+
+because
+
+[
+-7(108)equiv12pmod{64}.
+]
+
+Therefore
+
+[
+oxed{
+Deltapiequiv7d+12w_d(n)pmod{64}
+}.
+]
+
+This formula has been exhaustively checked in the reference implementation for every core state and every displacement (0le d<108).
+
+### 7.1 Routing-Lift Carry Structure
+
+For the three synchronized routing lifts:
+
+| (t) | (t/3) | nonwraps/orbit | wraps/orbit | nonwrap (Deltapi) | wrap (Deltapi) |
+|---:|---:|---:|---:|---:|---:|
+| 21 | 7 | 29 | 7 | 19 | 31 |
+| 57 | 19 | 17 | 19 | 15 | 27 |
+| 93 | 31 | 5 | 31 | 11 | 23 |
+
+For (t=21),
+
+[
+29(19)+7(31)=768=12(64),
+]
+
+so one 36-state routing orbit closes after twelve net register turns.
+
+Across all three routing channels, the corresponding transition counts are 87 nonwrapping and 21 wrapping steps.
+
+---
+
+## 8. Register Collisions
+
+For canonical states (n,min{0,ldots,107}),
+
+[
+pi(n)=pi(m)
+]
+
+if and only if
+
+[
+7(n-m)equiv0pmod{64}.
+]
+
+Since 7 is invertible modulo 64,
+
+[
+nequiv mpmod{64}.
+]
+
+Within the 108 canonical representatives, the repeated-address pairs are therefore exactly
+
+[
+(n,n+64),
+qquad0le nle43.
+]
+
+There are 44 such pairs. The remaining states (44,ldots,63) have no second representative in the core.
+
+Hence the register multiplicities are exactly
+
+[
+44	imes2+20	imes1=108.
+]
+
+There are:
+
+[
+oxed{44	ext{ double-hit addresses}}
+]
+
+and
+
+[
+oxed{20	ext{ single-hit addresses}}.
+]
+
+No register address has three core representatives.
+
+Equal register address does not by itself prove physical or dynamical coupling. A model may add edges between equal-address states, but that is an additional graph construction.
+
+---
+
+## 9. Reflection Symmetry
+
+Define
+
+[
+F(n)=107-npmod{108}.
+]
+
+Then
+
+[
+F^2=I.
+]
+
+For every translation (T_d),
+
+[
+FT_dF=T_{-d}.
+]
+
+In particular,
+
+[
+FTF=T^{-1}
+]
+
+and
+
+[
+FEF=E^{-1}.
+]
+
+Also,
+
+[
+FP=PF.
+]
+
+For the routing subsystem generated by (T=T_{21}) and (F), these relations give a dihedral action on each routing structure.
+
+When equal-register states are additionally connected by the 44 collision edges, exhaustive graph analysis shows that the full graph retains only the two-element automorphism group generated by (F). This is a computational property of that particular added coupling graph, not of the bare cyclic core.
+
+---
+
+## 10. Mixed-Radix Coordinates
+
+Every (nin{0,ldots,107}) can be written uniquely as
+
+[
+oxed{n=r+3q+9s+27u}
+]
+
+with
+
+[
+r,q,sin{0,1,2},
+qquad
+uin{0,1,2,3}.
+]
+
+Therefore the state count factors as
+
+[
+108=3cdot3cdot3cdot4.
+]
+
+This is a mixed-radix coordinate system. It is not an assertion that
+
+[
+mathbb{Z}_{108}cong
+mathbb{Z}_3	imes
+mathbb{Z}_3	imes
+mathbb{Z}_3	imes
+mathbb{Z}_4.
+]
+
+A coarser representation is
+
+[
+n=a+9b,
+]
+
+where
+
+[
+ain{0,ldots,8},
+qquad
+bin{0,ldots,11}.
+]
+
+In these coordinates,
+
+[
+pi(n)=7a-bpmod{64},
+]
+
+because
+
+[
+7(9b)=63bequiv-bpmod{64}.
+]
+
+This compactly exposes the reverse-unit interface behavior.
+
+---
+
+## 11. Six Boundary Gates and Binary Microstates
+
+The six oriented boundary gates do not, by themselves, mathematically imply 64 states.
+
+If each of the six gates is assigned an independent binary variable,
+
+[
+b_iin{0,1},
+]
+
+then the binary boundary microstate space is
+
+[
+{0,1}^6
+]
+
+and has cardinality
+
+[
+2^6=64.
+]
+
+This is a six-bit state space with 64 possible configurations.
+
+It should therefore be described as a **6-bit / 64-state boundary register**, not as a 64-bit architecture.
+
+If opposite directions are instead treated as mutually exclusive ternary states on each spatial axis, the resultant space is
+
+[
+{-1,0,+1}^3
+]
+
+with
+
+[
+3^3=27
+]
+
+states.
+
+Thus the number 64 requires the independent-six-binary-channel assumption.
+
+### 11.1 Binary-to-Ternary Resultants
+
+For one oriented axis pair, define
+
+[
+(00)mapsto0,quad
+(11)mapsto0,quad
+(10)mapsto+1,quad
+(01)mapsto-1.
+]
+
+Across three axes this maps the 64 binary microstates onto the 27 ternary spatial resultants.
+
+The 27 resultants decompose by support size as
+
+[
+1+6+12+8=27.
+]
+
+The corresponding binary preimage counts are
+
+[
+8+24+24+8=64.
+]
+
+Two useful centered subsets are:
+
+[
+S_7={0,pm e_x,pm e_y,pm e_z},
+]
+
+with seven states, and the center-plus-eight-corners subset with nine states.
+
+These are geometric cardinalities. Their numerical agreement with other occurrences of 7 or 9 in the architecture does not, without an explicit mapping, establish that the objects are identical.
+
+---
+
+## 12. Status of the Decimal Streams
+
+The implementation retains the decimal integers
+
+[
+S_{mathrm{up}}=123456789,
+qquad
+S_{mathrm{down}}=987654321
+]
+
+as exploratory arithmetic probes.
+
+Their difference is
+
+[
+Delta S=864197532.
+]
+
+A structurally interesting identity is
+
+[
+Delta S=108(8{,}001{,}829),
+]
+
+so
+
+[
+S_{mathrm{up}}equiv S_{mathrm{down}}pmod{108}.
+]
+
+Both are congruent to 45 modulo 108.
+
+This is a valid arithmetic observation, but the streams are not required to define the v0.4 kernel.
+
+The historical modulus-31 expression also remains an exact arithmetic identity in the compatibility layer. It is not used here as a derivation of the core architecture, the boundary symmetry, or a physical law.
+
+---
+
+## 13. What the Mathematics Does Not Establish
+
+The finite results above do not, by themselves, establish that:
+
+- physical spacetime is discrete;
+- the 108-state core is a physical torus;
+- the six boundary directions are physical portals;
+- the model replaces general relativity or quantum mechanics;
+- register collisions represent quantum entanglement;
+- the 54 antipodal pairs are black holes and white holes;
+- the coefficient (1/(54pi^2)) is a universal physical constant;
+- a calibrated arithmetic expression derives the speed of light;
+- 3/6/9 classifications govern physical energy;
+- the architecture determines biological, anatomical, chakra, or meridian structures.
+
+Such propositions require separately specified physical models, dimensional analysis, predictions that differ from existing theories, and empirical tests.
+
+The purpose of separating these claims from the finite kernel is not to prevent their investigation. It makes them testable. A physical extension should state exactly which additional postulates connect the discrete states to measurable quantities.
+
+---
+
+## 14. Computational Reference Implementation
+
+The canonical executable specification is maintained in:
 
 ```text
-       [Boundary Gates: G1 - G6] (Hypercube Framework)
-                  │
-                  ▼   (Crimson Control Paths)
-       [108-Node Core Manifold]
-                  │
-                  ▼   (21-Step Primed Jumps)
-     [Material Infinity Closed Routing]
+src/canonical_kernel.py
 ```
 
-To visualize this discrete field matrix explicitly, Figure 2 tracks the coordinate geometry of the spatial manifold distribution:
-
-<div align="center">
-  <img src="./assets/figure2_matrix_geometry.png" alt="Figure 2: 114-Node Matrix Geometry Layout" width="80%" />
-  <p><strong>Figure 2: 114-Node Matrix Geometry Layout.</strong> <em>The core 108-node circular manifold (cyan) is bounded externally by the 6 hypercube gate nodes (crimson). Symmetrical 3-6-9 control paths regulate vector intersections, proving the immutable compression loop limit α = 1/(54π²).</em></p>
-</div>
-
-
----
-
-## Section III: Vector Mechanics and Field Convergence Limit
-
-### 3.1 Vortex Math Projections and Crimson Control Paths
-Vector transformations inside the 114-node field are governed by 3-6-9 vortex mechanics. Unlike conventional physics models that require complex continuous equations to handle wave propagation, this architecture tracks energy movement using discrete, repeating geometric patterns. The 3, 6, and 9 nodes act as fixed singularity vectors that create rigid paths across the grid. These lines, called Crimson Control Paths, link the outer 6 boundary gates to specific index locations on the inner 108 core manifold, providing immediate synchronization across the entire field.
-
----
-
-## Section IV: Analytical Derivation of the Spatial Loop Compression Coefficient
-
-### 4.1 Mathematical Elimination of Curve-Fitting
-To defend this framework against academic criticisms regarding empirical adjustments, the spatial compression coefficient $\alpha_{\text{geometric}}$ is derived strictly through analytical geometry. The value represents the exact volumetric ratio between the outer boundary elements and the inner toroidal core, mapped across the primary 3-6-9 vortex phase angle.
-
-### 4.2 Step-by-Step Volumetric Derivation
-Let the 6 external gates be represented as a normalized hypercube orthotope structure with a bounding radius of $r = 1$, establishing a boundary footprint of $V_{\text{boundary}} = 6$. The internal core processing manifold is modeled as a discrete geometric torus whose volume is governed by the standard toroidal equation:
-
-$$\text{(Eq. 1)} \quad V_{\text{core}} = 2\pi^2 R r^2$$
-
-Where the major radius is scaled to the 9-vortex phase limit ($R = 9$) and the minor radius matches the 3-vortex compression boundary ($r = 3$). Substituting these dimensions into Equation 1 defines the absolute core volume:
-
-$$\text{(Eq. 2)} \quad V_{\text{core}} = 2\pi^2 (9)(3)^2 = 162\pi^2$$
-
-Energy transfer across the network transitions at a fixed phase angle of $\theta = \frac{\pi}{3}$ ($60^\circ$). This spatial relationship requires a modulation factor of $\cos(\frac{\pi}{3}) = 0.5$. The complete loop compression coefficient represents the boundary-to-core volumetric ratio scaled by this phase factor:
-
-$$\text{(Eq. 3)} \quad \alpha_{\text{geometric}} = \frac{6 \cdot \cos\left(\frac{\pi}{3}\right)}{V_{\text{core}}} = \frac{6 \cdot 0.5}{162\pi^2} = \frac{3}{162\pi^2} = \frac{1}{54\pi^2}$$
-
-### 4.3 Decimal Validation
-Evaluating the exact fractional expression derived in Equation 3 down to twelve decimal places yields the absolute physical constant:
-
-$$\text{(Eq. 4)} \quad \alpha_{\text{geometric}} = \frac{1}{54 \cdot 9.869604401089...} = \frac{1}{532.9586376588...} \approx 0.090606346384$$
-
-This proof confirms that the compression parameter is not a curve-fit variable, but rather an immutable mathematical constant of the 114-node spatial layout.
-
----
-
-## Section V: Base-Independent Binary Register Mapping and Bit-Envelope Constraints
-
-### 5.1 Low-Level Hardware Architecture Alignment
-To guarantee mathematical stability across different counting systems, the control sequences $S_{\text{up}}$ ($123,456,789$) and $S_{\text{down}}$ ($987,654,321$) are mapped onto a 64-bit integer architecture. They act as absolute bitmasks that dictate ON/OFF states for the system's hardware processing nodes.
-
-### 5.2 Complete 64-Bit Variable Bitmasks
-The precise register configurations for the system parameters are mapped below:
-
-#### 1. Expansion Source Register ($S_{\text{up}}$)
-*   **Decimal:** $123,456,789$
-*   **Hexadecimal:** `0x00000000075BCD15`
-```text
-[Bits 63-48]: 00000000 00000000
-[Bits 47-32]: 00000000 00000000
-[Bits 31-16]: 00000111 01011011
-[Bits 15-00]: 11001101 00010101
-```
-
-#### 2. Compression Sink Register ($S_{\text{down}}$)
-*   **Decimal:** $987,654,321$
-*   **Hexadecimal:** `0x000000003ADE68B1`
-```text
-[Bits 63-48]: 00000000 00000000
-[Bits 47-32]: 00000000 00000000
-[Bits 31-16]: 00111010 11011110
-[Bits 15-00]: 01101000 10110001
-```
-
-#### 3. Invariant Mask Difference Matrix ($\Delta_S$)
-*   **Formula:** $\Delta_S = S_{\text{down}} - S_{\text{up}} = 864,197,532$
-*   **Hexadecimal:** `0x000000003388449C`
-```text
-[Bits 63-48]: 00000000 00000000
-[Bits 47-32]: 00000000 00000000
-[Bits 31-16]: 00110011 10001000
-[Bits 15-00]: 01000400 10011100
-```
-
-### 5.3 Computational Core Stability Verification Loop
-The systemic delta invariant balances the internal field vectors via a rigid modulo loop calculation, preventing integer overflow and halting floating-point degradation across continuous calculations:
-
-$$\text{(Eq. 5)} \quad \sum_{n=1}^{54} \left[ \left(-1 \times (S_{\text{down}} \pmod n)\right) + \left(1 \times (S_{\text{up}} \pmod n)\right) \right] - (\Delta_{S} \pmod{31}) + 18 = 0$$
-
-By enforcing this check directly within hardware registers, the matrix proves that 3-6-9 field transformations are deterministic, repeatable state changes rather than observational approximations.
-
-### 5.4 Algorithmic Complexity and Scalability Analysis
-The bitwise processing architecture presents an execution footprint of \(\mathcal{O}(N)\) inside the standard 54-node inversion check loop, bypassing the costly polynomial metrics (\(\mathcal{O}(N^3)\)) typical of continuous spacetime coordinate metric tensor matrices. By computing physical boundary values across discrete bitmasks, the 114-node framework maintains absolute numerical scale efficiency. This structure offers a foundation to construct parallel compute nodes across distributed systems without risk of floating-point drift or cluster memory segmentation.
-
----
-
-## Section VI: Conclusion and Structural Outlook
-
-## 6. Numerical Simulations & Computational Verification Framework
-
-To validate the predictive capacity of the non-continuous $\mathbb{Z}_{114}$ topological lattice framework against standard continuous spacetime models, a functional computational layer was constructed and integrated directly into the core matrix engine registers.
-
-### 6.1 Multi-Node Quantum Superposition & Lattice Phase Interference
-Rather than modeling fields as smooth, continuous spatial coordinates, the lattice maps complex state vectors $\Psi(n)$ directly across the 108 internal processing manifold vertices, anchored by a multi-vector macro-flux vector $\mathbf{\Psi}_{\text{external}}$ entering across the 6 hypercube boundary face gates. The global wave function propagates according to the adjacent boundary gate distance weights, modulated by the $3\text{-}6\text{-}9$ active control triad and 64-bit hardware bitmask arrays:
-
-$$\Psi(node) = \left[ \frac{\Psi_{\text{LeftGate}}}{d_L + 1} + \frac{\Psi_{\text{RightGate}}}{d_R + 1} \right] \times \left( \Phi_{\text{Tesla}} \cdot \alpha_{\text{geometric}} \cdot \mathbf{M}_{\text{mask}} \right)$$
-
-Applying a discrete variant of the Born rule collapses the global complex array into real-world probability amplitudes, programmatically isolating localized field density wells (the discrete alternative to gravitational space-time contraction points) without relying on mass-based gravity inputs.
-
-### 6.2 Discrete Geodesic Orbit Propagation & Kinetic Velocity Drift
-Object kinematics are computed by mapping particles passing through the discrete matrix grid. Particle acceleration vectors are dictated strictly by localized register potentials at the nearest overlapping lattice node, directed toward the zero-point center ($0$). To account for orbital stability without continuous spacetime geodesics, an analytical quantum decay coefficient tied to the geometric compression scale factor $\alpha_{\text{geometric}}$ is applied to the velocity tensors at each discrete time increment $\Delta t$:
-
-$$\mathbf{V}(t + \Delta t) = \left[ \mathbf{V}(t) + \mathbf{A}_{\text{potential}}(t)\Delta t \right] \times \left(1.0 - \alpha_{\text{geometric}} \cdot \delta_{\text{decay}}\right)$$
-
-Simulations confirm that stable elliptical trajectories decay programmatically into high-density vector sinks, providing a completely non-continuous, force-free alternative to standard Newtonian and Relativistic orbital mechanics.
-
-### 6.3 Light-Cone Ray Tracing & Chromatic Vector Deflection
-The alternative to relativistic gravitational lensing is calculated as an electromagnetic refraction loop as a wavefront cuts across the discrete 114-node field gradient. Localized optical density metrics are computed from active 64-bit hardware registers, where the chromatic deflection delta ($\Theta_{\text{deflection}}$) inversely scales with the squared wavelength ($\lambda^2$), causing shorter wave frequencies to refract more intensely when crossing the boundary face gates:
-
-$$\Delta \theta = (n_{\text{refraction}} - 1.0) \times \sin(\theta_{\text{heading}}) \times \left(\frac{\lambda_{\text{reference}}}{\lambda_{\text{target}}}\right)^2$$
-
-### 6.4 Continuous Phase Waveguide Synthesis
-To bridge the discrete topological ring space with physical hardware manufacturing layouts, a real-time waveguide synthesizer decodes active bitmask configurations into continuous Radio Frequency (RF) carrier phase modulations. This enables physical multi-layered electromagnetic coils and toroidal antennas to be wired and driven at the exact frequencies required to target and focus coherent 3-6-9 vortex vectors in real-world empirical settings.
-
-### 6.5 Summary of Framework Achievements
-This paper has successfully demonstrated a complete mathematical formalization of the Universal Playing Field inside the discrete topological ring space of \(\mathbb{Z}_{114}\). By separating the spatial framework into an internal 108-node core computing manifold and an external 6-node hypercube gate configuration, we establish a balanced coordinate system governed entirely by the rules of 3-6-9 vortex mathematics. 
-
-The analytical derivation of the loop compression attenuation coefficient as an exact geometric fraction:
-
-\[\alpha_{\text{geometric}} = \frac{1}{54\pi^2} \approx 0.090606346384\]
-
-successfully eliminates historical arguments regarding arbitrary curve-fitting parameters. Furthermore, mapping these numerical vectors to rigid 64-bit integer registers anchors the entire state-space calculation directly onto low-level hardware constraints, proving base-independent stability across any notation layout.
-
-### 6.2 Future Areas of Mathematical Development
-Future research initiatives will focus on scaling this discrete lattice architecture into three distinct operational domains:
-1. **Dynamic High-Dimensional Projections:** Expanding the stereographic cascade loops of the 13-dimensional projection field to handle live, real-time dataset rendering streams inside immersive VR environments.
-2. **Automated G-Code Compilation Optimization:** Tuning the physical machine step instructions to allow high-precision manufacturing systems to wrap physical toroidal coil topologies along the exact zero-point axis without introducing geometric distortion.
-3. **Decentralized Validation Networks:** Deploying the REST API interface across a distributed cluster to test the network's resilience against complex synchronization faults.
-
----
-
-## Section VII: Institutional References
+with regression tests in:
 
 ```text
-[1] Rodin, M. (2010). "The Quantum Mechanics of Vortex Mathematics and Toroidal Energy Distributions." Journal of Discrete Topological Topologies, 14(3), 112-128.
-[2] Inquisitor, Q. & Waters, E. (2024). "Base-Independent Integer Register Mapping Across Quantized Field Lattices." Institutional Preprint Repository, Ref: WP-114-64B.
-[3] Weyl, H. (1952). "Symmetry and Discrete Group Formulations inside Hyper-Dimensional Coordinate Spaces." Princeton University Press, Second Edition.
-[4] Ursina Development Group. (2022). "Real-Time 3D Stereographic Rendering Routines across OpenXR Hardware Matrices." Open-Source Computation Engine Manual.
-[5] Riemann, B. (1854). "On the Hypotheses Which Lie at the Bases of Geometry: Continuous Manifolds vs. Discrete Spatial Structures." Historical Academic Translation Series, Vol. VII.
+tests/test_canonical_kernel.py
 ```
 
+The implementation checks, among other identities,
 
+[
+E^{12}=I,
+qquad
+T^{36}=I,
+qquad
+P^2=I,
+]
 
+[
+T^3=E^7,
+qquad
+T^{18}=E^6=P,
+]
+
+[
+F^2=I,
+qquad
+FTF=T^{-1},
+qquad
+FEF=E^{-1},
+]
+
+and the projection carry theorem over the complete finite state space.
+
+This executable layer is intended to prevent prose, visualization code, experimental simulations, and compatibility modules from silently redefining the mathematical architecture.
+
+---
+
+## 15. Research Program
+
+The next stage is to treat proposed physical interpretations as explicit extensions rather than assumptions embedded in the kernel. A candidate extension should specify:
+
+1. the observable represented by each mathematical state;
+2. units and dimensional mappings;
+3. the dynamical law connecting successive states;
+4. initial and boundary conditions;
+5. a prediction not inserted through calibration;
+6. an experimental protocol capable of falsifying that prediction;
+7. comparison with the relevant established model.
+
+This separation permits the finite architecture to be evaluated on its own mathematical merits while allowing physical hypotheses to be tested independently.
+
+---
+
+## Conclusion
+
+The v0.4 Universal Matrix is a finite discrete architecture with a clearly separated internal routing space and external boundary:
+
+[
+oxed{mathcal{A}=mathbb{Z}_{108}sqcup B_6}.
+]
+
+Its principal exact structures are
+
+[
+E=T_9,
+qquad
+P=T_{54},
+qquad
+F(n)=107-n,
+]
+
+the synchronization class
+
+[
+{T_{21},T_{57},T_{93}},
+]
+
+the minimal-positive-lift convention
+
+[
+T=T_{21},
+]
+
+and the canonical register projection
+
+[
+pi(n)=7npmod{64}.
+]
+
+These yield three 36-state routing cycles, a 12-state interface cycle, 54 polarity pairs, seven routing windings for the selected lift, an exact carry-aware register law, 44 double-hit register addresses, 20 single-hit addresses, and an abstract order-48 symmetry of the six oriented boundary directions.
+
+The central result of this revision is not a new physical claim. It is a sharper mathematical object: definitions, theorems, conventions, computational observations, and hypotheses are now separated so that each can be evaluated on its appropriate standard.
