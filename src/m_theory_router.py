@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Universal Playing Field: 11D M-Theory Super-Lattice & Omnidirectional VR Router
 Maps discrete 11-dimensional string/brane vibrations directly to 64-bit hardware
@@ -11,6 +11,7 @@ import math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     import calculator as mc
+    import canonical_kernel as ck
 except ImportError:
     print("CRITICAL: calculator.py missing from the local source directory.")
     sys.exit(1)
@@ -18,7 +19,9 @@ except ImportError:
 class MTheoryRouter:
     def __init__(self, dimensions=11):
         self.dimensions = dimensions
-        self.total_nodes = mc.M_TOTAL          # 114 Invariant Node Base
+        self.total_nodes = ck.M_TOTAL
+        self.core_nodes = ck.N_CORE
+        self.calculator = mc.UniversalMatrixCalculator()
         self.alpha = mc.ALPHA_GEOMETRIC        # Derived attenuation coefficient
         
         # Map explicit discrete projection basis for the matrix space
@@ -39,9 +42,9 @@ class MTheoryRouter:
         time_param = (system_state_id * 0.088)
         
         # Extract register bit configurations to enforce hardware interlocking constraints
-        bit_offset = (system_state_id * 7) % 64
-        up_bit = (mc.STREAM_UP >> bit_offset) & 1
-        down_bit = (mc.STREAM_DOWN >> bit_offset) & 1
+        bit_offset = ck.register_address(system_state_id)
+        up_bit = (self.calculator.STREAM_UP >> bit_offset) & 1
+        down_bit = (self.calculator.STREAM_DOWN >> bit_offset) & 1
         
         # Compute 11D Lattice coordinates
         lattice_coords = []
