@@ -14,7 +14,7 @@ class TestSDRRFSynthesizer(unittest.TestCase):
 
     def test_transmission_burst(self):
         result = self.synthesizer.transmit_carrier_burst(num_samples=512)
-        self.assertEqual(result["status"], "TRANSMITTED_MOCK")
+        self.assertEqual(result["status"], "SIMULATED_RF_BURST")
         self.assertEqual(result["samples_count"], 512)
 
 if __name__ == '__main__':
