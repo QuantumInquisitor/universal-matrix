@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from src.can_bus_driver import CANBusDriver, CANFramePayload
 from src.physics_verifier import SymbolicPhysicsVerifier, FieldInvariantPayload
 from src.marx_gate_array import MarxGateArrayController, MarxArrayConfig
@@ -64,11 +66,12 @@ async def get_current_user():
 
 import numpy as np
 import os
+import logging
 import json
 import asyncio
 import datetime
 import jwt
-from typing import Optional
+from typing import List, Optional
 from pydantic import BaseModel, Field
 
 from fastapi import FastAPI, Response, Depends, HTTPException, Request, status, WebSocket, WebSocketDisconnect
@@ -87,6 +90,9 @@ import redis.asyncio as aioredis
 from src.macro_lattice_mapper import MacroLatticeMapper
 from src.toroidal_resonance_engine import ToroidalResonanceEngine
 from src.dna_bio_mapper import DNABioMapper
+
+logger = logging.getLogger("UniversalMatrixLegacyAPI")
+
 from src.security_config import (
     JWT_ALGORITHM as ALGORITHM,
     JWT_SECRET as SECRET_KEY,
@@ -452,7 +458,7 @@ async def get_spatial_telemetry_dashboard():
     return "<h1>Reality Engine Spatial Viewport File Not Found</h1>"
 
 # --- Phase 15: Biometrics Telemetry Ingestion Endpoints ---
-from src.biometric_ingestion import BiometricTelemetryPayload, BiometricLatticeTransformer
+from src.biometric_ingestion import BiometricPayload, BiometricTelemetryPayload, BiometricLatticeTransformer
 
 transformer = BiometricLatticeTransformer()
 
