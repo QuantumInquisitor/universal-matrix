@@ -169,6 +169,48 @@ def fractional_rate_shift(rate_a: float, rate_b: float) -> float:
     return (rate_b - rate_a) / rate_a
 
 
+def scale_ratio_from_geometry(reference_scale: float, next_scale: float) -> float:
+    """Determine lambda from independently measured adjacent geometry."""
+    if reference_scale <= 0 or next_scale <= 0:
+        raise ValueError("scales must be positive")
+    return next_scale / reference_scale
+
+
+def maxwell_similarity_exponent() -> float:
+    """Return z=1 for geometrically similar, nondispersive EM resonators.
+
+    Maxwell scale invariance implies omega -> omega/s when every spatial
+    dimension is scaled by s while dimensionless material parameters are held
+    fixed. This helper encodes that external physical assumption explicitly.
+    """
+    return 1.0
+
+
+def normalized_coupling_from_mode_split(
+    lower_angular_frequency: float,
+    upper_angular_frequency: float,
+) -> float:
+    """Infer dimensionless coupling kappa/omega0 from a matched mode doublet.
+
+    Standard two-resonator coupled-mode theory gives
+        omega_+ - omega_- = 2*kappa_phys
+    and omega0=(omega_+ + omega_-)/2 for identical uncoupled resonators.
+    Hence
+        kappa_phys/omega0 = (omega_+ - omega_-)/(omega_+ + omega_-).
+
+    Frequencies may be supplied in any common frequency unit because the ratio
+    is dimensionless.
+    """
+    if lower_angular_frequency <= 0 or upper_angular_frequency <= 0:
+        raise ValueError("frequencies must be positive")
+    if upper_angular_frequency < lower_angular_frequency:
+        raise ValueError("upper frequency must be >= lower frequency")
+    return (
+        (upper_angular_frequency - lower_angular_frequency)
+        / (upper_angular_frequency + lower_angular_frequency)
+    )
+
+
 def bounded_transfer(
     source: ToroidalLayerState,
     target: ToroidalLayerState,
