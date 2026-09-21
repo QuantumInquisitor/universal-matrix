@@ -427,6 +427,8 @@ GET  /health
 GET  /metrics
 POST /api/v1/matrix/evaluate
 POST /api/v1/gcode/compile
+POST /api/v1/spatial/validate-command
+POST /api/v1/commercial/entitlements/evaluate
 GET  /api/v1/audit/ledger
 ```
 
