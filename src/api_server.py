@@ -15,6 +15,8 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from src.audit_ledger import CryptographicAuditLedger
 from src import canonical_kernel as ck
+from src.commercial_entitlements import CommercialEntitlement, ProductFamily
+from src.spatial_operations_control import SpatialCommand, SpatialOperationsControlPlane
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("UniversalMatrixAPI")
@@ -81,7 +83,8 @@ app = FastAPI(
     title="Universal Matrix Experimental API",
     description=(
         "API for the canonical finite kernel, experimental gauge extensions, "
-        "G-code tooling, and audit utilities. Experimental physics adapters are "
+        "G-code tooling, spatial command validation, commercial entitlement evaluation, "
+        "and audit utilities. Experimental physics adapters are "
         "not presented as validated physical laws."
     ),
     version="0.4.0",
@@ -156,6 +159,34 @@ class GCodeCompileRequest(BaseModel):
 class GCodeCompileResponse(BaseModel):
     lines_compiled: int
     gcode_output: str
+
+
+class SpatialCommandRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    session_id: str = Field(..., min_length=1, max_length=128)
+    operator_id: str = Field(..., min_length=1, max_length=128)
+    target_id: str = Field(..., min_length=1, max_length=128)
+    sequence_id: int = Field(..., ge=0)
+    timestamp_ns: int = Field(..., ge=0)
+    current_position_m: tuple[float, float, float]
+    position_delta_m: tuple[float, float, float] = (0.0, 0.0, 0.0)
+    linear_velocity_m_s: tuple[float, float, float] = (0.0, 0.0, 0.0)
+    angular_velocity_rad_s: tuple[float, float, float] = (0.0, 0.0, 0.0)
+    deadman_pressed: bool = False
+    emergency_stop: bool = False
+
+
+class EntitlementEvaluateRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    tenant_id: str = Field(..., min_length=1, max_length=128)
+    families: list[ProductFamily] = Field(default_factory=list)
+    extra_features: list[str] = Field(default_factory=list)
+    requested_feature: str | None = None
+
+
+spatial_control_plane = SpatialOperationsControlPlane()
 
 
 @app.get("/health", tags=["System"])
@@ -258,6 +289,80 @@ def compile_gcode_path(
         "lines_compiled": len(compiled_lines),
         "gcode_output": gcode_str,
     }
+
+
+@app.post(
+    "/api/v1/spatial/validate-command",
+    tags=["Spatial Operations"],
+)
+def validate_spatial_command(
+    req: SpatialCommandRequest,
+    client_tier: str = Depends(verify_api_key),
+) -> dict[str, Any]:
+    command = SpatialCommand(
+        session_id=req.session_id,
+        operator_id=req.operator_id,
+        target_id=req.target_id,
+        sequence_id=req.sequence_id,
+        timestamp_ns=req.timestamp_ns,
+        position_delta_m=req.position_delta_m,
+        linear_velocity_m_s=req.linear_velocity_m_s,
+        angular_velocity_rad_s=req.angular_velocity_rad_s,
+        deadman_pressed=req.deadman_pressed,
+        emergency_stop=req.emergency_stop,
+    )
+    decision = spatial_control_plane.evaluate(
+        command,
+        current_position_m=req.current_position_m,
+    )
+
+    API_REQUESTS.labels(endpoint="spatial_validate", outcome="ok").inc()
+    audit_ledger.record_event(
+        "API_SPATIAL_VALIDATE",
+        {
+            "client_tier": client_tier,
+            "session_id": req.session_id,
+            "target_id": req.target_id,
+            "sequence_id": req.sequence_id,
+            "status": decision.status,
+            "accepted": decision.accepted,
+            "requested_stop": decision.requested_stop,
+        },
+    )
+    return decision.to_dict()
+
+
+@app.post(
+    "/api/v1/commercial/entitlements/evaluate",
+    tags=["Commercial Entitlements"],
+)
+def evaluate_commercial_entitlement(
+    req: EntitlementEvaluateRequest,
+    client_tier: str = Depends(verify_api_key),
+) -> dict[str, Any]:
+    entitlement = CommercialEntitlement(
+        tenant_id=req.tenant_id,
+        families=frozenset(req.families),
+        extra_features=frozenset(req.extra_features),
+    )
+    snapshot = entitlement.snapshot()
+    if req.requested_feature is not None:
+        snapshot["requested_feature"] = req.requested_feature
+        snapshot["requested_feature_allowed"] = entitlement.allows_feature(
+            req.requested_feature
+        )
+
+    API_REQUESTS.labels(endpoint="entitlement_evaluate", outcome="ok").inc()
+    audit_ledger.record_event(
+        "API_ENTITLEMENT_EVALUATE",
+        {
+            "client_tier": client_tier,
+            "tenant_id": req.tenant_id,
+            "families": sorted(family.value for family in req.families),
+            "requested_feature": req.requested_feature,
+        },
+    )
+    return snapshot
 
 
 @app.get("/api/v1/audit/ledger", tags=["Cryptographic Audit"])
