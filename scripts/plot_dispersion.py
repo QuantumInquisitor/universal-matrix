@@ -1,83 +1,70 @@
 #!/usr/bin/env python3
-r"""
-scripts/plot_dispersion.py
-==========================
-Publication-Grade Plot Generator for Quantum Gravity Phase Dispersion Curves.
+"""Plot the dimensionless weak-field lattice dispersion relation.
 
-Plots photon arrival time delay (\Delta \tau) as a function of energy (GeV)
-and cosmological distance (light-years) comparing the 114-node SO(13) model
-against standard General Relativity (\Delta \tau = 0.0 s).
+This script visualizes the currently derived gauge-sector relation
+
+    omega(q) = 2 * sqrt(beta) * |sin(q/2)|
+
+for the 36-state routing cycle. It does not convert the result into photon
+time-of-flight delays or claim a quantum-gravity prediction.
 """
 
-import os
-import sys
-import math
+from __future__ import annotations
+
 import argparse
-import numpy as np
+from pathlib import Path
+
 import matplotlib.pyplot as plt
+import numpy as np
 
-# Add repository root to path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-# Physical Constants
-E_PLANCK = 1.9561e9         # Planck Energy (Joules)
-LIGHT_SPEED = 299792458.0   # Speed of light (m/s)
-LY_TO_METERS = 9.46073e15   # 1 Light-year in meters
-GEV_TO_JOULES = 1.60218e-10 # 1 GeV in Joules
-ALPHA_GEOMETRIC = 1.0 / (54.0 * (math.pi ** 2))
-B_BOUNDARY = 6
-N_CORE = 108
+from src.gauge_dispersion import weak_field_angular_frequency
+from src.gauge_dynamics import ROUTING_PERIOD
 
 
-def calculate_delay_us(energy_gev: np.ndarray, distance_ly: float) -> np.ndarray:
-    """Calculates theoretical phase dispersion delay in microseconds."""
-    distance_meters = distance_ly * LY_TO_METERS
-    energy_joules = energy_gev * GEV_TO_JOULES
-    energy_ratio = energy_joules / E_PLANCK
-    boundary_ratio = (B_BOUNDARY / N_CORE) ** 2
-    time_of_flight = distance_meters / LIGHT_SPEED
-
-    delay_seconds = energy_ratio * boundary_ratio * ALPHA_GEOMETRIC * time_of_flight * 10.0
-    return delay_seconds * 1.0e6  # Convert to microseconds
+def dispersion_curve(beta: float = 1.0) -> tuple[np.ndarray, np.ndarray]:
+    modes = np.arange(ROUTING_PERIOD, dtype=int)
+    q = 2.0 * np.pi * modes / ROUTING_PERIOD
+    omega = np.array(
+        [weak_field_angular_frequency(int(m), beta=beta) for m in modes],
+        dtype=float,
+    )
+    return q, omega
 
 
-def generate_publication_plot(output_path: str = "docs/dispersion_curve.png"):
-    """Generates a high-DPI publication figure."""
-    energies = np.linspace(1.0, 200.0, 500)  # 1 GeV to 200 GeV
+def generate_publication_plot(
+    output_path: str = "docs/gauge_dispersion_curve.png",
+    beta: float = 1.0,
+) -> None:
+    q, omega = dispersion_curve(beta)
 
-    distances_ly = [1.0e8, 5.0e8, 1.0e9, 2.0e9]
-    colors = ['#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899']
+    figure, axis = plt.subplots(figsize=(9, 5), dpi=180)
+    axis.plot(q, omega, marker="o", markersize=3, linewidth=1.5)
+    axis.set_title("Universal Matrix experimental U(1) lattice dispersion")
+    axis.set_xlabel("Dimensionless routing wave number q")
+    axis.set_ylabel("Dimensionless angular frequency omega")
+    axis.grid(True, alpha=0.3)
+    axis.text(
+        0.02,
+        0.96,
+        "No SI speed or photon-delay prediction is implied without an independent unit map.",
+        transform=axis.transAxes,
+        va="top",
+        fontsize=8,
+    )
 
-    plt.style.use('dark_background')
-    fig, ax = plt.subplots(figsize=(10, 6), dpi=300)
-
-    # Plot Matrix Engine predictions for varying distances
-    for dist, color in zip(distances_ly, colors):
-        delays = calculate_delay_us(energies, dist)
-        ax.plot(
-            energies,
-            delays,
-            label=f"114-Node SO(13) Model (L = {dist:.1e} ly)",
-            color=color,
-            linewidth=2.0,
-        )
-
-    # Plot General Relativity baseline
-    ax.axhline(0.0, color='#f59e0b', linestyle='--', linewidth=1.5, label="General Relativity (Δτ = 0.0 µs)")
-
-    # Formatting
-    ax.set_title("Photon Arrival Dispersion vs. Energy across Cosmological Distances", fontsize=12, fontweight='bold', pad=15)
-    ax.set_xlabel("Photon Energy E (GeV)", fontsize=10, labelpad=10)
-    ax.set_ylabel("Quantum Phase Delay Δτ (µs)", fontsize=10, labelpad=10)
-    ax.grid(True, linestyle=':', alpha=0.3, color='#475569')
-    ax.legend(loc="upper left", framealpha=0.8, facecolor='#0f172a', edgecolor='#1e293b', fontsize=9)
-
-    plt.tight_layout()
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    plt.savefig(output_path)
-    print(f"[*] High-resolution figure successfully exported to: {output_path}")
+    path = Path(output_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    figure.tight_layout()
+    figure.savefig(path)
+    plt.close(figure)
 
 
 if __name__ == "__main__":
-    generate_publication_plot()
-    
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--beta", type=float, default=1.0)
+    parser.add_argument(
+        "--output",
+        default="docs/gauge_dispersion_curve.png",
+    )
+    args = parser.parse_args()
+    generate_publication_plot(args.output, args.beta)

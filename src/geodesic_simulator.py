@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""
-Universal Playing Field: Discrete Geodesic Orbit Propagator & Decay Simulator
-Models the dynamic trajectory and orbital decay of a particle traversing
-the discrete 114-node spatial lattice gradient without assuming a gravity force.
+"""Legacy trajectory demonstrator.
+
+This module predates the canonical/open-DEC reconstruction. Its hand-authored
+inverse-square central acceleration, torus embedding, 3/6/9 multipliers, and
+decay factor are phenomenological demo rules. They are not derived from the
+current Universal Matrix gauge engine and must not be used as evidence against
+or as a replacement for gravitational dynamics.
 """
 
 import sys
@@ -14,6 +17,7 @@ import json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     import calculator as mc
+    import canonical_kernel as ck
 except ImportError:
     print("CRITICAL: 'calculator.py' must be present in the same directory.")
     sys.exit(1)
@@ -21,8 +25,11 @@ except ImportError:
 
 class GeodesicSimulator:
     def __init__(self, time_step=0.01):
-        """Initializes system invariants and the configuration metrics matrix."""
-        self.total_nodes = mc.M_TOTAL          # 114 Target Grid Base
+        """Initialize the legacy phenomenological trajectory demonstrator."""
+        self.total_nodes = ck.M_TOTAL
+        self.core_nodes = ck.N_CORE
+        self.boundary_gate_ids = frozenset(ck.BOUNDARY_GATES.values())
+        self.calculator = mc.UniversalMatrixCalculator()
         self.time_step = time_step
         self.alpha = mc.ALPHA_GEOMETRIC        # Invariant spatial scale factor
         
@@ -32,13 +39,19 @@ class GeodesicSimulator:
 
     def _get_node_potential(self, node_id: int) -> float:
         """Calculates localized field potential from active 64-bit hardware bitmasks."""
-        bit_offset = (node_id * 7) % 64
-        up_bit = (mc.STREAM_UP >> bit_offset) & 1
-        down_bit = (mc.STREAM_DOWN >> bit_offset) & 1
+        bit_offset = ck.register_address(node_id)
+        up_bit = (self.calculator.STREAM_UP >> bit_offset) & 1
+        down_bit = (self.calculator.STREAM_DOWN >> bit_offset) & 1
         
         # Enforce 3-6-9 frequency scaling multipliers
-        vortex_scale = 3.0 if node_id % 3 == 0 else (6.0 if node_id % 6 == 0 else 1.0)
-        if node_id % 9 == 0: vortex_scale = 9.0
+        if node_id % 9 == 0:
+            vortex_scale = 9.0
+        elif node_id % 6 == 0:
+            vortex_scale = 6.0
+        elif node_id % 3 == 0:
+            vortex_scale = 3.0
+        else:
+            vortex_scale = 1.0
         
         # Combine states with the exact alpha geometric scaling coefficient
         potential = (up_bit * 2.0 - down_bit * 0.5) * self.alpha * vortex_scale
@@ -52,7 +65,7 @@ class GeodesicSimulator:
         for node_id in range(self.total_nodes):
             # Basic geometric torus projection approximation tracking
             theta = (2.0 * math.pi * node_id) / self.total_nodes
-            phi = (2.0 * math.pi * (node_id * mc.S_AXIS)) / mc.N_CORE
+            phi = (2.0 * math.pi * (node_id * ck.REGISTER_MULTIPLIER)) / self.core_nodes
             
             tx = (self.major_radius + self.minor_radius * math.cos(phi)) * math.cos(theta)
             ty = (self.major_radius + self.minor_radius * math.cos(phi)) * math.sin(theta)
@@ -81,13 +94,13 @@ class GeodesicSimulator:
             r = math.sqrt(px**2 + py**2 + pz**2)
             if r == 0: r = 1.0
             
-            # Acceleration is dictated strictly by register bits and alpha metrics
+            # Legacy phenomenological inverse-square rule; not a canonical law.
             accel_magnitude = (potential / (r**2)) * 1000.0
             ax = -(px / r) * accel_magnitude
             ay = -(py / r) * accel_magnitude
             az = -(pz / r) * accel_magnitude
             
-            # Step 3: Implement discrete quantum decay coefficients (Relativistic Decay Metric)
+            # Legacy damping coefficient; not quantum or relativistic dynamics.
             decay_factor = 1.0 - (self.alpha * 0.01)
             vx = (vx + ax * self.time_step) * decay_factor
             vy = (vy + ay * self.time_step) * decay_factor
@@ -109,7 +122,8 @@ class GeodesicSimulator:
                 })
                 
         return {
-            "termination_status": "PROCURATION_COMPLETE",
+            "termination_status": "LEGACY_DEMO_COMPLETE",
+            "model_status": "phenomenological_not_canonical_physics",
             "initial_conditions": {"position": init_pos, "velocity": init_vel},
             "final_decay_state": {"node_id": current_node, "radius": round(r, 4)},
             "telemetry_stream": trajectory_log

@@ -8,9 +8,11 @@ class FieldInvariantPayload(BaseModel):
     frequency_hz: float = Field(432000000.0, ge=1.0)
 
 class SymbolicPhysicsVerifier:
-    """
-    Phase 45: Symbolic physics and conservation law verifier validating energy density
-    and Maxwell invariants prior to hardware dispatch.
+    """Conventional electromagnetic reference calculator.
+
+    This computes standard textbook field expressions. The final threshold is a
+    user-defined screening heuristic, not proof that conservation laws or a
+    hardware configuration are physically safe.
     """
     def verify_invariants(self, payload: FieldInvariantPayload) -> Dict[str, Any]:
         epsilon_0 = 8.854e-12
@@ -26,8 +28,10 @@ class SymbolicPhysicsVerifier:
         lorentz_invariant = round((payload.electric_field_v_m ** 2) - (c ** 2) * (payload.magnetic_field_tesla ** 2), 2)
 
         return {
-            "status": "PHYSICS_INVARIANTS_VERIFIED",
+            "status": "REFERENCE_EXPRESSIONS_EVALUATED",
+            "model_status": "reference_physics_plus_heuristic_threshold",
             "total_energy_density_j_m3": total_energy_density_j_m3,
             "lorentz_invariant_val": lorentz_invariant,
-            "conservation_laws_satisfied": total_energy_density_j_m3 < 100000.0
+            "conservation_laws_satisfied": total_energy_density_j_m3 < 100000.0,
+            "threshold_check_only": True
         }

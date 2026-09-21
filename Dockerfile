@@ -1,24 +1,30 @@
-FROM python:3.11-slim
+FROM python:3.14-slim
+
+COPY --from=ghcr.io/astral-sh/uv:0.12.12 /uv /uvx /bin/
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    UV_LINK_MODE=copy
 
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+COPY pyproject.toml ./
 
-# Copy dependency requirements and install
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv sync --no-dev --extra api
 
-# Copy source code and SDKs
 COPY src/ ./src/
 COPY sdk/ ./sdk/
 
+RUN addgroup --system matrix \
+    && adduser --system --ingroup matrix --home /app matrix \
+    && mkdir -p /app/logs \
+    && chown -R matrix:matrix /app
+
+USER matrix
+
 EXPOSE 8000
 
-ENV PYTHONPATH=/app
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD ["/app/.venv/bin/python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3).read()"]
 
-CMD ["uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "8000"]
-
+CMD ["/app/.venv/bin/uvicorn", "src.api_server:app", "--host", "0.0.0.0", "--port", "8000"]

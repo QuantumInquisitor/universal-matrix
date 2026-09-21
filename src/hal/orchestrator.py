@@ -31,9 +31,14 @@ class UniversalHALOrchestrator:
                 status_report[key] = driver.get_status()
             except Exception as e:
                 status_report[key] = {"error": str(e)}
+        error_count = sum(
+            1 for item in status_report.values() if "error" in item
+        )
         return {
             "total_registered_drivers": len(self.drivers),
-            "system_health": "ALL_SYSTEMS_OPERATIONAL",
-            "driver_statuses": status_report
+            "system_health": "DEGRADED" if error_count else "DRIVERS_RESPONDED",
+            "driver_error_count": error_count,
+            "driver_statuses": status_report,
+            "model_status": "software_driver_status_not_hardware_safety_certification",
         }
 

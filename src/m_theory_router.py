@@ -1,8 +1,11 @@
-﻿#!/usr/bin/env python3
-"""
-Universal Playing Field: 11D M-Theory Super-Lattice & Omnidirectional VR Router
-Maps discrete 11-dimensional string/brane vibrations directly to 64-bit hardware
-bitmasks and routes metrics down to omnidirectional stereographic VR meshes.
+#!/usr/bin/env python3
+"""Legacy 11-component visualization router.
+
+The historical filename/class name is retained for compatibility. This module
+does not implement M-theory: it has no 11D supergravity action, supersymmetry,
+M2/M5 branes, or 3-form gauge field. Treat its 11-component vectors as generic
+visualization features only. See src/theory_bridge.py for the current
+comparative-theory classification.
 """
 import sys
 import os
@@ -11,6 +14,7 @@ import math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     import calculator as mc
+    import canonical_kernel as ck
 except ImportError:
     print("CRITICAL: calculator.py missing from the local source directory.")
     sys.exit(1)
@@ -18,8 +22,10 @@ except ImportError:
 class MTheoryRouter:
     def __init__(self, dimensions=11):
         self.dimensions = dimensions
-        self.total_nodes = mc.M_TOTAL          # 114 Invariant Node Base
-        self.alpha = mc.ALPHA_GEOMETRIC        # Derived attenuation coefficient
+        self.total_nodes = ck.M_TOTAL
+        self.core_nodes = ck.N_CORE
+        self.calculator = mc.UniversalMatrixCalculator()
+        self.alpha = mc.ALPHA_GEOMETRIC        # legacy visualization coefficient
         
         # Map explicit discrete projection basis for the matrix space
         self.basis_matrix = [
@@ -39,11 +45,11 @@ class MTheoryRouter:
         time_param = (system_state_id * 0.088)
         
         # Extract register bit configurations to enforce hardware interlocking constraints
-        bit_offset = (system_state_id * 7) % 64
-        up_bit = (mc.STREAM_UP >> bit_offset) & 1
-        down_bit = (mc.STREAM_DOWN >> bit_offset) & 1
+        bit_offset = ck.register_address(system_state_id)
+        up_bit = (self.calculator.STREAM_UP >> bit_offset) & 1
+        down_bit = (self.calculator.STREAM_DOWN >> bit_offset) & 1
         
-        # Compute 11D Lattice coordinates
+        # Compute generic 11-component visualization coordinates
         lattice_coords = []
         for d in range(self.dimensions):
             coord_sum = 0.0
@@ -52,7 +58,7 @@ class MTheoryRouter:
                 coord_sum += self.basis_matrix[n][d] * mode_vibe
             lattice_coords.append(coord_sum)
             
-        # Down-project 11D hyper-spatial coordinates to 3D Cartesian VR meshes
+        # Down-project the 11-component visualization vector to 3D
         # Applying bit modulation weights and alpha geometric compression bounds
         bit_mod_scale = 1.0 + (up_bit * 0.1) - (down_bit * 0.1)
         x_comp = sum(lattice_coords[0:4]) * bit_mod_scale * (self.alpha * 16.5)
@@ -69,7 +75,8 @@ class MTheoryRouter:
             "system_state_id": system_state_id,
             "11d_lattice_coordinates": [round(c, 5) for c in lattice_coords],
             "vr_data_packet": {
-                "spatial_routing_address": f"M_THEORY_11D_NODE_{system_state_id}",
+                "spatial_routing_address": f"LEGACY_11D_VIS_NODE_{system_state_id}",
+                "model_status": "visualization_only_not_m_theory",
                 "omnidirectional_vector": [round(v, 6) for v in omni_vector],
                 "membrane_energy_density": round(membrane_density, 6)
             }

@@ -1,3 +1,14 @@
+> **SUPERSEDED / HISTORICAL MATERIAL**
+>
+> This file predates the canonical v0.4 reconstruction. It may contain obsolete
+> claims involving Z_114, SO(13) physical spacetime, 64-bit physical geometry,
+> exact physical-constant derivations, 3/6/9 physical laws, quantum/GR
+> equivalence, or enterprise/hardware validation. For the current project use
+> `README.md`, `ARCHITECTURE.md`, `docs/canonical_spec_v0.4.md`, and
+> `docs/white_paper.md`.
+>
+> Historical content below is retained for provenance only.
+
 # Repository Architecture Manifest
 
 This manifest details the complete source code, hardware abstraction layer (HAL) drivers, core physics engines, test suites, and operational manifests across `universal-matrix`.

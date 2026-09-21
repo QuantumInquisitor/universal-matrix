@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""
-Universal Playing Field: Discrete Light-Cone Ray Tracer & Deflection Engine
-Models optical wave vectors splitting and refracting across the 114-node grid.
+"""Legacy optical-path demonstrator.
+
+This module predates the canonical/open-DEC reconstruction. Its refractive-index
+and wavelength-deflection rules are hand-authored visualization assumptions, not
+derived Maxwell optics and not predictions of the current gauge engine.
 """
 
 import sys
@@ -13,6 +15,7 @@ import json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     import calculator as mc
+    import canonical_kernel as ck
 except ImportError:
     print("CRITICAL: 'calculator.py' must be present in the same directory.")
     sys.exit(1)
@@ -21,16 +24,19 @@ except ImportError:
 class LightConeSimulator:
     def __init__(self):
         """Initializes system invariants and matrix configuration bounds."""
-        self.total_nodes = mc.M_TOTAL          # 114 System Base
+        self.total_nodes = ck.M_TOTAL
+        self.core_nodes = ck.N_CORE
+        self.boundary_gate_ids = frozenset(ck.BOUNDARY_GATES.values())
+        self.calculator = mc.UniversalMatrixCalculator()
         self.alpha = mc.ALPHA_GEOMETRIC        # Invariant spatial scale factor
         self.major_radius = 50.0
         self.minor_radius = 15.0
 
     def _get_node_refraction_index(self, node_id: int) -> float:
-        """Computes localized optical density metrics from active 64-bit registers."""
-        bit_offset = (node_id * 7) % 64
-        up_bit = (mc.STREAM_UP >> bit_offset) & 1
-        down_bit = (mc.STREAM_DOWN >> bit_offset) & 1
+        """Compute a legacy visualization index from register state."""
+        bit_offset = ck.register_address(node_id)
+        up_bit = (self.calculator.STREAM_UP >> bit_offset) & 1
+        down_bit = (self.calculator.STREAM_DOWN >> bit_offset) & 1
         
         # Check for 3-6-9 vortex control triad nodes
         is_tesla = (node_id % 3 == 0) or (node_id % 6 == 0) or (node_id % 9 == 0)
@@ -48,7 +54,7 @@ class LightConeSimulator:
         # Trace the ray profile as it processes sequentially across key node regions
         for node_id in range(self.total_nodes):
             # Isolate the 6 external boundary face gates
-            is_gate = (node_id % 19 == 0)
+            is_gate = node_id in self.boundary_gate_ids
             n_index = self._get_node_refraction_index(node_id)
             
             # Compute chromatic vector deflection (shorter wavelengths refract more)
@@ -70,6 +76,7 @@ class LightConeSimulator:
                 
         total_net_deflection = current_angle - entrance_angle_rad
         return {
+            "model_status": "phenomenological_visualization_not_physical_optics",
             "wavelength_tracked_nm": wavelength_nm,
             "total_net_deflection_deg": round(math.degrees(total_net_deflection), 4),
             "final_heading_rad": round(current_angle, 6),

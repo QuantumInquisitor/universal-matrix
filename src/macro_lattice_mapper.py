@@ -3,9 +3,12 @@ import numpy as np
 from typing import Dict, List, Any
 
 class MacroLatticeMapper:
-    """
-    Maps biological macro-structures, Chinese Medicine Meridians, 
-    Chakras/Nadis, and gross human anatomy into SO(13) toroidal field space.
+    """Symbolic traditional-system visualization mapper.
+
+    Chakra/meridian labels, frequencies, tissue associations, and 13-component
+    vectors in this module are cultural/visualization metadata. They are not
+    validated anatomical, diagnostic, therapeutic, or biophysical mappings and
+    are not part of the canonical mathematical kernel.
     """
     
     # 7 Primary Chakras mapped to harmonic octaves and Torus Layers T9-T12
@@ -65,6 +68,8 @@ class MacroLatticeMapper:
                 "id": f"chakra_{idx+1}",
                 "name": name,
                 "category": "Chakra",
+                "category_description": "Traditional symbolic chakra label",
+                "model_status": "symbolic_visualization_only",
                 "frequency_hz": details["freq_hz"],
                 "target_layer": details["layer"],
                 "color_rgb": details["color_rgb"],
@@ -76,7 +81,9 @@ class MacroLatticeMapper:
             lattice_nodes.append({
                 "id": f"meridian_{idx+1}",
                 "name": f"{m_name} Meridian",
-                "category": "Meridian/Anatomy",
+                "category": "Meridian",
+                "category_description": "Traditional meridian analogy",
+                "model_status": "symbolic_visualization_only",
                 "element": m_details["element"],
                 "polarity": m_details["type"],
                 "target_tissue": m_details["tissue"],

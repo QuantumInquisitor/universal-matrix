@@ -1,3 +1,13 @@
+"""Conventional SI/reference-unit conversion utilities.
+
+This module uses standard constants, including Newton's G for conventional
+Planck-unit reference calculations. Those reference calculations are not part
+of the non-gravitational Universal Matrix kernel.
+
+The historical "matrix_units" value is retained only as a legacy numerical
+adapter and has no established physical-unit interpretation.
+"""
+
 import math
 
 # Universal Physical Constants (SI)
@@ -22,7 +32,9 @@ class NaturalUnitsConverter:
             "energy_ev": ev,
             "energy_planck": planck_units,
             "energy_matrix_units": matrix_units,
-            "so13_scale_factor": self.so13_scale_factor
+            "legacy_matrix_units": matrix_units,
+            "so13_scale_factor": self.so13_scale_factor,
+            "matrix_unit_status": "legacy_dimensionless_adapter_not_physical_unit"
         }
 
     def frequency_to_wavelength_natural(self, frequency_hz: float) -> dict:
@@ -33,5 +45,6 @@ class NaturalUnitsConverter:
             "frequency_hz": frequency_hz,
             "wavelength_m": wavelength_m,
             "lattice_node_spacing_m": lattice_spacing_m,
-            "nodes": self.node_count
+            "nodes": self.node_count,
+            "lattice_spacing_status": "derived_partition_of_reference_wavelength_not_canonical_spacing"
         }

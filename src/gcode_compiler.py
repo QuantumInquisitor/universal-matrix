@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Universal Playing Field: G-Code Compiler Module (v6.1 JSON-Config Enabled)
 Maps discrete 114-node toroidal geometric vectors into standardized 
@@ -14,6 +14,7 @@ import json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     import calculator as mc
+    import canonical_kernel as ck
 except ImportError:
     print("CRITICAL: 'calculator.py' must be present in the same directory.")
     sys.exit(1)
@@ -45,26 +46,31 @@ class GCodeCompiler:
         self.retract_height = config["manufacturing_presets"]["retract_height"]
         self.working_depth = config["manufacturing_presets"]["working_depth"]
         self.infinity_step = config["manufacturing_presets"]["infinity_step"]
+        if self.infinity_step != ck.ROUTING_STEP:
+            raise ValueError(f"manufacturing infinity_step must equal canonical routing step {ck.ROUTING_STEP}")
         
         self.major_radius = config["torus_dimensions"]["major_radius"]
         self.minor_radius = config["torus_dimensions"]["minor_radius"]
         
         # Pull core invariants from the verified math layer script
-        self.total_nodes = mc.M_TOTAL        # 114 Total Positions
-        self.core_nodes = mc.N_CORE          # 108 Internal Track Loop
-        self.boundary_nodes = mc.B_BOUNDARY  # 6 External Face Gates
+        self.total_nodes = ck.M_TOTAL       # 114 architectural positions
+        self.core_nodes = ck.N_CORE         # 108-state routing core
+        self.boundary_nodes = ck.BOUNDARY_COUNT
+        self.boundary_gate_ids = frozenset(ck.BOUNDARY_GATES.values())
+        self.calculator = mc.UniversalMatrixCalculator()
 
     def _project_node_to_3d(self, node_index):
         """Projects a discrete integer node index into continuous 3D coordinates."""
-        bit_shift_offset = (node_index * 7) % 64
-        up_bit = (mc.STREAM_UP >> bit_shift_offset) & 1
-        down_bit = (mc.STREAM_DOWN >> bit_shift_offset) & 1
+        bit_shift_offset = ck.register_address(node_index)
+        up_bit = (self.calculator.STREAM_UP >> bit_shift_offset) & 1
+        down_bit = (self.calculator.STREAM_DOWN >> bit_shift_offset) & 1
         
         bit_compression_factor = (up_bit * 0.05) - (down_bit * 0.05)
         dynamic_minor_radius = self.minor_radius * (1.0 + bit_compression_factor * (mc.ALPHA_GEOMETRIC * 10.0))
 
-        theta = (2.0 * math.pi * node_index) / self.total_nodes
-        phi = (2.0 * math.pi * (node_index * mc.S_AXIS)) / self.core_nodes
+        theta = (2.0 * math.pi * node_index) / self.core_nodes
+        # Seven windings across each canonical 36-state routing cycle.
+        phi = (2.0 * math.pi * ck.REGISTER_MULTIPLIER * node_index) / self.core_nodes
         
         x = (self.major_radius + dynamic_minor_radius * math.cos(phi)) * math.cos(theta)
         y = (self.major_radius + dynamic_minor_radius * math.cos(phi)) * math.sin(theta)
@@ -87,25 +93,25 @@ class GCodeCompiler:
             ""
         ]
 
-        print(f"Compiling complete 3-Phase Material Infinity toolpath loop for {self.total_nodes}-Node Matrix...")
+        print(f"Compiling 3-phase toolpath over {self.core_nodes} internal states plus {self.boundary_nodes} external gates...")
         
         node_execution_sequence = []
         for phase_offset in range(3):
             current_node = phase_offset
-            for _ in range(self.total_nodes // 3):
+            for _ in range(self.core_nodes // 3):
                 node_execution_sequence.append(current_node)
-                current_node = (current_node + self.infinity_step) % self.total_nodes
+                current_node = (current_node + self.infinity_step) % self.core_nodes
 
         for idx, node_id in enumerate(node_execution_sequence):
             x, y, z = self._project_node_to_3d(node_id)
-            is_boundary_gate = (node_id % (self.total_nodes // self.boundary_nodes)) == 0
+            is_boundary_gate = node_id in self.boundary_gate_ids
             
             if idx == 0:
                 lines.append(f"; Initialize primary coordinate entry point (Material Origin: Node {node_id})")
                 lines.append(f"G0 X{x:.4f} Y{y:.4f} Z{self.retract_height:.4f}")
                 lines.append(f"G1 Z{z + self.working_depth:.4f} F{self.feed_rate // 2} ; Engage tool head")
             else:
-                if idx % 38 == 0:
+                if idx % (self.core_nodes // 3) == 0:
                     lines.append(f"\n; Transitioning to Interlocking Winding Phase Layer (Node {node_id})")
                 
                 if is_boundary_gate:

@@ -1,44 +1,155 @@
-﻿# Derivation of the Continuum Limit: Contracting Z_114 to Smooth Riemannian Manifolds
+# Continuum-Limit Note for the Current Discrete Field Extensions
 
-## I. Mathematical Statement
-We prove that as the discrete lattice step $\Delta x \to 0$ and total nodes $N \to \infty$, the 114-node $SO(13)$ modular vector difference equations over $\mathbb{Z}_{114}$ contract directly into the smooth Einstein-Hilbert action and continuous wave equations of General Relativity.
+## Status
 
----
+This document replaces an earlier invalid claim that a Taylor expansion of a finite-difference operator directly recovered the Einstein-Hilbert action or Einstein field equations.
 
-## II. Discrete Shift Operators & Taylor Expansion
+A finite-difference Laplacian approaching a continuum Laplacian does **not** by itself derive General Relativity.
 
-### 1. 21-Step Primed Jump Operator
-In the core loop $\mathcal{N}_{\text{core}} \cong \mathbb{Z}_{108}$, discrete state propagation across the 21-step primed jump vector is defined by the central second-difference operator:
+## 1. One-dimensional central difference
 
-$$\Delta_{21} \Psi(x) = \frac{\Psi(x + 21\Delta x) - 2\Psi(x) + \Psi(x - 21\Delta x)}{(\Delta x)^2}$$
+For a smooth scalar field (psi(x)), define
 
-### 2. Continuum Limit Expansion
-Expanding $\Psi(x \pm 21\Delta x)$ in a Taylor series about $x$:
+[
+D_hpsi(x)
+=
+rac{psi(x+h)-2psi(x)+psi(x-h)}{h^2}.
+]
 
-$$\Psi(x + 21\Delta x) = \Psi(x) + 21\Delta x \partial_x \Psi + \frac{(21\Delta x)^2}{2} \partial_x^2 \Psi + \frac{(21\Delta x)^3}{6} \partial_x^3 \Psi + \mathcal{O}((\Delta x)^4)$$
+Taylor expansion gives
 
-$$\Psi(x - 21\Delta x) = \Psi(x) - 21\Delta x \partial_x \Psi + \frac{(21\Delta x)^2}{2} \partial_x^2 \Psi - \frac{(21\Delta x)^3}{6} \partial_x^3 \Psi + \mathcal{O}((\Delta x)^4)$$
+[
+psi(xpm h)
+=
+psi(x)
+pm hpsi'(x)
++
+rac{h^2}{2}psi''(x)
+pm
+rac{h^3}{6}psi'''(x)
++
+rac{h^4}{24}psi^{(4)}(x)
++
+O(h^5).
+]
 
-Summing both expressions:
+Therefore
 
-$$\Psi(x + 21\Delta x) + \Psi(x - 21\Delta x) - 2\Psi(x) = (21\Delta x)^2 \partial_x^2 \Psi + \mathcal{O}((\Delta x)^4)$$
+[
+D_hpsi(x)
+=
+psi''(x)
++
+rac{h^2}{12}psi^{(4)}(x)
++
+O(h^4).
+]
 
-Dividing by $(\Delta x)^2$ and taking the limit $\Delta x \to 0$:
+Hence
 
-$$\lim_{\Delta x \to 0} \Delta_{21} \Psi(x) = 441 \partial_x^2 \Psi$$
+[
+oxed{
+D_hpsi	opsi''
+}
+]
 
----
+as (h	o0), with second-order truncation error under the stated smoothness assumptions.
 
-## III. Metric Tensor Reduction
+## 2. Routing-step interpretation
 
-Mapping the 13-dimensional $SO(13)$ Lie algebra rotation generators $J_{ab}$ onto a 4D pseudo-Riemannian manifold metric $g_{\mu\nu}$:
+If a discrete coordinate uses a step corresponding to (21Delta x), then
 
-$$g_{\mu\nu} = \eta_{\mu\nu} + \kappa \cdot \sum_{a,b=1}^{13} \text{Tr}\left( J_a J_b \right) \cdot \mathbf{B}_f$$
+[
+rac{
+psi(x+21Delta x)
+-2psi(x)
++psi(x-21Delta x)
+}{
+(Delta x)^2
+}
+=
+441,psi''(x)
++
+O(Delta x^2).
+]
 
-Where $\mathbf{B}_f = [0, 9, 18, 9, 36, 45]^T$ acts as the localized boundary stress-energy tensor $T_{\mu\nu}$. 
+If instead the denominator is the physical squared displacement
 
-Taking the continuum limit over the 108 internal nodes recovers the standard Einstein Field Equations:
+[
+(21Delta x)^2,
+]
 
-$$\lim_{N_{\text{core}} \to \infty} G_{\mu\nu}\left(\mathbb{Z}_{108}\right) = R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R = \frac{8\pi G}{c^4} T_{\mu\nu}$$
+then the operator tends directly to
 
-This completes the formal contraction from the discrete 114-node lattice to continuous differential geometry.
+[
+psi''(x).
+]
+
+This distinction is dimensional and must be stated explicitly.
+
+## 3. Open 3D gauge extension
+
+The current open gauge engine uses a cubical discrete-exterior-calculus structure rather than a (mathbb Z_{114}) manifold.
+
+Its weak field energy is
+
+[
+H_h
+=
+rac12langle E_h,E_hangle
++
+rac{eta}{2}
+langle d_1A_h,d_1A_hangle.
+]
+
+Under an independently specified physical lattice spacing (a), smooth-field assumptions, and an appropriate refinement sequence, the discrete exterior derivative can approximate the continuum exterior derivative.
+
+The weak lattice dispersion
+
+[
+omega^2
+=
+4eta
+sum_i
+sin^2left(rac{q_i}{2}ight)
+]
+
+has the small-wave-number expansion
+
+[
+omega^2
+=
+eta|mathbf q|^2
++
+O(|mathbf q|^4).
+]
+
+This provides a defensible Maxwell-like linear continuum target for the Abelian gauge adapter.
+
+## 4. What is not derived
+
+The current continuum analysis does not derive:
+
+- the Einstein-Hilbert action,
+- an Einstein tensor,
+- a spacetime metric,
+- Newton's constant,
+- General Relativity,
+- physical SI lattice spacing,
+- the measured value of the speed of light.
+
+Deriving any of those would require additional independently justified physical structure and a separate convergence analysis.
+
+## 5. Required future convergence study
+
+A rigorous continuum program should define a family of meshes indexed by (h	o0) and measure:
+
+1. consistency error,
+2. stability,
+3. convergence rate,
+4. discrete energy conservation,
+5. boundary-condition convergence,
+6. gauge-invariant observable convergence,
+7. comparison against a known continuum solution.
+
+The current repository has the algebraic ingredients for such a numerical study but has not yet completed it.

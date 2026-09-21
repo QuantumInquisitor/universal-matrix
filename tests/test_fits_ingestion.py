@@ -1,27 +1,32 @@
-#!/usr/bin/env python3
-"""
-tests/test_fits_ingestion.py
-=============================
-Unit tests for NASA FITS data parser and GRB dispersion pipeline.
-"""
-
-import os
-import sys
 import unittest
 
-# Ensure repository root is in sys.path before importing scripts
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-from scripts.analyze_grb_data import run_dispersion_analysis, GRBDataIngestor
+from scripts.analyze_grb_data import GRBDataIngestor, run_dispersion_analysis
 
 
 class TestFITSIngestion(unittest.TestCase):
-
-    def test_synthetic_fallback_pipeline(self):
+    def test_synthetic_null_pipeline(self):
         results = run_dispersion_analysis(fits_path=None)
         self.assertEqual(results["data_source"], "Synthetic Stream")
         self.assertGreater(results["total_events"], 100)
-        self.assertAlmostEqual(results["measured_100gev_delay_us"], 15.8336, delta=1.5)
+        self.assertIsNone(results["matrix_target_delay_us"])
+        self.assertEqual(
+            results["model_status"],
+            "observational_regression_no_matrix_target",
+        )
+        # Null synthetic data should fit near zero, within statistical noise.
+        self.assertLess(abs(results["measured_100gev_delay_us"]), 5.0)
+
+    def test_known_synthetic_slope_is_recovered(self):
+        injected = 2.5e-8
+        results = run_dispersion_analysis(
+            fits_path=None,
+            synthetic_slope_s_per_gev=injected,
+        )
+        self.assertAlmostEqual(
+            results["fitted_slope_s_per_gev"],
+            injected,
+            delta=2e-9,
+        )
 
     def test_ingestor_initialization(self):
         ingestor = GRBDataIngestor()
@@ -32,4 +37,3 @@ class TestFITSIngestion(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-    

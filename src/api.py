@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from src.can_bus_driver import CANBusDriver, CANFramePayload
 from src.physics_verifier import SymbolicPhysicsVerifier, FieldInvariantPayload
 from src.marx_gate_array import MarxGateArrayController, MarxArrayConfig
@@ -64,15 +66,16 @@ async def get_current_user():
 
 import numpy as np
 import os
+import logging
 import json
 import asyncio
 import datetime
 import jwt
-from typing import Optional
+from typing import List, Optional
 from pydantic import BaseModel, Field
 
-from fastapi import FastAPI, Response, Depends, HTTPException, status, WebSocket, WebSocketDisconnect
-from fastapi.responses import StreamingResponse, FileResponse
+from fastapi import FastAPI, Response, Depends, HTTPException, Request, status, WebSocket, WebSocketDisconnect
+from fastapi.responses import StreamingResponse, FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from prometheus_client import Counter, Gauge, generate_latest, CONTENT_TYPE_LATEST, REGISTRY
@@ -88,14 +91,63 @@ from src.macro_lattice_mapper import MacroLatticeMapper
 from src.toroidal_resonance_engine import ToroidalResonanceEngine
 from src.dna_bio_mapper import DNABioMapper
 
+logger = logging.getLogger("UniversalMatrixLegacyAPI")
+
+from src import canonical_kernel as ck
+from src.security_config import (
+    JWT_ALGORITHM as ALGORITHM,
+    JWT_SECRET as SECRET_KEY,
+    OPERATOR_PASSWORD,
+    REDIS_URL,
+)
+
 # --- App Initialization & Constants ---
-SECRET_KEY = "universal_matrix_super_secret_jwt_key_change_in_prod"
-ALGORITHM = "HS256"
 REDIS_CLUSTER_CHANNEL = "matrix_cluster_sync_channel"
 
-app = FastAPI(title="Universal Matrix System API", version="6.4.0")
+app = FastAPI(
+    title="Universal Matrix Legacy Compatibility API",
+    version="0.4.0-legacy",
+    description=(
+        "Legacy compatibility surface. Hardware and control routes are experimental "
+        "and require authenticated access. Prefer src.api_server for the smaller "
+        "research API."
+    ),
+)
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/token")
+_PROTECTED_PREFIXES = (
+    "/api/v1/hardware/",
+    "/api/v1/commercial/",
+    "/api/v1/control",
+    "/api/v1/biometrics/",
+)
+
+@app.middleware("http")
+async def protect_control_routes(request: Request, call_next):
+    path = request.url.path
+    if any(path.startswith(prefix) for prefix in _PROTECTED_PREFIXES):
+        authorization = request.headers.get("Authorization", "")
+        if not authorization.startswith("Bearer "):
+            return JSONResponse(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                content={"detail": "Bearer token required for control routes"},
+            )
+        token = authorization[7:].strip()
+        try:
+            payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        except jwt.PyJWTError:
+            return JSONResponse(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                content={"detail": "Invalid or expired Bearer token"},
+            )
+        if payload.get("role") not in {"admin", "operator"}:
+            return JSONResponse(
+                status_code=status.HTTP_403_FORBIDDEN,
+                content={"detail": "Insufficient role for control route"},
+            )
+    return await call_next(request)
+
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/operator-token")
 
 # --- Observability Metrics ---
 SYSTEM_REQUESTS_TOTAL = Counter(
@@ -116,10 +168,10 @@ MATRIX_CLOCK_DRIFT = Gauge(
 
 ACTIVE_NODES_GAUGE = Gauge(
     "matrix_active_nodes_count",
-    "Number of active matrix nodes in the 114-Node Discrete Framework"
+    "Number of active canonical core states currently represented by the legacy API"
 )
 
-ACTIVE_NODES_GAUGE.set(114)
+ACTIVE_NODES_GAUGE.set(ck.N_CORE)
 
 # --- Subsystem Initialization ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -140,13 +192,17 @@ engine_config = {
 }
 
 # --- Authentication & Verification ---
-USERS_DB = {
-    "operator": {
-        "username": "operator",
-        "password": "matrix_secure_password_2026",
-        "role": "admin"
+USERS_DB = (
+    {
+        "operator": {
+            "username": "operator",
+            "password": OPERATOR_PASSWORD,
+            "role": "admin",
+        }
     }
-}
+    if OPERATOR_PASSWORD
+    else {}
+)
 
 def verify_token(token: str = Depends(oauth2_scheme)):
     """Decodes JWT tokens and verifies admin operator privileges."""
@@ -160,10 +216,35 @@ def verify_token(token: str = Depends(oauth2_scheme)):
     except jwt.PyJWTError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired Bearer token")
 
+async def verify_websocket_token(websocket: WebSocket) -> dict | None:
+    """Authenticate legacy WebSocket connections before accepting them."""
+    authorization = websocket.headers.get("authorization", "")
+    token = ""
+    if authorization.startswith("Bearer "):
+        token = authorization[7:].strip()
+    elif websocket.query_params.get("token"):
+        # Query-token support is legacy compatibility only. Prefer Authorization.
+        token = websocket.query_params["token"]
+
+    if not token:
+        await websocket.close(code=1008, reason="Bearer token required")
+        return None
+
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+    except jwt.PyJWTError:
+        await websocket.close(code=1008, reason="Invalid or expired token")
+        return None
+
+    if payload.get("role") not in {"admin", "operator", "read_only"}:
+        await websocket.close(code=1008, reason="Insufficient role")
+        return None
+    return payload
+
 async def broadcast_cluster_state(state_payload: dict):
     """Broadcasts updated engine state across all distributed regional cluster nodes."""
     try:
-        r = aioredis.from_url("redis://localhost:6379", decode_responses=True)
+        r = aioredis.from_url(REDIS_URL, decode_responses=True)
         await r.publish(REDIS_CLUSTER_CHANNEL, json.dumps(state_payload))
         await r.close()
     except Exception:
@@ -176,7 +257,11 @@ class ControlPayload(BaseModel):
     step_delay: Optional[float] = None
 
 class DNASequencePayload(BaseModel):
-    sequence: str = Field(..., description="Raw nucleotide sequence (A, T, C, G)", example="ATGCGATCG")
+    sequence: str = Field(
+        ...,
+        description="Raw nucleotide sequence (A, T, C, G)",
+        json_schema_extra={"example": "ATGCGATCG"},
+    )
 
 # --- System & Authentication Endpoints ---
 @app.get("/")
@@ -185,18 +270,38 @@ def read_root():
     dashboard_path = os.path.join(STATIC_DIR, "dashboard.html")
     if os.path.exists(dashboard_path):
         return FileResponse(dashboard_path)
-    return {"status": "online", "system": "114-Node Discrete Matrix Framework"}
+    return {
+        "status": "online",
+        "system": "Universal Matrix legacy compatibility API",
+        "canonical_core_nodes": ck.N_CORE,
+        "external_boundary_gates": ck.BOUNDARY_COUNT,
+        "model_status": "legacy_api_surface",
+    }
 
 @app.get("/metrics")
 def get_prometheus_metrics():
     SYSTEM_REQUESTS_TOTAL.labels(method="GET", endpoint="/metrics").inc()
     return Response(content=generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
-@app.post("/api/v1/auth/token")
+@app.post("/api/v1/auth/operator-token")
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
+    if not OPERATOR_PASSWORD:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Legacy operator login is disabled until UNIVERSAL_MATRIX_OPERATOR_PASSWORD is set",
+        )
     user = USERS_DB.get(form_data.username)
-    if not user or user["password"] != form_data.password:
-        raise HTTPException(status_code=400, detail="Incorrect username or password")
+    if (
+        not user
+        or not __import__("secrets").compare_digest(
+            user["password"],
+            form_data.password,
+        )
+    ):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Incorrect username or password",
+        )
     
     token_expires = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=1)
     access_token = jwt.encode(
@@ -223,7 +328,7 @@ async def telemetry_stream():
                 "step": step,
                 "status": "synchronized",
                 "clock_drift_ns": clock_drift,
-                "active_nodes": 114,
+                "active_nodes": ck.N_CORE,
                 "norm_sum": 1.0000
             }
             yield f"data: {json.dumps(data)}\n\n"
@@ -233,6 +338,8 @@ async def telemetry_stream():
 
 @app.websocket("/ws/telemetry")
 async def websocket_telemetry_endpoint(websocket: WebSocket):
+    if await verify_websocket_token(websocket) is None:
+        return
     await websocket.accept()
     try:
         while True:
@@ -341,10 +448,9 @@ async def get_field_coherence(current_user: dict = Depends(verify_token)):
 # --- Phase 8: Dynamic Resonance WebSocket Stream ---
 @app.websocket("/ws/resonance/stream")
 async def websocket_resonance_endpoint(websocket: WebSocket):
-    """
-    Bi-directional WebSocket streaming live toroidal field coherence, 
-    harmonic oscillations, and accepting real-time frequency modulation inputs.
-    """
+    """Legacy resonance visualization WebSocket."""
+    if await verify_websocket_token(websocket) is None:
+        return
     await websocket.accept()
     current_freq = 432.0
     phase_shift = 0.0
@@ -379,7 +485,7 @@ async def websocket_resonance_endpoint(websocket: WebSocket):
 from fastapi.responses import HTMLResponse
 import os
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/legacy-dashboard", response_class=HTMLResponse)
 async def get_spatial_telemetry_dashboard():
     """Serves the OpenXR spatial 3D telemetry dashboard and WebXR viewport."""
     html_file = os.path.join("src", "static", "index.html")
@@ -389,26 +495,28 @@ async def get_spatial_telemetry_dashboard():
     return "<h1>Reality Engine Spatial Viewport File Not Found</h1>"
 
 # --- Phase 15: Biometrics Telemetry Ingestion Endpoints ---
-from src.biometric_ingestion import BiometricTelemetryPayload, BiometricLatticeTransformer
+from src.biometric_ingestion import BiometricPayload, BiometricTelemetryPayload, BiometricLatticeTransformer
 
 transformer = BiometricLatticeTransformer()
 
 @app.post("/api/v1/biometrics/ingest", tags=["Biometrics"])
 async def ingest_biometric_telemetry(
     payload: BiometricTelemetryPayload,
-    current_user: str = Depends(lambda: 'operator')
+    current_user: dict = Depends(verify_token)
 ):
     """Processes real-time biometric telemetry and returns updated lattice coherence metrics."""
     metrics = transformer.compute_coherence_index(payload)
     return {
         "status": "success",
-        "operator": current_user,
+        "operator": current_user["sub"],
         "telemetry_metrics": metrics
     }
 
 @app.websocket("/ws/biometrics/ingest")
 async def websocket_biometrics_ingest(websocket: WebSocket):
-    """Live bi-directional WebSocket stream for hardware biometric sensor streams."""
+    """Legacy biometric visualization WebSocket."""
+    if await verify_websocket_token(websocket) is None:
+        return
     await websocket.accept()
     try:
         while True:

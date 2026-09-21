@@ -1,0 +1,69 @@
+[project]
+name = "universal-matrix"
+version = "0.4.0"
+description = "Finite 108-state canonical kernel with experimental open U(1) gauge extensions"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.2",
+]
+
+[project.optional-dependencies]
+scientific = [
+    "scipy>=1.18",
+]
+api = [
+    "fastapi>=0.116",
+    "requests>=2.32",
+    "uvicorn[standard]>=0.34",
+    "pydantic>=2.10",
+    "pydantic-settings>=2.7",
+    "python-multipart>=0.0.20",
+    "httpx>=0.28",
+    "prometheus-client>=0.21",
+    "PyJWT>=2.10",
+]
+ml = [
+    "torch>=2.14",
+]
+services = [
+    "redis>=5.2",
+]
+visualization = [
+    "matplotlib>=3.10",
+]
+
+[dependency-groups]
+test = [
+    "pytest>=9",
+    "hypothesis[numpy]>=6.168",
+]
+lint = [
+    "ruff>=0.16.8",
+]
+dev = [
+    { include-group = "test" },
+    { include-group = "lint" },
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = [
+    "docs",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
