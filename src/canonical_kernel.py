@@ -1,4 +1,4 @@
-"""Canonical mathematical kernel for the Universal Matrix.
+"""Canonical mathematical kernel v0.4 for the Universal Matrix.
 
 This module implements only the finite discrete architecture. It intentionally
 contains no claims about gravity, quantum mechanics, consciousness, or other
@@ -17,6 +17,7 @@ SYNCHRONIZED_ROUTING_STEPS = (21, 57, 93)
 ROUTING_STEP = SYNCHRONIZED_ROUTING_STEPS[0]
 POLARITY_STEP = 54
 REGISTER_MULTIPLIER = 7
+KERNEL_VERSION = "0.4"
 
 BOUNDARY_GATES = {
     "X_POS": 108,
@@ -96,6 +97,28 @@ def projection_delta_theorem(n: int, step: int) -> int:
     n = _core(n)
     wrap = 1 if d and n >= N_CORE - d else 0
     return (REGISTER_MULTIPLIER * d + 12 * wrap) % REGISTER_SIZE
+
+
+def routing_lift_properties(step: int) -> dict[str, int]:
+    """Return exact arithmetic properties of a synchronized routing lift."""
+    d = step % N_CORE
+    if d not in SYNCHRONIZED_ROUTING_STEPS:
+        raise ValueError(f"step must be one of {SYNCHRONIZED_ROUTING_STEPS}")
+    reduced_step = d // 3
+    wraps_per_orbit = reduced_step
+    nonwraps_per_orbit = 36 - wraps_per_orbit
+    nonwrap_delta = (REGISTER_MULTIPLIER * d) % REGISTER_SIZE
+    wrap_delta = (nonwrap_delta + 12) % REGISTER_SIZE
+    return {
+        "step": d,
+        "reduced_step": reduced_step,
+        "wraps_per_orbit": wraps_per_orbit,
+        "nonwraps_per_orbit": nonwraps_per_orbit,
+        "wraps_total": 3 * wraps_per_orbit,
+        "nonwraps_total": 3 * nonwraps_per_orbit,
+        "nonwrap_register_delta": nonwrap_delta,
+        "wrap_register_delta": wrap_delta,
+    }
 
 
 def synchronized_routing_steps() -> tuple[int, ...]:
