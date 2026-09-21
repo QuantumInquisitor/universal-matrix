@@ -16,7 +16,7 @@ class TestPhase45to50Modules(unittest.TestCase):
         verifier = SymbolicPhysicsVerifier()
         payload = FieldInvariantPayload(electric_field_v_m=100.0, magnetic_field_tesla=0.5, frequency_hz=432000000.0)
         res = verifier.verify_invariants(payload)
-        self.assertEqual(res["status"], "PHYSICS_INVARIANTS_VERIFIED")
+        self.assertEqual(res["status"], "REFERENCE_EXPRESSIONS_EVALUATED")
         self.assertTrue(res["conservation_laws_satisfied"])
 
     def test_marx_gate_array(self):
