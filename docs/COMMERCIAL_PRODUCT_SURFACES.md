@@ -135,6 +135,10 @@ It is a software/product roadmap, not a certification statement.
 
 ### Existing assets
 
+- typed digital-twin telemetry contract in `src/digital_twin_contract.py`;
+- explicit measured-versus-derived telemetry separation;
+- units, source, quality, calibration, uncertainty, and timestamp metadata;
+- transport-neutral snapshot serialization;
 - virtual-twin state model;
 - stress/thermal approximation modules;
 - sensor-ingestion paths;
