@@ -744,24 +744,25 @@ The historical modulus-31 expression also remains an exact arithmetic identity i
 
 ---
 
-## 13. What the Mathematics Does Not Establish
+## 13. Non-Gravitational Physical Program
 
-The finite results above do not, by themselves, establish that:
+The Universal Matrix is formulated without gravity as a primitive interaction. Its canonical kernel contains no gravitational force variable, gravitational potential, spacetime metric, curvature tensor, geodesic equation, Newtonian gravitational constant, or Einstein field equation.
 
-- physical spacetime is discrete;
-- the 108-state core is a physical torus;
-- the six boundary directions are physical portals;
-- the model replaces general relativity or quantum mechanics;
-- register collisions represent quantum entanglement;
-- the 54 antipodal pairs are black holes and white holes;
-- the coefficient (1/(54pi^2)) is a universal physical constant;
-- a calibrated arithmetic expression derives the speed of light;
-- 3/6/9 classifications govern physical energy;
-- the architecture determines biological, anatomical, chakra, or meridian structures.
+General Relativity is therefore not an internal component of the model. If the Universal Matrix is extended from a finite mathematical architecture into a physical theory, phenomena conventionally modeled gravitationally must instead emerge from independently specified Matrix dynamics.
 
-Such propositions require separately specified physical models, dimensional analysis, predictions that differ from existing theories, and empirical tests.
+This requirement forbids circular reconstruction. A proposed Matrix extension cannot import a Newtonian potential, Schwarzschild metric, Einstein tensor, fitted gravitational acceleration law, or a mathematically equivalent surrogate and then count the resulting agreement as an independent Matrix prediction.
 
-The purpose of separating these claims from the finite kernel is not to prevent their investigation. It makes them testable. A physical extension should state exactly which additional postulates connect the discrete states to measurable quantities.
+The central empirical question is:
+
+**Can independently defined Matrix dynamics reproduce measured phenomena conventionally attributed to gravity without assuming a gravitational law?**
+
+The first benchmark selected for this program is differential clock frequency shift. A physical Matrix extension must produce a dimensionless predicted fractional shift between two specified experimental configurations. It must define the observable map, dimensional conversion, dynamics, initial and boundary conditions, numerical prediction, uncertainty, and falsification criterion before comparison with the benchmark measurement.
+
+A disagreement between a future Matrix prediction and a relativistic prediction would become a discriminating test only if experimental uncertainty is small enough to distinguish them. Agreement with an already known observation after fitting free parameters is not an independent prediction.
+
+Version 0.4 does not yet contain the dimensional observable map required to calculate a clock-frequency shift. Consequently the absence of gravity and General Relativity from the kernel is a property of the model, while empirical displacement of General Relativity remains an open test objective rather than a result already obtained.
+
+Other proposed mappings, including quantum-entanglement, black-hole/white-hole, biological, anatomical, chakra, meridian, or consciousness interpretations, likewise require separately stated mappings and tests.
 
 ---
 
