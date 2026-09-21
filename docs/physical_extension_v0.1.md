@@ -203,3 +203,94 @@ The Universal Matrix now has a mathematically explicit mechanism for:
 ]
 
 It still does not yet have a parameter-free physical prediction.
+
+
+## 7. Independent electromagnetic parameter identification
+
+The extension should not determine its free parameters from the gravitational or clock observable it is meant to explain. Two parameters can instead be constrained from independent resonator physics.
+
+### 7.1 Dynamic exponent from electromagnetic scale similarity
+
+For geometrically similar, nondispersive electromagnetic structures with unchanged dimensionless material parameters, Maxwell scale invariance gives
+
+[
+omega propto R^{-1}.
+]
+
+Comparing this with
+
+[
+omega_ell=omega_0lambda^{-zell}
+]
+
+selects
+
+[
+oxed{z=1}
+]
+
+for that specific electromagnetic similarity class.
+
+This does not prove that every Universal Matrix layer is an electromagnetic resonator. It states a falsifiable bridge assumption: if the nested layers are physically realized as geometrically similar electromagnetic resonant structures, then (z) is no longer a free fit parameter.
+
+### 7.2 Scale ratio from geometry
+
+If two adjacent physical realizations of the nested structure have independently measured characteristic scales (R_ell) and (R_{ell+1}), then
+
+[
+oxed{lambda=rac{R_{ell+1}}{R_ell}}.
+]
+
+Thus (lambda) should be measured from geometry, not chosen to fit a clock experiment.
+
+### 7.3 Coupling from normal-mode splitting
+
+For two nominally identical weakly coupled resonators with measured split mode frequencies (omega_-) and (omega_+), the standard matched two-mode relation gives a physical coupling rate
+
+[
+kappa_{m phys}=rac{omega_+-omega_-}{2}
+]
+
+and uncoupled center frequency
+
+[
+omega_0=rac{omega_++omega_-}{2}.
+]
+
+Therefore the normalized dimensionless coupling used by the Matrix extension can be fixed as
+
+[
+oxed{
+kappa
+=
+rac{kappa_{m phys}}{omega_0}
+=
+rac{omega_+-omega_-}{omega_++omega_-}
+}.
+]
+
+This provides an independent laboratory route for determining (kappa).
+
+### 7.4 Consequence for the gravity benchmark
+
+Under the electromagnetic-resonator bridge hypothesis:
+
+- (z=1) is fixed by scale similarity;
+- (lambda) is measured geometrically;
+- (kappa) is measured from resonator mode splitting.
+
+The nested dynamics can then be run with those values held fixed. Only after that should its predicted fractional phase-rate shift be compared with a clock/redshift experiment.
+
+That creates the required separation between parameter identification and target validation.
+
+## 8. Remaining physical unknowns
+
+Even after (z), (lambda), and (kappa) are independently constrained, the model still needs:
+
+- an experimentally defined physical object corresponding to one Matrix layer;
+- a measured quantity corresponding to the modeled amplitude (A_ell);
+- a rule for initializing phase and polarity from laboratory conditions;
+- evidence that Matrix phase rate maps to the frequency of a physical clock or resonator;
+- a prediction for a new experimental configuration made before measurement.
+
+Those are now the principal unresolved physical steps.
