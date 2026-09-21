@@ -34,11 +34,15 @@ try:
     )
     from .polarity_oscillator import canonical_polarity_state
     from .scale_transfer import quadratic_content, transfer_chain
+    from .canonical_polarity_clock import POLARITY_PHASE_PER_ROUTING_TICK
+    from .content_clock import effective_tick_duration, clock_rate_ratio
 except ImportError:
     import canonical_kernel as ck
     from phase_roles import PhaseState, gauge_coupling_energy
     from polarity_oscillator import canonical_polarity_state
     from scale_transfer import quadratic_content, transfer_chain
+    from canonical_polarity_clock import POLARITY_PHASE_PER_ROUTING_TICK
+    from content_clock import effective_tick_duration, clock_rate_ratio
 
 
 @dataclass
@@ -49,6 +53,7 @@ class NestedOscillatorLayer:
     amplitude: float
     angular_rate: float = 1.0
     initial_polarity: int = 1
+    physical_elapsed_time: float = 0.0
 
     def __post_init__(self) -> None:
         self.base_node %= ck.N_CORE
@@ -56,6 +61,8 @@ class NestedOscillatorLayer:
             raise ValueError("angular_rate must be non-negative")
         if self.initial_polarity not in (-1, 1):
             raise ValueError("initial_polarity must be -1 or +1")
+        if self.physical_elapsed_time < 0:
+            raise ValueError("physical_elapsed_time must be non-negative")
 
     @property
     def canonical_node(self) -> int:
@@ -171,6 +178,80 @@ class OscillatoryScaleHierarchy:
             }
             for layer in self.layers
         ]
+
+    def step_routing_tick(
+        self,
+        reference_tick_duration: float,
+        content_clock_coupling: float,
+        reference_content: float = 0.0,
+    ) -> list[dict]:
+        """Advance exactly one canonical routing/polarity tick.
+
+        Every layer advances by the same canonical phase increment pi/18.
+        Physical elapsed time is layer dependent:
+
+            d tau_l = tau0 * exp(g * (C_l - C_ref)).
+
+        Scale transfer is evaluated over one dimensionless routing tick after
+        the canonical phase advance. This keeps the state-transition algebra
+        exact while making physical clock accumulation content dependent.
+        """
+        if reference_tick_duration <= 0:
+            raise ValueError("reference_tick_duration must be positive")
+        if content_clock_coupling < 0:
+            raise ValueError("content_clock_coupling must be non-negative")
+        if reference_content < 0:
+            raise ValueError("reference_content must be non-negative")
+
+        pre_transfer_content = [layer.local_content for layer in self.layers]
+
+        # 1. Exact canonical polarity-clock advance.
+        for layer, content in zip(self.layers, pre_transfer_content):
+            layer.phases.polarity_phase += POLARITY_PHASE_PER_ROUTING_TICK
+            layer.physical_elapsed_time += effective_tick_duration(
+                reference_tick_duration,
+                content,
+                content_clock_coupling,
+                reference_content,
+            )
+
+        # 2. Conservative inter-scale exchange over one routing tick.
+        amplitudes = transfer_chain(
+            [layer.amplitude for layer in self.layers],
+            self._edge_transfer_phases(),
+            coupling=self.transfer_coupling,
+            dt=1.0,
+        )
+        for layer, amplitude in zip(self.layers, amplitudes):
+            layer.amplitude = amplitude
+
+        self.time += 1.0
+
+        telemetry = []
+        for layer, old_content in zip(self.layers, pre_transfer_content):
+            telemetry.append(
+                {
+                    "layer_id": layer.layer_id,
+                    "canonical_node": layer.canonical_node,
+                    "polarity": layer.polarity,
+                    "polarity_phase": layer.phases.polarity_phase,
+                    "gauge_phase": layer.phases.gauge_phase,
+                    "polarity_carrier": layer.polarity_carrier,
+                    "transfer_carrier": layer.transfer_carrier,
+                    "amplitude": layer.amplitude,
+                    "local_quadratic_content": layer.local_content,
+                    "pre_transfer_content": old_content,
+                    "physical_elapsed_time": layer.physical_elapsed_time,
+                    "clock_rate_ratio": clock_rate_ratio(
+                        old_content,
+                        content_clock_coupling,
+                        reference_content,
+                    ),
+                    "routing_tick": self.time,
+                    "model_status": "experimental_content_clock_hierarchy",
+                }
+            )
+        return telemetry
 
     def verify_quadratic_conservation(self, tolerance: float = 1e-12) -> bool:
         return abs(
