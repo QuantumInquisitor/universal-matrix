@@ -11,6 +11,9 @@ from src.nested_polarity_dynamics import (
     self_similar_scale,
     self_similar_rate,
     fractional_rate_shift,
+    scale_ratio_from_geometry,
+    maxwell_similarity_exponent,
+    normalized_coupling_from_mode_split,
 )
 
 
@@ -104,3 +107,10 @@ def test_scale_ratio_changes_intrinsic_layer_rates():
     r1 = telemetry[1]["dimensionless_transition_rate"]
     assert r0 > r1
     assert math.isclose(r1 / r0, 0.5, rel_tol=0, abs_tol=1e-12)
+
+
+def test_independent_parameter_identification_helpers():
+    assert scale_ratio_from_geometry(2.0, 6.0) == 3.0
+    assert maxwell_similarity_exponent() == 1.0
+    kappa = normalized_coupling_from_mode_split(99.0, 101.0)
+    assert math.isclose(kappa, 0.01, rel_tol=0, abs_tol=1e-12)
