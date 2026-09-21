@@ -1,44 +1,122 @@
-﻿# Falsifiable Physical Predictions & Empirical Criteria for the 114-Node SO(13) Framework
+# Falsification and Validation Program
 
-## I. Overview
-To transition the Universal Playing Field from a self-consistent discrete spatial software architecture into a candidate theory of physical reality, it must propose quantitative predictions that diverge from General Relativity (GR) and Quantum Field Theory (QFT), along with explicit, non-negotiable experimental falsification conditions ("kill conditions").
+## Status
 
----
+The earlier version of this file contained numerical photon-delay and interferometer predictions that were not independently derived from the current canonical kernel. Those values are withdrawn as predictions.
 
-## II. High-Energy Quantized Spatial Phase Dispersion ($\Delta \tau$)
+A valid physical prediction must be generated from parameters fixed independently of the target measurement.
 
-### 1. Mathematical Formulation
-Continuous General Relativity asserts that vacuum photon propagation speed $c$ is strictly energy-independent. In contrast, the discrete 114-node manifold ($\mathbb{Z}_{114}$) introduces a tiny spatial lattice dispersion for ultra-high-energy photons approaching the 21-step primed jump scale ($\Delta x_{\text{core}}$).
+## 1. Parameter-separation rule
 
-For a photon of energy $E$ traveling across a cosmological distance $L$, the energy-dependent phase delay $\Delta \tau$ induced by boundary node transitions ($B_{\text{boundary}} = 6$) is given by:
+For every benchmark, divide inputs into:
 
-$$\Delta \tau = \left( \frac{E}{E_{\text{Planck}}} \right) \cdot \left( \frac{\mathcal{B}_{\text{boundary}}}{\mathcal{N}_{\text{core}}} \right)^2 \cdot \alpha_{\text{geometric}} \cdot \left( \frac{L}{c} \right)$$
+- **structural parameters**, fixed by the mathematical architecture;
+- **independently measured parameters**, determined from a different experiment;
+- **target observable**, never used to tune the previous two categories.
 
-Where:
-* $E_{\text{Planck}} \approx 1.22 \times 10^{19} \text{ GeV}$
-* Core-to-boundary factor: $\left(\frac{6}{108}\right)^2 = \frac{1}{324}$
-* First-principles geometric attenuation: $\alpha_{\text{geometric}} = \frac{1}{54\pi^2} \approx 0.001876$
+If a parameter is adjusted to reproduce the target result, the result is calibration rather than prediction.
 
-### 2. Empirical Test Case: Gamma-Ray Burst (GRB) Time-of-Flight
-For a $100 \text{ GeV}$ photon emitted from a Gamma-Ray Burst at redshift $z \approx 1$ ($L \approx 10^9 \text{ light-years}$):
+## 2. Gauge-wave benchmark
 
-$$\Delta \tau_{\text{predicted}} \approx \left( \frac{100}{1.22 \times 10^{19}} \right) \times \left( \frac{1}{324} \right) \times 0.001876 \times (3.15 \times 10^{16} \text{ s}) \approx 1.50 \times 10^{-7} \text{ s}$$
+The weak open U(1) adapter predicts a lattice dispersion relation of the form
 
-### 3. Explicit Falsification Metric (Kill Condition)
-> **Falsification Rule 1:** If multi-TeV photon arrival times from cosmic GRBs observed by Cherenkov telescope arrays (e.g., CTA, MAGIC, H.E.S.S.) show zero dispersion down to $\Delta \tau < 10^{-12} \text{ s}$, or if measured dispersion scales continuously without modular quantization steps of $\frac{1}{324} \cdot \alpha_{\text{geometric}}$, **the 114-node discrete lattice topology is empirically disproved.**
+[
+omega^2
+=
+4eta
+sum_i
+sin^2left(rac{q_i}{2}ight)
+]
 
----
+for appropriate transverse lattice modes.
 
-## III. Resonant Toroidal Optical Fringe Shifts
+A first laboratory benchmark should therefore test:
 
-### 1. Field Drift Under 3-6-9 Phase Modulation
-Driving a dual-wound counter-rotating toroidal coil with streams $S_{\text{up}} = 123456789 \text{ Hz}$ and $S_{\text{down}} = 987654321 \text{ Hz}$ generates a localized metric shift $\Delta t_{\text{matrix}}$ across the central vortex axis:
+1. whether a physical implementation corresponding to the modeled link network can be identified;
+2. whether (eta) is independently determined;
+3. whether measured normal-mode frequencies follow the predicted lattice dispersion;
+4. whether deviations agree with the predicted higher-order lattice terms.
 
-$$\Delta t_{\text{matrix}} = \left( \sigma_{369} + \sum \mathbf{B} \right) \cdot \text{ScaleFactor} \cdot \left(\frac{\Phi_{T1}}{\Phi_{T0}}\right)$$
+### Falsification condition
 
-Where $\sigma_{369} = 18.0$, $\sum \mathbf{B} = 117$, and $\text{ScaleFactor} = 1.04119924927 \times 10^{11}$.
+Once (eta), geometry, and boundary conditions are fixed independently, statistically significant disagreement between measured and predicted mode frequencies beyond stated uncertainty falsifies that physical mapping.
 
-### 2. Falsification Metric (Kill Condition)
-> **Falsification Rule 2:** If a high-precision Michelson/Fabry-Pérot laser interferometer reading optical path length variations across the active core registers no phase shift or registers shifts inconsistent with the discrete modular summation $\sum \mathbf{B} = 117$, **the proposed field coupling mechanisms are empirically disproved.**
+## 3. Polarity/source benchmark
 
+The polarity adapter maps
 
+[
+P=Asigmahat u
+]
+
+to
+
+[
+ho_{m pol}
+=
+-
+ablacdot P.
+]
+
+A physical realization would need independent measurements for (A), (sigma), and orientation.
+
+### Falsification condition
+
+If the mapped physical source distribution does not reproduce the sign, conservation behavior, or measured field response predicted by the gauge solve under independently fixed parameters, the polarity-to-source interpretation is falsified.
+
+## 4. Boundary-flux benchmark
+
+The open solver requires the discrete divergence theorem
+
+[
+sum_xho
+=
+sum_{gin B_6}
+Phi_g^{E,mathrm{outward}}.
+]
+
+### Falsification condition
+
+For any claimed physical six-gate realization, measured enclosed source and measured total outward field flux must satisfy the mapped Gauss balance within uncertainty. Persistent incompatible results falsify that boundary realization.
+
+## 5. Clock-shift benchmark
+
+The current model can generate dimensionless phase-rate differences in the nested polarity extension, but it does not yet independently identify those rates with atomic clock frequency.
+
+### Falsification condition
+
+A clock-shift prediction should not be published until the phase-rate-to-clock mapping and all required parameters are fixed independently. Once they are, a disagreement with measured fractional frequency shift outside uncertainty falsifies that mapping.
+
+## 6. Gravity comparison
+
+The model does not include gravity or General Relativity as primitive equations.
+
+That absence is not itself a falsification of General Relativity.
+
+A valid discriminating test requires:
+
+[
+O_{m Matrix}
+
+eq
+O_{m GR}
+]
+
+for a predeclared observable, followed by an experiment precise enough to distinguish the two predictions.
+
+## 7. Repository rule for new predictions
+
+A new prediction document or test should include:
+
+1. observable definition,
+2. units,
+3. source and boundary conditions,
+4. parameter provenance,
+5. numerical algorithm,
+6. convergence/error analysis,
+7. uncertainty,
+8. prediction generated before target comparison,
+9. explicit falsification threshold,
+10. code path and test reference.
+
+Predictions lacking these fields should be labeled exploratory rather than physical.
