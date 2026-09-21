@@ -173,3 +173,62 @@ the same parameter set.
 
 This ledger turns external experiment into a design constraint for the ongoing
 model reconstruction.
+
+
+---
+
+## 6. Solar-system spatial-response constraint
+
+Weak-field light deflection and Shapiro delay depend on the PPN parameter
+
+[
+gamma.
+]
+
+A Living Reviews analysis explains that the clock/time contribution alone gives
+only part of the full deflection, while the spatial-curvature contribution
+provides the remaining (gamma)-dependent part.
+
+The Cassini measurement is commonly quoted as
+
+[
+gamma-1
+=
+(2.1pm2.3)	imes10^{-5}.
+]
+
+References:
+
+- C. M. Will, "The Confrontation between General Relativity and Experiment,"
+  Living Reviews in Relativity.
+- NASA Technical Reports Server summary of Cassini PPN gamma measurements.
+
+### Matrix consequence
+
+The current content-clock-only optical index corresponds to an effective
+
+[
+gamma_M=0,
+]
+
+which predicts only half the required leading weak-field light deflection.
+
+Therefore this incomplete scalar clock model is ruled out as a complete
+description of observed solar-system gravity.
+
+A viable gravity-like extension must derive a spatial response satisfying
+
+[
+oxed{
+gamma_Mapprox1
+}
+]
+
+within the relevant experimental precision.
+
+Implementation:
+
+`src/weak_field_ppn_bridge.py`
+
+This is now a REQUIRED constraint for any claim that the content sector
+reproduces solar-system gravity.
