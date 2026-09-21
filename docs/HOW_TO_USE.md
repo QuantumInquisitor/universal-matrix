@@ -1,160 +1,203 @@
-# Universal Matrix — Operational Usage & API Guide
+# Universal Matrix — Current Usage Guide
 
-This document provides operational procedures for deploying the `universal-matrix` spatial compute engine, configuring runtime CLI parameters, interacting with API endpoints, executing containerized microservices, and validating industrial remedy test suites.
+## Status
 
----
+This guide describes the reconstructed v0.4 research stack.
 
-## 1. Local Installation & Environment Setup
+The canonical mathematical kernel is stable relative to the current branch. Physical gauge, polarity, source, and boundary layers remain experimental. Legacy hardware, biological, quantum, SO(13), and enterprise modules are compatibility/demo surfaces unless explicitly migrated.
 
-### Prerequisites
-* Python 3.11 or higher
-* NVIDIA CUDA Toolkit (optional, required for GPU VRAM acceleration)
-* Docker & Docker Compose (optional, for containerized deployments)
+## 1. Recommended environment
 
-### Environment Initialization
+Python 3.12 or newer is supported by project metadata. CI exercises the canonical/open engine on Python 3.12 and 3.14.
+
+Recommended setup:
 
 ```bash
-# Clone the repository and navigate to the project root
-git clone [https://github.com/QuantumInquisitor/universal-matrix.git](https://github.com/QuantumInquisitor/universal-matrix.git)
+git clone https://github.com/QuantumInquisitor/universal-matrix.git
 cd universal-matrix
 
-# Create and activate a Python virtual environment
-python -m venv venv
+uv sync --group dev --extra scientific
+```
 
-# Activate environment (Windows PowerShell)
-.\venv\Scripts\Activate.ps1
-
-# Activate environment (Linux / macOS)
-# source venv/bin/activate
-
-# Install required dependencies
-pip install -r requirements.txt
-
-###Pre-Flight System Audit
-Verify package dependencies, port 8000 availability, and active hardware acceleration drivers prior to execution:
+Run lint and tests:
 
 ```bash
-python scripts/verify_env.py
+uv run ruff check src tests
+uv run ruff format --check src tests
+uv run pytest
+```
 
-## 2. CLI Execution Parameters & Runtime Flags
-
-The primary pipeline entry point (`src/run_field_simulation.py`) supports dynamic CLI flags for targeted debugging, headless benchmarks, and isolated multi-layer torus rendering:
-
-| Flag | Type | Description | Example Usage |
-| :--- | :--- | :--- | :--- |
-| `--layer` | Integer (`0–14`) | Focuses spatial visualization on a specific Torus layer (`0` renders all 14 layers simultaneously). | `python src/run_field_simulation.py --layer 5` |
-| `--headless` | Flag | Executes simulation math and APIs without launching the interactive OpenXR/WebGL GUI. | `python src/run_field_simulation.py --headless` |
-| `--no-api` | Flag | Launches field calculations and visualization loops while disabling the ASGI REST server. | `python src/run_field_simulation.py --no-api` |
-| `--mode` | String | Sets engine execution profile (`harmony`, `cascade`, `simulation`). | `python src/calculator.py --mode harmony` |
-
-## 3. Server Execution & Telemetry Streaming
-
-### Unified Field Pipeline (ASGI REST API + Math Engine + WebXR Visualizer)
-python src/run_field_simulation.py
-
-* Interactive Viewport: http://localhost:8000
-* Prometheus Metrics: http://localhost:8000/metrics
-
-### Asynchronous REST Server Standalone
-python -m uvicorn src.api:app --reload --host 127.0.0.1 --port 8000
-
-## 4. API Operations & Endpoint Examples
-
-### OAuth2 Bearer Token Issuance
-$response = Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/v1/auth/token" -Method Post -Body @{
-    username = "operator"
-    password = "matrix_secure_password_2026"
-}
-$token =$response.access_token
-
-### Real-Time Telemetry Stream (Server-Sent Events)
-curl -N http://127.0.0.1:8000/api/v1/telemetry/stream
-
-### Direct Bare-Metal Matrix Transformation
-$payload = @{ matrix = @(@(1.0, 0.0), @(0.0, 1.0)) } | ConvertTo-Json
-Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/v1/matrix/transform/native" `
-  -Method Post `
-  -ContentType "application/json" `
-  -Body $payload
-
-  ## 5. Industrial Remedy Test Suite Execution
-
-Run the verified test suites to validate closed-loop hardware remedies across core industrial domains:
-
-### Complete Remedy Suite
-$env:PYTHONPATH="."
-.\venv\Scripts\python.exe -m unittest discover -s tests -p "test_*_remedy.py"
-
-### Individual Remedy Validations
-* Robot PINO Safety Guardrails & E-STOP:
-  .\venv\Scripts\python.exe -m unittest discover -s tests -p "test_pino_guardrail_remedy.py"
-
-* Edge Cluster Mesh Failover:
-  .\venv\Scripts\python.exe -m unittest discover -s tests -p "test_mesh_failover_remedy.py"
-
-* Sub-Nanometer CNC Thermal Stability:
-  .\venv\Scripts\python.exe -m unittest discover -s tests -p "test_thermal_stability_remedy.py"
-
-* Quantum-Classical HITL Optimization:
-  .\venv\Scripts\python.exe -m unittest discover -s tests -p "test_quantum_hitl_remedy.py"
-
-  ## 6. Enterprise Container & Cloud Deployment
-
-### Multi-Container Stack (Docker Compose)
-Deploy the core microservice alongside Redis state persistence, Prometheus metrics scraping, and Grafana visualization:
-
-# Build and launch microservice containers in detached mode
-docker compose up --build -d
-
-# Check operational status of running containers
-docker compose ps
-
-Access Endpoints & Default Credentials:
-* Matrix API / Dashboard: http://localhost:8000
-* Prometheus Metrics:    http://localhost:9090
-* Grafana Dashboards:    http://localhost:3000 (admin / admin)
-
-### Kubernetes Deployment (Helm v3)
-# Render Kubernetes manifests locally for dry-run inspection
-helm template matrix-release ./charts/universal-matrix
-
-# Deploy to active Kubernetes cluster
-helm install matrix-release ./charts/universal-matrix
-
-# Inspect active pod health and ingress routes
-kubectl get pods -l app=universal-matrix
-
----
-
-## 7. Running the Physics Prediction & Verification Suite
-
-To verify the mathematical proofs, continuum limit convergence, and falsifiable quantum gravity dispersion predictions against baseline General Relativity:
+For all optional legacy integrations:
 
 ```bash
-# 1. Run the physics prediction test suite (GRB time delay & continuum limit convergence)
-python tests/test_experimental_predictions.py
+uv sync --group test --all-extras
+uv run pytest
+```
 
-# 2. Run the core mathematical reconciliation test suite
-python tests/test_math_reconciliation.py
+`pyproject.toml` is the authoritative dependency configuration. `requirements.txt` remains only for legacy pip workflows.
 
-# 3. Run all repository tests simultaneously
-python -m unittest discover -s tests -p "test_*.py"
+## 2. Canonical kernel
 
-## 8. Running Astronomical Data Analysis & Hardware Telemetry
+Primary files:
 
-### 8.1 Parse GRB Astronomical Data & Evaluate Dispersion
-Execute the astronomical event analyzer to test high-energy photon arrival dispersion against NASA Fermi / Cherenkov observatory models[cite: 4]:
+- `src/canonical_kernel.py`
+- `tests/test_canonical_kernel.py`
+- `docs/canonical_spec_v0.4.md`
 
-```bash
-# Run GRB dispersion analysis against synthetic benchmark or real event stream
-python scripts/analyze_grb_data.py --distance-ly 1.0e9
-
-# Test falsification resilience against the null General Relativity hypothesis
-python scripts/analyze_grb_data.py --inject-null
-
-## 8.2 Run Toroidal Interferometry Hardware Driver
-Execute the HAL driver to initialize the optical DAQ interface and verify central-axis 3-6-9 vortex fringe shifts[cite: 4]:
+Quick verification:
 
 ```bash
-# Run hardware driver in synthetic HAL mode
-python src/hal/interferometer_driver.py
+uv run pytest -q tests/test_canonical_kernel.py tests/test_property_invariants.py
+```
+
+## 3. Open gauge engine
+
+Current default experimental physical path:
+
+- `src/open_gauge_dynamics.py`
+- `src/open_boundary_solver.py`
+- `src/open_polarity_sources.py`
+- `src/unified_engine.py`
+
+Focused verification:
+
+```bash
+uv run pytest -q \
+  tests/test_open_boundary_solver.py \
+  tests/test_open_gauge_dynamics.py \
+  tests/test_open_polarity_sources.py \
+  tests/test_unified_engine.py
+```
+
+## 4. Research API
+
+Prefer the smaller API in:
+
+`src/api_server.py`
+
+No credentials are embedded in source.
+
+Configure API keys:
+
+```bash
+export UNIVERSAL_MATRIX_API_KEYS="replace-with-secret:RESEARCH"
+```
+
+Optional CORS origins:
+
+```bash
+export UNIVERSAL_MATRIX_CORS_ORIGINS="https://example.org"
+```
+
+Start locally:
+
+```bash
+uv sync --extra api
+uv run uvicorn src.api_server:app --host 127.0.0.1 --port 8000
+```
+
+Send authenticated requests with:
+
+```text
+X-API-Key: replace-with-secret
+```
+
+Do not use wildcard credentialed CORS.
+
+## 5. Legacy compatibility API
+
+`src/api.py` is a large historical API surface with many experimental subsystems.
+
+It should not be exposed publicly by default.
+
+If it must be used, configure a process JWT secret:
+
+```bash
+export UNIVERSAL_MATRIX_JWT_SECRET="$(python -c 'import secrets; print(secrets.token_urlsafe(48))')"
+```
+
+The legacy operator password route is disabled unless this is explicitly set:
+
+```bash
+export UNIVERSAL_MATRIX_OPERATOR_PASSWORD="choose-a-strong-local-password"
+```
+
+The operator token endpoint is:
+
+```text
+POST /api/v1/auth/operator-token
+```
+
+Hardware/control HTTP routes require bearer authorization.
+
+The multi-tenant compatibility token endpoint remains separate:
+
+```text
+POST /api/v1/auth/token
+```
+
+## 6. Hardware safety
+
+Do not connect experimental software outputs directly to hazardous physical hardware without an independent safety controller.
+
+In particular:
+
+- CNC,
+- high voltage,
+- RF transmitters,
+- PEMF hardware,
+- robotics,
+- CAN buses,
+- laser systems,
+- swarm controllers
+
+must have hardware-level interlocks independent of this repository.
+
+A passing unit test is not a hardware safety certification.
+
+## 7. Scientific experiments
+
+The old repository instructions for hard-coded photon delays, exact speed-of-light derivation, 3/6/9 interferometer predictions, and General Relativity replacement have been superseded.
+
+Current validation rules are in:
+
+`docs/physics_proofs/falsifiable_predictions.md`
+
+A physical benchmark should specify:
+
+1. observable,
+2. units,
+3. initial conditions,
+4. boundary conditions,
+5. independently fixed parameters,
+6. numerical convergence/error,
+7. uncertainty,
+8. predeclared falsification threshold.
+
+## 8. Dispersion work
+
+The current derived lattice relation is implemented in:
+
+`src/gauge_dispersion.py`
+
+It predicts a dimensionless lattice dispersion once (eta) and the discrete geometry are specified.
+
+The repository does not currently derive the SI value of the speed of light.
+
+## 9. Theory comparisons
+
+Use:
+
+`docs/comparative_theory_bridge_audit_v0.1.md`
+
+for string, M-theory, LQG, causal-set, holographic/tensor-network, and lattice-gauge comparisons.
+
+The theory bridge is deliberately conservative about equivalence claims.
+
+## 10. Repository audit
+
+The current technical migration backlog is recorded in:
+
+`docs/repository_audit_2026-09.md`
+
+That file should be consulted before extending older modules because many retain historical terminology or assumptions.
