@@ -93,6 +93,7 @@ from src.dna_bio_mapper import DNABioMapper
 
 logger = logging.getLogger("UniversalMatrixLegacyAPI")
 
+from src import canonical_kernel as ck
 from src.security_config import (
     JWT_ALGORITHM as ALGORITHM,
     JWT_SECRET as SECRET_KEY,
@@ -167,10 +168,10 @@ MATRIX_CLOCK_DRIFT = Gauge(
 
 ACTIVE_NODES_GAUGE = Gauge(
     "matrix_active_nodes_count",
-    "Number of active matrix nodes in the 114-Node Discrete Framework"
+    "Number of active canonical core states currently represented by the legacy API"
 )
 
-ACTIVE_NODES_GAUGE.set(114)
+ACTIVE_NODES_GAUGE.set(ck.N_CORE)
 
 # --- Subsystem Initialization ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -265,7 +266,13 @@ def read_root():
     dashboard_path = os.path.join(STATIC_DIR, "dashboard.html")
     if os.path.exists(dashboard_path):
         return FileResponse(dashboard_path)
-    return {"status": "online", "system": "114-Node Discrete Matrix Framework"}
+    return {
+        "status": "online",
+        "system": "Universal Matrix legacy compatibility API",
+        "canonical_core_nodes": ck.N_CORE,
+        "external_boundary_gates": ck.BOUNDARY_COUNT,
+        "model_status": "legacy_api_surface",
+    }
 
 @app.get("/metrics")
 def get_prometheus_metrics():
@@ -317,7 +324,7 @@ async def telemetry_stream():
                 "step": step,
                 "status": "synchronized",
                 "clock_drift_ns": clock_drift,
-                "active_nodes": 114,
+                "active_nodes": ck.N_CORE,
                 "norm_sum": 1.0000
             }
             yield f"data: {json.dumps(data)}\n\n"
@@ -474,7 +481,7 @@ async def websocket_resonance_endpoint(websocket: WebSocket):
 from fastapi.responses import HTMLResponse
 import os
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/legacy-dashboard", response_class=HTMLResponse)
 async def get_spatial_telemetry_dashboard():
     """Serves the OpenXR spatial 3D telemetry dashboard and WebXR viewport."""
     html_file = os.path.join("src", "static", "index.html")
@@ -491,13 +498,13 @@ transformer = BiometricLatticeTransformer()
 @app.post("/api/v1/biometrics/ingest", tags=["Biometrics"])
 async def ingest_biometric_telemetry(
     payload: BiometricTelemetryPayload,
-    current_user: str = Depends(lambda: 'operator')
+    current_user: dict = Depends(verify_token)
 ):
     """Processes real-time biometric telemetry and returns updated lattice coherence metrics."""
     metrics = transformer.compute_coherence_index(payload)
     return {
         "status": "success",
-        "operator": current_user,
+        "operator": current_user["sub"],
         "telemetry_metrics": metrics
     }
 
