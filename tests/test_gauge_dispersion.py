@@ -67,7 +67,7 @@ def test_hamiltonian_initial_acceleration_matches_mode_eigenvalue():
 
     # E_dot = -dV/dtheta. In the weak-field limit this should be
     # -omega^2 * s(k) for a Fourier eigenmode.
-    _, scale_grad = state.field.euler_lagrange_residuals()
+    _, scale_grad = state.field.linearized_euler_lagrange_residuals()
     omega2 = weak_field_frequency_squared(mode, beta)
 
     for k in range(ROUTING_PERIOD):
