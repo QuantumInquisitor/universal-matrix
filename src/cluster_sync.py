@@ -1,6 +1,7 @@
 import time
 import json
 import asyncio
+import inspect
 
 class ClusterSyncManager:
     def __init__(self, channel_name: str = "matrix_cluster_sync_channel"):
@@ -12,7 +13,7 @@ class ClusterSyncManager:
 
     async def broadcast_state(self, state_data: dict):
         for sub in self.subscribers:
-            if asyncio.iscoroutinefunction(sub):
+            if inspect.iscoroutinefunction(sub):
                 await sub(state_data)
             else:
                 sub(state_data)
