@@ -19,7 +19,13 @@ from src.canonical_kernel import (
     routing_orbit,
     verify_kernel,
     synchronized_routing_steps,
+    routing_lift_properties,
+    KERNEL_VERSION,
 )
+
+
+def test_kernel_version():
+    assert KERNEL_VERSION == "0.4"
 
 
 def test_architecture_cardinalities():
@@ -52,6 +58,25 @@ def test_synchronized_routing_lifts_and_minimal_convention():
         assert math.gcd(step, 108) == 3
         assert (3 * step) % 108 == 63
     assert min(synchronized_routing_steps()) == 21
+
+
+def test_exact_routing_lift_carry_counts():
+    expected = {
+        21: (7, 29, 21, 87, 19, 31),
+        57: (19, 17, 57, 51, 15, 27),
+        93: (31, 5, 93, 15, 11, 23),
+    }
+    for step, values in expected.items():
+        p = routing_lift_properties(step)
+        got = (
+            p["wraps_per_orbit"], p["nonwraps_per_orbit"],
+            p["wraps_total"], p["nonwraps_total"],
+            p["nonwrap_register_delta"], p["wrap_register_delta"],
+        )
+        assert got == values
+        # Each 36-state orbit closes after an integer number of 64-address turns.
+        assert (p["nonwraps_per_orbit"] * p["nonwrap_register_delta"] +
+                p["wraps_per_orbit"] * p["wrap_register_delta"]) % 64 == 0
 
 
 def test_routing_three_cycles_of_36():
