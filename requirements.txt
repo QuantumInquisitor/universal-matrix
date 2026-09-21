@@ -17,6 +17,7 @@ redis>=5.2
 PyJWT>=2.10
 python-multipart>=0.0.20
 httpx>=0.28
+requests>=2.32
 matplotlib>=3.10
 prometheus-client>=0.21
 torch>=2.14
