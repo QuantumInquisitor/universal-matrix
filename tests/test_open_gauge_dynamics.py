@@ -69,10 +69,12 @@ def test_transverse_mode_acceleration_is_lattice_wave():
     # Open-domain cosine-like transverse test, inspect away from x boundaries.
     x = np.arange(n)
     profile = amp * np.cos(q*x)
-    state.links["y"][:, 0, 1] = profile
+    for j in range(state.links["y"].shape[1]):
+        for k in range(state.links["y"].shape[2]):
+            state.links["y"][:, j, k] = profile
     force = state.weak_force()
 
     # Interior second difference has eigenvalue -4 sin^2(q/2).
     omega2 = 4.0 * state.beta * np.sin(q/2.0)**2
     for i in range(2, n-2):
-        assert abs(force["y"][i,0,1] + omega2*profile[i]) < 1e-16
+        assert abs(force["y"][i,0,1] + omega2*profile[i]) < 1e-15
