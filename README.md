@@ -189,7 +189,7 @@ Wildcard credentialed CORS is intentionally rejected.
 
 Start with:
 
-- `docs/white_paper.md`
+- `white_paper.md`
 - `docs/canonical_spec_v0.4.md`
 - `docs/physical_extension_v0.1.md`
 - `docs/gauge_dynamics_v0.1.md`
@@ -199,7 +199,7 @@ Start with:
 - `docs/open_boundary_solver_v0.1.md`
 - `docs/unified_engine_v0.1.md`
 
-Older documents and modules may preserve historical design language. Where they conflict with the canonical specification or current white paper, the canonical specification and current executable tests take precedence.
+The repository keeps one authoritative white paper at `white_paper.md`. Technical notes in `docs/` document individual subsystems and should be read as supporting material. Where prose conflicts with the canonical specification or executable tests, the canonical specification and current tests take precedence.
 
 ## Repository policy
 
