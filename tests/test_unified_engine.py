@@ -67,12 +67,12 @@ def test_boundary_inflow_changes_total_charge_and_zero_mode_exactly():
     assert d.max_gauss_residual < 1e-9
 
 
-def test_periodic_topological_total_is_reported_separately():
+def test_open_topological_total_is_reported_separately():
     shape = (3,3,3)
     engine = UnifiedMatrixGaugeEngine(sites(shape), shape=shape)
 
     import math
-    engine.gauge.field.links["x"][0][0][0] = 2.0 * math.pi + 0.2
+    engine.gauge.links["x"][0][0][0] = 2.0 * math.pi + 0.2
 
     d = engine.step(sites(shape), zero_current(shape), BoundaryFlux(), 0.01)
 
@@ -92,11 +92,8 @@ def test_initial_nonzero_free_charge_is_supported_by_open_boundaries():
     )
 
     assert abs(engine.zero_mode_charge) < 1e-12
-    assert abs(sum(v for p in engine.field_source for r in p for v in r) - 2.0) < 1e-12
-    assert engine.open_boundary_solution is not None
-    assert engine.open_boundary_solution.max_abs_gauss_residual(
-        __import__("numpy").asarray(engine.field_source, dtype=float)
-    ) < 1e-9
+    assert abs(float(engine.field_source.sum()) - 2.0) < 1e-12
+    assert engine.max_gauss_residual < 1e-9
 
 
 def test_periodic_mode_retains_legacy_zero_mode_split():
@@ -111,4 +108,4 @@ def test_periodic_mode_retains_legacy_zero_mode_split():
     )
 
     assert abs(engine.zero_mode_charge - 2.0) < 1e-12
-    assert abs(sum(v for p in engine.field_source for r in p for v in r)) < 1e-12
+    assert abs(float(engine.field_source.sum())) < 1e-12
