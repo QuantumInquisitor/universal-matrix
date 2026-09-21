@@ -683,3 +683,173 @@ These are direct strong-field predictions of the current reciprocity exterior.
 5. compare the 2PN, second-order lensing, ISCO, and strong-field predictions
    against current observations;
 6. construct a genuine quantum theory rather than a classical field analogue.
+
+
+---
+
+## September 21 expansion checkpoint
+
+The following layers have now been added after the original status map and pass
+the repository verification stack together.
+
+### Self-consistent reciprocity source
+
+Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/self_consistent_reciprocity_action.py`
+- `src/scalar_virial_source_universality.py`
+- `src/stationary_source_universality.py`
+- `src/reciprocity_unified_geometry_source.py`
+
+The geometry scalar now couples through the stress-energy combination
+
+[
+sqrt{-g}
+left(
+T^{00}+T^{11}+T^{22}+T^{33}
+ight).
+]
+
+For stationary localized isolated composites satisfying the von Laue condition,
+
+[
+int T^{ij}d^3x=0,
+]
+
+the integrated active source becomes
+
+[
+oxed{
+M_{m active}=E_{m total}.
+}
+]
+
+This includes matter, gauge-field energy, interaction energy, and binding
+stress when the complete system is used.
+
+### Static reciprocity Dirac sector
+
+Status: **DERIVED-CORRESPONDENCE + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/reciprocity_dirac_constant_background.py`
+- `src/reciprocity_dirac_static_background.py`
+
+For static isotropic reciprocity geometry,
+
+[
+H
+=
+eta_D m e^{-psi}
++
+rac12
+left{
+oldsymbolalphacdotmathbf p,
+e^{-2psi}
+ight}.
+]
+
+The position-space discretization is Hermitian and contains the required
+geometry-gradient/spin-connection contribution.
+
+### Dynamical SU(2)
+
+Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/su2_hamiltonian_reference.py`
+- `src/su2_hamiltonian.py`
+- `src/su2_matter_gauge_dynamics.py`
+
+Capabilities now include:
+
+- exact group-valued link drift;
+- analytic Wilson staple force;
+- finite-difference group-force oracle;
+- non-Abelian electric field;
+- Gauss constraint;
+- classical fundamental matter backreaction;
+- total Hamiltonian energy tests.
+
+### Dynamical SU(3)
+
+Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/su3_hamiltonian.py`
+- `src/su3_matter_gauge_dynamics.py`
+
+Capabilities now include:
+
+- exact SU(3) group drift;
+- eight-component electric algebra;
+- analytic Wilson staple force;
+- group finite-difference oracle;
+- non-Abelian Gauss constraint;
+- triplet matter backreaction;
+- energy and local gauge-invariance tests.
+
+### Reciprocity coupling of non-Abelian sectors
+
+Status: **DERIVED-CORRESPONDENCE + NUMERICALLY VERIFIED**
+
+Modules:
+
+- `src/reciprocity_nonabelian_constant_geometry.py`
+- `src/reciprocity_nonabelian_spatial_geometry.py`
+
+For uniform geometry,
+
+[
+H_{m YM}(psi)
+=
+e^{-2psi}H_{m YM}(0).
+]
+
+For spatially varying geometry, gauge-invariant link and plaquette weights are
+
+[
+w_ell
+=
+e^{-2arpsi_ell},
+qquad
+w_p
+=
+e^{-2arpsi_p}.
+]
+
+The local geometry source satisfies the exact lattice identity
+
+[
+oxed{
+sum_x S_psi(x)=2H_{m YM}.
+}
+]
+
+### Current verification state
+
+At this checkpoint the same branch head passes:
+
+- Universal Matrix Verification;
+- Python 3.12 core;
+- Python 3.14 core;
+- full legacy compatibility suite;
+- container pipeline;
+- CodeQL.
+
+### Revised highest-priority open problems
+
+The highest-priority gaps are now:
+
+1. fully dynamical (psi) backreaction with spatially weighted SU(2)/SU(3);
+2. time-dependent curved-space spin connection;
+3. chiral fermion construction and anomaly constraints;
+4. second quantization and genuine quantum state space;
+5. derivation of the absolute dimensional scale rather than calibration;
+6. experimental discrimination of the reciprocity geometry from GR in
+   post-post-Newtonian and strong-field regimes.
