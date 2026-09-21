@@ -50,6 +50,9 @@ class RadialMatterSolution:
     omega: float
     energy: float
     charge: float
+    time_kinetic_integral: float
+    gradient_integral: float
+    potential_integral: float
     potential: MatterPotential
     solver_status: int
     solver_message: str
@@ -61,6 +64,34 @@ class RadialMatterSolution:
     @property
     def below_free_mass_threshold(self) -> bool:
         return self.energy_per_charge < self.potential.free_mass
+
+    @property
+    def virial_residual(self) -> float:
+        return (
+            self.gradient_integral
+            + 3.0
+            * (
+                self.potential_integral
+                - self.time_kinetic_integral
+            )
+        )
+
+    @property
+    def active_geometry_source(self) -> float:
+        return (
+            4.0 * self.time_kinetic_integral
+            - 2.0 * self.potential_integral
+        )
+
+    @property
+    def source_energy_difference(self) -> float:
+        return self.active_geometry_source - self.energy
+
+    @property
+    def source_energy_ratio(self) -> float:
+        if self.energy == 0:
+            return math.inf
+        return self.active_geometry_source / self.energy
 
     @property
     def nodeless(self) -> bool:
@@ -75,6 +106,13 @@ class RadialMatterSolution:
             "energy_per_charge": self.energy_per_charge,
             "free_mass": self.potential.free_mass,
             "below_free_mass_threshold": self.below_free_mass_threshold,
+            "time_kinetic_integral": self.time_kinetic_integral,
+            "gradient_integral": self.gradient_integral,
+            "potential_integral": self.potential_integral,
+            "virial_residual": self.virial_residual,
+            "active_geometry_source": self.active_geometry_source,
+            "source_energy_difference": self.source_energy_difference,
+            "source_energy_ratio": self.source_energy_ratio,
             "nodeless": self.nodeless,
             "solver_status": self.solver_status,
             "solver_message": self.solver_message,
@@ -175,16 +213,17 @@ def solve_radial_matter(
 
     i2 = float(simpson(volume_weight * rho2, x=rr))
     charge = 2.0 * omega * i2
-    energy = float(
-        simpson(
-            volume_weight
-            * (
-                omega**2 * rho2
-                + fp * fp
-                + potential_density
-            ),
-            x=rr,
-        )
+    time_kinetic_integral = omega**2 * i2
+    gradient_integral = float(
+        simpson(volume_weight * fp * fp, x=rr)
+    )
+    potential_integral = float(
+        simpson(volume_weight * potential_density, x=rr)
+    )
+    energy = (
+        time_kinetic_integral
+        + gradient_integral
+        + potential_integral
     )
 
     return RadialMatterSolution(
@@ -194,6 +233,9 @@ def solve_radial_matter(
         omega=omega,
         energy=energy,
         charge=charge,
+        time_kinetic_integral=time_kinetic_integral,
+        gradient_integral=gradient_integral,
+        potential_integral=potential_integral,
         potential=potential,
         solver_status=int(solution.status),
         solver_message=str(solution.message),
