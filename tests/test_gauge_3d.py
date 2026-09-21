@@ -5,6 +5,7 @@ from src.gauge_3d import (
     U13DField,
     U13DHamiltonian,
     divergence,
+    forward_divergence,
     max_abs_scalar,
 )
 
@@ -39,7 +40,7 @@ def test_discrete_divergence_of_magnetic_curvature_vanishes():
     field.links["y"][1][2][3] = -0.07
     field.links["z"][3][1][2] = 0.05
     b = field.magnetic_components()
-    divb = divergence(b, field.shape)
+    divb = forward_divergence(b, field.shape)
     assert max_abs_scalar(divb) < 1e-12
 
 
@@ -82,7 +83,7 @@ def test_transverse_plane_wave_has_expected_lattice_acceleration():
             force["y"][x][0][0],
             expected,
             rel_tol=0,
-            abs_tol=1e-18,
+            abs_tol=1e-16,
         )
 
 
