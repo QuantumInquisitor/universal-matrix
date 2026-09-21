@@ -57,12 +57,13 @@ class GCodeCompiler:
         self.core_nodes = ck.N_CORE         # 108-state routing core
         self.boundary_nodes = ck.BOUNDARY_COUNT
         self.boundary_gate_ids = frozenset(ck.BOUNDARY_GATES.values())
+        self.calculator = mc.UniversalMatrixCalculator()
 
     def _project_node_to_3d(self, node_index):
         """Projects a discrete integer node index into continuous 3D coordinates."""
         bit_shift_offset = ck.register_address(node_index)
-        up_bit = (mc.STREAM_UP >> bit_shift_offset) & 1
-        down_bit = (mc.STREAM_DOWN >> bit_shift_offset) & 1
+        up_bit = (self.calculator.STREAM_UP >> bit_shift_offset) & 1
+        down_bit = (self.calculator.STREAM_DOWN >> bit_shift_offset) & 1
         
         bit_compression_factor = (up_bit * 0.05) - (down_bit * 0.05)
         dynamic_minor_radius = self.minor_radius * (1.0 + bit_compression_factor * (mc.ALPHA_GEOMETRIC * 10.0))
