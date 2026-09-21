@@ -122,7 +122,7 @@ def solve_radial_matter(
     if radial_points < 50:
         raise ValueError("radial_points must be at least 50")
 
-    r0 = 1e-6
+    r0 = 1e-4
     r = np.linspace(r0, radius_max, radial_points)
     width_guess = max(1.0, radius_max / 5.0)
     f_guess = central_amplitude * np.exp(
@@ -135,11 +135,17 @@ def solve_radial_matter(
         return radial_rhs(x, y, float(p[0]), potential)
 
     def bc(ya: np.ndarray, yb: np.ndarray, p: np.ndarray) -> np.ndarray:
-        _ = p
+        omega = float(p[0])
+        regular_force = (
+            (potential.mass2 - omega**2) * central_amplitude
+            + 2.0 * potential.lambda4 * central_amplitude**3
+            + 3.0 * potential.lambda6 * central_amplitude**5
+        )
+        regular_derivative = regular_force * r0 / 3.0
         return np.array(
             [
                 ya[0] - central_amplitude,
-                ya[1],
+                ya[1] - regular_derivative,
                 yb[0],
             ]
         )
