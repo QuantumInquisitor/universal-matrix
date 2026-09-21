@@ -83,21 +83,28 @@ class U1CylinderField:
     def layer_count(self) -> int:
         return len(self.routing_links)
 
-    def plaquette_angle(self, layer: int, k: int) -> float:
-        """Oriented elementary loop angle.
-
-        p(l,k) = r(l,k) + s(l,k+1) - r(l+1,k) - s(l,k)
-        """
+    def raw_plaquette_angle(self, layer: int, k: int) -> float:
+        """Unwrapped oriented curvature for the weak linearized theory."""
         if not 0 <= layer < self.layer_count - 1:
             raise IndexError("plaquette layer out of range")
         k %= ROUTING_PERIOD
         kp = (k + 1) % ROUTING_PERIOD
-        return wrap_angle(
+        return (
             self.routing_links[layer][k]
             + self.scale_links[layer][kp]
             - self.routing_links[layer + 1][k]
             - self.scale_links[layer][k]
         )
+
+    def plaquette_angle(self, layer: int, k: int) -> float:
+        """Principal compact U(1) plaquette angle."""
+        return wrap_angle(self.raw_plaquette_angle(layer, k))
+
+    def raw_plaquettes(self) -> list[list[float]]:
+        return [
+            [self.raw_plaquette_angle(l, k) for k in range(ROUTING_PERIOD)]
+            for l in range(self.layer_count - 1)
+        ]
 
     def plaquettes(self) -> list[list[float]]:
         return [
@@ -117,7 +124,7 @@ class U1CylinderField:
         """Quadratic small-angle action beta/2 * sum(F_p^2)."""
         return 0.5 * self.beta * sum(
             angle * angle
-            for row in self.plaquettes()
+            for row in self.raw_plaquettes()
             for angle in row
         )
 
@@ -199,7 +206,7 @@ class U1CylinderField:
         relation. It replaces sin(F) by F and must not be confused with the
         nonlinear compact Wilson equations.
         """
-        p = self.plaquettes()
+        p = self.raw_plaquettes()
 
         routing_grad = [
             [0.0] * ROUTING_PERIOD for _ in range(self.layer_count)
