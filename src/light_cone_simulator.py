@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""
-Universal Playing Field: Discrete Light-Cone Ray Tracer & Deflection Engine
-Models optical wave vectors splitting and refracting across the 114-node grid.
+"""Legacy optical-path demonstrator.
+
+This module predates the canonical/open-DEC reconstruction. Its refractive-index
+and wavelength-deflection rules are hand-authored visualization assumptions, not
+derived Maxwell optics and not predictions of the current gauge engine.
 """
 
 import sys
@@ -31,7 +33,7 @@ class LightConeSimulator:
         self.minor_radius = 15.0
 
     def _get_node_refraction_index(self, node_id: int) -> float:
-        """Computes localized optical density metrics from active 64-bit registers."""
+        """Compute a legacy visualization index from register state."""
         bit_offset = ck.register_address(node_id)
         up_bit = (self.calculator.STREAM_UP >> bit_offset) & 1
         down_bit = (self.calculator.STREAM_DOWN >> bit_offset) & 1
@@ -74,6 +76,7 @@ class LightConeSimulator:
                 
         total_net_deflection = current_angle - entrance_angle_rad
         return {
+            "model_status": "phenomenological_visualization_not_physical_optics",
             "wavelength_tracked_nm": wavelength_nm,
             "total_net_deflection_deg": round(math.degrees(total_net_deflection), 4),
             "final_heading_rad": round(current_angle, 6),
