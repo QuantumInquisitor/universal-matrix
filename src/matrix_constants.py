@@ -1,15 +1,27 @@
 import math
 
-from .canonical_kernel import (
-    BOUNDARY_COUNT,
-    BOUNDARY_GATES,
-    M_TOTAL as CANONICAL_M_TOTAL,
-    N_CORE,
-    REGISTER_MULTIPLIER,
-    REGISTER_SIZE,
-    ROUTING_STEP,
-    verify_kernel,
-)
+try:
+    from .canonical_kernel import (
+        BOUNDARY_COUNT,
+        BOUNDARY_GATES,
+        M_TOTAL as CANONICAL_M_TOTAL,
+        N_CORE,
+        REGISTER_MULTIPLIER,
+        REGISTER_SIZE,
+        ROUTING_STEP,
+        verify_kernel,
+    )
+except ImportError:
+    from canonical_kernel import (
+        BOUNDARY_COUNT,
+        BOUNDARY_GATES,
+        M_TOTAL as CANONICAL_M_TOTAL,
+        N_CORE,
+        REGISTER_MULTIPLIER,
+        REGISTER_SIZE,
+        ROUTING_STEP,
+        verify_kernel,
+    )
 
 # Canonical architecture
 M_TOTAL = CANONICAL_M_TOTAL
