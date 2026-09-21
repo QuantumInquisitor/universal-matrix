@@ -94,3 +94,37 @@ If no such rule follows from additional independently motivated postulates, v0.4
 **Reason:** homogeneous finite-state topology supplies relations and dimensionless counts but no state-dependent physical clock-rate observable.
 
 **Required next step:** formulate and justify a boundary-to-core dynamical law, then derive its observable consequences without calibration to the target measurement.
+
+
+## Addendum: Nested Polarity Dynamics Extension
+
+The no-go result above applies only to the bare homogeneous v0.4 core. It does not apply once a time-dependent, nested polarity dynamics is added as extra structure.
+
+The exploratory extension in `src/nested_polarity_dynamics.py` introduces layer states
+
+```
+X_l = (n_l, sigma_l, phi_l, A_l)
+```
+
+with polarity `sigma_l in {-1,+1}`, phase `phi_l`, amplitude `A_l`, and canonical core position `n_l`.
+
+The polarity-flip operator is
+
+```
+Q(n,sigma) = (n+54,-sigma)
+```
+
+and satisfies `Q^2=I`.
+
+Routing is polarity-sensitive:
+
+```
+sigma=+1 -> T_21
+sigma=-1 -> T_-21.
+```
+
+Adjacent micro-to-macro layers exchange amplitude through an explicitly labeled modeling ansatz. The current implementation uses a bounded conservative nearest-neighbor flux dependent on amplitude, relative polarity, and phase difference. This creates state-dependent layer behavior and therefore breaks the translation-homogeneity assumption behind the bare-core clock-shift no-go theorem.
+
+This does not yet constitute a physical redshift prediction. The extension currently produces dimensionless transition rates only. A physical clock comparison still requires an independently justified map from those rates to measured frequency ratios.
+
+The important change is structural: a nonzero differential rate is now mathematically possible without inserting a gravitational potential into the core.
