@@ -10,13 +10,13 @@ class TestPinoGuardrailRemedy(unittest.TestCase):
     def test_pino_blocks_impossible_ml_move_before_HITL(self):
         impossible_move = [[1500.0, 1500.0], [1500.0, 1500.0]]
         
-        # 1. PINO Core detects physical conservation violation
+        # 1. Numeric guardrail detects threshold violation
         pino_check = self.pino.enforce_conservation_laws(impossible_move)
         
-        print(f"\n[PINO Check] Result: {pino_check['status']} (Energy: {pino_check['total_energy']})")
+        print(f"\n[PINO Check] Result: {pino_check['status']} (Aggregate: {pino_check['aggregate_value']})")
         
         self.assertFalse(pino_check["is_physically_valid"])
-        self.assertEqual(pino_check["status"], "PHYSICS_VIOLATION_DETECTED")
+        self.assertEqual(pino_check["status"], "THRESHOLD_EXCEEDED")
 
         # 2. Safety Interlock evaluates scalar velocity against thresholds (>1000.0)
         validation = self.safety.validate_spatial_vector(impossible_move[0][0])
