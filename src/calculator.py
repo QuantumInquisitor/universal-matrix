@@ -1,5 +1,10 @@
 import math
 import logging
+
+try:
+    from . import canonical_kernel as ck
+except ImportError:
+    import canonical_kernel as ck
 import numpy as np
 from typing import Tuple, Dict, Any, Union, List
 
@@ -30,12 +35,12 @@ if not GPU_AVAILABLE:
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("UniversalCalculator")
 
-# Global Topological & Physical Constants
+# Canonical architecture aliases. Experimental constants below are not kernel invariants.
 AXIOM_I = 0.0
-N_CORE = 108
-B_BOUNDARY = 6
-M_TOTAL = 114
-N_TOTAL = 114
+N_CORE = ck.N_CORE
+B_BOUNDARY = ck.BOUNDARY_COUNT
+M_TOTAL = ck.M_TOTAL
+N_TOTAL = ck.M_TOTAL
 B_VECTOR_SUM = 117.0
 SCALE_FACTOR = (2**64 / (114 * 9.0 * 324.0)) / (54.0 * (math.pi**2))
 LIGHT_SPEED = 299792458.0      # m/s
@@ -46,9 +51,7 @@ PLANCK_ENERGY = E_PLANCK
 
 
 class UniversalMatrixCalculator:
-    """
-    Exact Mathematical Implementation of the 114-Node SO(13) Universal Matrix Engine.
-    """
+    """Legacy arithmetic experiments attached to the canonical 108+6 topology."""
     def __init__(self):
         self.N_CORE = N_CORE
         self.B_BOUNDARY = B_BOUNDARY
@@ -58,6 +61,7 @@ class UniversalMatrixCalculator:
         self.DELTA_S = self.STREAM_DOWN - self.STREAM_UP
         self.BOUNDARY_MODULI = [9, 18, 27, 36, 45, 54]
         self.SCALE_FACTOR = SCALE_FACTOR
+        # Calibration parameter retained for backward compatibility. It is not an independent derivation of c.
         self.ALPHA_VELOCITY_WAVE = 0.000780263869205562
 
     def compute_boundary_vector(self) -> List[int]:
@@ -68,9 +72,13 @@ class UniversalMatrixCalculator:
         term_mod31 = self.DELTA_S % 31
         return float(term_sum - term_mod31 + 18)
 
-    def calculate_exact_speed_of_light(self) -> float:
+    def calculate_calibrated_speed_of_light(self) -> float:
         ratio = (2**64) / float(self.DELTA_S)
         return float(18.0 * ratio * self.ALPHA_VELOCITY_WAVE)
+
+    def calculate_exact_speed_of_light(self) -> float:
+        # Historical API alias. The expression is calibrated, not an independent derivation.
+        return self.calculate_calibrated_speed_of_light()
 
     def compute_matrix_clock_drift(self, layer_flux_ratio: float, phi_t0: float, phi_t1: float) -> float:
         b_vec = self.compute_boundary_vector()
@@ -79,12 +87,17 @@ class UniversalMatrixCalculator:
         flux_term = phi_t1 / phi_t0 if phi_t0 != 0 else 1.0
         return float(layer_flux_ratio * flux_term * (sigma_369 + b_sum) * self.SCALE_FACTOR)
 
-    def generate_3d_toroidal_coordinates(self):
-        coords = np.zeros((114, 3))
-        for i in range(114):
-            theta = (i / 114.0) * 2.0 * np.pi
+    def generate_3d_helical_coordinates(self, node_count: int = N_CORE):
+        # Circle in x/y with linearly increasing z: this is a helix, not a torus.
+        coords = np.zeros((node_count, 3))
+        for i in range(node_count):
+            theta = (i / float(node_count)) * 2.0 * np.pi
             coords[i] = [np.cos(theta) * 5.0, np.sin(theta) * 5.0, i * 0.5]
         return coords
+
+    def generate_3d_toroidal_coordinates(self):
+        # Backward-compatible alias preserving the historical 114-row output shape.
+        return self.generate_3d_helical_coordinates(M_TOTAL)
 
     def execute_vortex_doubling_step(self, val):
         if not isinstance(val, int) or val <= 0 or val > 57:
@@ -100,7 +113,7 @@ class GPUTensorEngine:
         self.device_str = DEVICE_NAME if self.use_gpu else "CPU (NumPy)"
         logger.info(f"[*] Initialized Tensor Engine on: {self.device_str}")
 
-    def compute_lattice_hamiltonian(self, grid_size: int = 114) -> Any:
+    def compute_lattice_matrix(self, grid_size: int = M_TOTAL) -> Any:
         if self.use_gpu and HAS_TORCH:
             device = torch.device("cuda")
             identity = torch.eye(grid_size, device=device, dtype=torch.float64)
@@ -114,6 +127,10 @@ class GPUTensorEngine:
             identity = np.eye(grid_size, dtype=np.float64)
             boundary_weights = np.full((grid_size, grid_size), B_BOUNDARY / N_CORE, dtype=np.float64)
             return (identity * B_VECTOR_SUM) + (boundary_weights * SCALE_FACTOR * ALPHA_GEOMETRIC)
+
+    def compute_lattice_hamiltonian(self, grid_size: int = M_TOTAL) -> Any:
+        # Backward-compatible historical name; no physical Hamiltonian claim is implied.
+        return self.compute_lattice_matrix(grid_size)
 
     def batch_contract_tensors(self, tensor_stack: Any) -> Any:
         if self.use_gpu and HAS_TORCH:
@@ -140,4 +157,6 @@ def get_hardware_status() -> Dict[str, Any]:
         "pytorch_installed": HAS_TORCH,
         "cupy_installed": HAS_CUPY,
         "total_nodes": N_TOTAL,
+        "core_nodes": N_CORE,
+        "external_gates": B_BOUNDARY,
     }
