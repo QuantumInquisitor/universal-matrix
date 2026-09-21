@@ -48,6 +48,12 @@ jobs:
           uv run python -c "from src.api_server import app; assert app.title"
           uv run python -c "from src.unified_engine import UnifiedMatrixGaugeEngine; print('unified engine import ok')"
 
+      - name: Productization API tests
+        env:
+          UNIVERSAL_MATRIX_API_KEYS: "ci-only-key:CI"
+          UNIVERSAL_MATRIX_AUDIT_LEDGER: "/tmp/universal_matrix_ci_audit.json"
+        run: uv run pytest -q tests/test_productization_api.py
+
       - name: Build research API container
         run: docker build --pull -t universal-matrix:test .
 
