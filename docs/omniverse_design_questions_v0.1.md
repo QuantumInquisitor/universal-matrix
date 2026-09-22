@@ -877,3 +877,84 @@ The repository already contains candidate pieces in
 \`fully_coupled_compact_fields.py\`. The next task is to perform that reduction
 and classify every term as symmetry-required, optional interaction, calibrated
 parameter, or unresolved hypothesis.
+
+
+---
+
+## Polarity–phase reduction checkpoint — v0.1
+
+The earlier concern that polarity may be counted multiple times now has an
+explicit algebraic answer.
+
+### Exact branch representation
+
+For canonical branch bit \(p\),
+
+\[
+s_p=(-1)^p.
+\]
+
+If local phase is otherwise independent, define
+
+\[
+\phi_{\rm eff}=\phi+\pi p.
+\]
+
+Then the explicit polarity-weighted link factor is exactly equal to the ordinary
+gauge-covariant sine of the effective phases.
+
+### Fixed-amplitude matter reduction
+
+For the existing complex matter link term with equal field magnitude \(R\),
+
+\[
+\left|
+e^{i\theta}\Phi_y-\Phi_x
+\right|^2
+=
+2R^2
+\left[
+1-\cos\Delta
+\right].
+\]
+
+Therefore the minimal rotor law is not a disconnected new sector. It is the
+fixed-amplitude reduction of the existing complex matter gradient.
+
+### Canonical half-cycle warning
+
+Because
+
+\[
+T^{18}=P
+\]
+
+and the canonical polarity clock advances by \(\pi\) over the same half-cycle,
+the same polarity reversal can be represented either by branch flip or by a
+clock-locked \(\pi\) phase advance.
+
+Applying both to the same physical effect adds \(2\pi\) and cancels the sign
+change. This is now treated as a double-counting error.
+
+### Creator question answered
+
+The question
+
+> Are polarity sign, canonical branch, and phase reversal separate primitive
+> variables?
+
+now has a first answer:
+
+**Not necessarily. Several existing representations are exactly reducible to
+one another.**
+
+### Next creator question
+
+The next highest-leverage question is:
+
+> What dynamics determines whether the matter amplitude remains free, settles
+> to a stable nonzero value, or forms localized defects, and can stable
+> particle-like excitations emerge from that dynamics without assigning
+> particle species by hand?
+
+This shifts the program from polarity bookkeeping to matter formation.
