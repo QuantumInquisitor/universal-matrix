@@ -55,7 +55,16 @@ It is a software/product roadmap, not a certification statement.
 - tenant/hardware authorization;
 - hardware-in-the-loop mocks.
 
-### New productization layer
+### Current productization layer
+
+The current spatial/robotics product stack includes:
+
+- `src/spatial_operations_control.py` for bounded command validation;
+- `src/spatial_protocol.py` for versioned commands, acknowledgements, telemetry, stop requests, and capability discovery;
+- `src/robot_adapter.py` for a common robot state/command/acknowledgement contract;
+- `src/xr_robot_bridge.py` for validated XR-to-robot command bridging;
+- `src/digital_twin_contract.py` for typed measured-versus-derived telemetry;
+- `src/digital_twin_store.py` for bounded reference state/history storage.
 
 `src/spatial_operations_control.py` adds:
 
@@ -384,16 +393,16 @@ terms.
 The highest-value engineering order is:
 
 1. **Spatial Operations Gateway**
-   because XR, robotics, digital twin, and hardware authorization all meet here.
+   Maintain the bounded command plane as the mandatory path between XR/operator input and downstream robot adapters.
 
-2. **Robotics adapter contract**
-   with common robot-state, command, acknowledgement, and stop semantics.
+2. **Production robotics adapters**
+   Build ROS2, CAN, CNC, and customer-specific OEM adapters against the now-defined common robot-state, command, acknowledgement, and stop contract.
 
 3. **XR control console**
    using the same versioned spatial protocol.
 
-4. **Digital twin telemetry service**
-   backed by persisted, timestamped, typed telemetry.
+4. **Persistent digital twin telemetry service**
+   Replace the bounded in-memory reference store with a production database or event-stream backend while preserving typed measured-versus-derived telemetry.
 
 5. **Enterprise entitlement and metering**
    decoupled from hard-coded billing assumptions.
