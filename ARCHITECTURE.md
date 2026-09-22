@@ -57,7 +57,37 @@ Executable authority:
 - tests/test_canonical_kernel.py
 - docs/canonical_spec_v0.4.md
 
-## 2. Boundary symmetry layer
+## 2. Primitive ontology layer
+
+The exact 108-state core address now has an ontology-adapted decomposition
+
+\[
+n=a+54p,
+\]
+
+with
+
+\[
+a\in\{0,\ldots,53\},
+\qquad
+p\in\{0,1\}.
+\]
+
+The canonical polarity operation preserves \(a\) and toggles \(p\).
+
+This prevents double-counting an independent polarity label when that label means exactly the canonical \(T_{54}\) branch.
+
+The current candidate repeated-cell state adds scale level, phase, and conjugate phase momentum explicitly as hypotheses. Gauge connections and electric fields remain edge variables.
+
+Implementation:
+
+- src/matrix_ontology.py
+- docs/primitive_matrix_ontology_v0.1.md
+- tests/test_matrix_ontology.py
+
+The repeated-cell complex is dimensionless and does not assign a physical lattice spacing.
+
+## 3. Boundary symmetry layer
 
 The six orientations form the signed three-axis set
 
@@ -73,7 +103,7 @@ Its abstract signed-permutation symmetry has order
 
 The six directions serve as an orientation scaffold for later spatial and gauge adapters. This is a structural construction, not by itself a proof that the finite kernel derives physical Euclidean three-space.
 
-## 3. Nested polarity and scale layer
+## 4. Nested polarity and scale layer
 
 The experimental nested state is represented schematically by
 
@@ -113,7 +143,7 @@ Representative modules:
 - src/scale_transfer.py
 - src/canonical_scale_transfer.py
 
-## 4. Open discrete-exterior-calculus layer
+## 5. Open discrete-exterior-calculus layer
 
 The default open field adapter uses a cubical complex with cochain sequence
 
@@ -144,7 +174,7 @@ Representative modules:
 - src/open_polarity_sources.py
 - src/unified_engine.py
 
-## 5. Six-gate open Gauss layer
+## 6. Six-gate open Gauss layer
 
 The open finite-volume field satisfies a source/flux balance of the form
 
@@ -164,7 +194,7 @@ Implementation:
 
 - src/open_boundary_solver.py
 
-## 6. Source layer
+## 7. Source layer
 
 The engine separates several source mechanisms rather than collapsing them into one quantity.
 
@@ -199,7 +229,7 @@ Representative modules:
 - src/source_channels.py
 - src/source_interaction.py
 
-## 7. Abelian and non-Abelian gauge layer
+## 8. Abelian and non-Abelian gauge layer
 
 The repository contains compact U(1), SU(2), and SU(3) lattice-gauge implementations.
 
@@ -217,7 +247,7 @@ U_\mu(x)\to G(x)U_\mu(x)G^\dagger(x+\hat\mu).
 
 Implemented capabilities include plaquettes and Wilson actions, Hamiltonian electric-field dynamics, Gauss constraints, analytic staple forces, fundamental matter coupling, gauge/matter backreaction, and geometry-dependent weighting.
 
-## 8. Reciprocity geometry layer
+## 9. Reciprocity geometry layer
 
 The experimental reciprocity metric is
 
@@ -229,11 +259,11 @@ The current stack includes a self-consistent scalar action, matter and gauge cou
 
 The reciprocity premises remain experimental assumptions until derived from deeper canonical structure or validated empirically.
 
-## 9. Dirac and chiral fermion layer
+## 10. Dirac and chiral fermion layer
 
 The repository contains Wilson-Dirac reference operators, reciprocity-background Dirac Hamiltonians, one-particle geometry backreaction, overlap-Dirac operators, Ginsparg-Wilson chirality, modified chiral projectors, overlap-index diagnostics, Weyl measure curvature and holonomy, finite Weyl determinants, charged-U(1) anomaly diagnostics, SU(2)/SU(3) overlap fermions, and product-group overlap representations.
 
-## 10. Product-group anomaly layer
+## 11. Product-group anomaly layer
 
 The repository computes supported anomaly coefficients for supplied Weyl spectra, including
 
@@ -249,31 +279,31 @@ The SU(2) global mod-2 doublet condition is tracked separately.
 
 This layer tests candidate spectra. It does not derive the observed Standard Model representation content.
 
-## 11. Spatial protocol layer
+## 12. Spatial protocol layer
 
 src/spatial_protocol.py defines versioned transport-neutral messages for commands, acknowledgements, telemetry, stop requests, and capability discovery.
 
 This allows WebXR, robotics adapters, digital twins, APIs, and customer-specific transports to share one command vocabulary.
 
-## 12. Spatial operations safety layer
+## 13. Spatial operations safety layer
 
 src/spatial_operations_control.py provides software-level validation for stale-command rejection, replay protection, deadman controls, workspace boundaries, position-delta limits, linear-speed limits, angular-speed limits, emergency-stop request propagation, and deterministic bounded waypoint generation.
 
 It does not itself authorize real hardware execution.
 
-## 13. Robot adapter layer
+## 14. Robot adapter layer
 
 src/robot_adapter.py defines a common robot contract for capabilities, state, command submission, stop requests, and acknowledgements.
 
 The same interface can back simulated robots, ROS2 bridges, CAN devices, CNC systems, or customer-specific OEM hardware.
 
-## 14. XR-to-robot bridge
+## 15. XR-to-robot bridge
 
 src/xr_robot_bridge.py connects versioned spatial commands to the common robot adapter only after validation through the spatial operations control plane.
 
 An XR or browser client therefore cannot bypass software command validation through this bridge.
 
-## 15. Digital-twin layer
+## 16. Digital-twin layer
 
 src/digital_twin_contract.py distinguishes measured telemetry from derived estimates and carries units, source, timestamp, quality, calibration, and uncertainty.
 
@@ -281,13 +311,13 @@ src/digital_twin_store.py provides a bounded thread-safe reference history store
 
 Production deployments can replace the in-memory store with a persistent database or stream backend without changing the telemetry contract.
 
-## 16. Manufacturing layer
+## 17. Manufacturing layer
 
 Current manufacturing and toolpath surfaces include authenticated G-code compilation, parametric path generation, CNC/GRBL compatibility, winding-path tools, visualization, geometry optimization prototypes, and stress/thermal digital-twin utilities.
 
 Historical manufacturing modules can contain older SO(13), 114-node, toroidal, or 3/6/9 labels. Those labels are not canonical unless explicitly migrated and tested.
 
-## 17. API and SDK layer
+## 18. API and SDK layer
 
 The current secured API is src/api_server.py.
 
@@ -300,13 +330,13 @@ SDKs:
 
 The larger src/api.py remains a compatibility/experimental surface and should not be exposed publicly by default.
 
-## 18. Commercial entitlement layer
+## 19. Commercial entitlement layer
 
 src/commercial_entitlements.py models licensable product families and feature entitlements.
 
 Technical entitlements do not themselves grant legal rights. The governing public license or executed commercial agreement controls.
 
-## 19. Licensing and governance layer
+## 20. Licensing and governance layer
 
 The public repository is source-available for permitted noncommercial use under the PolyForm Noncommercial License 1.0.0.
 
@@ -322,7 +352,7 @@ Relevant files:
 
 Commercial use outside the public license requires a separate written Waters Legacy Trust commercial license unless otherwise permitted by applicable law.
 
-## 20. Legacy compatibility layer
+## 21. Legacy compatibility layer
 
 Older modules can contain terminology such as Z_114 as a routing group, SO(13) physical spacetime, 64-bit physical geometry, fixed 3/6/9 physical laws, M-theory/string/brane equivalence labels, toroidal physical geometry, biological/chakra/meridian mappings, or hand-authored physical constants.
 
@@ -330,7 +360,7 @@ These are historical, compatibility, visualization, or experimental surfaces unl
 
 No legacy module overrides src/canonical_kernel.py, tests/test_canonical_kernel.py, or the current canonical specification.
 
-## 21. Verification hierarchy
+## 22. Verification hierarchy
 
 The repository uses three scientific verification levels.
 
@@ -348,7 +378,7 @@ External experiment or observation with units, independently fixed parameters, u
 
 A Level A or Level B result must not be presented as Level C evidence.
 
-## 22. Software verification
+## 23. Software verification
 
 Current CI includes Python 3.12 core verification, Python 3.14 core verification, full legacy compatibility tests, container smoke tests, CodeQL analysis, and licensing-governance regression checks.
 
@@ -361,7 +391,7 @@ uv run ruff format --check src tests
 uv run pytest
 ~~~
 
-## 23. Documentation authority
+## 24. Documentation authority
 
 When repository documents disagree, use:
 

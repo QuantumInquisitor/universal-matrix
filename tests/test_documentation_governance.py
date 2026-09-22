@@ -56,7 +56,7 @@ def test_current_readme_identifies_noncommercial_source_available_model():
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "PolyForm Noncommercial License 1.0.0" in text
     assert "source-available" in text
-    assert "not OSI open-source software" in text
+    assert "source-available, not OSI open source" in text
 
 
 def test_current_white_paper_version_matches_readme():

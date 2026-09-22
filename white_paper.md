@@ -465,6 +465,30 @@ The two constructions are distinct.
 
 ---
 
+## 9.1 Primitive ontology reduction
+
+The canonical polarity involution supplies an exact state-set decomposition
+
+\[
+n=a+54p,
+\qquad
+a\in\{0,\ldots,53\},
+\quad
+p\in\{0,1\}.
+\]
+
+Under \(P=T_{54}\),
+
+\[
+(a,p)\mapsto(a,1-p).
+\]
+
+Thus canonical polarity need not be introduced as an additional independent local variable when it means exactly the antipodal \(T_{54}\) branch.
+
+The current ontology layer treats the six boundary orientations as candidate connectivity labels for a repeated dimensionless cell complex, while phase, conjugate momentum, and scale level remain explicit physical hypotheses. Gauge variables are assigned to links rather than duplicated as site scalars.
+
+This ontology reduction is exact at the address level but does not derive physical length, time, particle content, or continuum spacetime.
+
 # Part II. Experimental Dynamical Extensions
 
 ## 10. Canonical polarity clock and nested scale dynamics
