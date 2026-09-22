@@ -78,11 +78,29 @@ def reciprocal_pairs(model: SeedModel) -> tuple[tuple[SeedMode, SeedMode], ...]:
 def seed_vesicas() -> tuple[tuple[int, int], ...]:
     """Return six center overlaps and six adjacent-ring overlaps."""
     spokes = tuple((CENTER_POSITION, position) for position in RING_POSITIONS)
-    ring = tuple(
-        (position, 1 if position == 6 else position + 1)
-        for position in RING_POSITIONS
-    )
+    ring = tuple((position, 1 if position == 6 else position + 1) for position in RING_POSITIONS)
     return spokes + ring
+
+
+def mirror_seed_position(position: int) -> int:
+    """Mirror a Seed position through its center by a half-turn."""
+    if position not in range(SEED_POSITION_COUNT):
+        raise ValueError("Seed position must be in 0..6")
+    if position == CENTER_POSITION:
+        return CENTER_POSITION
+    return 1 + (position + 2) % len(RING_POSITIONS)
+
+
+def mirror_vesica_index(vesica_index: int) -> int:
+    """Return the opposite overlap under the Seed's central half-turn."""
+    vesicas = seed_vesicas()
+    if vesica_index not in range(len(vesicas)):
+        raise ValueError(f"Vesica index must be in 0..{len(vesicas) - 1}")
+
+    mirrored_endpoints = {mirror_seed_position(position) for position in vesicas[vesica_index]}
+    return next(
+        index for index, endpoints in enumerate(vesicas) if set(endpoints) == mirrored_endpoints
+    )
 
 
 @dataclass(frozen=True, order=True)
@@ -103,3 +121,8 @@ class VesicaUniverseAddress:
     def child(self, vesica_index: int) -> VesicaUniverseAddress:
         """Enter one Vesica universe and expose its child Seed."""
         return VesicaUniverseAddress(self.path + (vesica_index,))
+
+
+def mirror_vesica_address(address: VesicaUniverseAddress) -> VesicaUniverseAddress:
+    """Apply the same Seed mirror independently at every recursive depth."""
+    return VesicaUniverseAddress(tuple(mirror_vesica_index(index) for index in address.path))
