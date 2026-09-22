@@ -30,8 +30,8 @@ def test_joint_grid_family_is_compatible_and_centered():
     grids = joint_grid_family()
     assert len(grids) == 12
     assert all(all(n % 2 == 1 for n in grid.shape) for grid in grids)
-    assert {grid.minimum_half_width for grid in grids} == pytest.approx(
-        {6.0, 7.5, 9.0}
+    assert sorted({grid.minimum_half_width for grid in grids}) == pytest.approx(
+        [6.0, 7.5, 9.0]
     )
 
 
