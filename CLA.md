@@ -40,7 +40,7 @@ non-exclusive, royalty-free, fully paid-up, irrevocable copyright license to:
 - distribute and communicate the Contribution;
 - sublicense the Contribution;
 - include the Contribution in collective or combined works;
-- license the Contribution under public open-source licenses;
+- license the Contribution under public source-available or open-source licenses;
 - license the Contribution under proprietary or commercial licenses;
 - relicense the Contribution under future project licenses;
 - authorize others to exercise these rights.
@@ -66,7 +66,7 @@ by later modifications not contributed by the Contributor.
 The Contributor understands and agrees that Waters Legacy Trust may distribute
 the Project, including the Contribution, under:
 
-- GNU AGPLv3-or-later;
+- PolyForm Noncommercial License 1.0.0 or another public source-available license selected by Waters Legacy Trust;
 - proprietary commercial licenses;
 - customer-specific licenses;
 - future public or commercial licenses selected by Waters Legacy Trust.
