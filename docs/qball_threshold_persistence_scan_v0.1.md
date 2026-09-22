@@ -55,3 +55,24 @@ If both threshold-neighbor points survive, expand outward along the branch until
 the first persistence failure is found. If they differ, refine directly between
 the surviving and failing points to estimate the finite-time persistence
 boundary.
+
+
+## Mapping-side safeguard
+
+The first scan showed why the radial and Cartesian energetic classifications
+must be tracked separately near the threshold.
+
+For the refined point with radial \(E/Q\) slightly above one, the finite 3D
+mapping shifted Cartesian \(E/Q\) slightly below one even though the relative
+mapping difference was below one percent.
+
+The scan now therefore records:
+
+- radial threshold side;
+- Cartesian threshold side;
+- whether the mapping preserves the side of the threshold;
+- whether a radial-versus-persistence threshold comparison is valid after
+  mapping.
+
+A persistence result is not interpreted as evidence about the radial energetic
+boundary when the mapping itself changes the energetic classification.
