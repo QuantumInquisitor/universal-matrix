@@ -12,28 +12,27 @@ def test_required_licensing_documents_exist():
         "COMMERCIAL_LICENSE_AGREEMENT_TEMPLATE.md",
         "CLA.md",
         "CONTRIBUTING.md",
+        "docs/LICENSING_GUIDE.md",
     ]
     for relative in required:
         assert (ROOT / relative).is_file(), relative
 
 
-def test_public_license_does_not_prohibit_commercial_use():
+def test_public_license_requires_commercial_license_for_commercial_use():
     text = (ROOT / "LICENSE").read_text(encoding="utf-8").lower()
-
-    prohibited_phrases = [
-        "commercial exclusion",
-        "commercial use is prohibited",
-        "commercial products are prohibited",
-        "corporate entities must execute",
-        "for individuals, independent academic researchers",
-    ]
-    for phrase in prohibited_phrases:
-        assert phrase not in text
+    assert "polyform noncommercial license 1.0.0" in text
+    assert "commercial use is not granted" in text
+    assert "waters legacy trust" in text
 
 
-def test_license_declares_agpl_spdx_identifier():
+def test_license_declares_polyform_spdx_identifier():
     text = (ROOT / "LICENSE").read_text(encoding="utf-8")
-    assert "AGPL-3.0-or-later" in text
+    assert "PolyForm-Noncommercial-1.0.0" in text
+
+
+def test_repository_does_not_mislabel_public_license_as_open_source():
+    readme = (ROOT / "README.md").read_text(encoding="utf-8").lower()
+    assert "source-available, not osi open source" in readme
 
 
 def test_contributing_does_not_claim_nonexistent_cla_bot():
