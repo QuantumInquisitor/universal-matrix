@@ -1,5 +1,7 @@
 import math
 import numpy as np
+import pytest
+from types import SimpleNamespace
 
 from src.classical_matter_dynamics import ClassicalMatterDynamics
 from src.localized_matter_persistence import (
@@ -7,6 +9,7 @@ from src.localized_matter_persistence import (
     evolve_persistence,
     interpolate_radial_profile,
     rms_radius,
+    radial_solution_to_dynamics,
 )
 from src.localized_matter_variational import MatterPotential
 
@@ -61,3 +64,75 @@ def test_controlled_free_mode_persistence_preserves_charge():
     assert abs(report.relative_charge_drift) < 1e-10
     assert abs(report.relative_energy_drift) < 1e-5
     assert math.isfinite(report.radius_ratio)
+
+
+
+def test_radial_mapper_propagates_spacing_into_dynamics():
+    potential = MatterPotential(
+        mass2=1.0,
+        lambda4=-2.0,
+        lambda6=1.0,
+    )
+    solution = SimpleNamespace(
+        radius=np.array([0.0, 1.0, 2.0, 3.0]),
+        profile=np.array([1.0, 0.7, 0.2, 0.0]),
+        omega=0.8,
+        potential=potential,
+    )
+
+    state = radial_solution_to_dynamics(
+        solution,
+        shape=(9, 9, 9),
+        spacing=0.5,
+    )
+
+    assert state.lattice_spacing == pytest.approx(0.5)
+    assert state.phi[4, 4, 4].real == pytest.approx(1.0)
+    assert np.allclose(state.momentum, 1j * 0.8 * state.phi)
+
+
+def test_persistence_rejects_diagnostic_spacing_mismatch():
+    shape = (5, 5, 5)
+    state = ClassicalMatterDynamics(
+        phi=np.full(shape, 1e-3 + 0j, dtype=complex),
+        momentum=np.full(shape, 1j * 1e-3, dtype=complex),
+        links=np.zeros((3,) + shape),
+        potential=MatterPotential(
+            mass2=1.0,
+            lambda4=0.0,
+            lambda6=1e-12,
+        ),
+        lattice_spacing=0.5,
+    )
+
+    with pytest.raises(ValueError):
+        evolve_persistence(
+            state,
+            steps=1,
+            dt=0.001,
+            spacing=1.0,
+        )
+
+
+def test_persistence_uses_state_spacing_when_not_repeated_explicitly():
+    shape = (5, 5, 5)
+    state = ClassicalMatterDynamics(
+        phi=np.full(shape, 1e-3 + 0j, dtype=complex),
+        momentum=np.full(shape, 1j * 1e-3, dtype=complex),
+        links=np.zeros((3,) + shape),
+        potential=MatterPotential(
+            mass2=1.0,
+            lambda4=0.0,
+            lambda6=1e-12,
+        ),
+        lattice_spacing=0.5,
+    )
+
+    report = evolve_persistence(
+        state,
+        steps=10,
+        dt=0.001,
+    )
+
+    assert math.isfinite(report.initial_rms_radius)
+    assert abs(report.relative_charge_drift) < 1e-12
