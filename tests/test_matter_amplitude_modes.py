@@ -113,8 +113,9 @@ def test_numeric_finite_wavelength_phase_mode_matches_lattice_dispersion():
     acceleration = matter_force(phi, links, DEFAULT)
     expected_lap = 4.0 * math.sin(0.5 * kx) ** 2
 
-    mask = np.abs(profile) > 0.5
-    measured = -acceleration.imag[mask] / (eps * np.broadcast_to(profile, shape)[mask])
+    profile_full = np.broadcast_to(profile, shape)
+    mask = np.abs(profile_full) > 0.5
+    measured = -acceleration.imag[mask] / (eps * profile_full[mask])
 
     assert np.allclose(measured, expected_lap, rtol=2e-5, atol=1e-8)
 
