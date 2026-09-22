@@ -958,3 +958,83 @@ The next highest-leverage question is:
 > particle species by hand?
 
 This shifts the program from polarity bookkeeping to matter formation.
+
+
+---
+
+## Polarity-rotor dispersion checkpoint — v0.1
+
+The linear collective-mode question for the polarity-aware rotor is now executable in
+`src/matrix_polarity_rotor_dispersion.py`.
+
+### Stable compensated backgrounds
+
+For independent phase plus canonical polarity bit,
+
+\[
+\phi_x^{\mathrm{eff}}
+=
+\phi_x
++
+\pi p_x.
+\]
+
+A zero-link energy minimum can be written
+
+\[
+\phi_x^{(0)}
+=
+\phi_{\mathrm{ref}}
+-
+\pi p_x,
+\]
+
+so the effective background phase is uniform.
+
+Linearizing about this state gives
+
+\[
+\omega^2(\mathbf{k})
+=
+\frac{4\kappa}{I}
+\sum_{a=x,y,z}
+\sin^2\frac{k_a}{2}.
+\]
+
+The spectrum is independent of the static canonical polarity pattern.
+
+Therefore the exact branch offset alone does not create a second stable normal-mode band.
+
+### Uncompensated opposite-branch links
+
+If opposite branches are assigned the same independent base phase, their zero-link phase difference is \(\pi\).
+
+The quadratic link stiffness is then
+
+\[
+\kappa\cos\pi
+=
+-\kappa.
+\]
+
+A periodic checkerboard polarity background is stationary but linearly unstable: one global zero mode remains and every nonzero rotor mode has negative \(\omega^2\).
+
+This distinguishes a true additional stable degree of freedom from a frustrated background.
+
+### Question moved forward
+
+The earlier question
+
+> Does exact canonical polarity by itself create an additional stable collective branch?
+
+now has a first answer:
+
+**Not in the current one-field rotor reduction. At a stable compensated equilibrium, canonical polarity is isospectral and algebraically absorbed into the phase background.**
+
+### Next creator question
+
+The next highest-leverage question is:
+
+> What is the smallest additional nonredundant degree of freedom that produces a second stable collective branch without duplicating canonical polarity or gauge phase?
+
+The conservative next candidate is matter amplitude, because the current rotor sector is already the fixed-amplitude limit of complex matter. Allowing amplitude dynamics introduces a radial mode that cannot be removed by the polarity-phase identity.
