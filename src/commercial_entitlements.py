@@ -4,7 +4,7 @@ This module provides an implementation-neutral entitlement layer for proprietary
 deployments. It does not implement billing, payment processing, contract terms,
 or DRM.
 
-Entitlements are explicit, typed, and separated from the public AGPL license.
+Entitlements are explicit, typed, and separated from the public PolyForm Noncommercial license.
 A commercial deployment may map executed license agreements to these product
 families or to finer-grained features as needed.
 """
