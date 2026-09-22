@@ -1542,3 +1542,55 @@ alone, while still remaining only a finite-time classical numerical result.
 
 That is the next step from one persistent candidate toward a genuine stability
 map.
+
+
+---
+
+## Q-ball branch diagnostics checkpoint — v0.1
+
+The continued charged-matter family now has finite-difference branch diagnostics
+in `src/qball_branch_diagnostics.py`.
+
+### Stationary-family consistency
+
+Neighboring accepted continuation points are tested against
+
+\[
+\frac{dE}{dQ}
+\approx
+\omega.
+\]
+
+This checks whether the branch behaves numerically like one constrained
+stationary family rather than a collection of unrelated BVP roots.
+
+### Charge-frequency slope
+
+The branch also records
+
+\[
+\frac{dQ}{d\omega}.
+\]
+
+Its sign is retained as a candidate branch-stability diagnostic, not as a proof.
+
+### Energetic threshold
+
+The code locates the crossing of
+
+\[
+E/Q=m_{\rm free}
+\]
+
+between neighboring accepted points.
+
+This allows the direct 3D persistence result to be placed on the same branch as
+the energetic and differential diagnostics.
+
+### Next creator question
+
+> Where do the energetic threshold, branch-slope changes, and direct
+> perturbative survival boundary fall relative to one another when the branch is
+> refined with smaller continuation steps?
+
+That is the next route toward a numerical stability diagram.
