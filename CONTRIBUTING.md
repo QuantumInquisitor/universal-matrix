@@ -18,11 +18,15 @@ process until such automation is actually installed.
 
 ## 2. Public license
 
-Accepted project code is distributed publicly under AGPL-3.0-or-later unless a
-specific file clearly states another compatible license.
+Accepted project code is distributed publicly under the PolyForm Noncommercial
+License 1.0.0 unless a specific file clearly states another license.
 
-Waters Legacy Trust may also license project code separately under proprietary
-commercial terms where it has the necessary rights.
+The public license is source-available and noncommercial. Commercial use
+requires a separate written Waters Legacy Trust commercial license unless
+otherwise permitted by law.
+
+Waters Legacy Trust may license accepted project code separately under
+proprietary commercial terms where it has the necessary rights.
 
 ## 3. Create a focused branch
 
