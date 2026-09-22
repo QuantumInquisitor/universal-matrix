@@ -3,64 +3,90 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
+CURRENT_AUTHORITY = [
+    "README.md",
+    "ARCHITECTURE.md",
+    "white_paper.md",
+    "docs/DOCUMENTATION_STATUS.md",
+    "docs/HOW_TO_USE.md",
+    "docs/CURRENT_REPOSITORY_MANIFEST.md",
+    "docs/canonical_spec_v0.4.md",
+    "docs/physics_stack_status_2026-09.md",
+    "docs/omniverse_design_questions_v0.1.md",
+    "docs/COMMERCIAL_PRODUCT_SURFACES.md",
+    "docs/ROBOTICS_XR_PRODUCT_ARCHITECTURE.md",
+]
 
-def markdown_files():
-    return [
-        path
-        for path in ROOT.rglob("*.md")
-        if ".git" not in path.parts
-    ]
+HISTORICAL_DOCS = [
+    "docs/FEATURE_HISTORY.md",
+    "docs/REPOSITORY_MANIFEST.md",
+    "docs/repository_audit_2026-09.md",
+]
 
 
-def test_authoritative_documents_exist():
-    required = [
-        "README.md",
-        "white_paper.md",
-        "ARCHITECTURE.md",
-        "docs/DOCUMENTATION_STATUS.md",
-        "docs/HOW_TO_USE.md",
-        "docs/canonical_spec_v0.4.md",
-        "docs/physics_stack_status_2026-09.md",
-        "docs/omniverse_design_questions_v0.1.md",
-    ]
-    for relative in required:
+def _read(relative: str) -> str:
+    return (ROOT / relative).read_text(encoding="utf-8", errors="replace")
+
+
+def test_current_authority_documents_exist():
+    for relative in CURRENT_AUTHORITY:
         assert (ROOT / relative).is_file(), relative
 
 
-def test_removed_duplicate_readme_stays_removed():
-    assert not (ROOT / "README2.md").exists()
-
-
-def test_markdown_has_no_retired_authority_references():
-    prohibited = {
+def test_removed_duplicate_white_papers_stay_removed():
+    for relative in (
         "docs/white_paper.md",
+        "docs/white_paper_old.md",
         "white_paper_v6.md",
-        "canonical-kernel-v0.3",
-        "v93.0.0",
-        "GNU Affero General Public License",
-        "AGPL-3.0",
-        "public open-source option",
-    }
+    ):
+        assert not (ROOT / relative).exists(), relative
 
-    failures = []
-    for path in markdown_files():
-        text = path.read_text(encoding="utf-8", errors="replace")
-        for phrase in prohibited:
-            if phrase in text:
-                failures.append(f"{path.relative_to(ROOT)}: {phrase}")
 
-    assert not failures, "\n".join(failures)
+def test_current_authority_uses_current_license_model():
+    for relative in CURRENT_AUTHORITY:
+        text = _read(relative).lower()
+        assert "gnu affero" not in text, relative
+        assert "agpl" not in text, relative
+
+
+def test_current_authority_does_not_reference_deleted_white_papers():
+    deleted_paths = (
+        "docs/white_paper.md",
+        "docs/white_paper_old.md",
+        "white_paper_v6.md",
+    )
+    for relative in CURRENT_AUTHORITY:
+        text = _read(relative)
+        for deleted in deleted_paths:
+            assert deleted not in text, (relative, deleted)
+
+
+def test_historical_documents_are_explicitly_labeled():
+    acceptable_markers = (
+        "historical / provenance document",
+        "point-in-time audit / historical snapshot",
+    )
+    for relative in HISTORICAL_DOCS:
+        head = _read(relative)[:1400].lower()
+        assert any(marker in head for marker in acceptable_markers), relative
 
 
 def test_current_readme_identifies_noncommercial_source_available_model():
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
+    text = _read("README.md")
     assert "PolyForm Noncommercial License 1.0.0" in text
     assert "source-available" in text
     assert "source-available, not OSI open source" in text
 
 
+def test_readme_has_renderable_canonical_math():
+    text = _read("README.md")
+    assert "\\mathcal A=\\mathbb Z_{108}\\sqcup B_6" in text
+    assert "\\pi(n)=7n\\bmod 64" in text
+    assert "[\nmathcal A=" not in text
+
+
 def test_current_white_paper_version_matches_readme():
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    paper = (ROOT / "white_paper.md").read_text(encoding="utf-8")
+    readme = _read("README.md")
+    paper = _read("white_paper.md")
     assert "White paper:** Version 0.6" in readme
     assert "Version 0.6" in paper

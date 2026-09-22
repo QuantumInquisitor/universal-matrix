@@ -30,6 +30,7 @@ A historical file never overrides the current canonical specification or tested 
 | `ARCHITECTURE.md` | Current software and subsystem architecture. |
 | `docs/canonical_spec_v0.4.md` | Canonical finite-kernel specification. |
 | `docs/HOW_TO_USE.md` | Current installation, API, verification, and safety usage guide. |
+| `docs/CURRENT_REPOSITORY_MANIFEST.md` | Current high-level repository and subsystem map. |
 | `docs/physics_stack_status_2026-09.md` | Current research-stack status and open scientific work. |
 | `docs/omniverse_design_questions_v0.1.md` | Open generative-design questions and gap ledger. |
 | `docs/primitive_matrix_ontology_v0.1.md` | Current executable answer to ontology Questions 1-3. |

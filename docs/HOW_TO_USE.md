@@ -280,6 +280,7 @@ Do not submit third-party material you do not have authority to contribute.
 Before extending a legacy module, consult:
 
 - docs/DOCUMENTATION_STATUS.md
+- docs/CURRENT_REPOSITORY_MANIFEST.md
 - docs/repository_audit_2026-09.md
 - ARCHITECTURE.md
 

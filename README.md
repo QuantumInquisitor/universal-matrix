@@ -12,15 +12,15 @@
 
 Universal Matrix is a modular mathematical, scientific-computing, spatial-operations, robotics, manufacturing, digital-twin, and edge-integration platform built around a finite canonical architecture
 
-[
-mathcal A=mathbb Z_{108}sqcup B_6,
-]
+\[
+\mathcal A=\mathbb Z_{108}\sqcup B_6,
+\]
 
 where
 
-[
-B_6={+X,-X,+Y,-Y,+Z,-Z}.
-]
+\[
+B_6=\{+X,-X,+Y,-Y,+Z,-Z\}.
+\]
 
 The repository is more than a theory manuscript or a single simulation engine. It contains an executable finite mathematical kernel, numerical field solvers, reciprocity-geometry research models, U(1), SU(2), and SU(3) lattice-gauge systems, overlap and Ginsparg-Wilson fermion tooling, Weyl-measure diagnostics, product-group anomaly bookkeeping, authenticated APIs, Python and JavaScript SDKs, container and Kubernetes deployment assets, observability tooling, G-code and manufacturing utilities, robotics and XR/VR interfaces, digital-twin infrastructure, hardware-abstraction adapters, and commercial entitlement components.
 
@@ -41,41 +41,41 @@ When files disagree, current executable tests and canonical specifications take 
 
 The canonical translations are
 
-[
-T_d(n)=n+dpmod{108}.
-]
+\[
+T_d(n)=n+d\pmod{108}.
+\]
 
 The principal operators are
 
-[
-E=T_9,qquad P=T_{54},qquad F(n)=107-n.
-]
+\[
+E=T_9,\qquad P=T_{54},\qquad F(n)=107-n.
+\]
 
 The synchronized routing condition gives the class
 
-[
-{21,57,93},
-]
+\[
+\{21,57,93\},
+\]
 
 and the current canonical convention selects
 
-[
+\[
 T=T_{21}
-]
+\]
 
 by the minimal-positive-lift rule.
 
 Important exact identities include
 
-[
-E^{12}=I,qquad T^{36}=I,qquad T^{18}=P,qquad P^2=I.
-]
+\[
+E^{12}=I,\qquad T^{36}=I,\qquad T^{18}=P,\qquad P^2=I.
+\]
 
 The register projection is
 
-[
-pi(n)=7nmod 64.
-]
+\[
+\pi(n)=7n\bmod 64.
+\]
 
 The 64-address layer is a finite addressing structure. When represented as six independent binary boundary channels, it is a six-bit state space. It is not a claim of a 64-bit physical spacetime.
 
@@ -92,7 +92,7 @@ The 64-address layer is a finite addressing structure. When represented as six i
 
 The canonical engine can:
 
-- route and invert (mathbb Z_{108}) state transitions;
+- route and invert \(\mathbb Z_{108}\) state transitions;
 - apply interface, polarity, and reflection operators;
 - encode and decode mixed-radix coordinates;
 - compute 64-address projections and carry-aware deltas;
@@ -116,7 +116,7 @@ Experimental modules support:
 The open-field stack supports:
 
 - node, edge, and plaquette cochains;
-- exact checks such as (d_1d_0=0);
+- exact checks such as \(d_1d_0=0\);
 - open finite-volume Gauss constraints;
 - nonzero enclosed charge;
 - six-gate boundary-flux accounting;
@@ -381,6 +381,7 @@ Start with:
 - `white_paper.md`
 - `ARCHITECTURE.md`
 - `docs/DOCUMENTATION_STATUS.md`
+- `docs/CURRENT_REPOSITORY_MANIFEST.md`
 - `docs/canonical_spec_v0.4.md`
 - `docs/HOW_TO_USE.md`
 - `docs/physics_stack_status_2026-09.md`
