@@ -128,7 +128,7 @@ B, rights to:
 No right listed above applies unless the applicable schedule affirmatively
 grants it.
 
-## 4. Relationship to the Public PolyForm Noncommercial License License
+## 4. Relationship to the Public Noncommercial License
 
 ### 4.1 Separate license paths
 
