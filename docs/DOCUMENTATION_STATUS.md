@@ -51,6 +51,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/qball_highres_timeseries_v0.1.md` | Current in-run sampled diagnostic for monotonic, turning, or oscillatory response on the 91^3 high-resolution persistence grid. |
 | `docs/qball_highres_timeseries_t1_v0.1.md` | Current sampled extension through t=1.0 with extrema-time diagnostics. |
 | `docs/qball_highres_timeseries_t1p5_v0.1.md` | Current sampled extension through t=1.5 with explicit turning-time and half-cycle diagnostics. |
+| `docs/qball_highres_timeseries_t2_v0.1.md` | Current sampled extension through t=2.0 with perturbed-peak half-cycle candidate diagnostics. |
 
 ## Licensing and governance authority
 
