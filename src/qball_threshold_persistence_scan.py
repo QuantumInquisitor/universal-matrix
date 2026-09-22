@@ -28,6 +28,8 @@ class ThresholdPersistencePoint:
     cartesian_energy_per_charge: float
     mapping_relative_difference: float
     below_free_mass_threshold: bool
+    cartesian_below_free_mass_threshold: bool
+    mapping_preserves_threshold_side: bool
     direct_survival: bool
     perturbed_survival: bool
     direct_energy_drift: float
@@ -77,6 +79,13 @@ def _run_one(
         cartesian_energy_per_charge=consistency.cartesian_energy_per_charge,
         mapping_relative_difference=consistency.relative_difference,
         below_free_mass_threshold=record.below_free_mass_threshold,
+        cartesian_below_free_mass_threshold=(
+            consistency.cartesian_energy_per_charge < record.solution.potential.free_mass
+        ),
+        mapping_preserves_threshold_side=(
+            record.below_free_mass_threshold
+            == (consistency.cartesian_energy_per_charge < record.solution.potential.free_mass)
+        ),
         direct_survival=passes_survival_window(direct_report, criteria),
         perturbed_survival=passes_survival_window(perturbed_report, criteria),
         direct_energy_drift=direct_report.relative_energy_drift,
@@ -163,6 +172,9 @@ def format_scan_report(scan: ThresholdPersistenceScan) -> str:
                 f"{label}_radial_E_over_Q={point.radial_energy_per_charge:.10f}",
                 f"{label}_cartesian_E_over_Q={point.cartesian_energy_per_charge:.10f}",
                 f"{label}_mapping_relative_difference={point.mapping_relative_difference:.6e}",
+                f"{label}_radial_below_threshold={point.below_free_mass_threshold}",
+                f"{label}_cartesian_below_threshold={point.cartesian_below_free_mass_threshold}",
+                f"{label}_mapping_preserves_threshold_side={point.mapping_preserves_threshold_side}",
                 f"{label}_direct_survival={point.direct_survival}",
                 f"{label}_perturbed_survival={point.perturbed_survival}",
                 f"{label}_direct_energy_drift={point.direct_energy_drift:.6e}",
