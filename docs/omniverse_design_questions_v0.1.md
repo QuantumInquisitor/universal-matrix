@@ -715,3 +715,58 @@ The highest-leverage next step is Question 1:
 Until this is fixed, later questions about particles, scale transitions, continuum limits, entropy, and cosmology can silently use incompatible state definitions.
 
 The next engine build should therefore define an explicit ontology contract before adding another physical sector.
+
+
+---
+
+## Ontology answer checkpoint — v0.1
+
+Questions 1 through 3 now have a first executable answer in `src/matrix_ontology.py`.
+
+### Question 1: primitive state
+
+The exact canonical core address is uniquely decomposed as
+
+\[
+n=a+54p,
+\qquad
+a\in\{0,\ldots,53\},
+\quad
+p\in\{0,1\}.
+\]
+
+The canonical polarity operator toggles \(p\) while preserving \(a\).
+
+Therefore an extra independent polarity variable must not duplicate this branch bit.
+
+The current minimal candidate dynamical cell state is
+
+\[
+(a,p,\ell,\phi,\Pi_\phi),
+\]
+
+where only \((a,p)\) is exact canonical structure and the remaining variables are explicit hypotheses.
+
+### Question 2: reality versus bookkeeping
+
+The executable ontology ledger separates:
+
+- exact canonical address;
+- candidate site dynamics;
+- candidate link gauge variables;
+- connectivity labels;
+- gauge redundancy;
+- quantities expected to be derived;
+- unresolved dimensional scales.
+
+### Question 3: global versus repeated core
+
+The current local field architecture is now formalized as a candidate repeated Matrix-cell complex with six oriented nearest-neighbor gates.
+
+This does not assign a physical lattice spacing and therefore does not yet solve the emergence of physical distance.
+
+### Next creator question
+
+The next highest-leverage question is:
+
+> What is the minimal transition law between neighboring Matrix cells that can simultaneously support causal propagation, conservative exchange, gauge transport, and a stable long-distance continuum?
