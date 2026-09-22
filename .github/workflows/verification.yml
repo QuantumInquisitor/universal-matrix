@@ -37,7 +37,7 @@ jobs:
           enable-cache: true
 
       - name: Install core verification environment
-        run: uv sync --group test --group lint --extra scientific
+        run: uv sync --python "${{ matrix.python }}" --group test --group lint --extra scientific
 
       - name: Compile
         run: uv run python -m compileall -q src tests
@@ -108,7 +108,7 @@ jobs:
           enable-cache: true
 
       - name: Install all optional runtime groups
-        run: uv sync --group test --all-extras
+        run: uv sync --python 3.12 --group test --all-extras
 
       - name: Full pytest suite
         run: uv run pytest -q
@@ -131,7 +131,7 @@ jobs:
           enable-cache: true
 
       - name: Install focused numerical environment
-        run: uv sync --group test --extra scientific
+        run: uv sync --python 3.12 --group test --extra scientific
 
       - name: Focused long-timeseries diagnostic tests
         run: uv run pytest -q tests/test_qball_highres_timeseries_t1p5.py tests/test_qball_highres_timeseries_t2.py tests/test_qball_highres_timeseries_t2p5.py tests/test_qball_peak_period_classification.py
