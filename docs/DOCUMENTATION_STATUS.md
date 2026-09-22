@@ -33,6 +33,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/physics_stack_status_2026-09.md` | Current research-stack status and open scientific work. |
 | `docs/omniverse_design_questions_v0.1.md` | Open generative-design questions and gap ledger. |
 | `docs/primitive_matrix_ontology_v0.1.md` | Current executable answer to ontology Questions 1-3. |
+| `docs/local_transition_kernel_v0.1.md` | Current experimental local neighbor-transition law. |
 
 ## Licensing and governance authority
 
