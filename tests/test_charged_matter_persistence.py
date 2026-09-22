@@ -32,9 +32,9 @@ def test_spacing_consistent_mapping_preserves_energy_per_charge(candidate, mappe
     assert consistency.relative_difference < 0.02
 
 
-def test_unperturbed_continued_candidate_survives_direct_3d_window(mapped_state):
+def test_unperturbed_continued_candidate_survives_direct_3d_window(candidate):
     state = map_candidate_to_3d(
-        default_continued_candidate(),
+        candidate,
         shape=(25, 25, 25),
         spacing=0.5,
     )
