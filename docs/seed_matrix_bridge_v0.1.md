@@ -12,14 +12,21 @@ while Ether labels its proposed relational medium. Neither is introduced as a
 109th internal state. The six elemental modes label possible boundary
 directions or interactions rather than additional core states.
 
-## Orientation remains open
+## Spatial frame remains open
 
 Three opposite Seed pairs match the three opposite spatial gate pairs. Geometry
 alone does not determine which elemental pair is X, Y, or Z, nor which end is
-positive. The bridge therefore retains all 48 opposite-preserving assignments:
+positive. The bridge therefore retains all 48 opposite-preserving signed
+frames:
 
 - six permutations of the three Seed axes over X, Y, and Z;
-- two orientations for each of the three axes.
+- two directions for each of the three axes.
+
+These are the signed permutation frames of three axes. Exactly 24 have
+determinant +1 and are proper rotations. The other 24 have determinant -1 and
+are reflected frames. Keeping both classes available preserves the proposed
+mirror or polarity possibility without incorrectly calling every frame a
+rotation.
 
 No assignment is promoted to canonical status without a dynamical law or
 empirical discriminator.
@@ -29,7 +36,7 @@ empirical discriminator.
 - the center exposes all 108 canonical states exactly once;
 - every ring assignment is a bijection over the six boundary gates;
 - opposite Seed positions always map to opposite gates on one spatial axis;
-- all 48 orientation choices remain available;
+- all 48 signed frames remain available as 24 rotations and 24 reflections;
 - Material, Polarity, and Dual Aspect labels can be evaluated in any frame.
 
 ## Open questions
