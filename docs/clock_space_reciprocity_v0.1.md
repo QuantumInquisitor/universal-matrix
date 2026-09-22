@@ -4,21 +4,21 @@
 
 The six-gate symmetry constrains the spatial response to
 
-[
-S(psi)
+\[
+S(\psi)
 =
 e^{gamma_Mpsi},
-]
+\]
 
 but does not by itself fix (gamma_M).
 
 The content-clock sector gives the tick-duration lapse
 
-[
-L_t(psi)
+\[
+L_t(\psi)
 =
-e^psi.
-]
+e^\psi.
+\]
 
 This note introduces one additional physical postulate:
 
@@ -38,33 +38,33 @@ Tests:
 
 Under the responded link/tick interpretation,
 
-[
+\[
 rac{v_{m local}}{v_{m ref}}
 =
 rac{S}{L_t}.
-]
+\]
 
 Therefore
 
-[
+\[
 rac{v_{m local}}{v_{m ref}}
 =
-e^{(gamma_M-1)psi}.
-]
+e^{(gamma_M-1)\psi}.
+\]
 
 If local causal speed is invariant for arbitrary (psi),
 
-[
-e^{(gamma_M-1)psi}=1.
-]
+\[
+e^{(gamma_M-1)\psi}=1.
+\]
 
 Hence
 
-[
+\[
 oxed{
 gamma_M=1.
 }
-]
+\]
 
 This result is conditional on the reciprocity postulate.
 
@@ -74,25 +74,25 @@ It is not a theorem of the canonical finite kernel alone.
 
 With
 
-[
+\[
 gamma_M=1,
-]
+\]
 
 the local clock-rate ratio is
 
-[
-N(psi)=e^{-psi},
-]
+\[
+N(\psi)=e^{-\psi},
+\]
 
 and the spatial scale response is
 
-[
-S(psi)=e^psi.
-]
+\[
+S(\psi)=e^\psi.
+\]
 
 The static isotropic effective line element becomes
 
-[
+\[
 oxed{
 ds^2
 =
@@ -101,35 +101,35 @@ ds^2
 e^{2psi}
 (dx^2+dy^2+dz^2).
 }
-]
+\]
 
 ## 3. Weak-field expansion
 
 For small (psi),
 
-[
+\[
 -e^{-2psi}
 =
--1+2psi-2psi^2+O(psi^3),
-]
+-1+2psi-2psi^2+O(\psi^3),
+\]
 
 and
 
-[
+\[
 e^{2psi}
 =
-1+2psi+2psi^2+O(psi^3).
-]
+1+2psi+2psi^2+O(\psi^3).
+\]
 
 Comparing with the standard first post-Newtonian isotropic form gives
 
-[
+\[
 oxed{
 eta_{m PPN}=1,
-qquad
+\qquad
 gamma_{m PPN}=1
 }
-]
+\]
 
 at the displayed weak-field orders.
 
@@ -141,29 +141,29 @@ It is not a proof that the full theory equals General Relativity.
 
 The null travel-time index is
 
-[
+\[
 n
 =
 rac{S}{N}
 =
 e^{2psi}.
-]
+\]
 
 For
 
-[
-psi(r)=rac{mu}{r},
-]
+\[
+\psi(r)=rac{\mu}{r},
+\]
 
 the leading deflection is
 
-[
+\[
 oxed{
-alpha
+\alpha
 =
 rac{4mu}{b}.
 }
-]
+\]
 
 Thus the reciprocity postulate supplies the second half of the weak-field light
 deflection that the clock-only scalar sector was missing.
@@ -172,29 +172,29 @@ deflection that the clock-only scalar sector was missing.
 
 The temporal metric factor gives the Newtonian-order correspondence
 
-[
+\[
 oxed{
-mathbf a
+\mathbf a
 =
 c_*^2
 ablapsi.
 }
-]
+\]
 
 For a positive point source,
 
-[
-psi=rac{mu}{r},
-]
+\[
+\psi=rac{\mu}{r},
+\]
 
 so
 
-[
+\[
 
 ablapsi
 =
--rac{mu}{r^3}mathbf r,
-]
+-rac{\mu}{r^3}\mathbf r,
+\]
 
 which points toward the source.
 
@@ -205,13 +205,13 @@ Therefore the reciprocity metric selects the previously ambiguous
 
 The line element
 
-[
+\[
 ds^2
 =
 -e^{-2psi}dt^2
 +
 e^{2psi}dmathbf x^2
-]
+\]
 
 is not historically novel.
 
@@ -233,9 +233,9 @@ can differ substantially from Schwarzschild/GR black-hole geometry.
 
 Therefore agreement with weak-field coefficients
 
-[
-eta=gamma=1
-]
+\[
+\eta=\gamma=1
+\]
 
 does not establish correct compact-object physics.
 
@@ -253,23 +253,23 @@ The model still needs direct tests against:
 
 The sequence is now
 
-[
+\[
 oxed{
 B_6	ext{ symmetry}
 Rightarrow
 S=e^{gamma_Mpsi}
 }
-]
+\]
 
 plus
 
-[
+\[
 oxed{
 	ext{local clock-space reciprocity}
 Rightarrow
 gamma_M=1.
 }
-]
+\]
 
 So the previously free spatial response can be fixed by a clearly stated
 physical principle rather than by fitting the Cassini result.
