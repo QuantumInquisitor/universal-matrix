@@ -17,13 +17,13 @@ Tests:
 
 The content-clock extension defines
 
-[
+\\[
 n(mathbf x)
 =
 expleft[
 g(mathcal C(mathbf x)-mathcal C_{m ref})
 ight].
-]
+\\]
 
 Under the hypothesis that one fixed physical link is crossed per local canonical
 tick, (n) is a travel-time index.
@@ -32,23 +32,23 @@ tick, (n) is a travel-time index.
 
 Let
 
-[
+\\[
 hat{mathbf u}
-]
+\\]
 
 be the unit ray direction and (s) Euclidean arc length.
 
 For an isotropic static index field,
 
-[
+\\[
 rac{dmathbf x}{ds}
 =
 hat{mathbf u}
-]
+\\]
 
 and
 
-[
+\\[
 oxed{
 rac{dhat{mathbf u}}{ds}
 =
@@ -61,7 +61,7 @@ hat{mathbf u}cdot
 ablaln n
 ight).
 }
-]
+\\]
 
 The longitudinal component of the index gradient changes travel time but does
 not instantaneously bend the ray.
@@ -72,15 +72,15 @@ Only the transverse gradient changes direction.
 
 Because
 
-[
+\\[
 ln n
 =
 g(mathcal C-mathcal C_{m ref}),
-]
+\\]
 
 we obtain
 
-[
+\\[
 oxed{
 
 ablaln n
@@ -88,11 +88,11 @@ ablaln n
 g
 ablamathcal C.
 }
-]
+\\]
 
 Therefore
 
-[
+\\[
 oxed{
 rac{dhat{mathbf u}}{ds}
 =
@@ -106,7 +106,7 @@ hat{mathbf u}
 ablamathcal C)
 ight].
 }
-]
+\\]
 
 The absolute reference content cancels from the local bending equation.
 
@@ -114,11 +114,11 @@ The absolute reference content cancels from the local bending equation.
 
 For small excess content,
 
-[
+\\[
 n
 approx
 1+g(mathcal C-mathcal C_{m ref}).
-]
+\\]
 
 Thus the leading deflection is linear in the transverse content gradient.
 
@@ -126,13 +126,13 @@ Thus the leading deflection is linear in the transverse content gradient.
 
 The dimensionless optical/travel-time path integral is
 
-[
+\\[
 oxed{
 mathcal T
 =
 int n(mathbf x),ds.
 }
-]
+\\]
 
 Uniform content leaves the path straight but changes this travel-time integral.
 
@@ -156,20 +156,20 @@ The tests verify:
 
 This mechanism produces two phenomena that are structurally interesting:
 
-[
+\\[
 	ext{content}
 	o
 	ext{clock delay}
-]
+\\]
 
 and
 
-[
+\\[
 
 abla	ext{content}
 	o
 	ext{ray bending}.
-]
+\\]
 
 Those are ingredients that a gravity-like theory would need.
 
@@ -190,15 +190,15 @@ A physically viable gravity-like sector would still need to show:
 
 The repository now contains a derived content-gradient propagation law:
 
-[
+\\[
 oxed{
 n=e^{g(mathcal C-mathcal C_{m ref})}
 }
-]
+\\]
 
 and
 
-[
+\\[
 oxed{
 rac{dhat{mathbf u}}{ds}
 =
@@ -212,6 +212,6 @@ hat{mathbf u}
 ablamathcal C)
 ight].
 }
-]
+\\]
 
 It is an experimental propagation adapter, not a gravitational field equation.
