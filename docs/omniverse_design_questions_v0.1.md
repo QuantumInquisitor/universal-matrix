@@ -1798,3 +1798,44 @@ A simple (h^2) intercept is recorded as a numerical diagnostic only.
 
 Once that is resolved, the persistence boundary can be compared with the
 energetic boundary without mixing discretization artifacts into the result.
+
+
+---
+
+## Q-ball joint mapping extrapolation checkpoint — v0.1
+
+The spacing and finite-volume mapping errors are now fit simultaneously on the
+same refined radial branch point.
+
+The extrapolation model is
+
+[
+E/Q(h,L)=c_0+c_hh^2+c_LT(L;mu),
+]
+
+with the finite-volume basis tied to the branch's asymptotic localization scale
+
+[
+mu=sqrt{m_{m free}^2-omega^2}.
+]
+
+The fit uses twelve Cartesian mappings spanning four lattice spacings and three
+physical box sizes.
+
+### Why this matters
+
+The earlier one-axis studies showed that both finer spacing and larger volume
+raise the mapped (E/Q) toward the radial value. A one-dimensional
+extrapolation therefore mixes unresolved error from the other axis.
+
+The new intercept (c_0) is the first controlled joint diagnostic for the
+(h	o0), (L	oinfty) mapping limit.
+
+### Next creator question
+
+> Does the joint extrapolated Cartesian (E/Q) recover the radial energetic
+> threshold side with small residuals and a well-conditioned fit?
+
+If yes, the persistence experiment should be rerun in a threshold-preserving
+mapping regime. If not, the mapping energy functional itself needs further
+reconciliation with the radial discretization.
