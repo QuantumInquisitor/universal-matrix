@@ -11,11 +11,11 @@ ontology contract:
 
 Implementation:
 
-- `src/matrix_local_transition.py`
+- \`src/matrix_local_transition.py\`
 
 Tests:
 
-- `tests/test_matrix_local_transition.py`
+- \`tests/test_matrix_local_transition.py\`
 
 This is an experimental ontology bridge. It does not replace the richer matter,
 gauge, reciprocity, or fully coupled field systems already present in the
@@ -25,20 +25,20 @@ repository.
 
 The minimal site state used here is
 
-[
-(phi_x,Pi_x),
-]
+\[
+(\phi_x,\Pi_x),
+\]
 
 where
 
-- (phi_x) is a dimensionless local phase;
-- (Pi_x) is its conjugate momentum.
+- \(\phi_x\) is a dimensionless local phase;
+- \(\Pi_x\) is its conjugate momentum.
 
 The exact canonical address
 
-[
+\[
 (a,p)
-]
+\]
 
 from the primitive ontology remains separate metadata. The canonical polarity
 bit is not duplicated as another independent site variable.
@@ -46,65 +46,65 @@ bit is not duplicated as another independent site variable.
 Each positively oriented nearest-neighbor link carries a compact transport
 phase
 
-[
-	heta_{xy}.
-]
+\[
+\theta_{xy}.
+\]
 
 ## 2. Gauge-covariant local difference
 
 Under the local transformation
 
-[
-phi_xightarrowphi_x+alpha_x,
-]
+\[
+\phi_x\rightarrow\phi_x+\alpha_x,
+\]
 
-[
-	heta_{xy}
-ightarrow
-	heta_{xy}+alpha_x-alpha_y,
-]
+\[
+\theta_{xy}
+\rightarrow
+\theta_{xy}+\alpha_x-\alpha_y,
+\]
 
 the combination
 
-[
-Delta_{xy}
+\[
+\Delta_{xy}
 =
-phi_y-phi_x+	heta_{xy}
-]
+\phi_y-\phi_x+\theta_{xy}
+\]
 
 is invariant.
 
-Therefore a local interaction can depend on (Delta_{xy}) without depending
+Therefore a local interaction can depend on \(\Delta_{xy}\) without depending
 on an arbitrary local phase convention.
 
 ## 3. Minimal Hamiltonian
 
 The current candidate law is
 
-[
-oxed{
+\[
+\boxed{
 H
 =
-sum_x
-rac{Pi_x^2}{2I}
+\sum_x
+\frac{\Pi_x^2}{2I}
 +
-kappa
-sum_{langle xyangle}
-left[
-1-cos(Delta_{xy})
-ight]
+\kappa
+\sum_{\langle xy\rangle}
+\left[
+1-\cos(\Delta_{xy})
+\right]
 }
-]
+\]
 
 with
 
-[
+\[
 I>0,
-qquad
-kappa>0.
-]
+\qquad
+\kappa>0.
+\]
 
-Here (I) is a dimensionless inertia parameter and (kappa) is a
+Here \(I\) is a dimensionless inertia parameter and \(\kappa\) is a
 dimensionless nearest-neighbor coupling.
 
 This is the compact rotor form of the minimal local exchange law.
@@ -113,33 +113,33 @@ This is the compact rotor form of the minimal local exchange law.
 
 Hamilton's equations give
 
-[
-dotphi_x
+\[
+\dot\phi_x
 =
-rac{Pi_x}{I},
-]
+\frac{\Pi_x}{I},
+\]
 
 and
 
-[
-dotPi_x
+\[
+\dot\Pi_x
 =
--rac{partial H}{partialphi_x}.
-]
+-\frac{\partial H}{\partial\phi_x}.
+\]
 
 Every link contributes equal and opposite momentum exchange to its two
 endpoints.
 
 Therefore
 
-[
-oxed{
-rac{d}{dt}
-sum_xPi_x
+\[
+\boxed{
+\frac{d}{dt}
+\sum_x\Pi_x
 =
 0
 }
-]
+\]
 
 in continuous time.
 
@@ -152,9 +152,9 @@ Only nearest-neighbor links contribute to the force on one site.
 A localized phase defect therefore produces an immediate force only on:
 
 - the defect site;
-- its (+X) and (-X) neighbors;
-- its (+Y) and (-Y) neighbors;
-- its (+Z) and (-Z) neighbors.
+- its \(+X\) and \(-X\) neighbors;
+- its \(+Y\) and \(-Y\) neighbors;
+- its \(+Z\) and \(-Z\) neighbors.
 
 No direct one-step force is introduced between non-neighboring cells.
 
@@ -165,37 +165,37 @@ long-range microscopic action.
 
 For small gauge-covariant phase differences,
 
-[
-|Delta_{xy}|ll1,
-]
+\[
+|\Delta_{xy}|\ll1,
+\]
 
 we have
 
-[
-sinDelta_{xy}
-approx
-Delta_{xy}.
-]
+\[
+\sin\Delta_{xy}
+\approx
+\Delta_{xy}.
+\]
 
 With zero background link phase, the site equation becomes
 
-[
-Iddotphi
+\[
+I\ddot\phi
 =
-kappaDelta_{m lat}phi,
-]
+\kappa\Delta_{\rm lat}\phi,
+\]
 
-where (Delta_{m lat}) is the nearest-neighbor graph Laplacian.
+where \(\Delta_{\rm lat}\) is the nearest-neighbor graph Laplacian.
 
 The characteristic lattice speed is therefore
 
-[
-oxed{
-c_{m lat}
+\[
+\boxed{
+c_{\rm lat}
 =
-sqrt{rac{kappa}{I}}
+\sqrt{\frac{\kappa}{I}}
 }
-]
+\]
 
 in lattice sites per model-time unit.
 
@@ -208,10 +208,10 @@ length per site and physical duration per model-time unit remain unresolved.
 
 The repository already contains richer systems, including:
 
-- `src/gauge_matter.py`;
-- `src/classical_matter_dynamics.py`;
-- `src/fully_coupled_classical_fields.py`;
-- `src/fully_coupled_compact_fields.py`.
+- \`src/gauge_matter.py\`;
+- \`src/classical_matter_dynamics.py\`;
+- \`src/fully_coupled_classical_fields.py\`;
+- \`src/fully_coupled_compact_fields.py\`.
 
 Those modules include additional structure such as:
 
@@ -255,9 +255,9 @@ Yes, the weak-field limit reduces to a discrete wave equation.
 
 Yes, a dimensionless lattice characteristic speed exists:
 
-[
-c_{m lat}=sqrt{kappa/I}.
-]
+\[
+c_{\rm lat}=\sqrt{\kappa/I}.
+\]
 
 ## 9. What this does not answer
 
@@ -265,7 +265,7 @@ The following remain open:
 
 1. Why should this rotor Hamiltonian be selected uniquely rather than merely be
    a minimal consistent candidate?
-2. What fixes (I) and (kappa)?
+2. What fixes \(I\) and \(\kappa\)?
 3. What fixes physical lattice spacing?
 4. What fixes physical time per model-time unit?
 5. Are the link variables fundamental or emergent?
