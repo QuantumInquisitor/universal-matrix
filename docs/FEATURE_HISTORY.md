@@ -1,13 +1,12 @@
-> **SUPERSEDED / HISTORICAL MATERIAL**
+> **HISTORICAL / PROVENANCE DOCUMENT**
 >
-> This file predates the canonical v0.4 reconstruction. It may contain obsolete
-> claims involving Z_114, SO(13) physical spacetime, 64-bit physical geometry,
-> exact physical-constant derivations, 3/6/9 physical laws, quantum/GR
-> equivalence, or enterprise/hardware validation. For the current project use
-> `README.md`, `ARCHITECTURE.md`, `docs/canonical_spec_v0.4.md`, and
-> `docs/white_paper.md`.
+> This file records earlier repository architecture and terminology. It is intentionally preserved for development history and compatibility research.
 >
-> Historical content below is retained for provenance only.
+> It is **not** current scientific or software authority. Historical claims involving Z_114, SO(13) physical spacetime, 64-bit physical geometry, fixed 3/6/9 laws, unverified physical constants, or production hardware should not be read as current project claims.
+>
+> Current authority: `README.md`, `white_paper.md`, `ARCHITECTURE.md`, `docs/DOCUMENTATION_STATUS.md`, and `docs/canonical_spec_v0.4.md`.
+>
+> Historical content below is retained without retroactively rewriting the development record.
 
 # Repository Architecture Manifest
 

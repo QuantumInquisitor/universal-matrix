@@ -1,52 +1,54 @@
-> **SUPERSEDED / HISTORICAL MATERIAL**
->
-> This file predates the canonical v0.4 reconstruction. It may contain obsolete
-> claims involving Z_114, SO(13) physical spacetime, 64-bit physical geometry,
-> exact physical-constant derivations, 3/6/9 physical laws, quantum/GR
-> equivalence, or enterprise/hardware validation. For the current project use
-> `README.md`, `ARCHITECTURE.md`, `docs/canonical_spec_v0.4.md`, and
-> `docs/white_paper.md`.
->
-> Historical content below is retained for provenance only.
+# Academic Submission Cover Letter
 
-﻿# EDITORIAL COVER LETTER & SUBMISSION MANIFEST
+**Author:** Matthew Waters  
+**Steward:** Waters Legacy Trust  
+**Manuscript:** *The Universal Matrix: Canonical Finite Architecture, Reciprocity Field Dynamics, Chiral Lattice Extensions, and Experimental Product Surfaces*  
+**White paper version:** 0.6  
+**Repository:** https://github.com/QuantumInquisitor/universal-matrix
 
-**Date:** August 20, 2026  
-**To:** Editorial Board & Peer Review Registry  
-**Subject:** Submission of Manuscript and Computational Repository for Peer Review  
-**Manuscript Title:** *The Universal Playing Field: A 114-Node Discrete Matrix Framework Alternative to Continuum Geometries*  
+Dear Editorial Board,
 
----
+I am submitting the Universal Matrix manuscript and its accompanying executable research repository for technical review.
 
-### Dear Members of the Editorial Board,
+The current work begins from a finite canonical architecture consisting of a 108-state cyclic core together with six external oriented boundary directions,
 
-I am pleased to submit our formal manuscript and its corresponding open-source software implementation repository for review and tracking. This research introduces a fully quantized, non-continuous alternative to the smooth spacetime continuum of General Relativity. By utilizing discrete coordinate matrix grids driven by modular arithmetic ($2n \pmod{114}$) and the 3-6-9 Tesla control triad, this framework calculates macroscopic orbital mechanics, gravitational lensing, and metric interference profiles without invoking a localized physical gravitational force.
+\[
+\mathcal A=\mathbb Z_{108}\sqcup B_6.
+\]
 
-A persistent bottleneck in the peer review of modern alternative physics models is the lack of empirical and digital reproducibility. To ensure absolute transparency and to withstand rigorous academic screening, our complete computational engine has been fully realized in Python and open-sourced under a strict dual-licensing strategy.
+The canonical layer is deliberately separated from later physical interpretations. Exact finite results include routing, polarity, reflection, projection, carry, collision, mixed-radix, and boundary-symmetry identities. The executable reference implementation and regression tests provide a reproducible basis for reviewing those claims.
 
-### Computational Architecture & Verification Manifest
+Above the finite kernel, the repository develops a set of explicitly experimental physical extensions. These include open discrete-exterior-calculus field solvers, U(1), SU(2), and SU(3) lattice-gauge sectors, reciprocity geometry, Dirac backreaction, overlap/Ginsparg-Wilson fermions, Weyl projector geometry, finite Weyl determinants, and product-group anomaly diagnostics.
 
-The architecture is built from first-principles geometry to eliminate arbitrary float-multiplier tuning coefficients. Reviewers are invited to clone the working repository and cross-verify the mathematical invariants through our automated validation pipeline. The system enforces strict adherence to the following core operational modules:
+The manuscript distinguishes four levels of claim:
 
-1. **`src/matrix_constants.py` (Locked Physics Rules):** Hardcodes the exact system partitions (108 core internal vertices split evenly into 54 electric inward and 54 electromagnetic outward nodes, wrapped within an external 6-node hypercube stabilization boundary). It enforces the universal loop compression constant ($\alpha = \frac{1}{54\pi^2} \approx 0.090606$).
-2. **`src/api.py` (Distributed Streaming Validation):** Features a localized, high-concurrency REST API streaming core calculation grids across distributed external endpoints, exposing specialized simulation routes for multi-axis tracking.
-3. **`src/geodesic_simulator.py` & `src/light_cone_simulator.py` (Verification Suites):** Contains the active multi-body kinetic orbit propagation engine and optical wave vector ray tracers used to profile vector deflection values through the 114-node frequency grid.
+1. exact finite mathematical results;
+2. model-derived results under stated assumptions;
+3. numerically verified software properties;
+4. physical hypotheses requiring independent empirical validation.
 
-### Empirical Reproducibility & Stability Invariants
+This distinction is central to the submission. The work does not claim that internal consistency or successful numerical tests constitute experimental confirmation. It also does not claim that the current finite kernel has already derived the measured Standard Model spectrum, absolute dimensional constants, a complete second-quantized theory, or a unique replacement for established gravitational theory.
 
-Our integration pipelines include an automated testing layer (`tests/test_matrix.py`) that guarantees system invariants hold absolute symmetry across any execution environment. Reviewers can independently execute our controlled calibration benchmarks to verify system stability bounds:
-* **Static Verification Simulation Run:** Running our core math script with a zeroed flux injection forces the net energy convergence vector to return an absolute invariant value of exactly `0.000000` across all internal dimensions.
-* **Live Dynamic Phase-Lock Test:** Long-duration execution steps within our cascade module enforce strict boundary constraints, maintaining normalized probability distributions between `0.9999` and `1.0001`.
+The repository includes reproducible tests for the canonical algebra and for numerical structural properties such as gauge covariance, Gauss consistency, overlap chirality, Weyl holonomy, and anomaly bookkeeping. Current CI exercises Python 3.12 and 3.14, a full legacy compatibility suite, container smoke tests, and CodeQL analysis.
 
-This framework reconciles macroscopic phenomena with a completely discrete, absolute 64-bit digital processing grid. Given the current interest in quantized spacetime models and localized web-exposed tensor engines, this work is highly relevant to your audience.
+The most important open scientific questions are stated explicitly in docs/omniverse_design_questions_v0.1.md. They include the emergence of physical units, stable matter, charge quantization, a complete quantum measurement structure, renormalization, the origin of the observed particle spectrum, and independently testable predictions.
 
-The complete software manifest, installation procedures, production ASGI specs, and continuous integration protocols are detailed thoroughly in the repository's root documentation.
+The public repository is source-available under the PolyForm Noncommercial License 1.0.0 for permitted noncommercial use. Commercial use requires a separate Waters Legacy Trust commercial license unless otherwise permitted by applicable law.
 
-Thank you for your time and consideration of our manuscript. I look forward to receiving the reviewers' feedback.
+For the current scientific statement of the project, reviewers should use:
 
-Sincerely,  
+- white_paper.md
+- README.md
+- ARCHITECTURE.md
+- docs/canonical_spec_v0.4.md
+- docs/DOCUMENTATION_STATUS.md
 
-**The Universal Playing Field Research Group**  
-*Waters Legacy Trust Academic Press*  
-Contact: `waterslegacytrust@gmail.com`  
-Repository Manifest: `https://github.com`  
+Historical files and legacy modules are retained for provenance and compatibility but do not override the current canonical specification.
+
+Thank you for considering this work for review. I welcome rigorous criticism, independent reproduction of the mathematical identities, and focused examination of the assumptions connecting the finite architecture to physical observables.
+
+Sincerely,
+
+**Matthew Waters**  
+Waters Legacy Trust  
+waterslegacytrust@gmail.com

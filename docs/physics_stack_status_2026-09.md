@@ -1396,3 +1396,113 @@ The next genuinely unresolved chiral tasks are:
 
 No current repository result should yet be described as a completed anomaly-free
 chiral gauge theory.
+
+---
+
+## September 22 current checkpoint — charged anomalies, product groups, and engineering productization
+
+This checkpoint supersedes older "next task" lists above where later work has already completed them.
+
+### Charged U(1) overlap index and anomaly ledger
+
+Status: **NUMERICALLY VERIFIED DIAGNOSTIC + REPRESENTATION BOOKKEEPING**
+
+Modules:
+
+- src/u1_chiral_anomaly_ledger.py
+- tests/test_u1_chiral_anomaly_ledger.py
+
+The repository now separates:
+
+- local charged overlap-index density;
+- integrated overlap index;
+- cubic U(1) representation coefficient;
+- mixed gravitational-U(1) coefficient;
+- vectorlike cancellation checks.
+
+This is not yet a complete consistent-anomaly derivation.
+
+### Gauge-orbit Weyl measure holonomy
+
+Status: **GEOMETRIC DIAGNOSTIC + NUMERICALLY VERIFIED**
+
+Modules:
+
+- src/u1_weyl_gauge_orbit.py
+- tests/test_u1_weyl_gauge_orbit.py
+
+A charged Weyl subspace is transported along a U(1) gauge orbit and closed with the exact charge-q gauge identification. The determinant phase is basis independent.
+
+The repository does not yet identify this quantity with the full consistent anomaly because the complete fermion-measure prescription remains unresolved.
+
+### Non-Abelian overlap fermions
+
+Status: **NUMERICALLY VERIFIED SMALL-LATTICE REFERENCE**
+
+Modules:
+
+- src/nonabelian_overlap_dirac_lattice.py
+- tests/test_nonabelian_overlap_dirac_lattice.py
+
+Fundamental SU(2) and SU(3) overlap constructions now verify Wilson-kernel Hermiticity, Ginsparg-Wilson chirality, gamma5-Hermiticity, and local gauge covariance.
+
+### Product-group overlap representation
+
+Status: **NUMERICALLY VERIFIED REPRESENTATION TOOL**
+
+Modules:
+
+- src/product_group_overlap_dirac.py
+- tests/test_product_group_overlap_dirac.py
+
+The current product representation supports selected SU(3), SU(2), and U(1) representation combinations.
+
+This tests candidate multiplets. It does not derive the observed Standard Model spectrum.
+
+### Product-group anomaly ledger
+
+Status: **REPRESENTATION-LEVEL BOOKKEEPING + NUMERICALLY VERIFIED**
+
+Modules:
+
+- src/product_group_anomaly_ledger.py
+- tests/test_product_group_anomaly_ledger.py
+
+The ledger tracks supported perturbative coefficients for supplied Weyl spectra and the SU(2) mod-2 global doublet condition.
+
+A Standard Model generation is used only as a correspondence benchmark.
+
+### Spatial, robotics, and digital-twin engineering
+
+Status: **ENGINEERING PRODUCT LAYER**
+
+Modules:
+
+- src/spatial_protocol.py
+- src/spatial_operations_control.py
+- src/robot_adapter.py
+- src/xr_robot_bridge.py
+- src/digital_twin_contract.py
+- src/digital_twin_store.py
+- src/commercial_entitlements.py
+
+These modules do not change the physical theory. They provide bounded command semantics, adapter contracts, telemetry typing, and product packaging around the research engine.
+
+### Current scientific frontier
+
+The highest-priority unresolved scientific tasks are now:
+
+1. define one complete primitive Matrix cell/state ontology and distinguish fundamental, emergent, gauge, and bookkeeping variables;
+2. derive a physical adjacency and locality rule if the 108-state core is repeated spatially;
+3. derive the absolute length, time, energy, and charge scales rather than calibrate them;
+4. derive stable particle-like excitations from the Matrix dynamics;
+5. derive charge quantization and the observed representation spectrum from the architecture;
+6. derive coupling constants and scale running from the nested dynamics;
+7. construct a globally consistent chiral fermion measure and complete local/global anomaly analysis;
+8. construct a genuine second-quantized quantum state space with entanglement and Bell-compatible correlations;
+9. derive or justify a measurement-probability rule;
+10. derive thermodynamic coarse graining, entropy, and the macroscopic arrow of time;
+11. derive cosmological dynamics and initial conditions from the same microscopic laws;
+12. produce at least one independently fixed dimensionless prediction with a clear falsification experiment.
+
+The project is now significantly beyond a classical field simulator, but it remains an incomplete candidate fundamental architecture until these gaps are closed.

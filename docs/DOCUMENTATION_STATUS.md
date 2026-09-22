@@ -1,0 +1,153 @@
+# Universal Matrix Documentation Status
+
+**Author:** Matthew Waters  
+**Steward:** Waters Legacy Trust  
+**Documentation baseline:** White Paper v0.6 / Software v0.4.0  
+**Updated:** September 2026
+
+This file defines the documentation hierarchy for the current repository.
+
+## Authority order
+
+When files disagree, use the following order:
+
+1. executable implementation and tests for the subsystem in question;
+2. `src/canonical_kernel.py` and `tests/test_canonical_kernel.py` for canonical finite mathematics;
+3. `docs/canonical_spec_v0.4.md`;
+4. `white_paper.md`;
+5. `README.md` and `ARCHITECTURE.md`;
+6. current subsystem technical notes in `docs/`;
+7. historical inventories, migration audits, and legacy modules.
+
+A historical file never overrides the current canonical specification or tested implementation.
+
+## Current authoritative documents
+
+| File | Role |
+| --- | --- |
+| `README.md` | Current repository overview, capabilities, licensing, and usage entry point. |
+| `white_paper.md` | Current scientific and mathematical preprint, Version 0.6. |
+| `ARCHITECTURE.md` | Current software and subsystem architecture. |
+| `docs/canonical_spec_v0.4.md` | Canonical finite-kernel specification. |
+| `docs/HOW_TO_USE.md` | Current installation, API, verification, and safety usage guide. |
+| `docs/physics_stack_status_2026-09.md` | Current research-stack status and open scientific work. |
+| `docs/omniverse_design_questions_v0.1.md` | Open generative-design questions and gap ledger. |
+
+## Licensing and governance authority
+
+| File | Role |
+| --- | --- |
+| `LICENSE` | PolyForm Noncommercial License 1.0.0 plus project-required notice. |
+| `NOTICE` | Project licensing and copyright notice. |
+| `COMMERCIAL_LICENSE.md` | Commercial licensing framework. |
+| `COMMERCIAL_LICENSE_AGREEMENT_TEMPLATE.md` | Negotiated proprietary license template. |
+| `CLA.md` | Contributor License Agreement. |
+| `CONTRIBUTING.md` | Contribution rules. |
+| `docs/LICENSING_GUIDE.md` | Plain-language licensing guide. |
+
+## Commercial and engineering product documents
+
+| File | Role |
+| --- | --- |
+| `docs/COMMERCIAL_PRODUCT_SURFACES.md` | Product families and buildout roadmap. |
+| `docs/ROBOTICS_XR_PRODUCT_ARCHITECTURE.md` | Current spatial/robotics/XR/digital-twin product architecture. |
+
+## Current subsystem technical notes
+
+Versioned files such as
+
+`docs/*_v0.1.md`
+
+are subsystem research notes. They remain current only for the subsystem and version they describe. They do not redefine the canonical kernel or imply experimental confirmation.
+
+Examples include:
+
+- gauge and matter notes;
+- reciprocity geometry derivations;
+- Dirac and overlap-fermion notes;
+- Weyl measure and anomaly diagnostics;
+- source and boundary solver notes;
+- nested-scale and polarity notes.
+
+## Historical or provenance documents
+
+The following are retained to preserve development history and should not be treated as current scientific authority:
+
+- `docs/FEATURE_HISTORY.md`;
+- `docs/REPOSITORY_MANIFEST.md`;
+- `docs/repository_audit_2026-09.md` where it describes the repository at the time of that audit;
+- any archived historical presentation material explicitly marked superseded.
+
+Historical terminology can include:
+
+- Z_114 or a 114-state cyclic routing group;
+- SO(13) as physical spacetime;
+- "64-bit spacetime";
+- fixed 3/6/9 physical laws;
+- unverified physical-constant derivations;
+- legacy toroidal, biological, chakra, meridian, or consciousness mappings;
+- older API or hardware claims.
+
+Such terminology is preserved only where needed for provenance or compatibility.
+
+## Naming conventions
+
+Use:
+
+- **108-state core plus six external boundary orientations** for the canonical architecture;
+- **114 labeled positions** only when referring to the total count of core plus external boundary labels;
+- **64-address projection** or **six-bit boundary-state model** rather than "64-bit spacetime";
+- **source-available noncommercial** for the public licensing model;
+- **PolyForm Noncommercial License 1.0.0** for the public license;
+- **Waters Legacy Trust commercial license** for commercial use.
+
+Do not call the current public license OSI open source.
+
+## Scientific claim conventions
+
+Use these labels consistently:
+
+- **Exact finite result**
+- **Model-derived result**
+- **Numerically verified result**
+- **Physical hypothesis**
+- **Experimental engineering interface**
+- **Legacy / compatibility**
+
+Do not turn calibration into derivation, numerical consistency into experimental validation, or a compatibility module into canonical authority.
+
+## Current product flow
+
+The present spatial/robotics stack is:
+
+```text
+XR / desktop operator
+        ↓
+versioned spatial protocol
+        ↓
+spatial command validation
+        ↓
+common robot adapter
+        ↓
+ROS2 / CAN / CNC / OEM adapter
+        ↓
+acknowledgement + robot state
+        ↓
+typed digital twin
+        ↓
+telemetry / history / audit
+```
+
+Real hardware remains fail-closed and requires independent physical safety systems.
+
+## Maintenance rule
+
+Whenever a major subsystem is merged:
+
+1. update `README.md`;
+2. update `ARCHITECTURE.md`;
+3. update `white_paper.md` if the scientific state changed;
+4. update `docs/HOW_TO_USE.md` if the user workflow changed;
+5. update this file if authority or document status changed;
+6. update the relevant subsystem technical note;
+7. add tests that prevent stale licensing or authority claims from reappearing.

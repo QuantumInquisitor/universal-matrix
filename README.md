@@ -3,87 +3,81 @@
 **Author:** Matthew Waters  
 **Steward:** Waters Legacy Trust  
 **Software version:** 0.4.0  
-**White paper:** Version 0.5  
+**White paper:** Version 0.6  
 **Runtime:** Python 3.12+
 
 ![Verification](https://github.com/QuantumInquisitor/universal-matrix/actions/workflows/verification.yml/badge.svg)
 ![Container Pipeline](https://github.com/QuantumInquisitor/universal-matrix/actions/workflows/pipeline_test.yml/badge.svg)
 ![CodeQL](https://github.com/QuantumInquisitor/universal-matrix/actions/workflows/codeql.yml/badge.svg)
 
-Universal Matrix is a modular mathematical, scientific-computing, spatial-operations, robotics, manufacturing, digital-twin, and edge-integration platform built around a finite 108-state canonical core, six external boundary orientations, and a 64-address projection layer.
+Universal Matrix is a modular mathematical, scientific-computing, spatial-operations, robotics, manufacturing, digital-twin, and edge-integration platform built around a finite canonical architecture
 
-It is more than a theory document or a single simulation engine. The repository contains an executable finite mathematical kernel, numerical field solvers, reciprocity-geometry research models, U(1), SU(2), and SU(3) lattice gauge systems, overlap and Ginsparg-Wilson fermion tooling, Weyl measure diagnostics, product-group anomaly bookkeeping, authenticated APIs, Python and JavaScript SDKs, container and Kubernetes deployment assets, observability tooling, 5-axis G-code compilation, robotics and XR/VR prototypes, digital-twin modules, hardware-abstraction interfaces, and enterprise licensing/metering components.
+[
+mathcal A=mathbb Z_{108}sqcup B_6,
+]
 
-The project intentionally separates exact finite mathematics from numerical verification, experimental physical interpretation, commercial software surfaces, and legacy compatibility code. A passing unit test establishes software behavior under tested assumptions. It does not by itself establish a new law of nature or certify production hardware.
+where
+
+[
+B_6={+X,-X,+Y,-Y,+Z,-Z}.
+]
+
+The repository is more than a theory manuscript or a single simulation engine. It contains an executable finite mathematical kernel, numerical field solvers, reciprocity-geometry research models, U(1), SU(2), and SU(3) lattice-gauge systems, overlap and Ginsparg-Wilson fermion tooling, Weyl-measure diagnostics, product-group anomaly bookkeeping, authenticated APIs, Python and JavaScript SDKs, container and Kubernetes deployment assets, observability tooling, G-code and manufacturing utilities, robotics and XR/VR interfaces, digital-twin infrastructure, hardware-abstraction adapters, and commercial entitlement components.
+
+The project deliberately separates exact finite mathematics, numerically verified software behavior, experimental physical interpretation, commercial product surfaces, and legacy compatibility code. A passing test establishes behavior under the tested assumptions. It does not by itself establish a new law of nature, certify hardware, or replace an established physical theory.
 
 ## Project maturity labels
 
 | Status | Meaning |
 | --- | --- |
 | **CANONICAL** | Exact finite definitions and identities of the current mathematical kernel. |
-| **NUMERICALLY VERIFIED** | Software or numerical properties exercised by tests with stated tolerances. |
+| **NUMERICALLY VERIFIED** | Software or numerical properties exercised by tests with defined tolerances. |
 | **EXPERIMENTAL** | Physical, engineering, or interpretive extensions requiring independent validation. |
-| **LEGACY / COMPATIBILITY** | Older interfaces retained for migration, testing, or historical compatibility. |
+| **LEGACY / COMPATIBILITY** | Older modules retained for migration, regression, provenance, or historical compatibility. |
 
-The canonical specification and executable tests take precedence over older descriptive material.
+When files disagree, current executable tests and canonical specifications take precedence over historical prose.
 
-## Canonical mathematical kernel
+## Canonical finite architecture
 
-The canonical architecture is
-
-[
-mathcal A = mathbb Z_{108} sqcup B_6
-]
-
-with
+The canonical translations are
 
 [
-B_6={+X,-X,+Y,-Y,+Z,-Z}.
+T_d(n)=n+dpmod{108}.
 ]
 
-Primary operators include
+The principal operators are
 
 [
-E=T_9,
-qquad
-P=T_{54},
-qquad
-F(n)=107-n,
+E=T_9,qquad P=T_{54},qquad F(n)=107-n.
 ]
 
-with the canonical routing convention
+The synchronized routing condition gives the class
 
 [
-T=T_{21},
+{21,57,93},
 ]
 
-selected from the synchronized class
+and the current canonical convention selects
 
 [
-{21,57,93}
+T=T_{21}
 ]
 
-by the minimal-positive-lift convention.
+by the minimal-positive-lift rule.
 
 Important exact identities include
 
 [
-E^{12}=I,
-qquad
-T^{36}=I,
-qquad
-T^{18}=P,
-qquad
-P^2=I.
+E^{12}=I,qquad T^{36}=I,qquad T^{18}=P,qquad P^2=I.
 ]
 
 The register projection is
 
 [
-pi(n)=7nmod64.
+pi(n)=7nmod 64.
 ]
 
-The 64-address layer is a finite address structure. When represented as six independent binary boundary channels it is naturally a six-bit state space. It is not a claim of a 64-bit physical spacetime.
+The 64-address layer is a finite addressing structure. When represented as six independent binary boundary channels, it is a six-bit state space. It is not a claim of a 64-bit physical spacetime.
 
 **Executable authority**
 
@@ -102,7 +96,7 @@ The canonical engine can:
 - apply interface, polarity, and reflection operators;
 - encode and decode mixed-radix coordinates;
 - compute 64-address projections and carry-aware deltas;
-- enumerate routing cycles, polarity pairs, collisions, and synchronized lifts;
+- enumerate routing cycles, polarity pairs, register collisions, and synchronized routing lifts;
 - exhaustively verify the current finite-kernel identities.
 
 ### Nested polarity and scale dynamics
@@ -110,40 +104,40 @@ The canonical engine can:
 Experimental modules support:
 
 - polarity-sensitive routing;
-- canonical 36-tick phase evolution;
+- a canonical 36-step phase clock;
 - alternating scale orientation;
 - nested self-similar layers;
 - conservative adjacent-scale exchange;
 - neutral-crossing transfer models;
-- source and interaction channels across nested scales.
+- source and interaction channels across micro-to-macro scale layers.
 
-### Open-field and DEC solvers
+### Open-field and discrete-exterior-calculus solvers
 
-The current open-field stack supports:
+The open-field stack supports:
 
-- discrete node, edge, and plaquette cochains;
-- exact (d_1d_0=0) checks;
+- node, edge, and plaquette cochains;
+- exact checks such as (d_1d_0=0);
 - open finite-volume Gauss constraints;
 - nonzero enclosed charge;
-- six-gate boundary flux accounting;
+- six-gate boundary-flux accounting;
 - matrix-free projected conjugate-gradient solving;
 - manufactured-solution tests;
 - source continuity and charge-balance diagnostics.
 
-Representative modules:
+Representative modules include:
 
 - `src/open_gauge_dynamics.py`
 - `src/open_boundary_solver.py`
 - `src/open_polarity_sources.py`
 - `src/unified_engine.py`
 
-### U(1), SU(2), and SU(3) lattice research
+### U(1), SU(2), and SU(3) lattice-gauge research
 
-The repository includes:
+The repository contains tested research implementations for:
 
 - compact U(1) links, plaquettes, Wilson actions, and Hamiltonian evolution;
 - Gauss constraints and weak-field lattice dispersion;
-- SU(2) and SU(3) matrix-valued link systems;
+- SU(2) and SU(3) matrix-valued links;
 - analytic staple forces checked against reference calculations;
 - fundamental matter coupling;
 - gauge/matter backreaction;
@@ -151,10 +145,10 @@ The repository includes:
 
 ### Reciprocity geometry and coupled dynamics
 
-Experimental reciprocity modules include:
+The experimental reciprocity program includes:
 
 - clock-space reciprocity;
-- scalar geometry dynamics;
+- a scalar geometry action;
 - stationary source-universality tests;
 - static spherical vacuum solutions under the stated model;
 - weak-field and higher-order correspondence calculations;
@@ -162,7 +156,7 @@ Experimental reciprocity modules include:
 - matter, U(1), SU(2), and SU(3) geometry coupling;
 - unified variational and backreaction studies.
 
-These are model-derived research results under explicit assumptions. They are not presented as experimentally established replacements for General Relativity.
+These are model-derived results under explicit assumptions. They are not presented as experimentally established replacements for General Relativity.
 
 ### Dirac and chiral lattice tooling
 
@@ -177,10 +171,10 @@ The current fermion stack includes:
 - Ginsparg-Wilson chirality;
 - modified chiral projectors;
 - overlap-index diagnostics;
-- Weyl bases, curvature, holonomy, and Stokes consistency;
+- Weyl bases, projector curvature, closed-loop holonomy, and Stokes consistency;
 - finite Weyl determinants;
 - charged-U(1) anomaly diagnostics;
-- SU(2)/SU(3) fundamental overlap fermions;
+- SU(2) and SU(3) fundamental overlap fermions;
 - (SU(3)	imes SU(2)	imes U(1)) product-representation overlap operators;
 - perturbative product-group anomaly bookkeeping.
 
@@ -188,121 +182,74 @@ The code can test a supplied candidate representation spectrum. It does not curr
 
 ### Research API and SDKs
 
-The secured research API in `src/api_server.py` provides:
+The secured API in `src/api_server.py` provides:
 
 - health reporting;
 - Prometheus metrics;
 - authenticated experimental matrix evaluation;
-- authenticated 5-axis G-code compilation;
+- authenticated G-code compilation;
+- bounded spatial-command validation;
+- commercial-entitlement evaluation;
 - cryptographic audit-ledger access.
 
-No production or demo API credentials are embedded in source.
-
-SDKs:
+SDKs are provided in:
 
 - `sdk/python/universal_matrix_sdk.py`
 - `sdk/js/universalMatrixSdk.js`
 
-The much larger `src/api.py` surface is retained for compatibility and experimental integration. It includes hardware, telemetry, cluster, spatial, optimization, and legacy routes and should not be exposed publicly by default without dedicated security review.
+The larger `src/api.py` surface remains a compatibility and experimental integration layer and should not be exposed publicly without dedicated review.
 
-### Manufacturing and toolpaths
+### Robotics, XR/VR, and digital twins
 
-The platform includes:
+The productized spatial stack now includes:
 
-- authenticated 5-axis G-code generation;
-- parametric toolpath generation;
-- toroidal/winding research paths;
-- CNC/GRBL adapters;
-- toolpath visualization;
-- geometry optimization prototypes;
-- stress/thermal digital-twin utilities.
-
-Some older modules retain historical SO(13), 3/6/9, or toroidal terminology. Those labels are not canonical unless separately implemented and tested.
-
-### Robotics and spatial operations
-
-The repository already contains:
-
-- 6-DoF robotics trajectory prototypes;
-- spatial teleoperation packets;
-- WebXR controller pose ingestion;
-- ROS2-style command bridges;
-- CAN and CNC adapters;
-- swarm coordination prototypes;
-- HIL mocks;
-- tenant/hardware authorization;
-- digital-twin state modules.
-
-The productization branch adds `src/spatial_operations_control.py`, which provides:
-
+- versioned transport-neutral spatial commands;
 - stale-command rejection;
 - replay protection;
 - deadman enforcement;
-- workspace bounds;
-- position, linear-speed, and angular-speed limiting;
+- workspace and motion limits;
 - emergency-stop request propagation;
-- deterministic bounded waypoint generation;
-- explicit separation between command validation and real hardware execution.
+- a common robot-adapter contract;
+- a bounded XR-to-robot bridge;
+- typed measured-versus-derived telemetry;
+- a bounded thread-safe digital-twin history store;
+- ROS2/CAN/CNC and other adapter surfaces.
 
-This is the beginning of a coherent spatial-operations control layer for XR, robotics, digital twins, and industrial interfaces.
+The intended commercial control path is:
 
-### XR / VR and spatial interfaces
-
-Existing surfaces include:
-
-- WebXR pose processing;
-- spatial viewports;
-- teleoperation packets;
-- browser/WebSocket compatibility routes;
-- haptic-command generation;
-- 3D visualization;
-- advanced VR laboratory prototypes;
-- micro-to-macro visualization prototypes;
-- digital-twin telemetry.
-
-These can be developed into remote operations, training, scientific visualization, maintenance, and digital-twin products.
-
-### Digital twins and predictive operations
-
-The repository contains virtual-twin, telemetry, maintenance, stress/thermal, and sensor-ingestion modules that can be developed into:
-
-- machine/equipment twins;
-- robotics state mirrors;
-- manufacturing process monitors;
-- predictive-maintenance dashboards;
-- research-instrument twins;
-- fleet health analytics.
-
-Derived estimates should be clearly separated from directly measured telemetry and validated against real datasets before production claims.
-
-### Hardware and HIL integration
-
-Compatibility and experimental adapters exist for areas including:
-
-- CNC and motion control;
-- CAN and field-bus messaging;
-- sensor ingestion;
-- SDR/RF adapters;
-- FPGA tooling;
-- external QPU adapters;
-- photonic and CUDA adapters;
-- ROS2-style bridges;
-- WebXR/spatial teleoperation;
-- swarm/edge orchestration;
-- hardware-in-the-loop testing.
-
-**Real hardware is fail-closed by default.**
-
-Real hardware mode requires both:
-
-```bash
-export UNIVERSAL_MATRIX_SYSTEM_MODE=REAL
-export UNIVERSAL_MATRIX_ALLOW_HARDWARE=1
+```text
+XR / desktop operator
+        ↓
+versioned spatial protocol
+        ↓
+spatial command validation
+        ↓
+common robot adapter
+        ↓
+ROS2 / CAN / CNC / OEM adapter
+        ↓
+robot acknowledgement + state
+        ↓
+typed digital twin
+        ↓
+telemetry / history / audit
 ```
 
-Individual drivers may require additional ports, devices, libraries, credentials, executors, or independent hardware interlocks.
+Real hardware remains fail-closed by default and requires independent physical safety controls.
 
-Software interlocks are not a substitute for physical safety systems.
+### Manufacturing and toolpaths
+
+The repository includes:
+
+- authenticated 5-axis G-code generation;
+- parametric toolpath generation;
+- winding-path research tools;
+- CNC/GRBL adapters;
+- toolpath visualization;
+- geometry-optimization prototypes;
+- stress/thermal digital-twin utilities.
+
+Historical modules may retain older SO(13), 3/6/9, toroidal, or 114-node terminology. Those terms are not canonical unless a current module and test explicitly establish them.
 
 ### Deployment and operations
 
@@ -316,8 +263,7 @@ The repository includes:
 - Kubernetes manifests;
 - Helm charts;
 - synthetic load testing;
-- GitHub Actions verification;
-- Python 3.12 and 3.14 core matrices;
+- Python 3.12 and 3.14 verification;
 - a full legacy compatibility suite;
 - container smoke testing;
 - CodeQL scanning;
@@ -325,23 +271,19 @@ The repository includes:
 
 ## Licensable product families
 
-The repository can be commercially licensed as a full platform or by product family. The detailed productization roadmap is in:
-
-`docs/COMMERCIAL_PRODUCT_SURFACES.md`
+The platform can be licensed as a whole or by product family.
 
 | Product family | Scope |
 | --- | --- |
-| **Universal Matrix Core** | Canonical kernel, projection/routing logic, SDKs, and private embedding. |
-| **Universal Matrix Spatial** | XR/VR, spatial command protocols, teleoperation, and digital-twin viewing. |
-| **Universal Matrix Robotics** | Bounded commands, trajectory services, ROS2/CAN/CNC adapters, HIL, and swarm research tooling. |
-| **Universal Matrix Manufacturing** | G-code, toolpaths, visualization, optimization, and machine adapters. |
+| **Universal Matrix Core** | Canonical kernel, routing/projection logic, SDK integration, private embedding. |
+| **Universal Matrix Spatial** | XR/VR, spatial commands, teleoperation, digital-twin viewing. |
+| **Universal Matrix Robotics** | Bounded robotics commands, adapter contracts, HIL, ROS2/CAN/CNC integration, swarm research. |
+| **Universal Matrix Manufacturing** | G-code, toolpaths, visualization, optimization, machine adapters. |
 | **Universal Matrix Research** | Gauge, reciprocity, Dirac, overlap/chiral, anomaly, and numerical research stack. |
-| **Universal Matrix Edge** | HAL/device adapters, telemetry, orchestration, deployment, and audit infrastructure. |
-| **Universal Matrix Enterprise** | Private APIs, tenancy, entitlements, metering, deployment support, and negotiated proprietary terms. |
+| **Universal Matrix Edge** | HAL/device adapters, telemetry, orchestration, deployment, audit. |
+| **Universal Matrix Enterprise** | Private APIs, tenancy, entitlements, metering, deployment support, negotiated proprietary terms. |
 
-The branch also contains `src/commercial_entitlements.py`, which models these families independently so a commercial agreement can authorize only the capabilities actually purchased.
-
-These are packaging and engineering boundaries. Legal rights are defined by the governing public license or an executed commercial agreement.
+See `docs/COMMERCIAL_PRODUCT_SURFACES.md` and `docs/ROBOTICS_XR_PRODUCT_ARCHITECTURE.md`.
 
 ## Scientific boundaries
 
@@ -349,7 +291,7 @@ The project does not currently claim to have experimentally established:
 
 - a replacement for General Relativity;
 - a replacement for quantum mechanics or quantum field theory;
-- equivalence with string theory, M-theory, loop quantum gravity, or other external theories;
+- equivalence with string theory, M-theory, loop quantum gravity, or another external theory;
 - exact SI constants derived from the finite kernel;
 - a derived Standard Model particle spectrum;
 - medically validated bio-field or consciousness physics;
@@ -370,11 +312,10 @@ Calibration to a known result must be labeled as calibration rather than derivat
 ```bash
 git clone https://github.com/QuantumInquisitor/universal-matrix.git
 cd universal-matrix
-
 uv sync --group dev --extra scientific
 ```
 
-### Run verification
+### Verify
 
 ```bash
 uv run ruff check src tests
@@ -396,28 +337,16 @@ Install API dependencies:
 uv sync --extra api
 ```
 
-Configure an API key:
+Configure credentials:
 
 ```bash
 export UNIVERSAL_MATRIX_API_KEYS="replace-with-secret:RESEARCH"
 ```
 
-Optional CORS origins:
-
-```bash
-export UNIVERSAL_MATRIX_CORS_ORIGINS="https://example.org"
-```
-
-Start:
+Start locally:
 
 ```bash
 uv run uvicorn src.api_server:app --host 127.0.0.1 --port 8000
-```
-
-Authenticated requests use:
-
-```text
-X-API-Key: replace-with-secret
 ```
 
 Primary secured endpoints include:
@@ -432,98 +361,68 @@ POST /api/v1/commercial/entitlements/evaluate
 GET  /api/v1/audit/ledger
 ```
 
-## Container deployment
+## Hardware safety
+
+Real hardware mode requires both:
 
 ```bash
-export UNIVERSAL_MATRIX_API_KEYS="replace-with-secret:RESEARCH"
-export GRAFANA_ADMIN_PASSWORD="replace-with-strong-password"
-
-docker compose up --build
+export UNIVERSAL_MATRIX_SYSTEM_MODE=REAL
+export UNIVERSAL_MATRIX_ALLOW_HARDWARE=1
 ```
 
-## Repository structure
+Individual drivers can require additional ports, libraries, credentials, executors, or device-specific configuration.
 
-```text
-src/                    Core engine, research models, APIs, drivers, and adapters
-tests/                  Canonical, numerical, physics-stack, compatibility, and property tests
-docs/                   Technical notes, audits, derivations, and product documentation
-sdk/python/             Python client
-sdk/js/                 JavaScript client
-scripts/                Analysis, verification, load-test, and maintenance utilities
-config/                 Runtime/manufacturing configuration
-k8s/                    Kubernetes deployment manifest
-charts/                 Helm chart
-grafana/                Grafana provisioning
-white_paper.md          Single authoritative white paper
-ARCHITECTURE.md         Current software architecture
-CLA.md                  Contributor License Agreement
-CONTRIBUTING.md         Contribution rules
-LICENSE                 Licensing notice
-```
+Software interlocks are not a substitute for independent hardware interlocks, machine guarding, electrical protection, collision protection, qualified supervision, or regulatory compliance.
 
 ## Documentation
 
-Recommended starting points:
+Start with:
 
 - `white_paper.md`
 - `ARCHITECTURE.md`
+- `docs/DOCUMENTATION_STATUS.md`
 - `docs/canonical_spec_v0.4.md`
 - `docs/HOW_TO_USE.md`
 - `docs/physics_stack_status_2026-09.md`
-- `docs/repository_audit_2026-09.md`
 - `docs/COMMERCIAL_PRODUCT_SURFACES.md`
-- `docs/comparative_theory_bridge_audit_v0.1.md`
+- `docs/ROBOTICS_XR_PRODUCT_ARCHITECTURE.md`
+- `docs/omniverse_design_questions_v0.1.md`
 
-## Security and operational safeguards
-
-The secured research API uses environment-provided credentials, constant-time API-key comparison, explicit credentialed CORS origins, metrics, and a cryptographic audit ledger.
-
-The legacy API requires additional care and should remain private unless explicitly configured and reviewed.
-
-The repository also uses CI verification, container smoke tests, and CodeQL analysis. These controls are not a complete production security certification.
+Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
 ## Commercial Licensing & Legal Framework
 
-Universal Matrix follows a **source-available noncommercial + proprietary commercial** dual-licensing model.
+Universal Matrix uses a **source-available noncommercial + proprietary commercial** dual-license model.
 
-### 1. Free noncommercial license
+### Free noncommercial public license
 
 The public source is licensed under the **PolyForm Noncommercial License 1.0.0**.
 
-This permits use, modification, and redistribution for permitted noncommercial purposes under the terms of that license, including:
+The public license covers permitted noncommercial uses such as personal study, hobby work, covered educational use, covered academic/public research, charitable use, and individual research or experimentation without anticipated commercial application.
 
-- personal study;
-- hobby use;
-- individual research and experimentation without anticipated commercial application;
-- educational use;
-- charitable and nonprofit use;
-- use by educational institutions;
-- use by public research organizations;
-- use by public safety, public health, environmental, and government institutions where covered by the license.
+This is source-available, not OSI open source, because general commercial use is restricted.
 
-This public license is **source-available, not OSI open source**, because commercial use is restricted.
+### Commercial license required
 
-### 2. Commercial license required
+Use outside the permitted noncommercial scope requires a separate written Waters Legacy Trust commercial license unless applicable law independently permits the use.
 
-Any use outside the permitted noncommercial scope requires a separate written commercial license from Waters Legacy Trust unless applicable law independently permits the use.
+Commercial licensing is intended for uses including:
 
-Commercial licensing is intended for uses such as:
-
-- revenue-generating SaaS or cloud services;
-- paid consulting or services built around the software;
+- revenue-generating SaaS or hosted services;
+- paid consulting built around the platform;
 - internal commercial business deployment;
 - proprietary products;
 - OEM embedding;
-- closed-source commercial software;
-- commercial robotics systems;
-- commercial XR/VR and digital-twin products;
+- closed-source software;
+- commercial robotics;
+- commercial XR/VR and digital twins;
 - manufacturing and CNC products;
 - commercial hardware integration;
 - enterprise deployment;
 - commercial research and development;
 - redistribution as part of a commercial offering.
 
-Commercial licenses may cover the full platform or selected product families.
+Commercial licenses can cover the full platform or selected product families.
 
 **Commercial licensing contact:** waterslegacytrust@gmail.com
 
@@ -535,76 +434,30 @@ See:
 - `COMMERCIAL_LICENSE.md`
 - `COMMERCIAL_LICENSE_AGREEMENT_TEMPLATE.md`
 
-The README is an overview. The governing public license or an executed commercial agreement controls.
-
 ## Contributing
 
-Contributions are welcome from developers, mathematicians, physicists, numerical researchers, robotics/XR engineers, documentation writers, and reviewers.
+External contributions require acceptance of `CLA.md` unless Waters Legacy Trust expressly waives that requirement in writing.
 
-To preserve the project's dual-licensing structure, external contributors must agree to `CLA.md` before a contribution can be merged.
+Contributors retain ownership of their contributions while granting Waters Legacy Trust the rights needed to distribute, sublicense, dual-license, and commercially license accepted contributions.
 
-Under the current CLA:
+See `CONTRIBUTING.md` for the complete development rules.
 
-- contributors retain ownership of their contributions;
-- contributors grant Waters Legacy Trust the rights needed to use, distribute, sublicense, and dual-license accepted contributions;
-- contributors represent that they have authority to submit the work.
-
-Before opening a pull request:
-
-1. Read `CLA.md` and `CONTRIBUTING.md`.
-2. Create a focused branch.
-3. Keep canonical, numerically verified, experimental, and legacy claims separate.
-4. Add or update tests.
-5. Run the relevant verification suite.
-6. Document assumptions, units, calibration, and falsification criteria for new physical claims.
-7. Do not describe simulated or unbenchmarked hardware behavior as certified production performance.
-
-## Formal Academic Citations & Reference Framework
-
-The older "114-node SO(13)" and "v93.0.0" citation language is superseded by the current canonical architecture and software release.
+## Formal citation
 
 ### Mathematical and physical framework
 
-**Waters, Matthew. (2026). _The Universal Matrix: Canonical Finite Architecture, Reciprocity Field Dynamics, and Chiral Lattice Extensions_. Working Mathematical and Physical Preprint, Version 0.5. Waters Legacy Trust Research Program.**
+**Waters, Matthew. (2026). _The Universal Matrix: Canonical Finite Architecture, Reciprocity Field Dynamics, and Chiral Lattice Extensions_. Working Mathematical and Physical Preprint, Version 0.6. Waters Legacy Trust Research Program.**
 
-Authoritative manuscript:
-
-`white_paper.md`
-
-### Software and computational platform
+### Software
 
 **Waters, Matthew. (2026). _Universal Matrix_ (Version 0.4.0) [Computer software]. QuantumInquisitor GitHub repository. https://github.com/QuantumInquisitor/universal-matrix**
-
-### Suggested BibTeX
-
-```bibtex
-@misc{waters2026universalmatrix,
-  author       = {Matthew Waters},
-  title        = {The Universal Matrix: Canonical Finite Architecture, Reciprocity Field Dynamics, and Chiral Lattice Extensions},
-  year         = {2026},
-  version      = {0.5},
-  note         = {Working Mathematical and Physical Preprint, Waters Legacy Trust Research Program}
-}
-```
-
-```bibtex
-@software{waters2026universalmatrixsoftware,
-  author  = {Matthew Waters},
-  title   = {Universal Matrix},
-  year    = {2026},
-  version = {0.4.0},
-  url     = {https://github.com/QuantumInquisitor/universal-matrix}
-}
-```
 
 ## Contact
 
 **Matthew Waters**  
 **Waters Legacy Trust**  
-Commercial licensing and project inquiries: **waterslegacytrust@gmail.com**
+waterslegacytrust@gmail.com
 
 ## Responsible use
 
-This repository includes experimental physics, engineering, optimization, robotics, manufacturing, XR, and hardware-control research surfaces. Users are responsible for evaluating the suitability, legality, safety, and regulatory requirements of their deployments.
-
-Do not connect unvalidated software directly to hazardous equipment without independent safety engineering, physical interlocks, and qualified supervision.
+This repository includes experimental physics, engineering, optimization, robotics, manufacturing, XR, and hardware-control research surfaces. Users are responsible for evaluating suitability, legality, safety, and regulatory obligations for their own deployments.
