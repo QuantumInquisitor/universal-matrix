@@ -6,6 +6,9 @@ from src.sevenfold_seed_contract import (
     SEED_POSITION_COUNT,
     SeedModel,
     VesicaUniverseAddress,
+    mirror_seed_position,
+    mirror_vesica_address,
+    mirror_vesica_index,
     modes_for,
     reciprocal_pairs,
     seed_vesicas,
@@ -62,6 +65,54 @@ def test_each_vesica_can_recur_as_a_child_universe():
         assert grandchild.path[:1] == child.path
 
 
+def test_seed_mirror_fixes_the_center_and_exchanges_opposite_ring_positions():
+    assert mirror_seed_position(CENTER_POSITION) == CENTER_POSITION
+    assert tuple(mirror_seed_position(position) for position in RING_POSITIONS) == (
+        4,
+        5,
+        6,
+        1,
+        2,
+        3,
+    )
+    assert all(
+        mirror_seed_position(mirror_seed_position(position)) == position
+        for position in range(SEED_POSITION_COUNT)
+    )
+
+
+def test_vesica_mirror_preserves_overlap_kind_and_mirrors_both_endpoints():
+    vesicas = seed_vesicas()
+
+    for index, endpoints in enumerate(vesicas):
+        mirrored_index = mirror_vesica_index(index)
+        expected_endpoints = {mirror_seed_position(position) for position in endpoints}
+
+        assert set(vesicas[mirrored_index]) == expected_endpoints
+        assert (index < 6) == (mirrored_index < 6)
+        assert mirror_vesica_index(mirrored_index) == index
+
+
+def test_same_mirror_recurs_at_every_vesica_address_depth():
+    address = VesicaUniverseAddress((0, 7, 5, 11))
+    mirrored = mirror_vesica_address(address)
+
+    assert mirrored.path == tuple(mirror_vesica_index(index) for index in address.path)
+    assert mirror_vesica_address(mirrored) == address
+
+    for child_index in range(len(seed_vesicas())):
+        assert mirror_vesica_address(address.child(child_index)) == mirrored.child(
+            mirror_vesica_index(child_index)
+        )
+
+
 def test_recursive_address_rejects_unknown_vesica():
     with pytest.raises(ValueError):
         VesicaUniverseAddress((12,))
+
+
+def test_mirror_rejects_unknown_seed_and_vesica_positions():
+    with pytest.raises(ValueError):
+        mirror_seed_position(7)
+    with pytest.raises(ValueError):
+        mirror_vesica_index(12)
