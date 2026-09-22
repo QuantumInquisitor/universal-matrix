@@ -18,7 +18,7 @@ def test_each_model_fills_one_center_and_six_ring_positions(model):
 
     assert len(modes) == SEED_POSITION_COUNT
     assert {mode.position for mode in modes} == {CENTER_POSITION, *RING_POSITIONS}
-    assert modes[CENTER_POSITION].name == "ether"
+    assert modes[CENTER_POSITION].name == "consciousness/ether"
 
 
 def test_models_preserve_both_open_interpretations():
