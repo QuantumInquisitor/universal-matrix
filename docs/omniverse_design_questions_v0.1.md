@@ -1478,3 +1478,67 @@ The corrected implementation uses the same spacing for:
 > perturbations?
 
 This is now a meaningful persistence test rather than a discretization artifact.
+
+
+---
+
+## Charged-matter 3D persistence checkpoint — v0.1
+
+The controlled below-threshold radial branch can now be tested directly in
+three dimensions with one consistent lattice spacing.
+
+### Candidate
+
+The selected continuation endpoint is near
+
+\[
+A_0=1,
+\qquad
+\omega\approx0.80015,
+\qquad
+E/Q<1.
+\]
+
+It is mapped to a cubic lattice with
+
+\[
+h=0.5.
+\]
+
+### Mapping check
+
+Before evolution, the three-dimensional lattice \(E/Q\) is compared with the
+radial value.
+
+This prevents a discretization artifact from being mistaken for improved or
+degraded binding.
+
+### Finite-time survival test
+
+The direct evolution tracks
+
+* relative energy drift,
+* relative charge drift,
+* peak-amplitude ratio,
+* RMS-radius ratio.
+
+The initial finite-window criteria require small conserved-quantity drift and
+less than ten-percent change in peak amplitude and RMS radius.
+
+### Perturbation test
+
+The same candidate is also tested after a smooth localized amplitude
+perturbation.
+
+Survival of both runs is stronger evidence than convergence of the radial BVP
+alone, while still remaining only a finite-time classical numerical result.
+
+### Next creator question
+
+> If the continued charged branch survives both direct and perturbed 3D
+> evolution, where is its true nonlinear stability boundary as a function of
+> charge, frequency, central amplitude, perturbation strength, and coupling to
+> dynamical gauge fields?
+
+That is the next step from one persistent candidate toward a genuine stability
+map.
