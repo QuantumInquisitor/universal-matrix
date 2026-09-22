@@ -2,9 +2,9 @@
 
 > **Template for legal review and negotiated execution.**
 >
-> This document is a complete commercial-license framework, but it is not
-> effective until the parties complete the applicable schedules and execute the
-> agreement. It should be reviewed by qualified counsel for the specific
+> This document is a complete commercial-license framework.
+>
+> This Agreement is not effective until the parties complete the applicable schedules and execute the agreement. It should be reviewed by qualified counsel for the specific
 > transaction, parties, jurisdiction, and regulated-use context.
 
 This Proprietary Commercial License Agreement ("Agreement") is entered into as
