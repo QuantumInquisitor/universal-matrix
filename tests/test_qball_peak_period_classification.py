@@ -28,7 +28,7 @@ def test_t2p5_perturbed_trace_separates_tiny_reversal_pair():
     )
     assert result.minimum_intervals == pytest.approx((1.375,))
     assert result.maximum_intervals == pytest.approx((0.675,))
-    assert result.candidate_period == pytest.approx(1.025)
+    assert result.candidate_period is None
     assert result.interval_relative_spread == pytest.approx(0.7 / 1.025)
     assert result.status == "inconsistent_period_candidates"
 
