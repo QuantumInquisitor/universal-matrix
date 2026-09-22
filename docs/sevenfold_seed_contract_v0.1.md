@@ -3,9 +3,12 @@
 ## Purpose
 
 This contract formalizes the creator hypothesis that the Seed of Life is one
-central mode with six surrounding modes. Ether occupies the center as the
-proposed coherence and cross-scale relation. This is an ontology under test,
-not evidence that a historical mechanical ether has been recovered.
+central mode with six surrounding modes. The book identifies Consciousness as
+the seventh center, the source from which the other six stem and to which they
+return. The present extension treats Ether as the proposed relational medium
+through which that central Consciousness expresses across scales. This is an
+ontology under test, not evidence that consciousness is a physical field or
+that a historical mechanical ether has been recovered.
 
 ## Competing interpretations
 
@@ -28,7 +31,7 @@ positions form three reciprocal axes: (1, 4), (2, 5), and (3, 6).
 
 The local Seed contains twelve explicitly indexed Vesica relationships:
 
-- six overlaps between Ether's center circle and the surrounding circles;
+- six overlaps between the center circle and the surrounding circles;
 - six overlaps between adjacent circles on the surrounding ring.
 
 Under the present creator hypothesis, every indexed Vesica is a universe
@@ -46,13 +49,15 @@ circulation through the substrate rather than replacing it.
 ## Exact software properties
 
 - every interpretation contains exactly one center and six ring positions;
-- Ether remains the center in all interpretations;
+- Consciousness/Ether remains the dual-aspect center in all interpretations;
 - the ring has exactly three opposite reciprocal axes;
 - the local neighborhood has twelve unique Vesica relationships;
 - every Vesica address can extend recursively by another valid child index.
 
 ## Open physical questions
 
+- whether Consciousness and Ether are distinct, dual aspects, or different
+  descriptions of one center;
 - whether Ether corresponds to any measurable field or vacuum property;
 - whether Metal and Crystal are fundamental modes or emergent expressions;
 - whether the two modes encode polarity, material organization, or both;
