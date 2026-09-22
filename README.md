@@ -381,6 +381,7 @@ Start with:
 - `white_paper.md`
 - `ARCHITECTURE.md`
 - `docs/DOCUMENTATION_STATUS.md`
+- `docs/CURRENT_REPOSITORY_MANIFEST.md`
 - `docs/canonical_spec_v0.4.md`
 - `docs/HOW_TO_USE.md`
 - `docs/physics_stack_status_2026-09.md`
