@@ -48,6 +48,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/qball_highres_persistence_stage3_v0.1.md` | Current 250-step duration-scaling test on the same 91^3 threshold-preserving grid. |
 | `docs/qball_highres_time_scaling_v0.1.md` | Current diagnostic of conservation and structural time scaling across the first three high-resolution persistence stages. |
 | `docs/qball_highres_persistence_stage4_v0.1.md` | Current 500-step persistence test selected by the prior high-resolution time-scaling diagnostic. |
+| `docs/qball_highres_timeseries_v0.1.md` | Current in-run sampled diagnostic for monotonic, turning, or oscillatory response on the 91^3 high-resolution persistence grid. |
 
 ## Licensing and governance authority
 
