@@ -19,6 +19,8 @@ jobs:
     name: Core / Python ${{ matrix.python }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      UV_PYTHON: ${{ matrix.python }}
     strategy:
       fail-fast: false
       matrix:
@@ -94,6 +96,8 @@ jobs:
     name: Full legacy compatibility suite
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    env:
+      UV_PYTHON: "3.12"
 
     steps:
       - uses: actions/checkout@v7
@@ -117,6 +121,8 @@ jobs:
     name: Q-ball long time series / Python 3.12
     runs-on: ubuntu-latest
     timeout-minutes: 35
+    env:
+      UV_PYTHON: "3.12"
 
     steps:
       - uses: actions/checkout@v7
