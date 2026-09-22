@@ -52,6 +52,7 @@ def test_report_keeps_energetic_and_persistence_results_separate():
 
     report = format_scan_report(scan)
 
+    assert "threshold_comparison_valid_after_mapping=False" in report
     assert "below_radial_E_over_Q=0.9900000000" in report
     assert "below_perturbed_survival=False" in report
     assert "above_radial_E_over_Q=1.0010000000" in report
