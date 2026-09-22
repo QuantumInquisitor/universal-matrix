@@ -1839,3 +1839,42 @@ The new intercept (c_0) is the first controlled joint diagnostic for the
 If yes, the persistence experiment should be rerun in a threshold-preserving
 mapping regime. If not, the mapping energy functional itself needs further
 reconciliation with the radial discretization.
+
+
+---
+
+## Q-ball threshold-preserving finite-grid checkpoint — v0.1
+
+The joint mapping extrapolation predicts that a sufficiently fine and large
+finite Cartesian grid should recover the same above-threshold energetic
+classification as the refined radial solution.
+
+A direct confirmation is now defined at
+
+[
+h=0.175,
+qquad
+L=7.875,
+qquad
+91^3 {m sites}.
+]
+
+The calculation records the actual mapped (E/Q) and compares it with both the
+radial value and the joint-fit prediction.
+
+### Decision rule
+
+If the finite grid preserves the radial threshold side, it becomes the first
+candidate grid for a high-resolution direct and perturbed persistence run.
+
+If it does not, the joint fit must be extended or the target grid refined before
+time evolution is attempted.
+
+### Next creator question
+
+> Does a finite Cartesian grid that is independently predicted to preserve the
+> radial energetic threshold side actually do so before nonlinear evolution is
+> run?
+
+This keeps extrapolation, finite-grid energetics, and dynamical persistence as
+three distinct evidence layers.
