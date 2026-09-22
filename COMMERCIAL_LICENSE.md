@@ -2,25 +2,20 @@
 
 ## Purpose
 
-Universal Matrix is publicly available under the GNU Affero General Public
-License, version 3 or later (AGPL-3.0-or-later). Waters Legacy Trust also offers
-separate proprietary commercial licenses for customers who need terms different
-from the public AGPL option.
+Universal Matrix is publicly available under the PolyForm Noncommercial License
+1.0.0 for permitted noncommercial purposes. Waters Legacy Trust also offers
+separate proprietary commercial licenses for customers whose use is commercial
+or who require proprietary rights.
 
 This document is an informational commercial-licensing framework. It is not,
 by itself, a signed commercial license and does not grant proprietary rights.
 
-## Public AGPL option
+## Public noncommercial option
 
-The public AGPL option permits commercial and noncommercial use subject to the
-AGPL's conditions.
+The public source-available license permits covered noncommercial use under the
+PolyForm Noncommercial License 1.0.0.
 
-In particular, the AGPL is a strong copyleft license. Depending on the way the
-software is modified, combined, conveyed, or offered for remote network
-interaction, source-code and license obligations may apply.
-
-Organizations should review the actual AGPL text and obtain legal advice for
-their deployment.
+It does not grant general commercial-use rights.
 
 ## Proprietary commercial option
 
@@ -86,7 +81,7 @@ Use of the public repository does not automatically create a proprietary
 commercial license.
 
 Likewise, software entitlements or feature flags implemented in code are
-technical controls only. Legal rights arise from the governing AGPL terms or
+technical controls only. Legal rights arise from the governing PolyForm Noncommercial public license terms or
 from an executed commercial agreement.
 
 ## Third-party software
@@ -110,7 +105,7 @@ logos, product-family names, or other source identifiers.
 
 Any patent rights, if applicable, should be addressed expressly in the executed
 commercial agreement. This informational document does not grant a separate
-patent license beyond rights, if any, arising under the public AGPL option.
+patent license beyond rights, if any, arising under the public PolyForm Noncommercial public license option.
 
 ## Safety-critical and regulated use
 
