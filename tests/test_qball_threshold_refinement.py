@@ -20,7 +20,7 @@ def refined():
 def test_refinement_reduces_crossing_bracket(refined):
     # Coarse branch brackets the crossing between 0.9 and 1.0.
     assert refined.bracket_width < 0.1
-    assert refined.bracket_width <= pytest.approx(0.004, abs=1e-12)
+    assert refined.bracket_width <= 0.004000000001
     assert 0.9 < refined.crossing.interpolated_amplitude < 1.0
 
 
