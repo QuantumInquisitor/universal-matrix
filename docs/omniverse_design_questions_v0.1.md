@@ -1242,3 +1242,105 @@ higher derivatives, or multi-field coupling.
 > charge, and controlled energy drift?
 
 This moves the engine from existence of profiles to dynamical survival.
+
+
+---
+
+## Charged-lump existence-window checkpoint — v0.1
+
+The time-harmonic charged scalar sector now has an exact necessary localization
+window in `src/qball_existence_window.py`.
+
+For
+
+\[
+U(\rho)
+=
+m^2\rho
++
+\lambda_4\rho^2
++
+\lambda_6\rho^3,
+\]
+
+a zero-vacuum time-harmonic lump requires
+
+\[
+\min_{\rho>0}
+\frac{U(\rho)}{\rho}
+<
+\omega^2
+<
+m^2.
+\]
+
+For the default repository potential,
+
+\[
+U(\rho)
+=
+\rho
+-
+2\rho^2
++
+\rho^3,
+\]
+
+the ratio is
+
+\[
+\frac{U(\rho)}{\rho}
+=
+(1-\rho)^2.
+\]
+
+Its minimum is zero at
+
+\[
+\rho=1.
+\]
+
+Therefore the necessary frequency interval is
+
+\[
+\boxed{
+0<\omega^2<1.
+}
+\]
+
+Equivalently,
+
+\[
+0<\omega<1.
+\]
+
+The asymptotic decay rate is
+
+\[
+\mu_\infty
+=
+\sqrt{1-\omega^2}.
+\]
+
+### Numerical consequence
+
+A radial boundary-value solution that converges outside
+
+\[
+0<\omega<1
+\]
+
+is not on the intended localized positive-frequency branch, even if the solver
+reports convergence.
+
+This gives the continuation solver a hard analytic branch filter.
+
+### Next creator question
+
+> Can the radial solver be upgraded from isolated Gaussian guesses to numerical
+> continuation along a converged nodeless branch, while enforcing the analytic
+> frequency window and tracking \(E/Q\), charge, virial residual, and
+> persistence?
+
+That is the next numerical reliability step before interpreting any charged
+localized branch as physically significant.
