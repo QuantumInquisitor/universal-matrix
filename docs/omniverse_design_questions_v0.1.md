@@ -1344,3 +1344,77 @@ This gives the continuation solver a hard analytic branch filter.
 
 That is the next numerical reliability step before interpreting any charged
 localized branch as physically significant.
+
+
+---
+
+## Radial charged-matter continuation checkpoint — v0.1
+
+The charged radial solver now has branch continuation in
+`src/radial_matter_continuation.py`.
+
+### Numerical reliability change
+
+Instead of solving every central amplitude from an unrelated Gaussian guess,
+the new workflow:
+
+1. solves one trusted starting point,
+2. uses each accepted solution to seed the next amplitude,
+3. enforces solver convergence,
+4. enforces nodelessness,
+5. enforces the analytic window \(0<\omega<1\),
+6. enforces a small relative virial residual,
+7. and only then permits a point to seed the next solve.
+
+### Default branch
+
+For
+
+\[
+A_0
+=
+0.5,,
+0.6,,
+0.7,,
+0.8,,
+0.9,,
+1.0,
+\]
+
+the tracked branch remains converged, nodeless, inside the analytic frequency
+window, and virially controlled.
+
+The frequency decreases smoothly along the branch and reaches approximately
+
+\[
+\omega(A_0=1)
+\approx
+0.80015.
+\]
+
+At that point,
+
+\[
+E/Q
+\approx
+0.9873
+<
+m_{\rm free}=1.
+\]
+
+### Interpretation boundary
+
+This is a stronger classical localization candidate than an isolated BVP
+solution because branch identity is controlled.
+
+It is still not proof of nonlinear dynamical stability.
+
+### Next creator question
+
+> Does the continued below-threshold point remain localized under direct
+> three-dimensional time evolution, including small perturbations, while
+> maintaining bounded radius, bounded peak amplitude, conserved charge, and
+> controlled energy drift?
+
+The repository already contains the required persistence diagnostics, so this
+can now be tested directly.
