@@ -619,6 +619,89 @@ repository are interpreted as extensions of this minimal local structure.
 
 ---
 
+## 10B. Canonical polarity–phase reduction
+
+The exact canonical polarity branch
+
+\[
+p\in\{0,1\}
+\]
+
+can be encoded by the sign
+
+\[
+(-1)^p
+\]
+
+or, when the local phase is independent of canonical polarity, by the effective
+phase
+
+\[
+\phi_{\rm eff}
+=
+\phi+\pi p.
+\]
+
+This yields
+
+\[
+(-1)^{p_x+p_y}
+\sin(
+\phi_y-\phi_x+\theta_{xy}
+)
+=
+\sin(
+\phi_{{\rm eff},y}
+-
+\phi_{{\rm eff},x}
++
+\theta_{xy}
+).
+\]
+
+Therefore an explicit polarity multiplier and a branch-shifted effective phase
+are not independent descriptions when they refer to the same canonical
+\(T_{54}\) branch.
+
+The same reduction connects the minimal rotor model to the existing complex
+matter sector. For equal amplitude \(R\),
+
+\[
+\left|
+e^{i\theta_{xy}}\Phi_y-\Phi_x
+\right|^2
+=
+2R^2
+\left[
+1-\cos\Delta_{xy}
+\right].
+\]
+
+Thus the rotor link interaction is the exact fixed-amplitude limit of the
+current complex matter gradient, with
+
+\[
+K=2R^2
+\]
+
+under the present normalization.
+
+The canonical routing identity
+
+\[
+T^{18}=P
+\]
+
+also advances the polarity clock by \(\pi\). Consequently, a model in which
+phase already denotes the canonical polarity clock must not apply an additional
+copy of the same branch flip as an independent sign factor.
+
+This reduction removes one source of redundant polarity bookkeeping but does
+not determine whether canonical polarity physically couples to every matter
+sector.
+
+---
+
 ## 11. Reciprocity geometry
 
 The current gravity-like correspondence is based on four explicit premises:
