@@ -1911,3 +1911,37 @@ After stage 1:
 
 The answer determines whether the next step is duration scaling or numerical
 stability diagnosis.
+
+
+---
+
+## Q-ball high-resolution persistence stage-2 checkpoint — v0.1
+
+The same threshold-preserving finite grid and perturbation are now evolved for
+four times the Stage-1 duration:
+
+[
+100 {m steps},qquad dt=0.001,qquad t=0.1.
+]
+
+No grid, energetic, or perturbation parameter is changed.
+
+### Comparison target
+
+Stage 2 is evaluated against Stage 1 using the same:
+
+- energy drift;
+- charge drift;
+- peak-amplitude ratio;
+- RMS-radius ratio;
+- direct survival;
+- perturbed survival.
+
+### Next creator question
+
+> Does the localized state remain coherent as duration increases while all
+> other numerical and physical parameters are held fixed?
+
+If the Stage-2 changes remain small and controlled, the next step is another
+duration increase. If they grow unexpectedly, the duration scaling itself
+becomes the object of study.
