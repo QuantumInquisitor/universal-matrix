@@ -134,7 +134,7 @@ jobs:
         run: uv sync --group test --extra scientific
 
       - name: Focused long-timeseries diagnostic tests
-        run: uv run pytest -q tests/test_qball_highres_timeseries_t1p5.py tests/test_qball_highres_timeseries_t2.py tests/test_qball_highres_timeseries_t2p5.py
+        run: uv run pytest -q tests/test_qball_highres_timeseries_t1p5.py tests/test_qball_highres_timeseries_t2.py tests/test_qball_highres_timeseries_t2p5.py tests/test_qball_peak_period_classification.py
 
       - name: Q-ball high-resolution in-run time series t2p5
         run: uv run python -m src.qball_highres_timeseries_t2p5
