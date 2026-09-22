@@ -31,17 +31,17 @@ T = T21     order 36
 
 Every finite cyclic orbit `Z_N` has an exact discrete Fourier basis
 
-[
+\\[
 psi_k(n)=N^{-1/2}exp(2pi i kn/N).
-]
+\\]
 
 This is a legitimate finite analogue of mode decomposition on a compact circle.
 
 For the routing orbit the selected step has winding
 
-[
+\\[
 36(21)/108=7.
-]
+\\]
 
 The inverse routing has winding (-7) when represented by the signed displacement (-21).
 
@@ -85,9 +85,9 @@ The Matrix has a finite graph once routing edges and optional register-coupling 
 
 A future experimental adapter could assign
 
-[
+\\[
 j_ein{0,	frac12,1,	frac32,ldots}
-]
+\\]
 
 to Matrix edges and intertwiners to vertices, then compute standard spin-network-inspired combinatorial observables.
 
@@ -101,15 +101,15 @@ A cyclic state space cannot itself be a causal set because a causal order must n
 
 However, the **time-unwrapped history** can be:
 
-[
+\\[
 e_t=(t,n_t).
-]
+\\]
 
 Define
 
-[
+\\[
 e_tprec e_s quad	ext{iff}quad t<s.
-]
+\\]
 
 Core states may repeat after a 36-step closure while the events remain distinct because their time labels differ.
 
@@ -125,17 +125,17 @@ Maldacena's AdS/CFT proposal relates certain conformal field theories to string/
 
 The nested Matrix hierarchy
 
-[
+\\[
 mathcal T_0leftrightarrowmathcal T_1leftrightarrowcdots
-]
+\\]
 
 therefore has a legitimate **scale-network analogy**.
 
 The engine now exposes nearest-neighbor scale edges
 
-[
+\\[
 (0,1),(1,2),ldots.
-]
+\\]
 
 ### What is missing for holography
 
@@ -157,22 +157,22 @@ In lattice gauge theory, group-valued variables live on oriented links and Wilso
 
 The Matrix already has oriented routing links. We can attach a U(1) variable
 
-[
+\\[
 U_{ij}=e^{i	heta_{ij}}.
-]
+\\]
 
 Under a local gauge transformation
 
-[
+\\[
 	heta_{ij}ightarrow
 	heta_{ij}+alpha_i-alpha_j,
-]
+\\]
 
 the closed-loop product
 
-[
+\\[
 W(C)=prod_{(ij)in C}U_{ij}
-]
+\\]
 
 is invariant.
 
@@ -255,27 +255,27 @@ The comparative audit does not show that existing quantum-gravity theories prove
 
 It does show that several independently developed mathematical tools can be used productively:
 
-[
+\\[
 oxed{	ext{cyclic modes + winding}}
-]
+\\]
 
 from compact-space mathematics,
 
-[
+\\[
 oxed{	ext{link variables + holonomy}}
-]
+\\]
 
 from lattice gauge theory,
 
-[
+\\[
 oxed{	ext{time-unwrapped partial order}}
-]
+\\]
 
 from causal-set thinking, and
 
-[
+\\[
 oxed{	ext{scale-network structure}}
-]
+\\]
 
 from tensor-network approaches.
 
