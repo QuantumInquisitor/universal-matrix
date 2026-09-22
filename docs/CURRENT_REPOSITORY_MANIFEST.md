@@ -31,8 +31,9 @@ Current experimental modules include:
 - `src/canonical_polarity_clock.py`
 - `src/scale_transfer.py`
 - `src/canonical_scale_transfer.py`
+- `src/matrix_local_transition.py`
 
-The current ontology distinguishes exact canonical address structure from candidate physical variables.
+The current ontology distinguishes exact canonical address structure from candidate physical variables. The local-transition layer adds the minimal gauge-covariant nearest-neighbor Hamiltonian used to test locality, conservative exchange, and the weak-field wave limit.
 
 ## 3. Open field and gauge systems
 
