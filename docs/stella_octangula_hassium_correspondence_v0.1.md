@@ -60,6 +60,60 @@ addresses while preserving these distance shells. The existing projection
 from 108 core states still has its established collision pattern: 44 register
 addresses receive two core states and 20 receive one.
 
+## One mirror tested across representations
+
+For this contract, “mirror” has a precise meaning: central inversion through
+the shared origin,
+
+`M(x, y, z) = (−x, −y, −z)`.
+
+This is a point reflection, not an arbitrary plane reflection. It has
+determinant `−1`, exchanges the two tetrahedra, sends every boundary gate to
+its opposite, and satisfies `M(M(v)) = v` exactly. With the canonical
+three-bit vertex encoding, antipodal vertices have complementary indices.
+Mirroring both vertices in a register pair therefore gives the exact address
+law
+
+`M64(a) = 63 − a`.
+
+The mirror preserves every pair's relative signature and Hamming-distance
+shell. Its 64-address permutation is also exactly the action of the
+all-axis-reversing member of the 48 signed frames.
+
+The same half-turn is now applied independently at every level of a nested
+Vesica address. The Seed center remains fixed, ring positions `1, 2, 3` swap
+with `4, 5, 6`, spoke overlaps remain spokes, and ring overlaps remain ring
+overlaps. Mirroring a parent and then entering the mirrored child is identical
+to entering a child and mirroring the resulting address. This is a testable
+self-similarity rule rather than a visual resemblance.
+
+This discrete mirror complements the existing spiral-cone reciprocal mirror
+`u -> −u`. They are two defined actions on different state spaces and are not
+silently treated as the same physical operation.
+
+## Flower of Life as a projection hypothesis
+
+There is an exact geometric result behind the proposed “shadow” idea. View the
+stella octangula along the cube body diagonal `(1, 1, 1)` and orthographically
+project onto the perpendicular plane. The two opposite tips on that viewing
+axis coincide at the projected center. The other six tips form a regular
+hexagon. After one uniform rescaling, the seven unique projected points are
+exactly a center plus six equally spaced neighbors, the circle-center layout
+of a Seed of Life.
+
+The six vertices of the internal octahedron project to a second, aligned
+regular hexagon at exactly half the outer radius. Thus the compound contains a
+literal inner/outer two-scale hexagonal relation in this projection. Central
+inversion commutes with projection: projecting a mirrored point gives the
+planar opposite of the original projection.
+
+What the projection proves is a seven-point center geometry. Circles do not
+appear automatically. Drawing equal circles on those centers produces the
+Seed construction, and continuing the same hexagonal circle lattice produces
+a Flower of Life pattern. That continuation is a defined geometric
+construction and a promising model hypothesis, not evidence that the Flower
+is physically emitted as a shadow by an Omniverse structure.
+
 ## The phrase “64 tetrahedron grid” remains underspecified
 
 Online diagrams called a “64 tetrahedron grid” do not provide one universally
