@@ -770,3 +770,39 @@ This does not assign a physical lattice spacing and therefore does not yet solve
 The next highest-leverage question is:
 
 > What is the minimal transition law between neighboring Matrix cells that can simultaneously support causal propagation, conservative exchange, gauge transport, and a stable long-distance continuum?
+
+
+---
+
+## Local-law checkpoint — v0.1
+
+The first ontology-to-dynamics bridge is now implemented in src/local_transition_kernel.py.
+
+The rule is local, reversible, gauge invariant, edge-orientation consistent, and conserves pair quadratic content.
+
+It combines two channels:
+
+\[
+G_{ij}
+=
+g_\phi\sin(\phi_j-\phi_i+\theta_{ij})
++
+g_p\frac{\sigma_i-\sigma_j}{2}
+\cos(\phi_j-\phi_i+\theta_{ij}).
+\]
+
+The polarity term can encode the alternating micro-to-macro orientation hypothesis without introducing or destroying local quadratic content.
+
+### What this answers
+
+The model now has an explicit candidate answer to:
+
+> What is the minimum rule by which neighboring Matrix cells exchange state?
+
+### What remains open
+
+The coefficients remain undetermined, the physical update time is unknown, and no claim is made that this law is electromagnetism or another established interaction.
+
+### Next creator question
+
+> When this edge law acts throughout the repeated Matrix complex, which normal modes and localized excitations are dynamically stable, and what long-wavelength dispersion relation emerges?
