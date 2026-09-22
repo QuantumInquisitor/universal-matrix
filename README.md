@@ -111,6 +111,28 @@ Experimental modules support:
 - neutral-crossing transfer models;
 - source and interaction channels across micro-to-macro scale layers.
 
+### Minimal local Matrix transition law
+
+The ontology-level transition layer now provides a minimal six-neighbor
+Hamiltonian for candidate repeated Matrix cells. It uses site phase and
+conjugate momentum with compact transport phase on links.
+
+Internally tested properties include:
+
+- strict nearest-neighbor locality;
+- gauge-invariant interaction energy;
+- pairwise conservative momentum exchange;
+- a weak-field graph-Laplacian wave limit;
+- dimensionless characteristic speed
+  \[
+  c_{\rm lat}=\sqrt{\kappa/I}.
+  \]
+
+This is an experimental bridge from primitive ontology to the richer matter and
+gauge systems. It does not determine physical length or time units.
+
+See \`docs/matrix_local_transition_v0.1.md\`.
+
 ### Open-field and discrete-exterior-calculus solvers
 
 The open-field stack supports:
