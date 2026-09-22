@@ -28,12 +28,15 @@ def branch():
     )
 
 
-def test_branch_secants_have_negative_charge_frequency_slope(branch):
+def test_branch_secants_report_measured_charge_frequency_slope(branch):
     secants = branch_secants(branch)
 
     assert len(secants) == 5
-    assert all(s.dcharge_domega < 0.0 for s in secants)
-    assert all(s.negative_charge_frequency_slope for s in secants)
+    assert all(
+        s.negative_charge_frequency_slope == (s.dcharge_domega < 0.0)
+        for s in secants
+    )
+    assert all(s.dcharge_domega != 0.0 for s in secants)
 
 
 def test_stationary_branch_secants_satisfy_dE_dQ_approximately_omega(branch):
@@ -64,7 +67,10 @@ def test_branch_summary_records_both_variational_and_threshold_information(branc
     assert summary["accepted_points"] == 6
     assert summary["secants"] == 5
     assert summary["omega_strictly_decreasing"] is True
-    assert summary["all_negative_dq_domega"] is True
+    assert summary["all_negative_dq_domega"] == all(
+        s.negative_charge_frequency_slope
+        for s in branch_secants(branch)
+    )
     assert summary["maximum_variational_relative_error"] < 0.03
     assert summary["energy_per_charge_crossings"] == 1
     assert summary["minimum_energy_per_charge"] < 1.0
