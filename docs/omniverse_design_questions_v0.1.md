@@ -680,3 +680,38 @@ If only ten questions are answered next, they should be:
 10. What experiment could falsify that prediction?
 
 These ten answers would determine whether the current architecture can become a candidate physical theory rather than only a rich discrete mathematical model.
+
+---
+
+## Current progress map — September 22, 2026
+
+The original 67 questions remain useful, but several are no longer blank. The table below records the current state so future work starts at the actual frontier.
+
+| Question area | Current state |
+| --- | --- |
+| 1-3 Primitive ontology and repeated-cell meaning | **OPEN / HIGHEST PRIORITY.** The repository has several partial state structures but no single authoritative primitive physical state. |
+| 4-8 Space and geometry | **PARTIAL.** Six oriented directions and reciprocity geometry are implemented, but the emergence of three macroscopic dimensions, physical distance, continuum refinement, and isotropy are not derived from the finite kernel. |
+| 9-12 Time and causality | **PARTIAL.** Hamiltonian evolution and a reciprocity causal cone exist. The origin of physical time, the arrow of time, absolute time units, and emergent Lorentz symmetry remain open. |
+| 13-18 Matter | **PARTIAL CORRESPONDENCE.** Scalar matter, Dirac spinors, chiral projectors, and gauge representations exist. Stable particle-like excitations, mass spectrum, charge quantization, and exclusion as emergent Matrix results remain open. |
+| 19 U(1) structure | **IMPLEMENTED AS A GAUGE SECTOR, NOT DERIVED.** |
+| 20 Non-Abelian interactions | **IMPLEMENTED FOR SU(2) AND SU(3), NOT DERIVED FROM THE FINITE KERNEL.** |
+| 21-22 Couplings and running | **OPEN.** Couplings are inputs; renormalization-group emergence from scale nesting is not derived. |
+| 23-29 Gravity-like sector | **SUBSTANTIAL PARTIAL ANSWER.** A reciprocity scalar action, universal stationary source result, redshift/trajectory correspondence, higher-order predictions, and dynamical matter/gauge backreaction exist. The reciprocity premises and observed tensor gravitational-wave sector are not derived from the canonical kernel. |
+| 30-35 Quantum behavior | **PARTIAL MATHEMATICAL TOOLING.** Complex spinors, overlap fermions, Weyl geometry, and determinants exist. Born rule, measurement outcomes, full composite Hilbert-space dynamics, and Bell/CHSH reproduction remain open. |
+| 36-38 Constants and units | **OPEN.** The finite architecture remains dimensionless and measured dimensional constants remain calibrated inputs. |
+| 39-45 Vacuum and cosmology | **OPEN.** No unique ground state, expansion law, dark-sector derivation, or complete compact-object cosmology is established. |
+| 46-49 Thermodynamics/information | **OPEN.** No canonical microscopic entropy or thermodynamic coarse-graining law has been derived. |
+| 50-54 Nested scales | **PARTIAL.** Alternating scale orientation and conservative exchange are implemented as explicit models. The scale ratio and inter-scale transfer law are not uniquely derived. |
+| 55-57 Initial conditions | **OPEN.** |
+| 58-60 Classical emergence | **OPEN.** |
+| 61-67 Direct reality checks | **PARTIAL PREPARATION.** The repository contains falsifiable reciprocity and lattice-dispersion targets, but an independently fixed no-fit laboratory prediction remains a central requirement. |
+
+### Revised first question to answer
+
+The highest-leverage next step is Question 1:
+
+> **What is the primitive state of one Matrix cell, and which quantities are fundamental rather than derived, gauge, or bookkeeping?**
+
+Until this is fixed, later questions about particles, scale transitions, continuum limits, entropy, and cosmology can silently use incompatible state definitions.
+
+The next engine build should therefore define an explicit ontology contract before adding another physical sector.
