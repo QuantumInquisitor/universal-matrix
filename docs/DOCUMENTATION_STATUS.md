@@ -49,6 +49,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/qball_highres_time_scaling_v0.1.md` | Current diagnostic of conservation and structural time scaling across the first three high-resolution persistence stages. |
 | `docs/qball_highres_persistence_stage4_v0.1.md` | Current 500-step persistence test selected by the prior high-resolution time-scaling diagnostic. |
 | `docs/qball_highres_timeseries_v0.1.md` | Current in-run sampled diagnostic for monotonic, turning, or oscillatory response on the 91^3 high-resolution persistence grid. |
+| `docs/qball_highres_timeseries_t1_v0.1.md` | Current sampled extension through t=1.0 with extrema-time diagnostics. |
 
 ## Licensing and governance authority
 
