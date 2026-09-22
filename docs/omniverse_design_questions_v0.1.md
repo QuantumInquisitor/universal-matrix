@@ -2201,3 +2201,39 @@ independent repeat before assigning a full period.
 
 If it does not appear, the response should be treated as a slow recovery rather
 than forced into a periodic model.
+
+
+---
+
+## Q-ball high-resolution sampled extension to t=2.5 — v0.1
+
+The same threshold-preserving (91^3) state is now sampled through
+
+[
+t=2.5
+]
+
+with unchanged grid, timestep, perturbation, and 25-step cadence.
+
+### New evidence
+
+Turning events now include their measured peak or radius value, not only time
+and type.
+
+The engine also reports:
+
+- minimum-to-minimum peak intervals;
+- maximum-to-maximum peak intervals;
+- adjacent turning-event amplitude swings.
+
+### Next creator question
+
+> Do repeated same-kind perturbed peak extrema emerge by (t=2.5) strongly
+> enough to support a full-period candidate, and are the closely spaced turns
+> near (t=1.6) to (1.8) dominant motion or only small modulation?
+
+If repeated same-kind extrema appear, the next analysis should compare their
+intervals and amplitudes for consistency before assigning a period.
+
+If repeated radius extrema also appear, the peak-radius phase relation becomes
+the next target.
