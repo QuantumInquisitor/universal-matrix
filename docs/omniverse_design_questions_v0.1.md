@@ -1722,3 +1722,40 @@ changes sides.
 This means the next numerical task is not merely to search for a persistence
 failure. It is also to improve or extrapolate the radial-to-Cartesian mapping
 near the energetic boundary so that the comparison is physically meaningful.
+
+
+---
+
+## Q-ball radial-to-Cartesian mapping convergence checkpoint — v0.1
+
+The first threshold persistence scan showed that a near-threshold radial
+classification can change after discretization onto the 3D Cartesian lattice.
+
+A dedicated convergence audit now tests the accepted radial point immediately
+above (E/Q=m_{\rm free}) across increasingly resolved centered grids.
+
+The audit records:
+
+- grid spacing;
+- physical half-width;
+- Cartesian (E/Q);
+- relative difference from radial (E/Q);
+- whether the energetic threshold side is preserved.
+
+### Decision rule
+
+If refined grids preserve the radial threshold side, rerun the persistence
+comparison only in that mapping regime.
+
+If they do not, the next task is to improve the mapping or perform a controlled
+finite-spacing/finite-volume extrapolation before comparing energetic and
+persistence boundaries.
+
+### Next creator question
+
+> Does the radial-to-Cartesian energetic classification converge before the 3D
+> persistence result is interpreted as lying above or below the radial
+> (E/Q=m_{\rm free}) boundary?
+
+This safeguard prevents discretization error from being mistaken for new
+physics.
