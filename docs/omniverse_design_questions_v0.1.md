@@ -2166,3 +2166,38 @@ capture a repeated same-kind event and estimate a full oscillation period.
 
 If the radius turns as well, the next diagnostic becomes the phase relation
 between amplitude and radius oscillations.
+
+
+---
+
+## Q-ball high-resolution sampled extension to t=2.0 — v0.1
+
+The same threshold-preserving (91^3) state is now sampled through
+
+[
+t=2.0
+]
+
+with unchanged grid, timestep, perturbation, and 25-step cadence.
+
+### New evidence
+
+If the perturbed peak develops a second turning event of the opposite kind, the
+engine reports the interval from the first event as a sampled half-cycle
+candidate.
+
+This is not yet a full oscillation period.
+
+The RMS-radius turning events remain a separate diagnostic.
+
+### Next creator question
+
+> Does the perturbed peak complete a minimum-to-maximum half cycle by (t=2.0),
+> and does the radius finally reverse strongly enough to begin measuring a
+> peak-radius phase relationship?
+
+If the second peak turning event appears, the next experiment must capture an
+independent repeat before assigning a full period.
+
+If it does not appear, the response should be treated as a slow recovery rather
+than forced into a periodic model.
