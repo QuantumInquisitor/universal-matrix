@@ -1945,3 +1945,31 @@ Stage 2 is evaluated against Stage 1 using the same:
 If the Stage-2 changes remain small and controlled, the next step is another
 duration increase. If they grow unexpectedly, the duration scaling itself
 becomes the object of study.
+
+
+---
+
+## Q-ball high-resolution persistence stage-3 checkpoint — v0.1
+
+The same threshold-preserving grid and perturbation are now evolved to
+
+[
+250 {m steps},qquad dt=0.001,qquad t=0.25.
+]
+
+This extends the duration to ten times Stage 1 and 2.5 times Stage 2 without
+changing any other numerical or physical parameter.
+
+### Comparison target
+
+Stage 3 is compared with Stages 1 and 2 using identical conservation and
+structural diagnostics.
+
+### Next creator question
+
+> Do the peak and radius deviations continue their earlier superlinear growth,
+> begin to saturate, or remain negligible in absolute terms as the evolution
+> reaches (t=0.25)?
+
+The answer determines whether the next task is another duration extension or a
+direct fit of the early-time relaxation law.
