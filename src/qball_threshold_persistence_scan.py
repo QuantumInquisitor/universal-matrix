@@ -48,6 +48,13 @@ class ThresholdPersistenceScan:
     below_side: ThresholdPersistencePoint
     above_side: ThresholdPersistencePoint
 
+    @property
+    def threshold_comparison_valid_after_mapping(self) -> bool:
+        return (
+            self.below_side.mapping_preserves_threshold_side
+            and self.above_side.mapping_preserves_threshold_side
+        )
+
 
 def _run_one(
     record: ContinuationRecord,
@@ -160,6 +167,7 @@ def format_scan_report(scan: ThresholdPersistenceScan) -> str:
         f"crossing_amplitude={crossing.interpolated_amplitude:.10f}",
         f"crossing_omega={crossing.interpolated_omega:.10f}",
         f"bracket_width={scan.refinement.bracket_width:.10f}",
+        f"threshold_comparison_valid_after_mapping={scan.threshold_comparison_valid_after_mapping}",
     ]
     for label, point in (
         ("below", scan.below_side),
