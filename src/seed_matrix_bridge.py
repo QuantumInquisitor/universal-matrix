@@ -14,6 +14,14 @@ from .canonical_kernel import BOUNDARY_GATES, N_CORE
 from .sevenfold_seed_contract import RING_POSITIONS, SeedModel, reciprocal_pairs
 
 SPATIAL_AXES = ("X", "Y", "Z")
+_OPPOSITE_GATE = {
+    "X_POS": "X_NEG",
+    "X_NEG": "X_POS",
+    "Y_POS": "Y_NEG",
+    "Y_NEG": "Y_POS",
+    "Z_POS": "Z_NEG",
+    "Z_NEG": "Z_POS",
+}
 
 
 def center_core_states() -> tuple[int, ...]:
@@ -22,12 +30,13 @@ def center_core_states() -> tuple[int, ...]:
 
 
 def gate_assignments() -> tuple[tuple[str, ...], ...]:
-    """Enumerate all opposite-preserving ring-to-gate assignments.
+    """Enumerate all opposite-preserving signed spatial frames.
 
     A returned tuple is ordered by Seed ring positions 1 through 6. The three
     opposite Seed axes may permute over X, Y, and Z, and either end of each axis
-    may carry its positive orientation. This leaves orientation open rather
-    than choosing one from symbolism alone.
+    may carry its positive direction. The 48 results comprise 24 proper
+    rotations and 24 reflected frames, so neither handedness is selected from
+    symbolism alone.
     """
     assignments = []
     for axes in permutations(SPATIAL_AXES):
@@ -45,12 +54,32 @@ def gate_assignments() -> tuple[tuple[str, ...], ...]:
 
 
 def assignment_gate_ids(assignment: tuple[str, ...]) -> tuple[int, ...]:
-    """Translate a valid six-position assignment to canonical gate node IDs."""
+    """Validate a signed spatial frame and return canonical gate node IDs."""
     if len(assignment) != len(RING_POSITIONS):
         raise ValueError("assignment must contain six gate labels")
     if set(assignment) != set(BOUNDARY_GATES):
         raise ValueError("assignment must be a bijection over all boundary gates")
+    for near, far in ((0, 3), (1, 4), (2, 5)):
+        if _OPPOSITE_GATE[assignment[near]] != assignment[far]:
+            raise ValueError("opposite Seed positions must map to opposite gates")
     return tuple(BOUNDARY_GATES[label] for label in assignment)
+
+
+def assignment_determinant(assignment: tuple[str, ...]) -> int:
+    """Return +1 for a proper rotation or -1 for a reflected frame."""
+    assignment_gate_ids(assignment)
+    axes = [label.split("_", maxsplit=1)[0] for label in assignment[:3]]
+    indices = [SPATIAL_AXES.index(axis) for axis in axes]
+    inversions = sum(
+        indices[left] > indices[right]
+        for left in range(3)
+        for right in range(left + 1, 3)
+    )
+    permutation_sign = -1 if inversions % 2 else 1
+    direction_sign = 1
+    for label in assignment[:3]:
+        direction_sign *= 1 if label.endswith("_POS") else -1
+    return permutation_sign * direction_sign
 
 
 def elemental_gate_pairs(
