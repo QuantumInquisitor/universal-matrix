@@ -44,6 +44,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/qball_joint_mapping_extrapolation_v0.1.md` | Current joint spacing and finite-volume extrapolation using the localized branch tail scale. |
 | `docs/qball_threshold_preserving_grid_v0.1.md` | Current finite-grid confirmation of radial energetic threshold-side preservation. |
 | `docs/qball_highres_persistence_stage1_v0.1.md` | Current short-duration direct and perturbed persistence test on the 91^3 threshold-preserving grid. |
+| `docs/qball_highres_persistence_stage2_v0.1.md` | Current four-times-longer persistence scaling test on the same 91^3 threshold-preserving grid. |
 
 ## Licensing and governance authority
 
