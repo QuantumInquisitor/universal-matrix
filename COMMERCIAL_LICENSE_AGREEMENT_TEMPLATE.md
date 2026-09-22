@@ -28,10 +28,10 @@ research tooling, spatial/robotics components, digital-twin components,
 manufacturing components, edge/HAL components, and related materials.
 
 B. Certain versions of Universal Matrix are also made available publicly under
-the GNU Affero General Public License, version 3 or later ("AGPL").
+the PolyForm Noncommercial License 1.0.0 ("Public Noncommercial License").
 
 C. Licensee desires rights under proprietary commercial terms that are
-different from or additional to rights available under the public AGPL option.
+different from or additional to rights available under the Public Noncommercial License option.
 
 D. Licensor is willing to grant such rights solely on the terms of this
 Agreement and the attached schedules.
@@ -128,35 +128,34 @@ B, rights to:
 No right listed above applies unless the applicable schedule affirmatively
 grants it.
 
-## 4. Relationship to the Public AGPL License
+## 4. Relationship to the Public PolyForm Noncommercial License License
 
 ### 4.1 Separate license paths
 
-The public AGPL license and this proprietary Agreement are separate alternative
-license paths.
+The Public Noncommercial License and this proprietary Agreement are separate
+alternative license paths.
 
-A recipient may exercise rights under the AGPL if that recipient satisfies the
-AGPL terms. A Licensee that enters this Agreement may instead exercise the
-commercial rights expressly granted here for the Licensed Software.
+A recipient may exercise rights under the Public Noncommercial License only
+for uses permitted by that license. A Licensee that enters this Agreement may
+exercise the commercial rights expressly granted here for the Licensed
+Software.
 
-### 4.2 No restriction of AGPL recipients
+### 4.2 No restriction of prior public-license rights
 
-Nothing in this Agreement alters or restricts rights previously granted to any
-recipient under a valid public AGPL license.
+Nothing in this Agreement alters rights previously and validly granted under
+the Public Noncommercial License.
 
 ### 4.3 Commercial-license compliance
 
-For Licensed Software used under this Agreement, the Parties intend this
-Agreement to govern the proprietary rights granted by Licensor to Licensee,
-rather than requiring Licensee to rely on the AGPL grant for that same licensed
-copy and scope.
+For Licensed Software used under this Agreement, this Agreement governs the
+commercial and proprietary rights granted by Licensor to Licensee.
 
-### 4.4 Third-party AGPL or other copyleft material
+### 4.4 Third-party copyleft or other licensed material
 
 This Agreement cannot remove obligations imposed by third-party software
 licenses.
 
-If the Licensed Software includes Third-Party Materials under AGPL, GPL, LGPL,
+If the Licensed Software includes Third-Party Materials under PolyForm Noncommercial License, GPL, LGPL,
 or another copyleft license, those third-party terms continue to apply to those
 materials according to their licenses.
 
@@ -492,11 +491,11 @@ surviving rights stated in the schedules.
 The Agreement should specify whether archival copies, customer deployments,
 perpetual rights, data-export rights, or transition periods survive.
 
-## 28. Effect of Termination on Public AGPL Rights
+## 28. Effect of Termination on Public Noncommercial License Rights
 
 Termination of this proprietary Agreement does not itself revoke any separate
-rights Licensee validly obtained under the public AGPL for publicly licensed
-copies, subject to the AGPL's own terms and termination provisions.
+rights Licensee validly obtained under the Public Noncommercial License for publicly licensed
+copies, subject to the PolyForm Noncommercial License's own terms and termination provisions.
 
 ## 29. Export, Sanctions, and Trade Compliance
 
@@ -574,7 +573,7 @@ Unless otherwise stated, the order of precedence is:
 4. other schedules;
 5. main Agreement.
 
-The public AGPL remains a separate license path rather than a subordinate
+The Public Noncommercial License remains a separate license path rather than a subordinate
 schedule to this Agreement.
 
 ## 38. Amendment and Waiver
