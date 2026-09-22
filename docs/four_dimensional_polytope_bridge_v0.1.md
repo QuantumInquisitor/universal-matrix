@@ -17,11 +17,15 @@ the stella octangula.
 The same construction continues one dimension higher. The sixteen tesseract
 vertices are `{−1, +1}^4`. Product parity divides them into two eight-vertex
 demitesseracts. A normalized order-four Hadamard transform maps each parity
-class bijectively and isometrically onto the vertices
+class bijectively onto the vertices
 
 `(±1, 0, 0, 0)` and permutations,
 
-which are the regular 16-cell. Thus the exact ladder is:
+which are the regular 16-cell. The transform uniformly reduces all distances
+by a factor of two. It is a similarity, and becomes an isometry after applying
+that one global scale factor. No incidence or angular relation is changed.
+
+Thus the exact ladder is:
 
 | Dimension | Hypercube vertex set | Parity half | Compound carrier |
 | ---: | --- | --- | --- |
@@ -61,7 +65,11 @@ only projecting downward. Treat the six gate vectors as the axial roots
 into its scalar and oriented bivector parts. In the implemented coordinate
 convention this is
 
-`gate_product(u, v) = (u dot v, u cross v)`.
+`gate_product(u, v) = (u cross v, u dot v)`.
+
+The first three components are XYZ and the scalar component is W. Parallel or
+antiparallel gate pairs therefore produce the two `±W` tips that project to the
+center. Orthogonal gate pairs produce the six `±X`, `±Y`, and `±Z` tips.
 
 Across all 36 ordered gate pairs, there are exactly eight distinct results:
 
