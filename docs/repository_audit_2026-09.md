@@ -1,3 +1,9 @@
+> **POINT-IN-TIME AUDIT / HISTORICAL SNAPSHOT**
+>
+> This audit records the repository state at the time it was performed. Subsequent work has added chiral overlap fermions, Weyl measure geometry, product-group anomaly tooling, commercial licensing governance, spatial command validation, robotics adapter contracts, XR bridging, and digital-twin telemetry/storage.
+>
+> Use `README.md`, `white_paper.md`, `ARCHITECTURE.md`, and `docs/DOCUMENTATION_STATUS.md` for the current repository state.
+
 # Repository Technical Audit — September 2026
 
 ## Executive status
@@ -14,7 +20,7 @@ Corrected:
 
 - `README.md`
 - `ARCHITECTURE.md`
-- `white_paper_v6.md`
+- `white_paper.md`
 - `docs/physics_proofs/continuum_limit_proof.md`
 - `docs/physics_proofs/falsifiable_predictions.md`
 
