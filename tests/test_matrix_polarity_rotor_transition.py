@@ -34,7 +34,7 @@ def test_opposite_branch_equal_base_phase_is_pi_frustrated_link():
 
     deltas = model.link_deltas()
     assert abs(abs(deltas["x"][0, 0, 0]) - math.pi) < 1e-12
-    assert model.interaction_energy() == pytest.approx(6.0)
+    assert model.interaction_energy() == pytest.approx(18.0)
 
 
 def test_like_branch_uniform_phase_has_zero_interaction_energy():
@@ -117,7 +117,7 @@ def test_clock_mode_prevents_branch_double_counting_in_hamiltonian():
     independent.polarity_bits[1, 0, 0] = 1
     clock.polarity_bits[1, 0, 0] = 1
 
-    assert independent.interaction_energy() == pytest.approx(4.0)
+    assert independent.interaction_energy() == pytest.approx(12.0)
     assert clock.interaction_energy() == pytest.approx(0.0)
 
 
