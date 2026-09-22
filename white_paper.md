@@ -557,6 +557,68 @@ The alternating orientation rule and the identification of the maximum transfer 
 
 ---
 
+## 10A. Minimal local Matrix transition law
+
+After fixing the primitive cell ontology, the next question is the minimum
+local dynamical rule required for conservative propagation.
+
+The current candidate assigns a site phase \(\phi_x\) and conjugate momentum
+\(\Pi_x\), with compact transport phase \(\theta_{xy}\) on nearest-neighbor
+links. The local gauge-invariant difference is
+
+\[
+\Delta_{xy}
+=
+\phi_y-\phi_x+\theta_{xy}.
+\]
+
+The minimal Hamiltonian is
+
+\[
+H
+=
+\sum_x
+\frac{\Pi_x^2}{2I}
++
+\kappa
+\sum_{\langle xy\rangle}
+\left[
+1-\cos(\Delta_{xy})
+\right].
+\]
+
+This law is strictly nearest-neighbor, gauge invariant, and Hamiltonian.
+Each link transfers equal and opposite phase momentum between its endpoints, so
+
+\[
+\frac{d}{dt}\sum_x\Pi_x=0.
+\]
+
+For small link differences and zero background transport phase,
+
+\[
+I\ddot\phi
+=
+\kappa\Delta_{\rm lat}\phi,
+\]
+
+with dimensionless lattice characteristic speed
+
+\[
+c_{\rm lat}
+=
+\sqrt{\frac{\kappa}{I}}.
+\]
+
+This establishes a minimal local propagation skeleton. It does not derive
+physical length, time, the numerical value of a measured causal speed, particle
+species, or the unique necessity of this Hamiltonian.
+
+The richer complex-matter and compact-gauge systems already present in the
+repository are interpreted as extensions of this minimal local structure.
+
+---
+
 ## 11. Reciprocity geometry
 
 The current gravity-like correspondence is based on four explicit premises:

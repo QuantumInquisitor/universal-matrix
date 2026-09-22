@@ -770,3 +770,110 @@ This does not assign a physical lattice spacing and therefore does not yet solve
 The next highest-leverage question is:
 
 > What is the minimal transition law between neighboring Matrix cells that can simultaneously support causal propagation, conservative exchange, gauge transport, and a stable long-distance continuum?
+
+
+---
+
+## Local-transition answer checkpoint — v0.1
+
+The next creator question now has a first executable answer in
+\`src/matrix_local_transition.py\`.
+
+### Minimal law
+
+The candidate repeated-cell transition law uses
+
+\[
+(\phi_x,\Pi_x)
+\]
+
+on sites and compact transport phase \(\theta_{xy}\) on nearest-neighbor links.
+
+The Hamiltonian is
+
+\[
+H
+=
+\sum_x\frac{\Pi_x^2}{2I}
++
+\kappa
+\sum_{\langle xy\rangle}
+\left[
+1-\cos\left(\phi_y-\phi_x+\theta_{xy}\right)
+\right].
+\]
+
+### What is now answered
+
+**Locality:** immediate forces are confined to the six nearest neighbors.
+
+**Conservative exchange:** link forces are equal and opposite, giving
+
+\[
+\frac{d}{dt}\sum_x\Pi_x=0.
+\]
+
+**Gauge transport:** the interaction depends only on the invariant combination
+
+\[
+\phi_y-\phi_x+\theta_{xy}.
+\]
+
+**Wave limit:** for small gradients,
+
+\[
+I\ddot\phi
+=
+\kappa\Delta_{\rm lat}\phi.
+\]
+
+**Dimensionless causal scale:**
+
+\[
+c_{\rm lat}
+=
+\sqrt{\kappa/I}.
+\]
+
+### Questions moved from open to partial
+
+- Question 7, isotropy: **PARTIAL.** The six-neighbor law is symmetric under the
+  cubic lattice group, but full emergent rotational invariance is not proved.
+- Question 11, causal speed limit: **PARTIAL.** A lattice characteristic speed
+  exists, but the physical unit map remains open.
+- Questions 51-53, transfer and conservation across local links:
+  **PARTIAL.** Conservative local exchange is explicit, but nested-scale
+  transfer remains separate.
+- Question 58, persistent local structures: **OPEN BUT NOW TESTABLE.** The new
+  law provides a minimal nonlinear medium in which stable excitations can be
+  searched for.
+
+### What remains unresolved
+
+The new law does not yet explain:
+
+1. why this Hamiltonian is unique;
+2. what fixes \(I\) and \(\kappa\);
+3. physical length and time units;
+4. how canonical polarity \(p\) modifies interaction, if at all;
+5. how scale level \(\ell\) couples to spatial neighbors;
+6. whether link phases are fundamental or derived;
+7. how dynamical gauge electric fields and site dynamics emerge from one common
+   local action;
+8. whether the cubic lattice flows to rotational and Lorentz symmetry at long
+   distances;
+9. what stable nonlinear excitations exist.
+
+### Next creator question
+
+The next highest-leverage question is:
+
+> Can the minimal site transition law, compact gauge-link dynamics, Gauss
+> constraint, and conserved matter current be reduced to one common local
+> Hamiltonian whose terms are forced by symmetry and conservation rather than
+> selected independently?
+
+The repository already contains candidate pieces in
+\`fully_coupled_compact_fields.py\`. The next task is to perform that reduction
+and classify every term as symmetry-required, optional interaction, calibrated
+parameter, or unresolved hypothesis.

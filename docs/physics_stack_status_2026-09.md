@@ -1506,3 +1506,43 @@ The highest-priority unresolved scientific tasks are now:
 12. produce at least one independently fixed dimensionless prediction with a clear falsification experiment.
 
 The project is now significantly beyond a classical field simulator, but it remains an incomplete candidate fundamental architecture until these gaps are closed.
+
+
+---
+
+## Minimal local transition checkpoint
+
+The primitive ontology now has a first explicit local Hamiltonian bridge in
+\`src/matrix_local_transition.py\`.
+
+The candidate law is
+
+\[
+H
+=
+\sum_x\frac{\Pi_x^2}{2I}
++
+\kappa
+\sum_{\langle xy\rangle}
+\left[
+1-\cos(\phi_y-\phi_x+\theta_{xy})
+\right].
+\]
+
+Verified internal properties include:
+
+- six-neighbor locality;
+- local U(1) gauge invariance;
+- antisymmetric pairwise momentum transfer;
+- continuous-time total phase-momentum conservation;
+- weak-field graph-Laplacian dynamics;
+- characteristic lattice speed \(c_{\rm lat}=\sqrt{\kappa/I}\);
+- bounded energy error under the tested symplectic integration regime.
+
+This does not supersede the richer classical matter and gauge systems. It
+supplies the minimal ontology-level skeleton beneath them.
+
+The next reduction problem is to identify which terms in the fully coupled
+compact matter/gauge Hamiltonian are forced by locality, gauge symmetry,
+conservation, and canonical Matrix structure, and which remain optional or
+calibrated hypotheses.
