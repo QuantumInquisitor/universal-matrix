@@ -68,19 +68,23 @@ def classify_peak_period(
     maximum_intervals = _same_kind_intervals(retained_tuple, "maximum")
     intervals = minimum_intervals + maximum_intervals
 
-    candidate = fmean(intervals) if intervals else None
+    interval_mean = fmean(intervals) if intervals else None
     spread = None
-    if candidate is not None and len(intervals) >= 2:
-        spread = (max(intervals) - min(intervals)) / candidate
+    if interval_mean is not None and len(intervals) >= 2:
+        spread = (max(intervals) - min(intervals)) / interval_mean
 
     if not intervals:
         status = "insufficient_repeated_extrema"
+        candidate = None
     elif len(intervals) == 1:
         status = "single_period_candidate"
+        candidate = interval_mean
     elif spread is not None and spread <= consistency_tolerance:
         status = "consistent_period_candidate"
+        candidate = interval_mean
     else:
         status = "inconsistent_period_candidates"
+        candidate = None
 
     return PeakPeriodClassification(
         retained_events=retained_tuple,
