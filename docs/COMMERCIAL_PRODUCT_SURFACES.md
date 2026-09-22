@@ -367,7 +367,7 @@ separate legal entities.
 
 ## 10. Licensing strategy
 
-The repository remains dual licensed according to its governing license files.
+The repository uses a source-available noncommercial public license plus a separate proprietary commercial licensing path. The governing terms are defined in the repository licensing files.
 
 For commercial negotiations, Waters Legacy Trust can license:
 
