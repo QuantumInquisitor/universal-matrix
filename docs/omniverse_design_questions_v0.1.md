@@ -1038,3 +1038,127 @@ The next highest-leverage question is:
 > What is the smallest additional nonredundant degree of freedom that produces a second stable collective branch without duplicating canonical polarity or gauge phase?
 
 The conservative next candidate is matter amplitude, because the current rotor sector is already the fixed-amplitude limit of complex matter. Allowing amplitude dynamics introduces a radial mode that cannot be removed by the polarity-phase identity.
+
+
+---
+
+## Matter-amplitude mode checkpoint — v0.1
+
+The smallest nonredundant extension beyond the fixed-amplitude rotor is now
+derived in `src/matter_amplitude_modes.py`.
+
+### Existing complex matter potential
+
+The current scalar sector uses
+
+\[
+U(\rho)
+=
+m^2\rho
++
+\lambda_4\rho^2
++
+\lambda_6\rho^3,
+\qquad
+\rho=|\Phi|^2.
+\]
+
+For a uniform nonzero stationary background,
+
+\[
+U'(\rho_0)=0.
+\]
+
+Small perturbations split into a tangential phase mode and a radial amplitude
+mode.
+
+### Linear branches
+
+The phase branch is
+
+\[
+\omega_{\rm phase}^2(\mathbf{k})
+=
+4\sum_a\sin^2\frac{k_a}{2}.
+\]
+
+The radial branch is
+
+\[
+\omega_{\rm radial}^2(\mathbf{k})
+=
+4\sum_a\sin^2\frac{k_a}{2}
++
+2\rho_0 U''(\rho_0).
+\]
+
+The radial mode is therefore independent of the canonical polarity-to-phase
+identity and supplies the first genuinely additional stable linear branch in
+this reduction.
+
+### Default-potential result
+
+For the current default
+
+\[
+U(\rho)=\rho-2\rho^2+\rho^3,
+\]
+
+the nonzero stationary densities are
+
+\[
+\rho=\frac13,
+\qquad
+\rho=1.
+\]
+
+At \(\rho=1/3\),
+
+\[
+m_R^2=-\frac43,
+\]
+
+so the background is radially unstable.
+
+At \(\rho=1\),
+
+\[
+m_R^2=4,
+\]
+
+so the radial gap is
+
+\[
+\omega_R(0)=2.
+\]
+
+### Completed rotor reduction
+
+For fixed amplitude \(\rho=R^2\), matching the existing complex scalar
+kinetic and link energies to the rotor Hamiltonian gives
+
+\[
+I=2\rho,
+\qquad
+\kappa=2\rho.
+\]
+
+Therefore
+
+\[
+\kappa/I=1
+\]
+
+in the scalar field's native lattice units.
+
+This extends the earlier fixed-amplitude bridge by deriving both rotor inertia
+and rotor coupling from the same matter density.
+
+### Next creator question
+
+> Can the stable nonzero matter background and its radial amplitude mode support
+> long-lived localized nonlinear excitations under the full lattice dynamics,
+> without assigning particle species by hand?
+
+That question now has a concrete dynamical starting point rather than a
+bookkeeping ambiguity.
