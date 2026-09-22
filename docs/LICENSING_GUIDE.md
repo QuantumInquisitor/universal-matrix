@@ -2,44 +2,44 @@
 
 This guide explains the repository's licensing structure in plain English.
 
-It is not legal advice and does not replace the actual AGPL text or an executed
+It is not legal advice and does not replace the actual public license or an executed
 commercial license agreement.
 
 ## 1. Public license
 
 Universal Matrix is publicly offered under:
 
-**GNU Affero General Public License v3.0 or later**
-**SPDX:** `AGPL-3.0-or-later`
+**PolyForm Noncommercial License 1.0.0**  
+**SPDX:** `PolyForm-Noncommercial-1.0.0`
 
-The AGPL permits both commercial and noncommercial use.
+This is a **source-available noncommercial license**, not an OSI open-source
+license.
 
-It is a strong copyleft license. Its obligations can include source-code,
-license-notice, same-license, and network-source obligations depending on how
-the covered software is modified, conveyed, combined, or made available over a
-network.
-
-The authoritative AGPL text is published by the Free Software Foundation.
+It permits covered noncommercial purposes, including personal research and
+experimentation without anticipated commercial application, and use by
+educational institutions, public research organizations, charities, and other
+organizations covered by the license.
 
 ## 2. Why a commercial license exists
 
-The proprietary commercial license is not required merely because a user makes
-money.
+Commercial use is outside the general public noncommercial grant.
 
-It is an alternative license path for customers who want rights or obligations
-different from the public AGPL option.
+A separate Waters Legacy Trust commercial license is therefore required for
+commercial use unless applicable law independently permits the activity.
 
-Common examples include:
+Typical commercial uses include:
 
-- closed-source SaaS;
+- paid SaaS and hosted services;
+- commercial internal deployment;
+- paid consulting using the platform;
 - proprietary OEM products;
-- closed-source robotics deployments;
-- proprietary XR or digital-twin products;
-- private manufacturing systems;
-- redistribution rights;
-- customer-specific proprietary derivatives;
-- negotiated warranties, indemnities, support, SLAs, or confidentiality;
-- enterprise source access under private terms.
+- commercial robotics;
+- commercial XR/VR and digital-twin products;
+- commercial manufacturing systems;
+- proprietary hardware integration;
+- closed-source derivatives;
+- enterprise redistribution;
+- commercial research and product development.
 
 ## 3. What the commercial license can cover
 
@@ -58,16 +58,16 @@ Product families currently include:
 The executed agreement should identify exactly which product families, modules,
 versions, sites, devices, tenants, users, or OEM units are licensed.
 
-## 4. Public AGPL and commercial rights are alternatives
+## 4. Public noncommercial and commercial rights are alternatives
 
-A customer can use a publicly licensed copy under the AGPL if the customer
-complies with the AGPL.
+A user may rely on the PolyForm Noncommercial public license for uses permitted
+by that license.
 
-A customer with a proprietary Waters Legacy Trust commercial license can use
-the licensed commercial copy under the negotiated agreement instead.
+Commercial users must obtain a separate written Waters Legacy Trust commercial
+license for uses not granted by the public noncommercial license.
 
-The commercial agreement does not take away AGPL rights already validly granted
-to recipients of public copies.
+The commercial agreement does not take away public-license rights previously
+and validly granted.
 
 ## 5. Third-party dependencies
 
@@ -87,7 +87,7 @@ Under `CLA.md`, contributors grant Waters Legacy Trust broad copyright and
 patent rights needed to:
 
 - include the contribution in the project;
-- distribute it under AGPL;
+- distribute it under the public source-available license;
 - sublicense it;
 - include it in proprietary commercial licenses;
 - relicense the project in the future.
@@ -109,7 +109,7 @@ agreement controls.
 
 The repository contains:
 
-- `LICENSE` — public AGPL notice and dual-license clarification;
+- `LICENSE` — public PolyForm Noncommercial license and dual-license clarification;
 - `NOTICE` — project copyright and licensing notice;
 - `COMMERCIAL_LICENSE.md` — commercial licensing overview;
 - `COMMERCIAL_LICENSE_AGREEMENT_TEMPLATE.md` — full negotiated agreement
