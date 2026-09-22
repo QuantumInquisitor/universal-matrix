@@ -37,6 +37,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/matrix_local_transition_v0.1.md` | Current minimal local transition-law candidate and creator-question checkpoint. |
 | `docs/matrix_polarity_phase_reduction_v0.1.md` | Exact algebraic bridge between canonical branch, phase representation, and fixed-amplitude matter. |
 | `docs/qball_stability_map_v0.1.md` | Current charged-matter evidence-map design separating energetic, branch-slope, and finite-time persistence diagnostics. |
+| `docs/qball_threshold_refinement_v0.1.md` | Current adaptive refinement of the charged-matter energetic threshold. |
 
 ## Licensing and governance authority
 

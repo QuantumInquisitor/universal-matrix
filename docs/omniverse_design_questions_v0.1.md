@@ -1628,3 +1628,42 @@ rerun seeded continuation on that narrower interval.
 A separation between those boundaries would be more informative than a single
 binary stability label and would identify which physical mechanism needs to be
 modeled next.
+
+
+---
+
+## Q-ball energetic-threshold refinement checkpoint — v0.1
+
+The coarse energetic crossing now has an adaptive refinement implementation in
+`src/qball_threshold_refinement.py`.
+
+### Refinement rule
+
+The solver repeatedly:
+
+1. continues the accepted charged branch across the ordered amplitude set;
+2. finds the neighboring accepted pair that brackets
+   \(E/Q=m_{\rm free}\);
+3. inserts new central amplitudes only inside that bracket;
+4. resolves the full ordered branch so branch identity remains controlled.
+
+With two refinement rounds and four interior points per round, the original
+\([0.9,1.0]\) amplitude bracket is required by the regression test to narrow
+to approximately \(4\times10^{-3}\) or less.
+
+The interpolated crossing itself remains solver-generated rather than encoded as
+a constant.
+
+### Evidence kept separate
+
+At the refined crossing, the engine records the local \(dQ/d\omega\) secant
+and the \(dE/dQ\approx\omega\) consistency error, but does not equate either
+with finite-time nonlinear survival.
+
+### Next creator question
+
+> When direct and perturbed 3D evolution are run on branch points immediately
+> below and above the refined energetic crossing, does the persistence boundary
+> sit on the energetic threshold, precede it, or extend beyond it?
+
+That comparison is now the next decisive numerical experiment for this branch.
