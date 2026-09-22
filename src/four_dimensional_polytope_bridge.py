@@ -1,8 +1,9 @@
 """Exact four-dimensional extension of the Seed, stella, and register geometry.
 
 The 4-cube (tesseract) is represented by ``{-1, +1}^4``.  Product parity
-partitions its 16 vertices into two demitesseracts, each isometric to a regular
-16-cell.  Fixed-W slices recover the existing cube/stella vertex set.
+partitions its 16 vertices into two demitesseracts, each a uniformly scaled
+copy of a regular 16-cell.  Fixed-W slices recover the existing cube/stella
+vertex set.
 
 The canonical 16-cell has vertices ``(+/-1, 0, 0, 0)`` and permutations.
 Dropping its W coordinate projects six vertices to the six boundary gates and
@@ -88,7 +89,7 @@ def _validate_cross_polytope_vertex(vertex: Coordinate4D) -> None:
 
 
 def demitesseract_to_cross_polytope(vertex: Coordinate4D) -> Coordinate4D:
-    """Map either parity half isometrically onto the canonical 16-cell.
+    """Map either parity half by a uniform similarity onto the canonical 16-cell.
 
     A normalized order-four Hadamard transform maps the positive parity half
     to signed basis vectors.  Flipping W first supplies the same map for the
@@ -149,8 +150,8 @@ def gate_spinor_product(left_gate: str, right_gate: str) -> Coordinate4D:
     """Return the even Clifford product of two axial gate roots.
 
     In three dimensions the product separates into scalar and oriented
-    bivector parts.  Hodge-dualizing the bivector gives ``(dot, cross_xyz)``,
-    one of the eight signed 4D basis vectors.
+    bivector parts. Hodge-dualizing the bivector and placing the scalar on W
+    gives ``(cross_xyz, dot)``, one of the eight signed 4D basis vectors.
     """
     left = gate_coordinate(left_gate)
     right = gate_coordinate(right_gate)
@@ -160,7 +161,7 @@ def gate_spinor_product(left_gate: str, right_gate: str) -> Coordinate4D:
         left[2] * right[0] - left[0] * right[2],
         left[0] * right[1] - left[1] * right[0],
     )
-    spinor = (scalar, *cross)
+    spinor = (*cross, scalar)
     _validate_cross_polytope_vertex(spinor)
     return spinor
 
