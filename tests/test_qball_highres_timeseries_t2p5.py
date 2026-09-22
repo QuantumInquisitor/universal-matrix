@@ -58,6 +58,7 @@ def test_extended_reports_adjacent_swing_magnitudes():
             _sample(25, 0.90, 1.1),
             _sample(50, 0.95, 1.2),
             _sample(75, 0.92, 1.3),
+            _sample(100, 0.96, 1.4),
         )
     )
     extended = _extended(summary)
