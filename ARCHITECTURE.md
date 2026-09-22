@@ -192,6 +192,68 @@ The richer gauge-matter and fully coupled field modules are treated as
 extensions of this minimal ontology-level skeleton rather than as replacements
 for it.
 
+## 4B. Canonical polarity–phase reduction
+
+The exact canonical branch bit can be represented as a sign
+
+\[
+s_p=(-1)^p,
+\]
+
+or, when the local phase is independent, as a phase offset
+
+\[
+\phi_{\rm eff}=\phi+\pi p.
+\]
+
+This gives the exact identity
+
+\[
+s_xs_y\sin(\phi_y-\phi_x+\theta_{xy})
+=
+\sin(
+\phi_{{\rm eff},y}
+-
+\phi_{{\rm eff},x}
++
+\theta_{xy}
+).
+\]
+
+The fixed-amplitude complex matter link energy also reduces exactly to the
+minimal rotor interaction:
+
+\[
+\left|
+e^{i\theta_{xy}}\Phi_y-\Phi_x
+\right|^2
+=
+2R^2
+\left[
+1-\cos\Delta_{xy}
+\right].
+\]
+
+Thus, under the current normalization, the rotor coupling is
+
+\[
+K=2R^2.
+\]
+
+The engine therefore treats canonical branch sign, branch-as-\(\pi\)-offset,
+and fixed-amplitude rotor coupling as reducible representations where their
+assumptions overlap.
+
+A strict bookkeeping rule follows: if a phase variable already represents the
+canonical polarity clock, do not apply the same \(T_{54}\) branch reversal
+again as an independent sign factor.
+
+Implementation:
+
+- src/matrix_polarity_phase_bridge.py
+- tests/test_matrix_polarity_phase_bridge.py
+- docs/matrix_polarity_phase_reduction_v0.1.md
+
 ## 5. Open discrete-exterior-calculus layer
 
 The default open field adapter uses a cubical complex with cochain sequence

@@ -35,6 +35,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/omniverse_design_questions_v0.1.md` | Open generative-design questions and gap ledger. |
 | `docs/primitive_matrix_ontology_v0.1.md` | Current executable answer to ontology Questions 1-3. |
 | `docs/matrix_local_transition_v0.1.md` | Current minimal local transition-law candidate and creator-question checkpoint. |
+| `docs/matrix_polarity_phase_reduction_v0.1.md` | Exact algebraic bridge between canonical branch, phase representation, and fixed-amplitude matter. |
 
 ## Licensing and governance authority
 

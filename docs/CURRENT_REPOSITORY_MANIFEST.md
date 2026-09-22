@@ -32,8 +32,9 @@ Current experimental modules include:
 - `src/scale_transfer.py`
 - `src/canonical_scale_transfer.py`
 - `src/matrix_local_transition.py`
+- `src/matrix_polarity_phase_bridge.py`
 
-The current ontology distinguishes exact canonical address structure from candidate physical variables. The local-transition layer adds the minimal gauge-covariant nearest-neighbor Hamiltonian used to test locality, conservative exchange, and the weak-field wave limit.
+The current ontology distinguishes exact canonical address structure from candidate physical variables. The local-transition layer adds the minimal gauge-covariant nearest-neighbor Hamiltonian used to test locality, conservative exchange, and the weak-field wave limit. The polarity-phase bridge removes redundant polarity bookkeeping by proving equivalence between branch sign, pi-shifted effective phase, and the fixed-amplitude rotor reduction where their assumptions overlap.
 
 ## 3. Open field and gauge systems
 
