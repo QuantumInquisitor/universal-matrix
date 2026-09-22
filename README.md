@@ -400,7 +400,7 @@ The public source is licensed under the **PolyForm Noncommercial License 1.0.0**
 
 The public license covers permitted noncommercial uses such as personal study, hobby work, covered educational use, covered academic/public research, charitable use, and individual research or experimentation without anticipated commercial application.
 
-This is source-available software, not OSI open-source software, because general commercial use is restricted.
+This is source-available, not OSI open source, because general commercial use is restricted.
 
 ### Commercial license required
 
