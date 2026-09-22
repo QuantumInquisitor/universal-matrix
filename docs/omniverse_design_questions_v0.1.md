@@ -1667,3 +1667,58 @@ with finite-time nonlinear survival.
 > sit on the energetic threshold, precede it, or extend beyond it?
 
 That comparison is now the next decisive numerical experiment for this branch.
+
+
+---
+
+## Q-ball threshold persistence experiment — v0.1
+
+The next comparison is now executable in
+`src/qball_threshold_persistence_scan.py`.
+
+The experiment automatically takes the two accepted refined branch points that
+straddle \(E/Q=m_{\rm free}\), maps each to the same 3D lattice, and runs:
+
+- direct finite-time evolution;
+- the same evolution after the standard localized amplitude perturbation.
+
+The CI report prints the refined crossing and the direct and perturbed survival
+status on both sides of the energetic threshold.
+
+### Decision rule for the next build
+
+If both sides survive, the search expands outward along the branch until the
+first finite-time persistence failure is found.
+
+If one side survives and one fails, the engine refines between those points.
+
+If both fail, the search moves inward toward the previously persistent
+\(A_0=1\) candidate and audits whether the change is caused by branch location,
+grid mapping, perturbation strength, or numerical duration.
+
+### Next creator question
+
+> Is the finite-time persistence boundary locked to the energetic threshold, or
+> does it occupy a distinct region of the charged branch?
+
+The experiment now produces the data needed to answer that without assuming the
+two criteria are equivalent.
+
+
+### Mapping safeguard discovered during the first threshold scan
+
+The first near-threshold run exposed a numerical subtlety that is now treated as
+part of the experiment rather than hidden.
+
+The radial point just above \(E/Q=m_{\rm free}\) mapped to a Cartesian state
+whose discretized \(E/Q\) fell just below the same threshold. The relative
+mapping difference was small, but the point was close enough to the boundary
+that the classification changed.
+
+The persistence scan now records radial and Cartesian threshold sides
+independently and marks the threshold comparison invalid whenever the mapping
+changes sides.
+
+This means the next numerical task is not merely to search for a persistence
+failure. It is also to improve or extrapolate the radial-to-Cartesian mapping
+near the energetic boundary so that the comparison is physically meaningful.
