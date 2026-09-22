@@ -1418,3 +1418,63 @@ It is still not proof of nonlinear dynamical stability.
 
 The repository already contains the required persistence diagnostics, so this
 can now be tested directly.
+
+
+---
+
+## Matter lattice-spacing consistency checkpoint — v0.1
+
+A numerical scale mismatch between the radial solver and 3D matter evolution has
+now been corrected.
+
+### Consistent spatial spacing
+
+For cubic spacing \(h\),
+
+\[
+\Delta_A
+\propto
+\frac{1}{h^2},
+\]
+
+while energy and charge integrals carry site volume
+
+\[
+h^3.
+\]
+
+The radial-to-Cartesian mapper now transfers its spacing directly into
+`ClassicalMatterDynamics`.
+
+### Backward compatibility
+
+The default is still
+
+\[
+h=1,
+\]
+
+so historical unit-spacing calculations are unchanged.
+
+### Why this was required
+
+Previously, a radial profile could be interpolated at \(h=0.5\) while the
+dynamical Laplacian still behaved as though \(h=1\).
+
+That mixed two spatial scales inside one persistence calculation.
+
+The corrected implementation uses the same spacing for:
+
+* radial coordinate sampling,
+* the gauge-covariant finite-difference operator,
+* energy integration,
+* charge integration,
+* and RMS-radius diagnostics.
+
+### Next creator question
+
+> With the scale mismatch removed, does the continued below-threshold charged
+> branch remain localized in direct 3D evolution and under controlled
+> perturbations?
+
+This is now a meaningful persistence test rather than a discretization artifact.

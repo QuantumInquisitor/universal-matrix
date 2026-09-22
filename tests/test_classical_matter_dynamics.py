@@ -86,3 +86,76 @@ def test_zero_field_remains_zero():
     assert np.all(state.momentum == 0)
     assert state.energy == 0.0
     assert state.charge == 0.0
+
+
+
+def test_plane_wave_laplacian_scales_with_inverse_spacing_squared():
+    n = 8
+    shape = (n, 3, 3)
+    spacing = 0.5
+    k = 2.0 * math.pi / n
+    x = np.arange(n, dtype=float)[:, None, None]
+    phi = np.broadcast_to(np.exp(1j * k * x), shape).copy()
+    links = np.zeros((3,) + shape)
+
+    lap = gauge_covariant_laplacian(
+        phi,
+        links,
+        spacing=spacing,
+    )
+    eigenvalue = -4.0 * math.sin(0.5 * k) ** 2 / spacing**2
+
+    assert np.allclose(lap, eigenvalue * phi, atol=1e-12)
+
+
+def test_uniform_charge_and_energy_scale_with_cell_volume():
+    shape = (3, 3, 3)
+    phi = np.full(shape, 0.2 + 0.1j, dtype=complex)
+    momentum = np.full(shape, -0.3 + 0.4j, dtype=complex)
+    links = np.zeros((3,) + shape)
+    potential = MatterPotential(
+        mass2=1.2,
+        lambda4=0.0,
+        lambda6=0.0,
+    )
+
+    q1 = matter_charge(phi, momentum, spacing=1.0)
+    e1 = matter_energy(phi, momentum, links, potential, spacing=1.0)
+
+    spacing = 0.5
+    qh = matter_charge(phi, momentum, spacing=spacing)
+    eh = matter_energy(phi, momentum, links, potential, spacing=spacing)
+
+    assert math.isclose(qh, q1 * spacing**3, rel_tol=0, abs_tol=1e-14)
+    assert math.isclose(eh, e1 * spacing**3, rel_tol=0, abs_tol=1e-14)
+
+
+def test_nonunit_spacing_state_preserves_free_uniform_charge_and_energy():
+    shape = (4, 4, 4)
+    spacing = 0.5
+    amplitude = 1e-3
+    mass = 1.0
+    phi = np.full(shape, amplitude + 0j, dtype=complex)
+    momentum = 1j * mass * phi
+    links = np.zeros((3,) + shape)
+    potential = MatterPotential(
+        mass2=mass**2,
+        lambda4=0.0,
+        lambda6=1e-12,
+    )
+    state = ClassicalMatterDynamics(
+        phi=phi,
+        momentum=momentum,
+        links=links,
+        potential=potential,
+        lattice_spacing=spacing,
+    )
+
+    e0 = state.energy
+    q0 = state.charge
+    for _ in range(500):
+        state.step(0.001)
+
+    assert abs(state.energy - e0) / e0 < 1e-6
+    assert abs(state.charge - q0) / q0 < 1e-10
+    assert state.lattice_spacing == spacing
