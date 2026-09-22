@@ -1759,3 +1759,42 @@ persistence boundaries.
 
 This safeguard prevents discretization error from being mistaken for new
 physics.
+
+
+---
+
+## Q-ball mapping error decomposition checkpoint — v0.1
+
+The radial-to-Cartesian threshold mismatch is now split into two independent
+numerical studies.
+
+### Fixed physical box
+
+At fixed half-width (L=6), the mapping is evaluated at
+
+[
+h=0.5, 0.4, 0.3, 0.25.
+]
+
+This isolates the spacing-resolution trend.
+
+### Fixed lattice spacing
+
+At fixed (h=0.3), the physical half-width is varied through
+
+[
+L=4.8, 6.0, 7.2, 8.4.
+]
+
+This isolates finite-volume truncation sensitivity.
+
+A simple (h^2) intercept is recorded as a numerical diagnostic only.
+
+### Next creator question
+
+> Is the near-threshold energetic mismatch primarily a finite-spacing effect, a
+> finite-volume effect, or a combination of both, and does the controlled
+> extrapolation restore the radial threshold side?
+
+Once that is resolved, the persistence boundary can be compared with the
+energetic boundary without mixing discretization artifacts into the result.
