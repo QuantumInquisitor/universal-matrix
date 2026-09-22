@@ -1,11 +1,20 @@
 [project]
 name = "universal-matrix"
 version = "0.4.0"
-description = "Finite 108-state canonical kernel with experimental open U(1) gauge extensions"
+description = "Finite 108-state canonical kernel with scientific, spatial-operations, robotics, digital-twin, manufacturing, and edge-integration extensions"
 requires-python = ">=3.12"
+license = "PolyForm-Noncommercial-1.0.0"
+authors = [
+    { name = "Matthew Waters" },
+]
 dependencies = [
     "numpy>=2.2",
 ]
+
+[project.urls]
+Homepage = "https://github.com/QuantumInquisitor/universal-matrix"
+Repository = "https://github.com/QuantumInquisitor/universal-matrix"
+Issues = "https://github.com/QuantumInquisitor/universal-matrix/issues"
 
 [project.optional-dependencies]
 scientific = [

@@ -1,53 +1,152 @@
-================================================================================
-WATERS LEGACY TRUST - DUAL-LICENSING & OPEN-SOURCE DISCLOSURE AGREEEMENT
-================================================================================
-Copyright (c) 2026 Waters Legacy Trust. All Rights Reserved.
+PolyForm Noncommercial License 1.0.0
 
-This Software ecosystem, calculation models, and 114-node discrete matrix 
-architectures are managed under a strict dual-licensing compliance protocol.
+https://polyformproject.org/licenses/noncommercial/1.0.0
 
---------------------------------------------------------------------------------
-PART 1: PUBLIC USE UNDER GNU AFFERO GENERAL PUBLIC LICENSE (AGPL-3.0)
---------------------------------------------------------------------------------
-For individuals, independent academic researchers, hobbyists, and non-profit 
-entities, this Software is distributed under the terms of the GNU Affero General 
-Public License as published by the Free Software Foundation, either version 3 
-of the License, or (at your option) any later version.
+SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 
-This program is distributed in the hope that it will be useful, but WITHOUT 
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
-FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for details.
+Copyright (C) 2026 Waters Legacy Trust
 
-NETWORK DISCLOSURE ENFORCEMENT: Under AGPL-3.0 compliance rules, if you modify 
-this Software or incorporate its matrix frameworks into a network service 
-(including SaaS apps, cloud portals, or remote APIs), you are legally obligated 
-to make your complete backend source code architecture available to the public 
-for free under these identical terms.
+Required Notice: Copyright 2026 Waters Legacy Trust. Universal Matrix is
+licensed for noncommercial use under the PolyForm Noncommercial License 1.0.0.
+Any commercial use requires a separate written commercial license from Waters
+Legacy Trust. Commercial licensing contact: waterslegacytrust@gmail.com
 
---------------------------------------------------------------------------------
-PART 2: PROPRIETARY COMMERCIAL CLAUSE (WATERS LEGACY TRUST NOTICE)
---------------------------------------------------------------------------------
-The copyright holder, Matthew Waters (via the Waters Legacy Trust), retains full, 
-exclusive ownership and intellectual property control over this Software framework, 
-underlying mathematical matrices, and coordinate processing mechanics.
+Acceptance
 
-COMMERCIAL EXCLUSION: Any incorporation, execution, embedding, or hosting of this 
-Software within proprietary corporate infrastructure, commercial products, closed-source 
-platforms, or monetization pipelines is strictly prohibited under the public tier. 
+In order to get any license under these terms, you must agree to them as both
+strict obligations and conditions to all your licenses.
 
-To bypass the AGPL-3.0 copyleft network disclosure mandates and clear the software for 
-commercial, closed-source implementation, corporate entities must execute a separate, 
-fully compensated Private Commercial License Agreement authorized directly by the Copyright Holder.
+Copyright License
 
-For enterprise procurement, commercial compliance licensing, or custom settlement options, 
-contact the Waters Legacy Trust explicitly at: waterslegacytrust@gmail.com
+The licensor grants you a copyright license for the software to do everything
+you might do with the software that would otherwise infringe the licensor's
+copyright in it for any permitted purpose. However, you may only distribute the
+software according to Distribution License and make changes or new works based
+on the software according to Changes and New Works License.
 
---------------------------------------------------------------------------------
-PART 3: DISCLAIMER OF WARRANTY AND LIMITATION OF LIABILITY
---------------------------------------------------------------------------------
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Distribution License
+
+The licensor grants you an additional copyright license to distribute copies of
+the software. Your license to distribute covers distributing the software with
+changes and new works permitted by Changes and New Works License.
+
+Notices
+
+You must ensure that anyone who gets a copy of any part of the software from
+you also gets a copy of these terms or the URL for them above, as well as
+copies of any plain-text lines beginning with `Required Notice:` that the
+licensor provided with the software.
+
+Changes and New Works License
+
+The licensor grants you an additional copyright license to make changes and new
+works based on the software for any permitted purpose.
+
+Patent License
+
+The licensor grants you a patent license for the software that covers patent
+claims the licensor can license, or becomes able to license, that you would
+infringe by using the software.
+
+Noncommercial Purposes
+
+Any noncommercial purpose is a permitted purpose.
+
+Personal Uses
+
+Personal use for research, experiment, and testing for the benefit of public
+knowledge, personal study, private entertainment, hobby projects, amateur
+pursuits, or religious observance, without any anticipated commercial
+application, is use for a permitted purpose.
+
+Noncommercial Organizations
+
+Use by any charitable organization, educational institution, public research
+organization, public safety or health organization, environmental protection
+organization, or government institution is use for a permitted purpose
+regardless of the source of funding or obligations resulting from the funding.
+
+Fair Use
+
+You may have "fair use" rights for the software under the law. These terms do
+not limit them.
+
+No Other Rights
+
+These terms do not allow you to sublicense or transfer any of your licenses to
+anyone else, or prevent the licensor from granting licenses to anyone else.
+These terms do not imply any other licenses.
+
+Patent Defense
+
+If you make any written claim that the software infringes or contributes to
+infringement of any patent, your patent license for the software granted under
+these terms ends immediately. If your company makes such a claim, your patent
+license ends immediately for work on behalf of your company.
+
+Violations
+
+The first time you are notified in writing that you have violated any of these
+terms, or done anything with the software not covered by your licenses, your
+licenses can nonetheless continue if you come into full compliance with these
+terms, and take practical steps to correct past violations, within 32 days of
+receiving notice. Otherwise, all your licenses end immediately.
+
+No Liability
+
+As far as the law allows, the software comes as is, without any warranty or
+condition, and the licensor will not be liable to you for any damages arising
+out of these terms or the use or nature of the software, under any kind of
+legal claim.
+
+Definitions
+
+The licensor is the individual or entity offering these terms, and the software
+is the software the licensor makes available under these terms.
+
+You refers to the individual or entity agreeing to these terms.
+
+Your company is any legal entity, sole proprietorship, or other kind of
+organization that you work for, plus all organizations that have control over,
+are under the control of, or are under common control with that organization.
+Control means ownership of substantially all the assets of an entity, or the
+power to direct its management and policies by vote, contract, or otherwise.
+Control can be direct or indirect.
+
+Your licenses are all the licenses granted to you for the software under these
+terms.
+
+Use means anything you do with the software requiring one of your licenses.
+
+---
+
+DUAL-LICENSING NOTICE
+
+Universal Matrix is source-available under the PolyForm Noncommercial License
+1.0.0 for permitted noncommercial purposes.
+
+Commercial use is not granted under the noncommercial public license.
+
+Any use outside the permitted noncommercial purposes requires a separate
+written commercial license from Waters Legacy Trust, unless the use is
+otherwise permitted by applicable law.
+
+Examples of uses that should be licensed commercially include, subject to the
+executed agreement:
+
+- proprietary or revenue-generating SaaS;
+- commercial cloud or hosted services;
+- paid commercial consulting or services using the software;
+- use in developing or operating a commercial product;
+- OEM embedding;
+- commercial hardware integration;
+- closed-source products;
+- private commercial deployments;
+- enterprise internal use for commercial business purposes;
+- paid robotics, XR/VR, digital-twin, manufacturing, edge, or research
+  products and services;
+- redistribution as part of a commercial offering.
+
+Commercial licensing contact:
+Waters Legacy Trust
+waterslegacytrust@gmail.com
