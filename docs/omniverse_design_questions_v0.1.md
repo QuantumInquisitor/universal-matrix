@@ -2134,3 +2134,35 @@ If turning appears, the next task is period estimation.
 
 If not, the next task is to model the relaxation timescale rather than assume
 breathing-mode oscillation.
+
+
+---
+
+## Q-ball high-resolution sampled extension to t=1.5 — v0.1
+
+The same threshold-preserving (91^3) state is now sampled through
+
+[
+t=1.5
+]
+
+with unchanged timestep, grid, perturbation, and 25-step cadence.
+
+### New evidence
+
+The engine now records explicit turning events for both peak amplitude and RMS
+radius.
+
+For the peak channel, intervals between consecutive turning events are also
+reported.
+
+### Next creator question
+
+> Does the perturbed peak develop a second turning point by (t=1.5), giving a
+> sampled half-cycle estimate, and does the radius finally begin to reverse?
+
+If a second peak turning point appears, the next task is to extend far enough to
+capture a repeated same-kind event and estimate a full oscillation period.
+
+If the radius turns as well, the next diagnostic becomes the phase relation
+between amplitude and radius oscillations.
