@@ -27,17 +27,31 @@ preference from silently becoming a physical law.
 ## Seed geometry
 
 Positions 1 through 6 form a hexagonal ring around position 0. Opposite
-positions form three reciprocal axes: (1, 4), (2, 5), and (3, 6).
+positions form three reciprocal axes: `(1, 4)`, `(2, 5)`, and `(3, 6)`.
 
 The local Seed contains twelve explicitly indexed Vesica relationships:
 
-- six overlaps between the center circle and the surrounding circles;
+- six overlaps between Ether's center circle and the surrounding circles;
 - six overlaps between adjacent circles on the surrounding ring.
 
 Under the present creator hypothesis, every indexed Vesica is a universe
 domain. A universe address is a path of Vesica indices. Appending an index
 enters a child universe containing another complete Seed, so recursion is not
 assigned an arbitrary maximum depth.
+
+## Recursive central mirror
+
+The Seed mirror is the half-turn through position 0. It fixes the center and
+exchanges the three pairs `(1, 4)`, `(2, 5)`, and `(3, 6)`. The same action
+maps each center-to-ring Vesica to an opposite center-to-ring Vesica and each
+adjacent-ring Vesica to an opposite adjacent-ring Vesica.
+
+At recursive depth, the mirror is applied to every Vesica index in the path.
+It is exactly involutive, and it respects the parent/child relation: mirror
+twice returns the original universe address, while mirroring after entering a
+child gives the same address as entering the mirrored child of the mirrored
+parent. This encodes “the pattern mirrors itself” as a test rather than an
+ungraded visual claim.
 
 ## Relation to the larger architecture
 
@@ -52,7 +66,9 @@ circulation through the substrate rather than replacing it.
 - Consciousness/Ether remains the dual-aspect center in all interpretations;
 - the ring has exactly three opposite reciprocal axes;
 - the local neighborhood has twelve unique Vesica relationships;
-- every Vesica address can extend recursively by another valid child index.
+- every Vesica address can extend recursively by another valid child index;
+- the same central mirror is involutive and parent/child compatible at every
+  recursive depth.
 
 ## Open physical questions
 

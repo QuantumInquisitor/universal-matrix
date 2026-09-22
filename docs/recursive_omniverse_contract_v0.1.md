@@ -52,6 +52,20 @@ M(A_k(x))=A_{-k}(M(x)).
 This is the first exact software contract for the proposed correspondence of
 inner with outer and inward development with outward development.
 
+The Sevenfold Seed contract now adds a separate recursive spatial mirror. A
+half-turn fixes the center, exchanges opposite ring positions, and mirrors
+each Vesica index at every depth of a nested universe address. It obeys
+
+\[
+M(M(a))=a,
+\qquad
+M(a.\mathrm{child}(i))=M(a).\mathrm{child}(M(i)).
+\]
+
+The spiral mirror and Seed mirror are compatible expressions of reciprocity,
+but they act on different state spaces. No physical identity between them is
+assumed without a future coupling law.
+
 ## DNA-like inheritance
 
 A complete turn preserves routing channel and phase position. Those two values
@@ -69,7 +83,8 @@ Exact software properties:
 - full-turn inheritance;
 - reversible inward and outward advancement;
 - reciprocal-mirror involution;
-- mirror/evolution conjugacy.
+- mirror/evolution conjugacy;
+- recursive Seed-mirror involution and parent/child compatibility.
 
 Open physical questions:
 
