@@ -2050,3 +2050,44 @@ This distinguishes three possibilities:
 > diagnostics?
 
 No duration beyond (t=0.5) is authorized by this checkpoint itself.
+
+
+---
+
+## Q-ball high-resolution in-run time-series checkpoint — v0.1
+
+The persistence workflow now records the internal trajectory of the same
+threshold-preserving (91^3) state instead of only comparing start and end
+points.
+
+The run remains
+
+[
+500 {m steps},qquad dt=0.001,qquad t=0.5,
+]
+
+with diagnostics sampled every 25 steps.
+
+### New evidence
+
+For both direct and perturbed evolutions, the engine now records:
+
+- energy drift versus time;
+- charge drift versus time;
+- peak-amplitude ratio versus time;
+- RMS-radius ratio versus time;
+- turning-point counts;
+- monotonicity flags;
+- maximum excursion;
+- endpoint-to-maximum excursion ratio.
+
+### Next creator question
+
+> Is the small structural response observed through (t=0.5) still moving
+> monotonically away from the initial state, or has the field already begun to
+> turn back toward it?
+
+If turning is already visible, the next task is oscillation-period estimation.
+
+If no turning is visible, the next task is a longer sampled window rather than a
+larger endpoint-only jump.
