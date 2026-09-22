@@ -4,9 +4,9 @@
 
 The local quadratic hierarchy quantity
 
-[
+\\[
 mathcal C_ell=a_ell^2
-]
+\\]
 
 is a local conserved-content candidate.
 
@@ -15,15 +15,15 @@ local source at the observation point.
 
 This extension therefore introduces a distinct scalar potential
 
-[
+\\[
 chi(mathbf x)
-]
+\\]
 
 sourced by a nonnegative content density
 
-[
+\\[
 ho_{mathcal C}(mathbf x)ge0.
-]
+\\]
 
 Implementation:
 
@@ -37,7 +37,7 @@ Tests:
 
 Choose the static functional
 
-[
+\\[
 mathcal E[chi]
 =
 int
@@ -48,26 +48,26 @@ ablachi|^2}{2kappa_{mathcal C}}
 ho_{mathcal C}chi
 ight]
 d^3x
-]
+\\]
 
 with
 
-[
+\\[
 kappa_{mathcal C}>0.
-]
+\\]
 
 The gradient term is positive.
 
 Varying with respect to (chi) gives
 
-[
+\\[
 oxed{
 -
 abla^2chi
 =
 kappa_{mathcal C}ho_{mathcal C}.
 }
-]
+\\]
 
 This sign is therefore tied to the chosen positive gradient-energy functional
 and linear source coupling.
@@ -76,7 +76,7 @@ and linear source coupling.
 
 In unbounded Euclidean three-space,
 
-[
+\\[
 -
 abla^2
 left(
@@ -84,11 +84,11 @@ left(
 ight)
 =
 delta^{(3)}(mathbf r).
-]
+\\]
 
 Therefore a positive point content source (Q_{mathcal C}) gives
 
-[
+\\[
 oxed{
 chi(r)
 =
@@ -98,11 +98,11 @@ kappa_{mathcal C}Q_{mathcal C}
 4pi r
 }.
 }
-]
+\\]
 
 Its gradient is
 
-[
+\\[
 oxed{
 
 ablachi
@@ -115,16 +115,16 @@ kappa_{mathcal C}Q_{mathcal C}
 }
 mathbf r.
 }
-]
+\\]
 
 Hence
 
-[
+\\[
 |
 ablachi|
 propto
 rac1{r^2}.
-]
+\\]
 
 The inverse-square gradient is therefore a consequence of:
 
@@ -138,7 +138,7 @@ It is not separately assumed as a force law.
 
 The static gradient-energy density is
 
-[
+\\[
 oxed{
 u_chi
 =
@@ -149,7 +149,7 @@ ablachi|^2
 2kappa_{mathcal C}
 }.
 }
-]
+\\]
 
 This is nonnegative for positive coupling.
 
@@ -159,12 +159,12 @@ The finite-domain implementation reuses the open Neumann solver.
 
 The discrete equation is the finite-volume analogue of
 
-[
+\\[
 -
 abla^2chi
 =
 kappa_{mathcal C}ho_{mathcal C}.
-]
+\\]
 
 For nonzero total source, outward boundary flux is required by the discrete
 divergence theorem.
@@ -177,19 +177,19 @@ The solver fixes that null mode with a mean-zero convention.
 
 The model now distinguishes
 
-[
+\\[
 oxed{
 ho_{mathcal C}
 }
-]
+\\]
 
 from
 
-[
+\\[
 oxed{
 chi.
 }
-]
+\\]
 
 The first is the source density.
 
@@ -200,7 +200,7 @@ directly on local quadratic content.
 
 For a long-range field interpretation, the more appropriate candidate is
 
-[
+\\[
 oxed{
 L
 =
@@ -210,13 +210,13 @@ g_chi
 (chi-chi_{m ref})
 ight].
 }
-]
+\\]
 
 ## 6. Clock effect
 
 Under that potential-based clock hypothesis,
 
-[
+\\[
 rac{r_{m local}}{r_{m ref}}
 =
 exp
@@ -224,7 +224,7 @@ left[
 -g_chi
 (chi-chi_{m ref})
 ight].
-]
+\\]
 
 A positive point source gives larger (chi) near the source and therefore a
 slower modeled clock rate for positive (g_chi).
@@ -233,7 +233,7 @@ slower modeled clock rate for positive (g_chi).
 
 The corresponding travel-time index is
 
-[
+\\[
 n
 =
 exp
@@ -241,24 +241,24 @@ left[
 g_chi
 (chi-chi_{m ref})
 ight].
-]
+\\]
 
 Then
 
-[
+\\[
 
 ablaln n
 =
 g_chi
 ablachi.
-]
+\\]
 
 For a positive point source,
 
-[
+\\[
 
 ablachi
-]
+\\]
 
 points toward the source.
 
@@ -291,13 +291,13 @@ propagation speed.
 The repository now has a variationally defined scalar content potential whose
 3D Green function naturally gives
 
-[
+\\[
 oxed{
 chisimrac1r,
 qquad
 |
 ablachi|simrac1{r^2}.
 }
-]
+\\]
 
 This is an experimental scalar field, not an established gravitational field.

@@ -4,9 +4,9 @@
 
 The content-clock law fixes a travel-time index,
 
-[
+\\[
 n=e^{g(mathcal C-mathcal C_{m ref})},
-]
+\\]
 
 and therefore fixes the direction of ray bending in the Fermat propagation
 adapter.
@@ -26,75 +26,75 @@ Tests:
 
 A broad minimal specific-potential family is
 
-[
+\\[
 rac{U}{m}
 =
 s,v_*^2ln n,
-]
+\\]
 
 where
 
-[
+\\[
 s=pm1.
-]
+\\]
 
 Since
 
-[
+\\[
 ln n
 =
 g(mathcal C-mathcal C_{m ref}),
-]
+\\]
 
 we have
 
-[
+\\[
 rac{U}{m}
 =
 s,v_*^2 g
 (mathcal C-mathcal C_{m ref}).
-]
+\\]
 
 The acceleration is
 
-[
+\\[
 oxed{
 mathbf a
 =
 -s,v_*^2 g,
 ablamathcal C.
 }
-]
+\\]
 
 ## 2. Two physically different branches
 
 For
 
-[
+\\[
 s=-1,
-]
+\\]
 
-[
+\\[
 mathbf a
 =
 +v_*^2g
 ablamathcal C,
-]
+\\]
 
 so test bodies accelerate toward increasing content.
 
 For
 
-[
+\\[
 s=+1,
-]
+\\]
 
-[
+\\[
 mathbf a
 =
 -v_*^2g
 ablamathcal C,
-]
+\\]
 
 so they accelerate toward decreasing content.
 
@@ -104,26 +104,26 @@ The content-clock law itself does not choose between these.
 
 If
 
-[
+\\[
 U=mV,
-]
+\\]
 
 then
 
-[
+\\[
 mathbf F
 =
 -m
 abla V,
-]
+\\]
 
 so
 
-[
+\\[
 rac{mathbf F}{m}
 =
 mathbf a
-]
+\\]
 
 is independent of the test body's inertial mass.
 
@@ -145,11 +145,11 @@ But massive-particle motion requires an additional action principle.
 
 Therefore the step
 
-[
+\\[
 	ext{clock gradient}
 ightarrow
 	ext{universal attraction}
-]
+\\]
 
 is not yet derived.
 
@@ -177,8 +177,8 @@ The repository now encodes the ambiguity rather than hiding it.
 
 That is a constraint on future theory development:
 
-[
+\\[
 oxed{
 	ext{content clock alone does not derive universal attraction.}
 }
-]
+\\]

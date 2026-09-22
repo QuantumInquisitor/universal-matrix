@@ -5,9 +5,9 @@
 The canonical routing algebra already fixes the dimensionless polarity phase
 advance per routing tick:
 
-[
+\\[
 Deltaphi_P=rac{pi}{18}.
-]
+\\]
 
 This extension asks whether the **physical duration** of that tick can depend on
 local conserved content without modifying the canonical discrete clock.
@@ -24,20 +24,20 @@ Tests:
 
 Let
 
-[
+\\[
 x=
 mathcal C_{m local}
 -
 mathcal C_{m ref}
-]
+\\]
 
 be dimensionless excess local content relative to a reference or vacuum level.
 
 The current conserved nested quantity is based on quadratic amplitude content,
 
-[
+\\[
 mathcal C_ell=a_ell^2.
-]
+\\]
 
 The interpretation of this quantity as physical energy remains experimental.
 
@@ -45,31 +45,31 @@ The interpretation of this quantity as physical energy remains experimental.
 
 Let
 
-[
+\\[
 L(x)>0
-]
+\\]
 
 multiply the reference physical tick duration.
 
 Impose
 
-[
+\\[
 L(0)=1
-]
+\\]
 
 and the composition rule
 
-[
+\\[
 L(x+y)=L(x)L(y).
-]
+\\]
 
 If (L) is continuous, the positive solution family is
 
-[
+\\[
 oxed{
 L(x)=e^{g x}
 }
-]
+\\]
 
 for a dimensionless coupling (g).
 
@@ -82,20 +82,20 @@ The assumption itself is not a theorem of the canonical kernel.
 
 Define
 
-[
+\\[
 oxed{
 	au_{m eff}
 =
 	au_0
 e^{g x}.
 }
-]
+\\]
 
 For positive coupling and positive excess content,
 
-[
+\\[
 	au_{m eff}>	au_0.
-]
+\\]
 
 The local physical clock is therefore slower relative to the reference clock.
 
@@ -103,49 +103,49 @@ The local physical clock is therefore slower relative to the reference clock.
 
 The relative physical clock rate is
 
-[
+\\[
 oxed{
 rac{r_{m local}}{r_{m ref}}
 =
 e^{-g x}.
 }
-]
+\\]
 
 For weak content,
 
-[
+\\[
 rac{r_{m local}}{r_{m ref}}
 =
 1-gx+O(x^2).
-]
+\\]
 
 ## 5. Canonical phase remains fixed
 
 The canonical phase advance per routing tick is unchanged:
 
-[
+\\[
 Deltaphi_P
 =
 rac{pi}{18}.
-]
+\\]
 
 Therefore
 
-[
+\\[
 omega_{P,m phys}
 =
 rac{pi}{18	au_{m eff}}.
-]
+\\]
 
 Hence
 
-[
+\\[
 oxed{
 omega_{P,m phys}	au_{m eff}
 =
 rac{pi}{18}.
 }
-]
+\\]
 
 The physical clock rate changes while the discrete routing structure remains
 exactly the same.
@@ -154,31 +154,31 @@ exactly the same.
 
 If a fixed physical link length (a) is traversed in one local routing tick,
 
-[
+\\[
 v_{m eff}
 =
 rac{a}{	au_{m eff}}.
-]
+\\]
 
 Relative to the reference region,
 
-[
+\\[
 oxed{
 rac{v_{m eff}}{v_0}
 =
 e^{-g x}.
 }
-]
+\\]
 
 Equivalently, define an effective travel-time index
 
-[
+\\[
 oxed{
 n_{m eff}
 =
 e^{g x}.
 }
-]
+\\]
 
 This resembles a variable propagation medium mathematically.
 
@@ -188,9 +188,9 @@ It is **not** yet a derived gravitational law.
 
 A purely linear rule
 
-[
+\\[
 L=1+gx
-]
+\\]
 
 can become negative for sufficiently negative (x) and does not compose
 multiplicatively.
@@ -203,15 +203,15 @@ Its weak-content expansion automatically gives the linear limit.
 
 Two dimensional/physical quantities remain unresolved:
 
-[
+\\[
 oxed{	au_0}
-]
+\\]
 
 the reference seconds per canonical routing tick, and
 
-[
+\\[
 oxed{g}
-]
+\\]
 
 the content-clock coupling.
 
@@ -225,7 +225,7 @@ gradients in effective clock rate and propagation time.
 
 That suggests the chain
 
-[
+\\[
 oxed{
 mathcal C
 ightarrow
@@ -235,7 +235,7 @@ mathcal C
 ightarrow
 	ext{propagation gradient}.
 }
-]
+\\]
 
 Whether this can reproduce universal attraction, redshift, trajectory bending,
 or gravitational-wave observations is a separate question and must be derived
