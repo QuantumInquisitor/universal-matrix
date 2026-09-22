@@ -34,7 +34,11 @@ class SeedMode:
 
 
 _COMMON = {
-    0: SeedMode(0, "ether", "coherence and cross-scale relation"),
+    0: SeedMode(
+        0,
+        "consciousness/ether",
+        "directing consciousness expressed through a relational medium",
+    ),
     1: SeedMode(1, "fire", "transformation and radiation"),
     2: SeedMode(2, "air", "motion and exchange"),
     4: SeedMode(4, "water", "cohesion and adaptation"),
