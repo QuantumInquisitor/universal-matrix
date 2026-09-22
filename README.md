@@ -484,35 +484,58 @@ The repository also uses CI verification, container smoke tests, and CodeQL anal
 
 ## Commercial Licensing & Legal Framework
 
-This project follows a dual-licensing strategy.
+Universal Matrix follows a **source-available noncommercial + proprietary commercial** dual-licensing model.
 
-### Public open-source option
+### 1. Free noncommercial license
 
-The project is offered under the GNU Affero General Public License, version 3 or later, subject to the repository's `LICENSE` file.
+The public source is licensed under the **PolyForm Noncommercial License 1.0.0**.
 
-The AGPL permits commercial as well as noncommercial use. Users choosing the AGPL option must comply with its copyleft and network-source obligations where those obligations apply to the covered work.
+This permits use, modification, and redistribution for permitted noncommercial purposes under the terms of that license, including:
 
-### Enterprise commercial license
+- personal study;
+- hobby use;
+- individual research and experimentation without anticipated commercial application;
+- educational use;
+- charitable and nonprofit use;
+- use by educational institutions;
+- use by public research organizations;
+- use by public safety, public health, environmental, and government institutions where covered by the license.
 
-A separate proprietary commercial license is available from Waters Legacy Trust for organizations that want negotiated proprietary terms instead of the AGPL.
+This public license is **source-available, not OSI open source**, because commercial use is restricted.
 
-Typical cases include:
+### 2. Commercial license required
 
-- proprietary SaaS/network deployments that do not want AGPL source-disclosure obligations for the covered work;
+Any use outside the permitted noncommercial scope requires a separate written commercial license from Waters Legacy Trust unless applicable law independently permits the use.
+
+Commercial licensing is intended for uses such as:
+
+- revenue-generating SaaS or cloud services;
+- paid consulting or services built around the software;
+- internal commercial business deployment;
+- proprietary products;
 - OEM embedding;
-- closed-source commercial products;
-- proprietary hardware integration;
-- private XR/robotics/manufacturing deployments;
-- private scientific-compute integrations;
-- enterprise redistribution;
-- customer-specific derivatives;
-- support and integration agreements.
+- closed-source commercial software;
+- commercial robotics systems;
+- commercial XR/VR and digital-twin products;
+- manufacturing and CNC products;
+- commercial hardware integration;
+- enterprise deployment;
+- commercial research and development;
+- redistribution as part of a commercial offering.
 
-Commercial licenses can cover the complete platform or selected product families.
+Commercial licenses may cover the full platform or selected product families.
 
 **Commercial licensing contact:** waterslegacytrust@gmail.com
 
-This README is an overview, not a substitute for the governing license or legal advice.
+See:
+
+- `LICENSE`
+- `NOTICE`
+- `docs/LICENSING_GUIDE.md`
+- `COMMERCIAL_LICENSE.md`
+- `COMMERCIAL_LICENSE_AGREEMENT_TEMPLATE.md`
+
+The README is an overview. The governing public license or an executed commercial agreement controls.
 
 ## Contributing
 
