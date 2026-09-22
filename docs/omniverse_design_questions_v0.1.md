@@ -1162,3 +1162,83 @@ and rotor coupling from the same matter density.
 
 That question now has a concrete dynamical starting point rather than a
 bookkeeping ambiguity.
+
+
+---
+
+## Matter-defect structure checkpoint — v0.1
+
+The default matter potential now has an exact nonlinear defect analysis in
+`src/matter_defect_structure.py`.
+
+### Exact factorization
+
+For a real amplitude \(f\),
+
+\[
+U(f^2)
+=
+f^2(1-f^2)^2.
+\]
+
+Thus \(f=0\) and \(|f|=1\) are degenerate zero-energy vacua.
+
+### Exact wall
+
+A one-dimensional static wall satisfies
+
+\[
+f'
+=
+f(1-f^2),
+\]
+
+with exact solution
+
+\[
+f(x)
+=
+\frac{1}{\sqrt{1+e^{-2(x-x_0)}}}.
+\]
+
+Its exact tension in the current scalar normalization is
+
+\[
+T_{\rm wall}=\frac12.
+\]
+
+### Three-dimensional localization constraint
+
+For a static scalar field under Derrick scaling,
+
+\[
+E(\lambda)
+=
+\lambda^{2-d}T
++
+\lambda^{-d}V.
+\]
+
+In \(d=3\), stationarity requires
+
+\[
+-T-3V=0.
+\]
+
+Because the default potential is nonnegative, a nontrivial static finite-energy
+scalar lump cannot satisfy this condition.
+
+### Consequence
+
+The current scalar amplitude sector can support an exact extended wall, but a
+particle-like 3D localized excitation requires an additional stabilizing
+ingredient such as time-dependent conserved charge, gauge dynamics, topology,
+higher derivatives, or multi-field coupling.
+
+### Next creator question
+
+> Which existing charged or gauge-coupled localized branch survives long-time
+> nonlinear evolution with bounded size, bounded peak amplitude, conserved
+> charge, and controlled energy drift?
+
+This moves the engine from existence of profiles to dynamical survival.
