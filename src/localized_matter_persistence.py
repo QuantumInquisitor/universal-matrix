@@ -1,21 +1,11 @@
 """Map localized radial matter profiles into 3D and test persistence.
 
-This module bridges:
-- radial boundary-value matter solutions;
-- 3D real-time classical matter dynamics.
+This module bridges radial boundary-value matter solutions and 3D real-time
+classical matter dynamics.
 
-A radial profile f(r) is interpolated onto a Cartesian cubic lattice.
-For a time-harmonic initial state,
-
-    Phi(x,0) = f(r)
-    Pi(x,0)  = i omega f(r).
-
-Diagnostics track:
-- total energy;
-- U(1) charge;
-- peak amplitude;
-- RMS radius;
-- relative changes over an evolution window.
+The Cartesian mapping spacing is also the dynamical lattice spacing.  This is
+required so the radial coordinate, lattice Laplacian, energy, charge, and RMS
+radius all refer to the same spatial scale.
 
 The persistence diagnostic does not by itself prove nonlinear stability. It is
 a controlled numerical survival test.
@@ -29,11 +19,9 @@ import numpy as np
 
 try:
     from .classical_matter_dynamics import ClassicalMatterDynamics
-    from .localized_matter_variational import MatterPotential
     from .radial_matter_solver import RadialMatterSolution
 except ImportError:
     from classical_matter_dynamics import ClassicalMatterDynamics
-    from localized_matter_variational import MatterPotential
     from radial_matter_solver import RadialMatterSolution
 
 
@@ -43,8 +31,8 @@ def cartesian_radius_grid(
 ) -> np.ndarray:
     if len(shape) != 3 or min(shape) < 3:
         raise ValueError("shape must be a 3D grid with each dimension >=3")
-    if spacing <= 0:
-        raise ValueError("spacing must be positive")
+    if not math.isfinite(spacing) or spacing <= 0:
+        raise ValueError("spacing must be finite and positive")
 
     axes = [
         (np.arange(n, dtype=float) - 0.5 * (n - 1)) * spacing
@@ -108,6 +96,7 @@ def radial_solution_to_dynamics(
         momentum=momentum,
         links=links,
         potential=solution.potential,
+        lattice_spacing=spacing,
     )
 
 
@@ -154,17 +143,34 @@ def evolve_persistence(
     *,
     steps: int,
     dt: float,
-    spacing: float,
+    spacing: float | None = None,
 ) -> PersistenceReport:
     if steps < 0:
         raise ValueError("steps must be non-negative")
-    if dt <= 0 or spacing <= 0:
-        raise ValueError("dt and spacing must be positive")
+    if not math.isfinite(dt) or dt <= 0:
+        raise ValueError("dt must be finite and positive")
+
+    diagnostic_spacing = (
+        state.lattice_spacing
+        if spacing is None
+        else float(spacing)
+    )
+    if not math.isfinite(diagnostic_spacing) or diagnostic_spacing <= 0:
+        raise ValueError("spacing must be finite and positive")
+    if not math.isclose(
+        diagnostic_spacing,
+        state.lattice_spacing,
+        rel_tol=0.0,
+        abs_tol=1e-15,
+    ):
+        raise ValueError(
+            "diagnostic spacing must match state.lattice_spacing"
+        )
 
     e0 = state.energy
     q0 = state.charge
     p0 = float(np.max(np.abs(state.phi)))
-    r0 = rms_radius(state.phi, spacing)
+    r0 = rms_radius(state.phi, diagnostic_spacing)
 
     for _ in range(steps):
         state.step(dt)
@@ -179,5 +185,5 @@ def evolve_persistence(
         initial_peak=p0,
         final_peak=float(np.max(np.abs(state.phi))),
         initial_rms_radius=r0,
-        final_rms_radius=rms_radius(state.phi, spacing),
+        final_rms_radius=rms_radius(state.phi, diagnostic_spacing),
     )
