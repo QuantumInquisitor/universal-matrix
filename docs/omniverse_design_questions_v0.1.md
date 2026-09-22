@@ -2261,3 +2261,40 @@ extremum and is not retained.
 The next extension must preserve the same grid, timestep, perturbation, and
 sampling cadence. It should add no new physical coupling until the period and
 phase diagnostics are resolved.
+
+---
+
+## Recursive Omniverse contract — v0.1
+
+The intended engine is now stated more precisely. It is not merely a simulator
+that contains many unrelated universes. It is intended to test whether one
+generative law can recur through nested universe and multiverse scales, with
+each completed spiral inheriting its local code at a new scale and with inner
+and outer development related reciprocally.
+
+The first executable contract uses three routing channels, 36 phase positions,
+and an unbounded integer scale coordinate. These reproduce all 108 canonical
+core states on every scale layer.
+
+A complete 36-step turn preserves the local inheritance signature while moving
+one scale outward. Reversing the turn moves one scale inward. The reciprocal
+mirror negates the unwrapped spiral coordinate and is exactly involutive.
+
+This establishes testable software meanings for:
+
+- spiral recurrence rather than flat circular return;
+- what is inward corresponding to what is outward;
+- what is below corresponding structurally to what is above;
+- DNA-like inheritance as preservation of local organizing code across scale.
+
+It does not yet establish that physical universes, biological DNA, or observed
+cosmological scales obey this contract.
+
+### Next creator question
+
+> What changes when the same inherited code expresses at a new scale: radius,
+> density, coupling, clock rate, handedness, or some constrained combination of
+> them?
+
+That scale-expression law must conserve a declared invariant and must be tested
+independently from the exact recursive addressing contract.
