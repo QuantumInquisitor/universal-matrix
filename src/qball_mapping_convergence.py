@@ -7,6 +7,7 @@ from collections.abc import Iterable
 import math
 
 from .charged_matter_persistence import map_candidate_to_3d, mapping_consistency
+from .qball_threshold_refinement import refine_energy_per_charge_threshold, threshold_bracket
 from .radial_matter_continuation import ContinuationRecord
 
 
@@ -134,3 +135,31 @@ def format_mapping_convergence_report(
         ]
     )
     return "\n".join(lines)
+
+
+def run_refined_above_threshold_mapping_audit(
+    grids: Iterable[MappingGrid] = (
+        MappingGrid((25, 25, 25), 0.5),
+        MappingGrid((33, 33, 33), 0.4),
+        MappingGrid((41, 41, 41), 0.3),
+    ),
+) -> tuple[MappingConvergencePoint, ...]:
+    """Audit the refined radial point immediately above E/Q=m_free."""
+    refinement = refine_energy_per_charge_threshold(
+        refinement_rounds=2,
+        interior_points_per_round=4,
+    )
+    left, right = threshold_bracket(refinement.records)
+    above = left if not left.below_free_mass_threshold else right
+    if above.below_free_mass_threshold:
+        raise RuntimeError("refined bracket does not contain an above-threshold point")
+    return audit_mapping_convergence(above, grids=grids)
+
+
+def main() -> None:
+    points = run_refined_above_threshold_mapping_audit()
+    print(format_mapping_convergence_report(points))
+
+
+if __name__ == "__main__":
+    main()
