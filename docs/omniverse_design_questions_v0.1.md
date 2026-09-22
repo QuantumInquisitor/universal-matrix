@@ -1973,3 +1973,47 @@ structural diagnostics.
 
 The answer determines whether the next task is another duration extension or a
 direct fit of the early-time relaxation law.
+
+
+---
+
+## Q-ball high-resolution time-scaling checkpoint — v0.1
+
+Three completed high-resolution persistence observations now exist at
+
+[
+t=0.025,quad 0.1,quad 0.25.
+]
+
+A dedicated diagnostic now compares conservation and structural scaling across
+those stages before selecting the next duration.
+
+### Current pattern
+
+The direct and perturbed RMS-radius deviations follow approximately quadratic
+growth over the measured interval.
+
+Energy drift rises from Stage 1 to Stage 2 but changes very little from Stage 2
+to Stage 3, which is consistent with numerical conservation error approaching a
+plateau rather than runaway growth.
+
+Peak-amplitude deviation remains small in absolute terms and is tracked
+separately from radius change.
+
+### Stage-4 selection rule
+
+A local late-time projection to (t=0.5) is used only as a diagnostic.
+
+Stage 4 is permitted at (t=0.5) only when every projected peak and radius
+deviation remains below a one-percent structural limit.
+
+The current observations satisfy that rule.
+
+### Next creator question
+
+> At (t=0.5), does the radius continue the approximately quadratic trend while
+> the energy drift remains saturated, or does a qualitatively new dynamical
+> regime appear?
+
+The next stage is therefore a controlled test of the observed scaling pattern,
+not an arbitrary duration increase.
