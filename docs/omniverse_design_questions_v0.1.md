@@ -1594,3 +1594,37 @@ the energetic and differential diagnostics.
 > refined with smaller continuation steps?
 
 That is the next route toward a numerical stability diagram.
+
+
+---
+
+## Q-ball stability evidence-map checkpoint — v0.1
+
+The branch diagnostics and direct persistence workflow are now joined by a
+non-collapsing evidence map in `src/qball_stability_map.py`.
+
+The map deliberately keeps separate:
+
+- energetic binding through (E/Q<m_{\rm free});
+- the measured sign of neighboring (dQ/d\omega) secants;
+- direct finite-time 3D survival;
+- perturbed finite-time 3D survival.
+
+No weighted score is formed. A disagreement between those channels is retained
+as a result rather than averaged away.
+
+### Threshold refinement
+
+The first refinement pass is now well defined: locate the accepted branch pair
+that brackets (E/Q=m_{\rm free}), generate interior central amplitudes, and
+rerun seeded continuation on that narrower interval.
+
+### Next creator question
+
+> After local refinement, do the energetic crossing, branch-slope changes, and
+> perturbative survival boundary coincide, remain ordered, or separate in
+> ((A_0,\omega,Q)) space?
+
+A separation between those boundaries would be more informative than a single
+binary stability label and would identify which physical mechanism needs to be
+modeled next.
