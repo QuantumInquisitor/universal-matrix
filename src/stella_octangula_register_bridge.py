@@ -13,14 +13,24 @@ themselves establish light, sound, elemental, nuclear, or cosmological claims.
 from __future__ import annotations
 
 from itertools import combinations
+from math import atan2, sqrt
 
 from .canonical_kernel import BOUNDARY_GATES, N_CORE, REGISTER_SIZE, register_address
 from .seed_matrix_bridge import SPATIAL_AXES, assignment_gate_ids
 
 Coordinate = tuple[int, int, int]
 Frame = tuple[str, ...]
+ProjectionCoordinate = tuple[float, float]
 
 VERTEX_COUNT = 8
+CENTRAL_MIRROR_FRAME: Frame = (
+    "X_NEG",
+    "Y_NEG",
+    "Z_NEG",
+    "X_POS",
+    "Y_POS",
+    "Z_POS",
+)
 
 
 def vertex_from_index(index: int) -> Coordinate:
@@ -80,6 +90,27 @@ def gate_coordinate(label: str) -> Coordinate:
     return tuple(coordinate)
 
 
+def central_mirror_coordinate(coordinate: Coordinate) -> Coordinate:
+    """Apply the point reflection through the shared center of the compound."""
+    if len(coordinate) != 3:
+        raise ValueError("coordinate must have exactly three components")
+    return tuple(-component for component in coordinate)
+
+
+def central_mirror_vertex(vertex: Coordinate) -> Coordinate:
+    """Return the antipodal stella vertex under the central mirror."""
+    vertex_index(vertex)
+    mirrored = central_mirror_coordinate(vertex)
+    vertex_index(mirrored)
+    return mirrored
+
+
+def central_mirror_gate(label: str) -> str:
+    """Return the boundary gate opposite ``label`` through the center."""
+    mirrored = central_mirror_coordinate(gate_coordinate(label))
+    return next(candidate for candidate in BOUNDARY_GATES if gate_coordinate(candidate) == mirrored)
+
+
 def transform_coordinate(coordinate: Coordinate, assignment: Frame) -> Coordinate:
     """Apply one validated signed axis frame to an integer coordinate."""
     if len(coordinate) != 3:
@@ -115,6 +146,15 @@ def vertex_pair_address(first: Coordinate, second: Coordinate) -> int:
     return VERTEX_COUNT * vertex_index(first) + vertex_index(second)
 
 
+def central_mirror_register_address(address: int) -> int:
+    """Mirror both stella vertices carried by one register address."""
+    first, second = register_vertex_pair(address)
+    return vertex_pair_address(
+        central_mirror_vertex(first),
+        central_mirror_vertex(second),
+    )
+
+
 def relative_signature(address: int) -> Coordinate:
     """Return component agreement (+1) or disagreement (-1) for a vertex pair."""
     first, second = register_vertex_pair(address)
@@ -147,6 +187,35 @@ def register_frame_permutation(assignment: Frame) -> tuple[int, ...]:
             )
         )
     return tuple(transformed)
+
+
+def body_diagonal_projection(coordinate: Coordinate) -> ProjectionCoordinate:
+    """Orthographically project onto the plane normal to the (1, 1, 1) axis.
+
+    The returned coordinates use the orthonormal in-plane basis
+    ``(1, -1, 0) / sqrt(2)`` and ``(1, 1, -2) / sqrt(6)``.
+    """
+    if len(coordinate) != 3:
+        raise ValueError("coordinate must have exactly three components")
+    x, y, z = coordinate
+    return (x - y) / sqrt(2), (x + y - 2 * z) / sqrt(6)
+
+
+def seed_shadow_centers() -> tuple[ProjectionCoordinate, ...]:
+    """Return the normalized center-plus-hexagon projection of the stella tips.
+
+    The two tips on the body diagonal project to the same center.  The other
+    six tips form a regular hexagon; its radius is normalized to one.
+    """
+    axial_tips = {(-1, -1, -1), (1, 1, 1)}
+    outer_radius = sqrt(8 / 3)
+    ring = [
+        tuple(component / outer_radius for component in body_diagonal_projection(vertex))
+        for vertex in STELLA_VERTICES
+        if vertex not in axial_tips
+    ]
+    ring.sort(key=lambda point: atan2(point[1], point[0]))
+    return ((0.0, 0.0), *ring)
 
 
 def core_state_vertex_pair(state: int) -> tuple[Coordinate, Coordinate]:
