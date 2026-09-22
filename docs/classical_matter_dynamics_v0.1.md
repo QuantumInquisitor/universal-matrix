@@ -20,51 +20,51 @@ Tests:
 
 The dynamical variables are
 
-[
-Phi(mathbf x,t)inmathbb C
-]
+\[
+\Phi(\mathbf x,t)inmathbb C
+\]
 
 and its canonical velocity/momentum variable
 
-[
-Pi=partial_tPhi.
-]
+\[
+\Pi=partial_tPhi.
+\]
 
 Spatial U(1) link phases are
 
-[
-A_i(mathbf x).
-]
+\[
+A_i(\mathbf x).
+\]
 
 This first version uses temporal gauge
 
-[
+\[
 A_0=0.
-]
+\]
 
 ## 2. Gauge-covariant lattice Laplacian
 
 The discrete covariant Laplacian is
 
-[
+\[
 Delta_APhi(x)
 =
 sum_i
-left[
-e^{iA_i(x)}Phi(x+hat i)
+\left[
+e^{iA_i(x)}\Phi(x+\hat i)
 +
-e^{-iA_i(x-hat i)}
-Phi(x-hat i)
+e^{-iA_i(x-\hat i)}
+\Phi(x-\hat i)
 -
 2Phi(x)
 ight].
-]
+\]
 
 ## 3. Matter equation
 
 For
 
-[
+\[
 U(ho)
 =
 m^2ho
@@ -72,28 +72,28 @@ m^2ho
 lambda_4ho^2
 +
 lambda_6ho^3,
-qquad
-ho=|Phi|^2,
-]
+\qquad
+ho=|\Phi|^2,
+\]
 
 the real-time field equation is
 
-[
+\[
 oxed{
 partial_t^2Phi
 =
 Delta_APhi
 -
-left[
+\left[
 m^2
 +
-2lambda_4|Phi|^2
+2lambda_4|\Phi|^2
 +
-3lambda_6|Phi|^4
+3lambda_6|\Phi|^4
 ight]
-Phi.
+\Phi.
 }
-]
+\]
 
 This is a classical nonlinear field equation.
 
@@ -101,38 +101,38 @@ This is a classical nonlinear field equation.
 
 The implemented conserved-energy candidate is
 
-[
+\[
 E
 =
 sum_x
-left[
-|Pi|^2
+\left[
+|\Pi|^2
 +
-sum_i|D_i^+Phi|^2
+sum_i|D_i^+\Phi|^2
 +
-U(|Phi|^2)
+U(|\Phi|^2)
 ight].
-]
+\]
 
 ## 5. Classical U(1) charge
 
 The charge convention is
 
-[
+\[
 oxed{
 Q
 =
-2,mathrm{Im}
+2,\mathrm{Im}
 sum_x
-Phi^*Pi.
+\Phi^*\Pi.
 }
-]
+\]
 
 This matches the positive
 
-[
+\[
 Q=2omegaint f^2d^3x
-]
+\]
 
 convention used by the time-harmonic radial solver.
 
