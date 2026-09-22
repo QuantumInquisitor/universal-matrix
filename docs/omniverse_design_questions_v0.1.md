@@ -1878,3 +1878,36 @@ time evolution is attempted.
 
 This keeps extrapolation, finite-grid energetics, and dynamical persistence as
 three distinct evidence layers.
+
+
+---
+
+## Q-ball high-resolution persistence stage-1 checkpoint — v0.1
+
+A short direct and perturbed dynamical test is now defined on the confirmed
+threshold-preserving finite grid:
+
+[
+91^3,qquad h=0.175,qquad L=7.875.
+]
+
+The first stage deliberately uses only 25 steps at (dt=0.001).
+
+The purpose is to measure numerical drift and structural response before
+choosing any longer evolution duration.
+
+### Decision rule
+
+After stage 1:
+
+- if both direct and perturbed states pass with small drift and minimal peak/radius change, increase the duration in a controlled second stage;
+- if either fails, diagnose whether the cause is dynamics, perturbation sensitivity, or high-resolution timestep stability before extending the run.
+
+### Next creator question
+
+> On a finite grid that genuinely preserves the above-threshold energetic
+> classification, does the localized state remain dynamically coherent even
+> over the first short nonlinear evolution window?
+
+The answer determines whether the next step is duration scaling or numerical
+stability diagnosis.
