@@ -2237,3 +2237,27 @@ intervals and amplitudes for consistency before assigning a period.
 
 If repeated radius extrema also appear, the peak-radius phase relation becomes
 the next target.
+
+---
+
+## Q-ball peak-period classification after t=2.5 — v0.1
+
+The completed trace shows that the reversal from `t=1.600` to `t=1.650` has
+only `5.0471e-6` amplitude, about `0.25%` of the largest adjacent perturbed
+peak swing. It is therefore classified as small modulation.
+
+Removing that adjacent modulation pair leaves a minimum-to-minimum interval of
+`1.375` and a maximum-to-maximum interval of `0.675`. Their disagreement is too
+large to assign one breathing period. The earlier apparent `0.650–0.725`
+period was produced by counting the small embedded reversal as a dominant
+extremum and is not retained.
+
+### Next creator question
+
+> Does a longer unchanged-grid trace produce a second dominant minimum and
+> maximum with consistent timing, and does it produce a second radius extremum
+> sufficient to test the peak-radius phase relation?
+
+The next extension must preserve the same grid, timestep, perturbation, and
+sampling cadence. It should add no new physical coupling until the period and
+phase diagnostics are resolved.
