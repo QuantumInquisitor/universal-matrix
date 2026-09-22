@@ -1,53 +1,37 @@
-================================================================================
-WATERS LEGACY TRUST - DUAL-LICENSING & OPEN-SOURCE DISCLOSURE AGREEEMENT
-================================================================================
-Copyright (c) 2026 Waters Legacy Trust. All Rights Reserved.
+GNU AFFERO GENERAL PUBLIC LICENSE
+Version 3, 19 November 2007
 
-This Software ecosystem, calculation models, and 114-node discrete matrix 
-architectures are managed under a strict dual-licensing compliance protocol.
+Copyright (C) 2026 Waters Legacy Trust
 
---------------------------------------------------------------------------------
-PART 1: PUBLIC USE UNDER GNU AFFERO GENERAL PUBLIC LICENSE (AGPL-3.0)
---------------------------------------------------------------------------------
-For individuals, independent academic researchers, hobbyists, and non-profit 
-entities, this Software is distributed under the terms of the GNU Affero General 
-Public License as published by the Free Software Foundation, either version 3 
-of the License, or (at your option) any later version.
+Universal Matrix is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
 
-This program is distributed in the hope that it will be useful, but WITHOUT 
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
-FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for details.
+Universal Matrix is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
 
-NETWORK DISCLOSURE ENFORCEMENT: Under AGPL-3.0 compliance rules, if you modify 
-this Software or incorporate its matrix frameworks into a network service 
-(including SaaS apps, cloud portals, or remote APIs), you are legally obligated 
-to make your complete backend source code architecture available to the public 
-for free under these identical terms.
+The authoritative GNU AGPLv3 text is published by the Free Software Foundation:
+https://www.gnu.org/licenses/agpl-3.0.html
 
---------------------------------------------------------------------------------
-PART 2: PROPRIETARY COMMERCIAL CLAUSE (WATERS LEGACY TRUST NOTICE)
---------------------------------------------------------------------------------
-The copyright holder, Matthew Waters (via the Waters Legacy Trust), retains full, 
-exclusive ownership and intellectual property control over this Software framework, 
-underlying mathematical matrices, and coordinate processing mechanics.
+SPDX-License-Identifier: AGPL-3.0-or-later
 
-COMMERCIAL EXCLUSION: Any incorporation, execution, embedding, or hosting of this 
-Software within proprietary corporate infrastructure, commercial products, closed-source 
-platforms, or monetization pipelines is strictly prohibited under the public tier. 
+DUAL-LICENSING NOTICE
 
-To bypass the AGPL-3.0 copyleft network disclosure mandates and clear the software for 
-commercial, closed-source implementation, corporate entities must execute a separate, 
-fully compensated Private Commercial License Agreement authorized directly by the Copyright Holder.
+The same Waters Legacy Trust-owned codebase may also be licensed separately
+under proprietary commercial terms by written agreement with Waters Legacy
+Trust. The public AGPL license is not restricted to noncommercial users and
+permits commercial use subject to its terms. A separate commercial license is
+available for parties that want different proprietary terms, including
+closed-source deployment, OEM embedding, negotiated redistribution rights,
+support, warranties, indemnities, service levels, or other rights not granted
+by the public AGPL option.
 
-For enterprise procurement, commercial compliance licensing, or custom settlement options, 
-contact the Waters Legacy Trust explicitly at: waterslegacytrust@gmail.com
+Commercial licensing contact:
+waterslegacytrust@gmail.com
 
---------------------------------------------------------------------------------
-PART 3: DISCLAIMER OF WARRANTY AND LIMITATION OF LIABILITY
---------------------------------------------------------------------------------
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Nothing in this notice adds restrictions to, or modifies, the GNU Affero
+General Public License. Rights under a proprietary commercial agreement arise
+only from the executed agreement itself.
