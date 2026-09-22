@@ -2091,3 +2091,46 @@ If turning is already visible, the next task is oscillation-period estimation.
 
 If no turning is visible, the next task is a longer sampled window rather than a
 larger endpoint-only jump.
+
+
+---
+
+## Q-ball high-resolution sampled extension to t=1.0 — v0.1
+
+The same threshold-preserving (91^3) state is now sampled continuously through
+
+[
+t=1.0
+]
+
+with the same
+
+[
+dt=0.001
+]
+
+and the same 25-step sampling cadence.
+
+This doubles the previous observation window without changing the grid,
+perturbation, or timestep.
+
+### Additional evidence
+
+The extended trace records the sampled times of the extrema in peak amplitude
+and RMS radius, in addition to:
+
+- turning-point counts;
+- monotonicity flags;
+- maximum excursion;
+- endpoint-to-maximum ratio;
+- energy and charge drift.
+
+### Next creator question
+
+> Does the perturbed state finally turn back toward its initial profile before
+> (t=1.0), or does it remain in a slow monotonic relaxation regime?
+
+If turning appears, the next task is period estimation.
+
+If not, the next task is to model the relaxation timescale rather than assume
+breathing-mode oscillation.
