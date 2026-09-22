@@ -73,9 +73,9 @@ E^{12}=I,\qquad T^{36}=I,\qquad T^{18}=P,\qquad P^2=I.
 
 The register projection is
 
-[
-pi(n)=7nmod 64.
-]
+\[
+\pi(n)=7n\bmod 64.
+\]
 
 The 64-address layer is a finite addressing structure. When represented as six independent binary boundary channels, it is a six-bit state space. It is not a claim of a 64-bit physical spacetime.
 
