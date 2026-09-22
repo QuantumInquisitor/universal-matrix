@@ -98,10 +98,6 @@ jobs:
         if: matrix.python == '3.12'
         run: uv run python -m src.qball_highres_timeseries_t1
 
-      - name: Q-ball high-resolution in-run time series t1p5
-        if: matrix.python == '3.12'
-        run: uv run python -m src.qball_highres_timeseries_t1p5
-
   full-suite:
     name: Full legacy compatibility suite
     runs-on: ubuntu-latest
@@ -124,3 +120,29 @@ jobs:
 
       - name: Full pytest suite
         run: uv run pytest -q
+
+  qball-long-timeseries:
+    name: Q-ball long time series / Python 3.12
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - uses: astral-sh/setup-uv@v10.1.0
+        with:
+          version: "latest-known"
+          enable-cache: true
+
+      - name: Install focused numerical environment
+        run: uv sync --group test --extra scientific
+
+      - name: Focused t1.5 diagnostic tests
+        run: uv run pytest -q tests/test_qball_highres_timeseries_t1p5.py
+
+      - name: Q-ball high-resolution in-run time series t1p5
+        run: uv run python -m src.qball_highres_timeseries_t1p5
