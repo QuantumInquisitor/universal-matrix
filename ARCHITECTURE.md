@@ -143,6 +143,55 @@ Representative modules:
 - src/scale_transfer.py
 - src/canonical_scale_transfer.py
 
+## 4A. Minimal local Matrix transition layer
+
+The ontology-level local transition candidate uses site phase and conjugate
+momentum,
+
+\[
+(\phi_x,\Pi_x),
+\]
+
+with compact transport phase \(\theta_{xy}\) on nearest-neighbor links.
+
+The minimal Hamiltonian is
+
+\[
+H
+=
+\sum_x \frac{\Pi_x^2}{2I}
++
+\kappa
+\sum_{\langle xy\rangle}
+\left[
+1-\cos\left(\phi_y-\phi_x+\theta_{xy}\right)
+\right].
+\]
+
+This layer supplies:
+
+- six-neighbor locality;
+- gauge-invariant nearest-neighbor coupling;
+- pairwise antisymmetric momentum exchange;
+- continuous-time conservation of total phase momentum;
+- a weak-field graph-Laplacian limit;
+- dimensionless lattice characteristic speed
+  \[
+  c_{\rm lat}=\sqrt{\kappa/I}.
+  \]
+
+It does not determine physical lattice spacing or physical time units.
+
+Implementation:
+
+- src/matrix_local_transition.py
+- tests/test_matrix_local_transition.py
+- docs/matrix_local_transition_v0.1.md
+
+The richer gauge-matter and fully coupled field modules are treated as
+extensions of this minimal ontology-level skeleton rather than as replacements
+for it.
+
 ## 5. Open discrete-exterior-calculus layer
 
 The default open field adapter uses a cubical complex with cochain sequence
