@@ -68,7 +68,7 @@ def test_continuation_tracks_default_branch_to_amplitude_one(default_branch_reco
     assert all(0.0 < omega < 1.0 for omega in omegas)
     assert all(
         later < earlier
-        for earlier, later in zip(omegas, omegas[1:], strict=True)
+        for earlier, later in zip(omegas, omegas[1:])
     )
 
 
