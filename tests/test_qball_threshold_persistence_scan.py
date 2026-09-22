@@ -30,6 +30,7 @@ def _point(**overrides):
 
 def test_report_keeps_energetic_and_persistence_results_separate():
     scan = SimpleNamespace(
+        threshold_comparison_valid_after_mapping=False,
         refinement=SimpleNamespace(
             crossing=SimpleNamespace(
                 interpolated_amplitude=0.945,
