@@ -2017,3 +2017,36 @@ The current observations satisfy that rule.
 
 The next stage is therefore a controlled test of the observed scaling pattern,
 not an arbitrary duration increase.
+
+
+---
+
+## Q-ball high-resolution persistence stage-4 checkpoint — v0.1
+
+The first duration selected by the explicit scaling diagnostic is now
+
+[
+500 {m steps},qquad dt=0.001,qquad t=0.5.
+]
+
+The grid, timestep, energetic classification, and perturbation are unchanged.
+
+### Prediction test
+
+Stage 4 compares measured peak and radius deviations directly with the
+Stage-1 through Stage-3 local projections to (t=0.5).
+
+This distinguishes three possibilities:
+
+1. the earlier trend remains predictive;
+2. the response bends toward saturation;
+3. a new dynamical regime begins.
+
+### Next creator question
+
+> At (t=0.5), does the measured high-resolution response continue the prior
+> scaling law closely enough to justify another duration extension, or should
+> the engine switch from endpoint tests to direct oscillation/relaxation
+> diagnostics?
+
+No duration beyond (t=0.5) is authorized by this checkpoint itself.
