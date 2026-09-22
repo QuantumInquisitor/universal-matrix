@@ -70,7 +70,7 @@ def test_product_parity_partitions_the_tesseract_into_two_equal_halves():
 
 
 @pytest.mark.parametrize("parity", W_LAYERS)
-def test_each_demitesseract_is_isometric_to_the_regular_16_cell(parity):
+def test_each_demitesseract_is_a_uniformly_scaled_regular_16_cell(parity):
     vertices = demitesseract_vertices(parity)
     mapped = {demitesseract_to_cross_polytope(vertex) for vertex in vertices}
 
@@ -123,6 +123,22 @@ def test_six_local_gates_generate_all_eight_16_cell_vertices():
 
     assert generated == set(CROSS_POLYTOPE_VERTICES)
     assert set(sixteen_cell_vertices_from_gates()) == set(CROSS_POLYTOPE_VERTICES)
+
+
+def test_gate_products_separate_parallel_w_tips_from_orthogonal_xyz_tips():
+    parallel_products = set()
+    orthogonal_products = set()
+
+    for left in BOUNDARY_GATES:
+        for right in BOUNDARY_GATES:
+            left_coordinate = gate_coordinate(left)
+            right_coordinate = gate_coordinate(right)
+            dot = sum(a * b for a, b in zip(left_coordinate, right_coordinate, strict=True))
+            target = parallel_products if dot else orthogonal_products
+            target.add(gate_spinor_product(left, right))
+
+    assert parallel_products == {(0, 0, 0, -1), (0, 0, 0, 1)}
+    assert orthogonal_products == {(*gate_coordinate(label), 0) for label in BOUNDARY_GATES}
 
 
 def test_gate_generated_16_cell_lifts_to_the_whole_tesseract():
