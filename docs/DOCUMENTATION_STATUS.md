@@ -42,6 +42,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/qball_mapping_convergence_v0.1.md` | Current radial-to-Cartesian energetic mapping convergence audit near the charged-matter threshold. |
 | `docs/qball_mapping_error_decomposition_v0.1.md` | Current separation of spacing-resolution and finite-volume mapping errors near the charged-matter threshold. |
 | `docs/qball_joint_mapping_extrapolation_v0.1.md` | Current joint spacing and finite-volume extrapolation using the localized branch tail scale. |
+| `docs/qball_threshold_preserving_grid_v0.1.md` | Current finite-grid confirmation of radial energetic threshold-side preservation. |
 
 ## Licensing and governance authority
 
