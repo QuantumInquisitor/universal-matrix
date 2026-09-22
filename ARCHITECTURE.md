@@ -87,7 +87,7 @@ Implementation:
 
 The repeated-cell complex is dimensionless and does not assign a physical lattice spacing.
 
-## 4. Boundary symmetry layer
+## 3. Boundary symmetry layer
 
 The six orientations form the signed three-axis set
 
