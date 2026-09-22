@@ -404,3 +404,32 @@ When repository documents disagree, use:
 7. historical inventories and legacy documentation.
 
 See docs/DOCUMENTATION_STATUS.md.
+
+
+## Local transition kernel
+
+The current experimental neighbor-interaction bridge is implemented in:
+
+- src/local_transition_kernel.py
+- docs/local_transition_kernel_v0.1.md
+- tests/test_local_transition_kernel.py
+
+For an oriented edge (i\to j), define the gauge-invariant phase difference
+
+\[
+\Delta_{ij}=\phi_j-\phi_i+\theta_{ij}.
+\]
+
+The minimal current two-channel generator is
+
+\[
+G_{ij}
+=
+g_\phi\sin\Delta_{ij}
++
+g_p\frac{\sigma_i-\sigma_j}{2}\cos\Delta_{ij}.
+\]
+
+Endpoint content is updated by an orthogonal two-state rotation, preserving local quadratic content and giving exact inverse evolution under a signed reverse step.
+
+This is a constrained experimental ansatz, not a derived physical force law.
