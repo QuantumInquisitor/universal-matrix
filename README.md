@@ -133,6 +133,22 @@ gauge systems. It does not determine physical length or time units.
 
 See \`docs/matrix_local_transition_v0.1.md\`.
 
+### Polarity–phase reduction
+
+The canonical polarity branch can be encoded as a \(\pi p\) phase offset when
+the local phase is otherwise independent. The repository now verifies that
+polarity-weighted link currents and branch-shifted phase currents are exactly
+equivalent under that identification.
+
+The fixed-amplitude complex matter-link energy also reduces exactly to the
+minimal rotor interaction, linking the ontology-level transition law to the
+existing matter sector rather than treating them as separate theories.
+
+The engine therefore avoids applying the same canonical polarity reversal twice
+through both clock phase and an extra branch sign.
+
+See \`docs/matrix_polarity_phase_reduction_v0.1.md\`.
+
 ### Open-field and discrete-exterior-calculus solvers
 
 The open-field stack supports:
