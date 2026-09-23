@@ -685,3 +685,15 @@ with exact rank eight.
 
 Primary verification: `tests/test_h4_direct_e8_lift.py`.
 Primary note: `docs/h4_direct_e8_lift_v0.1.md`.
+
+
+## 4I. Exact equivalence of the two E8 realizations
+
+`src/e8_equivalence_map.py` independently selects simple-root bases inside the
+H4-derived and standard E8 root sets, matches their Dynkin Gram structure, and
+derives the exact rational map between them. The map is a scale-sqrt(8)
+orthogonal transformation, maps all 240 roots bijectively, and intertwines
+central mirror and root reflections.
+
+Primary verification: `tests/test_e8_equivalence_map.py`.
+Primary note: `docs/e8_equivalence_map_v0.1.md`.
