@@ -228,6 +228,13 @@ as distinct E8 dynamics.
 
 See `docs/e8_coupling_observable_audit_v0.1.md`.
 
+A final radial-degree audit finds no unused engine amplitude that can be
+repurposed as an E8 radius without duplicating an existing matter, circulation,
+scale, or content variable. A genuinely dynamical E8 radius would therefore be
+a new degree of freedom and is not added at this checkpoint.
+
+See `docs/e8_radial_degree_audit_v0.1.md`.
+
 ### Minimal local Matrix transition law
 
 The ontology-level transition layer now provides a minimal six-neighbor
@@ -553,6 +560,7 @@ Start with:
 - `docs/e8_state_representation_audit_v0.1.md`
 - `docs/e8_invariant_coupling_v0.1.md`
 - `docs/e8_coupling_observable_audit_v0.1.md`
+- `docs/e8_radial_degree_audit_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 

@@ -2764,3 +2764,37 @@ None is promoted as distinct E8 dynamics.
 If not, the physical E8 coupling path should stop here. The E8 layer remains an
 exact internal geometry and Weyl-symmetry structure until a new state variable
 is justified independently by theory or experiment.
+
+
+---
+
+## E8 radial-degree audit — v0.1
+
+The final E8 dynamics gate now checks whether an existing engine quantity can
+supply a variable Cartan radius without duplicating another degree of freedom.
+
+The audit rejects:
+
+- matter amplitude, because it already controls the matter radial mode;
+- port circulation amplitude, because it already sets Vesica/Tree/scale-current strength;
+- nested oscillatory amplitude, because it already belongs to polarity and scale dynamics;
+- neutral content, because it already has its own field equation and continuity role;
+- scale level, because it is a hierarchy/address coordinate rather than a continuous Cartan radius.
+
+No existing quantity is therefore promoted to E8 radial amplitude.
+
+### Current decision
+
+The physical E8 coupling branch stops here.
+
+The E8 subsystem remains an exact internal geometry and Weyl-symmetry layer.
+A variable E8 radial mode may be added only if an independent theoretical or
+empirical requirement justifies a genuinely new state variable.
+
+### Next creator question
+
+> What independently testable requirement, if any, demands a new E8 radial
+> degree rather than allowing the exact E8 geometry to remain purely internal?
+
+Until such a requirement exists, further E8 physical dynamics would be
+speculative parameter invention rather than a derived extension.

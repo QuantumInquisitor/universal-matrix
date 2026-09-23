@@ -733,3 +733,16 @@ physical observable is selected.
 
 Primary verification: `tests/test_e8_coupling_observable_audit.py`.
 Primary note: `docs/e8_coupling_observable_audit_v0.1.md`.
+
+
+## 4M. E8 radial-degree audit
+
+`src/e8_radial_degree_audit.py` checks whether any existing amplitude, content,
+or scale variable can supply a genuinely independent E8 radius. Matter
+amplitude, port circulation amplitude, nested hierarchy amplitude, neutral
+content, and scale level are all rejected because they are already committed
+to other subsystem roles. A distinct E8 radial mode would require a new
+independently motivated degree of freedom.
+
+Primary verification: `tests/test_e8_radial_degree_audit.py`.
+Primary note: `docs/e8_radial_degree_audit_v0.1.md`.
