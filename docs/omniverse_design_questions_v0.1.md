@@ -2959,3 +2959,43 @@ derived chamber vertices and edges, then test injectivity, edge crossings,
 cycle preservation, mirror equivariance, and chamber collapse. A topology
 change should be reported only when one of those concrete incidence tests
 fails.
+
+
+---
+
+## Sri Yantra spherical topology-control checkpoint — v0.1
+
+The derived 43-chamber planar complex now has a nonplanar control realization in
+\`src/sri_yantra_spherical_topology_control.py\`.
+
+The complete chamber linework is first normalized inside an open planar disk
+and then lifted to the unit sphere through inverse stereographic projection.
+Because the map is a homeomorphism, the edge paths are the images of the full
+planar segments rather than replacement great-circle chords.
+
+The control preserves:
+
+- all 43 chambers;
+- the 1, 8, 10, 10, and 14 enclosure counts;
+- the 3, 16, 20, 20, and 28 enclosure vertex counts;
+- all 129 chamber edges;
+- every chamber-to-vertex incidence;
+- all four ring-cycle member sets;
+- the planar mirror as the spherical reflection (X,Y,Z) -> (X,-Y,Z).
+
+No topology change occurs in this control lift.
+
+This does not answer the historical spherical-form question. Rao's 1998
+construction rebuilds the root-triangle complex from great-circle arcs using
+six basic angular variables and nonlinear spherical-trigonometric constraints.
+
+### Next creator question
+
+> When Rao's sourced great-circle construction is implemented from a published
+> parameter row, does its actual chamber incidence agree with the Huet planar
+> complex and the homeomorphic spherical control, or does the spherical metric
+> and constraint system change the combinatorics?
+
+The next subsystem should reproduce one published Rao spherical solution before
+comparing chamber graphs. It should not use the topology control as a substitute
+for Rao's equations.
