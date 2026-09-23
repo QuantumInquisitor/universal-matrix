@@ -232,3 +232,5 @@ physical content identification.
 
 Technical note: `docs/conservative_toroidal_field_v0.1.md`.
 Verification: `tests/test_conservative_toroidal_field.py`.
+
+| `docs/graph_toroidal_flux_bundle_v0.1.md` | Current one-to-one mapping from conservative graph currents to disjoint 3D toroidal flux domains with exact signed cut-flux preservation. |
