@@ -1532,6 +1532,23 @@ network can be connected smoothly.
 
 See `docs/toroidal_connector_topology_v0.1.md`.
 
+
+
+## Annular junction edge-port candidate
+
+`src/toroidal_annular_junction.py` resolves the local
+rectangle-to-annulus connector obstruction by redesigning every external
+junction edge port as an annular band. An axisymmetric streamfunction preserves
+zero divergence and node balance, while a common cumulative-flux coordinate
+retains the deterministic inlet-to-outlet transfer decomposition.
+
+The boundary profile is exactly the source profile required by the annular
+Piola connector. The remaining kinematic problem is global: assign rigid frames
+and nonoverlapping positions to source junctions, cut-open toroidal edge
+channels, exit connectors, and target junctions.
+
+See `docs/toroidal_annular_junction_v0.1.md`.
+
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.
