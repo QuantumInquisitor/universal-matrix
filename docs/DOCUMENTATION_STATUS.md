@@ -45,6 +45,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/sri_yantra_huet_planar_v0.1.md` | Current Huet-reference planar coordinate reconstruction satisfying the sourced Chiodo concurrency constraints. |
 | `docs/sri_yantra_huet_chambers_v0.1.md` | Current geometry-derived 43-chamber Huet incidence complex with 1 + 8 + 10 + 10 + 14 rings and 129 distinct chamber edges. |
 | `docs/sri_yantra_spherical_topology_control_v0.1.md` | Current homeomorphic spherical control carrying the complete derived 43-chamber incidence complex without topology change; explicitly distinct from Rao's great-circle construction. |
+| `docs/sri_yantra_rao_spherical_reference_v0.1.md` | Current sourced Rao spherical-trigonometric reference reproducing one published six-constraint Table 1 solution. |
 | `docs/higher_dimensional_e8_bridge_v0.1.md` | Current exact arbitrary-dimensional regular-family audit and exploratory E8/D4 construction bridge. |
 | `docs/h4_direct_e8_lift_v0.1.md` | Current direct H4/600-cell to E8 lift using the reduced Q(phi) inner product and eight rational coefficient coordinates. |
 | `docs/e8_equivalence_map_v0.1.md` | Current exact scale-orthogonal equivalence between the H4-derived and standard E8 root systems. |
