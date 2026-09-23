@@ -629,6 +629,7 @@ Start with:
 - `docs/e8_radial_degree_audit_v0.1.md`
 - `docs/graph_toroidal_flux_bundle_v0.1.md`
 - `docs/toroidal_junction_control_volume_v0.1.md`
+- `docs/toroidal_connector_topology_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
@@ -775,3 +776,20 @@ dynamics, and physical units remain open.
 
 Technical note: `docs/toroidal_junction_control_volume_v0.1.md`.
 Verification: `tests/test_toroidal_junction_control_volume.py`.
+
+
+## Toroidal connector topology and annular Piola bridge
+
+The connector audit rejects a silent rectangular-port to annular-cut
+identification: their cross-section topology differs. The toroidal channel is
+therefore treated as cut open along its canonical annulus, and compatible
+annular source ports are connected with an explicit divergence-free Piola
+field.
+
+The connector preserves signed flux on every transverse section and matches
+the existing purely poloidal toroidal field point by point at the target cut.
+The remaining kinematic task is to redesign the external junction edge ports
+as annuli and embed the cut-open channels without overlap.
+
+Technical note: `docs/toroidal_connector_topology_v0.1.md`.
+Verification: `tests/test_toroidal_connector_topology.py`.
