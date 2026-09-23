@@ -2665,3 +2665,33 @@ The next work should move from geometry to state and dynamics. It must first
 identify an existing engine quantity that actually lives in an E8
 representation, or explicitly report that no such quantity has yet been
 derived.
+
+
+---
+
+## E8 state representation audit — v0.1
+
+The state scan found no existing Matrix physical state that carries a full E8
+representation.
+
+The eight-component SU(3) electric field is already an adjoint SU(3) Lie
+algebra quantity with SU(3) gauge-conjugation dynamics. It is therefore a
+no-fit for E8 despite matching the number eight.
+
+The 8 x 8 register is likewise combinatorial: it is an ordered pair of two
+choices from an eight-vertex set, not an eight-dimensional linear vector.
+
+The H4-derived eight-coordinate space is different. It is the rank-eight
+root/Cartan space and supports the exact finite E8 Weyl reflection action.
+The new `E8CartanState` exposes only that action and does not claim a full E8
+Lie-algebra representation.
+
+### Next creator question
+
+> Can an optional E8 Cartan/Weyl coordinate couple to an existing Matrix
+> observable through a scalar invariant while leaving U(1), SU(2), and SU(3)
+> gauge covariance unchanged?
+
+Any such coupling must be introduced as a separate candidate law. If no
+gauge-compatible invariant can be derived, the E8 layer should remain
+mathematical rather than becoming a physical dynamics sector.
