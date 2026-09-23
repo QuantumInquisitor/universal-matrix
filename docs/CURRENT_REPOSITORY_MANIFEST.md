@@ -44,6 +44,7 @@ Current experimental modules include:
 - `src/e8_equivalence_map.py`
 - `src/e8_state_audit.py`
 - `src/e8_invariant_coupling.py`
+- `src/e8_coupling_observable_audit.py`
 
 The current ontology distinguishes exact canonical address structure from candidate physical variables. The local-transition layer adds the minimal gauge-covariant nearest-neighbor Hamiltonian used to test locality, conservative exchange, and the weak-field wave limit. The polarity-phase bridge removes redundant polarity bookkeeping by proving equivalence between branch sign, pi-shifted effective phase, and the fixed-amplitude rotor reduction where their assumptions overlap. The recursive port layer supplies exact contained circle, Seed, Vesica, Flower, and Tree geometry, then exposes polarity-clock and negative-space adapters as explicit hypotheses rather than physical facts. The circulation layer adds a dimensionless graph continuity law, balanced Vesica and Tree currents, and a separately typed parent-child scale current without assigning a physical identity to the conserved content. The plane layer adds an open overlap graph and a mirror-paired possibility address while rejecting any elementary move that conflates scale, plane, and branch coordinates. The Sri Yantra layer attaches an embedding-independent enclosure fibre over that product address, distinguishes plane, spherical, Meru, simplex, and spiral-cone realizations, and preserves separate phase, flow, mirror, and handedness operations.
 
@@ -255,3 +256,13 @@ The geometry/state manifest now includes `src/e8_invariant_coupling.py`, which
 couples only the Weyl-invariant Cartan norm to an already gauge-invariant scalar.
 The E8 coordinate remains a singlet under the existing U(1), SU(2), and SU(3)
 gauge transformations.
+
+
+## E8 coupling observable boundary
+
+The state/dynamics manifest now includes
+`src/e8_coupling_observable_audit.py`. It records that fixed-root E8 scalar
+couplings to current matter norms, gauge energy, or the neutral scalar do not
+produce distinct E8 orientation dynamics. They reduce to parameter shifts,
+coupling rescalings, or source offsets unless a new E8-covariant or radial
+degree of freedom is introduced.
