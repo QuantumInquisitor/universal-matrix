@@ -39,6 +39,20 @@ center and a regular six-point ring. These are the centers of a normalized
 Seed-of-Life circle layout. The contract establishes the center geometry, not
 the claim that a physical Flower of Life is cast by a 4D object.
 
+## Sri Yantra simplex bridge
+
+The multidimensional Sri Yantra contract adds a dimension-open local bridge.
+An oriented triangle is the two-dimensional member of the centered regular
+simplex family. Its three-dimensional successor is a tetrahedron, and the two
+centrally inverted orientations form an eight-vertex dual-tetrahedron
+compound. This is an exact simplex-to-stella relation.
+
+It is not an equality between the complete forms. The Sri Yantra retains nine
+source generators with a four-upward/five-downward inventory, whereas one
+stella octangula contains two tetrahedra. Placement and intersection of all
+nine lifted generators remain an open construction problem. See
+`docs/sri_yantra_multidimensional_v0.1.md`.
+
 ## Mirror law
 
 Every layer is closed under the same central inversion `x -> -x`. Linear

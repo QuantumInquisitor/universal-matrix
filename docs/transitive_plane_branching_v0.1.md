@@ -224,3 +224,9 @@ That lift must preserve the product-address distinctions introduced here. It
 must also declare units, boundary conditions, singularity handling, and a
 falsification test before receiving a physical torus, wormhole, or cosmology
 interpretation.
+
+**Refinement:** before that field lift, the creator required the Sri Yantra to
+be expanded beyond a planar reading. The resulting embedding-independent fibre
+and its plane, spherical, Meru, simplex, and spiral-cone realizations are
+documented in `docs/sri_yantra_multidimensional_v0.1.md`. The vector-field
+question remains open after an exact cross-realization incidence audit.

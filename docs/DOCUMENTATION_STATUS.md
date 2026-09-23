@@ -39,6 +39,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/universe_port_engine_v0.1.md` | Current exact contained Seed, Vesica, Flower, and derived Tree geometry with explicit candidate port dynamics. |
 | `docs/vesica_tree_circulation_v0.1.md` | Current discrete continuity law for balanced Vesica, Tree, and recursive-scale currents. |
 | `docs/transitive_plane_branching_v0.1.md` | Current product-address, overlap-route, mirror, and conservative possibility-branch contract. |
+| `docs/sri_yantra_multidimensional_v0.1.md` | Current embedding-independent Sri Yantra inventory, realization family, simplex lift, spiral-cone chart, and enclosure-flow contract. |
 | `docs/qball_stability_map_v0.1.md` | Current charged-matter evidence-map design separating energetic, branch-slope, and finite-time persistence diagnostics. |
 | `docs/qball_threshold_refinement_v0.1.md` | Current adaptive refinement of the charged-matter energetic threshold. |
 | `docs/qball_threshold_persistence_scan_v0.1.md` | Current finite-time direct and perturbed 3D scan across the refined energetic threshold. |

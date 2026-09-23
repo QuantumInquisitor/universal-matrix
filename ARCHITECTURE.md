@@ -350,6 +350,51 @@ Implementation:
 - tests/test_transitive_plane_branching.py
 - docs/transitive_plane_branching_v0.1.md
 
+## 4F. Multidimensional Sri Yantra fibre
+
+The Sri Yantra layer is defined first as an embedding-independent ordered
+complex. Its canonical inventory retains nine generators, with four upward
+and five downward orientations, and nine outer-to-inner enclosures. The five
+triangular enclosure counts sum to
+
+\[
+14+10+10+8+1=43.
+\]
+
+Plane, spherical, and Meru forms are distinct typed realizations. The engine
+also provides explicitly labelled higher-simplex and spiral-cone candidates.
+Intrinsic and ambient dimension are stored separately, so a curved
+two-dimensional spherical network embedded in three dimensions is not silently
+called a three-dimensional volume.
+
+The fibre state extends the existing base address without replacing it:
+
+\[
+Y=((u,p,b),a,m,\varphi;R,f,h),
+\]
+
+where \(a\) is enclosure, \(m\) is local member, \(\varphi\) is rational
+phase, \(R\) is realization, \(f\) is inward/stationary/outward flow, and
+\(h\) is handedness. Projection and lift change only \(R\). Recursive scale,
+named plane, possibility path, enclosure, and phase remain explicit.
+
+The dimension-open generator template is the centered regular \(d\)-simplex
+in \(d+1\) barycentric coordinates. Its opposite orientation is exact central
+inversion. At \(d=3\), the two orientations give a dual-tetrahedron compound
+with eight vertices, providing a local bridge to the stella octangula without
+equating the complete nine-generator Yantra with one stella.
+
+Adjacent enclosure currents carry a constant dimensionless cut flux. The
+inward and outward routes are exact reverses; their equal superposition has
+zero divergence on all nine enclosures. No current is identified with energy,
+Ether, Consciousness, or another physical observable in this layer.
+
+Implementation:
+
+- src/sri_yantra_multidimensional.py
+- tests/test_sri_yantra_multidimensional.py
+- docs/sri_yantra_multidimensional_v0.1.md
+
 ## 5. Open discrete-exterior-calculus layer
 
 The default open field adapter uses a cubical complex with cochain sequence

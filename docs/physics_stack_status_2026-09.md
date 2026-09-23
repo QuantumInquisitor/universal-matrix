@@ -79,7 +79,7 @@ Key ideas:
 
 ## 2A. Recursive universe-port geometry
 
-Status: **EXACT PLANAR/GRAPH CONSTRUCTIONS + EXPERIMENTAL DYNAMIC ADAPTERS**
+Status: **EXACT FINITE/GRAPH CONSTRUCTIONS + EXPERIMENTAL MULTIDIMENSIONAL ADAPTERS**
 
 Modules:
 
@@ -88,6 +88,7 @@ Modules:
 - `src/universe_port_engine.py`
 - `src/vesica_tree_circulation.py`
 - `src/transitive_plane_branching.py`
+- `src/sri_yantra_multidimensional.py`
 
 Verified structural results:
 
@@ -108,6 +109,15 @@ Verified structural results:
 - indirect plane changes follow declared overlap routes while conserving total
   dimensionless graph content;
 - mirror-paired possibility splits preserve their total branch-cut current;
+- the Sri Yantra inventory is retained independently of realization, with
+  nine enclosures, four upward and five downward generators, and 43
+  triangular cells;
+- plane, spherical, Meru, simplex-field, and spiral-cone realizations preserve
+  the same typed fibre address;
+- regular oriented simplex templates extend the triangle generator to
+  arbitrary declared dimension and exchange by exact central inversion;
+- equal inward and outward enclosure currents form zero-divergence shell
+  circulation;
 - recursive central mirroring is exact;
 - three routing channels and 36 ticks cover all 108 canonical states;
 - every explicit Terryen candidate can be tested for one bounded cavity without
@@ -116,10 +126,12 @@ Verified structural results:
 The one-quarter scale ratio is exact only for the declared planar containment
 construction. The finite-graph conservation identities are exact under the
 declared channel model. The physical identity and units of the conserved
-content, a three-dimensional toroidal lift, a measured plane-transition
-observable, and cosmological interpretation remain open. The implemented
-plane and possibility topology is a formal candidate, not evidence of extra
-physical dimensions or parallel universes.
+content, exact metric equivalence among plane/spherical/Meru forms, a
+three-dimensional toroidal field lift, a measured plane-transition observable,
+and cosmological interpretation remain open. The implemented plane,
+possibility, simplex, and spiral-cone topology is a formal candidate, not
+evidence of extra physical dimensions, parallel universes, or a physical Sri
+Yantra field.
 
 ---
 

@@ -131,6 +131,12 @@ The active universe-port geometry now provides:
 - an open named-plane overlap graph with explicit intermediary routes;
 - a separately addressed possibility path with mirror-paired branch weights;
 - fail-closed separation of scale, plane, and possibility moves;
+- an embedding-independent Sri Yantra fibre with nine enclosures and 43
+  triangular cells;
+- distinct plane, spherical, Meru, higher-simplex, and spiral-cone
+  realizations without equating a projection to the full object;
+- conservative inward/outward enclosure flow and independently reversible
+  mirror, phase, flow, and handedness coordinates;
 - 36-tick polarity and transfer states covering all 108 canonical positions;
 - explicit Terryen-candidate cavity checks without a hidden preferred model.
 
@@ -142,8 +148,30 @@ candidate model. None of these results establishes a literal physical
 multiverse, Ether, black-hole mechanism, or new law of gravity.
 
 See `docs/universe_port_engine_v0.1.md`,
-`docs/vesica_tree_circulation_v0.1.md`, and
-`docs/transitive_plane_branching_v0.1.md`.
+`docs/vesica_tree_circulation_v0.1.md`,
+`docs/transitive_plane_branching_v0.1.md`, and
+`docs/sri_yantra_multidimensional_v0.1.md`.
+
+### Multidimensional Sri Yantra fibre
+
+The Sri Yantra checkpoint treats its familiar planar form as one realization
+of an abstract relational complex rather than as a two-dimensional endpoint.
+The source-derived inventory keeps four upward and five downward generators,
+nine ordered enclosures, 43 triangular cells, 24 lotus petals, four boundary
+gates, and one bindu distinct.
+
+The local Yantra coordinate is attached over the existing
+`(recursive universe, named plane, possibility path)` address. Realization,
+enclosure, local member, rational phase, inward/outward flow, and handedness
+remain independently typed. Projection or dimensional lift therefore cannot
+silently create a new universe, plane, or possibility branch.
+
+The candidate dimension-open construction lifts each oriented triangle to a
+regular oriented `d`-simplex. A separate spiral-cone chart supplies a dynamic
+three-dimensional scale view, while equal inward and outward shell routes
+form a zero-divergence graph circulation. These are exact model identities and
+candidate embeddings, not evidence that the Sri Yantra is a literal physical
+map of extra dimensions or the omniverse.
 
 ### Minimal local Matrix transition law
 
@@ -463,6 +491,7 @@ Start with:
 - `docs/universe_port_engine_v0.1.md`
 - `docs/vesica_tree_circulation_v0.1.md`
 - `docs/transitive_plane_branching_v0.1.md`
+- `docs/sri_yantra_multidimensional_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 

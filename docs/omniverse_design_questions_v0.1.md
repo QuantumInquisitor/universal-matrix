@@ -2488,3 +2488,71 @@ The next subsystem must preserve the new product address rather than treating
 plane, branch, and scale axes as interchangeable. It must declare units,
 boundary conditions, singularity handling, and at least one falsification
 criterion before acquiring a physical torus, wormhole, or cosmological label.
+
+---
+
+## Multidimensional Sri Yantra checkpoint — v0.1
+
+The creator correction preceding the field lift was that the Sri Yantra must
+not be reduced to a two-dimensional diagram. The first executable answer is in
+`src/sri_yantra_multidimensional.py`.
+
+The model now begins with an embedding-independent inventory. It retains four
+upward and five downward generators, nine ordered enclosures, 43 triangular
+cells, 24 lotus petals, four outer gates, and one bindu without treating those
+different counts as interchangeable.
+
+The existing product address is not replaced. Instead, the local Yantra state
+is a fibre over it:
+
+\[
+Y=((u,p,b),a,m,\varphi;R,f,h).
+\]
+
+The new coordinates record enclosure, local member, rational phase,
+realization, inward/stationary/outward flow, and handedness. Plane, spherical,
+and Meru forms are distinguished from the explicitly candidate
+higher-dimensional simplex field and spiral cone. A projection or lift changes
+the realization only; it cannot silently change recursive universe, named
+plane, or possibility path.
+
+The dimension-open construction replaces an oriented triangle with the
+centered regular \(d\)-simplex
+
+\[
+v_i=e_i-\frac{1}{d+1}\mathbf1.
+\]
+
+The complementary orientation is \(-v_i\). In three intrinsic dimensions the
+two orientation templates form a dual-tetrahedron compound with eight
+vertices. This gives an exact local bridge to the stella octangula while
+retaining the important no-fit: the complete four-plus-five generator Sri
+Yantra is not thereby reduced to a single star tetrahedron.
+
+The spiral-cone chart places the outer enclosure on a base ring, the bindu at
+the apex, and phase/handedness in its winding. It is a project-specific
+candidate inspired by the book, not an asserted historical Sri Meru metric.
+
+A dimensionless current can pass inward through the eight adjacent enclosure
+interfaces with constant cut flux. The outward path is its exact reverse.
+Equal inward and outward paths have zero divergence at every enclosure. This
+answers how “in is out” can become an executable reciprocity statement without
+declaring what physical substance, if any, circulates.
+
+The full source boundary, realization table, visualization, failure
+conditions, and verification are in
+`docs/sri_yantra_multidimensional_v0.1.md`.
+
+### Next creator question
+
+> Which incidence relations and intersection multiplicities remain invariant
+> under exact plane, spherical, Meru, and higher-simplex constructions, and
+> where do topology-changing branch events occur in their configuration
+> space?
+
+The next subsystem must reconstruct exact coordinates for at least one planar
+and one nonplanar form, extract topology before projection, and report both
+fits and obstructions. It must not promote the traditional 108 association to
+the canonical 108-state processor until an explicit operator-respecting
+bijection exists. The toroidal vector-field lift should then use the surviving
+incidence structure rather than assuming the planar picture is fundamental.
