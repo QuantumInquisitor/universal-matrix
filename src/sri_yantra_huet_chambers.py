@@ -34,7 +34,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from itertools import combinations
-from math import hypot
+from math import atan2, hypot
 
 from .sri_yantra_huet_planar import (
     HUET_PLANAR_SOLUTION,
@@ -312,7 +312,14 @@ def _candidate_points(
     candidate: ChamberCandidate,
     nodes: tuple[Point2D, ...],
 ) -> tuple[Point2D, Point2D, Point2D]:
-    return tuple(nodes[index] for index in candidate.vertex_ids)
+    points = tuple(nodes[index] for index in candidate.vertex_ids)
+    center = _centroid(points)
+    return tuple(
+        sorted(
+            points,
+            key=lambda point: atan2(point[1] - center[1], point[0] - center[0]),
+        )
+    )
 
 
 def _candidate_centroid(
