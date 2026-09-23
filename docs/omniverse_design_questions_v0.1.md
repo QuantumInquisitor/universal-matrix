@@ -3103,3 +3103,35 @@ merely share a total count or a visual shape.
 > Which explicit graph-to-volume map preserves the oriented cut flux of
 > every channel, and what independent dynamical law and physical units would
 > turn this kinematic current into a testable physical model?
+
+
+---
+
+## Graph-to-toroidal flux-bundle checkpoint v0.1
+
+The previous graph-to-volume question now has a conservative kinematic answer
+in `src/graph_toroidal_flux_bundle.py`.
+
+Every directed graph current edge is assigned one explicit translated solid
+ring torus. The signed graph current is used directly as the torus poloidal
+cut flux, so the measured oriented surface flux equals the graph current with
+no fitted normalization factor.
+
+The channel supports are separated in three-dimensional space. Each local
+field remains divergence-free, and the summed field remains locally
+divergence-free because the supports do not overlap. Each volume also retains
+the original source, target, current, and channel label, so applying the graph
+incidence relation to the mapped fluxes reproduces the original node
+divergence exactly.
+
+This closes the one-to-one flux-domain assignment gate. It does not yet turn
+graph nodes into physical three-dimensional junctions.
+
+### Next creator question
+
+> Can explicit three-dimensional junction control volumes replace the separate
+> incidence ledger while preserving every signed channel flux and zero net
+> source at each conservative graph node?
+
+Only after a connected junction construction should an independent dynamics
+law or physical normalization be introduced.
