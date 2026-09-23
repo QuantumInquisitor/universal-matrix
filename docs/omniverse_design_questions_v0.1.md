@@ -2798,3 +2798,41 @@ empirical requirement justifies a genuinely new state variable.
 
 Until such a requirement exists, further E8 physical dynamics would be
 speculative parameter invention rather than a derived extension.
+
+
+---
+
+## Sri Yantra incidence and topology audit — v0.1
+
+The multidimensional Sri Yantra question now has a conservative topology
+checkpoint in `src/sri_yantra_incidence_topology_audit.py`.
+
+The exact abstract structure currently available is:
+
+- 72 local enclosure components across all nine avaranas;
+- 70 declared same-enclosure cyclic edges;
+- eight adjacent-enclosure shell interfaces;
+- preserved base address, phase, mirror, flow, handedness, and realization
+  coordinates.
+
+The current spherical-shell and spiral-cone candidate charts are injective over
+all 72 locations, so neither chart introduces a topology change merely by
+embedding the abstract address structure in three dimensions.
+
+The following remain explicitly unknown because the repository does not yet
+encode them:
+
+- the complete 43-triangle intersection graph;
+- exact pairwise intersection multiplicities for the four upward and five
+  downward generators;
+- a proved incidence-preserving equivalence among historical plane, spherical,
+  and Meru constructions.
+
+### Next creator question
+
+> What sourced exact planar construction should define the four-up/five-down
+> generator coordinates and their complete intersection graph?
+
+That graph should be derived first. Only then can the engine test whether
+spherical and Meru realizations preserve the same incidence or undergo genuine
+topology-changing events.
