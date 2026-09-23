@@ -2556,3 +2556,41 @@ fits and obstructions. It must not promote the traditional 108 association to
 the canonical 108-state processor until an explicit operator-respecting
 bijection exists. The toroidal vector-field lift should then use the surviving
 incidence structure rather than assuming the planar picture is fundamental.
+
+
+---
+
+## Higher-dimensional regular-family and E8 checkpoint — v0.1
+
+The next dimensional audit is now executable in
+`src/higher_dimensional_geometry.py`.
+
+The result separates dimensional recursion from visual resemblance. Hypercubes
+and cross-polytopes remain centrally mirror closed in arbitrary dimension and
+project recursively to lower-dimensional members of the same family. A single
+simplex is not centrally mirror closed, although adjoining its inverted copy
+produces an exact mirrored compound. This generalizes the tetrahedron-plus-
+inverted-tetrahedron idea without falsely identifying that compound with the
+cross-polytope in every dimension.
+
+The same checkpoint constructs the 240 E8 roots exactly, verifies reflection
+closure, 120 antipodal pairs, and 56 nearest neighbors at every root-polytope
+vertex. The existing 24-cell contributes an exact 24-root D4 subsystem through
+its facet normals.
+
+This makes E8 a legitimate mathematical research layer because there is an
+exact bridge from geometry already present in the engine. It does not establish
+that eight physical dimensions exist or that the project’s 8 x 8 language is
+identical to E8.
+
+### Next creator question
+
+> Can the already implemented H4 / 600-cell coordinates generate the same 240
+> E8 roots through an explicit tested lift, with no target-root list inserted
+> by hand, while commuting with central mirror and the existing H3 reflection
+> structure?
+
+If that map exists, the next question is whether its eight coordinates are
+physical state variables, internal representation coordinates, or only a
+mathematical completion space. That distinction must be settled before any
+cosmological interpretation is added.
