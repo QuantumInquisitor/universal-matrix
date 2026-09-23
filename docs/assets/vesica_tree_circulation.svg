@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Conservative Vesica and Tree circulation</title>
+  <desc id="desc">Three panels show a balanced cusp-neutral Vesica loop, matched outer and inner Tree currents with a closed ring weave, and the quadrature relation between local circulation and a separately typed parent-child scale current.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="1" stop-color="#111a33"/>
+    </linearGradient>
+    <linearGradient id="lens" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5c75b" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#ff8f70" stop-opacity="0.18"/>
+    </linearGradient>
+    <marker id="arrowCyan" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#6ee7f2"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#f5c75b"/>
+    </marker>
+    <marker id="arrowViolet" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#b69cff"/>
+    </marker>
+    <style>
+      .panel { fill: #0b1628; stroke: #2b3f62; stroke-width: 1.5; }
+      .title { fill: #f6f8ff; font: 700 27px system-ui, sans-serif; }
+      .panel-title { fill: #f6f8ff; font: 700 18px system-ui, sans-serif; }
+      .label { fill: #cbd6ea; font: 14px system-ui, sans-serif; }
+      .small { fill: #9fb0ca; font: 12px system-ui, sans-serif; }
+      .formula { fill: #f5c75b; font: 600 15px ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .node { fill: #f6f8ff; stroke: #07111f; stroke-width: 1.5; }
+      .tree-node { fill: #0b1628; stroke: #cbd6ea; stroke-width: 1.4; }
+      .outer { fill: none; stroke: #6ee7f2; stroke-width: 2.5; marker-end: url(#arrowCyan); }
+      .inner { fill: none; stroke: #f5c75b; stroke-width: 2.2; marker-end: url(#arrowGold); }
+      .weave { fill: none; stroke: #b69cff; stroke-width: 2.3; marker-end: url(#arrowViolet); }
+      .guide { fill: none; stroke: #52698e; stroke-width: 1.2; stroke-dasharray: 5 5; }
+      .divider { stroke: #2b3f62; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="720" rx="22" fill="url(#background)"/>
+  <text x="50" y="52" class="title">Conservative Vesica and Tree Circulation</text>
+  <text x="50" y="78" class="label">Exact graph continuity inside a declared candidate port model</text>
+
+  <rect x="35" y="105" width="360" height="525" rx="18" class="panel"/>
+  <rect x="420" y="105" width="360" height="525" rx="18" class="panel"/>
+  <rect x="805" y="105" width="360" height="525" rx="18" class="panel"/>
+
+  <text x="58" y="140" class="panel-title">1. Local Vesica loop</text>
+  <path d="M215 190 A105 105 0 0 1 215 450 A105 105 0 0 1 215 190 Z" fill="url(#lens)" stroke="#52698e" stroke-width="1.8"/>
+  <circle cx="215" cy="210" r="7" fill="#ff8f70" stroke="#07111f" stroke-width="1.4"/>
+  <circle cx="215" cy="320" r="7" class="node"/>
+  <circle cx="215" cy="430" r="7" fill="#6ee7f2" stroke="#07111f" stroke-width="1.4"/>
+  <path d="M215 220 L215 305" class="outer"/>
+  <path d="M215 335 L215 420" class="outer"/>
+  <path d="M202 426 C112 400 112 240 202 214" class="inner"/>
+  <path d="M228 426 C318 400 318 240 228 214" class="inner"/>
+  <text x="232" y="214" class="label">cusp A</text>
+  <text x="232" y="325" class="label">neutral</text>
+  <text x="232" y="435" class="label">cusp B</text>
+  <text x="67" y="323" class="small">αI</text>
+  <text x="328" y="323" class="small">(1−α)I</text>
+  <text x="58" y="504" class="formula">div J(A) = div J(N) = div J(B) = 0</text>
+  <text x="58" y="534" class="label">Two returns sum to the through-current.</text>
+  <text x="58" y="560" class="small">Closed cross-section candidate, not a physical-torus claim.</text>
+
+  <text x="443" y="140" class="panel-title">2. Flower-derived Tree</text>
+  <g class="guide">
+    <path d="M600 218 L688 269 L688 371 L600 422 L512 371 L512 269 Z"/>
+    <path d="M600 320 L600 218 M600 320 L688 269 M600 320 L688 371 M600 320 L600 422 M600 320 L512 371 M600 320 L512 269"/>
+  </g>
+  <path d="M600 312 L600 235" class="outer"/>
+  <path d="M608 327 L675 366" class="outer"/>
+  <path d="M592 327 L525 366" class="outer"/>
+  <path d="M600 238 L600 304" class="inner"/>
+  <path d="M673 361 L610 324" class="inner"/>
+  <path d="M527 361 L590 324" class="inner"/>
+  <path d="M608 218 L681 260 L687 355 L608 414 L521 374 L513 278 L588 222" class="weave"/>
+  <circle cx="600" cy="320" r="8" class="node"/>
+  <circle cx="600" cy="218" r="7" class="tree-node"/>
+  <circle cx="688" cy="269" r="7" class="tree-node"/>
+  <circle cx="688" cy="371" r="7" class="tree-node"/>
+  <circle cx="600" cy="422" r="7" class="tree-node"/>
+  <circle cx="512" cy="371" r="7" class="tree-node"/>
+  <circle cx="512" cy="269" r="7" class="tree-node"/>
+  <text x="443" y="474" class="formula">cut flux = Iᵣ at every ring</text>
+  <text x="443" y="504" class="label"><tspan fill="#6ee7f2">outer</tspan><tspan> + </tspan><tspan fill="#f5c75b">inner</tspan><tspan> + </tspan><tspan fill="#b69cff">weave</tspan><tspan> is divergence-free</tspan></text>
+  <text x="443" y="534" class="label">Positive and negative pillars mirror exactly.</text>
+  <text x="443" y="560" class="small">The Tree routes come from Flower adjacency.</text>
+
+  <text x="828" y="140" class="panel-title">3. Clock and scale type</text>
+  <line x1="970" y1="190" x2="970" y2="410" class="guide"/>
+  <line x1="860" y1="300" x2="1080" y2="300" class="guide"/>
+  <circle cx="970" cy="300" r="94" fill="none" stroke="#52698e" stroke-width="1.8"/>
+  <path d="M970 300 L1040 237" class="outer"/>
+  <circle cx="1040" cy="237" r="6" fill="#f5c75b"/>
+  <text x="1050" y="230" class="small">(I_local, I_scale)</text>
+  <text x="1060" y="294" class="small">local</text>
+  <text x="979" y="198" class="small">scale</text>
+  <text x="842" y="438" class="formula">I_local² + I_scale² = A²</text>
+  <rect x="846" y="475" width="118" height="48" rx="10" fill="#101f36" stroke="#6ee7f2" stroke-width="1.5"/>
+  <rect x="1010" y="475" width="118" height="48" rx="10" fill="#101f36" stroke="#f5c75b" stroke-width="1.5"/>
+  <text x="872" y="504" class="label">parent p</text>
+  <text x="1027" y="504" class="label">child p+i</text>
+  <path d="M966 499 L1000 499" class="weave"/>
+  <text x="828" y="550" class="label">Solid prefix edge = recursive scale transfer</text>
+  <text x="828" y="576" class="small">Transitive-plane branching remains a separate open type.</text>
+
+  <line x1="50" y1="655" x2="1150" y2="655" class="divider"/>
+  <text x="50" y="682" class="small">Exact graph identities  •  dimensionless content placeholder  •  no automatic energy, Ether, Consciousness, or cosmology label</text>
+</svg>

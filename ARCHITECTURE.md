@@ -289,6 +289,38 @@ Implementation:
 - tests/test_universe_port_engine.py
 - docs/universe_port_engine_v0.1.md
 
+## 4D. Conservative Vesica and Tree circulation
+
+The port geometry now carries a minimal discrete continuity layer. For signed
+edge current (J), the node convention is outgoing current minus incoming
+current, and the local update obeys
+
+\[
+\frac{dq_a}{dt}+(\operatorname{div}J)_a=0.
+\]
+
+The local Vesica graph routes one through-current from cusp (A), through the
+neutral center, to cusp (B), then returns it over two separately labeled lens
+channels. The return currents sum to the through-current, so all three nodes
+have zero divergence.
+
+On the Flower-derived Tree, the normalized outer flow carries equal total flux
+across every radial cut. The inner flow is its exact weighted reverse, and
+same-ring weave currents are closed cycles. Their sum is therefore locally
+balanced. Central mirroring preserves route weights and exchanges the positive
+and negative pillar fluxes.
+
+Recursive scale transfer is represented by a distinct parent-child address
+edge. It is neither a Flower route nor a transitive-plane branch. The latter
+remains an open subsystem rather than being silently conflated with spatial
+scale nesting.
+
+Implementation:
+
+- src/vesica_tree_circulation.py
+- tests/test_vesica_tree_circulation.py
+- docs/vesica_tree_circulation_v0.1.md
+
 ## 5. Open discrete-exterior-calculus layer
 
 The default open field adapter uses a cubical complex with cochain sequence

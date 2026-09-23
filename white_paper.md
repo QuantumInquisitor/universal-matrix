@@ -588,6 +588,62 @@ is not established.
 
 ---
 
+## 10.2 Conservative port circulation
+
+A minimal continuity layer now places dimensionless scalar content (q_a) on
+the port and Tree graphs. For signed current (J_{a\to b}), it uses
+
+\[
+\frac{dq_a}{dt}
++
+\left(
+\sum_{a\to b}J_{a\to b}
+-
+\sum_{c\to a}J_{c\to a}
+\right)
+=0.
+\]
+
+The closed-graph sum of the divergence vanishes exactly. The local Vesica
+cross-section contains equal axial current through cusp (A), the neutral
+center, and cusp (B), with two return-channel currents whose sum matches the
+axial current. It is therefore divergence-free at every port node.
+
+The Flower-derived Tree assigns normalized outward route weights so that every
+radial ring cut carries the same total flux. The inner Tree is the exact
+weighted reverse, while transverse ring currents form closed cycles. The
+combined Tree circulation is locally divergence-free and preserves the
+positive/negative pillar mirror balance.
+
+The 36-tick candidate adapter resolves a fixed amplitude (A) into local and
+recursive-scale current carriers,
+
+\[
+I_{\mathrm{local}}
+=A(-1)^\ell\cos\phi,
+\qquad
+I_{\mathrm{scale}}
+=A(-1)^\ell\sin\phi,
+\]
+
+so their squared quadrature norm is (A^2). Recursive scale current is a
+separately typed parent-child prefix edge, not a spatial Tree route and not an
+implemented transitive-plane branch.
+
+The graph conservation identities are exact under the declared discrete
+model. Calling the conserved scalar energy, charge, information, Ether,
+Consciousness, or matter would require a separate dimensional and empirical
+bridge. The closed planar loop is likewise only a toroidal cross-section
+candidate, not evidence for a physical torus.
+
+Implementation:
+
+- `src/vesica_tree_circulation.py`
+- `tests/test_vesica_tree_circulation.py`
+- `docs/vesica_tree_circulation_v0.1.md`
+
+---
+
 ## 10A. Minimal local Matrix transition law
 
 After fixing the primitive cell ontology, the next question is the minimum
@@ -1323,6 +1379,7 @@ The strongest internally established statements include:
 - routing, polarity, reflection, projection, carry, collision, and mixed-radix identities;
 - order-48 boundary symmetry;
 - conservative nested transfer under the stated alternating-scale model;
+- exact finite-graph continuity for the declared Vesica and Tree circulation;
 - local gauge invariance of implemented U(1), SU(2), and SU(3) lattice constructions;
 - self-consistent reciprocity scalar sourcing under the stated action;
 - static spherical vacuum solution \(\psi=\mu/r\) within that model;
