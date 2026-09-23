@@ -43,6 +43,7 @@ Current experimental modules include:
 - `src/sri_yantra_chiodo_concurrency.py`
 - `src/sri_yantra_huet_planar.py`
 - `src/sri_yantra_huet_chambers.py`
+- `src/sri_yantra_spherical_topology_control.py`
 - `src/higher_dimensional_geometry.py`
 - `src/h4_direct_e8_lift.py`
 - `src/e8_equivalence_map.py`
@@ -321,3 +322,14 @@ The resulting 43 chambers are mirror closed, the four noncentral enclosures
 are vertex-touching cycles, and their 129 chamber sides are all distinct.
 The result is a planar incidence contract. Nonplanar Sri Yantra candidates have
 not yet been shown to preserve it.
+
+
+## Sri Yantra spherical topology control
+
+The geometry manifest includes `src/sri_yantra_spherical_topology_control.py`.
+It maps the actual 43-chamber Huet incidence complex through an injective
+inverse-stereographic chart, retains complete chamber and ring membership, and
+verifies mirror equivariance and planar roundtrip recovery.
+
+The construction is intentionally a topology-preserving control. It is not
+identified with Rao's sourced great-circle spherical geometry.
