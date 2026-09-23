@@ -2836,3 +2836,37 @@ encode them:
 That graph should be derived first. Only then can the engine test whether
 spherical and Meru realizations preserve the same incidence or undergo genuine
 topology-changing events.
+
+
+---
+
+## Sourced Sri Yantra planar concurrency checkpoint — v0.1
+
+The previous open question now has a sourced answer in
+`src/sri_yantra_chiodo_concurrency.py`.
+
+Following Alessandro Chiodo's 2021 construction, the engine now distinguishes
+nine maximal triangles t1 through t9, with t1 through t5 downward and t6
+through t9 upward. The exact minimal concurrency contract contains:
+
+- the shared circumcircle of t3 and t7;
+- seven apex-to-base-point incidences;
+- twelve three-line concurrency conditions;
+- four ordered base parameters P,Q,R,S on the normalized diameter, associated
+  with t3, t6, t7, and t9.
+
+The Huet parameter values quoted by Chiodo are recorded as one reproducible
+example inside the four-parameter family.
+
+This closes the inventory-to-concurrency gap, but not the coordinate-to-chamber
+gap.
+
+### Next creator question
+
+> Can Chiodo's complete straightedge-and-compass construction, including the
+> selected circle-line-point Apollonius solution, be implemented numerically so
+> that all line intersections and the 43 chambers are derived rather than
+> stored as metadata?
+
+The next step must produce the planar coordinates and recover the chamber count
+from geometry itself.
