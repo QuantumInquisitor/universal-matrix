@@ -205,6 +205,14 @@ standard E8 roots and commutes with central mirror and every root reflection.
 
 See `docs/e8_equivalence_map_v0.1.md`.
 
+A state-space audit now keeps those E8 coordinates separate from existing
+physical variables. In particular, the eight-component SU(3) electric field
+remains an SU(3) adjoint quantity and is not relabelled as E8. The only admitted
+eight-coordinate E8 state is an internal Cartan/root-space object carrying the
+finite Weyl reflection action.
+
+See `docs/e8_state_representation_audit_v0.1.md`.
+
 ### Minimal local Matrix transition law
 
 The ontology-level transition layer now provides a minimal six-neighbor
@@ -527,6 +535,7 @@ Start with:
 - `docs/higher_dimensional_e8_bridge_v0.1.md`
 - `docs/h4_direct_e8_lift_v0.1.md`
 - `docs/e8_equivalence_map_v0.1.md`
+- `docs/e8_state_representation_audit_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 

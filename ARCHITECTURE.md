@@ -697,3 +697,15 @@ central mirror and root reflections.
 
 Primary verification: `tests/test_e8_equivalence_map.py`.
 Primary note: `docs/e8_equivalence_map_v0.1.md`.
+
+
+## 4J. E8 state representation audit
+
+`src/e8_state_audit.py` separates E8 root/Cartan coordinates from existing
+physical state variables. The canonical Z_108 core, the 8 x 8 register, and the
+eight-component SU(3) electric field are explicitly rejected as full E8 state
+representations. A dedicated `E8CartanState` carries only the rank-eight Weyl
+reflection action.
+
+Primary verification: `tests/test_e8_state_audit.py`.
+Primary note: `docs/e8_state_representation_audit_v0.1.md`.
