@@ -406,3 +406,18 @@ disk-like rectangular port as a nonsingular annulus connector.
 
 See `docs/toroidal_connector_topology_v0.1.md` for the topology audit, Piola
 map, and current limitations.
+
+
+## Build connector-compatible annular junctions
+
+```sh
+python -m pytest -q tests/test_toroidal_annular_junction.py
+```
+
+Use `connect_bundle_to_annular_junctions(...)` with a
+`GraphToroidalFluxBundle` and complete graph node set. Each incident edge
+receives one annular boundary band whose signed surface flux equals the graph
+contribution and whose profile matches the annular Piola connector.
+
+See `docs/toroidal_annular_junction_v0.1.md` for the cumulative-flux and
+streamfunction construction.
