@@ -6,6 +6,7 @@ from math import isclose
 import pytest
 
 from src.lynchpin_geometry_audit import (
+    ALL_SHAPE_CONFIGURATIONS,
     COLLAPSIBLE_ASSEMBLIES,
     CORE_LYNCHPIN_CONFIGURATIONS,
     DESIGN_PATENT_SHAPES,
@@ -202,6 +203,33 @@ def test_core_registry_covers_every_lynchpin_patent_figure():
     assert len({configuration.key for configuration in CORE_LYNCHPIN_CONFIGURATIONS}) == len(
         CORE_LYNCHPIN_CONFIGURATIONS
     )
+
+
+def test_all_shape_registry_covers_every_application_figure_and_textual_variant():
+    covered = {
+        figure for configuration in ALL_SHAPE_CONFIGURATIONS for figure in configuration.figures
+    }
+
+    assert covered == set(range(1, 12))
+    assert len(ALL_SHAPE_CONFIGURATIONS) == 11
+    assert len({configuration.key for configuration in ALL_SHAPE_CONFIGURATIONS}) == 11
+    assert (
+        sum(
+            configuration.status is AuditStatus.INCONSISTENT_AS_WRITTEN
+            for configuration in ALL_SHAPE_CONFIGURATIONS
+        )
+        == 2
+    )
+    assert {
+        configuration.key
+        for configuration in ALL_SHAPE_CONFIGURATIONS
+        if configuration.component_count == 6
+    } == {
+        "six_flange_folding_sequence",
+        "six_block_hub_ring",
+        "partially_collapsed_radial_array",
+        "partially_extended_radial_array",
+    }
 
 
 def test_related_configuration_inventories_are_complete_and_nonduplicated():
