@@ -43,6 +43,7 @@ Current experimental modules include:
 - `src/h4_direct_e8_lift.py`
 - `src/e8_equivalence_map.py`
 - `src/e8_state_audit.py`
+- `src/e8_invariant_coupling.py`
 
 The current ontology distinguishes exact canonical address structure from candidate physical variables. The local-transition layer adds the minimal gauge-covariant nearest-neighbor Hamiltonian used to test locality, conservative exchange, and the weak-field wave limit. The polarity-phase bridge removes redundant polarity bookkeeping by proving equivalence between branch sign, pi-shifted effective phase, and the fixed-amplitude rotor reduction where their assumptions overlap. The recursive port layer supplies exact contained circle, Seed, Vesica, Flower, and Tree geometry, then exposes polarity-clock and negative-space adapters as explicit hypotheses rather than physical facts. The circulation layer adds a dimensionless graph continuity law, balanced Vesica and Tree currents, and a separately typed parent-child scale current without assigning a physical identity to the conserved content. The plane layer adds an open overlap graph and a mirror-paired possibility address while rejecting any elementary move that conflates scale, plane, and branch coordinates. The Sri Yantra layer attaches an embedding-independent enclosure fibre over that product address, distinguishes plane, spherical, Meru, simplex, and spiral-cone realizations, and preserves separate phase, flow, mirror, and handedness operations.
 
@@ -246,3 +247,11 @@ The geometry manifest now includes `src/e8_state_audit.py`. It records that
 the canonical core, the 8 x 8 stella register, and the eight-component SU(3)
 electric field are not established E8 representations. A separate
 `E8CartanState` carries only the exact rank-eight Weyl reflection action.
+
+
+## E8 invariant scalar coupling
+
+The geometry/state manifest now includes `src/e8_invariant_coupling.py`, which
+couples only the Weyl-invariant Cartan norm to an already gauge-invariant scalar.
+The E8 coordinate remains a singlet under the existing U(1), SU(2), and SU(3)
+gauge transformations.
