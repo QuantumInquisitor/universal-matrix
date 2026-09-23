@@ -3177,3 +3177,36 @@ control-volume realization. It remains kinematic.
 
 Only after that spatial connector exists should the project open the independent
 dynamics and physical-normalization gate.
+
+
+---
+
+## Toroidal connector topology and Piola checkpoint v0.1
+
+The attempted junction-to-torus connector reveals a necessary topology gate.
+
+The current junction lane port is disk-like, with one boundary component and
+first Betti number zero. The toroidal poloidal cut is an annulus, with two
+boundary components and first Betti number one. A nonsingular one-to-one steady
+sweep between them would induce a diffeomorphism of cross-sections, so the
+present rectangle-to-annulus interface is rejected.
+
+The torus is also now treated correctly as cut open along its internal
+measurement annulus before that annulus is used as a channel boundary. The two
+cut copies carry equal and opposite outward flux.
+
+For compatible annular source ports,
+`src/toroidal_connector_topology.py` supplies an explicit Piola connector.
+Its Jacobian stays positive, its divergence is zero, every transverse section
+carries the graph flux, and its target vector matches the existing purely
+poloidal toroidal field point by point.
+
+### Next creator question
+
+> Can the connected junction control volume expose annular edge ports while
+> preserving its conservative internal transfer decomposition, so one Piola
+> connector can attach to each cut-open toroidal edge boundary?
+
+That port redesign, plus a nonoverlapping global embedding of the cut-open
+channels, is the remaining kinematic geometry before dynamics or physical
+normalization.
