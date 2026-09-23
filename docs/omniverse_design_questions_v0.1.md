@@ -2414,3 +2414,77 @@ The next subsystem must give plane branches their own addresses, adjacency,
 mirror semantics, continuity or transformation law, and explicit no-fit
 failure conditions. Only after that separation should the planar circulation
 be lifted into a three-dimensional toroidal field candidate.
+
+---
+
+## Transitive-plane overlap and possibility-branch checkpoint — v0.1
+
+The preceding creator question now has a first executable answer in
+`src/transitive_plane_branching.py`.
+
+The minimal state is the product address
+
+\[
+X=(u,p,b),
+\]
+
+where \(u\) is a recursive Vesica-universe address, \(p\) is an open named
+plane identifier, and \(b\) is a signed possibility path. An elementary move
+may change exactly one of these coordinates:
+
+- scale transfer changes \(u\) by one parent-child depth;
+- plane transition changes \(p\) across one declared overlap;
+- possibility branching changes \(b\) by one outcome token.
+
+A mixed-coordinate move fails closed. This is the invariant that prevents a
+plane change from becoming scale recursion by renaming it.
+
+The Chapter 8 example is an open overlap graph, not a fixed seven-plane stack.
+Indirect travel must follow an explicit path through intermediary planes. A
+named node with no stated adjacency remains disconnected rather than receiving
+an invented edge.
+
+Possibility outcomes use neutral zero and any finite number of signed mirror
+pairs. Their nonnegative weights obey
+
+\[
+w_k=w_{-k},
+\qquad
+\sum_k w_k=1.
+\]
+
+An outward branch current \(I\) therefore preserves the cut flux
+
+\[
+\sum_k Iw_k=I,
+\]
+
+and the graph continuity law preserves total dimensionless content. Exact
+reverse edges form a divergence-free closed branch circulation. One pair plus
+neutral gives the minimal three-way branch. Three pairs plus neutral makes the
+six-plus-one case available without declaring that there must be seven named
+planes.
+
+The possibility mirror negates every signed outcome and preserves zero. The
+global mirror combines it with the recursive Seed half-turn while leaving the
+plane identifier unchanged, because no general mirror pairing of plane names
+has been established.
+
+These are exact type, graph, and normalization results under the declared
+candidate. They do not prove extra physical dimensions, quantum many-worlds,
+parallel universes, spirits, or a physical identity for the current.
+
+The full law, source boundary, visualization, failure conditions, and focused
+verification are in `docs/transitive_plane_branching_v0.1.md`.
+
+### Next creator question
+
+> What is the minimal three-dimensional vector-field lift whose planar
+> cross-section reproduces the Vesica and Tree circulation, which boundary
+> conditions make it divergence-free, and which observable could distinguish
+> that field from a purely diagrammatic embedding?
+
+The next subsystem must preserve the new product address rather than treating
+plane, branch, and scale axes as interchangeable. It must declare units,
+boundary conditions, singularity handling, and at least one falsification
+criterion before acquiring a physical torus, wormhole, or cosmological label.

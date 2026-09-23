@@ -128,6 +128,9 @@ The active universe-port geometry now provides:
 - locally balanced cusp-neutral circulation with two return channels;
 - normalized Tree flow with equal total flux across every radial cut;
 - a separately typed parent-child scale current, not a spatial Tree edge;
+- an open named-plane overlap graph with explicit intermediary routes;
+- a separately addressed possibility path with mirror-paired branch weights;
+- fail-closed separation of scale, plane, and possibility moves;
 - 36-tick polarity and transfer states covering all 108 canonical positions;
 - explicit Terryen-candidate cavity checks without a hidden preferred model.
 
@@ -138,8 +141,9 @@ coupling, scale-current adapter, and negative-space activation remains a
 candidate model. None of these results establishes a literal physical
 multiverse, Ether, black-hole mechanism, or new law of gravity.
 
-See `docs/universe_port_engine_v0.1.md` and
-`docs/vesica_tree_circulation_v0.1.md`.
+See `docs/universe_port_engine_v0.1.md`,
+`docs/vesica_tree_circulation_v0.1.md`, and
+`docs/transitive_plane_branching_v0.1.md`.
 
 ### Minimal local Matrix transition law
 
@@ -458,6 +462,7 @@ Start with:
 - `docs/omniverse_design_questions_v0.1.md`
 - `docs/universe_port_engine_v0.1.md`
 - `docs/vesica_tree_circulation_v0.1.md`
+- `docs/transitive_plane_branching_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 

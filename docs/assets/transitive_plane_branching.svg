@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Transitive-plane overlap and possibility branching</title>
+  <desc id="desc">Three panels distinguish the product address axes, a plane overlap route through an intermediary, and a mirror-paired possibility branch with neutral center and conserved current.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="1" stop-color="#17132f"/>
+    </linearGradient>
+    <linearGradient id="branchGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff8f70" stop-opacity="0.24"/>
+      <stop offset="0.5" stop-color="#f5c75b" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#6ee7f2" stop-opacity="0.24"/>
+    </linearGradient>
+    <marker id="arrowCyan" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#6ee7f2"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#f5c75b"/>
+    </marker>
+    <marker id="arrowCoral" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#ff8f70"/>
+    </marker>
+    <style>
+      .panel { fill: #0b1628; stroke: #2b3f62; stroke-width: 1.5; }
+      .title { fill: #f6f8ff; font: 700 27px system-ui, sans-serif; }
+      .panel-title { fill: #f6f8ff; font: 700 18px system-ui, sans-serif; }
+      .label { fill: #cbd6ea; font: 14px system-ui, sans-serif; }
+      .small { fill: #9fb0ca; font: 12px system-ui, sans-serif; }
+      .formula { fill: #f5c75b; font: 600 14px ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .node { fill: #101f36; stroke: #cbd6ea; stroke-width: 1.5; }
+      .neutral { fill: #f5c75b; stroke: #07111f; stroke-width: 1.5; }
+      .negative { fill: #ff8f70; stroke: #07111f; stroke-width: 1.5; }
+      .positive { fill: #6ee7f2; stroke: #07111f; stroke-width: 1.5; }
+      .cyan { fill: none; stroke: #6ee7f2; stroke-width: 2.5; marker-end: url(#arrowCyan); }
+      .gold { fill: none; stroke: #f5c75b; stroke-width: 2.4; marker-end: url(#arrowGold); }
+      .coral { fill: none; stroke: #ff8f70; stroke-width: 2.4; marker-end: url(#arrowCoral); }
+      .guide { fill: none; stroke: #52698e; stroke-width: 1.2; stroke-dasharray: 5 5; }
+      .divider { stroke: #2b3f62; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="720" rx="22" fill="url(#background)"/>
+  <text x="50" y="52" class="title">Transitive-Plane Overlap and Possibility Branching</text>
+  <text x="50" y="78" class="label">Three independent coordinates, one-axis moves, and dimensionless graph continuity</text>
+
+  <rect x="35" y="105" width="360" height="525" rx="18" class="panel"/>
+  <rect x="420" y="105" width="360" height="525" rx="18" class="panel"/>
+  <rect x="805" y="105" width="360" height="525" rx="18" class="panel"/>
+
+  <text x="58" y="140" class="panel-title">1. Product address</text>
+  <rect x="75" y="180" width="280" height="78" rx="14" fill="#101f36" stroke="#52698e" stroke-width="1.5"/>
+  <text x="100" y="211" class="small">recursive universe</text>
+  <text x="100" y="238" class="formula">u = (v₁, v₂, …, vℓ)</text>
+  <rect x="75" y="282" width="280" height="78" rx="14" fill="#101f36" stroke="#52698e" stroke-width="1.5"/>
+  <text x="100" y="313" class="small">named plane</text>
+  <text x="100" y="340" class="formula">p = material, astral, …</text>
+  <rect x="75" y="384" width="280" height="78" rx="14" fill="#101f36" stroke="#52698e" stroke-width="1.5"/>
+  <text x="100" y="415" class="small">possibility path</text>
+  <text x="100" y="442" class="formula">b = (−2, 0, +1, …)</text>
+  <text x="58" y="512" class="formula">X = (u, p, b)</text>
+  <text x="58" y="542" class="label">One elementary move changes one row.</text>
+  <text x="58" y="568" class="small">Mixed-axis moves fail closed.</text>
+
+  <text x="443" y="140" class="panel-title">2. Declared overlap route</text>
+  <circle cx="490" cy="280" r="46" class="node"/>
+  <circle cx="600" cy="280" r="46" class="node"/>
+  <circle cx="710" cy="280" r="46" class="node"/>
+  <text x="461" y="285" class="label">material</text>
+  <text x="578" y="285" class="label">astral</text>
+  <text x="674" y="285" class="label">probability</text>
+  <path d="M537 280 L544 280" class="cyan"/>
+  <path d="M647 280 L654 280" class="cyan"/>
+  <path d="M490 346 C548 405 652 405 710 346" class="guide"/>
+  <text x="511" y="393" class="small">no undeclared direct jump</text>
+  <text x="443" y="452" class="formula">div J(astral) = I − I = 0</text>
+  <text x="443" y="486" class="label">Universe u and possibility b stay fixed.</text>
+  <text x="443" y="516" class="label">Disconnected nodes have no route.</text>
+  <text x="443" y="546" class="small">The graph records conceptual provenance, not proof.</text>
+
+  <text x="828" y="140" class="panel-title">3. Mirror-paired branch</text>
+  <rect x="836" y="174" width="298" height="326" rx="20" fill="url(#branchGlow)" stroke="#52698e" stroke-width="1.2"/>
+  <circle cx="985" cy="225" r="13" class="node"/>
+  <text x="1005" y="230" class="small">parent b</text>
+  <circle cx="875" cy="400" r="12" class="negative"/>
+  <circle cx="930" cy="400" r="12" class="negative"/>
+  <circle cx="985" cy="400" r="12" class="neutral"/>
+  <circle cx="1040" cy="400" r="12" class="positive"/>
+  <circle cx="1095" cy="400" r="12" class="positive"/>
+  <path d="M979 239 L880 386" class="coral"/>
+  <path d="M982 239 L934 385" class="coral"/>
+  <path d="M985 239 L985 382" class="gold"/>
+  <path d="M988 239 L1036 385" class="cyan"/>
+  <path d="M991 239 L1090 386" class="cyan"/>
+  <text x="866" y="430" class="small">−2</text>
+  <text x="922" y="430" class="small">−1</text>
+  <text x="981" y="430" class="small">0</text>
+  <text x="1033" y="430" class="small">+1</text>
+  <text x="1088" y="430" class="small">+2</text>
+  <text x="828" y="532" class="formula">w₋ₖ = w₊ₖ   •   Σ wₖ = 1</text>
+  <text x="828" y="562" class="formula">Σ Jbranch = I</text>
+  <text x="828" y="590" class="small">Exact reverse edges close the circulation.</text>
+
+  <line x1="50" y1="655" x2="1150" y2="655" class="divider"/>
+  <text x="50" y="682" class="small">Exact finite-graph rules  •  open plane catalogue  •  no automatic extra-dimension, many-worlds, energy, Ether, or Consciousness claim</text>
+</svg>

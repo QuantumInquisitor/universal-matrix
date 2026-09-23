@@ -87,6 +87,7 @@ Modules:
 - `src/sevenfold_seed_contract.py`
 - `src/universe_port_engine.py`
 - `src/vesica_tree_circulation.py`
+- `src/transitive_plane_branching.py`
 
 Verified structural results:
 
@@ -102,6 +103,11 @@ Verified structural results:
   divergence;
 - recursive scale current is a distinct parent-child address edge rather than
   a spatial Tree route;
+- scale, named-plane, and possibility coordinates are independently typed and
+  mixed elementary moves fail closed;
+- indirect plane changes follow declared overlap routes while conserving total
+  dimensionless graph content;
+- mirror-paired possibility splits preserve their total branch-cut current;
 - recursive central mirroring is exact;
 - three routing channels and 36 ticks cover all 108 canonical states;
 - every explicit Terryen candidate can be tested for one bounded cavity without
@@ -110,8 +116,10 @@ Verified structural results:
 The one-quarter scale ratio is exact only for the declared planar containment
 construction. The finite-graph conservation identities are exact under the
 declared channel model. The physical identity and units of the conserved
-content, a three-dimensional toroidal lift, transitive-plane branching, and
-cosmological interpretation remain open.
+content, a three-dimensional toroidal lift, a measured plane-transition
+observable, and cosmological interpretation remain open. The implemented
+plane and possibility topology is a formal candidate, not evidence of extra
+physical dimensions or parallel universes.
 
 ---
 

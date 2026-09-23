@@ -28,7 +28,7 @@ Vesica or universe is a torus.
 The Flower-derived Tree uses a normalized outward radial flow, its exact
 inward reverse, and optional closed same-ring weave currents.  Recursive scale
 transfer is represented by a separate address edge so it cannot be confused
-with spatial Tree routing or with future transitive-plane branching.
+with spatial Tree routing or with separately typed transitive-plane branching.
 """
 
 from __future__ import annotations
@@ -81,6 +81,9 @@ class FlowChannel(StrEnum):
     TREE_OUTER = "tree_outer"
     TREE_INNER = "tree_inner"
     TREE_WEAVE = "tree_weave"
+    PLANE_TRANSITION = "plane_transition"
+    POSSIBILITY_BRANCH = "possibility_branch"
+    POSSIBILITY_RETURN = "possibility_return"
 
 
 @dataclass(frozen=True)

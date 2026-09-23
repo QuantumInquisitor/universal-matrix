@@ -150,8 +150,9 @@ This prefix relation is not:
 - a same-ring weave route;
 - a transitive-plane branch.
 
-The last relation remains unimplemented. Keeping it absent rather than
-silently treating it as scale recursion is part of the scientific boundary.
+That last relation is now implemented in `src/transitive_plane_branching.py`
+with its own named-plane and possibility coordinates. It preserves the
+recursive universe address, so it cannot silently become a scale edge.
 
 ## Canonical clock coupling
 
@@ -226,13 +227,13 @@ Implementation:
 
 ## Next creator question
 
-The next gate is no longer whether a conservative port circulation can be
-written. It can. The next question is:
+The plane and possibility address relation is now specified in
+`docs/transitive_plane_branching_v0.1.md`. The next question is:
 
-> What is the minimal state and transition law for a transitive-plane branch,
-> and which invariant distinguishes changing possibility or dimensional plane
-> from moving inward or outward along a recursive parent-child scale edge?
+> What is the minimal three-dimensional vector-field lift whose planar
+> cross-section reproduces the Vesica and Tree circulation, which boundary
+> conditions make it divergence-free, and which observable could distinguish
+> that field from a purely diagrammatic embedding?
 
-That branch must receive its own address relation, continuity rule, mirror
-operation, and falsifiable observable before it can be coupled to this
-circulation model.
+The lift must preserve the separation between spatial Tree routing, recursive
+scale transfer, plane overlap, and possibility branching.

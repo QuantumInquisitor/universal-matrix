@@ -311,15 +311,44 @@ balanced. Central mirroring preserves route weights and exchanges the positive
 and negative pillar fluxes.
 
 Recursive scale transfer is represented by a distinct parent-child address
-edge. It is neither a Flower route nor a transitive-plane branch. The latter
-remains an open subsystem rather than being silently conflated with spatial
-scale nesting.
+edge. It is neither a Flower route nor a transitive-plane branch. Plane and
+possibility changes are supplied by the separately typed subsystem below.
 
 Implementation:
 
 - src/vesica_tree_circulation.py
 - tests/test_vesica_tree_circulation.py
 - docs/vesica_tree_circulation_v0.1.md
+
+## 4E. Plane overlap and possibility branching
+
+The transitive-plane layer uses a product address
+
+\[
+X=(u,p,b)
+\]
+
+with independent recursive-universe, named-plane, and possibility-path
+coordinates. An elementary move changes exactly one coordinate. Scale moves
+join adjacent universe paths, plane moves follow one declared overlap edge,
+and branch moves append or remove one signed outcome token. Mixed-coordinate
+moves fail closed.
+
+The plane catalogue is open rather than a fixed stack. The included Chapter 8
+topology records explicitly described overlap routes while leaving a named
+plane disconnected when no link was supplied. Indirect transitions must pass
+through declared intermediary nodes.
+
+Possibility labels occur in mirrored integer pairs with neutral zero. Branch
+weights are nonnegative, normalized, and equal on each signed pair. The
+outward split preserves total dimensionless content; adding exact return edges
+makes the branch circulation divergence-free.
+
+Implementation:
+
+- src/transitive_plane_branching.py
+- tests/test_transitive_plane_branching.py
+- docs/transitive_plane_branching_v0.1.md
 
 ## 5. Open discrete-exterior-calculus layer
 
