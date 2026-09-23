@@ -190,6 +190,14 @@ not a claim that physical spacetime is eight-dimensional or that the canonical
 
 See `docs/higher_dimensional_e8_bridge_v0.1.md`.
 
+The H4 layer now also supplies a direct E8 lift: the existing 120 golden-field
+roots are combined with their phi-scaled copy, and each four-component Q(phi)
+coordinate is resolved into eight rational coefficients. Under the reduced
+inner product this produces an exact 240-root E8 system without inserting the
+standard E8 root list by hand.
+
+See `docs/h4_direct_e8_lift_v0.1.md`.
+
 ### Minimal local Matrix transition law
 
 The ontology-level transition layer now provides a minimal six-neighbor
@@ -510,6 +518,7 @@ Start with:
 - `docs/transitive_plane_branching_v0.1.md`
 - `docs/sri_yantra_multidimensional_v0.1.md`
 - `docs/higher_dimensional_e8_bridge_v0.1.md`
+- `docs/h4_direct_e8_lift_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
