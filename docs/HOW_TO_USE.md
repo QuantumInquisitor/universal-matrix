@@ -363,3 +363,16 @@ python -m pytest -q tests/test_conservative_toroidal_field.py
 The API accepts signed poloidal and toroidal cut fluxes. The CLI reports
 analytic flux normalization; the tests independently integrate the cuts.
 See `docs/conservative_toroidal_field_v0.1.md` for domain and mirror rules.
+
+
+## Map conservative graph currents into toroidal volumes
+
+```sh
+python -m pytest -q tests/test_graph_toroidal_flux_bundle.py
+```
+
+`map_graph_currents_to_tori(...)` assigns one disjoint translated toroidal
+domain to each `DirectedCurrent`. The mapped inner-cut flux equals the signed
+graph current, and the original source/target incidence remains available for
+node-balance checks. See `docs/graph_toroidal_flux_bundle_v0.1.md` for the
+kinematic scope and the remaining junction problem.

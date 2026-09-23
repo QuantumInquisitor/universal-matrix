@@ -627,6 +627,7 @@ Start with:
 - `docs/e8_invariant_coupling_v0.1.md`
 - `docs/e8_coupling_observable_audit_v0.1.md`
 - `docs/e8_radial_degree_audit_v0.1.md`
+- `docs/graph_toroidal_flux_bundle_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
@@ -743,3 +744,17 @@ physical content identification.
 
 Technical note: `docs/conservative_toroidal_field_v0.1.md`.
 Verification: `tests/test_conservative_toroidal_field.py`.
+
+
+## Graph-to-toroidal flux bundle
+
+`src/graph_toroidal_flux_bundle.py` assigns every conservative directed graph
+edge one explicit disjoint three-dimensional toroidal domain. The edge current
+is the torus poloidal cut flux, so signed flux is preserved channel by channel
+and the original graph incidence recovers the same node divergence.
+
+This is a dimensionless kinematic bridge, not yet a connected physical
+junction network or a force law.
+
+Technical note: `docs/graph_toroidal_flux_bundle_v0.1.md`.
+Verification: `tests/test_graph_toroidal_flux_bundle.py`.
