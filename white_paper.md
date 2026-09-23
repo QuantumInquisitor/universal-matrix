@@ -1549,6 +1549,26 @@ channels, exit connectors, and target junctions.
 
 See `docs/toroidal_annular_junction_v0.1.md`.
 
+
+
+## Framed toroidal edge-assembly candidate
+
+`src/toroidal_framed_edge_assembly.py` now closes the local kinematic path for
+each graph edge. Source annular ports, Piola transitions, a straightened
+flux-equivalent cut-open toroidal channel, and target annular ports share the
+same signed current. Internal vectors match pointwise and outward interface
+fluxes cancel pairwise.
+
+A current-sign axial frame rule handles negative graph currents without
+relabeling the current itself. Zero-current edges retain explicit zero-field
+assemblies.
+
+The remaining geometry is global rather than local: place and route all edge
+assemblies between actual node volumes without collisions while preserving
+endpoint vectors and fluxes.
+
+See `docs/toroidal_framed_edge_assembly_v0.1.md`.
+
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.
