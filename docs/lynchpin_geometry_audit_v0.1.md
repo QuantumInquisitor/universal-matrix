@@ -216,6 +216,23 @@ It also records the distinct US9731215B2 assemblies:
 - six-block turbine connector;
 - eight-block flexible phase-capacitor coupling.
 
+The explicit US9168465B2 All-Shape registry covers all eleven figures plus the
+textual variants:
+
+- four circular or elliptical faces around a tetrahedral inner space;
+- one circumscribed-triangle face with three foldable flanges;
+- four vertex and six flange locations for magnetic material;
+- the six-flange open-to-closed folding sequence;
+- a nested pair and the related nested tripod/column construction;
+- a six-block hub ring and its arbitrary closed-chain generalization;
+- partially collapsed and partially extended radial arrays;
+- the four-block larger-tetrahedron construction.
+
+The registry marks the literal 120-degree equilateral-triangle interior angle
+and the literal 120-degree tetrahedral vertex-angle statements as inconsistent
+in Euclidean geometry. The mechanisms remain parametric until their lengths,
+hinge ranges, actuator travel, contact maps, and block poses are specified.
+
 All seventeen numbered US10556189B2 enhanced configurations are inventoried.
 Their disclosed panel counts and connection descriptions are testable, but
 most surface equations, edge lengths, curvatures, and assembled coordinates
@@ -281,6 +298,7 @@ The audit currently verifies:
 - six mirror-paired classes;
 - modified-dodecahedron panel accounting;
 - complete US11117065 figure coverage;
+- complete US9168465 figure coverage and its separately stated variants;
 - seventeen enhanced configurations and 24 design-patent references;
 - Euclidean triangle-angle and unit-area conservation checks;
 - explicit metric determinant requirement for curved-area scaling.
