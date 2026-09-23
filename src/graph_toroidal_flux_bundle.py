@@ -17,12 +17,9 @@ from __future__ import annotations
 import math
 from collections.abc import Hashable, Sequence
 from dataclasses import dataclass
-from typing import Generic, TypeVar
-
 from .conservative_toroidal_field import ToroidalContentCurrent
 from .vesica_tree_circulation import DirectedCurrent, graph_divergence
 
-NodeT = TypeVar("NodeT", bound=Hashable)
 Point3D = tuple[float, float, float]
 
 
@@ -34,7 +31,7 @@ def _finite(value: float, name: str) -> float:
 
 
 @dataclass(frozen=True)
-class ToroidalChannelVolume(Generic[NodeT]):
+class ToroidalChannelVolume[NodeT: Hashable]:
     """One graph edge represented by one translated toroidal flux domain."""
 
     edge_index: int
@@ -101,7 +98,7 @@ class ToroidalChannelVolume(Generic[NodeT]):
 
 
 @dataclass(frozen=True)
-class GraphToroidalFluxBundle(Generic[NodeT]):
+class GraphToroidalFluxBundle[NodeT: Hashable]:
     """A one-to-one map from graph current edges to disjoint toroidal volumes."""
 
     channels: tuple[ToroidalChannelVolume[NodeT], ...]
@@ -162,7 +159,7 @@ class GraphToroidalFluxBundle(Generic[NodeT]):
         return maximum
 
 
-def map_graph_currents_to_tori(
+def map_graph_currents_to_tori[NodeT: Hashable](
     currents: Sequence[DirectedCurrent[NodeT]],
     *,
     major_radius: float = 2.0,
@@ -209,7 +206,7 @@ def map_graph_currents_to_tori(
     return GraphToroidalFluxBundle(channels=channels, gap=gap)
 
 
-def flux_mapping_residual(bundle: GraphToroidalFluxBundle[NodeT]) -> float:
+def flux_mapping_residual[NodeT: Hashable](bundle: GraphToroidalFluxBundle[NodeT]) -> float:
     """Return the largest difference between graph current and mapped cut flux."""
     return max(
         (
