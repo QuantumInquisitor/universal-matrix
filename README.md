@@ -213,6 +213,13 @@ finite Weyl reflection action.
 
 See `docs/e8_state_representation_audit_v0.1.md`.
 
+A minimal interaction candidate now couples the Weyl-invariant Cartan norm
+`||h||^2` only to scalar observables that are already gauge invariant in their
+own sector. The E8 coordinate does not transform U(1), SU(2), or SU(3) fields,
+and their gauge transformations do not act on the Cartan coordinate.
+
+See `docs/e8_invariant_coupling_v0.1.md`.
+
 ### Minimal local Matrix transition law
 
 The ontology-level transition layer now provides a minimal six-neighbor
@@ -536,6 +543,7 @@ Start with:
 - `docs/h4_direct_e8_lift_v0.1.md`
 - `docs/e8_equivalence_map_v0.1.md`
 - `docs/e8_state_representation_audit_v0.1.md`
+- `docs/e8_invariant_coupling_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
