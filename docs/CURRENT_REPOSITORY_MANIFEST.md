@@ -387,3 +387,18 @@ physical content identification.
 
 Technical note: `docs/conservative_toroidal_field_v0.1.md`.
 Verification: `tests/test_conservative_toroidal_field.py`.
+
+- `src/graph_toroidal_flux_bundle.py`
+
+
+## Graph-to-toroidal flux bundle
+
+`src/graph_toroidal_flux_bundle.py` maps every conservative directed graph
+edge to one disjoint translated solid-ring-torus domain. Each edge current is
+the mapped torus poloidal cut flux, so the signed channel flux and graph node
+divergence are preserved exactly. The construction remains a kinematic volume
+assignment; connected three-dimensional node junctions and dynamics are not
+yet claimed.
+
+Primary verification: `tests/test_graph_toroidal_flux_bundle.py`.
+Primary note: `docs/graph_toroidal_flux_bundle_v0.1.md`.
