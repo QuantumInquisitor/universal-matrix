@@ -41,6 +41,7 @@ Current experimental modules include:
 - `src/sri_yantra_multidimensional.py`
 - `src/sri_yantra_incidence_topology_audit.py`
 - `src/sri_yantra_chiodo_concurrency.py`
+- `src/sri_yantra_huet_planar.py`
 - `src/higher_dimensional_geometry.py`
 - `src/h4_direct_e8_lift.py`
 - `src/e8_equivalence_map.py`
@@ -296,3 +297,11 @@ The geometry manifest now includes `src/sri_yantra_chiodo_concurrency.py`,
 which encodes Chiodo's proved planar concurrency conditions for t1 through t9.
 This gives a sourced relation graph across all nine maximal triangles without
 conflating it with the still-uncomputed 43-chamber edge graph.
+
+
+## Sri Yantra Huet planar reconstruction
+
+The geometry manifest now includes `src/sri_yantra_huet_planar.py`, which
+reconstructs all nine maximal triangles for the Huet reference parameters from
+the sourced Chiodo concurrency equations. It provides the 27 planar edge
+segments needed for the next chamber-extraction stage.
