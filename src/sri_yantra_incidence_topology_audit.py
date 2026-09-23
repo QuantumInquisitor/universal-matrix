@@ -32,7 +32,8 @@ from .sri_yantra_multidimensional import (
     candidate_spherical_shell_point,
     candidate_spiral_cone_point,
 )
-from .transitive_plane_branching import PlaneAddress
+from .sevenfold_seed_contract import VesicaUniverseAddress
+from .transitive_plane_branching import MATERIAL_PLANE, PlaneAddress
 
 
 class IncidenceKnowledge(StrEnum):
@@ -132,7 +133,7 @@ def incidence_audit() -> tuple[IncidenceAuditEntry, ...]:
 
 def _default_base() -> PlaneAddress:
     """Return a stable existing base address without changing plane semantics."""
-    return PlaneAddress()
+    return PlaneAddress(VesicaUniverseAddress(), MATERIAL_PLANE)
 
 
 def spherical_location_points(
