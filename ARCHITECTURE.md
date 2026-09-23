@@ -807,3 +807,18 @@ edges.
 
 Primary verification: \`tests/test_sri_yantra_huet_chambers.py\`.
 Primary note: \`docs/sri_yantra_huet_chambers_v0.1.md\`.
+
+
+### Spherical chamber-topology control
+
+`src/sri_yantra_spherical_topology_control.py` lifts the complete derived
+43-chamber planar complex through one inverse-stereographic homeomorphism.
+Chamber IDs, ring cycles, mirror pairing, and all incidence data are preserved
+by construction while the carrier becomes a unit sphere.
+
+This is a topology control, not Rao's sourced great-circle spherical Sri Yantra.
+It exists so later spherical reconstructions can distinguish genuine
+constraint-induced incidence changes from a harmless change of embedding.
+
+Primary verification: `tests/test_sri_yantra_spherical_topology_control.py`.
+Primary note: `docs/sri_yantra_spherical_topology_control_v0.1.md`.
