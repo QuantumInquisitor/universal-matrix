@@ -2901,3 +2901,30 @@ The resulting solution:
 A generic planar-face polygonization is not sufficient. The next subsystem
 must reconstruct the traditional concentric triangle circuits and count the 43
 canonical chambers from their geometric definitions.
+
+
+---
+
+## Huet Sri Yantra chamber extraction checkpoint v0.1
+
+The previous chamber question is now answered numerically in
+`src/sri_yantra_chambers.py`. The 27 finite edges produce 69 vertices,
+142 atomic edges, and 74 bounded faces. Independent generator coverage and
+exterior graph depth agree for every face. Odd coverage selects 43
+triangles in circuits of 14, 10, 10, 8, and 1. Four connected vertex-contact
+cycles surround the central triangle. Selected chambers share vertices but
+no edges; the remaining 31 regions are gaps.
+
+Reflection, area partition, tolerance sweeps, and coordinate transformations
+verify the reference result. The count is not imposed by the algorithm.
+See `docs/sri_yantra_chambers_v0.1.md` for the evidence and computed diagram.
+
+### Next creator question
+
+> Can a spherical or Meru realization preserve every computed chamber
+> vertex, edge, and contact, with no new crossings or collisions?
+
+The next step must map the actual planar complex. Moving 43 abstract labels
+onto a surface is insufficient to establish incidence equivalence. This
+checkpoint establishes geometry for one planar reference, not physical
+extra dimensions or a proof over the entire Chiodo parameter family.
