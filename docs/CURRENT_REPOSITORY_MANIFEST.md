@@ -391,6 +391,7 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 - `src/graph_toroidal_flux_bundle.py`
 - `src/toroidal_junction_control_volume.py`
 - `src/toroidal_connector_topology.py`
+- `src/toroidal_annular_junction.py`
 
 
 ## Graph-to-toroidal flux bundle
@@ -428,3 +429,16 @@ matches the purely poloidal toroidal field on the target cut.
 
 Primary verification: `tests/test_toroidal_connector_topology.py`.
 Primary note: `docs/toroidal_connector_topology_v0.1.md`.
+
+
+## Annular junction edge ports
+
+`src/toroidal_annular_junction.py` assigns one annular boundary band to every
+incident graph edge and uses lower/upper cumulative streamfunctions to build a
+divergence-free axisymmetric junction current. Flux-coordinate interval
+overlaps preserve the deterministic conservative transport decomposition. Each
+port's normal-density profile matches the annular Piola connector source
+profile exactly.
+
+Primary verification: `tests/test_toroidal_annular_junction.py`.
+Primary note: `docs/toroidal_annular_junction_v0.1.md`.
