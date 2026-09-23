@@ -3210,3 +3210,41 @@ poloidal toroidal field point by point.
 That port redesign, plus a nonoverlapping global embedding of the cut-open
 channels, is the remaining kinematic geometry before dynamics or physical
 normalization.
+
+
+---
+
+## Annular junction edge-port checkpoint v0.1
+
+The connector-topology no-fit is now resolved at the junction boundary in
+`src/toroidal_annular_junction.py`.
+
+Each conservative graph node is represented by an annular cylindrical control
+volume. Every incident edge receives one full concentric annular band on the
+lower or upper face according to the sign of its outward flux. Zero-current
+edges also retain explicit annular ports.
+
+The internal field is generated from lower and upper cumulative
+streamfunctions. It is divergence-free, has zero radial side-wall flux, and
+recovers the same deterministic inlet-to-outlet transfer amounts through
+overlaps of cumulative-flux intervals.
+
+The boundary cumulative law
+
+[
+H(q)=(2q-q^2)^3
+]
+
+has exactly the derivative required by the annular Piola connector. Every
+external edge port therefore matches both the connector topology and its
+pointwise source flux-density profile.
+
+### Next creator question
+
+> Can each graph edge be assembled in a consistent spatial frame from its
+> source annular port, an inlet Piola connector, the cut-open toroidal channel,
+> an exit connector, and its target annular port, with the correct orientation
+> for positive, negative, and zero signed currents?
+
+That framed edge assembly and a collision-free global network embedding are the
+remaining kinematic geometry before dynamics or physical normalization.
