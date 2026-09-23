@@ -2594,3 +2594,36 @@ If that map exists, the next question is whether its eight coordinates are
 physical state variables, internal representation coordinates, or only a
 mathematical completion space. That distinction must be settled before any
 cosmological interpretation is added.
+
+
+---
+
+## Direct H4 to E8 checkpoint — v0.1
+
+The preceding gate now has an explicit construction in
+`src/h4_direct_e8_lift.py`.
+
+Starting only from the existing 120 H4 / 600-cell roots in Q(phi)^4, the engine
+forms H4 and phi H4. Their union contains 240 distinct roots. Under the reduced
+inner product, defined by taking the rational coefficient of the Q(phi) inner
+product, the full set has unit norm and closes under every root reflection.
+
+Each coordinate a+b phi contributes two rational coefficients. Four such
+coordinates therefore become an eight-component rational vector, and the
+reduced inner product becomes the ordinary Euclidean dot product of those eight
+coefficients. The resulting root span has exact rank eight.
+
+This answers the previous mathematical question without inserting a standard
+E8 target list by hand. It does not establish that the eight coefficient
+coordinates are physical spatial dimensions.
+
+### Next creator question
+
+> Can the independently generated H4-derived E8 root system and the standard
+> integer-scaled E8 root system be connected by an explicit orthogonal
+> equivalence that intertwines root reflections, central mirror, and the
+> embedded D4 subsystem?
+
+If that equivalence exists, the next step is to ask whether any part of the
+eight-coordinate representation couples to the engine state dynamically or
+remains purely representational.
