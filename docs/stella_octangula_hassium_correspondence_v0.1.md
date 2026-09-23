@@ -114,6 +114,21 @@ a Flower of Life pattern. That continuation is a defined geometric
 construction and a promising model hypothesis, not evidence that the Flower
 is physically emitted as a shadow by an Omniverse structure.
 
+## Sri Yantra relation after dimensional expansion
+
+The multidimensional Sri Yantra contract supplies another exact local bridge:
+a regular triangle is the two-dimensional centered-simplex template, a regular
+tetrahedron is its three-dimensional successor, and the positive/negative
+three-dimensional templates form an eight-vertex stella compound under
+central inversion.
+
+This explains how triangular orientation can expand into a star-tetrahedral
+volume without treating a flat image as fundamental. It does not identify the
+complete Sri Yantra with one stella. The former retains nine source triangles
+in a four-upward/five-downward inventory; the latter contains two tetrahedra.
+An exact placement and incidence law for all nine lifted generators is still
+required. See `docs/sri_yantra_multidimensional_v0.1.md`.
+
 ## The phrase “64 tetrahedron grid” remains underspecified
 
 Online diagrams called a “64 tetrahedron grid” do not provide one universally

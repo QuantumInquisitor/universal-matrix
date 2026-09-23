@@ -267,9 +267,13 @@ The current recursive geometry and circulation boundaries are documented in
 docs/universe_port_engine_v0.1.md and
 docs/vesica_tree_circulation_v0.1.md. Plane overlap and possibility branching
 are documented separately in docs/transitive_plane_branching_v0.1.md. The
-circulation state is dimensionless;
-do not relabel it as measured energy, charge, Ether, Consciousness, or matter
-without a separately tested adapter.
+embedding-independent Sri Yantra fibre, its plane/spherical/Meru realization
+family, and the explicitly candidate simplex and spiral-cone lifts are in
+docs/sri_yantra_multidimensional_v0.1.md. A rendering is only a view of the
+abstract state; it does not change recursive universe, named plane, or
+possibility coordinates. The circulation state is dimensionless; do not
+relabel it as measured energy, charge, Ether, Consciousness, or matter without
+a separately tested adapter.
 
 ## 15. Licensing
 

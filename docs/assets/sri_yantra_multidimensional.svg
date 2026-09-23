@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Multidimensional Sri Yantra contract</title>
+  <desc id="desc">A schematic showing an invariant nine-enclosure Sri Yantra complex realized as plane, spherical, Meru, simplex, and spiral-cone forms over the recursive universe, named plane, and possibility address.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07182f"/>
+      <stop offset="1" stop-color="#132a46"/>
+    </linearGradient>
+    <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7d36b" stop-opacity="0.78"/>
+      <stop offset="1" stop-color="#d65db1" stop-opacity="0.18"/>
+    </linearGradient>
+    <radialGradient id="sphere" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#9ee8ff"/>
+      <stop offset="0.55" stop-color="#4aa4d8"/>
+      <stop offset="1" stop-color="#174c7a"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9ee8ff"/>
+    </marker>
+    <style>
+      .title { font: 700 28px system-ui, sans-serif; fill: #f7fbff; }
+      .subtitle { font: 500 15px system-ui, sans-serif; fill: #b9d4eb; }
+      .panel-title { font: 700 18px system-ui, sans-serif; fill: #f7fbff; }
+      .label { font: 600 13px system-ui, sans-serif; fill: #e7f4ff; }
+      .small { font: 500 12px system-ui, sans-serif; fill: #b9d4eb; }
+      .micro { font: 500 10px system-ui, sans-serif; fill: #9cbad2; }
+      .panel { fill: #0d223d; stroke: #31516e; stroke-width: 1.5; }
+      .card { fill: #142d4b; stroke: #4e789a; stroke-width: 1.2; }
+      .gold { stroke: #f7d36b; fill: none; }
+      .cyan { stroke: #6edbf5; fill: none; }
+      .magenta { stroke: #e07ac5; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" rx="24" fill="url(#background)"/>
+  <text x="60" y="54" class="title">Sri Yantra as a multidimensional fibre, not a flat endpoint</text>
+  <text x="60" y="82" class="subtitle">One invariant relational core • multiple embeddings • recursive, dynamic state coordinates</text>
+
+  <rect x="44" y="112" width="340" height="548" rx="20" class="panel" filter="url(#shadow)"/>
+  <text x="214" y="148" text-anchor="middle" class="panel-title">Invariant relational core</text>
+  <text x="214" y="170" text-anchor="middle" class="small">topology and inventory before rendering</text>
+
+  <g transform="translate(214 350)">
+    <circle r="139" class="cyan" stroke-width="1.4" opacity="0.7"/>
+    <circle r="122" class="gold" stroke-width="1.4" opacity="0.75"/>
+    <circle r="105" class="magenta" stroke-width="1.4" opacity="0.8"/>
+    <circle r="88" class="cyan" stroke-width="1.4" opacity="0.85"/>
+    <circle r="70" class="gold" stroke-width="1.4" opacity="0.9"/>
+    <polygon points="0,-116 103,62 -103,62" class="gold" stroke-width="2"/>
+    <polygon points="0,116 103,-62 -103,-62" class="magenta" stroke-width="2"/>
+    <polygon points="0,-92 81,49 -81,49" class="cyan" stroke-width="1.7"/>
+    <polygon points="0,92 81,-49 -81,-49" class="gold" stroke-width="1.7"/>
+    <polygon points="0,-67 59,35 -59,35" class="magenta" stroke-width="1.6"/>
+    <polygon points="0,67 59,-35 -59,-35" class="cyan" stroke-width="1.6"/>
+    <polygon points="0,-43 38,22 -38,22" class="gold" stroke-width="1.5"/>
+    <polygon points="0,43 38,-22 -38,-22" class="magenta" stroke-width="1.5"/>
+    <circle r="7" fill="#f7fbff" stroke="#f7d36b" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(78 526)">
+    <rect width="272" height="103" rx="12" class="card"/>
+    <text x="18" y="27" class="label">Source-derived invariants</text>
+    <text x="18" y="50" class="small">9 generators = 4 upward + 5 downward</text>
+    <text x="18" y="71" class="small">9 enclosures • 43 triangular cells</text>
+    <text x="18" y="92" class="small">24 petals • 4 outer gates • 1 bindu</text>
+  </g>
+
+  <path d="M 392 366 C 420 366 421 366 444 366" class="cyan" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="454" y="112" width="292" height="548" rx="20" class="panel" filter="url(#shadow)"/>
+  <text x="600" y="148" text-anchor="middle" class="panel-title">Realization family</text>
+  <text x="600" y="170" text-anchor="middle" class="small">same address, different carriers</text>
+
+  <g transform="translate(478 192)">
+    <rect width="244" height="78" rx="12" class="card"/>
+    <g transform="translate(42 39)">
+      <polygon points="0,-23 22,17 -22,17" class="gold" stroke-width="1.5"/>
+      <polygon points="0,23 22,-17 -22,-17" class="magenta" stroke-width="1.5"/>
+      <circle r="3.5" fill="#fff"/>
+    </g>
+    <text x="83" y="31" class="label">Plane chart</text>
+    <text x="83" y="52" class="small">intrinsic 2 • ambient 2</text>
+  </g>
+
+  <g transform="translate(478 284)">
+    <rect width="244" height="78" rx="12" class="card"/>
+    <circle cx="42" cy="39" r="28" fill="url(#sphere)" stroke="#9ee8ff" stroke-width="1.2"/>
+    <ellipse cx="42" cy="39" rx="28" ry="10" class="gold" stroke-width="1.2"/>
+    <path d="M 42 11 C 27 25 27 53 42 67 C 57 53 57 25 42 11" class="magenta" stroke-width="1.2"/>
+    <text x="83" y="31" class="label">Spherical chart</text>
+    <text x="83" y="52" class="small">intrinsic 2 • ambient 3</text>
+  </g>
+
+  <g transform="translate(478 376)">
+    <rect width="244" height="78" rx="12" class="card"/>
+    <path d="M 14 61 L 42 13 L 70 61 Z" fill="url(#cone)" stroke="#f7d36b" stroke-width="1.5"/>
+    <path d="M 22 48 Q 42 38 62 48 M 28 37 Q 42 29 56 37 M 34 26 Q 42 22 50 26" class="magenta" stroke-width="1.1"/>
+    <text x="83" y="31" class="label">Meru realization</text>
+    <text x="83" y="52" class="small">intrinsic 3 • ambient 3</text>
+  </g>
+
+  <g transform="translate(478 468)">
+    <rect width="244" height="78" rx="12" class="card"/>
+    <g transform="translate(42 39)" stroke-width="1.1">
+      <path d="M -23 18 L 0 -24 L 23 18 Z M -23 -18 L 0 24 L 23 -18 Z" class="cyan"/>
+      <circle cx="-23" cy="18" r="2.5" fill="#f7d36b"/>
+      <circle cx="0" cy="-24" r="2.5" fill="#f7d36b"/>
+      <circle cx="23" cy="18" r="2.5" fill="#f7d36b"/>
+      <circle cx="-23" cy="-18" r="2.5" fill="#e07ac5"/>
+      <circle cx="0" cy="24" r="2.5" fill="#e07ac5"/>
+      <circle cx="23" cy="-18" r="2.5" fill="#e07ac5"/>
+    </g>
+    <text x="83" y="31" class="label">Oriented d-simplex</text>
+    <text x="83" y="52" class="small">intrinsic d • ambient d+1</text>
+  </g>
+
+  <g transform="translate(478 561)">
+    <rect width="244" height="68" rx="12" fill="#102842" stroke="#f7d36b" stroke-dasharray="5 5"/>
+    <text x="122" y="26" text-anchor="middle" class="label">Projection ≠ identity</text>
+    <text x="122" y="48" text-anchor="middle" class="small">topology is checked before the view</text>
+  </g>
+
+  <path d="M 754 366 C 782 366 783 366 806 366" class="cyan" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="816" y="112" width="340" height="548" rx="20" class="panel" filter="url(#shadow)"/>
+  <text x="986" y="148" text-anchor="middle" class="panel-title">Dynamic recursive lift</text>
+  <text x="986" y="170" text-anchor="middle" class="small">spiral cone is one candidate chart</text>
+
+  <g transform="translate(986 355)">
+    <path d="M 0 -145 L -123 151 L 123 151 Z" fill="url(#cone)" stroke="#f7d36b" stroke-width="1.5"/>
+    <ellipse cx="0" cy="151" rx="123" ry="33" fill="none" stroke="#6edbf5" stroke-width="2"/>
+    <path d="M 0 -137
+             C 31 -119 39 -97 10 -81
+             C -34 -57 -58 -29 -15 -5
+             C 47 28 75 60 23 89
+             C -50 129 -87 141 -119 151" fill="none" stroke="#e07ac5" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 0 -137
+             C -31 -119 -39 -97 -10 -81
+             C 34 -57 58 -29 15 -5
+             C -47 28 -75 60 -23 89
+             C 50 129 87 141 119 151" fill="none" stroke="#6edbf5" stroke-width="4" stroke-linecap="round"/>
+    <circle cy="-145" r="7" fill="#fff" stroke="#f7d36b" stroke-width="3"/>
+    <text x="14" y="-137" class="small">bindu / fixed apex</text>
+    <text x="0" y="198" text-anchor="middle" class="small">inward ↔ outward • left ↔ right</text>
+  </g>
+
+  <g transform="translate(846 558)">
+    <rect width="280" height="72" rx="12" class="card"/>
+    <text x="140" y="25" text-anchor="middle" class="label">Fibre over X = (u, p, b)</text>
+    <text x="140" y="48" text-anchor="middle" class="small">enclosure × member × phase × flow × hand</text>
+  </g>
+
+  <g transform="translate(62 698)">
+    <circle cx="7" cy="-5" r="5" fill="#6edbf5"/>
+    <text x="22" y="0" class="small">Exact under the declared model: counts, addresses, simplex identities, mirror involutions, graph continuity</text>
+    <circle cx="737" cy="-5" r="5" fill="#e07ac5"/>
+    <text x="752" y="0" class="small">Candidate: spiral-cone and higher-dimensional interpretation</text>
+  </g>
+  <text x="600" y="734" text-anchor="middle" class="micro">Schematic only • not a metric reconstruction of a historical Sri Yantra or proof of physical extra dimensions</text>
+</svg>
