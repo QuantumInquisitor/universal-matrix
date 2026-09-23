@@ -501,6 +501,111 @@ CORE_LYNCHPIN_CONFIGURATIONS = (
 )
 
 
+ALL_SHAPE_CONFIGURATIONS = (
+    ShapeConfiguration(
+        "tetrahedral_four_face_block",
+        "US9168465B2",
+        (1, 3),
+        "four circular or elliptical faces joined around a tetrahedral inner space",
+        4,
+        AuditStatus.EXACT_TOPOLOGY,
+        ("face curvature", "flange profile", "edge lengths"),
+    ),
+    ShapeConfiguration(
+        "circumscribed_triangle_face",
+        "US9168465B2",
+        (2,),
+        "circular or elliptical face circumscribing a triangular face with three foldable flanges",
+        1,
+        AuditStatus.INCONSISTENT_AS_WRITTEN,
+        (
+            "the disclosed equilateral-triangle interior angles are 120 degrees rather than 60 degrees",
+        ),
+    ),
+    ShapeConfiguration(
+        "ten_magnetic_locations",
+        "US9168465B2",
+        (4, 5),
+        "four vertex locations and six disc-shaped flange locations for magnetic material",
+        10,
+        AuditStatus.PARAMETRIC,
+        ("magnet geometry", "field orientation", "material response"),
+    ),
+    ShapeConfiguration(
+        "six_flange_folding_sequence",
+        "US9168465B2",
+        (6, 7),
+        "six hinged flanges moving from open toward coplanar closed positions",
+        6,
+        AuditStatus.PARAMETRIC,
+        ("hinge range", "actuation law", "collision clearance"),
+    ),
+    ShapeConfiguration(
+        "nested_all_shape_pair",
+        "US9168465B2",
+        (8,),
+        "two blocks nested through at least one collapsed or removed tetrahedral surface",
+        2,
+        AuditStatus.PARAMETRIC,
+        ("nest depth", "contact map"),
+    ),
+    ShapeConfiguration(
+        "nested_tripod_and_column",
+        "US9168465B2",
+        (8,),
+        "nested blocks extended across three lower vertices as a tripod and an upper vertex as a column",
+        None,
+        AuditStatus.UNDERSPECIFIED,
+        ("block count", "attachment map", "load geometry"),
+    ),
+    ShapeConfiguration(
+        "six_block_hub_ring",
+        "US9168465B2",
+        (9,),
+        "six asymmetrical blocks connected around a central hub by radial spokes",
+        6,
+        AuditStatus.PARAMETRIC,
+        ("spoke length", "block orientation", "flange angles"),
+    ),
+    ShapeConfiguration(
+        "variable_closed_chain",
+        "US9168465B2",
+        (9,),
+        "an arbitrary number of asymmetrical blocks forming a closed-chain polygon",
+        None,
+        AuditStatus.PARAMETRIC,
+        ("block count", "turn angle", "closure condition"),
+    ),
+    ShapeConfiguration(
+        "partially_collapsed_radial_array",
+        "US9168465B2",
+        (10,),
+        "six-block hub-and-spoke array in a partially collapsed state",
+        6,
+        AuditStatus.PARAMETRIC,
+        ("spoke lengths", "actuator travel", "block poses"),
+    ),
+    ShapeConfiguration(
+        "partially_extended_radial_array",
+        "US9168465B2",
+        (11,),
+        "six-block hub-and-spoke array in a partially extended state",
+        6,
+        AuditStatus.PARAMETRIC,
+        ("spoke lengths", "actuator travel", "block poses"),
+    ),
+    ShapeConfiguration(
+        "four_block_larger_tetrahedron",
+        "US9168465B2",
+        (),
+        "four tetrahedral blocks joined vertex-to-vertex to form the appearance of a larger tetrahedron",
+        4,
+        AuditStatus.INCONSISTENT_AS_WRITTEN,
+        ("the disclosed 120-degree tetrahedral vertex angle is not a Euclidean tetrahedral angle",),
+    ),
+)
+
+
 COLLAPSIBLE_ASSEMBLIES = (
     ShapeConfiguration(
         "dodecahedron_from_triplets",
