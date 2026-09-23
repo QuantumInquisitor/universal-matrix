@@ -2627,3 +2627,41 @@ coordinates are physical spatial dimensions.
 If that equivalence exists, the next step is to ask whether any part of the
 eight-coordinate representation couples to the engine state dynamically or
 remains purely representational.
+
+
+---
+
+## Exact E8 equivalence checkpoint — v0.1
+
+The independently generated E8 realizations are now connected by an exact
+change of basis in `src/e8_equivalence_map.py`.
+
+Each root system supplies its own E8 simple-root basis. Matching the common
+Dynkin Gram matrix determines the map
+
+M = S D^{-1}.
+
+The map satisfies
+
+M^T M = 8 I,
+
+which is the required scale-orthogonal relation between unit-norm
+H4-coefficient roots and squared-norm-eight standard E8 roots.
+
+All 240 H4-derived roots map bijectively to the 240 standard roots. Central
+mirror commutes with the map, and every one of the 240 by 240 root-reflection
+squares commutes.
+
+This closes the geometry-equivalence question. The two E8 implementations are
+the same root system up to the exact derived basis transformation.
+
+### Next creator question
+
+> Which existing Matrix state variables, if any, transform nontrivially under
+> this E8 action, and can an E8-covariant state or transition law be defined
+> without introducing unobserved physical degrees of freedom?
+
+The next work should move from geometry to state and dynamics. It must first
+identify an existing engine quantity that actually lives in an E8
+representation, or explicitly report that no such quantity has yet been
+derived.
