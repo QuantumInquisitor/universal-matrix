@@ -376,3 +376,18 @@ domain to each `DirectedCurrent`. The mapped inner-cut flux equals the signed
 graph current, and the original source/target incidence remains available for
 node-balance checks. See `docs/graph_toroidal_flux_bundle_v0.1.md` for the
 kinematic scope and the remaining junction problem.
+
+
+## Build connected conservative junction control volumes
+
+```sh
+python -m pytest -q tests/test_toroidal_junction_control_volume.py
+```
+
+Build a `GraphToroidalFluxBundle` first, then pass it with the complete node
+set to `connect_toroidal_bundle_with_junctions(...)`. The result contains one
+connected 3D control volume per graph node and verifies flux agreement across
+source junctions, toroidal channels, and target junctions.
+
+See `docs/toroidal_junction_control_volume_v0.1.md` for the port convention,
+lane construction, and remaining connector problem.
