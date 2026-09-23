@@ -130,7 +130,7 @@ def test_bundle_is_centered_and_channel_domains_do_not_overlap():
     assert sum(centers) / len(centers) == pytest.approx(7.0)
     assert bundle.maximum_overlap_count() == 1
 
-    for left, right in zip(bundle.channels, bundle.channels[1:], strict=True):
+    for left, right in zip(bundle.channels, bundle.channels[1:]):
         assert right.axial_interval[0] - left.axial_interval[1] == pytest.approx(0.25)
 
 
