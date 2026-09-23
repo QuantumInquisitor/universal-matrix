@@ -3248,3 +3248,36 @@ pointwise source flux-density profile.
 
 That framed edge assembly and a collision-free global network embedding are the
 remaining kinematic geometry before dynamics or physical normalization.
+
+
+---
+
+## Framed toroidal edge-assembly checkpoint v0.1
+
+The annular port and connector components are now assembled edge by edge in
+`src/toroidal_framed_edge_assembly.py`.
+
+Each graph edge receives one local five-part path:
+
+1. source annular junction port;
+2. inlet Piola transition;
+3. straightened cut-open toroidal channel;
+4. exit Piola transition;
+5. target annular junction port.
+
+The signed graph current is retained through all five parts. Positive edges use
+the local axial frame directly. Negative edges use a one-bit axial frame flip,
+which makes both endpoint vectors agree with the annular junction's fixed
+internal current direction without changing the signed flux ledger.
+
+Every shared local interface has equal vector values and cancelling outward
+fluxes. Zero-current edges remain explicit zero-field assemblies.
+
+### Next creator question
+
+> Can global rigid frames and routed centerlines place every edge assembly
+> between its actual source and target junctions while preserving endpoint
+> vectors and keeping all nonincident edge volumes disjoint?
+
+That collision-free global embedding is the last purely kinematic network gate
+before an independent dynamics or physical-normalization proposal.
