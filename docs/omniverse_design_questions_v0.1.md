@@ -3058,3 +3058,27 @@ A candidate height lift can test topology but cannot by itself establish a
 historical Meru metric. After geometry, the toroidal vector-field extension
 must specify its domain, conservation law, and mirror action. The remaining
 research gates are tracked in `MATRIX_ENGINE_WORK_QUEUE.md`.
+
+## Explicit Meru candidate edge-rule audit
+
+`src/sri_yantra_meru_candidate.py` now provides a conical graph-surface
+control with explicit vertices, complete edge paths, and an invertible
+horizontal projection. It preserves the computed 43-chamber incidence for
+positive horizontal scale. A separate audit detects 53 failed projected
+concurrencies if the default raised root corners are instead joined by straight
+spatial chords. This is an explicitly chosen candidate metric, not a sourced
+historical Meru reconstruction.
+
+The continuous inverse proves the incidence claim for the chosen graph
+surface. It also explains why varying finite height cannot create a topology
+transition while horizontal scale stays positive. An independent historical
+or polyhedral Meru metric remains a separate research task.
+
+### Next creator question
+
+> What three-dimensional toroidal field, flux measure, and mirror action can
+> couple to these verified incidence domains while obeying a stated local
+> conservation law?
+
+The next field must expose its physical assumptions and distinguish a
+kinematic conservative example from a derived equation of motion.

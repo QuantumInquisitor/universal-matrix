@@ -1455,6 +1455,19 @@ The source and formula audit are recorded in
 `docs/sri_yantra_rao_great_circles_v0.1.md`. This is a geometric result and
 does not supply an experimental physical interpretation.
 
+## Explicit nonplanar candidate control
+
+`src/sri_yantra_meru_candidate.py` now provides a conical graph-surface
+control with explicit vertices, complete edge paths, and an invertible
+horizontal projection. It preserves the computed 43-chamber incidence for
+positive horizontal scale. A separate audit detects 53 failed projected
+concurrencies if the default raised root corners are instead joined by straight
+spatial chords. This is an explicitly chosen candidate metric, not a sourced
+historical Meru reconstruction.
+
+See `docs/sri_yantra_meru_candidate_v0.1.md` for the projection argument
+and edge-rule failure audit. No physical interpretation is inferred.
+
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.
