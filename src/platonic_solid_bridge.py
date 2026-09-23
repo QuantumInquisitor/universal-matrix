@@ -69,11 +69,20 @@ class PhiNumber:
 
     __rmul__ = __mul__
 
-    def __truediv__(self, divisor: int | Fraction) -> PhiNumber:
-        divisor = Fraction(divisor)
-        if divisor == 0:
-            raise ZeroDivisionError("cannot divide a PhiNumber by zero")
-        return PhiNumber(self.rational / divisor, self.golden / divisor)
+    def inverse(self) -> PhiNumber:
+        """Return the exact multiplicative inverse in ``Q(phi)``."""
+        field_norm = (
+            self.rational * self.rational + self.rational * self.golden - self.golden * self.golden
+        )
+        if field_norm == 0:
+            raise ZeroDivisionError("cannot invert zero in Q(phi)")
+        return PhiNumber(
+            (self.rational + self.golden) / field_norm,
+            -self.golden / field_norm,
+        )
+
+    def __truediv__(self, divisor: PhiNumber | int | Fraction) -> PhiNumber:
+        return self * self.coerce(divisor).inverse()
 
     def __float__(self) -> float:
         phi = (1 + sqrt(5)) / 2
