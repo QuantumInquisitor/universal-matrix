@@ -887,3 +887,16 @@ physical content identification.
 
 Technical note: `docs/conservative_toroidal_field_v0.1.md`.
 Verification: `tests/test_conservative_toroidal_field.py`.
+
+
+## Graph-to-toroidal flux bundle
+
+`src/graph_toroidal_flux_bundle.py` is the first explicit graph-to-volume
+coupling layer. It assigns one translated compact toroidal field domain to
+each `DirectedCurrent`, uses the graph edge current as the signed poloidal cut
+flux, and preserves the source/target incidence ledger for node-divergence
+checks. Pairwise-disjoint supports keep the summed prescribed field locally
+divergence-free without introducing hidden junction dynamics.
+
+Primary verification: `tests/test_graph_toroidal_flux_bundle.py`.
+Primary note: `docs/graph_toroidal_flux_bundle_v0.1.md`.
