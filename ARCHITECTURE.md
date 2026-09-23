@@ -764,3 +764,16 @@ Primary verification:
 `tests/test_sri_yantra_incidence_topology_audit.py`.
 Primary note:
 `docs/sri_yantra_incidence_topology_audit_v0.1.md`.
+
+
+## 4O. Sourced Sri Yantra concurrency contract
+
+`src/sri_yantra_chiodo_concurrency.py` encodes the minimal planar concurrency
+conditions in Chiodo 2021. It fixes the t1..t9 orientation convention, the
+t3/t7 common circumcircle, seven apex-to-base incidences, twelve three-line
+concurrencies, and the four ordered base parameters P,Q,R,S on the normalized
+diameter. The resulting graph is a maximal-triangle constraint graph, not yet
+the complete 43-chamber adjacency graph.
+
+Primary verification: `tests/test_sri_yantra_chiodo_concurrency.py`.
+Primary note: `docs/sri_yantra_chiodo_concurrency_v0.1.md`.

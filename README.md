@@ -184,6 +184,15 @@ are not inferred from counts alone.
 
 See `docs/sri_yantra_incidence_topology_audit_v0.1.md`.
 
+A sourced planar concurrency contract now follows Chiodo's 2021 construction:
+five downward triangles t1 through t5, four upward triangles t6 through t9,
+one shared-circumcircle condition, seven apex-to-base incidences, and twelve
+three-line concurrency constraints. This supplies an exact relation graph among
+all nine maximal triangles while keeping the 43-chamber edge graph as the next
+coordinate-level task.
+
+See `docs/sri_yantra_chiodo_concurrency_v0.1.md`.
+
 ### Higher-dimensional geometry and E8 bridge
 
 The finite-geometry engine now also contains exact dimension-open simplex,
@@ -566,6 +575,7 @@ Start with:
 - `docs/transitive_plane_branching_v0.1.md`
 - `docs/sri_yantra_multidimensional_v0.1.md`
 - `docs/sri_yantra_incidence_topology_audit_v0.1.md`
+- `docs/sri_yantra_chiodo_concurrency_v0.1.md`
 - `docs/higher_dimensional_e8_bridge_v0.1.md`
 - `docs/h4_direct_e8_lift_v0.1.md`
 - `docs/e8_equivalence_map_v0.1.md`
