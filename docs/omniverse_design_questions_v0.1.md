@@ -2999,3 +2999,41 @@ six basic angular variables and nonlinear spherical-trigonometric constraints.
 The next subsystem should reproduce one published Rao spherical solution before
 comparing chamber graphs. It should not use the topology control as a substitute
 for Rao's equations.
+
+
+---
+
+## Rao sourced spherical-reference checkpoint — v0.1
+
+The next spherical gate now has a sourced numerical foothold in
+`src/sri_yantra_rao_spherical_reference.py`.
+
+Rao's construction uses six independent angular variables b, c, d, e, g, and h
+and derives the remaining intersections by spherical trigonometry.
+
+The implementation reproduces Rao Table 1's published parameter row for
+constraints 1, 2, 4, 5, 10, and 19:
+
+b = 0.231687
+c = 0.120012
+d = 0.146680
+e = 0.230471
+g = 0.053009
+h = 1.076084.
+
+Without refining those rounded values, every selected nonlinear constraint
+residual closes below 1e-6.
+
+This establishes a sourced metric spherical reference distinct from the
+homeomorphic topology control. It does not yet provide a spherical chamber
+graph.
+
+### Next creator question
+
+> Can Rao's derived arc variables be converted into explicit unit-sphere
+> coordinates and great-circle root-triangle arcs so that their intersection
+> graph can be computed directly?
+
+The next implementation should reconstruct the nine spherical root triangles
+for the published reference row and derive their intersections before making
+any comparison with the Huet 43-chamber complex.
