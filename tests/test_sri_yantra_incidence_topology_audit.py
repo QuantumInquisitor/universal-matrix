@@ -41,11 +41,11 @@ def test_cyclic_edge_count_is_70():
     assert cyclic_edge_count() == 70
 
 
-def test_missing_historical_incidence_is_explicitly_unknown():
+def test_huet_incidence_is_numerical_and_other_realizations_remain_unknown():
     ledger = {entry.relation: entry for entry in incidence_audit()}
     assert (
         ledger["complete_43_triangle_intersection_graph"].status
-        is IncidenceKnowledge.UNKNOWN_NOT_ENCODED
+        is IncidenceKnowledge.NUMERICALLY_VERIFIED_HUET
     )
     assert (
         ledger["generator_pair_intersection_multiplicities"].status

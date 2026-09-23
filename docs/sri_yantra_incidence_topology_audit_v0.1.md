@@ -3,8 +3,9 @@
 ## Result
 
 The multidimensional Sri Yantra contract preserves more topology than the
-visible drawing alone, but the repository still does not contain enough data to
-claim a complete historical 43-cell intersection graph.
+visible drawing alone. The repository now derives the 43-cell incidence
+graph numerically for the Huet planar reference, while equivalence across
+historical spherical and Meru realizations remains unproved.
 
 This checkpoint separates what is exact from what remains unknown.
 
@@ -31,7 +32,7 @@ the current abstract member graph.
 
 The current repository does not contain:
 
-- an exact intersection graph for all 43 triangular cells;
+- a symbolic exact or full-parameter-family proof of the 43-cell graph;
 - exact pairwise intersection multiplicities for the four upward and five
   downward generators;
 - an incidence-preserving coordinate map proving historical plane, spherical,
@@ -39,7 +40,9 @@ The current repository does not contain:
 
 Those items remain explicitly unknown.
 
-Counts alone are not used to invent them.
+Counts alone are not used to invent them. The new numerical planar graph
+is documented in `docs/sri_yantra_chambers_v0.1.md`; the audit classifies it
+as `NUMERICALLY_VERIFIED_HUET`, separate from `EXACT_DECLARED`.
 
 ## Candidate chart preservation
 
@@ -71,17 +74,11 @@ spiral-cone candidate parameter domain.
 The implementations reject degenerate spiral-cone scales and heights rather
 than allowing a collapse to be misclassified as a physical branch event.
 
-A genuine topology-changing event cannot be studied until an exact incidence
-model of the generator intersections is introduced.
+The Huet planar graph supplies a numerical baseline for future topology
+comparisons. No event in a broader parameter family is established here.
 
 ## Next creator question
 
-What sourced coordinate or incidence construction should define the actual
-four-up/five-down generator intersection graph?
-
-The next Sri Yantra step should derive that graph from an explicit planar
-construction first, then ask whether spherical and Meru realizations preserve
-the same incidence.
-
-Until then, the nine-enclosure inventory and candidate embeddings remain exact
-only at the abstraction level already tested here.
+Can an explicit spherical or Meru map preserve every vertex, edge, and
+contact of the computed Huet planar chambers without introducing collisions?
+The existing abstract-location charts do not yet answer that question.

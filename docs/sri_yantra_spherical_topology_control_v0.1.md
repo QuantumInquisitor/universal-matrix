@@ -170,3 +170,16 @@ complex and the homeomorphic topology control.
 
 C. S. Rao, "Sriyantra - A Study of Spherical and Plane Forms",
 Indian Journal of History of Science 33(3), 1998, 203-227.
+
+
+## Input and full-edge validation
+
+Normalization centers, scales, planar coordinates, and edge parameters must
+be finite. The inverse chart rejects off-sphere points and its excluded
+south pole; overflowing chart radii are rejected. This prevents NaN values
+from silently passing comparison-based topology checks.
+
+Tests now sample all 129 selected chamber edges, checking both unit-sphere
+membership and recovery of their planar parameterized paths. A separate
+nonradial segment confirms that its stereographic image is not silently
+replaced by the great circle through its endpoints.

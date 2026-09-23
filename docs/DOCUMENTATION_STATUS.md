@@ -40,10 +40,13 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/vesica_tree_circulation_v0.1.md` | Current discrete continuity law for balanced Vesica, Tree, and recursive-scale currents. |
 | `docs/transitive_plane_branching_v0.1.md` | Current product-address, overlap-route, mirror, and conservative possibility-branch contract. |
 | `docs/sri_yantra_multidimensional_v0.1.md` | Current embedding-independent Sri Yantra inventory, realization family, simplex lift, spiral-cone chart, and enclosure-flow contract. |
-| `docs/sri_yantra_incidence_topology_audit_v0.1.md` | Current abstract-incidence audit separating declared enclosure topology from the not-yet-encoded historical 43-cell intersection graph. |
+| `docs/sri_yantra_incidence_topology_audit_v0.1.md` | Current incidence audit separating exact abstract topology, the numerical Huet chamber graph, and open spherical/Meru equivalence. |
 | `docs/sri_yantra_chiodo_concurrency_v0.1.md` | Current sourced Chiodo 2021 planar concurrency contract for all nine maximal Sri Yantra triangles. |
 | `docs/sri_yantra_huet_planar_v0.1.md` | Current Huet-reference planar coordinate reconstruction satisfying the sourced Chiodo concurrency constraints. |
 | `docs/sri_yantra_huet_chambers_v0.1.md` | Current geometry-derived 43-chamber Huet incidence complex with 1 + 8 + 10 + 10 + 14 rings and 129 distinct chamber edges. |
+
+| `docs/sri_yantra_chambers_v0.1.md` | Numerically verified Huet planar chamber extraction, odd-coverage selection, contact circuits, and computed diagram. |
+
 | `docs/sri_yantra_spherical_topology_control_v0.1.md` | Current homeomorphic spherical control carrying the complete derived 43-chamber incidence complex without topology change; explicitly distinct from Rao's great-circle construction. |
 | `docs/higher_dimensional_e8_bridge_v0.1.md` | Current exact arbitrary-dimensional regular-family audit and exploratory E8/D4 construction bridge. |
 | `docs/h4_direct_e8_lift_v0.1.md` | Current direct H4/600-cell to E8 lift using the reduced Q(phi) inner product and eight rational coefficient coordinates. |

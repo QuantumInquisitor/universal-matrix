@@ -31,7 +31,7 @@ same complex on a curved carrier.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from math import hypot, sqrt
+from math import hypot, isfinite, sqrt
 
 from .sri_yantra_huet_chambers import (
     HUET_CHAMBER_SYSTEM,
@@ -45,6 +45,13 @@ _TOLERANCE = 1e-11
 _TARGET_DISK_RADIUS = 0.9
 
 
+def _finite(value: float, name: str) -> float:
+    value = float(value)
+    if not isfinite(value):
+        raise ValueError(f"{name} must be finite")
+    return value
+
+
 @dataclass(frozen=True)
 class PlanarNormalization:
     """Affine normalization used before inverse stereographic projection."""
@@ -53,19 +60,21 @@ class PlanarNormalization:
     scale: float
 
     def __post_init__(self) -> None:
+        object.__setattr__(self, "center_x", _finite(self.center_x, "center_x"))
+        object.__setattr__(self, "scale", _finite(self.scale, "scale"))
         if self.scale <= 0.0:
             raise ValueError("normalization scale must be positive")
 
     def forward(self, point: Point2D) -> Point2D:
         return (
-            self.scale * (float(point[0]) - self.center_x),
-            self.scale * float(point[1]),
+            _finite(self.scale * (_finite(point[0], "x") - self.center_x), "normalized x"),
+            _finite(self.scale * _finite(point[1], "y"), "normalized y"),
         )
 
     def inverse(self, point: Point2D) -> Point2D:
         return (
-            float(point[0]) / self.scale + self.center_x,
-            float(point[1]) / self.scale,
+            _finite(_finite(point[0], "u") / self.scale + self.center_x, "recovered x"),
+            _finite(_finite(point[1], "v") / self.scale, "recovered y"),
         )
 
 
@@ -123,10 +132,7 @@ def derive_planar_normalization(
     maximum_x = max(point[0] for point in selected_points)
     center_x = 0.5 * (minimum_x + maximum_x)
 
-    maximum_radius = max(
-        hypot(point[0] - center_x, point[1])
-        for point in selected_points
-    )
+    maximum_radius = max(hypot(point[0] - center_x, point[1]) for point in selected_points)
     if maximum_radius <= _TOLERANCE:
         raise RuntimeError("the selected chamber complex must have positive extent")
 
@@ -138,9 +144,9 @@ def derive_planar_normalization(
 
 def inverse_stereographic(point: Point2D) -> Point3D:
     """Map the plane to the unit sphere with the origin at the north pole."""
-    u = float(point[0])
-    v = float(point[1])
-    squared_radius = u * u + v * v
+    u = _finite(point[0], "u")
+    v = _finite(point[1], "v")
+    squared_radius = _finite(u * u + v * v, "squared chart radius")
     denominator = 1.0 + squared_radius
     return (
         2.0 * u / denominator,
@@ -151,7 +157,9 @@ def inverse_stereographic(point: Point2D) -> Point3D:
 
 def forward_stereographic(point: Point3D) -> Point2D:
     """Invert the selected inverse-stereographic chart away from the south pole."""
-    x, y, z = (float(component) for component in point)
+    x, y, z = (_finite(component, "sphere coordinate") for component in point)
+    if abs(hypot(x, y, z) - 1.0) > _TOLERANCE:
+        raise ValueError("point must lie on the unit sphere")
     denominator = 1.0 + z
     if denominator <= _TOLERANCE:
         raise ValueError("the south pole is outside this stereographic chart")
@@ -185,7 +193,7 @@ def lift_segment_point(
     normalization: PlanarNormalization,
 ) -> Point3D:
     """Lift one point on a complete planar chamber-edge segment."""
-    parameter = float(parameter)
+    parameter = _finite(parameter, "segment parameter")
     if parameter < 0.0 or parameter > 1.0:
         raise ValueError("segment parameter must lie in [0,1]")
     planar = (
@@ -200,10 +208,7 @@ def derive_spherical_topology_control(
 ) -> SphericalTopologyControl:
     """Lift every arrangement node through one injective spherical chart."""
     normalization = derive_planar_normalization(system)
-    node_points = tuple(
-        lift_planar_point(point, normalization)
-        for point in system.nodes
-    )
+    node_points = tuple(lift_planar_point(point, normalization) for point in system.nodes)
     control = SphericalTopologyControl(
         planar=system,
         normalization=normalization,
@@ -265,10 +270,13 @@ def planar_roundtrip_closes(
             spherical,
             control.normalization,
         )
-        if hypot(
-            recovered[0] - planar[0],
-            recovered[1] - planar[1],
-        ) > tolerance:
+        if (
+            hypot(
+                recovered[0] - planar[0],
+                recovered[1] - planar[1],
+            )
+            > tolerance
+        ):
             return False
     return True
 
@@ -305,10 +313,7 @@ def mirror_equivariant(
         reflected = mirror_spherical_point(control.node_points[node_id])
         target = control.node_points[mirrored_id]
         distance = sqrt(
-            sum(
-                (left - right) ** 2
-                for left, right in zip(reflected, target, strict=True)
-            )
+            sum((left - right) ** 2 for left, right in zip(reflected, target, strict=True))
         )
         if distance > tolerance:
             return False
