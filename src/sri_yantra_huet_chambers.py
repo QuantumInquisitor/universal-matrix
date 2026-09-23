@@ -812,4 +812,51 @@ def derive_huet_chambers(
     return system
 
 
+def selected_chambers_are_conflict_free(system: ChamberSystem) -> bool:
+    """Return whether selected chambers have disjoint interiors and edge lengths."""
+    selected = system.selected_candidate_ids
+    return not any(
+        _candidates_conflict(
+            system.candidates[first_id],
+            system.candidates[second_id],
+            system.nodes,
+        )
+        for first_id, second_id in combinations(selected, 2)
+    )
+
+
+def ring_is_vertex_cycle(system: ChamberSystem, ring: ChamberRing) -> bool:
+    """Return whether every chamber in a ring touches exactly two ring neighbors."""
+    ring_ids = set(ring.candidate_ids)
+    for candidate_id in ring.candidate_ids:
+        neighbors = 0
+        vertices = set(system.candidates[candidate_id].vertex_ids)
+        for other_id in ring_ids - {candidate_id}:
+            other_vertices = set(system.candidates[other_id].vertex_ids)
+            if len(vertices & other_vertices) == 1:
+                neighbors += 1
+        if neighbors != 2:
+            return False
+    return True
+
+
+def rings_are_mirror_closed(system: ChamberSystem) -> bool:
+    """Return whether each concentric ring is closed under axis reflection."""
+    node_mirror = _mirror_node_map(system.nodes)
+    candidate_mirror = _mirror_candidate_map(system.candidates, node_mirror)
+    return all(
+        {
+            candidate_mirror[candidate_id]
+            for candidate_id in ring.candidate_ids
+        }
+        == set(ring.candidate_ids)
+        for ring in system.rings
+    )
+
+
+def all_rings_are_vertex_cycles(system: ChamberSystem) -> bool:
+    """Return whether all four noncentral rings are vertex-touching cycles."""
+    return all(ring_is_vertex_cycle(system, ring) for ring in system.rings)
+
+
 HUET_CHAMBER_SYSTEM = derive_huet_chambers()
