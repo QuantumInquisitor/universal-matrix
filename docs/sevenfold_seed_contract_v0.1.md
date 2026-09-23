@@ -39,6 +39,20 @@ domain. A universe address is a path of Vesica indices. Appending an index
 enters a child universe containing another complete Seed, so recursion is not
 assigned an arbitrary maximum depth.
 
+The recursive universe-port engine now gives this address an exact contained
+geometry. If a parent vessel has radius (R), its complete Seed uses circles
+of radius (R/2). The largest centered circle inside any resulting Vesica has
+radius (R/4), remains inside the parent vessel, and contains the next complete
+Seed. Thus the current planar containment convention gives
+
+\[
+R_d=R_0/4^d
+\]
+
+and (12^d) distinct addresses at exact depth (d). This is a software and
+Euclidean-geometry result under the selected convention, not a measured
+physical ratio between universes.
+
 ## Recursive central mirror
 
 The Seed mirror is the half-turn through position 0. It fixes the center and
@@ -60,6 +74,13 @@ the Flower of Life substrate. Tree of Life structures are proposed routing and
 expression maps selected from that substrate. Toroidal structures describe
 circulation through the substrate rather than replacing it.
 
+That construction is now explicit in `src/universe_port_engine.py`. Equal-size
+Flower growth has (1+3n(n+1)) circles and (9n^2+3n) neighboring Vesicas in
+a radius-(n) hexagonal disk. Inner and outer Tree routes are opposite
+orientations of Flower edges that cross successive rings. The negative,
+neutral, and positive pillars are extracted from the same lattice and transform
+under its central mirror.
+
 ## Exact software properties
 
 - every interpretation contains exactly one center and six ring positions;
@@ -69,6 +90,9 @@ circulation through the substrate rather than replacing it.
 - every Vesica address can extend recursively by another valid child index;
 - the same central mirror is involutive and parent/child compatible at every
   recursive depth.
+- every contained Seed and Vesica child remains inside its parent vessel;
+- equal-circle Flower growth is kept distinct from inward scale contraction;
+- inner and outer Tree routes are exact reverses derived from Flower geometry.
 
 ## Open physical questions
 
@@ -77,5 +101,9 @@ circulation through the substrate rather than replacing it.
 - whether Ether corresponds to any measurable field or vacuum property;
 - whether Metal and Crystal are fundamental modes or emergent expressions;
 - whether the two modes encode polarity, material organization, or both;
-- how the seven Seed modes map into the canonical 108 states;
+- whether the current explicit port coupling to three routing channels and 36
+  phases has physical meaning beyond exact 108-state coverage;
 - what observable distinguishes these models from one another.
+
+See `docs/universe_port_engine_v0.1.md` for the complete geometry and evidence
+boundary.

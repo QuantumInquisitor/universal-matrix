@@ -13,11 +13,11 @@ model, symbolic interpretation, or empirical claim.
 | Chapter | Engine-relevant map | Current status | Next requirement |
 | --- | --- | --- | --- |
 | 1. Alchemy | Transmutation, repeated 1-2-4-8-7-5 cycle, 3-6-9 organization, nested micro-to-Omniverse tori | Partial | Define a state-transmutation operator and its conserved invariant; retain tori as flow rather than replacing the Flower substrate |
-| 2. School for Ego-based Life | Universes within overlapping circles, Flower/Tree as Omniverse DNA, tubes, cone traversal, mutually containing realms | Partial | Connect recursive Vesica addresses to explicit circle geometry and a measurable scale-expression law |
-| 3. The Energetic System | Positive, negative, and neutral feeding streams; nested rotating fields; scale hierarchy | Partial | Test a three-stream coupling law and distinguish discrete routing identities from physical energy claims |
-| 4. The Sacred Art of Creation | Circle vessel, void as transmission medium, six elementals, seventh Consciousness, Vesica births a universe, Seed to Flower to Tree, DNA-like recurrence | Seed and Vesica contracts begun | Build exact circle coordinates, overlap geometry, Flower growth, Tree extraction, and dual-aspect Consciousness/Ether center |
+| 2. School for Ego-based Life | Universes within overlapping circles, Flower/Tree as Omniverse DNA, tubes, cone traversal, mutually containing realms | Exact recursive port geometry; tube physics open | Put a conserved circulation law on the port network and keep it separate from literal DNA claims |
+| 3. The Energetic System | Positive, negative, and neutral feeding streams; nested rotating fields; scale hierarchy | Three-state port clock and alternating scale orientation implemented | Derive or falsify a physical three-stream coupling rather than identifying clock carriers with energy by name |
+| 4. The Sacred Art of Creation | Circle vessel, void as transmission medium, six elementals, seventh Consciousness, Vesica births a universe, Seed to Flower to Tree, DNA-like recurrence | Circle, contained Seed, Vesica, Flower, and derived Tree geometry implemented | Add conserved toroidal circulation and an operational Consciousness/Ether observable before physical coupling |
 | 5. 108 Program Coding | 108 loop, 8 by 8 light-sound register, inward/outward mirrored streams, Source zero | Strong discrete coverage | Maintain corrected canonical arithmetic; test any light/sound identification independently |
-| 6. Chakras and Nadis | 114 inventory, 54 positive plus 54 negative ports, giving/taking flips, six yin plus six yang paths, three pillars | 54-pair polarity is exact; biological mapping open | Add a polarity-flow adapter and test whether the twelve local Vesicas relate to twelve paths without assuming identity |
+| 6. Chakras and Nadis | 114 inventory, 54 positive plus 54 negative ports, giving/taking flips, six yin plus six yang paths, three pillars | 54-pair polarity, twelve port states, and three geometric pillars implemented; biological mapping open | Test any biological correspondence against data without assuming that geometric counts establish anatomy |
 | 7. Planes and Health | Neighboring planes affect one another; repeated biological scale organization | Open physical adapter | Define a generic adjacent-layer coupling first; require biological data before health interpretation |
 | 8. Additional Planes | Positive/negative/neutral unity, overlapping transitive planes, branching dimensions and possibilities | Partial recursion only | Add an overlap-transition graph and branch semantics distinct from spatial scale nesting |
 | 9. Consciousness | Consciousness localizes information; sound, light, matter, interior, and exterior are holographically related | Ontology only | Define an operational localization variable and a falsifiable observable before physical coupling |
@@ -45,15 +45,27 @@ model, symbolic interpretation, or empirical claim.
 7. Chapter 6 independently supports the exact 54 plus 54 polarity pairing now
    present in the canonical core, but the book's biological port claims remain
    hypotheses requiring separate evidence.
+8. The two opposite Vesica endpoints used by the port engine are the two
+   circle-intersection cusps. Their midpoint is the neutral center. The
+   generating-circle centers are kept distinct from those cusp points.
+9. Exact containment requires two half-scale steps: Seed circles are half the
+   parent-vessel radius and the Vesica child is half the Seed-circle radius.
+   The resulting inward vessel law is (R_{d+1}=R_d/4), while outward Flower
+   growth retains equal circle radius.
 
 ## Ordered implementation path
 
-1. Finish the Sevenfold Seed ontology with the dual-aspect center.
-2. Bridge the center to the 108-state processor and the six outer positions to
-   the six boundary gates without selecting a symbolic orientation.
-3. Implement exact circle, Vesica, Seed, Flower, and Tree geometry.
-4. Add positive, negative, and neutral flow on that geometry.
-5. Add scale expression and transitive-plane branching as distinct operations.
-6. Only then attach light, sound, biological, psychological, or cosmological
-   interpretations through separately testable adapters.
+1. **Implemented:** Sevenfold Seed ontology with the dual-aspect center.
+2. **Implemented:** center and six-position bridge to the 108-state processor
+   and six boundary gates without selecting a symbolic orientation.
+3. **Implemented:** exact circle, contained Seed, Vesica, equal-radius Flower,
+   and Flower-derived inner/outer Tree geometry.
+4. **Implemented as a candidate:** positive, negative, and neutral port clock,
+   alternating scale orientation, and explicit negative-space aperture.
+5. **Next:** conserved circulation through the port and Tree network, followed
+   by transitive-plane branching as an operation distinct from spatial scale.
+6. **Evidence gate:** attach light, sound, biological, psychological, or
+   cosmological interpretations only through separately testable adapters.
 
+The current implementation and its claim boundary are specified in
+`docs/universe_port_engine_v0.1.md`.

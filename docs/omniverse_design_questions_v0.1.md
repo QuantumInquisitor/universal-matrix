@@ -2298,3 +2298,45 @@ cosmological scales obey this contract.
 
 That scale-expression law must conserve a declared invariant and must be tested
 independently from the exact recursive addressing contract.
+
+---
+
+## Recursive universe-port geometry checkpoint — v0.1
+
+The circle, Seed, Vesica, Flower, and Tree map now has one executable geometric
+realization.
+
+A parent circle is the vessel. Seven half-radius Seed circles fit completely
+inside it. Each of the Seed's twelve adjacent circle pairs creates a Vesica,
+and the maximal circle centered in that lens has one quarter of the parent
+vessel's radius. Recursing gives
+
+\[
+R_d=R_0/4^d,
+\qquad
+N_d=12^d.
+\]
+
+This answers the earlier scale-expression question only for the selected
+planar containment convention. It does not determine a physical unit or show
+that observed cosmic scales use the ratio.
+
+Equal-radius Flower expansion is now a different operation from inward
+containment. The Tree is extracted from Flower adjacency: outer routes point
+away from the center, inner routes reverse them, and same-ring edges weave
+across the structure. The negative and positive pillars exchange under the
+central mirror while the neutral pillar is preserved.
+
+An active port state adds the 36-tick polarity clock, adjacent-scale reversal,
+all 108 routing positions, opposite Vesica cusps, and an explicitly selected
+Terryen negative-space cavity. This is a candidate coupling, not proof of a
+physical black hole, white hole, ether, gravity law, or literal universe.
+
+### Next creator question
+
+> What locally conserved quantity circulates through the two Vesica cusps,
+> neutral center, and inner/outer Tree routes, and how does that circulation
+> distinguish spatial scale recursion from transitive-plane branching?
+
+The next law should declare its state variable, continuity equation, and
+conserved invariant before adding a biological or cosmological label.

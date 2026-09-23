@@ -75,6 +75,37 @@ minimal proposition that a new scale inherits the same local organizing code.
 It does not yet implement mutation, recombination, scale-dependent expression,
 or biological DNA. Those require separate laws and evidence.
 
+## Geometric universe-port realization
+
+The recursive address now has an explicit planar containment model in
+`src/universe_port_engine.py`.
+
+One parent circle is treated as the vessel. A complete seven-circle Seed is
+inscribed using circles of half the parent radius. Every one of the Seed's
+twelve adjacent equal-circle pairs defines an addressed Vesica universe
+domain. The largest circle centered in that lens is the vessel that carries
+the domain's next Seed and has half the generating-circle radius. Its contained
+radius is therefore
+
+\[
+R_{d+1}=R_d/4.
+\]
+
+This does not replace the integer spiral scale. It supplies one exact
+dimensionless geometric realization under a declared containment convention.
+The absolute physical size of (R_0), and whether observed nature uses this
+ratio, remain open.
+
+The construction also separates two operations that had previously been easy
+to blur:
+
+- Flower expansion grows outward with equal-radius circles;
+- recursive universe containment contracts inward by one quarter per depth.
+
+The Flower adjacency graph supplies both Tree orientations: the outer Tree
+directs routes away from the center and the inner Tree reverses them. No
+independent Tree diagram is inserted.
+
 ## Status
 
 Exact software properties:
@@ -85,11 +116,22 @@ Exact software properties:
 - reciprocal-mirror involution;
 - mirror/evolution conjugacy;
 - recursive Seed-mirror involution and parent/child compatibility.
+- contained Seed, Vesica, and child-circle geometry at every tested depth;
+- (R_d=R_0/4^d) and (12^d) address growth under the planar convention;
+- equal-radius Flower counts and reciprocal inner/outer Tree routes;
+- active port states coupled to all 108 canonical routing positions;
+- explicit Terryen-candidate cavity activation without silently selecting a
+  preferred candidate.
 
 Open physical questions:
 
 - what establishes a physical scale boundary;
 - whether the 36-step turn has a dimensional duration;
-- how scale radius, density, or coupling changes across a turn;
+- whether the geometric one-quarter containment ratio maps to any physical
+  scale transition;
+- how density, coupling, or clock rate changes across a turn;
 - how many universe or multiverse layers exist;
 - whether this recursion corresponds to observed physical structure.
+
+See `docs/universe_port_engine_v0.1.md` for formulas, tests, and the scientific
+claim boundary.
