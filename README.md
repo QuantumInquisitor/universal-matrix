@@ -220,6 +220,14 @@ and their gauge transformations do not act on the Cartan coordinate.
 
 See `docs/e8_invariant_coupling_v0.1.md`.
 
+A follow-up observable audit shows that, on the fixed 240-root orbit,
+`||h||^2` is constant. Couplings to present matter norms therefore behave like
+mass shifts, couplings to gauge energy behave like coupling rescalings, and a
+linear neutral-scalar coupling behaves like a source offset. None is promoted
+as distinct E8 dynamics.
+
+See `docs/e8_coupling_observable_audit_v0.1.md`.
+
 ### Minimal local Matrix transition law
 
 The ontology-level transition layer now provides a minimal six-neighbor
@@ -544,6 +552,7 @@ Start with:
 - `docs/e8_equivalence_map_v0.1.md`
 - `docs/e8_state_representation_audit_v0.1.md`
 - `docs/e8_invariant_coupling_v0.1.md`
+- `docs/e8_coupling_observable_audit_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
