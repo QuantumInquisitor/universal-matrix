@@ -236,3 +236,5 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 | `docs/graph_toroidal_flux_bundle_v0.1.md` | Current one-to-one mapping from conservative graph currents to disjoint 3D toroidal flux domains with exact signed cut-flux preservation. |
 
 | `docs/toroidal_junction_control_volume_v0.1.md` | Current connected conservative graph-node control volumes with explicit 3D boundary-port flux routing and toroidal edge-interface checks. |
+
+| `docs/toroidal_connector_topology_v0.1.md` | Current topology audit for junction/toroidal interfaces and divergence-free annular Piola connector to the cut-open purely poloidal torus. |
