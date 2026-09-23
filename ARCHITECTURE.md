@@ -822,3 +822,19 @@ constraint-induced incidence changes from a harmless change of embedding.
 
 Primary verification: \`tests/test_sri_yantra_spherical_topology_control.py\`.
 Primary note: \`docs/sri_yantra_spherical_topology_control_v0.1.md\`.
+
+
+### Rao great-circle spherical reference
+
+`src/sri_yantra_rao_spherical_reference.py` implements the spherical
+trigonometric dependency chain needed for one published C. S. Rao Table 1
+solution. It evaluates the selected constraint set 1, 2, 4, 5, 10, and 19
+directly from the six published angular variables and reproduces closure below
+1e-6 despite their six-decimal tabulation.
+
+This layer is a sourced metric spherical construction. It is distinct from the
+homeomorphic topology-control lift and does not yet claim a complete spherical
+43-chamber incidence graph.
+
+Primary verification: `tests/test_sri_yantra_rao_spherical_reference.py`.
+Primary note: `docs/sri_yantra_rao_spherical_reference_v0.1.md`.
