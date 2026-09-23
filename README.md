@@ -630,6 +630,7 @@ Start with:
 - `docs/graph_toroidal_flux_bundle_v0.1.md`
 - `docs/toroidal_junction_control_volume_v0.1.md`
 - `docs/toroidal_connector_topology_v0.1.md`
+- `docs/toroidal_annular_junction_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
@@ -793,3 +794,19 @@ as annuli and embed the cut-open channels without overlap.
 
 Technical note: `docs/toroidal_connector_topology_v0.1.md`.
 Verification: `tests/test_toroidal_connector_topology.py`.
+
+
+## Annular junction edge ports
+
+`src/toroidal_annular_junction.py` redesigns the connected conservative
+junction's external edge ports as concentric annuli. An axisymmetric
+streamfunction preserves node balance and zero divergence while retaining the
+deterministic inlet-to-outlet transfer decomposition in a cumulative-flux
+coordinate.
+
+Each edge port uses exactly the annular flux profile expected by the Piola
+connector, resolving the earlier rectangle-to-annulus no-fit locally. Global
+framing and collision-free source/edge/target placement remain open.
+
+Technical note: `docs/toroidal_annular_junction_v0.1.md`.
+Verification: `tests/test_toroidal_annular_junction.py`.
