@@ -1390,6 +1390,14 @@ The strongest internally established statements include:
 - product-group perturbative anomaly bookkeeping;
 - bounded spatial command validation and typed digital-twin telemetry contracts.
 
+A separate numerical geometry checkpoint reconstructs the Huet planar Sri
+Yantra reference and extracts 43 triangular chambers from its finite edges.
+Generator coverage and exterior graph depth independently recover the
+14 + 10 + 10 + 8 + 1 contact circuits. This verifies one reference arrangement
+and its tested coordinate transformations; it does not establish physical
+extra dimensions or historical spherical/Meru incidence equivalence.
+See `docs/sri_yantra_chambers_v0.1.md` for the method and evidence boundary.
+
 ### 22.2 Open derivations
 
 The following remain unresolved:

@@ -87,14 +87,15 @@ triangles.
 
 This is stronger than the previous inventory-only model.
 
-It is still not the full 43-chamber edge graph. A concurrency relation among
-maximal triangles and a chamber-adjacency relation are different objects.
+A concurrency relation among maximal triangles and a chamber contact are
+different objects. The separate `src/sri_yantra_chambers.py` now derives the
+Huet planar chamber graph numerically from the reconstructed coordinates.
 
-## Next gate
+## Subsequent checkpoints
 
-Implement Chiodo's actual planar coordinate construction from P,Q,R,S,
-including the selected Apollonius circle, and derive all line intersections
-computationally.
-
-Then the engine can count the 43 chambers from geometry rather than storing 43
-as inventory metadata.
+The Huet coordinate solver reconstructs the concurrent reference
+algebraically, without replaying every compass-and-straightedge operation.
+The chamber extractor now derives the 43 selected triangles and their
+circuits. See `docs/sri_yantra_huet_planar_v0.1.md` and
+`docs/sri_yantra_chambers_v0.1.md`. General parameter-family and historical
+spherical/Meru incidence equivalence remain open.

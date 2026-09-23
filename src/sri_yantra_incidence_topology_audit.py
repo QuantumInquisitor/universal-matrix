@@ -2,8 +2,9 @@
 
 The existing multidimensional module contains exact enclosure inventories,
 cyclic local-member labels, an outer-to-inner shell order, and candidate
-spherical and spiral-cone charts. It does not yet contain a sourced complete
-intersection graph for all 43 triangular cells.
+spherical and spiral-cone charts. A separate chamber extractor now derives
+the 43-cell graph numerically for the Huet planar reference; equivalence with
+historical spherical and Meru realizations remains open.
 
 This module therefore tests only topology that is actually declared:
 - the 72 abstract component locations across all nine enclosures;
@@ -38,6 +39,7 @@ from .transitive_plane_branching import MATERIAL_PLANE, PlaneAddress
 
 class IncidenceKnowledge(StrEnum):
     EXACT_DECLARED = "exact_declared"
+    NUMERICALLY_VERIFIED_HUET = "numerically_verified_huet"
     UNKNOWN_NOT_ENCODED = "unknown_not_encoded"
 
 
@@ -115,8 +117,8 @@ def incidence_audit() -> tuple[IncidenceAuditEntry, ...]:
         ),
         IncidenceAuditEntry(
             "complete_43_triangle_intersection_graph",
-            IncidenceKnowledge.UNKNOWN_NOT_ENCODED,
-            "The current contract stores counts but no exact triangle-intersection incidence matrix.",
+            IncidenceKnowledge.NUMERICALLY_VERIFIED_HUET,
+            "sri_yantra_chambers derives all planar chamber boundaries and vertex contacts for the Huet reference; other realizations remain open.",
         ),
         IncidenceAuditEntry(
             "generator_pair_intersection_multiplicities",

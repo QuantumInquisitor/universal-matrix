@@ -43,6 +43,8 @@ Current experimental modules include:
 - `src/sri_yantra_chiodo_concurrency.py`
 - `src/sri_yantra_huet_planar.py`
 - `src/sri_yantra_huet_chambers.py`
+
+- `src/sri_yantra_chambers.py`
 - `src/higher_dimensional_geometry.py`
 - `src/h4_direct_e8_lift.py`
 - `src/e8_equivalence_map.py`
@@ -286,8 +288,9 @@ E8 radial mode would be a new degree of freedom and is not introduced.
 
 The geometry manifest now includes
 `src/sri_yantra_incidence_topology_audit.py`. It tests the abstract topology
-that is actually declared by the current Sri Yantra contract and keeps the
-complete historical 43-triangle intersection graph explicitly open. The
+that is declared by the current Sri Yantra contract, and records the new
+numerical Huet planar chamber graph separately from open historical
+spherical/Meru incidence equivalence. The
 current spherical and spiral-cone candidate charts preserve all declared
 locations without collisions.
 
@@ -297,7 +300,7 @@ locations without collisions.
 The geometry manifest now includes `src/sri_yantra_chiodo_concurrency.py`,
 which encodes Chiodo's proved planar concurrency conditions for t1 through t9.
 This gives a sourced relation graph across all nine maximal triangles without
-conflating it with the still-uncomputed 43-chamber edge graph.
+conflating it with the separately computed planar chamber graph.
 
 
 ## Sri Yantra Huet planar reconstruction
@@ -305,12 +308,12 @@ conflating it with the still-uncomputed 43-chamber edge graph.
 The geometry manifest now includes `src/sri_yantra_huet_planar.py`, which
 reconstructs all nine maximal triangles for the Huet reference parameters from
 the sourced Chiodo concurrency equations. It provides the 27 planar edge
-segments needed for the next chamber-extraction stage.
+segments used by the two chamber extractors.
 
 
 ## Derived Sri Yantra chamber complex
 
-The geometry manifest now includes \`src/sri_yantra_huet_chambers.py\`.
+The geometry manifest now includes `src/sri_yantra_huet_chambers.py`.
 
 Starting from the 27 finite Huet parent edges, it derives the complete planar
 intersection arrangement, enumerates all supported triangular circuits, and
@@ -321,3 +324,12 @@ The resulting 43 chambers are mirror closed, the four noncentral enclosures
 are vertex-touching cycles, and their 129 chamber sides are all distinct.
 The result is a planar incidence contract. Nonplanar Sri Yantra candidates have
 not yet been shown to preserve it.
+
+
+## Sri Yantra chamber extraction
+
+`src/sri_yantra_chambers.py` derives 43 odd-coverage triangular chambers
+from the finite Huet edges, and verifies their 14 + 10 + 10 + 8 + 1 contact
+circuits. It exposes the full 69-vertex, 142-edge, 74-bounded-face arrangement.
+`docs/sri_yantra_chambers_v0.1.md` records the numerical scope and tests.
+`python -m scripts.render_sri_yantra_chambers` regenerates the computed SVG.

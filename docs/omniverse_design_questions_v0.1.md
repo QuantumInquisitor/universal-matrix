@@ -1816,7 +1816,8 @@ E/Q(h,L)=c_0+c_hh^2+c_LT(L;mu),
 with the finite-volume basis tied to the branch's asymptotic localization scale
 
 [
-mu=sqrt{m_{m free}^2-omega^2}.
+mu=sqrt{m_{
+m free}^2-omega^2}.
 ]
 
 The fit uses twelve Cartesian mappings spanning four lattice spacings and three
@@ -1856,7 +1857,8 @@ h=0.175,
 qquad
 L=7.875,
 qquad
-91^3 {m sites}.
+91^3 {
+m sites}.
 ]
 
 The calculation records the actual mapped (E/Q) and compares it with both the
@@ -1921,7 +1923,8 @@ The same threshold-preserving finite grid and perturbation are now evolved for
 four times the Stage-1 duration:
 
 [
-100 {m steps},qquad dt=0.001,qquad t=0.1.
+100 {
+m steps},qquad dt=0.001,qquad t=0.1.
 ]
 
 No grid, energetic, or perturbation parameter is changed.
@@ -1954,7 +1957,8 @@ becomes the object of study.
 The same threshold-preserving grid and perturbation are now evolved to
 
 [
-250 {m steps},qquad dt=0.001,qquad t=0.25.
+250 {
+m steps},qquad dt=0.001,qquad t=0.25.
 ]
 
 This extends the duration to ten times Stage 1 and 2.5 times Stage 2 without
@@ -2026,7 +2030,8 @@ not an arbitrary duration increase.
 The first duration selected by the explicit scaling diagnostic is now
 
 [
-500 {m steps},qquad dt=0.001,qquad t=0.5.
+500 {
+m steps},qquad dt=0.001,qquad t=0.5.
 ]
 
 The grid, timestep, energetic classification, and perturbation are unchanged.
@@ -2063,7 +2068,8 @@ points.
 The run remains
 
 [
-500 {m steps},qquad dt=0.001,qquad t=0.5,
+500 {
+m steps},qquad dt=0.001,qquad t=0.5,
 ]
 
 with diagnostics sampled every 25 steps.
@@ -2908,7 +2914,7 @@ canonical chambers from their geometric definitions.
 ## Geometry-derived Sri Yantra 43-chamber checkpoint — v0.1
 
 The previous creator question now has an executable answer in
-\`src/sri_yantra_huet_chambers.py\`.
+`src/sri_yantra_huet_chambers.py`.
 
 The 27 finite Huet triangle edges generate 69 snapped arrangement nodes and
 122 possible triangular circuits supported by the parent linework. The engine
@@ -2959,3 +2965,32 @@ derived chamber vertices and edges, then test injectivity, edge crossings,
 cycle preservation, mirror equivariance, and chamber collapse. A topology
 change should be reported only when one of those concrete incidence tests
 fails.
+
+
+---
+
+## Huet Sri Yantra chamber extraction checkpoint v0.1
+
+The previous chamber question is now answered numerically in
+`src/sri_yantra_chambers.py`. The 27 finite edges produce 69 vertices,
+142 atomic edges, and 74 bounded faces. Independent generator coverage and
+exterior graph depth agree for every face. Odd coverage selects 43
+triangles in circuits of 14, 10, 10, 8, and 1. Four connected vertex-contact
+cycles surround the central triangle. Selected chambers share vertices but
+no edges; the remaining 31 regions are gaps.
+
+Reflection, area partition, tolerance sweeps, and coordinate transformations
+verify the reference result. The count is not imposed by the algorithm.
+A direct coordinate comparison also confirms identical per-ring chamber sets
+with the independent traditional-constraint solver merged in PR #67.
+See `docs/sri_yantra_chambers_v0.1.md` for the evidence and computed diagram.
+
+### Next creator question
+
+> Can a spherical or Meru realization preserve every computed chamber
+> vertex, edge, and contact, with no new crossings or collisions?
+
+The next step must map the actual planar complex. Moving 43 abstract labels
+onto a surface is insufficient to establish incidence equivalence. This
+checkpoint establishes geometry for one planar reference, not physical
+extra dimensions or a proof over the entire Chiodo parameter family.

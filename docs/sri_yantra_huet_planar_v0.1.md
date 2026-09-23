@@ -89,18 +89,13 @@ concurrency conditions for the Huet parameter choice.
 It is not yet a literal software replay of every straightedge-and-compass step
 or the nested Apollonius construction.
 
-It also does not identify every one of the traditional 43 subsidiary
-triangles.
+The coordinate solver supplies edges; `src/sri_yantra_chambers.py` now
+identifies the 43 selected chambers numerically. See
+`docs/sri_yantra_chambers_v0.1.md` for the extraction and verified circuits.
 
-## Next gate
+## Chamber gate completed
 
-Use these 27 exact-concurrency edge segments to reconstruct Huet's concentric
-triangle circuits and derive the traditional ring counts
-
-14 + 10 + 10 + 8 + 1 = 43
-
-from geometry rather than from stored metadata.
-
-A generic polygonization of every line segment is not an acceptable substitute,
-because the traditional 43 circuits are a selected concentric triangle
-structure rather than simply the set of all planar faces.
+The finite edges yield 74 bounded faces. Odd generator coverage selects
+43 triangular chambers, and independent exterior-depth and vertex-contact
+checks recover the 14 + 10 + 10 + 8 + 1 circuits. The next gate is to
+preserve their actual incidence under spherical and Meru candidate maps.
