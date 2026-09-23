@@ -69,6 +69,13 @@ triangles leave intervening regions, including ten other triangular regions.
 
 ## Validation
 
+PR #67 also supplies `src/sri_yantra_huet_chambers.py`, an independent solver
+that enumerates supported triangular circuits and applies the sourced ring
+sizes as constraints. A direct coordinate comparison matches every selected
+triangle in every ring between that solver and this coverage/depth method.
+Thus the two constructions recover the same chambers, not just equal counts.
+The coverage/depth extractor never receives the traditional ring sizes.
+
 The tests check Euler's identity, circuit connectedness, single-vertex
 contacts, absence of shared edges between chambers, reflection involution,
 and agreement between independent coverage and graph depth. Summing the areas

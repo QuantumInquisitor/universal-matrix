@@ -84,6 +84,29 @@ def test_reflection_is_an_involution_preserving_faces_and_depth(geometry):
         assert reflected.area == pytest.approx(face.area, abs=2e-12)
 
 
+def test_independent_ring_constraint_solver_selects_identical_chambers(geometry):
+    from src.sri_yantra_huet_chambers import HUET_CHAMBER_SYSTEM
+
+    reference = HUET_CHAMBER_SYSTEM
+    node_map = {}
+    for i, point in enumerate(reference.nodes):
+        matches = [
+            j for j, other in enumerate(geometry.vertices) if math.dist(point, other) < 1e-10
+        ]
+        assert len(matches) == 1
+        node_map[i] = matches[0]
+    reference_rings = ((reference.central_candidate_id,),) + tuple(
+        ring.candidate_ids for ring in reference.rings
+    )
+    for reference_ring, computed_ring in zip(reference_rings, geometry.rings[::-1], strict=True):
+        expected = {
+            frozenset(node_map[v] for v in reference.candidates[i].vertex_ids)
+            for i in reference_ring
+        }
+        actual = {frozenset(geometry.faces[i].corners) for i in computed_ring}
+        assert actual == expected
+
+
 @pytest.mark.parametrize("tolerance", [1e-11, 1e-9, 1e-7])
 def test_tolerance_sweep(tolerance, geometry):
     actual = extract_chambers(tolerance=tolerance)

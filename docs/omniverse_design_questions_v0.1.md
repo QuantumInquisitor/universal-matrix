@@ -1816,7 +1816,8 @@ E/Q(h,L)=c_0+c_hh^2+c_LT(L;mu),
 with the finite-volume basis tied to the branch's asymptotic localization scale
 
 [
-mu=sqrt{m_{m free}^2-omega^2}.
+mu=sqrt{m_{
+m free}^2-omega^2}.
 ]
 
 The fit uses twelve Cartesian mappings spanning four lattice spacings and three
@@ -1856,7 +1857,8 @@ h=0.175,
 qquad
 L=7.875,
 qquad
-91^3 {m sites}.
+91^3 {
+m sites}.
 ]
 
 The calculation records the actual mapped (E/Q) and compares it with both the
@@ -1921,7 +1923,8 @@ The same threshold-preserving finite grid and perturbation are now evolved for
 four times the Stage-1 duration:
 
 [
-100 {m steps},qquad dt=0.001,qquad t=0.1.
+100 {
+m steps},qquad dt=0.001,qquad t=0.1.
 ]
 
 No grid, energetic, or perturbation parameter is changed.
@@ -1954,7 +1957,8 @@ becomes the object of study.
 The same threshold-preserving grid and perturbation are now evolved to
 
 [
-250 {m steps},qquad dt=0.001,qquad t=0.25.
+250 {
+m steps},qquad dt=0.001,qquad t=0.25.
 ]
 
 This extends the duration to ten times Stage 1 and 2.5 times Stage 2 without
@@ -2026,7 +2030,8 @@ not an arbitrary duration increase.
 The first duration selected by the explicit scaling diagnostic is now
 
 [
-500 {m steps},qquad dt=0.001,qquad t=0.5.
+500 {
+m steps},qquad dt=0.001,qquad t=0.5.
 ]
 
 The grid, timestep, energetic classification, and perturbation are unchanged.
@@ -2063,7 +2068,8 @@ points.
 The run remains
 
 [
-500 {m steps},qquad dt=0.001,qquad t=0.5,
+500 {
+m steps},qquad dt=0.001,qquad t=0.5,
 ]
 
 with diagnostics sampled every 25 steps.
@@ -2905,6 +2911,64 @@ canonical chambers from their geometric definitions.
 
 ---
 
+## Geometry-derived Sri Yantra 43-chamber checkpoint — v0.1
+
+The previous creator question now has an executable answer in
+`src/sri_yantra_huet_chambers.py`.
+
+The 27 finite Huet triangle edges generate 69 snapped arrangement nodes and
+122 possible triangular circuits supported by the parent linework. The engine
+does not identify all of those candidates with traditional chambers.
+
+Instead it reconstructs the documented enclosure structure:
+
+- the central t1/t5 triangle;
+- a ring of 8 chambers;
+- an inner ring of 10;
+- an outer ring of 10;
+- a ring of 14.
+
+Nine atomic symmetry-axis chambers are derived directly from the arrangement.
+The central one is the unique t1/t5 candidate. The other eight form four
+nested anchor pairs.
+
+For each enclosure the engine solves for a vertex-touching upper chain of the
+required length, mirrors it, and rejects any choice with positive area overlap
+or shared edge length. The four rings are then subjected to the same conflict
+test as one complete system.
+
+The Huet reference admits exactly one global solution.
+
+That solution has
+
+\[
+1+8+10+10+14=43
+\]
+
+chambers, 129 distinct chamber sides, mirror closure in every noncentral ring,
+and circuit-vertex counts
+
+\[
+3,\ 16,\ 20,\ 20,\ 28.
+\]
+
+The individual chamber coordinates are therefore derived rather than inserted
+as a 43-entry lookup table.
+
+### Next creator question
+
+> Does this newly derived 43-chamber incidence complex survive an explicit
+> lift into the spherical, Meru, and other nonplanar Sri Yantra realizations?
+
+The next gate is topological rather than numerological. It must map the actual
+derived chamber vertices and edges, then test injectivity, edge crossings,
+cycle preservation, mirror equivariance, and chamber collapse. A topology
+change should be reported only when one of those concrete incidence tests
+fails.
+
+
+---
+
 ## Huet Sri Yantra chamber extraction checkpoint v0.1
 
 The previous chamber question is now answered numerically in
@@ -2917,6 +2981,8 @@ no edges; the remaining 31 regions are gaps.
 
 Reflection, area partition, tolerance sweeps, and coordinate transformations
 verify the reference result. The count is not imposed by the algorithm.
+A direct coordinate comparison also confirms identical per-ring chamber sets
+with the independent traditional-constraint solver merged in PR #67.
 See `docs/sri_yantra_chambers_v0.1.md` for the evidence and computed diagram.
 
 ### Next creator question
