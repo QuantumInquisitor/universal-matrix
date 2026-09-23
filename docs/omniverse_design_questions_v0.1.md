@@ -2870,3 +2870,34 @@ gap.
 
 The next step must produce the planar coordinates and recover the chamber count
 from geometry itself.
+
+
+---
+
+## Huet-reference Sri Yantra planar-coordinate checkpoint — v0.1
+
+The sourced concurrency contract now has an executable planar realization in
+`src/sri_yantra_huet_planar.py`.
+
+Using the Huet P,Q,R,S values quoted by Chiodo, the engine reconstructs all
+nine maximal isosceles triangles. The t3/t7 common circumcircle fixes the two
+outer reference triangles, while the published apex/base and twelve
+three-line concurrency constraints determine the remaining base locations and
+leg slopes.
+
+The resulting solution:
+
+- preserves the t1-through-t9 base ordering;
+- closes all seven apex-to-base conditions;
+- closes all twelve three-line concurrencies to numerical precision;
+- preserves the common t3/t7 circumcircle;
+- produces all 27 finite maximal-triangle edge segments.
+
+### Next creator question
+
+> How are the traditional 43 subsidiary triangles, grouped as
+> 14 + 10 + 10 + 8 + 1, extracted from these 27 concurrent edges?
+
+A generic planar-face polygonization is not sufficient. The next subsystem
+must reconstruct the traditional concentric triangle circuits and count the 43
+canonical chambers from their geometric definitions.
