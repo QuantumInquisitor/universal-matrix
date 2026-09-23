@@ -40,6 +40,7 @@ Current experimental modules include:
 - `src/transitive_plane_branching.py`
 - `src/sri_yantra_multidimensional.py`
 - `src/sri_yantra_incidence_topology_audit.py`
+- `src/sri_yantra_chiodo_concurrency.py`
 - `src/higher_dimensional_geometry.py`
 - `src/h4_direct_e8_lift.py`
 - `src/e8_equivalence_map.py`
@@ -287,3 +288,11 @@ that is actually declared by the current Sri Yantra contract and keeps the
 complete historical 43-triangle intersection graph explicitly open. The
 current spherical and spiral-cone candidate charts preserve all declared
 locations without collisions.
+
+
+## Sri Yantra sourced concurrency graph
+
+The geometry manifest now includes `src/sri_yantra_chiodo_concurrency.py`,
+which encodes Chiodo's proved planar concurrency conditions for t1 through t9.
+This gives a sourced relation graph across all nine maximal triangles without
+conflating it with the still-uncomputed 43-chamber edge graph.
