@@ -181,6 +181,17 @@ and a global nonoverlapping embedding remain open before any dynamics claim.
 
 ---
 
+
+
+The junction boundary has now been redesigned with annular edge ports in
+`src/toroidal_annular_junction.py`. The node interior remains conservative
+under an axisymmetric streamfunction, and each external port has the topology
+and pointwise normal-flux profile required by the Piola connector. A framed,
+collision-free source/edge/target embedding remains open; no dynamics or
+physical normalization is inferred from this kinematic compatibility.
+
+---
+
 ## 3. Abelian U(1) gauge sector
 
 Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
