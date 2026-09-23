@@ -212,6 +212,15 @@ edges, and enclosure vertex counts 3, 16, 20, 20, and 28.
 
 See \`docs/sri_yantra_huet_chambers_v0.1.md\`.
 
+
+A topology-control spherical lift now maps the complete derived chamber complex
+through an explicit inverse-stereographic homeomorphism. All 43 chamber IDs,
+the 1/8/10/10/14 enclosure counts, 129 chamber edges, ring cycles, and mirror
+pairing survive exactly at the incidence level. This control is intentionally
+separate from Rao's historical great-circle spherical construction.
+
+See `docs/sri_yantra_spherical_topology_control_v0.1.md`.
+
 ### Higher-dimensional geometry and E8 bridge
 
 The finite-geometry engine now also contains exact dimension-open simplex,
@@ -597,6 +606,7 @@ Start with:
 - `docs/sri_yantra_chiodo_concurrency_v0.1.md`
 - `docs/sri_yantra_huet_planar_v0.1.md`
 - `docs/sri_yantra_huet_chambers_v0.1.md`
+- `docs/sri_yantra_spherical_topology_control_v0.1.md`
 - `docs/higher_dimensional_e8_bridge_v0.1.md`
 - `docs/h4_direct_e8_lift_v0.1.md`
 - `docs/e8_equivalence_map_v0.1.md`
