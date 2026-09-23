@@ -40,6 +40,7 @@ Current experimental modules include:
 - `src/transitive_plane_branching.py`
 - `src/sri_yantra_multidimensional.py`
 - `src/higher_dimensional_geometry.py`
+- `src/h4_direct_e8_lift.py`
 
 The current ontology distinguishes exact canonical address structure from candidate physical variables. The local-transition layer adds the minimal gauge-covariant nearest-neighbor Hamiltonian used to test locality, conservative exchange, and the weak-field wave limit. The polarity-phase bridge removes redundant polarity bookkeeping by proving equivalence between branch sign, pi-shifted effective phase, and the fixed-amplitude rotor reduction where their assumptions overlap. The recursive port layer supplies exact contained circle, Seed, Vesica, Flower, and Tree geometry, then exposes polarity-clock and negative-space adapters as explicit hypotheses rather than physical facts. The circulation layer adds a dimensionless graph continuity law, balanced Vesica and Tree currents, and a separately typed parent-child scale current without assigning a physical identity to the conserved content. The plane layer adds an open overlap graph and a mirror-paired possibility address while rejecting any elementary move that conflates scale, plane, and branch coordinates. The Sri Yantra layer attaches an embedding-independent enclosure fibre over that product address, distinguishes plane, spherical, Meru, simplex, and spiral-cone realizations, and preserves separate phase, flow, mirror, and handedness operations.
 
@@ -219,3 +220,11 @@ families, tests central-mirror and recursive-projection behavior, constructs
 the 240 E8 roots exactly, and embeds the existing 24-cell dual D4 subsystem.
 The E8 layer remains mathematical and exploratory; no physical eight-dimensional
 ontology is declared.
+
+
+## Direct H4 to E8 lift
+
+The geometry manifest now includes `src/h4_direct_e8_lift.py`, which derives a
+240-root E8 system directly from the existing H4 / 600-cell coordinates by
+forming H4 union phi*H4 and applying the reduced rational-coefficient inner
+product. Its coefficient expansion spans eight exact rational dimensions.
