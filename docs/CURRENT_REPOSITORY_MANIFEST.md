@@ -390,6 +390,7 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 
 - `src/graph_toroidal_flux_bundle.py`
 - `src/toroidal_junction_control_volume.py`
+- `src/toroidal_connector_topology.py`
 
 
 ## Graph-to-toroidal flux bundle
@@ -415,3 +416,15 @@ source junction ports, toroidal channel cuts, and target junction ports.
 
 Primary verification: `tests/test_toroidal_junction_control_volume.py`.
 Primary note: `docs/toroidal_junction_control_volume_v0.1.md`.
+
+
+## Toroidal connector topology and Piola field
+
+`src/toroidal_connector_topology.py` records the disk-to-annulus interface
+no-fit, exposes the two annular boundary copies of a cut-open toroidal channel,
+and constructs a compatible annulus-to-annulus connector through an explicit
+Piola map. The connector preserves signed flux, has positive Jacobian, and
+matches the purely poloidal toroidal field on the target cut.
+
+Primary verification: `tests/test_toroidal_connector_topology.py`.
+Primary note: `docs/toroidal_connector_topology_v0.1.md`.
