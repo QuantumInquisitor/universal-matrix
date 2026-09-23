@@ -45,6 +45,8 @@ Current experimental modules include:
 - `src/sri_yantra_huet_chambers.py`
 
 - `src/sri_yantra_chambers.py`
+
+- `src/sri_yantra_spherical_topology_control.py`
 - `src/higher_dimensional_geometry.py`
 - `src/h4_direct_e8_lift.py`
 - `src/e8_equivalence_map.py`
@@ -333,3 +335,13 @@ from the finite Huet edges, and verifies their 14 + 10 + 10 + 8 + 1 contact
 circuits. It exposes the full 69-vertex, 142-edge, 74-bounded-face arrangement.
 `docs/sri_yantra_chambers_v0.1.md` records the numerical scope and tests.
 `python -m scripts.render_sri_yantra_chambers` regenerates the computed SVG.
+
+## Sri Yantra spherical topology control
+
+The geometry manifest includes `src/sri_yantra_spherical_topology_control.py`.
+It maps the actual 43-chamber Huet incidence complex through an injective
+inverse-stereographic chart, retains complete chamber and ring membership, and
+verifies mirror equivariance and planar roundtrip recovery.
+
+The construction is intentionally a topology-preserving control. It is not
+identified with Rao's sourced great-circle spherical geometry.
