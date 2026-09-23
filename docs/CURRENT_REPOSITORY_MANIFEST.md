@@ -44,6 +44,7 @@ Current experimental modules include:
 - `src/sri_yantra_huet_planar.py`
 - `src/sri_yantra_huet_chambers.py`
 - `src/sri_yantra_spherical_topology_control.py`
+- `src/sri_yantra_rao_spherical_reference.py`
 - `src/higher_dimensional_geometry.py`
 - `src/h4_direct_e8_lift.py`
 - `src/e8_equivalence_map.py`
@@ -333,3 +334,15 @@ verifies mirror equivariance and planar roundtrip recovery.
 
 The construction is intentionally a topology-preserving control. It is not
 identified with Rao's sourced great-circle spherical geometry.
+
+
+## Rao sourced spherical Sri Yantra reference
+
+The geometry manifest includes `src/sri_yantra_rao_spherical_reference.py`.
+It implements the spherical-trigonometric dependency chain for one published
+Rao Table 1 parameter row and validates constraints 1, 2, 4, 5, 10, and 19 to
+better than 1e-6 using only the printed six-decimal values.
+
+This is the first sourced metric spherical checkpoint. The full great-circle
+root-triangle coordinates and spherical chamber incidence remain subsequent
+work.
