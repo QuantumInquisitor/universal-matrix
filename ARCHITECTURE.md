@@ -721,3 +721,15 @@ with their fields is introduced.
 
 Primary verification: `tests/test_e8_invariant_coupling.py`.
 Primary note: `docs/e8_invariant_coupling_v0.1.md`.
+
+
+## 4L. E8 coupling observable audit
+
+`src/e8_coupling_observable_audit.py` verifies that the quadratic E8 invariant
+is constant across the fixed 240-root orbit. The currently available scalar
+couplings are therefore classified as parameter renormalizations or source
+shifts rather than distinct orientation-sensitive E8 dynamics. No preferred
+physical observable is selected.
+
+Primary verification: `tests/test_e8_coupling_observable_audit.py`.
+Primary note: `docs/e8_coupling_observable_audit_v0.1.md`.
