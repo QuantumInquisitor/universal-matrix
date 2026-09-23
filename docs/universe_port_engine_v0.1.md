@@ -231,6 +231,8 @@ The full law, diagram, tests, and evidence boundary are in
 | Flower counts, adjacency, mirror, inner/outer Tree reversal | Exact finite graph geometry |
 | Recursive addresses and one-quarter containment law | Exact under the declared planar convention |
 | Vesica and Tree continuity identities | Exact under the declared finite-channel graph |
+| Plane/possibility/scale address separation | Exact software validation rule |
+| Mirror-paired possibility-branch flux | Exact under the declared finite-graph weights |
 | 36-tick carrier and 108-state pairing | Exact software coupling to the canonical finite engine |
 | Terryen cavity aperture | Model-derived topology for explicit candidate center sets |
 | Elemental, Consciousness/Ether, DNA, eye, torus, black/white-hole meanings | Interpretive hypotheses |
@@ -250,6 +252,11 @@ The focused tests establish:
 - the cusp-neutral Vesica loop is divergence-free;
 - normalized Tree current preserves flux across every radial cut;
 - the matched inner/outer flow and ring weave are divergence-free;
+- plane transitions preserve recursive scale and follow declared overlap
+  edges;
+- possibility branches preserve recursive scale and named plane while
+  extending a separate signed branch address;
+- mixed scale, plane, and possibility changes fail closed;
 - three pillars transform correctly under the central mirror;
 - every explicit Terryen candidate opens exactly one bounded cavity within its
   certified window;
@@ -259,10 +266,14 @@ The focused tests establish:
 
 ## Next research gate
 
-The next extension should implement Chapter 8's transitive-plane branching as
-a relation distinct from both spatial Tree routing and recursive parent-child
-scale transfer. It must declare its state, conservation or transformation law,
-mirror semantics, and observable. A three-dimensional toroidal lift can then
-test whether the planar circulation is the cross-section of a coherent field,
-but it must not replace the Flower substrate or be identified with physical
-cosmology without units, an observable, and data.
+Chapter 8's transitive-plane relation is now implemented separately in
+`src/transitive_plane_branching.py`. It gives scale, plane, and possibility
+their own address coordinates, explicit overlap routes, mirror semantics, and
+a dimensionless branch-continuity law.
+
+The next extension is a three-dimensional toroidal lift that tests whether the
+planar circulation can be the cross-section of a coherent vector field. It
+must state units, boundary conditions, singularity handling, and an observable
+that distinguishes the field from a diagrammatic embedding. It must not
+replace the Flower substrate or be identified with physical cosmology without
+data.

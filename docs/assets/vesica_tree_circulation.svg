@@ -102,7 +102,7 @@
   <text x="1027" y="504" class="label">child p+i</text>
   <path d="M966 499 L1000 499" class="weave"/>
   <text x="828" y="550" class="label">Solid prefix edge = recursive scale transfer</text>
-  <text x="828" y="576" class="small">Transitive-plane branching remains a separate open type.</text>
+  <text x="828" y="576" class="small">Plane and possibility branching use a separate typed subsystem.</text>
 
   <line x1="50" y1="655" x2="1150" y2="655" class="divider"/>
   <text x="50" y="682" class="small">Exact graph identities  •  dimensionless content placeholder  •  no automatic energy, Ether, Consciousness, or cosmology label</text>

@@ -265,7 +265,9 @@ The creator framing is a systems-design metaphor used to ask what laws must exis
 
 The current recursive geometry and circulation boundaries are documented in
 docs/universe_port_engine_v0.1.md and
-docs/vesica_tree_circulation_v0.1.md. The circulation state is dimensionless;
+docs/vesica_tree_circulation_v0.1.md. Plane overlap and possibility branching
+are documented separately in docs/transitive_plane_branching_v0.1.md. The
+circulation state is dimensionless;
 do not relabel it as measured energy, charge, Ether, Consciousness, or matter
 without a separately tested adapter.
 

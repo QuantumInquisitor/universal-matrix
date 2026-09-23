@@ -19,7 +19,7 @@ model, symbolic interpretation, or empirical claim.
 | 5. 108 Program Coding | 108 loop, 8 by 8 light-sound register, inward/outward mirrored streams, Source zero | Strong discrete coverage | Maintain corrected canonical arithmetic; test any light/sound identification independently |
 | 6. Chakras and Nadis | 114 inventory, 54 positive plus 54 negative ports, giving/taking flips, six yin plus six yang paths, three pillars | 54-pair polarity, twelve port states, and three geometric pillars implemented; biological mapping open | Test any biological correspondence against data without assuming that geometric counts establish anatomy |
 | 7. Planes and Health | Neighboring planes affect one another; repeated biological scale organization | Open physical adapter | Define a generic adjacent-layer coupling first; require biological data before health interpretation |
-| 8. Additional Planes | Positive/negative/neutral unity, overlapping transitive planes, branching dimensions and possibilities | Partial recursion only | Add an overlap-transition graph and branch semantics distinct from spatial scale nesting |
+| 8. Additional Planes | Positive/negative/neutral unity, overlapping transitive planes, branching dimensions and possibilities | Open overlap graph and conservative possibility-branch candidate implemented | Supply a measured observable and evidence before identifying the graph with physical dimensions or parallel universes |
 | 9. Consciousness | Consciousness localizes information; sound, light, matter, interior, and exterior are holographically related | Ontology only | Define an operational localization variable and a falsifiable observable before physical coupling |
 | 10. Symbolism | Inner/middle/outer worlds, seven-plus-one light and sound, wheel and three-stream structure | Partial 64-state register | Add a provenance ledger separating symbolic correspondence from exact kernel identities |
 | 11. Conclusion | Neutral Source, mirrored number streams, polarity integration, return from multiplicity to center | Reciprocal mirror and neutral-node continuity implemented | Derive rather than postulate the clock-to-current coupling and physical units |
@@ -65,11 +65,14 @@ model, symbolic interpretation, or empirical claim.
 5. **Implemented as a candidate:** dimensionless conserved circulation through
    the Vesica and Tree network, with recursive scale transfer kept as a
    separate parent-child address edge.
-6. **Next:** transitive-plane branching as an operation distinct from spatial
-   scale, followed by a three-dimensional toroidal lift.
-7. **Evidence gate:** attach light, sound, biological, psychological, or
+6. **Implemented as a candidate:** open named-plane overlap routes and a
+   mirror-paired possibility path, both typed separately from spatial scale.
+7. **Next:** a three-dimensional toroidal lift with boundary conditions and a
+   distinguishable observable.
+8. **Evidence gate:** attach light, sound, biological, psychological, or
    cosmological interpretations only through separately testable adapters.
 
 The current implementation and its claim boundary are specified in
-`docs/universe_port_engine_v0.1.md` and
-`docs/vesica_tree_circulation_v0.1.md`.
+`docs/universe_port_engine_v0.1.md`,
+`docs/vesica_tree_circulation_v0.1.md`, and
+`docs/transitive_plane_branching_v0.1.md`.
