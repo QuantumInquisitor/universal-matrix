@@ -557,6 +557,37 @@ The alternating orientation rule and the identification of the maximum transfer 
 
 ---
 
+## 10.1 Recursive contained port geometry
+
+The spatial recursion now has one explicit Euclidean realization. A circular
+parent vessel of radius (R_d) contains a complete seven-circle Seed whose
+circle radius is (R_d/2). Each of the twelve neighboring Seed-circle pairs
+forms an addressed equal-circle Vesica domain. The largest circle centered at
+the lens midpoint carries that domain's next Seed and has radius
+
+\[
+R_{d+1}=\frac{R_d}{4}.
+\]
+
+It remains inside both generating circles and the parent vessel, and it can
+contain the next complete Seed. The construction therefore supplies (12^d)
+recursive addresses at depth (d), with no software-imposed depth cutoff.
+
+Outward Flower growth is a separate equal-radius operation. A radius-(n)
+hexagonal disk contains (1+3n(n+1)) circles and (9n^2+3n) neighboring
+Vesicas. Inner and outer Tree routes are derived as opposite orientations of
+Flower edges crossing successive rings. A central mirror exchanges the
+positive and negative lattice pillars and preserves the neutral pillar.
+
+The current engine couples these ports to the 36-tick clock and all 108
+canonical states, and can require one bounded negative-space component in an
+explicitly selected Terryen candidate. The containment and graph formulas are
+exact under the selected planar convention. Their identification with literal
+universes, DNA, ether, black or white holes, gravity, or physical scale ratios
+is not established.
+
+---
+
 ## 10A. Minimal local Matrix transition law
 
 After fixing the primitive cell ontology, the next question is the minimum

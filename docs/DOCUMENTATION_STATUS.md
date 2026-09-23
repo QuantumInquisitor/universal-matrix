@@ -36,6 +36,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/primitive_matrix_ontology_v0.1.md` | Current executable answer to ontology Questions 1-3. |
 | `docs/matrix_local_transition_v0.1.md` | Current minimal local transition-law candidate and creator-question checkpoint. |
 | `docs/matrix_polarity_phase_reduction_v0.1.md` | Exact algebraic bridge between canonical branch, phase representation, and fixed-amplitude matter. |
+| `docs/universe_port_engine_v0.1.md` | Current exact contained Seed, Vesica, Flower, and derived Tree geometry with explicit candidate port dynamics. |
 | `docs/qball_stability_map_v0.1.md` | Current charged-matter evidence-map design separating energetic, branch-slope, and finite-time persistence diagnostics. |
 | `docs/qball_threshold_refinement_v0.1.md` | Current adaptive refinement of the charged-matter energetic threshold. |
 | `docs/qball_threshold_persistence_scan_v0.1.md` | Current finite-time direct and perturbed 3D scan across the refined energetic threshold. |

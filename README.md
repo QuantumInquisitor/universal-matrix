@@ -111,6 +111,30 @@ Experimental modules support:
 - neutral-crossing transfer models;
 - source and interaction channels across micro-to-macro scale layers.
 
+### Recursive circle, Vesica, Flower, and Tree ports
+
+The active universe-port geometry now provides:
+
+- a circle vessel with a separately represented interior;
+- a fully contained seven-circle Seed;
+- twelve exact equal-circle Vesica interfaces per Seed;
+- one maximal child vessel inside each Vesica;
+- recursive addressing with (12^d) domains at exact depth (d);
+- the contained planar scale law (R_d=R_0/4^d);
+- equal-radius Flower growth with exact circle and adjacency counts;
+- reciprocal inner and outer Tree routes derived from the Flower graph;
+- negative, neutral, and positive pillars exchanged by central mirroring;
+- 36-tick polarity and transfer states covering all 108 canonical positions;
+- explicit Terryen-candidate cavity checks without a hidden preferred model.
+
+The circle, Vesica, containment, Flower, and graph-count results are exact
+under the stated planar construction. The polarity coupling and negative-space
+activation are candidate model adapters. None of these results establishes a
+literal physical multiverse, ether, black-hole mechanism, or new law of
+gravity.
+
+See `docs/universe_port_engine_v0.1.md`.
+
 ### Minimal local Matrix transition law
 
 The ontology-level transition layer now provides a minimal six-neighbor
@@ -426,6 +450,7 @@ Start with:
 - `docs/COMMERCIAL_PRODUCT_SURFACES.md`
 - `docs/ROBOTICS_XR_PRODUCT_ARCHITECTURE.md`
 - `docs/omniverse_design_questions_v0.1.md`
+- `docs/universe_port_engine_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 

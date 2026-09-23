@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Recursive universe port engine diagnostic</title>
+  <desc id="desc">Three panels show a contained seven circle Seed and highlighted Vesica, equal circle Flower growth, and recursive scale plus polarity routing.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="1" stop-color="#111a33"/>
+    </linearGradient>
+    <linearGradient id="lens" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5c75b" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ff8f70" stop-opacity="0.58"/>
+    </linearGradient>
+    <marker id="arrowCyan" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#6ee7f2"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#f5c75b"/>
+    </marker>
+    <style>
+      .panel { fill: #0b1628; stroke: #2b3f62; stroke-width: 1.5; }
+      .vessel { fill: none; stroke: #b69cff; stroke-width: 2.5; }
+      .seed { fill: none; stroke: #6ee7f2; stroke-width: 1.6; opacity: 0.78; }
+      .flower { fill: none; stroke: #6ee7f2; stroke-width: 1.25; opacity: 0.68; }
+      .child { fill: #b69cff; fill-opacity: 0.14; stroke: #f5c75b; stroke-width: 2.4; }
+      .title { fill: #f6f8ff; font: 700 27px system-ui, sans-serif; }
+      .panel-title { fill: #f6f8ff; font: 700 18px system-ui, sans-serif; }
+      .label { fill: #cbd6ea; font: 14px system-ui, sans-serif; }
+      .small { fill: #9fb0ca; font: 12px system-ui, sans-serif; }
+      .formula { fill: #f5c75b; font: 600 15px ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .neutral { fill: #f6f8ff; stroke: #07111f; stroke-width: 1.5; }
+      .cusp { fill: #ff8f70; stroke: #07111f; stroke-width: 1.2; }
+      .divider { stroke: #2b3f62; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="680" rx="22" fill="url(#background)"/>
+  <text x="50" y="52" class="title">Recursive Universe Port Engine</text>
+  <text x="50" y="78" class="label">Exact containment geometry with explicit candidate dynamics</text>
+
+  <rect x="35" y="105" width="360" height="500" rx="18" class="panel"/>
+  <rect x="420" y="105" width="360" height="500" rx="18" class="panel"/>
+  <rect x="805" y="105" width="360" height="500" rx="18" class="panel"/>
+
+  <text x="58" y="140" class="panel-title">1. Vessel → Seed → Vesica</text>
+  <circle cx="215" cy="320" r="142" class="vessel"/>
+  <circle cx="215" cy="320" r="71" class="seed"/>
+  <circle cx="286" cy="320" r="71" class="seed"/>
+  <circle cx="250.5" cy="258.51" r="71" class="seed"/>
+  <circle cx="179.5" cy="258.51" r="71" class="seed"/>
+  <circle cx="144" cy="320" r="71" class="seed"/>
+  <circle cx="179.5" cy="381.49" r="71" class="seed"/>
+  <circle cx="250.5" cy="381.49" r="71" class="seed"/>
+  <path d="M250.5 258.51 A71 71 0 0 1 250.5 381.49 A71 71 0 0 1 250.5 258.51 Z" fill="url(#lens)" stroke="#f5c75b" stroke-width="2"/>
+  <circle cx="250.5" cy="320" r="35.5" class="child"/>
+  <circle cx="250.5" cy="258.51" r="5" class="cusp"/>
+  <circle cx="250.5" cy="381.49" r="5" class="cusp"/>
+  <circle cx="250.5" cy="320" r="5" class="neutral"/>
+  <line x1="250.5" y1="252" x2="250.5" y2="213" stroke="#ff8f70" stroke-width="1.5"/>
+  <text x="266" y="216" class="small">opposite cusps</text>
+  <line x1="256" y1="320" x2="335" y2="320" stroke="#f6f8ff" stroke-width="1"/>
+  <text x="270" y="311" class="small">neutral center</text>
+  <text x="58" y="500" class="formula">Seed radius = R / 2</text>
+  <text x="58" y="526" class="formula">Child vessel = R / 4</text>
+  <text x="58" y="552" class="label">12 contained Vesica ports</text>
+  <text x="58" y="576" class="small">Circle is vessel; interior remains distinct.</text>
+
+  <text x="443" y="140" class="panel-title">2. Equal-circle Flower</text>
+  <g>
+    <circle cx="600" cy="310" r="38" class="flower"/>
+    <circle cx="638" cy="310" r="38" class="flower"/>
+    <circle cx="619" cy="277.09" r="38" class="flower"/>
+    <circle cx="581" cy="277.09" r="38" class="flower"/>
+    <circle cx="562" cy="310" r="38" class="flower"/>
+    <circle cx="581" cy="342.91" r="38" class="flower"/>
+    <circle cx="619" cy="342.91" r="38" class="flower"/>
+    <circle cx="524" cy="310" r="38" class="flower"/>
+    <circle cx="543" cy="277.09" r="38" class="flower"/>
+    <circle cx="562" cy="244.18" r="38" class="flower"/>
+    <circle cx="543" cy="342.91" r="38" class="flower"/>
+    <circle cx="600" cy="244.18" r="38" class="flower"/>
+    <circle cx="562" cy="375.82" r="38" class="flower"/>
+    <circle cx="638" cy="244.18" r="38" class="flower"/>
+    <circle cx="600" cy="375.82" r="38" class="flower"/>
+    <circle cx="657" cy="277.09" r="38" class="flower"/>
+    <circle cx="638" cy="375.82" r="38" class="flower"/>
+    <circle cx="657" cy="342.91" r="38" class="flower"/>
+    <circle cx="676" cy="310" r="38" class="flower"/>
+  </g>
+  <circle cx="600" cy="310" r="5" class="neutral"/>
+  <line x1="600" y1="430" x2="600" y2="188" stroke="#f6f8ff" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.65"/>
+  <text x="443" y="484" class="formula">C₂ = 19 circles</text>
+  <text x="443" y="510" class="formula">V₂ = 42 Vesicas</text>
+  <text x="443" y="540" class="label">Tree routes are extracted from this graph.</text>
+  <text x="443" y="566" class="small">Positive ↔ neutral ↔ negative pillars mirror.</text>
+
+  <text x="828" y="140" class="panel-title">3. Recursion and flow</text>
+  <circle cx="930" cy="300" r="112" class="vessel"/>
+  <circle cx="930" cy="300" r="28" class="child"/>
+  <circle cx="930" cy="300" r="7" fill="#6ee7f2" fill-opacity="0.22" stroke="#6ee7f2" stroke-width="2"/>
+  <circle cx="930" cy="300" r="1.75" fill="#f5c75b"/>
+  <line x1="1057" y1="245" x2="1057" y2="355" stroke="#cbd6ea" stroke-width="2"/>
+  <circle cx="1057" cy="245" r="7" class="cusp"/>
+  <circle cx="1057" cy="300" r="7" class="neutral"/>
+  <circle cx="1057" cy="355" r="7" fill="#6ee7f2" stroke="#07111f" stroke-width="1.2"/>
+  <path d="M1080 350 C1130 325 1130 275 1080 250" fill="none" stroke="#6ee7f2" stroke-width="2.5" marker-end="url(#arrowCyan)"/>
+  <path d="M1034 250 C990 275 990 325 1034 350" fill="none" stroke="#f5c75b" stroke-width="2.5" marker-end="url(#arrowGold)"/>
+  <text x="1090" y="247" class="small">outward</text>
+  <text x="1090" y="304" class="small">neutral</text>
+  <text x="1090" y="359" class="small">inward</text>
+  <text x="828" y="455" class="formula">R_d = R₀ / 4ᵈ</text>
+  <text x="828" y="481" class="formula">N_d = 12ᵈ</text>
+  <text x="828" y="515" class="label">3 channels × 36 ticks = 108 states</text>
+  <text x="828" y="541" class="label">Adjacent scales reverse orientation</text>
+  <text x="828" y="567" class="small">Cavity candidate must be named and tested.</text>
+
+  <line x1="50" y1="630" x2="1150" y2="630" class="divider"/>
+  <text x="50" y="655" class="small">Exact geometry  •  candidate polarity and negative-space adapters  •  no empirical cosmology claim</text>
+</svg>

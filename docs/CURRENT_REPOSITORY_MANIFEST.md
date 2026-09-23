@@ -33,8 +33,11 @@ Current experimental modules include:
 - `src/canonical_scale_transfer.py`
 - `src/matrix_local_transition.py`
 - `src/matrix_polarity_phase_bridge.py`
+- `src/recursive_omniverse_contract.py`
+- `src/sevenfold_seed_contract.py`
+- `src/universe_port_engine.py`
 
-The current ontology distinguishes exact canonical address structure from candidate physical variables. The local-transition layer adds the minimal gauge-covariant nearest-neighbor Hamiltonian used to test locality, conservative exchange, and the weak-field wave limit. The polarity-phase bridge removes redundant polarity bookkeeping by proving equivalence between branch sign, pi-shifted effective phase, and the fixed-amplitude rotor reduction where their assumptions overlap.
+The current ontology distinguishes exact canonical address structure from candidate physical variables. The local-transition layer adds the minimal gauge-covariant nearest-neighbor Hamiltonian used to test locality, conservative exchange, and the weak-field wave limit. The polarity-phase bridge removes redundant polarity bookkeeping by proving equivalence between branch sign, pi-shifted effective phase, and the fixed-amplitude rotor reduction where their assumptions overlap. The recursive port layer supplies exact contained circle, Seed, Vesica, Flower, and Tree geometry, then exposes polarity-clock and negative-space adapters as explicit hypotheses rather than physical facts.
 
 ## 3. Open field and gauge systems
 

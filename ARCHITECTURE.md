@@ -254,6 +254,41 @@ Implementation:
 - tests/test_matrix_polarity_phase_bridge.py
 - docs/matrix_polarity_phase_reduction_v0.1.md
 
+## 4C. Recursive universe-port geometry
+
+The recursive spatial layer distinguishes outward Flower growth from inward
+universe containment.
+
+For a circular parent vessel of radius (R_d), the complete contained Seed
+uses seven circles of radius (R_d/2). Every one of its twelve neighboring
+circle pairs forms an equal-circle Vesica. The largest circle centered at a
+Vesica midpoint has radius
+
+\[
+R_{d+1}=R_d/4.
+\]
+
+The child contains a new complete Seed, giving (12^d) recursive addresses at
+exact depth (d). Central mirroring is exact in both address and planar
+coordinates.
+
+Outward Flower growth instead preserves circle radius. A radius-(n) hexagonal
+disk has (1+3n(n+1)) circles and (9n^2+3n) Vesica adjacencies. Inner and
+outer Tree routes are reverse orientations of radial Flower edges; same-ring
+links form the transverse weave. The sign of the axial horizontal coordinate
+provides the negative, neutral, and positive pillar classification.
+
+The active-state adapter attaches the canonical 36-tick clock, the 108-state
+routing pair, alternating scale orientation, and one explicitly selected
+Terryen cavity diagnostic. Geometry is exact under the construction. Dynamic,
+elemental, DNA, toroidal, and cosmological meanings remain experimental.
+
+Implementation:
+
+- src/universe_port_engine.py
+- tests/test_universe_port_engine.py
+- docs/universe_port_engine_v0.1.md
+
 ## 5. Open discrete-exterior-calculus layer
 
 The default open field adapter uses a cubical complex with cochain sequence

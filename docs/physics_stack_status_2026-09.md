@@ -77,6 +77,35 @@ Key ideas:
 
 ---
 
+## 2A. Recursive universe-port geometry
+
+Status: **EXACT PLANAR GEOMETRY + EXPERIMENTAL DYNAMIC ADAPTERS**
+
+Modules:
+
+- `src/recursive_omniverse_contract.py`
+- `src/sevenfold_seed_contract.py`
+- `src/universe_port_engine.py`
+
+Verified structural results:
+
+- one contained Seed has seven circles and twelve Vesica interfaces;
+- every Vesica contains a maximal centered child vessel;
+- contained child radius follows (R_{d+1}=R_d/4);
+- exact-depth address count follows (12^d);
+- equal-radius Flower growth follows the closed circle and adjacency counts;
+- inner and outer Tree routes are reciprocal orientations of Flower edges;
+- recursive central mirroring is exact;
+- three routing channels and 36 ticks cover all 108 canonical states;
+- every explicit Terryen candidate can be tested for one bounded cavity without
+  declaring one candidate physically correct.
+
+The one-quarter scale ratio is exact only for the declared planar containment
+construction. Its physical scale, dimensional units, toroidal circulation,
+and cosmological interpretation remain open.
+
+---
+
 ## 3. Abelian U(1) gauge sector
 
 Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
