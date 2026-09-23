@@ -40,6 +40,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/vesica_tree_circulation_v0.1.md` | Current discrete continuity law for balanced Vesica, Tree, and recursive-scale currents. |
 | `docs/transitive_plane_branching_v0.1.md` | Current product-address, overlap-route, mirror, and conservative possibility-branch contract. |
 | `docs/sri_yantra_multidimensional_v0.1.md` | Current embedding-independent Sri Yantra inventory, realization family, simplex lift, spiral-cone chart, and enclosure-flow contract. |
+| `docs/sri_yantra_incidence_topology_audit_v0.1.md` | Current abstract-incidence audit separating declared enclosure topology from the not-yet-encoded historical 43-cell intersection graph. |
 | `docs/higher_dimensional_e8_bridge_v0.1.md` | Current exact arbitrary-dimensional regular-family audit and exploratory E8/D4 construction bridge. |
 | `docs/h4_direct_e8_lift_v0.1.md` | Current direct H4/600-cell to E8 lift using the reduced Q(phi) inner product and eight rational coefficient coordinates. |
 | `docs/e8_equivalence_map_v0.1.md` | Current exact scale-orthogonal equivalence between the H4-derived and standard E8 root systems. |
