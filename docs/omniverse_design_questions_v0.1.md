@@ -1816,7 +1816,8 @@ E/Q(h,L)=c_0+c_hh^2+c_LT(L;mu),
 with the finite-volume basis tied to the branch's asymptotic localization scale
 
 [
-mu=sqrt{m_{m free}^2-omega^2}.
+mu=sqrt{m_{
+m free}^2-omega^2}.
 ]
 
 The fit uses twelve Cartesian mappings spanning four lattice spacings and three
@@ -1856,7 +1857,8 @@ h=0.175,
 qquad
 L=7.875,
 qquad
-91^3 {m sites}.
+91^3 {
+m sites}.
 ]
 
 The calculation records the actual mapped (E/Q) and compares it with both the
@@ -1921,7 +1923,8 @@ The same threshold-preserving finite grid and perturbation are now evolved for
 four times the Stage-1 duration:
 
 [
-100 {m steps},qquad dt=0.001,qquad t=0.1.
+100 {
+m steps},qquad dt=0.001,qquad t=0.1.
 ]
 
 No grid, energetic, or perturbation parameter is changed.
@@ -1954,7 +1957,8 @@ becomes the object of study.
 The same threshold-preserving grid and perturbation are now evolved to
 
 [
-250 {m steps},qquad dt=0.001,qquad t=0.25.
+250 {
+m steps},qquad dt=0.001,qquad t=0.25.
 ]
 
 This extends the duration to ten times Stage 1 and 2.5 times Stage 2 without
@@ -2026,7 +2030,8 @@ not an arbitrary duration increase.
 The first duration selected by the explicit scaling diagnostic is now
 
 [
-500 {m steps},qquad dt=0.001,qquad t=0.5.
+500 {
+m steps},qquad dt=0.001,qquad t=0.5.
 ]
 
 The grid, timestep, energetic classification, and perturbation are unchanged.
@@ -2063,7 +2068,8 @@ points.
 The run remains
 
 [
-500 {m steps},qquad dt=0.001,qquad t=0.5,
+500 {
+m steps},qquad dt=0.001,qquad t=0.5,
 ]
 
 with diagnostics sampled every 25 steps.
@@ -2908,7 +2914,7 @@ canonical chambers from their geometric definitions.
 ## Geometry-derived Sri Yantra 43-chamber checkpoint — v0.1
 
 The previous creator question now has an executable answer in
-\`src/sri_yantra_huet_chambers.py\`.
+`src/sri_yantra_huet_chambers.py`.
 
 The 27 finite Huet triangle edges generate 69 snapped arrangement nodes and
 122 possible triangular circuits supported by the parent linework. The engine
@@ -2963,10 +2969,38 @@ fails.
 
 ---
 
+## Huet Sri Yantra chamber extraction checkpoint v0.1
+
+The previous chamber question is now answered numerically in
+`src/sri_yantra_chambers.py`. The 27 finite edges produce 69 vertices,
+142 atomic edges, and 74 bounded faces. Independent generator coverage and
+exterior graph depth agree for every face. Odd coverage selects 43
+triangles in circuits of 14, 10, 10, 8, and 1. Four connected vertex-contact
+cycles surround the central triangle. Selected chambers share vertices but
+no edges; the remaining 31 regions are gaps.
+
+Reflection, area partition, tolerance sweeps, and coordinate transformations
+verify the reference result. The count is not imposed by the algorithm.
+A direct coordinate comparison also confirms identical per-ring chamber sets
+with the independent traditional-constraint solver merged in PR #67.
+See `docs/sri_yantra_chambers_v0.1.md` for the evidence and computed diagram.
+
+### Next creator question
+
+> Can a spherical or Meru realization preserve every computed chamber
+> vertex, edge, and contact, with no new crossings or collisions?
+
+The next step must map the actual planar complex. Moving 43 abstract labels
+onto a surface is insufficient to establish incidence equivalence. This
+checkpoint establishes geometry for one planar reference, not physical
+extra dimensions or a proof over the entire Chiodo parameter family.
+
+---
+
 ## Sri Yantra spherical topology-control checkpoint — v0.1
 
 The derived 43-chamber planar complex now has a nonplanar control realization in
-\`src/sri_yantra_spherical_topology_control.py\`.
+`src/sri_yantra_spherical_topology_control.py`.
 
 The complete chamber linework is first normalized inside an open planar disk
 and then lifted to the unit sphere through inverse stereographic projection.
@@ -3000,40 +3034,27 @@ The next subsystem should reproduce one published Rao spherical solution before
 comparing chamber graphs. It should not use the topology control as a substitute
 for Rao's equations.
 
+## Rao great-circle answer and next geometric gate
 
----
+The audited Rao reference construction now supplies nine unit-sphere root
+triangles with great-circle edges. After refinement within the published
+rounding intervals and two explicitly documented formula fixes, its 69
+vertices, 142 atomic edges, 74 bounded faces, and 43 selected chambers match
+the Huet complex through a complete generator-edge-labelled correspondence.
+This numerical result applies to one reference row; broader spherical families
+and independently specified Meru geometry remain open.
 
-## Rao sourced spherical-reference checkpoint — v0.1
-
-The next spherical gate now has a sourced numerical foothold in
-`src/sri_yantra_rao_spherical_reference.py`.
-
-Rao's construction uses six independent angular variables b, c, d, e, g, and h
-and derives the remaining intersections by spherical trigonometry.
-
-The implementation reproduces Rao Table 1's published parameter row for
-constraints 1, 2, 4, 5, 10, and 19:
-
-b = 0.231687
-c = 0.120012
-d = 0.146680
-e = 0.230471
-g = 0.053009
-h = 1.076084.
-
-Without refining those rounded values, every selected nonlinear constraint
-residual closes below 1e-6.
-
-This establishes a sourced metric spherical reference distinct from the
-homeomorphic topology control. It does not yet provide a spherical chamber
-graph.
+The formula audit retains the literal printed point-16 width alongside its
+geometrically consistent correction. The earlier question is answered for
+this reference row by incidence, rather than by visually similar renders.
 
 ### Next creator question
 
-> Can Rao's derived arc variables be converted into explicit unit-sphere
-> coordinates and great-circle root-triangle arcs so that their intersection
-> graph can be computed directly?
+> Which explicitly defined Meru vertices and edge paths preserve the computed
+> chamber complex, and which metric choices cause a chamber collapse or an
+> incidence change?
 
-The next implementation should reconstruct the nine spherical root triangles
-for the published reference row and derive their intersections before making
-any comparison with the Huet 43-chamber complex.
+A candidate height lift can test topology but cannot by itself establish a
+historical Meru metric. After geometry, the toroidal vector-field extension
+must specify its domain, conservation law, and mirror action. The remaining
+research gates are tracked in `MATRIX_ENGINE_WORK_QUEUE.md`.

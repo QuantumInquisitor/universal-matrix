@@ -314,3 +314,30 @@ Before extending a legacy module, consult:
 - ARCHITECTURE.md
 
 Historical modules can retain old terminology and assumptions for provenance. They do not override current canonical definitions.
+
+
+## 18. Compute the Huet Sri Yantra chambers
+
+```bash
+python -m src.sri_yantra_chambers
+python -m scripts.render_sri_yantra_chambers
+python -m pytest -q tests/test_sri_yantra_chambers.py
+```
+
+The report derives 43 selected triangles from 74 bounded regions and checks
+the contact circuits. The renderer writes `docs/assets/sri_yantra_chambers.svg`
+from computed geometry. See `docs/sri_yantra_chambers_v0.1.md` for the
+numerical scope and the remaining spherical/Meru mapping question.
+
+## Compute the Rao great-circle reference
+
+With the scientific extra installed:
+
+```sh
+python -m src.sri_yantra_rao_great_circles
+python -m pytest -q tests/test_sri_yantra_rao_spherical_reference.py tests/test_sri_yantra_rao_great_circles.py
+```
+
+The report gives constraint closure, the literal/corrected point-16 residuals,
+chamber circuits, and the full Huet vertex correspondence. See
+`docs/sri_yantra_rao_great_circles_v0.1.md` for the source audit.

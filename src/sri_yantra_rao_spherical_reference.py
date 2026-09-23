@@ -32,8 +32,8 @@ complete spherical 43-chamber incidence complex.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 import math
+from dataclasses import dataclass
 
 _TOLERANCE = 1e-12
 
@@ -170,6 +170,8 @@ RAO_TABLE1_REFERENCE_PARAMETERS = RaoSphericalParameters(
 
 
 def _acos_checked(value: float) -> float:
+    if not math.isfinite(value):
+        raise ValueError("spherical cosine must be finite")
     if value < -1.0 - 1e-12 or value > 1.0 + 1e-12:
         raise ValueError("spherical cosine left the real domain")
     return math.acos(max(-1.0, min(1.0, value)))
@@ -290,7 +292,7 @@ def derive_rao_spherical(
     v12 = d + g - u12
 
     x14 = _acute_from_tangent(
-        math.sin(u7 + capital_v8)
+        math.sin(u7 + v8)
         / math.sin(d + g + v8)
         * math.tan(x10)
     )

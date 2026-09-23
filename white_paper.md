@@ -1390,6 +1390,14 @@ The strongest internally established statements include:
 - product-group perturbative anomaly bookkeeping;
 - bounded spatial command validation and typed digital-twin telemetry contracts.
 
+A separate numerical geometry checkpoint reconstructs the Huet planar Sri
+Yantra reference and extracts 43 triangular chambers from its finite edges.
+Generator coverage and exterior graph depth independently recover the
+14 + 10 + 10 + 8 + 1 contact circuits. This verifies one reference arrangement
+and its tested coordinate transformations; it does not establish physical
+extra dimensions or historical spherical/Meru incidence equivalence.
+See `docs/sri_yantra_chambers_v0.1.md` for the method and evidence boundary.
+
 ### 22.2 Open derivations
 
 The following remain unresolved:
@@ -1432,6 +1440,20 @@ The reciprocity geometry is especially suitable for discrimination because it ag
 The chiral lattice sector is similarly falsifiable internally: inconsistent gauge covariance, Ginsparg-Wilson violation, nonunitary Weyl transport, failed anomaly cancellation for a proposed spectrum, or lack of a consistent continuum limit would invalidate the corresponding extension.
 
 ---
+
+## Audited spherical reference incidence
+
+The audited Rao reference construction now supplies nine unit-sphere root
+triangles with great-circle edges. After refinement within the published
+rounding intervals and two explicitly documented formula fixes, its 69
+vertices, 142 atomic edges, 74 bounded faces, and 43 selected chambers match
+the Huet complex through a complete generator-edge-labelled correspondence.
+This numerical result applies to one reference row; broader spherical families
+and independently specified Meru geometry remain open.
+
+The source and formula audit are recorded in
+`docs/sri_yantra_rao_great_circles_v0.1.md`. This is a geometric result and
+does not supply an experimental physical interpretation.
 
 # Conclusion
 

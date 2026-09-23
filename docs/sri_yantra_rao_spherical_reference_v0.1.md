@@ -123,7 +123,15 @@ great-circle arcs constrained by spherical trigonometry?
 That is a new metric construction. Its chamber incidence must be derived
 rather than assumed.
 
-## Evidence boundary
+## Scope of the original parameter checkpoint
+
+The following limits describe the original parameter-only checkpoint. The
+subsequent `sri_yantra_rao_great_circles_v0.1.md` derives explicit coordinates,
+great-circle edges, and the complete graph for this reference row. It records
+a corrected transcription of equation 2.41 and a geometric correction to
+printed equation 2.22. Literal `x16` remains available for the source audit.
+
+## Original evidence boundary
 
 This checkpoint verifies one published six-constraint spherical parameter row.
 

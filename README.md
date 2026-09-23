@@ -178,9 +178,9 @@ A topology audit now makes the incidence boundary explicit. The current
 contract contains 72 abstract enclosure components, 70 declared cyclic
 same-enclosure edges, and eight adjacent-enclosure shell interfaces. The
 spherical and spiral-cone candidate charts preserve all 72 locations without
-collisions. The complete historical 43-triangle intersection graph and exact
-four-up/five-down generator intersection multiplicities are not yet encoded and
-are not inferred from counts alone.
+collisions. A separate numerical extraction now supplies the 43-chamber
+incidence graph for the Huet planar reference. Incidence-preserving maps to
+historical spherical and Meru realizations remain open.
 
 See `docs/sri_yantra_incidence_topology_audit_v0.1.md`.
 
@@ -188,8 +188,8 @@ A sourced planar concurrency contract now follows Chiodo's 2021 construction:
 five downward triangles t1 through t5, four upward triangles t6 through t9,
 one shared-circumcircle condition, seven apex-to-base incidences, and twelve
 three-line concurrency constraints. This supplies an exact relation graph among
-all nine maximal triangles while keeping the 43-chamber edge graph as the next
-coordinate-level task.
+all nine maximal triangles, serving as input to the planar reconstruction and
+chamber extraction below.
 
 See `docs/sri_yantra_chiodo_concurrency_v0.1.md`.
 
@@ -210,7 +210,20 @@ the vertex-touching mirror-closed ring constraints. The unique admissible
 system contains 1 + 8 + 10 + 10 + 14 = 43 chambers, 129 distinct chamber
 edges, and enclosure vertex counts 3, 16, 20, 20, and 28.
 
-See \`docs/sri_yantra_huet_chambers_v0.1.md\`.
+See `docs/sri_yantra_huet_chambers_v0.1.md`.
+
+An independent coverage-based extractor splits those finite edges into 69 vertices, 142 atomic
+edges, and 74 bounded regions. Odd generator coverage selects 43 triangular
+chambers. Independent exterior-depth analysis recovers the 14 + 10 + 10 + 8 + 1
+circuits, and shared-vertex traversal verifies each surrounding circuit.
+The result preserves reflection symmetry and is stable across the tested
+coordinate transformations and numerical tolerances. This verifies the Huet
+planar reference, without establishing spherical or Meru incidence equivalence.
+
+Run `python -m src.sri_yantra_chambers`.
+See `docs/sri_yantra_chambers_v0.1.md` for the computed diagram and verification.
+A coordinate-level comparison verifies that both independent extractors select
+the same triangle in every position of all five rings.
 
 
 A topology-control spherical lift now maps the complete derived chamber complex
@@ -219,16 +232,7 @@ the 1/8/10/10/14 enclosure counts, 129 chamber edges, ring cycles, and mirror
 pairing survive exactly at the incidence level. This control is intentionally
 separate from Rao's historical great-circle spherical construction.
 
-See \`docs/sri_yantra_spherical_topology_control_v0.1.md\`.
-
-
-A sourced spherical-reference layer now implements Rao's great-circle
-spherical-trigonometric construction for one published Table 1 solution. Using
-only Rao's six-decimal values for b, c, d, e, g, and h, the selected
-constraints 1, 2, 4, 5, 10, and 19 close below 1e-6. This is kept separate
-from the homeomorphic topology-control sphere.
-
-See `docs/sri_yantra_rao_spherical_reference_v0.1.md`.
+See `docs/sri_yantra_spherical_topology_control_v0.1.md`.
 
 ### Higher-dimensional geometry and E8 bridge
 
@@ -616,8 +620,6 @@ Start with:
 - `docs/sri_yantra_huet_planar_v0.1.md`
 - `docs/sri_yantra_huet_chambers_v0.1.md`
 - `docs/sri_yantra_spherical_topology_control_v0.1.md`
-- `docs/sri_yantra_rao_spherical_reference_v0.1.md`
-- `docs/sri_yantra_huet_chambers_v0.1.md`
 - `docs/higher_dimensional_e8_bridge_v0.1.md`
 - `docs/h4_direct_e8_lift_v0.1.md`
 - `docs/e8_equivalence_map_v0.1.md`
@@ -699,3 +701,19 @@ waterslegacytrust@gmail.com
 ## Responsible use
 
 This repository includes experimental physics, engineering, optimization, robotics, manufacturing, XR, and hardware-control research surfaces. Users are responsible for evaluating suitability, legality, safety, and regulatory obligations for their own deployments.
+
+## Audited Rao great-circle reference
+
+The audited Rao reference construction now supplies nine unit-sphere root
+triangles with great-circle edges. After refinement within the published
+rounding intervals and two explicitly documented formula fixes, its 69
+vertices, 142 atomic edges, 74 bounded faces, and 43 selected chambers match
+the Huet complex through a complete generator-edge-labelled correspondence.
+This numerical result applies to one reference row; broader spherical families
+and independently specified Meru geometry remain open.
+
+Implementation: `src/sri_yantra_rao_spherical_reference.py` and
+`src/sri_yantra_rao_great_circles.py`. Verification: the corresponding
+`tests/test_sri_yantra_rao_*.py` modules.
+See `docs/sri_yantra_rao_great_circles_v0.1.md` for the formula audit and
+`docs/MATRIX_ENGINE_WORK_QUEUE.md` for remaining gates.

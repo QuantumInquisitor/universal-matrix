@@ -43,8 +43,10 @@ Current experimental modules include:
 - `src/sri_yantra_chiodo_concurrency.py`
 - `src/sri_yantra_huet_planar.py`
 - `src/sri_yantra_huet_chambers.py`
+
+- `src/sri_yantra_chambers.py`
+
 - `src/sri_yantra_spherical_topology_control.py`
-- `src/sri_yantra_rao_spherical_reference.py`
 - `src/higher_dimensional_geometry.py`
 - `src/h4_direct_e8_lift.py`
 - `src/e8_equivalence_map.py`
@@ -288,8 +290,9 @@ E8 radial mode would be a new degree of freedom and is not introduced.
 
 The geometry manifest now includes
 `src/sri_yantra_incidence_topology_audit.py`. It tests the abstract topology
-that is actually declared by the current Sri Yantra contract and keeps the
-complete historical 43-triangle intersection graph explicitly open. The
+that is declared by the current Sri Yantra contract, and records the new
+numerical Huet planar chamber graph separately from open historical
+spherical/Meru incidence equivalence. The
 current spherical and spiral-cone candidate charts preserve all declared
 locations without collisions.
 
@@ -299,7 +302,7 @@ locations without collisions.
 The geometry manifest now includes `src/sri_yantra_chiodo_concurrency.py`,
 which encodes Chiodo's proved planar concurrency conditions for t1 through t9.
 This gives a sourced relation graph across all nine maximal triangles without
-conflating it with the still-uncomputed 43-chamber edge graph.
+conflating it with the separately computed planar chamber graph.
 
 
 ## Sri Yantra Huet planar reconstruction
@@ -307,12 +310,12 @@ conflating it with the still-uncomputed 43-chamber edge graph.
 The geometry manifest now includes `src/sri_yantra_huet_planar.py`, which
 reconstructs all nine maximal triangles for the Huet reference parameters from
 the sourced Chiodo concurrency equations. It provides the 27 planar edge
-segments needed for the next chamber-extraction stage.
+segments used by the two chamber extractors.
 
 
 ## Derived Sri Yantra chamber complex
 
-The geometry manifest now includes \`src/sri_yantra_huet_chambers.py\`.
+The geometry manifest now includes `src/sri_yantra_huet_chambers.py`.
 
 Starting from the 27 finite Huet parent edges, it derives the complete planar
 intersection arrangement, enumerates all supported triangular circuits, and
@@ -325,9 +328,17 @@ The result is a planar incidence contract. Nonplanar Sri Yantra candidates have
 not yet been shown to preserve it.
 
 
+## Sri Yantra chamber extraction
+
+`src/sri_yantra_chambers.py` derives 43 odd-coverage triangular chambers
+from the finite Huet edges, and verifies their 14 + 10 + 10 + 8 + 1 contact
+circuits. It exposes the full 69-vertex, 142-edge, 74-bounded-face arrangement.
+`docs/sri_yantra_chambers_v0.1.md` records the numerical scope and tests.
+`python -m scripts.render_sri_yantra_chambers` regenerates the computed SVG.
+
 ## Sri Yantra spherical topology control
 
-The geometry manifest includes \`src/sri_yantra_spherical_topology_control.py\`.
+The geometry manifest includes `src/sri_yantra_spherical_topology_control.py`.
 It maps the actual 43-chamber Huet incidence complex through an injective
 inverse-stereographic chart, retains complete chamber and ring membership, and
 verifies mirror equivariance and planar roundtrip recovery.
@@ -335,14 +346,18 @@ verifies mirror equivariance and planar roundtrip recovery.
 The construction is intentionally a topology-preserving control. It is not
 identified with Rao's sourced great-circle spherical geometry.
 
+## Rao reference and great-circle geometry
 
-## Rao sourced spherical Sri Yantra reference
+The audited Rao reference construction now supplies nine unit-sphere root
+triangles with great-circle edges. After refinement within the published
+rounding intervals and two explicitly documented formula fixes, its 69
+vertices, 142 atomic edges, 74 bounded faces, and 43 selected chambers match
+the Huet complex through a complete generator-edge-labelled correspondence.
+This numerical result applies to one reference row; broader spherical families
+and independently specified Meru geometry remain open.
 
-The geometry manifest includes `src/sri_yantra_rao_spherical_reference.py`.
-It implements the spherical-trigonometric dependency chain for one published
-Rao Table 1 parameter row and validates constraints 1, 2, 4, 5, 10, and 19 to
-better than 1e-6 using only the printed six-decimal values.
-
-This is the first sourced metric spherical checkpoint. The full great-circle
-root-triangle coordinates and spherical chamber incidence remain subsequent
-work.
+Implementation: `src/sri_yantra_rao_spherical_reference.py` and
+`src/sri_yantra_rao_great_circles.py`. Verification: the corresponding
+`tests/test_sri_yantra_rao_*.py` modules.
+See `docs/sri_yantra_rao_great_circles_v0.1.md` for the formula audit and
+`docs/MATRIX_ENGINE_WORK_QUEUE.md` for remaining gates.
