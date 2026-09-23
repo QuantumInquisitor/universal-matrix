@@ -3,6 +3,8 @@
 Status: EXPERIMENTAL candidate geometry, with exact or numerically verified
 mathematics inside the stated model.
 
+![Central-cavity intervals](assets/terryen_negative_space_windows.svg)
+
 ## Purpose and boundary
 
 The Terryology source reports five Terryen Wave Field counts: 4, 8, 6, 12,
@@ -138,6 +140,8 @@ For the normalized 24-cell this projection:
 - has orthonormality residual below 1e-12;
 - is linear, so every antipodal pair projects to an exact antipodal pair;
 - exposes the view direction as a parameter, making the render reproducible.
+
+![Controlled Heavenly projection](assets/terryen_heavenly_projection.svg)
 
 A projection is a view of the 4D object, not an equality between three and four
 dimensions. Topology is calculated before projection.
