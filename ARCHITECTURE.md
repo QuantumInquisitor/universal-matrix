@@ -709,3 +709,15 @@ reflection action.
 
 Primary verification: `tests/test_e8_state_audit.py`.
 Primary note: `docs/e8_state_representation_audit_v0.1.md`.
+
+
+## 4K. Gauge-compatible E8 scalar coupling
+
+`src/e8_invariant_coupling.py` supplies the minimal optional interaction
+`g ||h||^2 O`, where `h` is an `E8CartanState` and `O` is a scalar already
+invariant under the gauge group of its own sector. The E8 layer remains a gauge
+singlet with respect to U(1), SU(2), and SU(3); no componentwise identification
+with their fields is introduced.
+
+Primary verification: `tests/test_e8_invariant_coupling.py`.
+Primary note: `docs/e8_invariant_coupling_v0.1.md`.
