@@ -42,6 +42,7 @@ Current experimental modules include:
 - `src/sri_yantra_incidence_topology_audit.py`
 - `src/sri_yantra_chiodo_concurrency.py`
 - `src/sri_yantra_huet_planar.py`
+- `src/sri_yantra_huet_chambers.py`
 - `src/higher_dimensional_geometry.py`
 - `src/h4_direct_e8_lift.py`
 - `src/e8_equivalence_map.py`
@@ -305,3 +306,18 @@ The geometry manifest now includes `src/sri_yantra_huet_planar.py`, which
 reconstructs all nine maximal triangles for the Huet reference parameters from
 the sourced Chiodo concurrency equations. It provides the 27 planar edge
 segments needed for the next chamber-extraction stage.
+
+
+## Derived Sri Yantra chamber complex
+
+The geometry manifest now includes \`src/sri_yantra_huet_chambers.py\`.
+
+Starting from the 27 finite Huet parent edges, it derives the complete planar
+intersection arrangement, enumerates all supported triangular circuits, and
+selects the unique globally admissible chamber system satisfying the sourced
+central plus 8, 10, 10, and 14 enclosure contract.
+
+The resulting 43 chambers are mirror closed, the four noncentral enclosures
+are vertex-touching cycles, and their 129 chamber sides are all distinct.
+The result is a planar incidence contract. Nonplanar Sri Yantra candidates have
+not yet been shown to preserve it.
