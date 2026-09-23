@@ -198,6 +198,13 @@ standard E8 root list by hand.
 
 See `docs/h4_direct_e8_lift_v0.1.md`.
 
+The two independent E8 constructions are now connected by an exact
+scale-orthogonal change of basis derived from independently selected simple
+root bases. The map sends all 240 H4-derived roots bijectively onto the
+standard E8 roots and commutes with central mirror and every root reflection.
+
+See `docs/e8_equivalence_map_v0.1.md`.
+
 ### Minimal local Matrix transition law
 
 The ontology-level transition layer now provides a minimal six-neighbor
@@ -519,6 +526,7 @@ Start with:
 - `docs/sri_yantra_multidimensional_v0.1.md`
 - `docs/higher_dimensional_e8_bridge_v0.1.md`
 - `docs/h4_direct_e8_lift_v0.1.md`
+- `docs/e8_equivalence_map_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
