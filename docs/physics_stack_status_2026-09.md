@@ -135,6 +135,27 @@ Yantra field.
 
 ---
 
+## 2B. Explicit geometry and toroidal kinematics
+
+The planar chamber, spherical control, corrected Rao reference, and conical
+Meru candidate checkpoints are documented in their `sri_yantra_*` notes.
+Their incidence results have distinct metric scopes; none establishes a
+physical Sri Yantra field.
+
+`src/conservative_toroidal_field.py` defines a compact, divergence-free
+three-dimensional content current on an explicit solid ring torus. A stream
+function fixes local conservation; signed parameters equal independently
+integrated poloidal and toroidal cut fluxes. Cartesian tests distinguish
+central mirroring, axial-plane mirroring, and flow reversal. This is a
+prescribed dimensionless kinematic candidate with no derived force law or
+physical content identification.
+
+The earlier open three-dimensional field gate now has this kinematic
+example. Its full spatial coupling, dynamics, units, and physical validation
+remain open. See `docs/conservative_toroidal_field_v0.1.md`.
+
+---
+
 ## 3. Abelian U(1) gauge sector
 
 Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
@@ -175,7 +196,8 @@ Modules:
 Current chain:
 
 [
-ho_{mathcal C}
+
+ho_{mathcal C}
 	o
 chi
 	o
@@ -192,7 +214,8 @@ with
 -
 abla^2chi
 =
-kappa_{mathcal C}ho_{mathcal C}
+kappa_{mathcal C}
+ho_{mathcal C}
 ]
 
 and under the reciprocity postulate
@@ -208,9 +231,11 @@ e^{2psi}dmathbf x^2.
 Weak-field correspondence:
 
 [
-eta_{m PPN}=1,
+eta_{
+m PPN}=1,
 qquad
-gamma_{m PPN}=1.
+gamma_{
+m PPN}=1.
 ]
 
 Strong-field continuation remains experimental and differs from Schwarzschild.
@@ -452,7 +477,8 @@ A common action now determines:
 The source is
 
 [
-ho+p_x+p_y+p_z
+
+ho+p_x+p_y+p_z
 ]
 
 rather than an independently assigned matter charge.
@@ -469,16 +495,19 @@ implies
 
 [
 oxed{
-M_{m active}=E.
+M_{
+m active}=E.
 }
 ]
 
 Equivalently,
 
 [
-M_{m active}-E
+M_{
+m active}-E
 =
--Delta_{m virial}.
+-Delta_{
+m virial}.
 ]
 
 Thus integrated gravitational/source universality follows automatically for
@@ -568,7 +597,8 @@ condition gives
 
 [
 oxed{
-M_{m active}=E.
+M_{
+m active}=E.
 }
 ]
 
@@ -616,13 +646,16 @@ speed as the geometry scalar and metric null cone:
 
 [
 oxed{
-c_{m U(1)}
+c_{
+m U(1)}
 =
-c_{m YM}
+c_{
+m YM}
 =
 c_psi
 =
-c_{m null}
+c_{
+m null}
 =
 e^{-2psi}.
 }
@@ -659,11 +692,13 @@ Using the isotropic 2PN spatial convention,
 
 [
 oxed{
-delta_{m reciprocity}
+delta_{
+m reciprocity}
 =
 rac43,
 qquad
-delta_{m GR}=1.
+delta_{
+m GR}=1.
 }
 ]
 
@@ -671,14 +706,16 @@ delta_{m GR}=1.
 
 [
 oxed{
-alpha_{m reciprocity}
+alpha_{
+m reciprocity}
 =
 4rac{mu}{b}
 +
 4pi
 left(
 rac{mu}{b}
-ight)^2
+
+ight)^2
 +cdots
 }
 ]
@@ -687,14 +724,16 @@ versus
 
 [
 oxed{
-alpha_{m GR}
+alpha_{
+m GR}
 =
 4rac{mu}{b}
 +
 rac{15pi}{4}
 left(
 rac{mu}{b}
-ight)^2
+
+ight)^2
 +cdots.
 }
 ]
@@ -703,7 +742,8 @@ left(
 
 [
 oxed{
-r_{m ISCO}
+r_{
+m ISCO}
 =
 (3+sqrt5)mu
 }
@@ -713,7 +753,8 @@ with
 
 [
 oxed{
-R_{m ISCO}
+R_{
+m ISCO}
 approx
 6.337940264856347,mu
 }
@@ -723,7 +764,8 @@ and
 
 [
 oxed{
-Omega_{m ISCO}mu
+Omega_{
+m ISCO}mu
 approx
 0.06333263135.
 }
@@ -767,7 +809,8 @@ The geometry scalar now couples through the stress-energy combination
 sqrt{-g}
 left(
 T^{00}+T^{11}+T^{22}+T^{33}
-ight).
+
+ight).
 ]
 
 For stationary localized isolated composites satisfying the von Laue condition,
@@ -780,7 +823,9 @@ the integrated active source becomes
 
 [
 oxed{
-M_{m active}=E_{m total}.
+M_{
+m active}=E_{
+m total}.
 }
 ]
 
@@ -807,7 +852,8 @@ H
 left{
 oldsymbolalphacdotmathbf p,
 e^{-2psi}
-ight}.
+
+ight}.
 ]
 
 The position-space discretization is Hermitian and contains the required
@@ -864,9 +910,11 @@ Modules:
 For uniform geometry,
 
 [
-H_{m YM}(psi)
+H_{
+m YM}(psi)
 =
-e^{-2psi}H_{m YM}(0).
+e^{-2psi}H_{
+m YM}(0).
 ]
 
 For spatially varying geometry, gauge-invariant link and plaquette weights are
@@ -885,7 +933,8 @@ The local geometry source satisfies the exact lattice identity
 
 [
 oxed{
-sum_x S_psi(x)=2H_{m YM}.
+sum_x S_psi(x)=2H_{
+m YM}.
 }
 ]
 
@@ -940,7 +989,8 @@ w_ell E_ell^aE_ell^a
 w_p
 left[
 1-rac13operatorname{ReTr}U_p
-ight].
+
+ight].
 ]
 
 The local source satisfies
@@ -973,7 +1023,8 @@ Modules:
 The matter Hamiltonian on the reciprocity geometry is
 
 [
-H_{m matter}
+H_{
+m matter}
 =
 e^{-4psi}|Pi|^2
 +
@@ -986,9 +1037,11 @@ The geometry source is additive:
 
 [
 oxed{
-S_psi^{m total}
+S_psi^{
+m total}
 =
-S_psi^{m matter}
+S_psi^{
+m matter}
 +
 S_psi^{SU(3)}.
 }
@@ -998,7 +1051,8 @@ The matter term is
 
 [
 oxed{
-S_psi^{m matter}
+S_psi^{
+m matter}
 =
 4e^{-4psi}|Pi|^2
 -
@@ -1044,7 +1098,8 @@ H(t)
 left{
 oldsymbolalphacdotmathbf p,
 e^{-2psi}
-ight}.
+
+ight}.
 }
 ]
 
@@ -1069,7 +1124,8 @@ The overlap operator satisfies
 oxed{
 gamma_5D+Dgamma_5
 =
-rac1ho Dgamma_5D
+rac1
+ho Dgamma_5D
 }
 ]
 
@@ -1120,13 +1176,15 @@ S_psi(x)
 m e^{-psi(x)}
 operatorname{Re}!left[
 chi^dagger(x)etachi(x)
-ight]
+
+ight]
 +
 2e^{-2psi(x)}
 sum_i
 operatorname{Re}!left[
 chi^dagger(x)alpha_i p_ichi(x)
-ight].
+
+ight].
 ]
 
 This is the exact derivative of the existing finite-lattice Dirac energy with
@@ -1149,12 +1207,15 @@ The prescribed-background loop is now closed at the one-particle /
 semiclassical level with
 
 [
-H_{m total}
+H_{
+m total}
 =
-H_{m geometry}
+H_{
+m geometry}
 +
 operatorname{Re}
-langlechi|H_D[psi]|chiangle.
+langlechi|H_D[psi]|chi
+angle.
 ]
 
 The coupled equations are

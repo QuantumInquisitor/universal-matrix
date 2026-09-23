@@ -730,3 +730,16 @@ historical Meru reconstruction.
 
 Technical note: `docs/sri_yantra_meru_candidate_v0.1.md`.
 Verification: `tests/test_sri_yantra_meru_candidate.py`.
+
+## Conservative toroidal field candidate
+
+`src/conservative_toroidal_field.py` defines a compact, divergence-free
+three-dimensional content current on an explicit solid ring torus. A stream
+function fixes local conservation; signed parameters equal independently
+integrated poloidal and toroidal cut fluxes. Cartesian tests distinguish
+central mirroring, axial-plane mirroring, and flow reversal. This is a
+prescribed dimensionless kinematic candidate with no derived force law or
+physical content identification.
+
+Technical note: `docs/conservative_toroidal_field_v0.1.md`.
+Verification: `tests/test_conservative_toroidal_field.py`.

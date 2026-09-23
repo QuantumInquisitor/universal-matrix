@@ -3082,3 +3082,24 @@ or polyhedral Meru metric remains a separate research task.
 
 The next field must expose its physical assumptions and distinguish a
 kinematic conservative example from a derived equation of motion.
+
+## Conservative three-dimensional toroidal candidate
+
+`src/conservative_toroidal_field.py` defines a compact, divergence-free
+three-dimensional content current on an explicit solid ring torus. A stream
+function fixes local conservation; signed parameters equal independently
+integrated poloidal and toroidal cut fluxes. Cartesian tests distinguish
+central mirroring, axial-plane mirroring, and flow reversal. This is a
+prescribed dimensionless kinematic candidate with no derived force law or
+physical content identification.
+
+The cut-flux normalization allows a graph route current to set the poloidal
+flux directly. It does not yet assign every Yantra chamber or Tree channel
+to a spatial region. Such a coupling must preserve local conservation, not
+merely share a total count or a visual shape.
+
+### Next creator question
+
+> Which explicit graph-to-volume map preserves the oriented cut flux of
+> every channel, and what independent dynamical law and physical units would
+> turn this kinematic current into a testable physical model?
