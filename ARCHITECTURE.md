@@ -777,3 +777,16 @@ the complete 43-chamber adjacency graph.
 
 Primary verification: `tests/test_sri_yantra_chiodo_concurrency.py`.
 Primary note: `docs/sri_yantra_chiodo_concurrency_v0.1.md`.
+
+
+## 4P. Huet reference Sri Yantra planar reconstruction
+
+`src/sri_yantra_huet_planar.py` reconstructs the nine maximal planar
+triangles for the Huet parameter choice quoted by Chiodo. The common t3/t7
+circumcircle initializes the solution; the remaining apex locations, base
+locations, and leg slopes are derived from the sourced apex/base and
+three-line concurrency conditions. The implementation emits all 27 finite
+maximal-triangle edges and verifies closure to numerical precision.
+
+Primary verification: `tests/test_sri_yantra_huet_planar.py`.
+Primary note: `docs/sri_yantra_huet_planar_v0.1.md`.
