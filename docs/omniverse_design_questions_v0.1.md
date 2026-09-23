@@ -3135,3 +3135,45 @@ graph nodes into physical three-dimensional junctions.
 
 Only after a connected junction construction should an independent dynamics
 law or physical normalization be introduced.
+
+
+---
+
+## Connected toroidal junction control-volume checkpoint v0.1
+
+The preceding node-junction question now has a constructive kinematic answer in
+`src/toroidal_junction_control_volume.py`.
+
+Every conservative graph node is represented by one connected rectangular
+three-dimensional control volume. Signed incident edge currents become boundary
+port fluxes. Negative outward flux enters the left face and positive outward
+flux leaves the right face.
+
+A deterministic transport decomposition pairs inlet and outlet magnitudes into
+nonoverlapping internal lanes. Each lane carries a field of the form
+
+[
+J=(f(y,z),0,0),
+]
+
+independent of x. The interior divergence is therefore zero, the side-wall
+normal flux is zero, and the normalized lane profile integrates exactly to its
+declared transfer flux.
+
+For every graph edge, the implementation verifies the three-way interface:
+
+- source junction outward port flux = +J_e;
+- toroidal channel oriented cut flux = +J_e;
+- target junction outward port flux = -J_e.
+
+This replaces node balance as pure incidence bookkeeping with an explicit 3D
+control-volume realization. It remains kinematic.
+
+### Next creator question
+
+> Can each junction port be connected geometrically to its matching toroidal
+> cut by an explicit divergence-free connector field that preserves the same
+> signed flux without introducing an interface source?
+
+Only after that spatial connector exists should the project open the independent
+dynamics and physical-normalization gate.
