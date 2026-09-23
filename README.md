@@ -221,6 +221,15 @@ separate from Rao's historical great-circle spherical construction.
 
 See \`docs/sri_yantra_spherical_topology_control_v0.1.md\`.
 
+
+A sourced spherical-reference layer now implements Rao's great-circle
+spherical-trigonometric construction for one published Table 1 solution. Using
+only Rao's six-decimal values for b, c, d, e, g, and h, the selected
+constraints 1, 2, 4, 5, 10, and 19 close below 1e-6. This is kept separate
+from the homeomorphic topology-control sphere.
+
+See `docs/sri_yantra_rao_spherical_reference_v0.1.md`.
+
 ### Higher-dimensional geometry and E8 bridge
 
 The finite-geometry engine now also contains exact dimension-open simplex,
@@ -607,6 +616,7 @@ Start with:
 - `docs/sri_yantra_huet_planar_v0.1.md`
 - `docs/sri_yantra_huet_chambers_v0.1.md`
 - `docs/sri_yantra_spherical_topology_control_v0.1.md`
+- `docs/sri_yantra_rao_spherical_reference_v0.1.md`
 - `docs/sri_yantra_huet_chambers_v0.1.md`
 - `docs/higher_dimensional_e8_bridge_v0.1.md`
 - `docs/h4_direct_e8_lift_v0.1.md`
