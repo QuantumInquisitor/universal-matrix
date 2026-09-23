@@ -192,6 +192,17 @@ physical normalization is inferred from this kinematic compatibility.
 
 ---
 
+
+
+The edge-local kinematic path is now complete in
+`src/toroidal_framed_edge_assembly.py`: source annular port, inlet transition,
+flux-equivalent cut-open toroidal channel, exit transition, and target annular
+port. Signed flux and endpoint vectors close for positive, negative, and zero
+graph currents. Global rigid routing and collision-free placement remain open;
+no dynamics or physical normalization follows from the local assembly.
+
+---
+
 ## 3. Abelian U(1) gauge sector
 
 Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
