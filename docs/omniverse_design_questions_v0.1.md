@@ -2695,3 +2695,38 @@ Lie-algebra representation.
 Any such coupling must be introduced as a separate candidate law. If no
 gauge-compatible invariant can be derived, the E8 layer should remain
 mathematical rather than becoming a physical dynamics sector.
+
+
+---
+
+## Gauge-compatible E8 scalar coupling checkpoint — v0.1
+
+The first dynamics-level bridge now exists in
+`src/e8_invariant_coupling.py`.
+
+The only E8 quantity used is the quadratic Cartan invariant
+
+`I_E8 = ||h||^2`.
+
+The candidate interaction is
+
+`E_int = g I_E8 O`,
+
+where `O` must already be a gauge-invariant scalar in its own sector. The
+implementation verifies invariance under every E8 root reflection and checks
+representative U(1), SU(2), and SU(3) gauge transformations without changing
+their established transformation laws.
+
+This proves compatibility of the scalar-singlet construction, not physical
+necessity. The coupling strength and the identity of `O` remain open.
+
+### Next creator question
+
+> Which existing gauge-invariant scalar observable produces genuinely new,
+> local, conserved, and falsifiable dynamics when coupled to `||h||^2`, rather
+> than merely shifting an existing mass, stiffness, or coupling constant?
+
+The next audit should compare matter norms, gauge-invariant energy densities,
+and the existing neutral reciprocity/content scalar by dimensional role,
+locality, conservation, and parameter redundancy before selecting a preferred
+candidate.
