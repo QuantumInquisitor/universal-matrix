@@ -151,8 +151,15 @@ prescribed dimensionless kinematic candidate with no derived force law or
 physical content identification.
 
 The earlier open three-dimensional field gate now has this kinematic
-example. Its full spatial coupling, dynamics, units, and physical validation
-remain open. See `docs/conservative_toroidal_field_v0.1.md`.
+example. Its per-channel graph-to-volume coupling is also implemented in
+`src/graph_toroidal_flux_bundle.py`: every conservative graph edge receives a
+disjoint toroidal domain whose measured signed cut flux equals the graph
+current, while the retained incidence ledger reproduces node divergence.
+
+Connected three-dimensional junction control volumes, dynamics, units, and
+physical validation remain open. See
+`docs/conservative_toroidal_field_v0.1.md` and
+`docs/graph_toroidal_flux_bundle_v0.1.md`.
 
 ---
 
