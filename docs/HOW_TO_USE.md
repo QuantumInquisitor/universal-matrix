@@ -391,3 +391,18 @@ source junctions, toroidal channels, and target junctions.
 
 See `docs/toroidal_junction_control_volume_v0.1.md` for the port convention,
 lane construction, and remaining connector problem.
+
+
+## Audit and evaluate annular toroidal connectors
+
+```sh
+python -m pytest -q tests/test_toroidal_connector_topology.py
+```
+
+Use `CutOpenToroidalChannel` to expose the two annular boundary copies of a
+purely poloidal toroidal edge, then construct `AnnularPiolaConnector` from a
+compatible annular source port. The implementation rejects the existing
+disk-like rectangular port as a nonsingular annulus connector.
+
+See `docs/toroidal_connector_topology_v0.1.md` for the topology audit, Piola
+map, and current limitations.

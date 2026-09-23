@@ -1511,6 +1511,27 @@ nor a dynamics law or physical normalization.
 
 See `docs/toroidal_junction_control_volume_v0.1.md`.
 
+
+
+## Toroidal connector topology and Piola field
+
+The connected junction lane ports are disk-like rectangles, while the canonical
+poloidal cut of the solid torus is annular. Their boundary and first-homology
+invariants differ, so the model rejects a nonsingular one-to-one connector
+between them.
+
+The toroidal channel is instead treated as cut open along its annulus. For a
+compatible annular source port, `src/toroidal_connector_topology.py` constructs
+a divergence-free connector by a smooth coordinate map and contravariant Piola
+transform. Flux is preserved on every cross-section and the connector vector
+matches the existing purely poloidal toroidal field at the target cut.
+
+This identifies the required next geometry rather than hiding a topology
+change: external junction edge ports must become annular before the whole
+network can be connected smoothly.
+
+See `docs/toroidal_connector_topology_v0.1.md`.
+
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.

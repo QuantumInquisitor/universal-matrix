@@ -915,3 +915,20 @@ toroidal-cut, and target-port flux continuity for every edge.
 
 Primary verification: `tests/test_toroidal_junction_control_volume.py`.
 Primary note: `docs/toroidal_junction_control_volume_v0.1.md`.
+
+
+## Toroidal connector topology and annular Piola bridge
+
+`src/toroidal_connector_topology.py` audits the cross-section topology of the
+junction and toroidal interfaces. Disk-like rectangular lane ports are not
+diffeomorphic to the annular poloidal cut, so a nonsingular one-to-one sweep is
+rejected. The torus is represented as cut open along the annulus, exposing two
+boundary copies with opposite outward flux.
+
+For annular source ports, an explicit smoothstep coordinate map and
+contravariant Piola transform give a zero-divergence connector with positive
+Jacobian, preserved transverse flux, and pointwise target-vector agreement with
+the purely poloidal toroidal field.
+
+Primary verification: `tests/test_toroidal_connector_topology.py`.
+Primary note: `docs/toroidal_connector_topology_v0.1.md`.

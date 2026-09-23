@@ -170,6 +170,17 @@ physical validation. See `docs/conservative_toroidal_field_v0.1.md`,
 
 ---
 
+
+
+The junction-to-torus connector topology has also been audited. Rectangular
+disk-like junction lane ports are not silently identified with the annular
+poloidal cut. `src/toroidal_connector_topology.py` exposes cut-open toroidal
+boundary copies and constructs a divergence-free annular Piola connector for
+the compatible purely poloidal case. External annular junction-port redesign
+and a global nonoverlapping embedding remain open before any dynamics claim.
+
+---
+
 ## 3. Abelian U(1) gauge sector
 
 Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
