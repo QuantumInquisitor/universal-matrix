@@ -141,7 +141,7 @@ class GraphToroidalFluxBundle(Generic[NodeT]):
         """Return every mapped cut flux in original graph-edge order."""
         return tuple(channel.oriented_cut_flux for channel in self.channels)
 
-    def node_flux_divergence(self, nodes: Sequence[NodeT]) -> dict[NodeT, float:
+    def node_flux_divergence(self, nodes: Sequence[NodeT]) -> dict[NodeT, float]:
         """Recover graph divergence from the mapped channel flux ledger."""
         return graph_divergence(nodes, self.edges)
 
