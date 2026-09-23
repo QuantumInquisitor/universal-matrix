@@ -1481,6 +1481,20 @@ physical content identification.
 See `docs/conservative_toroidal_field_v0.1.md` for the stream function,
 cut-flux derivation, and limits of graph-to-volume coupling.
 
+
+## Graph-to-volume toroidal flux bundle
+
+`src/graph_toroidal_flux_bundle.py` gives each conservative directed graph
+edge its own translated solid-ring-torus domain. The signed edge current is
+the measured poloidal cut flux of that domain. Because the supports are
+disjoint, the summed prescribed current remains locally divergence-free, while
+the retained source/target incidence reproduces the original graph node
+divergence exactly.
+
+This closes a kinematic per-channel volume-assignment gap. It does not provide
+connected node junctions, an equation of motion, or physical units. See
+`docs/graph_toroidal_flux_bundle_v0.1.md`.
+
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.
