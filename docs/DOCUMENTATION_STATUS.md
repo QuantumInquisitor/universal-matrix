@@ -46,6 +46,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/e8_state_representation_audit_v0.1.md` | Current no-fit audit separating E8 Weyl/Cartan coordinates from existing Matrix and SU(3) state variables. |
 | `docs/e8_invariant_coupling_v0.1.md` | Current minimal Weyl-invariant scalar coupling that preserves existing U(1), SU(2), and SU(3) gauge transformation laws. |
 | `docs/e8_coupling_observable_audit_v0.1.md` | Current audit showing fixed-root scalar E8 couplings reduce to parameter renormalization or source shifts rather than distinct E8 dynamics. |
+| `docs/e8_radial_degree_audit_v0.1.md` | Current no-duplication audit showing no existing amplitude/content/scale variable can serve as an independent E8 radial degree. |
 | `docs/qball_stability_map_v0.1.md` | Current charged-matter evidence-map design separating energetic, branch-slope, and finite-time persistence diagnostics. |
 | `docs/qball_threshold_refinement_v0.1.md` | Current adaptive refinement of the charged-matter energetic threshold. |
 | `docs/qball_threshold_persistence_scan_v0.1.md` | Current finite-time direct and perturbed 3D scan across the refined energetic threshold. |
