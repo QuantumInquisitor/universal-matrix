@@ -39,6 +39,7 @@ Current experimental modules include:
 - `src/vesica_tree_circulation.py`
 - `src/transitive_plane_branching.py`
 - `src/sri_yantra_multidimensional.py`
+- `src/sri_yantra_incidence_topology_audit.py`
 - `src/higher_dimensional_geometry.py`
 - `src/h4_direct_e8_lift.py`
 - `src/e8_equivalence_map.py`
@@ -276,3 +277,13 @@ It records that the existing matter amplitude, port circulation amplitude,
 nested oscillatory amplitude, neutral content scalar, and scale coordinate are
 already committed to other roles and are not reused as an E8 radius. A distinct
 E8 radial mode would be a new degree of freedom and is not introduced.
+
+
+## Sri Yantra topology boundary
+
+The geometry manifest now includes
+`src/sri_yantra_incidence_topology_audit.py`. It tests the abstract topology
+that is actually declared by the current Sri Yantra contract and keeps the
+complete historical 43-triangle intersection graph explicitly open. The
+current spherical and spiral-cone candidate charts preserve all declared
+locations without collisions.

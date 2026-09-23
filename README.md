@@ -173,6 +173,17 @@ form a zero-divergence graph circulation. These are exact model identities and
 candidate embeddings, not evidence that the Sri Yantra is a literal physical
 map of extra dimensions or the omniverse.
 
+
+A topology audit now makes the incidence boundary explicit. The current
+contract contains 72 abstract enclosure components, 70 declared cyclic
+same-enclosure edges, and eight adjacent-enclosure shell interfaces. The
+spherical and spiral-cone candidate charts preserve all 72 locations without
+collisions. The complete historical 43-triangle intersection graph and exact
+four-up/five-down generator intersection multiplicities are not yet encoded and
+are not inferred from counts alone.
+
+See `docs/sri_yantra_incidence_topology_audit_v0.1.md`.
+
 ### Higher-dimensional geometry and E8 bridge
 
 The finite-geometry engine now also contains exact dimension-open simplex,
@@ -554,6 +565,7 @@ Start with:
 - `docs/vesica_tree_circulation_v0.1.md`
 - `docs/transitive_plane_branching_v0.1.md`
 - `docs/sri_yantra_multidimensional_v0.1.md`
+- `docs/sri_yantra_incidence_topology_audit_v0.1.md`
 - `docs/higher_dimensional_e8_bridge_v0.1.md`
 - `docs/h4_direct_e8_lift_v0.1.md`
 - `docs/e8_equivalence_map_v0.1.md`

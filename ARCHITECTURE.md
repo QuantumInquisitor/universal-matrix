@@ -746,3 +746,21 @@ independently motivated degree of freedom.
 
 Primary verification: `tests/test_e8_radial_degree_audit.py`.
 Primary note: `docs/e8_radial_degree_audit_v0.1.md`.
+
+
+## 4N. Sri Yantra incidence and topology audit
+
+`src/sri_yantra_incidence_topology_audit.py` separates declared abstract
+topology from historical incidence that is not yet encoded. It enumerates 72
+abstract enclosure locations, 70 same-enclosure cyclic edges, and eight
+adjacent-enclosure shell interfaces. The current spherical and spiral-cone
+candidate charts are tested for injective placement of all declared locations.
+
+The complete 43-triangle intersection graph, generator-pair intersection
+multiplicities, and incidence-preserving equivalence of historical plane,
+spherical, and Meru realizations remain explicitly open.
+
+Primary verification:
+`tests/test_sri_yantra_incidence_topology_audit.py`.
+Primary note:
+`docs/sri_yantra_incidence_topology_audit_v0.1.md`.
