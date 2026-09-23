@@ -673,3 +673,15 @@ interpretation in this layer.
 
 Primary verification: `tests/test_higher_dimensional_geometry.py`.
 Primary note: `docs/higher_dimensional_e8_bridge_v0.1.md`.
+
+
+## 4H. Direct H4 to E8 lift
+
+`src/h4_direct_e8_lift.py` starts from the existing 120 H4 / 600-cell roots in
+Q(phi)^4, forms H4 union phi*H4, and uses the reduced rational-coefficient inner
+product to obtain an exact 240-root E8 system. Resolving each a+b*phi component
+into its two rational coefficients yields an eight-component representation
+with exact rank eight.
+
+Primary verification: `tests/test_h4_direct_e8_lift.py`.
+Primary note: `docs/h4_direct_e8_lift_v0.1.md`.
