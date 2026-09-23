@@ -1495,6 +1495,22 @@ This closes a kinematic per-channel volume-assignment gap. It does not provide
 connected node junctions, an equation of motion, or physical units. See
 `docs/graph_toroidal_flux_bundle_v0.1.md`.
 
+
+
+## Connected junction control-volume candidate
+
+`src/toroidal_junction_control_volume.py` replaces conservative node balance
+as ledger-only incidence with one connected three-dimensional control volume
+per graph node. Signed incident currents become boundary-port fluxes and are
+paired into nonoverlapping analytic transfer lanes whose interior divergence is
+zero. Source-port, toroidal-cut, and target-port fluxes agree edge by edge.
+
+This is a kinematic conservation construction. It does not yet supply a smooth
+connector field between the junction-port geometry and toroidal cut geometry,
+nor a dynamics law or physical normalization.
+
+See `docs/toroidal_junction_control_volume_v0.1.md`.
+
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.

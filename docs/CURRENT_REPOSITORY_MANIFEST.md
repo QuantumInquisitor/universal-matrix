@@ -389,6 +389,7 @@ Technical note: `docs/conservative_toroidal_field_v0.1.md`.
 Verification: `tests/test_conservative_toroidal_field.py`.
 
 - `src/graph_toroidal_flux_bundle.py`
+- `src/toroidal_junction_control_volume.py`
 
 
 ## Graph-to-toroidal flux bundle
@@ -402,3 +403,15 @@ yet claimed.
 
 Primary verification: `tests/test_graph_toroidal_flux_bundle.py`.
 Primary note: `docs/graph_toroidal_flux_bundle_v0.1.md`.
+
+
+## Connected toroidal junction control volumes
+
+`src/toroidal_junction_control_volume.py` constructs one connected rectangular
+control volume for each conservative graph node. Incident edge currents are
+represented as signed boundary-port fluxes and routed through nonoverlapping
+divergence-free internal lanes. The network checks flux continuity between
+source junction ports, toroidal channel cuts, and target junction ports.
+
+Primary verification: `tests/test_toroidal_junction_control_volume.py`.
+Primary note: `docs/toroidal_junction_control_volume_v0.1.md`.

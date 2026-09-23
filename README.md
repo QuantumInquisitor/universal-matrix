@@ -628,6 +628,7 @@ Start with:
 - `docs/e8_coupling_observable_audit_v0.1.md`
 - `docs/e8_radial_degree_audit_v0.1.md`
 - `docs/graph_toroidal_flux_bundle_v0.1.md`
+- `docs/toroidal_junction_control_volume_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
@@ -758,3 +759,19 @@ junction network or a force law.
 
 Technical note: `docs/graph_toroidal_flux_bundle_v0.1.md`.
 Verification: `tests/test_graph_toroidal_flux_bundle.py`.
+
+
+## Connected toroidal junction control volumes
+
+`src/toroidal_junction_control_volume.py` gives every conservative graph node
+one connected three-dimensional control volume. Incident signed graph currents
+become explicit boundary-port fluxes and are paired into nonoverlapping
+divergence-free internal transfer lanes. Source-port, toroidal-cut, and
+target-port fluxes are checked edge by edge.
+
+This is still a dimensionless kinematic construction. Smooth geometric
+connectors between the rectangular junction ports and toroidal cut surfaces,
+dynamics, and physical units remain open.
+
+Technical note: `docs/toroidal_junction_control_volume_v0.1.md`.
+Verification: `tests/test_toroidal_junction_control_volume.py`.
