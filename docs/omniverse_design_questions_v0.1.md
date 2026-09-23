@@ -2730,3 +2730,37 @@ The next audit should compare matter norms, gauge-invariant energy densities,
 and the existing neutral reciprocity/content scalar by dimensional role,
 locality, conservation, and parameter redundancy before selecting a preferred
 candidate.
+
+
+---
+
+## E8 coupling observable audit — v0.1
+
+The scalar-coupling compatibility test is now followed by a redundancy audit in
+`src/e8_coupling_observable_audit.py`.
+
+On the fixed 240-root orbit,
+
+`||h||^2 = 8`
+
+for every standard E8 root. Therefore the quadratic invariant carries no
+orientation information within that orbit.
+
+The immediate coupling candidates classify as follows:
+
+- U(1), SU(2), and SU(3) matter norms: effective mass-parameter shifts;
+- gauge-invariant energy density: gauge-coupling rescaling;
+- neutral reciprocity/content scalar: constant source or offset.
+
+None is promoted as distinct E8 dynamics.
+
+### Next creator question
+
+> Is there any independently motivated existing engine quantity that can serve
+> as a variable E8 radial/amplitude coordinate or as a second E8-covariant
+> object without duplicating phase, scale, content, matter amplitude, or gauge
+> variables?
+
+If not, the physical E8 coupling path should stop here. The E8 layer remains an
+exact internal geometry and Weyl-symmetry structure until a new state variable
+is justified independently by theory or experiment.
