@@ -173,6 +173,23 @@ form a zero-divergence graph circulation. These are exact model identities and
 candidate embeddings, not evidence that the Sri Yantra is a literal physical
 map of extra dimensions or the omniverse.
 
+### Higher-dimensional geometry and E8 bridge
+
+The finite-geometry engine now also contains exact dimension-open simplex,
+hypercube, and cross-polytope families. Hypercubes and cross-polytopes remain
+centrally mirror closed and project recursively into their lower-dimensional
+families. A simplex does not satisfy central-mirror closure by itself, so the
+engine keeps a mirrored simplex compound distinct from the cross-polytope.
+
+An exploratory E8 layer constructs all 240 roots in exact integer-scaled
+coordinates, verifies reflection closure, 120 antipodal pairs, and 56 nearest
+neighbors per root. The existing 24-cell contributes an exact embedded D4 root
+subsystem through its facet-normal system. This is a mathematical extension,
+not a claim that physical spacetime is eight-dimensional or that the canonical
+8 x 8 language is automatically E8.
+
+See `docs/higher_dimensional_e8_bridge_v0.1.md`.
+
 ### Minimal local Matrix transition law
 
 The ontology-level transition layer now provides a minimal six-neighbor
@@ -492,6 +509,7 @@ Start with:
 - `docs/vesica_tree_circulation_v0.1.md`
 - `docs/transitive_plane_branching_v0.1.md`
 - `docs/sri_yantra_multidimensional_v0.1.md`
+- `docs/higher_dimensional_e8_bridge_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 

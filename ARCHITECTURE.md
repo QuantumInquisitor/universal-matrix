@@ -656,3 +656,20 @@ When repository documents disagree, use:
 7. historical inventories and legacy documentation.
 
 See docs/DOCUMENTATION_STATUS.md.
+
+
+## 4G. Higher-dimensional regular families and E8 bridge
+
+`src/higher_dimensional_geometry.py` extends the exact finite geometry into
+arbitrary-dimensional simplex, hypercube, and cross-polytope families. It
+keeps simplex mirror completion distinct from cross-polytope geometry and
+implements recursive coordinate projections for the two centrally symmetric
+families.
+
+The same module builds the 240-root E8 configuration in integer coordinates
+scaled by two, verifies exact root-reflection closure, and embeds the existing
+24-cell dual D4 root subsystem into E8. No E8 coordinate is assigned a physical
+interpretation in this layer.
+
+Primary verification: `tests/test_higher_dimensional_geometry.py`.
+Primary note: `docs/higher_dimensional_e8_bridge_v0.1.md`.
