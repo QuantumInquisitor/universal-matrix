@@ -341,3 +341,14 @@ python -m pytest -q tests/test_sri_yantra_rao_spherical_reference.py tests/test_
 The report gives constraint closure, the literal/corrected point-16 residuals,
 chamber circuits, and the full Huet vertex correspondence. See
 `docs/sri_yantra_rao_great_circles_v0.1.md` for the source audit.
+
+## Compare Meru candidate edge rules
+
+```sh
+python -m src.sri_yantra_meru_candidate
+python -m pytest -q tests/test_sri_yantra_meru_candidate.py
+```
+
+The report distinguishes the incidence-preserving surface lift from the
+straight-root-chord substitution and reports the latter's height separations.
+See `docs/sri_yantra_meru_candidate_v0.1.md` for the chosen metric.

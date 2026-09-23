@@ -717,3 +717,16 @@ Implementation: `src/sri_yantra_rao_spherical_reference.py` and
 `tests/test_sri_yantra_rao_*.py` modules.
 See `docs/sri_yantra_rao_great_circles_v0.1.md` for the formula audit and
 `docs/MATRIX_ENGINE_WORK_QUEUE.md` for remaining gates.
+
+## Explicit Meru candidate control
+
+`src/sri_yantra_meru_candidate.py` now provides a conical graph-surface
+control with explicit vertices, complete edge paths, and an invertible
+horizontal projection. It preserves the computed 43-chamber incidence for
+positive horizontal scale. A separate audit detects 53 failed projected
+concurrencies if the default raised root corners are instead joined by straight
+spatial chords. This is an explicitly chosen candidate metric, not a sourced
+historical Meru reconstruction.
+
+Technical note: `docs/sri_yantra_meru_candidate_v0.1.md`.
+Verification: `tests/test_sri_yantra_meru_candidate.py`.
