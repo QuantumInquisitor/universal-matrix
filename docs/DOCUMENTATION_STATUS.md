@@ -42,6 +42,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/sri_yantra_multidimensional_v0.1.md` | Current embedding-independent Sri Yantra inventory, realization family, simplex lift, spiral-cone chart, and enclosure-flow contract. |
 | `docs/higher_dimensional_e8_bridge_v0.1.md` | Current exact arbitrary-dimensional regular-family audit and exploratory E8/D4 construction bridge. |
 | `docs/h4_direct_e8_lift_v0.1.md` | Current direct H4/600-cell to E8 lift using the reduced Q(phi) inner product and eight rational coefficient coordinates. |
+| `docs/e8_equivalence_map_v0.1.md` | Current exact change-of-basis equivalence between the H4-derived and standard E8 root systems. |
 | `docs/e8_equivalence_map_v0.1.md` | Current exact scale-orthogonal equivalence between the H4-derived and standard E8 root systems. |
 | `docs/qball_stability_map_v0.1.md` | Current charged-matter evidence-map design separating energetic, branch-slope, and finite-time persistence diagnostics. |
 | `docs/qball_threshold_refinement_v0.1.md` | Current adaptive refinement of the charged-matter energetic threshold. |
