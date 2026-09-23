@@ -2901,3 +2901,61 @@ The resulting solution:
 A generic planar-face polygonization is not sufficient. The next subsystem
 must reconstruct the traditional concentric triangle circuits and count the 43
 canonical chambers from their geometric definitions.
+
+
+---
+
+## Geometry-derived Sri Yantra 43-chamber checkpoint — v0.1
+
+The previous creator question now has an executable answer in
+\`src/sri_yantra_huet_chambers.py\`.
+
+The 27 finite Huet triangle edges generate 69 snapped arrangement nodes and
+122 possible triangular circuits supported by the parent linework. The engine
+does not identify all of those candidates with traditional chambers.
+
+Instead it reconstructs the documented enclosure structure:
+
+- the central t1/t5 triangle;
+- a ring of 8 chambers;
+- an inner ring of 10;
+- an outer ring of 10;
+- a ring of 14.
+
+Nine atomic symmetry-axis chambers are derived directly from the arrangement.
+The central one is the unique t1/t5 candidate. The other eight form four
+nested anchor pairs.
+
+For each enclosure the engine solves for a vertex-touching upper chain of the
+required length, mirrors it, and rejects any choice with positive area overlap
+or shared edge length. The four rings are then subjected to the same conflict
+test as one complete system.
+
+The Huet reference admits exactly one global solution.
+
+That solution has
+
+\[
+1+8+10+10+14=43
+\]
+
+chambers, 129 distinct chamber sides, mirror closure in every noncentral ring,
+and circuit-vertex counts
+
+\[
+3,\ 16,\ 20,\ 20,\ 28.
+\]
+
+The individual chamber coordinates are therefore derived rather than inserted
+as a 43-entry lookup table.
+
+### Next creator question
+
+> Does this newly derived 43-chamber incidence complex survive an explicit
+> lift into the spherical, Meru, and other nonplanar Sri Yantra realizations?
+
+The next gate is topological rather than numerological. It must map the actual
+derived chamber vertices and edges, then test injectivity, edge crossings,
+cycle preservation, mirror equivariance, and chamber collapse. A topology
+change should be reported only when one of those concrete incidence tests
+fails.

@@ -790,3 +790,20 @@ maximal-triangle edges and verifies closure to numerical precision.
 
 Primary verification: `tests/test_sri_yantra_huet_planar.py`.
 Primary note: `docs/sri_yantra_huet_planar_v0.1.md`.
+
+
+### Huet 43-chamber incidence extraction
+
+\`src/sri_yantra_huet_chambers.py\` reconstructs the traditional chamber complex
+from the 27 finite Huet parent edges rather than storing chamber coordinates.
+It derives 69 snapped arrangement nodes and 122 supported triangular circuits,
+finds the nine atomic symmetry-axis anchors, identifies the central t1/t5
+chamber, and solves the four nested mirror-closed ring constraints.
+
+The Huet reference has one globally conflict-free solution with chamber counts
+1, 8, 10, 10, and 14. Its rings are vertex-touching cycles with 3, 16, 20, 20,
+and 28 unique circuit vertices, and the complete chamber set has 129 distinct
+edges.
+
+Primary verification: \`tests/test_sri_yantra_huet_chambers.py\`.
+Primary note: \`docs/sri_yantra_huet_chambers_v0.1.md\`.
