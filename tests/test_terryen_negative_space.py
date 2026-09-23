@@ -2,7 +2,6 @@ from math import isclose, sqrt
 
 import pytest
 
-from src.terryology_audit import TERRYEN_WAVE_FIELDS
 from src.terryen_negative_space import (
     cech_critical_radius,
     cech_topology,
