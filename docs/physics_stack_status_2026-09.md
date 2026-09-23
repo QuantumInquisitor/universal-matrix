@@ -156,10 +156,17 @@ example. Its per-channel graph-to-volume coupling is also implemented in
 disjoint toroidal domain whose measured signed cut flux equals the graph
 current, while the retained incidence ledger reproduces node divergence.
 
-Connected three-dimensional junction control volumes, dynamics, units, and
-physical validation remain open. See
-`docs/conservative_toroidal_field_v0.1.md` and
-`docs/graph_toroidal_flux_bundle_v0.1.md`.
+Connected three-dimensional graph-node control volumes are now implemented in
+`src/toroidal_junction_control_volume.py`. Each conservative node carries
+explicit inlet/outlet boundary-port fluxes and zero-divergence internal
+transfer lanes, and every edge is checked across source junction, toroidal cut,
+and target junction.
+
+A smooth divergence-free connector field between the rectangular junction
+ports and toroidal cut surfaces remains open, as do dynamics, units, and
+physical validation. See `docs/conservative_toroidal_field_v0.1.md`,
+`docs/graph_toroidal_flux_bundle_v0.1.md`, and
+`docs/toroidal_junction_control_volume_v0.1.md`.
 
 ---
 
