@@ -683,7 +683,7 @@ These ten answers would determine whether the current architecture can become a 
 
 ---
 
-## Current progress map — September 22, 2026
+## Current progress map — September 23, 2026
 
 The original 67 questions remain useful, but several are no longer blank. The table below records the current state so future work starts at the actual frontier.
 
@@ -701,7 +701,7 @@ The original 67 questions remain useful, but several are no longer blank. The ta
 | 36-38 Constants and units | **OPEN.** The finite architecture remains dimensionless and measured dimensional constants remain calibrated inputs. |
 | 39-45 Vacuum and cosmology | **OPEN.** No unique ground state, expansion law, dark-sector derivation, or complete compact-object cosmology is established. |
 | 46-49 Thermodynamics/information | **OPEN.** No canonical microscopic entropy or thermodynamic coarse-graining law has been derived. |
-| 50-54 Nested scales | **PARTIAL.** Alternating scale orientation and conservative exchange are implemented as explicit models. The scale ratio and inter-scale transfer law are not uniquely derived. |
+| 50-54 Nested scales | **PARTIAL.** The selected planar containment gives the exact internal ratio (R_{d+1}=R_d/4), and dimensionless circulation plus a typed parent-child scale current are implemented. The physical scale, identity of what crosses the boundary, six-gate coupling, and alternating orientation remain unproved hypotheses. |
 | 55-57 Initial conditions | **OPEN.** |
 | 58-60 Classical emergence | **OPEN.** |
 | 61-67 Direct reality checks | **PARTIAL PREPARATION.** The repository contains falsifiable reciprocity and lattice-dispersion targets, but an independently fixed no-fit laboratory prediction remains a central requirement. |
@@ -2340,3 +2340,77 @@ physical black hole, white hole, ether, gravity law, or literal universe.
 
 The next law should declare its state variable, continuity equation, and
 conserved invariant before adding a biological or cosmological label.
+
+---
+
+## Conservative Vesica and Tree circulation checkpoint — v0.1
+
+The preceding creator question now has a first executable answer in
+`src/vesica_tree_circulation.py`.
+
+The state variable is a dimensionless scalar called **content**. That neutral
+name is intentional. No result in this checkpoint identifies the scalar as
+energy, charge, information, Ether, Consciousness, matter, or a biological
+quantity.
+
+For directed edge current (J), the local law is
+
+\[
+\frac{dq_a}{dt}+(\operatorname{div}J)_a=0,
+\qquad
+(\operatorname{div}J)_a
+=
+\sum_{a\to b}J_{a\to b}
+-
+\sum_{c\to a}J_{c\to a}.
+\]
+
+The implemented Vesica cross-section sends a through-current from cusp (A)
+through the neutral center to cusp (B). Two separately labeled lens-side
+returns carry complementary fractions whose sum equals the through-current.
+All three node divergences therefore vanish.
+
+The Flower-derived outer Tree uses normalized route weights and carries the
+same total current across every radial cut. Its inner Tree is the exact
+weighted reverse. Same-ring weave currents are closed cycles. The combined
+Tree current is locally divergence-free, and the central mirror preserves the
+route weights while exchanging positive and negative pillar flux.
+
+The port clock now supplies a candidate quadrature:
+
+\[
+I_{\mathrm{local}}
+=A(-1)^\ell\cos\phi,
+\qquad
+I_{\mathrm{scale}}
+=A(-1)^\ell\sin\phi,
+\]
+
+\[
+I_{\mathrm{local}}^2+I_{\mathrm{scale}}^2=A^2.
+\]
+
+Recursive scale transfer is a separately typed edge between a parent address
+and a child address that extends it by exactly one Vesica index. It is not a
+radial Flower edge, an inner or outer Tree route, or a same-ring weave.
+Transitive-plane branching is deliberately not aliased to that scale edge.
+
+This gives Questions 51 and 52 a **mathematical candidate**, not a physical
+answer. It specifies something that can cross and be conserved, but its
+physical identity, dimensional units, equation for generating the current,
+and observational meaning remain open. The planar loop is likewise only a
+toroidal cross-section candidate.
+
+The law, evidence boundary, visualization, and focused verification are in
+`docs/vesica_tree_circulation_v0.1.md`.
+
+### Next creator question
+
+> What is the minimal state and transition law for a transitive-plane branch,
+> and which invariant distinguishes changing possibility or dimensional plane
+> from moving inward or outward along a recursive parent-child scale edge?
+
+The next subsystem must give plane branches their own addresses, adjacency,
+mirror semantics, continuity or transformation law, and explicit no-fit
+failure conditions. Only after that separation should the planar circulation
+be lifted into a three-dimensional toroidal field candidate.

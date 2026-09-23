@@ -13,16 +13,16 @@ model, symbolic interpretation, or empirical claim.
 | Chapter | Engine-relevant map | Current status | Next requirement |
 | --- | --- | --- | --- |
 | 1. Alchemy | Transmutation, repeated 1-2-4-8-7-5 cycle, 3-6-9 organization, nested micro-to-Omniverse tori | Partial | Define a state-transmutation operator and its conserved invariant; retain tori as flow rather than replacing the Flower substrate |
-| 2. School for Ego-based Life | Universes within overlapping circles, Flower/Tree as Omniverse DNA, tubes, cone traversal, mutually containing realms | Exact recursive port geometry; tube physics open | Put a conserved circulation law on the port network and keep it separate from literal DNA claims |
+| 2. School for Ego-based Life | Universes within overlapping circles, Flower/Tree as Omniverse DNA, tubes, cone traversal, mutually containing realms | Exact recursive port geometry plus dimensionless conservative circulation candidate; tube physics open | Derive a 3D lift and measured observable; keep circulation separate from literal DNA claims |
 | 3. The Energetic System | Positive, negative, and neutral feeding streams; nested rotating fields; scale hierarchy | Three-state port clock and alternating scale orientation implemented | Derive or falsify a physical three-stream coupling rather than identifying clock carriers with energy by name |
-| 4. The Sacred Art of Creation | Circle vessel, void as transmission medium, six elementals, seventh Consciousness, Vesica births a universe, Seed to Flower to Tree, DNA-like recurrence | Circle, contained Seed, Vesica, Flower, and derived Tree geometry implemented | Add conserved toroidal circulation and an operational Consciousness/Ether observable before physical coupling |
+| 4. The Sacred Art of Creation | Circle vessel, void as transmission medium, six elementals, seventh Consciousness, Vesica births a universe, Seed to Flower to Tree, DNA-like recurrence | Circle, contained Seed, Vesica, Flower, derived Tree, and conservative graph circulation implemented | Supply an operational Consciousness/Ether observable before any physical identification |
 | 5. 108 Program Coding | 108 loop, 8 by 8 light-sound register, inward/outward mirrored streams, Source zero | Strong discrete coverage | Maintain corrected canonical arithmetic; test any light/sound identification independently |
 | 6. Chakras and Nadis | 114 inventory, 54 positive plus 54 negative ports, giving/taking flips, six yin plus six yang paths, three pillars | 54-pair polarity, twelve port states, and three geometric pillars implemented; biological mapping open | Test any biological correspondence against data without assuming that geometric counts establish anatomy |
 | 7. Planes and Health | Neighboring planes affect one another; repeated biological scale organization | Open physical adapter | Define a generic adjacent-layer coupling first; require biological data before health interpretation |
 | 8. Additional Planes | Positive/negative/neutral unity, overlapping transitive planes, branching dimensions and possibilities | Partial recursion only | Add an overlap-transition graph and branch semantics distinct from spatial scale nesting |
 | 9. Consciousness | Consciousness localizes information; sound, light, matter, interior, and exterior are holographically related | Ontology only | Define an operational localization variable and a falsifiable observable before physical coupling |
 | 10. Symbolism | Inner/middle/outer worlds, seven-plus-one light and sound, wheel and three-stream structure | Partial 64-state register | Add a provenance ledger separating symbolic correspondence from exact kernel identities |
-| 11. Conclusion | Neutral Source, mirrored number streams, polarity integration, return from multiplicity to center | Reciprocal mirror implemented | Connect neutral-center dynamics to conserved quantities and scale transfer |
+| 11. Conclusion | Neutral Source, mirrored number streams, polarity integration, return from multiplicity to center | Reciprocal mirror and neutral-node continuity implemented | Derive rather than postulate the clock-to-current coupling and physical units |
 
 ## Corrections exposed by the audit
 
@@ -62,10 +62,14 @@ model, symbolic interpretation, or empirical claim.
    and Flower-derived inner/outer Tree geometry.
 4. **Implemented as a candidate:** positive, negative, and neutral port clock,
    alternating scale orientation, and explicit negative-space aperture.
-5. **Next:** conserved circulation through the port and Tree network, followed
-   by transitive-plane branching as an operation distinct from spatial scale.
-6. **Evidence gate:** attach light, sound, biological, psychological, or
+5. **Implemented as a candidate:** dimensionless conserved circulation through
+   the Vesica and Tree network, with recursive scale transfer kept as a
+   separate parent-child address edge.
+6. **Next:** transitive-plane branching as an operation distinct from spatial
+   scale, followed by a three-dimensional toroidal lift.
+7. **Evidence gate:** attach light, sound, biological, psychological, or
    cosmological interpretations only through separately testable adapters.
 
 The current implementation and its claim boundary are specified in
-`docs/universe_port_engine_v0.1.md`.
+`docs/universe_port_engine_v0.1.md` and
+`docs/vesica_tree_circulation_v0.1.md`.

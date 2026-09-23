@@ -206,6 +206,23 @@ and preserves the child radius. The neutral center, both ordered cusp points,
 and the complete recursive domain mirror through the root center. Scale parity
 then reverses the dynamic carriers between adjacent depths.
 
+## Conservative circulation extension
+
+`src/vesica_tree_circulation.py` now supplies a dimensionless graph-content
+continuity law on this geometry. The local Vesica current passes through both
+cusps and the neutral center, then closes over two separately labeled return
+channels. On the Flower graph, normalized outer flow has equal total flux
+across every radial cut, the inner Tree is its exact weighted reverse, and
+same-ring weaves are closed cycles.
+
+Recursive scale current is represented by a different parent-child address
+edge. This prevents a radial Tree route from being mistaken for inward or
+outward universe recursion. Transitive-plane branching remains a third,
+unimplemented relation.
+
+The full law, diagram, tests, and evidence boundary are in
+`docs/vesica_tree_circulation_v0.1.md`.
+
 ## Evidence boundary
 
 | Layer | Current status |
@@ -213,6 +230,7 @@ then reverses the dynamic carriers between adjacent depths.
 | Circle, contained Seed, Vesica dimensions and area | Exact Euclidean geometry |
 | Flower counts, adjacency, mirror, inner/outer Tree reversal | Exact finite graph geometry |
 | Recursive addresses and one-quarter containment law | Exact under the declared planar convention |
+| Vesica and Tree continuity identities | Exact under the declared finite-channel graph |
 | 36-tick carrier and 108-state pairing | Exact software coupling to the canonical finite engine |
 | Terryen cavity aperture | Model-derived topology for explicit candidate center sets |
 | Elemental, Consciousness/Ether, DNA, eye, torus, black/white-hole meanings | Interpretive hypotheses |
@@ -229,6 +247,9 @@ The focused tests establish:
 - recursive mirroring is involutive in address and physical coordinates;
 - Flower circle and Vesica counts match their closed forms;
 - inner and outer Tree routes are exact reverses;
+- the cusp-neutral Vesica loop is divergence-free;
+- normalized Tree current preserves flux across every radial cut;
+- the matched inner/outer flow and ring weave are divergence-free;
 - three pillars transform correctly under the central mirror;
 - every explicit Terryen candidate opens exactly one bounded cavity within its
   certified window;
@@ -238,8 +259,10 @@ The focused tests establish:
 
 ## Next research gate
 
-The next extension should put a conserved circulation law on the Vesica and
-Tree routes, then distinguish spatial scale recursion from Chapter 8's
-transitive-plane branching. A toroidal field may be tested as circulation
-through the port architecture, but it should not replace the Flower substrate
-or be identified with physical cosmology without an observable and data.
+The next extension should implement Chapter 8's transitive-plane branching as
+a relation distinct from both spatial Tree routing and recursive parent-child
+scale transfer. It must declare its state, conservation or transformation law,
+mirror semantics, and observable. A three-dimensional toroidal lift can then
+test whether the planar circulation is the cross-section of a coherent field,
+but it must not replace the Flower substrate or be identified with physical
+cosmology without units, an observable, and data.

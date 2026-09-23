@@ -263,6 +263,12 @@ Use docs/omniverse_design_questions_v0.1.md as the current gap ledger for the cr
 
 The creator framing is a systems-design metaphor used to ask what laws must exist for a complete universe model. It is not treated as evidence that the model is physically correct.
 
+The current recursive geometry and circulation boundaries are documented in
+docs/universe_port_engine_v0.1.md and
+docs/vesica_tree_circulation_v0.1.md. The circulation state is dimensionless;
+do not relabel it as measured energy, charge, Ether, Consciousness, or matter
+without a separately tested adapter.
+
 ## 15. Licensing
 
 The public repository is source-available for permitted noncommercial use under the PolyForm Noncommercial License 1.0.0.

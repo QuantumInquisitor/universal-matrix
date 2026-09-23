@@ -79,13 +79,14 @@ Key ideas:
 
 ## 2A. Recursive universe-port geometry
 
-Status: **EXACT PLANAR GEOMETRY + EXPERIMENTAL DYNAMIC ADAPTERS**
+Status: **EXACT PLANAR/GRAPH CONSTRUCTIONS + EXPERIMENTAL DYNAMIC ADAPTERS**
 
 Modules:
 
 - `src/recursive_omniverse_contract.py`
 - `src/sevenfold_seed_contract.py`
 - `src/universe_port_engine.py`
+- `src/vesica_tree_circulation.py`
 
 Verified structural results:
 
@@ -95,14 +96,22 @@ Verified structural results:
 - exact-depth address count follows (12^d);
 - equal-radius Flower growth follows the closed circle and adjacency counts;
 - inner and outer Tree routes are reciprocal orientations of Flower edges;
+- the Vesica cusp-neutral loop is locally divergence-free;
+- normalized Tree current has equal total flux across every radial cut;
+- matched outer/inner currents and closed ring weaves have zero node
+  divergence;
+- recursive scale current is a distinct parent-child address edge rather than
+  a spatial Tree route;
 - recursive central mirroring is exact;
 - three routing channels and 36 ticks cover all 108 canonical states;
 - every explicit Terryen candidate can be tested for one bounded cavity without
   declaring one candidate physically correct.
 
 The one-quarter scale ratio is exact only for the declared planar containment
-construction. Its physical scale, dimensional units, toroidal circulation,
-and cosmological interpretation remain open.
+construction. The finite-graph conservation identities are exact under the
+declared channel model. The physical identity and units of the conserved
+content, a three-dimensional toroidal lift, transitive-plane branching, and
+cosmological interpretation remain open.
 
 ---
 
