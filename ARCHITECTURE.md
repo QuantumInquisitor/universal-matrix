@@ -932,3 +932,19 @@ the purely poloidal toroidal field.
 
 Primary verification: `tests/test_toroidal_connector_topology.py`.
 Primary note: `docs/toroidal_connector_topology_v0.1.md`.
+
+
+## Annular junction edge ports
+
+`src/toroidal_annular_junction.py` replaces disk-like external junction ports
+with concentric annular bands. Lower and upper face streamfunctions encode the
+incident flux distributions; cubic interpolation between them produces an
+axisymmetric zero-divergence internal current. Cumulative-flux interval
+overlaps recover the deterministic conservative transfer plan.
+
+The annular boundary profile is algebraically identical to the source profile
+of `AnnularPiolaConnector`, providing local topology and flux-density
+compatibility.
+
+Primary verification: `tests/test_toroidal_annular_junction.py`.
+Primary note: `docs/toroidal_annular_junction_v0.1.md`.
