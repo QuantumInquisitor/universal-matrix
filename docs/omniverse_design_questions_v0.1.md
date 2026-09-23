@@ -3033,3 +3033,28 @@ six basic angular variables and nonlinear spherical-trigonometric constraints.
 The next subsystem should reproduce one published Rao spherical solution before
 comparing chamber graphs. It should not use the topology control as a substitute
 for Rao's equations.
+
+## Rao great-circle answer and next geometric gate
+
+The audited Rao reference construction now supplies nine unit-sphere root
+triangles with great-circle edges. After refinement within the published
+rounding intervals and two explicitly documented formula fixes, its 69
+vertices, 142 atomic edges, 74 bounded faces, and 43 selected chambers match
+the Huet complex through a complete generator-edge-labelled correspondence.
+This numerical result applies to one reference row; broader spherical families
+and independently specified Meru geometry remain open.
+
+The formula audit retains the literal printed point-16 width alongside its
+geometrically consistent correction. The earlier question is answered for
+this reference row by incidence, rather than by visually similar renders.
+
+### Next creator question
+
+> Which explicitly defined Meru vertices and edge paths preserve the computed
+> chamber complex, and which metric choices cause a chamber collapse or an
+> incidence change?
+
+A candidate height lift can test topology but cannot by itself establish a
+historical Meru metric. After geometry, the toroidal vector-field extension
+must specify its domain, conservation law, and mirror action. The remaining
+research gates are tracked in `MATRIX_ENGINE_WORK_QUEUE.md`.

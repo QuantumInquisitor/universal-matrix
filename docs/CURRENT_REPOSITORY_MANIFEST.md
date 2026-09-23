@@ -345,3 +345,19 @@ verifies mirror equivariance and planar roundtrip recovery.
 
 The construction is intentionally a topology-preserving control. It is not
 identified with Rao's sourced great-circle spherical geometry.
+
+## Rao reference and great-circle geometry
+
+The audited Rao reference construction now supplies nine unit-sphere root
+triangles with great-circle edges. After refinement within the published
+rounding intervals and two explicitly documented formula fixes, its 69
+vertices, 142 atomic edges, 74 bounded faces, and 43 selected chambers match
+the Huet complex through a complete generator-edge-labelled correspondence.
+This numerical result applies to one reference row; broader spherical families
+and independently specified Meru geometry remain open.
+
+Implementation: `src/sri_yantra_rao_spherical_reference.py` and
+`src/sri_yantra_rao_great_circles.py`. Verification: the corresponding
+`tests/test_sri_yantra_rao_*.py` modules.
+See `docs/sri_yantra_rao_great_circles_v0.1.md` for the formula audit and
+`docs/MATRIX_ENGINE_WORK_QUEUE.md` for remaining gates.
