@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">Terryen candidate central-cavity intervals</title>
+<desc id="desc">Five horizontal intervals show where one bounded central negative-space component exists. Each begins at a shape-specific birth radius and ends just before radius one.</desc>
+<rect width="960" height="500" rx="22" fill="#f8fafc"/>
+<text x="480" y="43" text-anchor="middle" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#0f172a">One bounded central cavity</text>
+<text x="480" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#475569">Normalized center radius = 1, closed equal balls</text>
+<line x1="278.40" y1="87" x2="278.40" y2="430" stroke="#cbd5e1" stroke-width="1"/>
+<text x="278.40" y="456" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#64748b">0.6</text>
+<line x1="425.21" y1="87" x2="425.21" y2="430" stroke="#cbd5e1" stroke-width="1"/>
+<text x="425.21" y="456" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#64748b">0.7</text>
+<line x1="572.02" y1="87" x2="572.02" y2="430" stroke="#cbd5e1" stroke-width="1"/>
+<text x="572.02" y="456" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#64748b">0.8</text>
+<line x1="718.83" y1="87" x2="718.83" y2="430" stroke="#cbd5e1" stroke-width="1"/>
+<text x="718.83" y="456" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#64748b">0.9</text>
+<line x1="865.64" y1="87" x2="865.64" y2="430" stroke="#cbd5e1" stroke-width="1"/>
+<text x="865.64" y="456" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#64748b">1.0</text>
+<text x="183" y="110" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#1e293b">Tetra-Terryen</text>
+<line x1="781.68" y1="105" x2="865.64" y2="105" stroke="#2563eb" stroke-width="12" stroke-linecap="round"/>
+<circle cx="781.68" cy="105" r="8" fill="#2563eb" stroke="#fff" stroke-width="2"/>
+<circle cx="865.64" cy="105" r="8" fill="#f8fafc" stroke="#2563eb" stroke-width="3"/>
+<text x="781.68" y="89" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#2563eb">0.942809</text>
+<text x="183" y="172" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#1e293b">Huntyen</text>
+<line x1="596.24" y1="167" x2="865.64" y2="167" stroke="#7c3aed" stroke-width="12" stroke-linecap="round"/>
+<circle cx="596.24" cy="167" r="8" fill="#7c3aed" stroke="#fff" stroke-width="2"/>
+<circle cx="865.64" cy="167" r="8" fill="#f8fafc" stroke="#7c3aed" stroke-width="3"/>
+<text x="596.24" y="151" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#7c3aed">0.816497</text>
+<text x="183" y="234" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#1e293b">Mira</text>
+<line x1="596.24" y1="229" x2="865.64" y2="229" stroke="#059669" stroke-width="12" stroke-linecap="round"/>
+<circle cx="596.24" cy="229" r="8" fill="#059669" stroke="#fff" stroke-width="2"/>
+<circle cx="865.64" cy="229" r="8" fill="#f8fafc" stroke="#059669" stroke-width="3"/>
+<text x="596.24" y="213" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#059669">0.816497</text>
+<text x="183" y="296" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#1e293b">Aubreyen</text>
+<line x1="288.77" y1="291" x2="865.64" y2="291" stroke="#d97706" stroke-width="12" stroke-linecap="round"/>
+<circle cx="288.77" cy="291" r="8" fill="#d97706" stroke="#fff" stroke-width="2"/>
+<circle cx="865.64" cy="291" r="8" fill="#f8fafc" stroke="#d97706" stroke-width="3"/>
+<text x="288.77" y="275" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#d97706">0.607062</text>
+<text x="183" y="358" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#1e293b">Heavenly</text>
+<line x1="435.65" y1="353" x2="865.64" y2="353" stroke="#be185d" stroke-width="12" stroke-linecap="round"/>
+<circle cx="435.65" cy="353" r="8" fill="#be185d" stroke="#fff" stroke-width="2"/>
+<circle cx="865.64" cy="353" r="8" fill="#f8fafc" stroke="#be185d" stroke-width="3"/>
+<text x="435.65" y="337" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#be185d">0.707107</text>
+<text x="865.64" y="480" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#475569">r = 1, common origin intersection closes every central cavity</text>
+</svg>
