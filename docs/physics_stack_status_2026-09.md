@@ -135,6 +135,27 @@ Yantra field.
 
 ---
 
+## 2B. Explicit geometry and toroidal kinematics
+
+The planar chamber, spherical control, corrected Rao reference, and conical
+Meru candidate checkpoints are documented in their `sri_yantra_*` notes.
+Their incidence results have distinct metric scopes; none establishes a
+physical Sri Yantra field.
+
+`src/conservative_toroidal_field.py` defines a compact, divergence-free
+three-dimensional content current on an explicit solid ring torus. A stream
+function fixes local conservation; signed parameters equal independently
+integrated poloidal and toroidal cut fluxes. Cartesian tests distinguish
+central mirroring, axial-plane mirroring, and flow reversal. This is a
+prescribed dimensionless kinematic candidate with no derived force law or
+physical content identification.
+
+The earlier open three-dimensional field gate now has this kinematic
+example. Its full spatial coupling, dynamics, units, and physical validation
+remain open. See `docs/conservative_toroidal_field_v0.1.md`.
+
+---
+
 ## 3. Abelian U(1) gauge sector
 
 Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**

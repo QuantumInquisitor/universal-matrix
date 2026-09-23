@@ -1468,6 +1468,19 @@ historical Meru reconstruction.
 See `docs/sri_yantra_meru_candidate_v0.1.md` for the projection argument
 and edge-rule failure audit. No physical interpretation is inferred.
 
+## Conservative three-dimensional current candidate
+
+`src/conservative_toroidal_field.py` defines a compact, divergence-free
+three-dimensional content current on an explicit solid ring torus. A stream
+function fixes local conservation; signed parameters equal independently
+integrated poloidal and toroidal cut fluxes. Cartesian tests distinguish
+central mirroring, axial-plane mirroring, and flow reversal. This is a
+prescribed dimensionless kinematic candidate with no derived force law or
+physical content identification.
+
+See `docs/conservative_toroidal_field_v0.1.md` for the stream function,
+cut-flux derivation, and limits of graph-to-volume coupling.
+
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.

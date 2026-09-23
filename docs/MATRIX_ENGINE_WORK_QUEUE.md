@@ -11,7 +11,7 @@ physical interpretation requires separate derivation and tests.
 | Rao reference geometry | Implemented for one corrected reference row | All labelled vertices, edges, faces, and selected chambers correspond to Huet; formula discrepancies remain visible. |
 | Meru geometry | Conical candidate implemented; independent historical metric open | Complete surface edges preserve incidence; straight-root substitution fails at 53 projected vertices. Further metrics need their own proof or audit. |
 | Broader Rao family | Open | Implement remaining constraints; trace branches and identify degeneracy boundaries. |
-| Toroidal circulation | Next field gate beyond existing graph currents | Define a three-dimensional field and boundaries, verify conservation and mirror transformation, then couple to the incidence domain. |
+| Toroidal circulation | Compact 3D kinematic field implemented | Conservation, signed cut fluxes, and mirror transformations verified. Explicit incidence-domain coupling and a dynamical law remain open. |
 | Physical normalization | Open derivation | Independently fix content units, clock scale, energy scale, and scale-transfer normalization. |
 | Six-gate/sevenfold physical coupling | Open derivation beyond existing finite contracts | Derive coupling assumptions and a discriminating observable. |
 | Particle interpretation | Open physical identification | Relate existing matter/gauge modes to independently constrained mass, charge, and quantum observables. |

@@ -352,3 +352,14 @@ python -m pytest -q tests/test_sri_yantra_meru_candidate.py
 The report distinguishes the incidence-preserving surface lift from the
 straight-root-chord substitution and reports the latter's height separations.
 See `docs/sri_yantra_meru_candidate_v0.1.md` for the chosen metric.
+
+## Compute the conservative toroidal current
+
+```sh
+python -m src.conservative_toroidal_field
+python -m pytest -q tests/test_conservative_toroidal_field.py
+```
+
+The API accepts signed poloidal and toroidal cut fluxes. The CLI reports
+analytic flux normalization; the tests independently integrate the cuts.
+See `docs/conservative_toroidal_field_v0.1.md` for domain and mirror rules.
