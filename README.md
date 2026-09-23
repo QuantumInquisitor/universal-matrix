@@ -193,6 +193,14 @@ coordinate-level task.
 
 See `docs/sri_yantra_chiodo_concurrency_v0.1.md`.
 
+The Huet reference parameter set is now reconstructed into all nine planar
+maximal triangles by solving the published concurrency equations. The solver
+generates all 27 finite triangle edges, preserves the t1-through-t9 base order,
+and closes the seven apex/base and twelve triple-concurrency constraints to
+numerical precision.
+
+See `docs/sri_yantra_huet_planar_v0.1.md`.
+
 ### Higher-dimensional geometry and E8 bridge
 
 The finite-geometry engine now also contains exact dimension-open simplex,
@@ -576,6 +584,7 @@ Start with:
 - `docs/sri_yantra_multidimensional_v0.1.md`
 - `docs/sri_yantra_incidence_topology_audit_v0.1.md`
 - `docs/sri_yantra_chiodo_concurrency_v0.1.md`
+- `docs/sri_yantra_huet_planar_v0.1.md`
 - `docs/higher_dimensional_e8_bridge_v0.1.md`
 - `docs/h4_direct_e8_lift_v0.1.md`
 - `docs/e8_equivalence_map_v0.1.md`
