@@ -14,9 +14,9 @@ This checkpoint supplies a minimal one-to-one answer.
 
 For every directed graph edge
 
-$
+$$
 e=(s,t,J_e),
-$
+$$
 
 the engine assigns one translated solid ring torus.
 
@@ -26,18 +26,18 @@ supports are disjoint.
 
 The local toroidal field is the existing `ToroidalContentCurrent` with
 
-$
+$$
 I_e = J_e,
 \qquad
 T_e = 0.
-$
+$$
 
 The canonical inner equatorial cut is declared to carry the graph edge
 source-to-target orientation. Its measured surface flux is therefore exactly
 
-$
+$$
 \Phi_e = J_e.
-$
+$$
 
 No normalization factor is fitted after the fact.
 
@@ -45,9 +45,9 @@ No normalization factor is fitted after the fact.
 
 Neighboring torus centers are separated by
 
-$
+$$
 2a+g,
-$
+$$
 
 where $g\ge 0$ is an explicit gap. Their z-support intervals therefore do
 not overlap.
