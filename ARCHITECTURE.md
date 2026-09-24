@@ -57,6 +57,19 @@ Executable authority:
 - tests/test_canonical_kernel.py
 - docs/canonical_spec_v0.4.md
 
+### 1.1 Derived mod-9 quotient and interface-phase audit
+
+`src/canonical_mod9_interface_audit.py` is a derived exact-arithmetic layer
+over the canonical `Z_108` kernel. It uses reduction modulo nine to label the
+nine `E = T_9` orbits and a twelve-step phase coordinate inside each orbit.
+
+It also records the independent multiplication-by-two automorphism of `Z_9`
+and its three orbit classes. That automorphism is not a canonical translation
+operator and remains separate from `E`, `P`, and `T_21`.
+
+Primary verification: `tests/test_canonical_mod9_interface_audit.py`.
+Primary note: `docs/canonical_mod9_interface_audit_v0.1.md`.
+
 ## 2. Primitive ontology layer
 
 The exact 108-state core address now has an ontology-adapted decomposition
@@ -395,269 +408,6 @@ Implementation:
 - tests/test_sri_yantra_multidimensional.py
 - docs/sri_yantra_multidimensional_v0.1.md
 
-## 5. Open discrete-exterior-calculus layer
-
-The default open field adapter uses a cubical complex with cochain sequence
-
-$$
-C^0\xrightarrow{d_0}C^1\xrightarrow{d_1}C^2
-$$
-
-and exact identity
-
-$$
-d_1d_0=0.
-$$
-
-The weak Hamiltonian form is
-
-$$
-H
-=
-\frac12\langle E,E\rangle
-+
-\frac{\beta}{2}\langle d_1A,d_1A\rangle.
-$$
-
-Representative modules:
-
-- src/open_gauge_dynamics.py
-- src/open_boundary_solver.py
-- src/open_polarity_sources.py
-- src/unified_engine.py
-
-## 6. Six-gate open Gauss layer
-
-The open finite-volume field satisfies a source/flux balance of the form
-
-$$
-\nabla_{\rm open}\cdot E+b_{\partial V}=\rho.
-$$
-
-Global compatibility is
-
-$$
-\sum_x\rho(x)=\sum_{g\in B_6}\Phi_g^{E,\mathrm{outward}}.
-$$
-
-The scalar-potential solve uses a matrix-free Neumann Laplacian and projected preconditioned conjugate gradients.
-
-Implementation:
-
-- src/open_boundary_solver.py
-
-## 7. Source layer
-
-The engine separates several source mechanisms rather than collapsing them into one quantity.
-
-### 6.1 Polarization-induced source
-
-$$
-P=A\sigma\hat u,
-$$
-
-$$
-\rho_{\rm pol}=-\nabla\cdot P.
-$$
-
-### 6.2 Free electric source
-
-$$
-\dot\rho_{\rm free}+\nabla\cdot J_{\rm free}=0.
-$$
-
-### 6.3 Six-gate boundary exchange
-
-Internal total electric charge changes only through explicit boundary exchange.
-
-### 6.4 Topological magnetic source
-
-Compact plaquette winding can generate integer-valued magnetic/topological defects. These are kept separate from ordinary electric charge.
-
-Representative modules:
-
-- src/polarity_sources.py
-- src/open_polarity_sources.py
-- src/source_channels.py
-- src/source_interaction.py
-
-## 8. Abelian and non-Abelian gauge layer
-
-The repository contains compact U(1), SU(2), and SU(3) lattice-gauge implementations.
-
-For U(1),
-
-$$
-U_{ij}=e^{i\theta_{ij}}.
-$$
-
-For non-Abelian sectors,
-
-$$
-U_\mu(x)\to G(x)U_\mu(x)G^\dagger(x+\hat\mu).
-$$
-
-Implemented capabilities include plaquettes and Wilson actions, Hamiltonian electric-field dynamics, Gauss constraints, analytic staple forces, fundamental matter coupling, gauge/matter backreaction, and geometry-dependent weighting.
-
-## 9. Reciprocity geometry layer
-
-The experimental reciprocity metric is
-
-$$
-ds^2=-e^{-2\psi}c_*^2dt^2+e^{2\psi}d\mathbf x^2.
-$$
-
-The current stack includes a self-consistent scalar action, matter and gauge coupling, static spherical vacuum solutions, weak-field and higher-order correspondence, circular-orbit and light-deflection calculations, and geometry backreaction.
-
-The reciprocity premises remain experimental assumptions until derived from deeper canonical structure or validated empirically.
-
-## 10. Dirac and chiral fermion layer
-
-The repository contains Wilson-Dirac reference operators, reciprocity-background Dirac Hamiltonians, one-particle geometry backreaction, overlap-Dirac operators, Ginsparg-Wilson chirality, modified chiral projectors, overlap-index diagnostics, Weyl measure curvature and holonomy, finite Weyl determinants, charged-U(1) anomaly diagnostics, SU(2)/SU(3) overlap fermions, and product-group overlap representations.
-
-## 11. Product-group anomaly layer
-
-The repository computes supported anomaly coefficients for supplied Weyl spectra, including
-
-$$
-C_{SU(3)^3},\qquad
-C_{SU(3)^2U(1)},\qquad
-C_{SU(2)^2U(1)},\qquad
-C_{U(1)^3},\qquad
-C_{{\rm grav}^2U(1)}.
-$$
-
-The SU(2) global mod-2 doublet condition is tracked separately.
-
-This layer tests candidate spectra. It does not derive the observed Standard Model representation content.
-
-## 12. Spatial protocol layer
-
-src/spatial_protocol.py defines versioned transport-neutral messages for commands, acknowledgements, telemetry, stop requests, and capability discovery.
-
-This allows WebXR, robotics adapters, digital twins, APIs, and customer-specific transports to share one command vocabulary.
-
-## 13. Spatial operations safety layer
-
-src/spatial_operations_control.py provides software-level validation for stale-command rejection, replay protection, deadman controls, workspace boundaries, position-delta limits, linear-speed limits, angular-speed limits, emergency-stop request propagation, and deterministic bounded waypoint generation.
-
-It does not itself authorize real hardware execution.
-
-## 14. Robot adapter layer
-
-src/robot_adapter.py defines a common robot contract for capabilities, state, command submission, stop requests, and acknowledgements.
-
-The same interface can back simulated robots, ROS2 bridges, CAN devices, CNC systems, or customer-specific OEM hardware.
-
-## 15. XR-to-robot bridge
-
-src/xr_robot_bridge.py connects versioned spatial commands to the common robot adapter only after validation through the spatial operations control plane.
-
-An XR or browser client therefore cannot bypass software command validation through this bridge.
-
-## 16. Digital-twin layer
-
-src/digital_twin_contract.py distinguishes measured telemetry from derived estimates and carries units, source, timestamp, quality, calibration, and uncertainty.
-
-src/digital_twin_store.py provides a bounded thread-safe reference history store.
-
-Production deployments can replace the in-memory store with a persistent database or stream backend without changing the telemetry contract.
-
-## 17. Manufacturing layer
-
-Current manufacturing and toolpath surfaces include authenticated G-code compilation, parametric path generation, CNC/GRBL compatibility, winding-path tools, visualization, geometry optimization prototypes, and stress/thermal digital-twin utilities.
-
-Historical manufacturing modules can contain older SO(13), 114-node, toroidal, or 3/6/9 labels. Those labels are not canonical unless explicitly migrated and tested.
-
-## 18. API and SDK layer
-
-The current secured API is src/api_server.py.
-
-It provides health, metrics, matrix evaluation, G-code compilation, spatial command validation, commercial entitlement evaluation, and audit-ledger access.
-
-SDKs:
-
-- sdk/python/universal_matrix_sdk.py
-- sdk/js/universalMatrixSdk.js
-
-The larger src/api.py remains a compatibility/experimental surface and should not be exposed publicly by default.
-
-## 19. Commercial entitlement layer
-
-src/commercial_entitlements.py models licensable product families and feature entitlements.
-
-Technical entitlements do not themselves grant legal rights. The governing public license or executed commercial agreement controls.
-
-## 20. Licensing and governance layer
-
-The public repository is source-available for permitted noncommercial use under the PolyForm Noncommercial License 1.0.0.
-
-Relevant files:
-
-- LICENSE
-- NOTICE
-- COMMERCIAL_LICENSE.md
-- COMMERCIAL_LICENSE_AGREEMENT_TEMPLATE.md
-- CLA.md
-- CONTRIBUTING.md
-- docs/LICENSING_GUIDE.md
-
-Commercial use outside the public license requires a separate written Waters Legacy Trust commercial license unless otherwise permitted by applicable law.
-
-## 21. Legacy compatibility layer
-
-Older modules can contain terminology such as Z_114 as a routing group, SO(13) physical spacetime, 64-bit physical geometry, fixed 3/6/9 physical laws, M-theory/string/brane equivalence labels, toroidal physical geometry, biological/chakra/meridian mappings, or hand-authored physical constants.
-
-These are historical, compatibility, visualization, or experimental surfaces unless explicitly migrated to the current canonical stack.
-
-No legacy module overrides src/canonical_kernel.py, tests/test_canonical_kernel.py, or the current canonical specification.
-
-## 22. Verification hierarchy
-
-The repository uses three scientific verification levels.
-
-### Level A: exact finite identities
-
-Deterministic algebraic tests for the canonical kernel.
-
-### Level B: numerical structural invariants
-
-Gauge covariance, DEC exactness, Gauss consistency, continuity, Hermiticity, chiral identities, unitarity, solver residuals, and bounded-control behavior.
-
-### Level C: physical validation
-
-External experiment or observation with units, independently fixed parameters, uncertainty, and falsification criteria.
-
-A Level A or Level B result must not be presented as Level C evidence.
-
-## 23. Software verification
-
-Current CI includes Python 3.12 core verification, Python 3.14 core verification, full legacy compatibility tests, container smoke tests, CodeQL analysis, and licensing-governance regression checks.
-
-Typical developer workflow:
-
-~~~bash
-uv sync --group dev --extra scientific
-uv run ruff check src tests
-uv run ruff format --check src tests
-uv run pytest
-~~~
-
-## 24. Documentation authority
-
-When repository documents disagree, use:
-
-1. tested implementation for the subsystem in question;
-2. src/canonical_kernel.py and tests/test_canonical_kernel.py for canonical finite mathematics;
-3. docs/canonical_spec_v0.4.md;
-4. white_paper.md;
-5. README.md and this architecture document;
-6. current subsystem technical notes;
-7. historical inventories and legacy documentation.
-
-See docs/DOCUMENTATION_STATUS.md.
-
-
 ## 4G. Higher-dimensional regular families and E8 bridge
 
 `src/higher_dimensional_geometry.py` extends the exact finite geometry into
@@ -846,7 +596,7 @@ constraint-induced incidence changes from a harmless change of embedding.
 Primary verification: `tests/test_sri_yantra_spherical_topology_control.py`.
 Primary note: `docs/sri_yantra_spherical_topology_control_v0.1.md`.
 
-## Rao great-circle incidence
+## 4R. Rao great-circle incidence
 
 The audited Rao reference construction now supplies nine unit-sphere root
 triangles with great-circle edges. After refinement within the published
@@ -862,7 +612,7 @@ Implementation: `src/sri_yantra_rao_spherical_reference.py` and
 See `docs/sri_yantra_rao_great_circles_v0.1.md` for the formula audit and
 `docs/MATRIX_ENGINE_WORK_QUEUE.md` for remaining gates.
 
-## Explicit Meru candidate control
+## 4S. Explicit Meru candidate control
 
 `src/sri_yantra_meru_candidate.py` now provides a conical graph-surface
 control with explicit vertices, complete edge paths, and an invertible
@@ -875,7 +625,14 @@ historical Meru reconstruction.
 Technical note: `docs/sri_yantra_meru_candidate_v0.1.md`.
 Verification: `tests/test_sri_yantra_meru_candidate.py`.
 
-## Conservative toroidal field candidate
+## 4T. Toroidal circulation and connected field geometry
+
+The toroidal stack maps conservative graph currents into explicit
+three-dimensional annular channels and connected junction geometry. Each
+checkpoint preserves its own evidence boundary; the current frontier is
+sampled incident bend clearance rather than a derived physical scale law.
+
+### Conservative toroidal field candidate
 
 `src/conservative_toroidal_field.py` defines a compact, divergence-free
 three-dimensional content current on an explicit solid ring torus. A stream
@@ -889,7 +646,7 @@ Technical note: `docs/conservative_toroidal_field_v0.1.md`.
 Verification: `tests/test_conservative_toroidal_field.py`.
 
 
-## Graph-to-toroidal flux bundle
+### Graph-to-toroidal flux bundle
 
 `src/graph_toroidal_flux_bundle.py` is the first explicit graph-to-volume
 coupling layer. It assigns one translated compact toroidal field domain to
@@ -902,7 +659,7 @@ Primary verification: `tests/test_graph_toroidal_flux_bundle.py`.
 Primary note: `docs/graph_toroidal_flux_bundle_v0.1.md`.
 
 
-## Connected toroidal junction control volumes
+### Connected toroidal junction control volumes
 
 `src/toroidal_junction_control_volume.py` replaces conservative graph-node
 balance as ledger-only bookkeeping with explicit connected 3D control volumes.
@@ -917,7 +674,7 @@ Primary verification: `tests/test_toroidal_junction_control_volume.py`.
 Primary note: `docs/toroidal_junction_control_volume_v0.1.md`.
 
 
-## Toroidal connector topology and annular Piola bridge
+### Toroidal connector topology and annular Piola bridge
 
 `src/toroidal_connector_topology.py` audits the cross-section topology of the
 junction and toroidal interfaces. Disk-like rectangular lane ports are not
@@ -934,7 +691,7 @@ Primary verification: `tests/test_toroidal_connector_topology.py`.
 Primary note: `docs/toroidal_connector_topology_v0.1.md`.
 
 
-## Annular junction edge ports
+### Annular junction edge ports
 
 `src/toroidal_annular_junction.py` replaces disk-like external junction ports
 with concentric annular bands. Lower and upper face streamfunctions encode the
@@ -950,7 +707,7 @@ Primary verification: `tests/test_toroidal_annular_junction.py`.
 Primary note: `docs/toroidal_annular_junction_v0.1.md`.
 
 
-## Framed toroidal edge assemblies
+### Framed toroidal edge assemblies
 
 `src/toroidal_framed_edge_assembly.py` composes annular junction ports,
 general annular Piola transitions, and a straightened flux-equivalent
@@ -965,7 +722,7 @@ Primary verification: `tests/test_toroidal_framed_edge_assembly.py`.
 Primary note: `docs/toroidal_framed_edge_assembly_v0.1.md`.
 
 
-## Global collision-audited toroidal routing
+### Global collision-audited toroidal routing
 
 `src/toroidal_global_routing.py` supplies a deterministic global embedding
 contract for the local framed edge assemblies. Annular junctions are translated
@@ -981,7 +738,7 @@ Primary verification: `tests/test_toroidal_global_routing.py`.
 Primary note: `docs/toroidal_global_routing_v0.1.md`.
 
 
-## Smooth positive-Jacobian toroidal bends
+### Smooth positive-Jacobian toroidal bends
 
 `src/toroidal_smooth_bends.py` turns each orthogonal global route corner into
 a quarter-circle annular tube. The bend map retains a positive Jacobian when
@@ -996,7 +753,7 @@ Primary verification: `tests/test_toroidal_smooth_bends.py`.
 Primary note: `docs/toroidal_smooth_bends_v0.1.md`.
 
 
-## Same-face incident connector overlap audit
+### Same-face incident connector overlap audit
 
 `src/toroidal_incident_overlap_audit.py` evaluates pairs of nonzero edge
 connectors sharing one annular junction face. It parameterizes each connector
@@ -1012,7 +769,7 @@ Primary verification: `tests/test_toroidal_incident_overlap_audit.py`.
 Primary note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
 
 
-## Edge-specific separated toroidal channel shells
+### Edge-specific separated toroidal channel shells
 
 `src/toroidal_separated_channels.py` replaces the common cut annulus used by
 all framed edges with globally ordered, pairwise-disjoint edge-specific
@@ -1028,7 +785,7 @@ Primary verification: `tests/test_toroidal_separated_channels.py`.
 Primary note: `docs/toroidal_separated_channels_v0.1.md`.
 
 
-## Incident smooth-bend collision audit
+### Incident smooth-bend collision audit
 
 `src/toroidal_incident_bend_audit.py` evaluates actual annular bend samples
 against the exact finite endpoint straight shell of every other nonzero edge
@@ -1043,7 +800,7 @@ Primary verification: `tests/test_toroidal_incident_bend_audit.py`.
 Primary note: `docs/toroidal_incident_bend_audit_v0.1.md`.
 
 
-## Toroidal bend-spacing parameter gate
+### Toroidal bend-spacing parameter gate
 
 `src/toroidal_bend_spacing_scan.py` preserves the existing graph, signed
 currents, annular junctions, Piola connector maps, and smooth-bend field while
@@ -1060,16 +817,278 @@ scale-consistent clearance region survives.
 Primary verification: `tests/test_toroidal_bend_spacing_scan.py`.
 Primary note: `docs/toroidal_bend_spacing_scan_v0.1.md`.
 
+### Sampled toroidal bend-clearance frontier
 
-## Canonical mod-9 quotient audit
+`src/toroidal_bend_clearance_boundary.py` summarizes the finite bend-spacing
+grid by bend margin. For each tested margin it records the first
+collision-free sampled shell gap, the nearest lower colliding sample when one
+exists, and margins that remain unresolved on the tested grid.
 
-`src/canonical_mod9_interface_audit.py` is a derived exact-arithmetic layer
-over the canonical `Z_108` kernel. It uses reduction modulo nine to label the
-nine `E = T_9` orbits and a twelve-step phase coordinate inside each orbit.
+The checkpoint establishes a sampled parameter frontier only. It does not
+establish a continuous monotone boundary, an optimal compactness law,
+scale-invariant clearance, or a physical length scale.
 
-It also records the independent multiplication-by-two automorphism of `Z_9`
-and its three orbit classes. That automorphism is not a canonical translation
-operator and remains separate from `E`, `P`, and `T_21`.
+Primary verification: `tests/test_toroidal_bend_clearance_boundary.py`.
+Primary note: `docs/toroidal_bend_clearance_boundary_v0.1.md`.
 
-Primary verification: `tests/test_canonical_mod9_interface_audit.py`.
-Primary note: `docs/canonical_mod9_interface_audit_v0.1.md`.
+## 5. Open discrete-exterior-calculus layer
+
+The default open field adapter uses a cubical complex with cochain sequence
+
+$$
+C^0\xrightarrow{d_0}C^1\xrightarrow{d_1}C^2
+$$
+
+and exact identity
+
+$$
+d_1d_0=0.
+$$
+
+The weak Hamiltonian form is
+
+$$
+H
+=
+\frac12\langle E,E\rangle
++
+\frac{\beta}{2}\langle d_1A,d_1A\rangle.
+$$
+
+Representative modules:
+
+- src/open_gauge_dynamics.py
+- src/open_boundary_solver.py
+- src/open_polarity_sources.py
+- src/unified_engine.py
+
+## 6. Six-gate open Gauss layer
+
+The open finite-volume field satisfies a source/flux balance of the form
+
+$$
+\nabla_{\rm open}\cdot E+b_{\partial V}=\rho.
+$$
+
+Global compatibility is
+
+$$
+\sum_x\rho(x)=\sum_{g\in B_6}\Phi_g^{E,\mathrm{outward}}.
+$$
+
+The scalar-potential solve uses a matrix-free Neumann Laplacian and projected preconditioned conjugate gradients.
+
+Implementation:
+
+- src/open_boundary_solver.py
+
+## 7. Source layer
+
+The engine separates several source mechanisms rather than collapsing them into one quantity.
+
+### 7.1 Polarization-induced source
+
+$$
+P=A\sigma\hat u,
+$$
+
+$$
+\rho_{\rm pol}=-\nabla\cdot P.
+$$
+
+### 7.2 Free electric source
+
+$$
+\dot\rho_{\rm free}+\nabla\cdot J_{\rm free}=0.
+$$
+
+### 7.3 Six-gate boundary exchange
+
+Internal total electric charge changes only through explicit boundary exchange.
+
+### 7.4 Topological magnetic source
+
+Compact plaquette winding can generate integer-valued magnetic/topological defects. These are kept separate from ordinary electric charge.
+
+Representative modules:
+
+- src/polarity_sources.py
+- src/open_polarity_sources.py
+- src/source_channels.py
+- src/source_interaction.py
+
+## 8. Abelian and non-Abelian gauge layer
+
+The repository contains compact U(1), SU(2), and SU(3) lattice-gauge implementations.
+
+For U(1),
+
+$$
+U_{ij}=e^{i\theta_{ij}}.
+$$
+
+For non-Abelian sectors,
+
+$$
+U_\mu(x)\to G(x)U_\mu(x)G^\dagger(x+\hat\mu).
+$$
+
+Implemented capabilities include plaquettes and Wilson actions, Hamiltonian electric-field dynamics, Gauss constraints, analytic staple forces, fundamental matter coupling, gauge/matter backreaction, and geometry-dependent weighting.
+
+## 9. Reciprocity geometry layer
+
+The experimental reciprocity metric is
+
+$$
+ds^2=-e^{-2\psi}c_*^2dt^2+e^{2\psi}d\mathbf x^2.
+$$
+
+The current stack includes a self-consistent scalar action, matter and gauge coupling, static spherical vacuum solutions, weak-field and higher-order correspondence, circular-orbit and light-deflection calculations, and geometry backreaction.
+
+The reciprocity premises remain experimental assumptions until derived from deeper canonical structure or validated empirically.
+
+## 10. Dirac and chiral fermion layer
+
+The repository contains Wilson-Dirac reference operators, reciprocity-background Dirac Hamiltonians, one-particle geometry backreaction, overlap-Dirac operators, Ginsparg-Wilson chirality, modified chiral projectors, overlap-index diagnostics, Weyl measure curvature and holonomy, finite Weyl determinants, charged-U(1) anomaly diagnostics, SU(2)/SU(3) overlap fermions, and product-group overlap representations.
+
+## 11. Product-group anomaly layer
+
+The repository computes supported anomaly coefficients for supplied Weyl spectra, including
+
+$$
+C_{SU(3)^3},\qquad
+C_{SU(3)^2U(1)},\qquad
+C_{SU(2)^2U(1)},\qquad
+C_{U(1)^3},\qquad
+C_{{\rm grav}^2U(1)}.
+$$
+
+The SU(2) global mod-2 doublet condition is tracked separately.
+
+This layer tests candidate spectra. It does not derive the observed Standard Model representation content.
+
+## 12. Spatial protocol layer
+
+src/spatial_protocol.py defines versioned transport-neutral messages for commands, acknowledgements, telemetry, stop requests, and capability discovery.
+
+This allows WebXR, robotics adapters, digital twins, APIs, and customer-specific transports to share one command vocabulary.
+
+## 13. Spatial operations safety layer
+
+src/spatial_operations_control.py provides software-level validation for stale-command rejection, replay protection, deadman controls, workspace boundaries, position-delta limits, linear-speed limits, angular-speed limits, emergency-stop request propagation, and deterministic bounded waypoint generation.
+
+It does not itself authorize real hardware execution.
+
+## 14. Robot adapter layer
+
+src/robot_adapter.py defines a common robot contract for capabilities, state, command submission, stop requests, and acknowledgements.
+
+The same interface can back simulated robots, ROS2 bridges, CAN devices, CNC systems, or customer-specific OEM hardware.
+
+## 15. XR-to-robot bridge
+
+src/xr_robot_bridge.py connects versioned spatial commands to the common robot adapter only after validation through the spatial operations control plane.
+
+An XR or browser client therefore cannot bypass software command validation through this bridge.
+
+## 16. Digital-twin layer
+
+src/digital_twin_contract.py distinguishes measured telemetry from derived estimates and carries units, source, timestamp, quality, calibration, and uncertainty.
+
+src/digital_twin_store.py provides a bounded thread-safe reference history store.
+
+Production deployments can replace the in-memory store with a persistent database or stream backend without changing the telemetry contract.
+
+## 17. Manufacturing layer
+
+Current manufacturing and toolpath surfaces include authenticated G-code compilation, parametric path generation, CNC/GRBL compatibility, winding-path tools, visualization, geometry optimization prototypes, and stress/thermal digital-twin utilities.
+
+Historical manufacturing modules can contain older SO(13), 114-node, toroidal, or 3/6/9 labels. Those labels are not canonical unless explicitly migrated and tested.
+
+## 18. API and SDK layer
+
+The current secured API is src/api_server.py.
+
+It provides health, metrics, matrix evaluation, G-code compilation, spatial command validation, commercial entitlement evaluation, and audit-ledger access.
+
+SDKs:
+
+- sdk/python/universal_matrix_sdk.py
+- sdk/js/universalMatrixSdk.js
+
+The larger src/api.py remains a compatibility/experimental surface and should not be exposed publicly by default.
+
+## 19. Commercial entitlement layer
+
+src/commercial_entitlements.py models licensable product families and feature entitlements.
+
+Technical entitlements do not themselves grant legal rights. The governing public license or executed commercial agreement controls.
+
+## 20. Licensing and governance layer
+
+The public repository is source-available for permitted noncommercial use under the PolyForm Noncommercial License 1.0.0.
+
+Relevant files:
+
+- LICENSE
+- NOTICE
+- COMMERCIAL_LICENSE.md
+- COMMERCIAL_LICENSE_AGREEMENT_TEMPLATE.md
+- CLA.md
+- CONTRIBUTING.md
+- docs/LICENSING_GUIDE.md
+
+Commercial use outside the public license requires a separate written Waters Legacy Trust commercial license unless otherwise permitted by applicable law.
+
+## 21. Legacy compatibility layer
+
+Older modules can contain terminology such as Z_114 as a routing group, SO(13) physical spacetime, 64-bit physical geometry, fixed 3/6/9 physical laws, M-theory/string/brane equivalence labels, toroidal physical geometry, biological/chakra/meridian mappings, or hand-authored physical constants.
+
+These are historical, compatibility, visualization, or experimental surfaces unless explicitly migrated to the current canonical stack.
+
+No legacy module overrides src/canonical_kernel.py, tests/test_canonical_kernel.py, or the current canonical specification.
+
+## 22. Verification hierarchy
+
+The repository uses three scientific verification levels.
+
+### Level A: exact finite identities
+
+Deterministic algebraic tests for the canonical kernel.
+
+### Level B: numerical structural invariants
+
+Gauge covariance, DEC exactness, Gauss consistency, continuity, Hermiticity, chiral identities, unitarity, solver residuals, and bounded-control behavior.
+
+### Level C: physical validation
+
+External experiment or observation with units, independently fixed parameters, uncertainty, and falsification criteria.
+
+A Level A or Level B result must not be presented as Level C evidence.
+
+## 23. Software verification
+
+Current CI includes Python 3.12 core verification, Python 3.14 core verification, full legacy compatibility tests, container smoke tests, CodeQL analysis, and licensing-governance regression checks.
+
+Typical developer workflow:
+
+~~~bash
+uv sync --group dev --extra scientific
+uv run ruff check src tests
+uv run ruff format --check src tests
+uv run pytest
+~~~
+
+## 24. Documentation authority
+
+When repository documents disagree, use:
+
+1. tested implementation for the subsystem in question;
+2. src/canonical_kernel.py and tests/test_canonical_kernel.py for canonical finite mathematics;
+3. docs/canonical_spec_v0.4.md;
+4. white_paper.md;
+5. README.md and this architecture document;
+6. current subsystem technical notes;
+7. historical inventories and legacy documentation.
+
+See docs/DOCUMENTATION_STATUS.md.
