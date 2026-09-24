@@ -1010,3 +1010,19 @@ complete whole-network collision certificate.
 
 Primary verification: `tests/test_toroidal_incident_overlap_audit.py`.
 Primary note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
+
+
+## Edge-specific separated toroidal channel shells
+
+`src/toroidal_separated_channels.py` replaces the common cut annulus used by
+all framed edges with globally ordered, pairwise-disjoint edge-specific
+annular shells. Each shell is the inner poloidal cut of its own purely poloidal
+toroidal field and preserves the signed graph current.
+
+Since same-face junction bands and channel shells share edge-index order, the
+smooth radial Piola interpolation cannot reverse interval order. The earlier
+same-face connector overlap is therefore removed without changing the annular
+junction or framed-edge APIs.
+
+Primary verification: `tests/test_toroidal_separated_channels.py`.
+Primary note: `docs/toroidal_separated_channels_v0.1.md`.
