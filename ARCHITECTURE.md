@@ -994,3 +994,19 @@ verified collision audit also bounds the curved volume.
 
 Primary verification: `tests/test_toroidal_smooth_bends.py`.
 Primary note: `docs/toroidal_smooth_bends_v0.1.md`.
+
+
+## Same-face incident connector overlap audit
+
+`src/toroidal_incident_overlap_audit.py` evaluates pairs of nonzero edge
+connectors sharing one annular junction face. It parameterizes each connector
+from the junction port to the channel annulus and detects radial-interval
+overlap by bisection.
+
+The current common-channel construction necessarily overlaps because disjoint
+port bands continuously converge to one identical channel annulus. This
+obstruction prevents promotion of the nonincident routing certificate to a
+complete whole-network collision certificate.
+
+Primary verification: `tests/test_toroidal_incident_overlap_audit.py`.
+Primary note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
