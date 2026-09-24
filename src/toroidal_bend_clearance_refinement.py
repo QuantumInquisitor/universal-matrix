@@ -195,9 +195,10 @@ class ClearanceRefinementAudit:
 
 
 def refine_vesica_clearance_boundary(
-    coarse: ClearanceBoundaryAudit | None = None,
     *,
     subdivisions: int = 4,
+    coarse_shell_gaps: tuple[float, ...] = (0.25, 1.0, 3.0, 10.0, 30.0),
+    coarse_bend_margins: tuple[float, ...] = (0.005, 0.02, 0.05, 0.1, 0.25),
     current: float = 1.0,
     shell_width: float = 0.4,
     base_inner_radius: float = 2.0,
@@ -212,15 +213,16 @@ def refine_vesica_clearance_boundary(
         or subdivisions < 2
     ):
         raise ValueError("subdivisions must be an integer at least two")
-    if coarse is None:
-        coarse = audit_vesica_clearance_boundary(
-            current=current,
-            shell_width=shell_width,
-            base_inner_radius=base_inner_radius,
-            phi_samples=phi_samples,
-            q_samples=q_samples,
-            theta_samples=theta_samples,
-        )
+    coarse = audit_vesica_clearance_boundary(
+        shell_gaps=coarse_shell_gaps,
+        bend_margins=coarse_bend_margins,
+        current=current,
+        shell_width=shell_width,
+        base_inner_radius=base_inner_radius,
+        phi_samples=phi_samples,
+        q_samples=q_samples,
+        theta_samples=theta_samples,
+    )
 
     coarse_lookup = {
         (result.shell_gap, result.bend_margin): result
