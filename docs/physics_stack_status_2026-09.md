@@ -269,6 +269,22 @@ radii or gaps.
 
 ---
 
+
+
+### Incident bend collision no-fit
+
+`src/toroidal_incident_bend_audit.py` shows that radially separated
+same-face connector shells remain individually conservative but still collide
+when one incident edge enters its first smooth bend while another remains on
+the shared endpoint axis.
+
+This leaves the toroidal network at a geometric fan-out gate. Same-face
+incident edges must first be placed on pairwise separated spatial axes by a
+positive-Jacobian divergence-free map. No dynamics or physical normalization
+is inferred from this obstruction.
+
+---
+
 ## 3. Abelian U(1) gauge sector
 
 Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
