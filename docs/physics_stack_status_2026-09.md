@@ -31,27 +31,21 @@ Primary modules:
 
 Core results:
 
-[
-mathbb Z_{108}sqcup B_6
-]
+$$
+\mathbb Z_{108}\sqcup B_6
+$$
 
-[
-E=T_9,
-qquad
-P=T_{54},
-qquad
-T=T_{21}
-]
+$$
+E=T_9,\qquad P=T_{54},\qquad T=T_{21}
+$$
 
-[
-T^{18}=P,
-qquad
-T^{36}=I
-]
+$$
+T^{18}=P,\qquad T^{36}=I
+$$
 
-[
-Deltaphi_P=pi/18
-]
+$$
+\Delta\phi_P=\pi/18
+$$
 
 per canonical routing tick.
 
@@ -342,44 +336,27 @@ Modules:
 
 Current chain:
 
-[
-ho_{mathcal C}
-	o
-chi
-	o
-psi
-	o
-	ext{clock response}
-	o
-	ext{spatial response}
-]
+$$
+\rho_{\mathcal C}\to\chi\to\psi\to\text{clock response}\to\text{spatial response}
+$$
 
 with
 
-[
--
-abla^2chi
-=
-kappa_{mathcal C}ho_{mathcal C}
-]
+$$
+-\nabla^2\chi=\kappa_{\mathcal C}\rho_{\mathcal C}
+$$
 
 and under the reciprocity postulate
 
-[
-ds^2
-=
--e^{-2psi}c_*^2dt^2
-+
-e^{2psi}dmathbf x^2.
-]
+$$
+ds^2=-e^{-2\psi}c_*^2dt^2+e^{2\psi}d\mathbf x^2.
+$$
 
 Weak-field correspondence:
 
-[
-eta_{m PPN}=1,
-qquad
-gamma_{m PPN}=1.
-]
+$$
+\beta_{\rm PPN}=1,\qquad \gamma_{\rm PPN}=1.
+$$
 
 Strong-field continuation remains experimental and differs from Schwarzschild.
 
@@ -475,17 +452,17 @@ Module:
 
 Reproduces the standard tree-level reference identities:
 
-[
-m_W=gv/2
-]
+$$
+m_W=\frac{gv}{2}
+$$
 
-[
-m_Z=vsqrt{g^2+g'^2}/2
-]
+$$
+m_Z=\frac{v}{2}\sqrt{g^2+g'^2}
+$$
 
-[
-m_W=m_Zcos	heta_W
-]
+$$
+m_W=m_Z\cos\theta_W
+$$
 
 with one massless photon direction.
 
@@ -542,9 +519,9 @@ Current constraints include:
 
 Need one action whose variation determines both
 
-[
-psi
-]
+$$
+\psi
+$$
 
 and its effective geometry rather than assigning the exponential metric after
 the fact.
@@ -553,9 +530,9 @@ the fact.
 
 Need to derive why stable matter should satisfy an effectively universal
 
-[
-Q_{mathcal C}/E.
-]
+$$
+\frac{Q_{\mathcal C}}{E}.
+$$
 
 ### OPEN C — stable matter branch
 
@@ -619,9 +596,9 @@ A common action now determines:
 
 The source is
 
-[
-ho+p_x+p_y+p_z
-]
+$$
+\rho+p_x+p_y+p_z
+$$
 
 rather than an independently assigned matter charge.
 
@@ -629,25 +606,21 @@ rather than an independently assigned matter charge.
 
 For exact stationary localized time-harmonic scalar solutions,
 
-[
+$$
 G+3(V-K)=0
-]
+$$
 
 implies
 
-[
-oxed{
-M_{m active}=E.
-}
-]
+$$
+\boxed{M_{\rm active}=E.}
+$$
 
 Equivalently,
 
-[
-M_{m active}-E
-=
--Delta_{m virial}.
-]
+$$
+M_{\rm active}-E=-\Delta_{\rm virial}.
+$$
 
 Thus integrated gravitational/source universality follows automatically for
 this solution class when the virial equation is satisfied.
@@ -656,26 +629,21 @@ this solution class when the virial equation is satisfied.
 
 For the proposed scalar action,
 
-[
-dotpsi=0,
-qquad
-S_m=0
-]
+$$
+\dot\psi=0,\qquad S_m=0
+$$
 
 implies exactly
 
-[
-
-abla^2psi=0.
-]
+$$
+\nabla^2\psi=0.
+$$
 
 Spherical symmetry and asymptotic flatness give
 
-[
-oxed{
-psi=mu/r.
-}
-]
+$$
+\boxed{\psi=\frac{\mu}{r}.}
+$$
 
 Therefore the exponential static exterior is now derived within the proposed
 action rather than treated only as a strong-field extrapolation.
@@ -707,19 +675,15 @@ The exponential metric is now conditionally derived from explicit premises:
 
 Together these imply
 
-[
-S=e^psi
-]
+$$
+S=e^\psi
+$$
 
 and therefore
 
-[
-ds^2
-=
--e^{-2psi}c_*^2dt^2
-+
-e^{2psi}dmathbf x^2.
-]
+$$
+ds^2=-e^{-2\psi}c_*^2dt^2+e^{2\psi}d\mathbf x^2.
+$$
 
 ### Self-consistent matter + geometry-scalar action
 
@@ -727,18 +691,16 @@ A common action now gives both the matter equation and geometry-scalar equation.
 
 The geometry source is
 
-[
+$$
 T^{00}+T^{11}+T^{22}+T^{33}.
-]
+$$
 
 For stationary isolated systems, stress-energy conservation plus the von Laue
 condition gives
 
-[
-oxed{
-M_{m active}=E.
-}
-]
+$$
+\boxed{M_{\rm active}=E.}
+$$
 
 Thus integrated source universality is no longer restricted to the scalar
 soliton sector.
@@ -747,13 +709,9 @@ soliton sector.
 
 The weak Newton limit fixes
 
-[
-oxed{
-kappa
-=
-rac{4pi G}{c_*^4}
-}
-]
+$$
+\boxed{\kappa=\frac{4\pi G}{c_*^4}}
+$$
 
 for the current scalar-action convention.
 
@@ -764,16 +722,15 @@ kernel derivation.
 
 The static spherical vacuum equation is exactly
 
-[
-
-abla^2psi=0,
-]
+$$
+\nabla^2\psi=0,
+$$
 
 so
 
-[
-psi=mu/r
-]
+$$
+\psi=\frac{\mu}{r}
+$$
 
 is the exact exterior solution within the proposed scalar action.
 
@@ -782,120 +739,67 @@ is the exact exterior solution within the proposed scalar action.
 U(1) and generic Yang-Mills actions now give the same coordinate characteristic
 speed as the geometry scalar and metric null cone:
 
-[
-oxed{
-c_{m U(1)}
-=
-c_{m YM}
-=
-c_psi
-=
-c_{m null}
-=
-e^{-2psi}.
-}
-]
+$$
+\boxed{c_{\rm U(1)}=c_{\rm YM}=c_\psi=c_{\rm null}=e^{-2\psi}.}
+$$
 
 ### Exact geometric difference from GR vacuum
 
 The reciprocity exterior is not Ricci-flat:
 
-[
-R
-=
--rac{2mu^2}{r^4}e^{-2mu/r}.
-]
+$$
+R=-\frac{2\mu^2}{r^4}e^{-2\mu/r}.
+$$
 
 Thus
 
-[
-	ext{reciprocity scalar vacuum}
-
-eq
-	ext{Einstein vacuum}.
-]
+$$
+\text{reciprocity scalar vacuum}\neq\text{Einstein vacuum}.
+$$
 
 ### Higher-order weak-field signature
 
 The first-post-Newtonian parameters still satisfy
 
-[
-eta=gamma=1.
-]
+$$
+\beta=\gamma=1.
+$$
 
 Using the isotropic 2PN spatial convention,
 
-[
-oxed{
-delta_{m reciprocity}
-=
-rac43,
-qquad
-delta_{m GR}=1.
-}
-]
+$$
+\boxed{\delta_{\rm reciprocity}=\frac43,\qquad \delta_{\rm GR}=1.}
+$$
 
 ### Second-order light deflection
 
-[
-oxed{
-alpha_{m reciprocity}
-=
-4rac{mu}{b}
-+
-4pi
-left(
-rac{mu}{b}
-ight)^2
-+cdots
-}
-]
+$$
+\boxed{\alpha_{\rm reciprocity}=4\frac{\mu}{b}+4\pi\left(\frac{\mu}{b}\right)^2+\cdots}
+$$
 
 versus
 
-[
-oxed{
-alpha_{m GR}
-=
-4rac{mu}{b}
-+
-rac{15pi}{4}
-left(
-rac{mu}{b}
-ight)^2
-+cdots.
-}
-]
+$$
+\boxed{\alpha_{\rm GR}=4\frac{\mu}{b}+\frac{15\pi}{4}\left(\frac{\mu}{b}\right)^2+\cdots.}
+$$
 
 ### Circular orbits and ISCO
 
-[
-oxed{
-r_{m ISCO}
-=
-(3+sqrt5)mu
-}
-]
+$$
+\boxed{r_{\rm ISCO}=(3+\sqrt5)\mu}
+$$
 
 with
 
-[
-oxed{
-R_{m ISCO}
-approx
-6.337940264856347,mu
-}
-]
+$$
+\boxed{R_{\rm ISCO}\approx 6.337940264856347\,\mu}
+$$
 
 and
 
-[
-oxed{
-Omega_{m ISCO}mu
-approx
-0.06333263135.
-}
-]
+$$
+\boxed{\Omega_{\rm ISCO}\mu\approx 0.06333263135.}
+$$
 
 These are direct strong-field predictions of the current reciprocity exterior.
 
@@ -931,26 +835,21 @@ Modules:
 
 The geometry scalar now couples through the stress-energy combination
 
-[
-sqrt{-g}
-left(
-T^{00}+T^{11}+T^{22}+T^{33}
-ight).
-]
+$$
+\sqrt{-g}\left(T^{00}+T^{11}+T^{22}+T^{33}\right).
+$$
 
 For stationary localized isolated composites satisfying the von Laue condition,
 
-[
-int T^{ij}d^3x=0,
-]
+$$
+\int T^{ij}\,d^3x=0,
+$$
 
 the integrated active source becomes
 
-[
-oxed{
-M_{m active}=E_{m total}.
-}
-]
+$$
+\boxed{M_{\rm active}=E_{\rm total}.}
+$$
 
 This includes matter, gauge-field energy, interaction energy, and binding
 stress when the complete system is used.
@@ -966,17 +865,9 @@ Modules:
 
 For static isotropic reciprocity geometry,
 
-[
-H
-=
-eta_D m e^{-psi}
-+
-rac12
-left{
-oldsymbolalphacdotmathbf p,
-e^{-2psi}
-ight}.
-]
+$$
+H=\beta_D m e^{-\psi}+\frac12\left\{\boldsymbol\alpha\cdot\mathbf p,e^{-2\psi}\right\}.
+$$
 
 The position-space discretization is Hermitian and contains the required
 geometry-gradient/spin-connection contribution.
@@ -1031,31 +922,21 @@ Modules:
 
 For uniform geometry,
 
-[
-H_{m YM}(psi)
-=
-e^{-2psi}H_{m YM}(0).
-]
+$$
+H_{\rm YM}(\psi)=e^{-2\psi}H_{\rm YM}(0).
+$$
 
 For spatially varying geometry, gauge-invariant link and plaquette weights are
 
-[
-w_ell
-=
-e^{-2arpsi_ell},
-qquad
-w_p
-=
-e^{-2arpsi_p}.
-]
+$$
+w_\ell=e^{-2\bar\psi_\ell},\qquad w_p=e^{-2\bar\psi_p}.
+$$
 
 The local geometry source satisfies the exact lattice identity
 
-[
-oxed{
-sum_x S_psi(x)=2H_{m YM}.
-}
-]
+$$
+\boxed{\sum_x S_\psi(x)=2H_{\rm YM}.}
+$$
 
 ### Current verification state
 
@@ -1098,34 +979,21 @@ geometry scalar.
 
 The gauge Hamiltonian is
 
-[
-H_{SU(3)}
-=
-rac12sum_ell
-w_ell E_ell^aE_ell^a
-+
-etasum_p
-w_p
-left[
-1-rac13operatorname{ReTr}U_p
-ight].
-]
+$$
+H_{SU(3)}=\frac12\sum_\ell w_\ell E_\ell^aE_\ell^a+\beta\sum_p w_p\left[1-\frac13\operatorname{ReTr}U_p\right].
+$$
 
 The local source satisfies
 
-[
-S_psi(x)
-=
--rac{partial H_{SU(3)}}{partialpsi(x)}
-]
+$$
+S_\psi(x)=-\frac{\partial H_{SU(3)}}{\partial\psi(x)}
+$$
 
 and the exact lattice identity
 
-[
-oxed{
-sum_x S_psi(x)=2H_{SU(3)}.
-}
-]
+$$
+\boxed{\sum_x S_\psi(x)=2H_{SU(3)}.}
+$$
 
 The analytic weighted SU(3) staple force is checked against group-direction
 finite differences.
@@ -1140,39 +1008,21 @@ Modules:
 
 The matter Hamiltonian on the reciprocity geometry is
 
-[
-H_{m matter}
-=
-e^{-4psi}|Pi|^2
-+
-|D_iPsi|^2
-+
-e^{2psi}V.
-]
+$$
+H_{\rm matter}=e^{-4\psi}|\Pi|^2+|D_i\Psi|^2+e^{2\psi}V.
+$$
 
 The geometry source is additive:
 
-[
-oxed{
-S_psi^{m total}
-=
-S_psi^{m matter}
-+
-S_psi^{SU(3)}.
-}
-]
+$$
+\boxed{S_\psi^{\rm total}=S_\psi^{\rm matter}+S_\psi^{SU(3)}.}
+$$
 
 The matter term is
 
-[
-oxed{
-S_psi^{m matter}
-=
-4e^{-4psi}|Pi|^2
--
-2e^{2psi}V.
-}
-]
+$$
+\boxed{S_\psi^{\rm matter}=4e^{-4\psi}|\Pi|^2-2e^{2\psi}V.}
+$$
 
 The implementation verifies this full source against a direct finite-difference
 derivative of the non-geometry Hamiltonian.
@@ -1188,33 +1038,23 @@ Modules:
 
 For homogeneous time dependence,
 
-[
-chi=e^{3psi/2}Psi
-]
+$$
+\chi=e^{3\psi/2}\Psi
+$$
 
 removes the temporal volume-dilution spin-connection term.
 
 For general prescribed
 
-[
-psi=psi(t,mathbf x),
-]
+$$
+\psi=\psi(t,\mathbf x),
+$$
 
 the rescaled spinor evolves with the instantaneous Hermitian operator
 
-[
-oxed{
-H(t)
-=
-eta m e^{-psi}
-+
-rac12
-left{
-oldsymbolalphacdotmathbf p,
-e^{-2psi}
-ight}.
-}
-]
+$$
+\boxed{H(t)=\beta m e^{-\psi}+\frac12\left\{\boldsymbol\alpha\cdot\mathbf p,e^{-2\psi}\right\}.}
+$$
 
 The spatial anticommutator contains the geometry-gradient connection term,
 while the local (e^{3psi/2}) rescaling handles the temporal volume term.
@@ -1233,21 +1073,15 @@ Modules:
 
 The overlap operator satisfies
 
-[
-oxed{
-gamma_5D+Dgamma_5
-=
-rac1ho Dgamma_5D
-}
-]
+$$
+\boxed{\gamma_5D+D\gamma_5=\frac1\rho D\gamma_5D}
+$$
 
 and
 
-[
-oxed{
-D^dagger=gamma_5Dgamma_5.
-}
-]
+$$
+\boxed{D^\dagger=\gamma_5D\gamma_5.}
+$$
 
 The finite-lattice U(1) implementation is locally gauge covariant and retains
 one physical zero-momentum mode rather than the naive doubled set.
@@ -1282,20 +1116,9 @@ Modules:
 The local geometry source for the Hermitian reciprocity Dirac Hamiltonian now
 has an explicit lattice form,
 
-[
-S_psi(x)
-=
-m e^{-psi(x)}
-operatorname{Re}!left[
-chi^dagger(x)etachi(x)
-ight]
-+
-2e^{-2psi(x)}
-sum_i
-operatorname{Re}!left[
-chi^dagger(x)alpha_i p_ichi(x)
-ight].
-]
+$$
+S_\psi(x)=m e^{-\psi(x)}\operatorname{Re}\!\left[\chi^\dagger(x)\beta\chi(x)\right]+2e^{-2\psi(x)}\sum_i\operatorname{Re}\!\left[\chi^\dagger(x)\alpha_i p_i\chi(x)\right].
+$$
 
 This is the exact derivative of the existing finite-lattice Dirac energy with
 respect to the local reciprocity scalar.
@@ -1316,41 +1139,25 @@ Modules:
 The prescribed-background loop is now closed at the one-particle /
 semiclassical level with
 
-[
-H_{m total}
-=
-H_{m geometry}
-+
-operatorname{Re}
-langlechi|H_D[psi]|chiangle.
-]
+$$
+H_{\rm total}=H_{\rm geometry}+\operatorname{Re}\langle\chi|H_D[\psi]|\chi\rangle.
+$$
 
 The coupled equations are
 
-[
-idotchi
-=
-H_D[psi]chi,
-]
+$$
+i\dot\chi=H_D[\psi]\chi,
+$$
 
-[
-dotpsi
-=
-kappa e^{-4psi}P_psi,
-]
+$$
+\dot\psi=\kappa e^{-4\psi}P_\psi,
+$$
 
 and
 
-[
-dot P_psi
-=
-rac{
-abla^2psi}{kappa}
-+
-2kappa e^{-4psi}P_psi^2
-+
-S_psi.
-]
+$$
+\dot P_\psi=\frac{\nabla^2\psi}{\kappa}+2\kappa e^{-4\psi}P_\psi^2+S_\psi.
+$$
 
 The same Hamiltonian therefore controls both the geometry acting on the spinor
 and the spinor source acting back on the geometry.
@@ -1399,49 +1206,28 @@ Modules:
 
 The overlap operator now feeds the exact modified chirality operator
 
-[
-\widehat{\gamma}_5
-=
-\gamma_5
-\left(
-I-\frac{D}{\rho}
-\right),
-]
+$$
+\widehat{\gamma}_5=\gamma_5\left(I-\frac{D}{\rho}\right),
+$$
 
 with
 
-[
+$$
 \widehat{\gamma}_5^2=I.
-]
+$$
 
 This gives exact finite-lattice chiral projectors
 
-[
-\widehat P_\pm
-=
-\frac12
-\left(
-I\pm\widehat{\gamma}_5
-\right).
-]
+$$
+\widehat P_\pm=\frac12\left(I\pm\widehat{\gamma}_5\right).
+$$
 
 The repository also computes the finite-lattice overlap index in the equivalent
 forms
 
-[
-\operatorname{index}(D)
-=
-\operatorname{Tr}
-\left[
-\gamma_5
-\left(
-I-\frac{D}{2\rho}
-\right)
-\right]
-=
-\frac12
-\operatorname{Tr}\widehat{\gamma}_5.
-]
+$$
+\operatorname{index}(D)=\operatorname{Tr}\left[\gamma_5\left(I-\frac{D}{2\rho}\right)\right]=\frac12\operatorname{Tr}\widehat{\gamma}_5.
+$$
 
 ### Weyl projector-bundle curvature
 
@@ -1457,21 +1243,9 @@ defines a vector bundle over gauge-field configuration space.
 
 The local basis-independent curvature is
 
-[
-\boxed{
-\mathcal F_{ab}
-=
-i\operatorname{Tr}
-\left[
-P
-\left(
-\partial_aP\,\partial_bP
--
-\partial_bP\,\partial_aP
-\right)
-\right].
-}
-]
+$$
+\boxed{\mathcal F_{ab}=i\operatorname{Tr}\left[P\left(\partial_aP\,\partial_bP-\partial_bP\,\partial_aP\right)\right].}
+$$
 
 The implementation verifies gauge covariance of the Weyl subspace and gauge
 invariance, antisymmetry, and numerical reality of this curvature diagnostic.
@@ -1490,23 +1264,17 @@ overlap.
 
 The closed-loop transport product
 
-[
-\mathcal H
-=
-Q_{0,N-1}\cdots Q_{2,1}Q_{1,0}
-]
+$$
+\mathcal H=Q_{0,N-1}\cdots Q_{2,1}Q_{1,0}
+$$
 
 changes only by conjugation under arbitrary internal frame rotations.
 
 Therefore
 
-[
-\boxed{
-\Theta_{\rm loop}
-=
-\arg\det\mathcal H
-}
-]
+$$
+\boxed{\Theta_{\rm loop}=\arg\det\mathcal H}
+$$
 
 is independent of arbitrary eigensolver basis choices.
 
@@ -1524,15 +1292,9 @@ Modules:
 
 For sufficiently small rectangular loops,
 
-[
-\boxed{
-\Theta_{\rm loop}
-\simeq
-\mathcal F_{ab}
-\,\Delta\lambda^a
-\,\Delta\lambda^b.
-}
-]
+$$
+\boxed{\Theta_{\rm loop}\simeq\mathcal F_{ab}\,\Delta\lambda^a\,\Delta\lambda^b.}
+$$
 
 The independently constructed differential curvature and discrete loop
 holonomy agree in the shrinking-loop limit.
@@ -1552,39 +1314,33 @@ Modules:
 For a GW-modified Weyl basis (V) and opposite ordinary barred chiral basis
 (overline V),
 
-[
-M
-=
-\overline V^\dagger D V.
-]
+$$
+M=\overline V^\dagger D V.
+$$
 
 Under internal basis rotations,
 
-[
-V\to VU,
-\qquad
-\overline V\to\overline V\overline U,
-]
+$$
+V\to VU,\qquad \overline V\to\overline V\overline U,
+$$
 
 the finite Weyl block transforms as
 
-[
-M
-\to
-\overline U^\dagger M U.
-]
+$$
+M\to\overline U^\dagger M U.
+$$
 
 Thus
 
-[
+$$
 |\det M|
-]
+$$
 
 is basis independent, while
 
-[
+$$
 \arg\det M
-]
+$$
 
 shifts by the internal basis determinant phases.
 
@@ -1596,19 +1352,9 @@ This makes the remaining measure problem precise rather than hiding it.
 
 The repository has now advanced through:
 
-[
-D_{\rm overlap}
-\rightarrow
-\widehat P_\pm
-\rightarrow
-\text{Weyl subspace}
-\rightarrow
-\mathcal F
-\rightarrow
-\mathcal H
-\rightarrow
-\det M.
-]
+$$
+D_{\rm overlap}\rightarrow\widehat P_\pm\rightarrow\text{Weyl subspace}\rightarrow\mathcal F\rightarrow\mathcal H\rightarrow\det M.
+$$
 
 The next genuinely unresolved chiral tasks are:
 
@@ -1739,11 +1485,11 @@ The project is now significantly beyond a classical field simulator, but it rema
 ## Minimal local transition checkpoint
 
 The primitive ontology now has a first explicit local Hamiltonian bridge in
-\`src/matrix_local_transition.py\`.
+`src/matrix_local_transition.py`.
 
 The candidate law is
 
-\[
+$
 H
 =
 \sum_x\frac{\Pi_x^2}{2I}
@@ -1753,7 +1499,7 @@ H
 \left[
 1-\cos(\phi_y-\phi_x+\theta_{xy})
 \right].
-\]
+$
 
 Verified internal properties include:
 
@@ -1762,7 +1508,7 @@ Verified internal properties include:
 - antisymmetric pairwise momentum transfer;
 - continuous-time total phase-momentum conservation;
 - weak-field graph-Laplacian dynamics;
-- characteristic lattice speed \(c_{\rm lat}=\sqrt{\kappa/I}\);
+- characteristic lattice speed $c_{\rm lat}=\sqrt{\kappa/I}$;
 - bounded energy error under the tested symplectic integration regime.
 
 This does not supersede the richer classical matter and gauge systems. It
