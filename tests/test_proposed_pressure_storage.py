@@ -123,6 +123,7 @@ def test_invalid_or_unresolved_networks_reject(c, g, b):
 
 
 @pytest.mark.parametrize("pressure,time", [([1], 1), ([1, np.nan], 1), ([True, False], 1),
+    ([1, 2], np.complex128(1+2j)), ([1, 2], np.complex128(1+0j)),
     ([1, 2], True), ([1, 2], -1), ([1, 2], np.inf), ([1, 2], [1]), ([1e308, -1e308], 1)])
 def test_invalid_or_overflowing_states_reject(pressure, time):
     with pytest.raises(ValueError):

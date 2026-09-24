@@ -79,4 +79,4 @@ python -m pytest tests/test_proposed_pressure_storage.py tests/test_proposed_pip
 
 The focused tests cover analytic two-reservoir decay and integrated loss; independently integrated three-node dynamics and work; component-wise conservation; isolated nodes and zero links; orientation reversal; common-pressure shifts; passive energy and pressure bounds; all endpoint choices; exact sine/cosine nodal shapes; second-order acoustic convergence; the half-fundamental control; geometry/speed scaling; invalid inputs and bounded allocations. They validate the declared mathematical models and their ordinary-scale numerical implementation, without supplying a physical fit to Russell's apparatus or the Universal Matrix geometry.
 
-Recorded verification on 2026-09-24: **75 focused tests passed**. Both demonstration entry points also executed successfully.
+Recorded verification on 2026-09-24: **79 focused tests passed**. Both demonstration entry points also executed successfully. Complex NumPy scalar lengths, speeds and times are explicitly rejected before conversion to real values.

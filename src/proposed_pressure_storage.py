@@ -30,7 +30,7 @@ def _array(value, name, ndim):
 
 
 def _time(value):
-    if isinstance(value, (bool, np.bool_)) or not np.isscalar(value):
+    if isinstance(value, (bool, np.bool_)) or not np.isscalar(value) or np.iscomplexobj(value):
         raise ValueError("time_s must be a finite nonnegative real scalar")
     try:
         result = float(value)

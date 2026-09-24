@@ -87,6 +87,7 @@ def test_endpoint_reversal_and_length_speed_scaling():
     {"length_m": 0}, {"length_m": -1}, {"length_m": True}, {"length_m": [1]},
     {"length_m": float("nan")}, {"sound_speed_m_s": float("inf")},
     {"sound_speed_m_s": 0}, {"sound_speed_m_s": 1j}, {"left_end": "sealed"},
+    {"length_m": np.complex128(1+2j)}, {"sound_speed_m_s": np.complex128(343+0j)},
     {"right_end": False}, {"length_m": 1e-308, "sound_speed_m_s": 1e308},
     {"length_m": 1e308, "sound_speed_m_s": 1e-308},
 ])

@@ -14,7 +14,7 @@ MAX_INTERVALS = 256
 
 
 def _positive(value, name):
-    if isinstance(value, (bool, np.bool_)) or not np.isscalar(value):
+    if isinstance(value, (bool, np.bool_)) or not np.isscalar(value) or np.iscomplexobj(value):
         raise ValueError(f"{name} must be a positive finite real scalar")
     try:
         result = float(value)
