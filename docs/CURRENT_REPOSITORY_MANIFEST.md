@@ -395,6 +395,7 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 - `src/toroidal_framed_edge_assembly.py`
 - `src/toroidal_global_routing.py`
 - `src/toroidal_smooth_bends.py`
+- `src/toroidal_incident_overlap_audit.py`
 
 
 ## Graph-to-toroidal flux bundle
@@ -483,3 +484,14 @@ profile and matches the adjacent straight fields.
 
 Primary verification: `tests/test_toroidal_smooth_bends.py`.
 Primary note: `docs/toroidal_smooth_bends_v0.1.md`.
+
+
+## Same-face incident connector overlap audit
+
+`src/toroidal_incident_overlap_audit.py` measures annular interval overlap for
+nonzero graph edges sharing one junction face. It confirms that the present
+common-channel transition loses disjointness before the channel endpoint even
+though each connector separately preserves flux.
+
+Primary verification: `tests/test_toroidal_incident_overlap_audit.py`.
+Primary note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
