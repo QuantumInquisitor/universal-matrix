@@ -128,3 +128,8 @@ different destinations. The next small audit is compatibility of these
 shared routed return shells with the existing junction/connector endpoint
 contract. Recursive topology and dormant-path semantics remain separate
 open questions. No dynamics or physical units are introduced.
+
+Follow-up: `docs/toroidal_shared_return_connectors_v0.1.md` now places the
+existing junction/connector transitions into this static reference and
+checks the assembled field and component interiors. The motion and general
+fan-out limitations above remain unchanged.

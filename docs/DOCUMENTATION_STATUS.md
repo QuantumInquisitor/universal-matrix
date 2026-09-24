@@ -134,7 +134,8 @@ Selected current geometry and routing notes:
 | `docs/toroidal_sampling_reliability_v0.1.md` | Current finite-grid reliability audit reproducing a missed collision with shifted and denser sampling; no-detection results are not clearance certificates. |
 | `docs/toroidal_inversion_control_v0.1.md` | Current inside-out endpoint control: reversible spherical inversion, explicit flux orientation, retained collision witnesses, and a singular straight-interpolation obstruction; no safe motion or collision repair claimed. |
 | `docs/toroidal_fixed_interface_obstruction_v0.1.md` | Current fixed-interface obstruction: two analytic face witnesses rule out bend-only deformations fixing the internal joins and neighboring shells in the reference geometry; no global clearance claim. |
-| `docs/toroidal_shared_return_route_v0.1.md` | Current opt-in shared-centerline endpoint for the two Vesica return tubes, with separated shells and conservative piece bounds; the simple transition still collides and full connector embedding remains open. |
+| `docs/toroidal_shared_return_route_v0.1.md` | Current opt-in shared-centerline endpoint for the two Vesica return tubes, with separated shells and conservative piece bounds; the simple transition still collides. Connector integration is covered by the follow-up below. |
+| `docs/toroidal_shared_return_connectors_v0.1.md` | Current static Vesica assembly placing existing transitions between junctions and shared routed tubes, with matching global fields and interior-disjointness checks; intended boundary contact is allowed and safe motion/general fan-out remain open. |
 
 ## Historical or provenance documents
 

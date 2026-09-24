@@ -645,11 +645,25 @@ and straight sections onto the outer return's centerline while retaining
 distinct annular shells, currents, and junction frames. The endpoint has
 conservative piece bounds separating the two routed return tubes from each
 other and the unchanged routes. The simple interpolating family still
-collides, and a full junction/connector embedding remains unverified.
+collides. Junction/connector integration is covered by the follow-up below.
 Existing routing builders are unchanged.
 
 Primary verification: `tests/test_toroidal_shared_return_route.py`.
 Primary note: `docs/toroidal_shared_return_route_v0.1.md`.
+
+
+## Connected shared return endpoint
+
+`src/toroidal_shared_return_connectors.py` places the eight existing Piola
+transitions between the Vesica junction ports and shortened shared-route
+channels. Proper rotations preserve signed currents in both axial
+directions. A global current evaluator selects one matching field at each
+shared face. Conservative boxes and coaxial radial-order checks exclude
+overlapping component interiors while allowing intended boundary contact.
+This remains an opt-in static reference, not general fan-out or a safe motion.
+
+Primary verification: `tests/test_toroidal_shared_return_connectors.py`.
+Primary note: `docs/toroidal_shared_return_connectors_v0.1.md`.
 
 
 ## Canonical mod-9 quotient audit
