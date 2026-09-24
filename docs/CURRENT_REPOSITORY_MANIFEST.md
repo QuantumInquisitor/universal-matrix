@@ -694,6 +694,20 @@ uncertified.
 Primary verification: `tests/test_toroidal_junction_bore_passage.py`.
 Primary note: `docs/toroidal_junction_bore_passage_v0.1.md`.
 
+## Downstream attachment from the junction bore
+
+`src/toroidal_bore_downstream.py` extends the local C bore transit through an
+inner annulus along the existing C-to-A route, ending at A's original edge-0
+port. The optional fixed reference inventories all pairs involving the new
+partial route, its interfaces, positive Jacobian bounds and exposed boundaries.
+It excludes the original edge-0 route. B's edge-0 port and the new transit inlet
+remain open, so their opposite total fluxes do not establish a closed graph.
+Retained branch collisions, upstream access and motion remain separate gates.
+
+Primary verification: `tests/test_toroidal_bore_downstream.py` and
+`tests/test_toroidal_bore_downstream_adversarial.py`.
+Primary note: `docs/toroidal_bore_downstream_v0.1.md`.
+
 
 ## Canonical mod-9 quotient audit
 
