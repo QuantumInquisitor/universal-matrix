@@ -1489,7 +1489,7 @@ The primitive ontology now has a first explicit local Hamiltonian bridge in
 
 The candidate law is
 
-$
+$$
 H
 =
 \sum_x\frac{\Pi_x^2}{2I}
@@ -1499,7 +1499,7 @@ H
 \left[
 1-\cos(\phi_y-\phi_x+\theta_{xy})
 \right].
-$
+$$
 
 Verified internal properties include:
 
