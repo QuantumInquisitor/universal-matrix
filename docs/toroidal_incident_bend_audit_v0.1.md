@@ -58,18 +58,24 @@ current global routing order is insufficient for incident edges.
 The nonincident collision certificate remains valid for the pairs it was
 designed to cover.
 
-## Next gate
+## Follow-up gate
 
-A separate-axis fan-out is now required.
+This audit establishes a no-fit for the tested compact separated-shell
+parameters. It does not establish that every possible shell spacing and bend
+radius must collide.
 
-Every same-face incident edge must leave the junction on its own spatial axis
-before any large-radius bend begins. The fan-out must:
+The follow-up scan in `src/toroidal_bend_spacing_scan.py` preserves the same
+graph, signed fluxes, annular junctions, Piola connectors, and smooth-bend maps
+while varying shell gap and bend-radius margin. Its deterministic 25-point
+Vesica grid contains at least one collision-free sample.
 
-- preserve each annular port profile and signed flux;
-- use positive-Jacobian divergence-free connector maps;
-- assign pairwise separated axes;
-- join the existing edge-specific channel shells;
-- preserve the global nonincident collision certificate.
+The next gate is therefore optimization before redesign:
 
-Only after the fan-out is verified should the smooth global routing and unified
-field-sampler program resume.
+- map the collision/no-collision boundary;
+- test dimensionless clearance ratios across Flower/Tree scales and recursive
+  depths;
+- derive a conservative scale-consistent clearance condition;
+- retain separate-axis fan-out as the fallback if no compact scale-consistent
+  region survives.
+
+See `docs/toroidal_bend_spacing_scan_v0.1.md`.
