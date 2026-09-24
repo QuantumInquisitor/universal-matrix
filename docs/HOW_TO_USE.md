@@ -62,8 +62,8 @@ uv run pytest -q tests/test_canonical_kernel.py tests/test_property_invariants.p
 
 Use:
 
-- \`src/matrix_local_transition.py\`
-- \`docs/matrix_local_transition_v0.1.md\`
+- `src/matrix_local_transition.py`
+- `docs/matrix_local_transition_v0.1.md`
 
 Focused verification:
 
@@ -71,7 +71,7 @@ Focused verification:
 uv run pytest -q tests/test_matrix_local_transition.py
 ~~~
 
-The transition model is dimensionless. Its \`lattice_wave_speed\` is measured in
+The transition model is dimensionless. Its `lattice_wave_speed` is measured in
 lattice sites per model-time unit and must not be presented as a measured
 physical speed without an independently justified unit map.
 
