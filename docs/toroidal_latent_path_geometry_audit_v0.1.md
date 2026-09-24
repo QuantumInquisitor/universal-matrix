@@ -53,6 +53,38 @@ zero-current weave paths at ring depth $r$.
 
 The focused audit evaluates $r=1,2,3$.
 
+## Measured checkpoint
+
+Running `python -m src.toroidal_latent_path_geometry_audit` with the default
+geometry gives:
+
+| Ring depth | Active edges | Latent edges | Latent ports | Active center shift | Minimum active port-width ratio |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 12 | 6 | 12 | -3 | 0.5 |
+| 2 | 48 | 18 | 36 | -9 | 0.5 |
+| 3 | 108 | 36 | 72 | -18 | 0.5 |
+
+The center shift is uniform across matching active channels at each depth.
+Their major-radius residual is zero, while the maximum absolute port-width
+difference is 0.5 in the implementation's coordinate units at every tested
+depth. Thus the measured latent-path effect is material: at least one active
+port is half as wide when dormant paths are retained.
+
+The current Tree ordering appends latent weave edges after active radial edges.
+For that ordering, retaining $L$ latent channels changes the common stack
+midpoint and gives
+
+$$
+\Delta z=-\frac{L}{2}(2w+g_z),
+$$
+
+where $w$ is shell width and $g_z$ is axial gap. This is a property of the
+current allocation rule, not an order-independent topology theorem. Focused
+controls verify current reversal and magnitude changes, nondefault axial
+spacing, and independence of this displacement from radial shell gap. The
+audit uses an absolute current tolerance of $10^{-12}$; radial currents at or
+below that magnitude are rejected rather than treated as active support.
+
 ## Evidence boundary
 
 This audit can establish whether latent zero-current pathways alter active
