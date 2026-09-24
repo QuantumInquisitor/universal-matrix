@@ -28,6 +28,7 @@ A historical file never overrides the current canonical specification or tested 
 | `README.md` | Current repository overview, capabilities, licensing, and usage entry point. |
 | `white_paper.md` | Current scientific and mathematical preprint, Version 0.6. |
 | `ARCHITECTURE.md` | Current software and subsystem architecture. |
+| `docs/DOCUMENTATION_STATUS.md` | Current documentation authority hierarchy, status classification, and maintenance policy. |
 | `docs/canonical_spec_v0.4.md` | Canonical finite-kernel specification. |
 | `docs/HOW_TO_USE.md` | Current installation, API, verification, and safety usage guide. |
 | `docs/CURRENT_REPOSITORY_MANIFEST.md` | Current high-level repository and subsystem map. |
