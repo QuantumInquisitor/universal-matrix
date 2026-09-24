@@ -838,7 +838,7 @@ Verification: `tests/test_toroidal_framed_edge_assembly.py`.
 
 `src/toroidal_global_routing.py` rigidly re-places the annular junctions and
 assigns every framed graph edge a deterministic orthogonal 3D centerline. Each
-edge receives a unique y corridor and z level, preserves the +z endpoint frame,
+edge receives a unique y corridor and z level, preserves the signed endpoint frame,
 and is audited with a conservative tube envelope.
 
 The implementation verifies positive clearance between all nonincident routed
