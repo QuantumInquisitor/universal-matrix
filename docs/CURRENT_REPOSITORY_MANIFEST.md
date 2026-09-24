@@ -396,6 +396,7 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 - `src/toroidal_global_routing.py`
 - `src/toroidal_smooth_bends.py`
 - `src/toroidal_incident_overlap_audit.py`
+- `src/toroidal_separated_channels.py`
 
 
 ## Graph-to-toroidal flux bundle
@@ -495,3 +496,15 @@ though each connector separately preserves flux.
 
 Primary verification: `tests/test_toroidal_incident_overlap_audit.py`.
 Primary note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
+
+
+## Edge-specific separated toroidal channel shells
+
+`src/toroidal_separated_channels.py` allocates pairwise-disjoint annular
+channel shells in edge-index order, constructs edge-specific toroidal fields,
+and reuses the annular junction and framed-edge builders. The same-face
+connector overlap audit returns zero nonzero pairs for the corrected Vesica and
+Flower/Tree connector networks.
+
+Primary verification: `tests/test_toroidal_separated_channels.py`.
+Primary note: `docs/toroidal_separated_channels_v0.1.md`.
