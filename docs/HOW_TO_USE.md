@@ -468,4 +468,4 @@ verifies straight-to-bend vector matching, positive Jacobian margin, trimmed
 straight length, and global collision certification.
 
 See `docs/toroidal_smooth_bends_v0.1.md` for the Piola derivation and the
-remaining unified-field sampler gate.
+remaining incident-overlap gate before unified field sampling.
