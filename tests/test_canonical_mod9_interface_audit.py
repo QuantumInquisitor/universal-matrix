@@ -83,17 +83,11 @@ def test_doubling_mod9_has_exact_three_orbit_partition():
 
 def test_doubling_is_an_order_six_automorphism_but_not_a_translation():
     assert sorted(doubling_mod9(r) for r in range(9)) == list(range(9))
-    assert all(
-        (lambda x: x)(
-            __import__("functools").reduce(
-                lambda value, _: doubling_mod9(value),
-                range(6),
-                r,
-            )
-        )
-        == r
-        for r in range(9)
-    )
+    for residue in range(9):
+        value = residue
+        for _ in range(6):
+            value = doubling_mod9(value)
+        assert value == residue
     assert doubling_is_translation() is False
 
 
