@@ -12,9 +12,9 @@ I am submitting the Universal Matrix manuscript and its accompanying executable 
 
 The current work begins from a finite canonical architecture consisting of a 108-state cyclic core together with six external oriented boundary directions,
 
-\[
+$$
 \mathcal A=\mathbb Z_{108}\sqcup B_6.
-\]
+$$
 
 The canonical layer is deliberately separated from later physical interpretations. Exact finite results include routing, polarity, reflection, projection, carry, collision, mixed-radix, and boundary-symmetry identities. The executable reference implementation and regression tests provide a reproducible basis for reviewing those claims.
 

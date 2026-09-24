@@ -15,9 +15,9 @@ Tests:
 
 The target condition is
 
-\[
+$$
 E/Q = m_{\rm free}.
-\]
+$$
 
 The crossing is an energetic diagnostic only. It is not treated as a universal
 nonlinear stability boundary.
@@ -26,9 +26,9 @@ nonlinear stability boundary.
 
 The procedure begins from the coarse accepted amplitudes
 
-\[
+$$
 A_0 = 0.5,0.6,0.7,0.8,0.9,1.0.
-\]
+$$
 
 After solving the full ordered branch, the code identifies the first accepted
 neighboring pair that brackets the threshold. It then inserts evenly spaced
@@ -50,26 +50,26 @@ The refinement result records:
 A companion diagnostic extracts the branch secant containing the crossing and
 reports:
 
-- \(dQ/d\omega\);
-- \(dE/dQ\);
-- midpoint \(\omega\);
-- relative error of \(dE/dQ\approx\omega\);
-- sign of \(dQ/d\omega\).
+- $dQ/d\omega$;
+- $dE/dQ$;
+- midpoint $\omega$;
+- relative error of $dE/dQ\approx\omega$;
+- sign of $dQ/d\omega$.
 
 These are retained as separate measurements.
 
 ## Current numerical target
 
 Two rounds with four interior amplitudes per round reduce the original
-\([0.9,1.0]\) central-amplitude bracket to a width of at most approximately
-\(0.004\), subject to the same continuation acceptance criteria.
+$[0.9,1.0]$ central-amplitude bracket to a width of at most approximately
+$0.004$, subject to the same continuation acceptance criteria.
 
 The exact interpolated crossing is intentionally produced by the solver and is
 not hard-coded into the implementation.
 
 ## Interpretation boundary
 
-A refined \(E/Q=m_{\rm free}\) location establishes where the present
+A refined $E/Q=m_{\rm free}$ location establishes where the present
 classical energetic binding diagnostic changes sign along this branch.
 
 It does not establish:

@@ -32,9 +32,9 @@ This makes branch identity explicit.
 
 For the default potential, the previous existence-window result requires
 
-\[
+$$
 0<\omega<1.
-\]
+$$
 
 A converged point outside that interval is rejected as a continuation seed.
 
@@ -42,7 +42,7 @@ A converged point outside that interval is rejected as a continuation seed.
 
 Using the ordered amplitudes
 
-\[
+$$
 A_0
 =
 0.5,,
@@ -51,43 +51,43 @@ A_0
 0.8,,
 0.9,,
 1.0,
-\]
+$$
 
 the continuation remains converged, nodeless, and inside the analytic frequency window.
 
 The solved frequency decreases continuously along this branch, reaching approximately
 
-\[
+$$
 \omega(A_0=1)
 \approx
 0.80015.
-\]
+$$
 
 At the final point,
 
-\[
+$$
 \frac{E}{Q}
 <
 m_{\rm free}=1.
-\]
+$$
 
 In the current normalization the representative value is approximately
 
-\[
+$$
 E/Q
 \approx
 0.9873.
-\]
+$$
 
-This is stronger than the earlier isolated representative solve at \(A_0=0.5\), which lies above the free-mass threshold.
+This is stronger than the earlier isolated representative solve at $A_0=0.5$, which lies above the free-mass threshold.
 
 ## What this establishes
 
 The repository now has a controlled nodeless charged branch containing at least one point that satisfies the energetic diagnostic
 
-\[
+$$
 E/Q<m_{\rm free}.
-\]
+$$
 
 That is a classical stability candidate.
 
@@ -109,7 +109,7 @@ The continued point should also be perturbed, because mere survival of an exactl
 ## Next creator question
 
 > Does the continued below-threshold charged solution at approximately
-> \(A_0=1\), \(\omega\approx0.80015\) remain localized under long-time
+> $A_0=1$, $\omega\approx0.80015$ remain localized under long-time
 > 3D evolution and small perturbations?
 
 That is now the highest-value particle-emergence test.

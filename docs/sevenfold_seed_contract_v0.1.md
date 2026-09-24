@@ -45,9 +45,9 @@ of radius (R/2). The largest centered circle inside any resulting Vesica has
 radius (R/4), remains inside the parent vessel, and contains the next complete
 Seed. Thus the current planar containment convention gives
 
-\[
+$$
 R_d=R_0/4^d
-\]
+$$
 
 and (12^d) distinct addresses at exact depth (d). This is a software and
 Euclidean-geometry result under the selected convention, not a measured

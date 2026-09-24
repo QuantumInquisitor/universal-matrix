@@ -10,29 +10,29 @@ A finite simulation window is evidence about the numerical classical field model
 
 The seeded continuation branch reaches a controlled point near
 
-\[
+$$
 A_0=1,
 \qquad
 \omega\approx0.80015,
-\]
+$$
 
 with
 
-\[
+$$
 E/Q<1.
-\]
+$$
 
 That radial solution is mapped onto a cubic lattice with
 
-\[
+$$
 h=0.5.
-\]
+$$
 
-The real-time dynamics uses the same \(h\) in the Laplacian, energy, charge, and radius diagnostics.
+The real-time dynamics uses the same $h$ in the Laplacian, energy, charge, and radius diagnostics.
 
 ## Mapping consistency
 
-Before evolution, the Cartesian lattice \(E/Q\) is compared with the radial continuum value.
+Before evolution, the Cartesian lattice $E/Q$ is compared with the radial continuum value.
 
 This is a discretization check.
 
@@ -49,13 +49,13 @@ The persistence report tracks
 
 The default finite-window criteria are deliberately explicit:
 
-\[
+$$
 |\Delta E/E|\le10^{-5},
-\]
+$$
 
-\[
+$$
 |\Delta Q/Q|\le10^{-10},
-\]
+$$
 
 with peak and radius remaining within ten percent of their initial values.
 
@@ -65,7 +65,7 @@ These are numerical survival criteria, not universal physical constants.
 
 A smooth localized radial perturbation is applied through
 
-\[
+$$
 \Phi\rightarrow
 \Phi
 \left[
@@ -73,17 +73,17 @@ A smooth localized radial perturbation is applied through
 \epsilon
 e^{-r^2/(2w^2)}
 \right],
-\]
+$$
 
 and the same real factor is applied to the initial momentum.
 
 The default test uses
 
-\[
+$$
 \epsilon=0.005,
 \qquad
 w=1.
-\]
+$$
 
 The perturbed configuration is then judged from its own conserved energy and charge and from whether its size and peak remain bounded.
 

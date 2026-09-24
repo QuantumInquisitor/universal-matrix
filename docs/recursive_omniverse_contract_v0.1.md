@@ -23,17 +23,17 @@ inward and outward from level zero. The three channels and 36 phases cover all
 
 The unwrapped coordinate is
 
-\[
+$$
 u = 36s + p,
-\]
+$$
 
 where `s` is scale level and `p` is phase position. Local evolution adds an
 integer number of steps to `u`. Every 36 steps returns to the same local code
 while moving to the adjacent scale:
 
-\[
+$$
 (s,p) \mapsto (s+1,p).
-\]
+$$
 
 The path therefore closes in phase but not in scale. It is a spiral recurrence,
 not a flat circular return.
@@ -43,11 +43,11 @@ not a flat circular return.
 The reciprocal mirror is `u -> -u`. It is an involution and reverses spiral
 evolution:
 
-\[
+$$
 M(M(x))=x,
 \qquad
 M(A_k(x))=A_{-k}(M(x)).
-\]
+$$
 
 This is the first exact software contract for the proposed correspondence of
 inner with outer and inward development with outward development.
@@ -56,11 +56,11 @@ The Sevenfold Seed contract now adds a separate recursive spatial mirror. A
 half-turn fixes the center, exchanges opposite ring positions, and mirrors
 each Vesica index at every depth of a nested universe address. It obeys
 
-\[
+$$
 M(M(a))=a,
 \qquad
 M(a.\mathrm{child}(i))=M(a).\mathrm{child}(M(i)).
-\]
+$$
 
 The spiral mirror and Seed mirror are compatible expressions of reciprocity,
 but they act on different state spaces. No physical identity between them is
@@ -87,9 +87,9 @@ domain. The largest circle centered in that lens is the vessel that carries
 the domain's next Seed and has half the generating-circle radius. Its contained
 radius is therefore
 
-\[
+$$
 R_{d+1}=R_d/4.
-\]
+$$
 
 This does not replace the integer spiral scale. It supplies one exact
 dimensionless geometric realization under a declared containment convention.
