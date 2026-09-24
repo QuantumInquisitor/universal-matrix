@@ -231,8 +231,8 @@ Contravariant Piola transport preserves the existing annular flux profile and
 matches the neighboring straight fields point by point.
 
 Expanded routing envelopes contain the curved volumes and retain positive
-nonincident clearance in the tested finite networks. A unified whole-network
-field sampler is still required before the routed kinematic field is complete.
+nonincident clearance in the tested finite networks. A same-face incident-connector overlap audit is still required before a
+unified whole-network field sampler can be admitted.
 No dynamics, units, or experimental interpretation are introduced here.
 
 ---
