@@ -682,6 +682,18 @@ candidate without claiming all fan-out geometries are impossible.
 Primary verification: `tests/test_toroidal_shared_prefix_fanout.py`.
 Primary note: `docs/toroidal_shared_prefix_fanout_v0.1.md`.
 
+## Local junction bore passage
+
+`src/toroidal_junction_bore_passage.py` contracts a separate annular current
+through the empty center of the unchanged C junction and its two existing
+port transitions, then expands it again. Analytic radial bounds certify
+the finite coaxial passage; the reference central gap is 0.3. The two
+transit ends remain unattached, so full fan-out and later side exit remain
+uncertified.
+
+Primary verification: `tests/test_toroidal_junction_bore_passage.py`.
+Primary note: `docs/toroidal_junction_bore_passage_v0.1.md`.
+
 
 ## Canonical mod-9 quotient audit
 
