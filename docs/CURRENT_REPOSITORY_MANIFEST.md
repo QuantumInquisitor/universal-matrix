@@ -704,3 +704,20 @@ multiplication-by-two automorphism of `Z_9`.
 
 Primary verification: `tests/test_canonical_mod9_interface_audit.py`.
 Primary note: `docs/canonical_mod9_interface_audit_v0.1.md`.
+
+## Source-tracked frequency catalog
+
+`src/frequency_source_catalog.py` validates optional historical instrument
+observations in `src/reference_data/rife_scoon_catalog.json`. The selected
+Scoon reports supply 24 frequency records, five ranges and 12 unresolved
+settings. Exact decimal unit conversion and explicit role selection preserve
+source memberships and keep carrier, modulation and spectral observations
+distinct. Unknown measurement uncertainty remains unknown.
+
+This is a source-data audit, not a biological resonance map or a piezoelectric
+model. Physical time/length scales, material tensors, boundaries, drive, losses
+and independently measured response remain required. No hardware output or
+canonical-state change is introduced.
+
+Primary verification: `tests/test_frequency_source_catalog.py`.
+Primary note: `docs/frequency_source_audit_v0.1.md`.
