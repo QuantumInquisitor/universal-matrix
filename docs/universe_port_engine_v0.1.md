@@ -24,9 +24,9 @@ The governing distinction is:
 Let a parent vessel have center (C) and radius (R). The contained Seed uses
 seven circles of radius
 
-$
+$$
 r_s=\frac{R}{2}.
-$
+$$
 
 One Seed circle is centered at (C). The other six centers lie on a regular
 hexagonal ring of radius (r_s). Every Seed circle is therefore contained in
@@ -45,21 +45,21 @@ Those are the same twelve indexed Vesicas already used by
 For two equal Seed circles with radius (r_s) and center separation (r_s),
 the Vesica has:
 
-$
+$$
 L_{\mathrm{minor}}=r_s,
 \qquad
 L_{\mathrm{major}}=\sqrt{3}\,r_s,
-$
+$$
 
 and lens area
 
-$
+$$
 A_{\mathrm{lens}}
 =
 \left(
 \frac{2\pi}{3}-\frac{\sqrt{3}}{2}
 \right)r_s^2.
-$
+$$
 
 The midpoint between the two circle centers is the neutral center of the
 port. The two circle-intersection points are the opposite cusp or funnel
@@ -68,17 +68,17 @@ points.
 The largest circle centered at the neutral point and contained in the Vesica
 has radius
 
-$
+$$
 r_u=\frac{r_s}{2}.
-$
+$$
 
 This circle is the internal vessel that carries the next complete Seed. It does
 not replace the Vesica lens as the addressed universe domain. Because
 (r_s=R/2), its radius is
 
-$
+$$
 R_{d+1}=\frac{R_d}{4}.
-$
+$$
 
 This resolves an important scale ambiguity. A Vesica's centered child circle
 is half the radius of its two generating circles, but the generating circles
@@ -88,11 +88,11 @@ depth.
 
 At depth (d),
 
-$
+$$
 R_d=\frac{R_0}{4^d},
 \qquad
 N_d=12^d,
-$
+$$
 
 where (R_d) is the internal recursion-vessel radius and (N_d) is the number
 of distinct Vesica addresses at exactly that depth. The software imposes no
@@ -107,22 +107,22 @@ convention. It is not a derived physical ratio between observed universes.
 Outward Flower growth is deliberately separate from inward containment. A
 Flower of radius (n) is the hexagonal disk
 
-$
+$$
 \max(|q|,|r|,|q+r|)\le n
-$
+$$
 
 on an axial lattice whose neighboring circle centers are one circle radius
 apart. It contains
 
-$
+$$
 C_n=1+3n(n+1)
-$
+$$
 
 equal circles and
 
-$
+$$
 V_n=9n^2+3n
-$
+$$
 
 neighboring Vesica interfaces. Thus:
 
@@ -149,17 +149,17 @@ into its inward reciprocal.
 The dynamic adapter uses the existing 36-tick polarity clock. For parent depth
 (ell),
 
-$
+$$
 \epsilon_\ell=(-1)^\ell,
 \qquad
 \phi_t=\frac{\pi t}{18},
-$
+$$
 
-$
+$$
 p_\ell(t)=\epsilon_\ell\cos\phi_t,
 \qquad
 s_\ell(t)=\epsilon_\ell\sin\phi_t.
-$
+$$
 
 The first carrier marks outward, neutral, or inward polarity. The quadrature
 carrier marks transfer into the child, balance, or transfer into the parent.
@@ -194,13 +194,13 @@ uncertainty among tetra-Terryen, Huntyen, Mira, Aubreyen, and Heavenly.
 
 At every recursive depth, the engine verifies:
 
-$
+$$
 M(M(a))=a,
-$
+$$
 
-$
+$$
 C(M(a))=2C_0-C(a),
-$
+$$
 
 and preserves the child radius. The neutral center, both ordered cusp points,
 and the complete recursive domain mirror through the root center. Scale parity
