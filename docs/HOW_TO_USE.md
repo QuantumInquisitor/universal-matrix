@@ -437,3 +437,19 @@ currents.
 
 See `docs/toroidal_framed_edge_assembly_v0.1.md` for the local frame rule and
 remaining global-routing gate.
+
+
+## Build the global collision-audited toroidal routing
+
+```sh
+python -m pytest -q tests/test_toroidal_global_routing.py
+```
+
+Build the annular junction network and framed edge network first, then call
+`build_global_toroidal_routing(...)`. The result rigidly places all
+junctions, assigns one deterministic routed centerline to every graph edge,
+preserves the +z endpoint frames, and audits nonincident edge and junction
+clearance.
+
+See `docs/toroidal_global_routing_v0.1.md` for the routing construction and
+the remaining smooth-bend field gate.
