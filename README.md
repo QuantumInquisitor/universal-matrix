@@ -195,6 +195,7 @@ Primary notes:
 - [docs/toroidal_connector_topology_v0.1.md](docs/toroidal_connector_topology_v0.1.md)
 - [docs/toroidal_separated_channels_v0.1.md](docs/toroidal_separated_channels_v0.1.md)
 - [docs/toroidal_incident_bend_audit_v0.1.md](docs/toroidal_incident_bend_audit_v0.1.md)
+- [docs/toroidal_bend_spacing_scan_v0.1.md](docs/toroidal_bend_spacing_scan_v0.1.md)
 - [docs/MATRIX_ENGINE_WORK_QUEUE.md](docs/MATRIX_ENGINE_WORK_QUEUE.md)
 
 ### 5. Gauge, Dirac and chiral lattice research
@@ -317,7 +318,7 @@ The broader [src/api.py](src/api.py) surface remains a compatibility and experim
 | Rao great-circle reference | Implemented for one corrected reference row |
 | Meru geometry | Explicit conical candidate implemented, independent historical metric remains open |
 | Broader Rao family | Open |
-| Toroidal whole-network field | Incident bend clearance remains open |
+| Toroidal whole-network field | A collision-free spacing/curvature point exists in the tested grid; boundary mapping and scale-consistency remain open |
 | Physical normalization | Open derivation |
 | Six-gate/sevenfold physical coupling | Open derivation |
 | Particle interpretation | Open physical identification |
