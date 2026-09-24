@@ -948,3 +948,18 @@ compatibility.
 
 Primary verification: `tests/test_toroidal_annular_junction.py`.
 Primary note: `docs/toroidal_annular_junction_v0.1.md`.
+
+
+## Framed toroidal edge assemblies
+
+`src/toroidal_framed_edge_assembly.py` composes annular junction ports,
+general annular Piola transitions, and a straightened flux-equivalent
+cut-open toroidal chart into one local edge assembly. Internal interface
+vectors agree pointwise and all adjacent outward fluxes cancel.
+
+The edge-local axial frame uses `sign(current)` to align negative-current
+assemblies with the fixed axial direction of the annular junction fields while
+retaining the signed graph flux.
+
+Primary verification: `tests/test_toroidal_framed_edge_assembly.py`.
+Primary note: `docs/toroidal_framed_edge_assembly_v0.1.md`.

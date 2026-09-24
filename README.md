@@ -631,6 +631,7 @@ Start with:
 - `docs/toroidal_junction_control_volume_v0.1.md`
 - `docs/toroidal_connector_topology_v0.1.md`
 - `docs/toroidal_annular_junction_v0.1.md`
+- `docs/toroidal_framed_edge_assembly_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
@@ -810,3 +811,22 @@ framing and collision-free source/edge/target placement remain open.
 
 Technical note: `docs/toroidal_annular_junction_v0.1.md`.
 Verification: `tests/test_toroidal_annular_junction.py`.
+
+
+## Framed toroidal edge assemblies
+
+`src/toroidal_framed_edge_assembly.py` builds one complete local five-part
+path for every graph edge: source annular port, inlet Piola transition,
+straightened cut-open toroidal channel, exit transition, and target annular
+port. The signed graph current is preserved across every interface.
+
+Positive edges use the local axial frame directly. Negative edges apply one
+axial frame flip at the junction interfaces, preserving vector agreement
+without changing the signed flux. Zero-current edges remain explicit zero-field
+assemblies.
+
+This closes the edge-local kinematic path. Global rigid placement, bends, and
+collision-free network routing remain open.
+
+Technical note: `docs/toroidal_framed_edge_assembly_v0.1.md`.
+Verification: `tests/test_toroidal_framed_edge_assembly.py`.

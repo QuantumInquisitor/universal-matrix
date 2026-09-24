@@ -421,3 +421,19 @@ contribution and whose profile matches the annular Piola connector.
 
 See `docs/toroidal_annular_junction_v0.1.md` for the cumulative-flux and
 streamfunction construction.
+
+
+## Build local framed toroidal edge assemblies
+
+```sh
+python -m pytest -q tests/test_toroidal_framed_edge_assembly.py
+```
+
+After building an annular junction network, call
+`build_framed_edge_network(...)`. The result creates one local five-part
+assembly per graph edge and checks signed flux cancellation, internal vector
+continuity, and endpoint vector agreement for positive, negative, and zero
+currents.
+
+See `docs/toroidal_framed_edge_assembly_v0.1.md` for the local frame rule and
+remaining global-routing gate.

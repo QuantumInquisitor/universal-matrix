@@ -392,6 +392,7 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 - `src/toroidal_junction_control_volume.py`
 - `src/toroidal_connector_topology.py`
 - `src/toroidal_annular_junction.py`
+- `src/toroidal_framed_edge_assembly.py`
 
 
 ## Graph-to-toroidal flux bundle
@@ -442,3 +443,15 @@ profile exactly.
 
 Primary verification: `tests/test_toroidal_annular_junction.py`.
 Primary note: `docs/toroidal_annular_junction_v0.1.md`.
+
+
+## Framed toroidal edge assemblies
+
+`src/toroidal_framed_edge_assembly.py` composes source annular junction ports,
+general Piola transitions, a straightened cut-open toroidal chart, and target
+annular junction ports into one local edge path. It verifies pointwise vector
+continuity, signed interface-flux cancellation, and endpoint agreement under a
+one-bit current-sign frame rule.
+
+Primary verification: `tests/test_toroidal_framed_edge_assembly.py`.
+Primary note: `docs/toroidal_framed_edge_assembly_v0.1.md`.
