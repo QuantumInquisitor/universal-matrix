@@ -244,3 +244,5 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 | `docs/toroidal_framed_edge_assembly_v0.1.md` | Current local five-part framed graph-edge assembly joining annular junction ports, Piola transitions, and flux-equivalent cut-open toroidal channels. |
 
 | `docs/toroidal_global_routing_v0.1.md` | Current deterministic global rigid placement and collision-audited routed centerline contract for framed toroidal graph edges. |
+
+| `docs/toroidal_smooth_bends_v0.1.md` | Current positive-Jacobian annular quarter-bend map with Piola-transported flux profile and global collision-envelope certification. |
