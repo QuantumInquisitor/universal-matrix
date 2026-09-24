@@ -17,13 +17,13 @@ The v0.2 transition joins those layers while adding a hard safeguard against dou
 
 For an independent local phase phi_x and canonical polarity bit p_x in {0,1}, define
 
-\[
+$$
 \phi_x^{\mathrm{eff}} = \phi_x + \pi p_x.
-\]
+$$
 
 Then each nearest-neighbor rotor link uses
 
-\[
+$$
 \Delta_{xy}
 =
 \phi_y^{\mathrm{eff}}
@@ -31,11 +31,11 @@ Then each nearest-neighbor rotor link uses
 \phi_x^{\mathrm{eff}}
 +
 \theta_{xy}.
-\]
+$$
 
 The interaction is
 
-\[
+$$
 H_{\mathrm{int}}
 =
 \kappa
@@ -43,16 +43,16 @@ H_{\mathrm{int}}
 \left[
 1-\cos(\Delta_{xy})
 \right].
-\]
+$$
 
 The kinetic term remains
 
-\[
+$$
 H_{\mathrm{kin}}
 =
 \sum_x
 \frac{\pi_x^2}{2I}.
-\]
+$$
 
 ## Exact polarity consequences
 
@@ -69,11 +69,11 @@ A local branch flip changes only the links incident on the flipped site.
 
 The gauge convention remains
 
-\[
+$$
 \phi_x \rightarrow \phi_x + \alpha_x,
-\]
+$$
 
-\[
+$$
 \theta_{xy}
 \rightarrow
 \theta_{xy}
@@ -81,7 +81,7 @@ The gauge convention remains
 \alpha_x
 -
 \alpha_y.
-\]
+$$
 
 The canonical branch bit is not a gauge variable. Therefore Delta_xy is gauge invariant.
 
@@ -105,9 +105,9 @@ The continuous-time candidate Hamiltonian uses the same nearest-neighbor rotor f
 
 The weak-field lattice speed remains
 
-\[
+$$
 c_{\mathrm{lat}}^2 = \frac{\kappa}{I}.
-\]
+$$
 
 No mapping from lattice units to SI length or time is asserted.
 
