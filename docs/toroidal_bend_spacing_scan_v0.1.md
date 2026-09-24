@@ -23,22 +23,24 @@ bend margin = 0.25.
 
 The scan reproduces the known incident bend/straight collision at that point.
 
-## Collision-free existence point
+## First widened candidate is still a no-fit
 
-A deliberately wider shell spacing with a tighter positive-Jacobian bend,
+The first deliberately widened test point,
 
 shell gap = 3.0,
 
 bend margin = 0.05,
 
-produces no sampled incident bend/straight collision in the Vesica reference
-at the higher-resolution audit used by the test suite.
+still produces two sampled incident bend/straight collisions in the Vesica
+reference. The maximum penetration is approximately 0.196 in the current
+dimensionless geometry, and reversing the signed graph current does not remove
+the obstruction.
 
-The same candidate remains collision-free when the signed graph current is
-reversed.
+Therefore moderate radial widening plus a tighter bend is not sufficient.
 
-This is an existence result. It does not establish that these numerical values
-are optimal, physically meaningful, or compact.
+The current branch now expands the search to much larger shell gaps and smaller
+positive bend margins before deciding whether spacing alone can ever remove
+the collision.
 
 ## Interpretation
 
@@ -56,8 +58,8 @@ later adaptive or recursive routing law.
 Established here:
 
 - reproduction of the earlier colliding reference;
-- existence of at least one collision-free Vesica spacing/bend candidate;
-- current-reversal invariance of that existence result;
+- persistence of the collision at shell gap 3.0 and bend margin 0.05;
+- orientation independence of that failed candidate;
 - deterministic finite parameter-grid scanning.
 
 Not established here:
