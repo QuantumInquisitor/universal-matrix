@@ -203,6 +203,23 @@ no dynamics or physical normalization follows from the local assembly.
 
 ---
 
+
+
+### Global routed toroidal placement
+
+`src/toroidal_global_routing.py` adds a deterministic global Euclidean
+placement for the local framed toroidal edge assemblies. Annular junctions are
+translated rigidly and every edge receives unique y and z routing lanes. The
+endpoint +z frames are preserved and conservative tube envelopes are checked
+against all nonincident edges and nonincident junctions.
+
+This closes the first global collision-avoidance gate for the tested finite
+networks. The route corners remain geometric only. A smooth
+positive-Jacobian bend map with Piola-transported current is still required
+before the routed network is a globally continuous divergence-free field.
+
+---
+
 ## 3. Abelian U(1) gauge sector
 
 Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
