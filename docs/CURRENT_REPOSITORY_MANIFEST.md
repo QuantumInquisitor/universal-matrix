@@ -767,3 +767,9 @@ The optional `src/microplane_projection_reference.py` checks normal/tangential p
 ## Proposed scalar standing-wave experiment
 
 `src/proposed_scalar_wave_control.py` introduces our explicit M4-inspired working hypothesis for a parametrically driven ring mode. It tests linear standing-mode growth, damping and off-resonance controls, a drive/work/loss balance, and joint space/time scaling. A fixed material gap supplies a negative similarity control. The equations and assumptions are declared in `docs/proposed_scalar_wave_control_v0.1.md`; they are not attributed to the unverified social source. Nonlinear pattern selection and saturation remain future extensions.
+
+## Proposed pressure-storage and acoustic controls
+
+`src/proposed_pressure_storage.py` models a passive linear fluid-compliance network with explicit SI parameters, separate equilibria for disconnected components, and energy/volume balance audits. `src/proposed_pipe_acoustics.py` compares analytic ideal cylindrical-pipe modes with a consistent-mass finite-element calculation, including explicit open/closed endpoints and the closed/closed static mode. The fixed-length one-end-capping control halves the fundamental.
+
+These optional models use synthetic examples and preserve the canonical geometry and clock. They do not reconstruct Russell apparatus or assign frequencies to unresolved historical rows. See `docs/proposed_storage_acoustics_v0.1.md`; focused verification is in `tests/test_proposed_pressure_storage.py` and `tests/test_proposed_pipe_acoustics.py`.
