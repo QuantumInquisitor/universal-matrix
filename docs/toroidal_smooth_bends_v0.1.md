@@ -106,11 +106,13 @@ components.
 
 ## Next gate
 
-The remaining step before dynamics is a unified field sampler over the complete
-global network: junction interiors, endpoint Piola transitions, straight
-annular segments, and smooth bends. It must prove single-valued vector
-continuity at every shared interface and zero divergence away from those
-measure-zero interfaces.
+Before a unified field sampler can be admitted, incident edges sharing one
+junction face must be audited geometrically. Their annular port bands are
+disjoint at the junction surface, but the present framed connectors expand
+toward the same channel annulus on the same local axis. That can create
+multi-valued overlap even though the nonincident global collision audit passes.
 
-Once that unified kinematic field is verified, the project can open a separate
-dynamics and physical-normalization program.
+The next gate is therefore an explicit same-face incident-connector overlap
+audit followed by a disjoint fan-out or separated-channel construction. Only
+after all incident and nonincident supports are compatible should one unified
+whole-network field sampler be built.
