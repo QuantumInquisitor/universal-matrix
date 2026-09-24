@@ -36,9 +36,9 @@ For source axis point S and target axis point T, the seven route points are
 6. sideways back to y=0 at -H_e;
 7. T.
 
-The first and final segments both point in global +z.  Therefore the endpoint
-axis frames agree exactly with the annular junction vector convention already
-verified by the framed-edge assembly.
+The first and final segments follow the framed assembly's signed axial rule:
++z for positive or zero current and -z for negative current. Therefore the
+endpoint geometry agrees exactly with the annular junction frame convention.
 
 ## Conservative routed envelopes
 
@@ -74,7 +74,7 @@ The implementation verifies:
 
 - one global rigid translation per annular junction;
 - one routed centerline per framed graph edge;
-- exact +z endpoint tangent agreement;
+- exact signed endpoint tangent agreement;
 - unique y and z routing lanes;
 - positive route lengths;
 - no nonincident edge-envelope collisions in Vesica and Flower/Tree examples;
