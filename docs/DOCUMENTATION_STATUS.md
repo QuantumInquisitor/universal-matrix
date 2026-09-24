@@ -250,3 +250,5 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 | `docs/toroidal_incident_overlap_audit_v0.1.md` | Current same-face incident connector overlap no-fit, including first-overlap progress and affected-node diagnostics. |
 
 | `docs/toroidal_separated_channels_v0.1.md` | Current edge-specific ordered annular channel-shell construction removing same-face connector overlap while preserving signed cut flux. |
+
+| `docs/toroidal_incident_bend_audit_v0.1.md` | Current numerical no-fit audit showing separated same-face connectors still collide when endpoint smooth bends begin before incident routes spatially separate. |
