@@ -124,6 +124,29 @@ class CutOpenToroidalChannel:
         return -density if side is CutSide.INLET_COPY else density
 
 
+def annular_connector_source_density(
+    flux: float,
+    inner_radius: float,
+    outer_radius: float,
+    radius: float,
+) -> float:
+    """Return the connector-compatible normal density on an annular source port."""
+    flux = _finite(flux, "flux")
+    inner_radius = _finite(inner_radius, "inner_radius")
+    outer_radius = _finite(outer_radius, "outer_radius")
+    radius = _finite(radius, "radius")
+    if inner_radius <= 0 or outer_radius <= inner_radius:
+        raise ValueError("source annulus must have positive ordered radii")
+    if not inner_radius <= radius <= outer_radius:
+        return 0.0
+    q = (radius - inner_radius) / (outer_radius - inner_radius)
+    if q <= 0.0 or q >= 1.0:
+        return 0.0
+    t = 1.0 - q
+    measure_density = 3.0 * flux / math.pi * t * (1.0 - t**2) ** 2
+    return measure_density / (radius * (outer_radius - inner_radius))
+
+
 @dataclass(frozen=True)
 class AnnularPiolaConnector:
     """Divergence-free connector from an annular source port to a toroidal cut.
@@ -253,10 +276,12 @@ class AnnularPiolaConnector:
         )
 
     def source_normal_density(self, radius: float) -> float:
-        radius = _finite(radius, "radius")
-        if not self.source_inner_radius <= radius <= self.source_outer_radius:
-            return 0.0
-        return self.current((radius, 0.0, self.source_z))[2]
+        return annular_connector_source_density(
+            self.flux,
+            self.source_inner_radius,
+            self.source_outer_radius,
+            radius,
+        )
 
     def target_vector_residual(self, radius: float) -> float:
         radius = _finite(radius, "radius")
