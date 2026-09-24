@@ -15,6 +15,7 @@ For authority and historical-status rules, see `docs/DOCUMENTATION_STATUS.md`.
 Primary authority:
 
 - `src/canonical_kernel.py`
+- `src/canonical_mod9_interface_audit.py`
 - `tests/test_canonical_kernel.py`
 - `docs/canonical_spec_v0.4.md`
 - `white_paper.md`
@@ -396,8 +397,6 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 - `src/toroidal_global_routing.py`
 - `src/toroidal_smooth_bends.py`
 - `src/toroidal_incident_overlap_audit.py`
-- `src/toroidal_separated_channels.py`
-- `src/toroidal_incident_bend_audit.py`
 
 
 ## Graph-to-toroidal flux bundle
@@ -499,24 +498,12 @@ Primary verification: `tests/test_toroidal_incident_overlap_audit.py`.
 Primary note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
 
 
-## Edge-specific separated toroidal channel shells
+## Canonical mod-9 quotient audit
 
-`src/toroidal_separated_channels.py` allocates pairwise-disjoint annular
-channel shells in edge-index order, constructs edge-specific toroidal fields,
-and reuses the annular junction and framed-edge builders. The same-face
-connector overlap audit returns zero nonzero pairs for the corrected Vesica and
-Flower/Tree connector networks.
+`src/canonical_mod9_interface_audit.py` derives nine mod-9 fibers and twelve
+interface phases from the canonical 108-state core. It records exact coordinate
+actions for (E), (P), (F), and (T_{21}), plus the separate
+multiplication-by-two automorphism of (mathbb Z_9).
 
-Primary verification: `tests/test_toroidal_separated_channels.py`.
-Primary note: `docs/toroidal_separated_channels_v0.1.md`.
-
-
-## Incident smooth-bend collision audit
-
-`src/toroidal_incident_bend_audit.py` samples actual endpoint annular bend
-volumes against neighboring same-face trimmed straight shells. It demonstrates
-that edge-specific separated channel shells remove connector interpolation
-overlap but do not prevent later incident bend/straight collisions.
-
-Primary verification: `tests/test_toroidal_incident_bend_audit.py`.
-Primary note: `docs/toroidal_incident_bend_audit_v0.1.md`.
+Primary verification: `tests/test_canonical_mod9_interface_audit.py`.
+Primary note: `docs/canonical_mod9_interface_audit_v0.1.md`.

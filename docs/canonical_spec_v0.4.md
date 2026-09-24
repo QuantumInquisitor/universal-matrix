@@ -212,6 +212,33 @@ Not foundational in v0.4:
 
 Those may be studied as secondary hypotheses or experimental mappings, but they are not mathematical consequences of this kernel.
 
+
+
+## 7A. Derived mod-9 quotient audit
+
+Reduction modulo nine is an exact quotient of the additive core because nine
+divides 108. It labels the nine orbits of (E=T_9).
+
+Every canonical representative has a unique set-coordinate decomposition
+
+[
+n=r+9k,qquad 0le r<9,quad 0le k<12.
+]
+
+Thus the core has nine interface fibers with twelve phases in each fiber.
+
+This is a derived audit, not an additional canonical transition definition.
+Multiplication by two in (mathbb Z_9) has orbit partition
+
+[
+(0),quad (3,6),quad (1,2,4,8,7,5),
+]
+
+but that automorphism is distinct from the additive canonical operators.
+Executable details are in
+`src/canonical_mod9_interface_audit.py` and
+`docs/canonical_mod9_interface_audit_v0.1.md`.
+
 ## 8. Implementation authority
 
 The executable reference is `src/canonical_kernel.py`. Regression identities are in `tests/test_canonical_kernel.py`.

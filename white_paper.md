@@ -1625,44 +1625,6 @@ required before a whole-network field is admitted.
 
 See `docs/toroidal_incident_overlap_audit_v0.1.md`.
 
-
-
-## Separated annular channel correction
-
-The same-face connector no-fit can be removed locally by replacing the common
-channel annulus with edge-specific annular shells.
-`src/toroidal_separated_channels.py` orders those shells by graph edge index,
-the same order already used by the junction face bands.
-
-Both ends of every connector pair are therefore radially ordered and disjoint.
-The smooth Piola radial interpolation preserves that ordering throughout the
-connector. The implementation verifies zero same-face nonzero connector
-overlap in the corrected Vesica and Flower/Tree references while preserving the
-signed poloidal flux and framed-edge vector/flux contracts.
-
-This does not yet prove that incident edges remain disjoint after their global
-routes bend away from the common junction axis.
-
-See `docs/toroidal_separated_channels_v0.1.md`.
-
-
-
-## Incident bend collision no-fit
-
-After edge-specific annular channel shells remove the coaxial connector
-overlap, `src/toroidal_incident_bend_audit.py` checks the actual first smooth
-bend of each nonzero edge against neighboring incident straight shells.
-
-The tested Vesica and Flower/Tree separated-shell networks still contain
-strict bend/straight intersections before same-face routes have moved onto
-independent spatial axes. This is a geometric routing obstruction rather than a
-failure of local flux conservation or the Piola bend field.
-
-The next construction must fan same-face incident edges onto separate axes
-before their first large-radius bends.
-
-See `docs/toroidal_incident_bend_audit_v0.1.md`.
-
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.
