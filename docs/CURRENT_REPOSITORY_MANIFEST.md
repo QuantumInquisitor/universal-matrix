@@ -638,6 +638,20 @@ Primary verification: `tests/test_toroidal_fixed_interface_obstruction.py`.
 Primary note: `docs/toroidal_fixed_interface_obstruction_v0.1.md`.
 
 
+## Toroidal shared return route candidate
+
+`src/toroidal_shared_return_route.py` moves the inner Vesica return's joins
+and straight sections onto the outer return's centerline while retaining
+distinct annular shells, currents, and junction frames. The endpoint has
+conservative piece bounds separating the two routed return tubes from each
+other and the unchanged routes. The simple interpolating family still
+collides, and a full junction/connector embedding remains unverified.
+Existing routing builders are unchanged.
+
+Primary verification: `tests/test_toroidal_shared_return_route.py`.
+Primary note: `docs/toroidal_shared_return_route_v0.1.md`.
+
+
 ## Canonical mod-9 quotient audit
 
 `src/canonical_mod9_interface_audit.py` derives nine mod-9 fibers and twelve
