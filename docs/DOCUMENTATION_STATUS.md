@@ -248,3 +248,5 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 | `docs/toroidal_smooth_bends_v0.1.md` | Current positive-Jacobian annular quarter-bend map with Piola-transported flux profile and global collision-envelope certification. |
 
 | `docs/toroidal_incident_overlap_audit_v0.1.md` | Current same-face incident connector overlap no-fit, including first-overlap progress and affected-node diagnostics. |
+
+| `docs/canonical_mod9_interface_audit_v0.1.md` | Exact derived Z_108 -> Z_9 quotient, nine interface fibers, twelve interface phases, and mod-9 doubling orbit audit; not a new canonical transition law. |
