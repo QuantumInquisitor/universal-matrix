@@ -465,7 +465,7 @@ The two constructions are distinct.
 
 ---
 
-## 9.1 Primitive ontology reduction
+### 9.1 Primitive ontology reduction
 
 The canonical polarity involution supplies an exact state-set decomposition
 
@@ -557,7 +557,7 @@ The alternating orientation rule and the identification of the maximum transfer 
 
 ---
 
-## 10.1 Recursive contained port geometry
+### 10.1 Recursive contained port geometry
 
 The spatial recursion now has one explicit Euclidean realization. A circular
 parent vessel of radius (R_d) contains a complete seven-circle Seed whose
@@ -588,7 +588,7 @@ is not established.
 
 ---
 
-## 10.2 Conservative port circulation
+### 10.2 Conservative port circulation
 
 A minimal continuity layer now places dimensionless scalar content (q_a) on
 the port and Tree graphs. For signed current (J_{a\to b}), it uses
@@ -644,7 +644,7 @@ Implementation:
 
 ---
 
-## 10A. Minimal local Matrix transition law
+### 10.3 Minimal local Matrix transition law
 
 After fixing the primitive cell ontology, the next question is the minimum
 local dynamical rule required for conservative propagation.
@@ -706,7 +706,7 @@ repository are interpreted as extensions of this minimal local structure.
 
 ---
 
-## 10B. Canonical polarity–phase reduction
+### 10.4 Canonical polarity–phase reduction
 
 The exact canonical polarity branch
 
@@ -1441,7 +1441,15 @@ The chiral lattice sector is similarly falsifiable internally: inconsistent gaug
 
 ---
 
-## Audited spherical reference incidence
+## 24. Geometric and toroidal validation checkpoints
+
+This section collects the later geometry and toroidal checkpoints under one
+numbered scientific-status layer. These checkpoints retain their original
+evidence boundaries: exact or numerical geometric verification does not by
+itself establish a physical force law, dimensional normalization, or a
+fundamental spacetime interpretation.
+
+### 24.1 Audited spherical reference incidence
 
 The audited Rao reference construction now supplies nine unit-sphere root
 triangles with great-circle edges. After refinement within the published
@@ -1455,7 +1463,7 @@ The source and formula audit are recorded in
 `docs/sri_yantra_rao_great_circles_v0.1.md`. This is a geometric result and
 does not supply an experimental physical interpretation.
 
-## Explicit nonplanar candidate control
+### 24.2 Explicit nonplanar candidate control
 
 `src/sri_yantra_meru_candidate.py` now provides a conical graph-surface
 control with explicit vertices, complete edge paths, and an invertible
@@ -1468,7 +1476,7 @@ historical Meru reconstruction.
 See `docs/sri_yantra_meru_candidate_v0.1.md` for the projection argument
 and edge-rule failure audit. No physical interpretation is inferred.
 
-## Conservative three-dimensional current candidate
+### 24.3 Conservative three-dimensional current candidate
 
 `src/conservative_toroidal_field.py` defines a compact, divergence-free
 three-dimensional content current on an explicit solid ring torus. A stream
@@ -1482,7 +1490,7 @@ See `docs/conservative_toroidal_field_v0.1.md` for the stream function,
 cut-flux derivation, and limits of graph-to-volume coupling.
 
 
-## Graph-to-volume toroidal flux bundle
+### 24.4 Graph-to-volume toroidal flux bundle
 
 `src/graph_toroidal_flux_bundle.py` gives each conservative directed graph
 edge its own translated solid-ring-torus domain. The signed edge current is
@@ -1497,7 +1505,7 @@ connected node junctions, an equation of motion, or physical units. See
 
 
 
-## Connected junction control-volume candidate
+### 24.5 Connected junction control-volume candidate
 
 `src/toroidal_junction_control_volume.py` replaces conservative node balance
 as ledger-only incidence with one connected three-dimensional control volume
@@ -1513,7 +1521,7 @@ See `docs/toroidal_junction_control_volume_v0.1.md`.
 
 
 
-## Toroidal connector topology and Piola field
+### 24.6 Toroidal connector topology and Piola field
 
 The connected junction lane ports are disk-like rectangles, while the canonical
 poloidal cut of the solid torus is annular. Their boundary and first-homology
@@ -1534,7 +1542,7 @@ See `docs/toroidal_connector_topology_v0.1.md`.
 
 
 
-## Annular junction edge-port candidate
+### 24.7 Annular junction edge-port candidate
 
 `src/toroidal_annular_junction.py` resolves the local
 rectangle-to-annulus connector obstruction by redesigning every external
@@ -1551,7 +1559,7 @@ See `docs/toroidal_annular_junction_v0.1.md`.
 
 
 
-## Framed toroidal edge-assembly candidate
+### 24.8 Framed toroidal edge-assembly candidate
 
 `src/toroidal_framed_edge_assembly.py` now closes the local kinematic path for
 each graph edge. Source annular ports, Piola transitions, a straightened
@@ -1571,7 +1579,7 @@ See `docs/toroidal_framed_edge_assembly_v0.1.md`.
 
 
 
-## Global routed toroidal network candidate
+### 24.9 Global routed toroidal network candidate
 
 `src/toroidal_global_routing.py` supplies a deterministic global placement of
 the annular junctions and local framed edge assemblies. Junctions are rigidly
@@ -1590,7 +1598,7 @@ See `docs/toroidal_global_routing_v0.1.md`.
 
 
 
-## Smooth routed annular current candidate
+### 24.10 Smooth routed annular current candidate
 
 `src/toroidal_smooth_bends.py` replaces every right-angle global route corner
 with a smooth quarter-circle annular bend. The bend map has positive Jacobian
@@ -1607,7 +1615,7 @@ See `docs/toroidal_smooth_bends_v0.1.md`.
 
 
 
-## Incident connector overlap no-fit
+### 24.11 Incident connector overlap no-fit
 
 The nonincident routing and smooth-bend certificates do not by themselves
 guarantee that edge volumes sharing one graph node are disjoint.
@@ -1627,7 +1635,7 @@ See `docs/toroidal_incident_overlap_audit_v0.1.md`.
 
 
 
-## Separated annular channel correction
+### 24.12 Separated annular channel correction
 
 The same-face connector no-fit can be removed locally by replacing the common
 channel annulus with edge-specific annular shells.
@@ -1647,7 +1655,7 @@ See `docs/toroidal_separated_channels_v0.1.md`.
 
 
 
-## Incident bend collision no-fit
+### 24.13 Incident bend collision no-fit
 
 After edge-specific annular channel shells remove the coaxial connector
 overlap, `src/toroidal_incident_bend_audit.py` checks the actual first smooth
@@ -1662,7 +1670,7 @@ That result is a no-fit for the tested compact geometry, not a topology theorem.
 
 See `docs/toroidal_incident_bend_audit_v0.1.md`.
 
-## Incident bend spacing and curvature scan
+### 24.14 Incident bend spacing and curvature scan
 
 A follow-up parameter audit in `src/toroidal_bend_spacing_scan.py` keeps the
 graph, fluxes, annular junctions, Piola connectors, and smooth-bend maps fixed
@@ -1683,6 +1691,39 @@ This scan is dimensionless and geometric. It does not derive a physical length
 scale, a dynamics law for adaptive geometry, or a physical interpretation.
 
 See `docs/toroidal_bend_spacing_scan_v0.1.md`.
+
+### 24.15 Sampled bend-clearance frontier
+
+The follow-up audit in `src/toroidal_bend_clearance_boundary.py` groups the
+finite spacing/curvature samples by bend margin and records the first
+collision-free tested shell gap, the nearest lower colliding sample when
+available, and any unresolved margin.
+
+This converts the coarse existence result into an explicit sampled frontier
+without promoting the finite grid to a continuous boundary or assuming a
+physical length scale.
+
+See `docs/toroidal_bend_clearance_boundary_v0.1.md`.
+
+### 24.16 Bend-clearance bracket refinement
+
+`src/toroidal_bend_clearance_refinement.py` subdivides each resolved sampled
+collision/free bracket while preserving the declared geometry and collision
+sampling. The refinement records a narrower sampled bracket, transition count,
+and any re-entrant collision sample rather than assuming global monotonicity in
+shell gap.
+
+The next geometric gate is scale consistency: expose the deterministic refined
+bracket report, increase local sampling where required, and compare
+dimensionless clearance ratios across scaled Vesica and Flower/Tree
+constructions. Separate-axis fan-out remains a fallback if no compact
+scale-consistent collision-free region survives.
+
+This remains a finite numerical geometry result. It does not establish a
+continuous clearance theorem, optimal spacing law, physical length scale, or
+adaptive geometry dynamics.
+
+See `docs/toroidal_bend_clearance_refinement_v0.1.md`.
 
 # Conclusion
 
