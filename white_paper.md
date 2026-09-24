@@ -1569,6 +1569,25 @@ endpoint vectors and fluxes.
 
 See `docs/toroidal_framed_edge_assembly_v0.1.md`.
 
+
+
+## Global routed toroidal network candidate
+
+`src/toroidal_global_routing.py` supplies a deterministic global placement of
+the annular junctions and local framed edge assemblies. Junctions are rigidly
+translated, while every graph edge receives a unique orthogonal centerline
+corridor with preserved signed endpoint frames.
+
+A conservative tube-envelope audit finds positive clearance between
+nonincident edge routes and between each route and every nonincident junction
+for the tested Vesica and Flower/Tree networks.
+
+This is a global routing geometry, not yet a globally smooth current field.
+The orthogonal bends still require explicit positive-Jacobian maps and Piola
+transport before continuous routed current is claimed.
+
+See `docs/toroidal_global_routing_v0.1.md`.
+
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.

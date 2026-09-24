@@ -3281,3 +3281,36 @@ fluxes. Zero-current edges remain explicit zero-field assemblies.
 
 That collision-free global embedding is the last purely kinematic network gate
 before an independent dynamics or physical-normalization proposal.
+
+
+---
+
+## Global collision-audited toroidal routing checkpoint v0.1
+
+The framed-edge assemblies now have a deterministic global Euclidean placement
+in `src/toroidal_global_routing.py`.
+
+Every annular junction is moved by a rigid translation with its local axis kept
+parallel to global +z. Every graph edge receives a unique positive-y corridor
+and a unique high/low z level. Its routed centerline begins and ends along +z,
+so the endpoint frame contract from the local framed assembly is preserved
+exactly.
+
+Each route is surrounded by a conservative circular envelope whose radius is
+the largest annular outer radius used anywhere in that edge assembly plus an
+optional padding. The implementation computes exact finite-segment distances
+for every pair of nonincident edges and rejects the embedding if two envelopes
+overlap. It also checks each routed edge against a spherical bound for every
+nonincident junction control volume.
+
+The Vesica and Flower/Tree examples admit a deterministic collision-free
+embedding under this construction.
+
+### Next creator question
+
+> Can every orthogonal route corner be replaced by a smooth
+> positive-Jacobian annular bend map whose Piola-transformed current preserves
+> signed flux, endpoint frames, and the same global collision clearance?
+
+That smooth bend field is the remaining kinematic geometry gate before
+independent dynamics or physical normalization.

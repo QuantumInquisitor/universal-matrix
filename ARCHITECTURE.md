@@ -963,3 +963,19 @@ retaining the signed graph flux.
 
 Primary verification: `tests/test_toroidal_framed_edge_assembly.py`.
 Primary note: `docs/toroidal_framed_edge_assembly_v0.1.md`.
+
+
+## Global collision-audited toroidal routing
+
+`src/toroidal_global_routing.py` supplies a deterministic global embedding
+contract for the local framed edge assemblies. Annular junctions are translated
+rigidly along x; every edge receives a unique y corridor and high/low z level.
+Endpoint tangents follow `axis_sign * +z` and therefore preserve the signed
+annular junction frame contract.
+
+The routing layer uses conservative tube envelopes and exact finite-segment
+distance calculations to reject nonincident edge collisions and
+edge-to-nonincident-junction overlaps.
+
+Primary verification: `tests/test_toroidal_global_routing.py`.
+Primary note: `docs/toroidal_global_routing_v0.1.md`.

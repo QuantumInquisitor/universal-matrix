@@ -393,6 +393,7 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 - `src/toroidal_connector_topology.py`
 - `src/toroidal_annular_junction.py`
 - `src/toroidal_framed_edge_assembly.py`
+- `src/toroidal_global_routing.py`
 
 
 ## Graph-to-toroidal flux bundle
@@ -455,3 +456,18 @@ one-bit current-sign frame rule.
 
 Primary verification: `tests/test_toroidal_framed_edge_assembly.py`.
 Primary note: `docs/toroidal_framed_edge_assembly_v0.1.md`.
+
+
+## Global collision-audited toroidal routing
+
+`src/toroidal_global_routing.py` rigidly places annular junctions and assigns
+each framed graph edge a deterministic orthogonal global route with unique y and
+z lanes. Conservative route envelopes are checked against all nonincident edge
+routes and nonincident junctions.
+
+The checkpoint proves a collision-free routing envelope for the tested finite
+networks. It does not yet construct smooth current-preserving bend fields at
+the orthogonal corners.
+
+Primary verification: `tests/test_toroidal_global_routing.py`.
+Primary note: `docs/toroidal_global_routing_v0.1.md`.

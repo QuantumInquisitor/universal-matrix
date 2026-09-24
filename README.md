@@ -632,6 +632,7 @@ Start with:
 - `docs/toroidal_connector_topology_v0.1.md`
 - `docs/toroidal_annular_junction_v0.1.md`
 - `docs/toroidal_framed_edge_assembly_v0.1.md`
+- `docs/toroidal_global_routing_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
@@ -830,3 +831,19 @@ collision-free network routing remain open.
 
 Technical note: `docs/toroidal_framed_edge_assembly_v0.1.md`.
 Verification: `tests/test_toroidal_framed_edge_assembly.py`.
+
+
+## Global collision-audited toroidal routing
+
+`src/toroidal_global_routing.py` rigidly re-places the annular junctions and
+assigns every framed graph edge a deterministic orthogonal 3D centerline. Each
+edge receives a unique y corridor and z level, preserves the signed endpoint frame,
+and is audited with a conservative tube envelope.
+
+The implementation verifies positive clearance between all nonincident routed
+edge envelopes and between routed edges and nonincident junctions. The sharp
+route corners are geometric only; smooth divergence-free bend fields are not
+yet claimed.
+
+Technical note: `docs/toroidal_global_routing_v0.1.md`.
+Verification: `tests/test_toroidal_global_routing.py`.
