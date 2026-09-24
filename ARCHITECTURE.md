@@ -979,3 +979,18 @@ edge-to-nonincident-junction overlaps.
 
 Primary verification: `tests/test_toroidal_global_routing.py`.
 Primary note: `docs/toroidal_global_routing_v0.1.md`.
+
+
+## Smooth positive-Jacobian toroidal bends
+
+`src/toroidal_smooth_bends.py` turns each orthogonal global route corner into
+a quarter-circle annular tube. The bend map retains a positive Jacobian when
+its bend radius exceeds the annular outer radius. The straight annular current
+is transported by the contravariant Piola map, yielding the same radial flux
+density along the bend tangent and exact vector matching at both interfaces.
+
+The global routing envelope is expanded by the bend radius so the previously
+verified collision audit also bounds the curved volume.
+
+Primary verification: `tests/test_toroidal_smooth_bends.py`.
+Primary note: `docs/toroidal_smooth_bends_v0.1.md`.

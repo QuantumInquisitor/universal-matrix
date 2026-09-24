@@ -394,6 +394,7 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 - `src/toroidal_annular_junction.py`
 - `src/toroidal_framed_edge_assembly.py`
 - `src/toroidal_global_routing.py`
+- `src/toroidal_smooth_bends.py`
 
 
 ## Graph-to-toroidal flux bundle
@@ -471,3 +472,14 @@ the orthogonal corners.
 
 Primary verification: `tests/test_toroidal_global_routing.py`.
 Primary note: `docs/toroidal_global_routing_v0.1.md`.
+
+
+## Smooth positive-Jacobian toroidal bends
+
+`src/toroidal_smooth_bends.py` replaces every orthogonal internal route corner
+with an annular quarter bend whose bend radius exceeds the annular outer
+radius. The Piola-transported current preserves the connector-compatible flux
+profile and matches the adjacent straight fields.
+
+Primary verification: `tests/test_toroidal_smooth_bends.py`.
+Primary note: `docs/toroidal_smooth_bends_v0.1.md`.

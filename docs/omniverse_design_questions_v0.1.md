@@ -3314,3 +3314,42 @@ embedding under this construction.
 
 That smooth bend field is the remaining kinematic geometry gate before
 independent dynamics or physical normalization.
+
+
+---
+
+## Smooth positive-Jacobian toroidal bend checkpoint v0.1
+
+The global routed centerlines now have an explicit current-preserving smoothing
+in `src/toroidal_smooth_bends.py`.
+
+Every 90-degree route corner is replaced by an annular quarter-circle bend. For
+bend radius R_b and annular radius r, the Cartesian Jacobian scale relative to
+a straight tube is
+
+[
+1-rac{r}{R_b}cos	heta.
+]
+
+The implementation requires R_b to exceed the annular outer radius, so the
+Jacobian stays positive everywhere.
+
+The contravariant Piola transform of the straight annular field reduces to the
+same connector-compatible density multiplied by the local bend tangent. The
+bend therefore preserves signed flux, is divergence-free, and matches the
+incoming and outgoing straight fields point by point.
+
+The global routing is rebuilt with expanded conservative envelopes large enough
+to contain every curved bend. The existing exact segment-distance audit then
+certifies nonincident edge and junction clearance for the smoothed Vesica and
+Flower/Tree examples.
+
+### Next creator question
+
+> Do two or more edges leaving the same annular junction face remain spatially
+> disjoint while their connector annuli expand toward the common toroidal
+> channel annulus?
+
+That incident-edge overlap must be audited and, if present, removed by an
+explicit fan-out or separated-channel construction before a unified
+whole-network field sampler can be claimed.

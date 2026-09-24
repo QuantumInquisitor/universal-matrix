@@ -1588,6 +1588,23 @@ transport before continuous routed current is claimed.
 
 See `docs/toroidal_global_routing_v0.1.md`.
 
+
+
+## Smooth routed annular current candidate
+
+`src/toroidal_smooth_bends.py` replaces every right-angle global route corner
+with a smooth quarter-circle annular bend. The bend map has positive Jacobian
+for bend radius larger than the annular outer radius. Under the
+contravariant Piola transform the straight annular flux density becomes the
+same density directed along the local bend tangent, preserving divergence-free
+flow and signed cross-sectional flux.
+
+The curved bends are contained inside expanded collision-audited routing
+envelopes. Before a single global field sampler is admitted, same-face incident edge
+connectors must be shown spatially disjoint or redesigned.
+
+See `docs/toroidal_smooth_bends_v0.1.md`.
+
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.

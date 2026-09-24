@@ -210,13 +210,30 @@ no dynamics or physical normalization follows from the local assembly.
 `src/toroidal_global_routing.py` adds a deterministic global Euclidean
 placement for the local framed toroidal edge assemblies. Annular junctions are
 translated rigidly and every edge receives unique y and z routing lanes. The
-signed endpoint frames are preserved and conservative tube envelopes are checked
+endpoint +z frames are preserved and conservative tube envelopes are checked
 against all nonincident edges and nonincident junctions.
 
 This closes the first global collision-avoidance gate for the tested finite
 networks. The route corners remain geometric only. A smooth
 positive-Jacobian bend map with Piola-transported current is still required
 before the routed network is a globally continuous divergence-free field.
+
+---
+
+
+
+### Smooth routed annular bends
+
+`src/toroidal_smooth_bends.py` supplies explicit quarter-circle annular bend
+maps for every orthogonal global route corner. The bend radius is constrained
+to exceed the annular outer radius, keeping the map Jacobian positive.
+Contravariant Piola transport preserves the existing annular flux profile and
+matches the neighboring straight fields point by point.
+
+Expanded routing envelopes contain the curved volumes and retain positive
+nonincident clearance in the tested finite networks. A same-face incident-connector overlap audit is still required before a
+unified whole-network field sampler can be admitted.
+No dynamics, units, or experimental interpretation are introduced here.
 
 ---
 
