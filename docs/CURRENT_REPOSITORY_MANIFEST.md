@@ -665,6 +665,23 @@ This remains an opt-in static reference, not general fan-out or a safe motion.
 Primary verification: `tests/test_toroidal_shared_return_connectors.py`.
 Primary note: `docs/toroidal_shared_return_connectors_v0.1.md`.
 
+Additional verification: `tests/test_toroidal_shared_return_parameters.py`
+checks six bounded parameter cases and independent physical-cut fluxes;
+`tests/test_toroidal_shared_return_adversarial.py` checks weak-current
+interface mismatches, fractional flux leaks and unresolved shell gaps.
+
+
+## Shared-prefix different-destination control
+
+`src/toroidal_shared_prefix_fanout.py` preserves endpoint frames and local
+regularity in a balanced three-node, four-edge shared-prefix experiment.
+An explicit point penetrates both tubes by 0.2 where the inner branch
+departs toward its distinct destination. This rejects the particular
+candidate without claiming all fan-out geometries are impossible.
+
+Primary verification: `tests/test_toroidal_shared_prefix_fanout.py`.
+Primary note: `docs/toroidal_shared_prefix_fanout_v0.1.md`.
+
 
 ## Canonical mod-9 quotient audit
 
