@@ -539,6 +539,21 @@ Primary verification: `tests/test_toroidal_bend_spacing_scan.py`.
 Primary note: `docs/toroidal_bend_spacing_scan_v0.1.md`.
 
 
+## Toroidal sampled bend-clearance frontier
+
+`src/toroidal_bend_clearance_boundary.py` groups the finite bend-spacing
+samples by bend margin and records the first collision-free sampled shell gap,
+the nearest lower colliding sample when available, and margins that remain
+unresolved on the tested grid.
+
+The result is a sampled parameter frontier only. It does not establish a
+continuous monotone boundary, an optimal compactness law, scale invariance, or
+a physical length scale.
+
+Primary verification: `tests/test_toroidal_bend_clearance_boundary.py`.
+Primary note: `docs/toroidal_bend_clearance_boundary_v0.1.md`.
+
+
 ## Canonical mod-9 quotient audit
 
 `src/canonical_mod9_interface_audit.py` derives nine mod-9 fibers and twelve
