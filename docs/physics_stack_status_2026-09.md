@@ -210,7 +210,7 @@ no dynamics or physical normalization follows from the local assembly.
 `src/toroidal_global_routing.py` adds a deterministic global Euclidean
 placement for the local framed toroidal edge assemblies. Annular junctions are
 translated rigidly and every edge receives unique y and z routing lanes. The
-endpoint +z frames are preserved and conservative tube envelopes are checked
+signed endpoint frames are preserved and conservative tube envelopes are checked
 against all nonincident edges and nonincident junctions.
 
 This closes the first global collision-avoidance gate for the tested finite
