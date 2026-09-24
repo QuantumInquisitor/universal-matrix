@@ -3353,3 +3353,38 @@ Flower/Tree examples.
 That incident-edge overlap must be audited and, if present, removed by an
 explicit fan-out or separated-channel construction before a unified
 whole-network field sampler can be claimed.
+
+
+---
+
+## Same-face incident connector overlap checkpoint v0.1
+
+The post-bend incident geometry is now audited explicitly in
+`src/toroidal_incident_overlap_audit.py`.
+
+Annular junction ports on one face begin as disjoint radial bands. The framed
+edge construction then maps every nonzero edge toward the same channel annulus.
+For normalized outward connector progress p, each edge occupies an annular
+interval [r_inner(p), r_outer(p)].
+
+At p=0, same-face port intervals are disjoint. At p=1, the channel intervals
+are identical. Continuity therefore forces every same-face nonzero pair to
+overlap at some p in (0,1).
+
+The implementation locates the first overlap by bisection. The Vesica
+reference exposes two such pairs, and the Flower/Tree reference exposes
+affected nodes as well. Positive and negative current orientations share the
+same geometric obstruction.
+
+This is a spatial no-fit, not a conservation failure. Each individual
+connector remains divergence-free and flux preserving.
+
+### Next creator question
+
+> Is the minimal correction to assign every edge a distinct annular channel
+> shell, preserving the edge-index radial order through each connector, or is a
+> separate-axis spatial fan-out required?
+
+The next subsystem should implement the simplest disjoint construction and
+prove same-face connector separation before returning to unified field
+sampling.

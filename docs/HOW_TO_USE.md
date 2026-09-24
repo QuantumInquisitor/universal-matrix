@@ -469,3 +469,18 @@ straight length, and global collision certification.
 
 See `docs/toroidal_smooth_bends_v0.1.md` for the Piola derivation and the
 remaining incident-overlap gate before unified field sampling.
+
+
+## Audit same-face incident connector overlap
+
+```sh
+python -m pytest -q tests/test_toroidal_incident_overlap_audit.py
+```
+
+Run `audit_incident_connector_overlap(...)` on a framed edge network to list
+every nonzero same-face connector pair that converges onto the common channel
+annulus. The report includes affected nodes, the first normalized overlap
+progress, and terminal overlap width.
+
+See `docs/toroidal_incident_overlap_audit_v0.1.md` for the no-fit result and
+the separated-channel/fan-out correction gate.

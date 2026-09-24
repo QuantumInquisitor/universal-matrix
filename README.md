@@ -634,6 +634,7 @@ Start with:
 - `docs/toroidal_framed_edge_assembly_v0.1.md`
 - `docs/toroidal_global_routing_v0.1.md`
 - `docs/toroidal_smooth_bends_v0.1.md`
+- `docs/toroidal_incident_overlap_audit_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
@@ -864,3 +865,19 @@ smoothed geometry.
 
 Technical note: `docs/toroidal_smooth_bends_v0.1.md`.
 Verification: `tests/test_toroidal_smooth_bends.py`.
+
+
+## Same-face incident connector overlap audit
+
+`src/toroidal_incident_overlap_audit.py` checks connector geometry that the
+nonincident global collision audit intentionally excludes. Annular port bands
+on one junction face begin disjoint, but the current framed construction sends
+each nonzero edge toward the same channel annulus. The audit locates the first
+normalized progress where each same-face pair begins to overlap.
+
+This is a geometric no-fit, not a flux-conservation failure. A disjoint
+edge-specific channel or spatial fan-out construction is required before a
+single whole-network field can be claimed.
+
+Technical note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
+Verification: `tests/test_toroidal_incident_overlap_audit.py`.

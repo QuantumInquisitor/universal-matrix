@@ -237,6 +237,22 @@ No dynamics, units, or experimental interpretation are introduced here.
 
 ---
 
+
+
+### Incident connector overlap boundary
+
+`src/toroidal_incident_overlap_audit.py` shows that same-face nonzero
+connectors in the present framed-edge construction do not remain spatially
+disjoint. Their junction port bands are separate, but all transition toward the
+same channel annulus, forcing overlap before the channel endpoint.
+
+This blocks a unified whole-network field interpretation of the current stack
+without invalidating any individual connector conservation result. A separated
+channel or explicit spatial fan-out is required before whole-network sampling,
+dynamics, or physical normalization.
+
+---
+
 ## 3. Abelian U(1) gauge sector
 
 Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
