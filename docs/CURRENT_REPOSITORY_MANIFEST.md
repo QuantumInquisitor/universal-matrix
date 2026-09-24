@@ -585,6 +585,21 @@ Primary verification: `tests/test_toroidal_uniform_scale_similarity.py`.
 Primary note: `docs/toroidal_uniform_scale_similarity_v0.1.md`.
 
 
+## Toroidal latent-path geometry audit
+
+`src/toroidal_latent_path_geometry_audit.py` compares the same Flower/Tree
+circulation with zero-current weave pathways retained geometrically versus
+omitted from the active-current support. It measures latent edge and port
+counts, active-channel center displacement, active shell-radius residual, and
+active annular-port width compression.
+
+The audit is diagnostic. It does not decide whether dormant pathways should
+persist, disappear, or contract continuously.
+
+Primary verification: `tests/test_toroidal_latent_path_geometry_audit.py`.
+Primary note: `docs/toroidal_latent_path_geometry_audit_v0.1.md`.
+
+
 ## Canonical mod-9 quotient audit
 
 `src/canonical_mod9_interface_audit.py` derives nine mod-9 fibers and twelve
