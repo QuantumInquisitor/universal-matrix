@@ -970,8 +970,8 @@ Primary note: `docs/toroidal_framed_edge_assembly_v0.1.md`.
 `src/toroidal_global_routing.py` supplies a deterministic global embedding
 contract for the local framed edge assemblies. Annular junctions are translated
 rigidly along x; every edge receives a unique y corridor and high/low z level.
-Endpoint tangents remain +z and therefore preserve the annular junction frame
-contract.
+Endpoint tangents follow `axis_sign * +z` and therefore preserve the signed
+annular junction frame contract.
 
 The routing layer uses conservative tube envelopes and exact finite-segment
 distance calculations to reject nonincident edge collisions and
