@@ -513,5 +513,24 @@ The audit builds the smooth global routing, samples each endpoint bend, and
 tests those bend points against neighboring same-face trimmed straight shells.
 It returns affected nodes, edge pairs, witness points, and penetration margins.
 
-See `docs/toroidal_incident_bend_audit_v0.1.md` for the resulting
-separate-axis fan-out requirement.
+See `docs/toroidal_incident_bend_audit_v0.1.md` for the compact-geometry
+no-fit. Run the spacing scan below before committing to a topology redesign.
+
+
+## Scan toroidal bend spacing and curvature
+
+```sh
+python -m pytest -q tests/test_toroidal_bend_spacing_scan.py
+```
+
+Use `evaluate_vesica_bend_spacing(...)` for one shell-gap/bend-margin point or
+`scan_vesica_bend_spacing(...)` for a deterministic Cartesian grid. The scan
+keeps the graph, signed currents, annular junctions, Piola connectors, and
+smooth-bend field unchanged while varying only shell separation and bend
+curvature.
+
+The current regression grid contains at least one collision-free sample, so
+separate-axis fan-out is not yet forced by the tested geometry. The next task
+is boundary mapping and scale-consistency, not immediate topology replacement.
+
+See `docs/toroidal_bend_spacing_scan_v0.1.md` for the evidence boundary.

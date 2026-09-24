@@ -523,6 +523,22 @@ Primary verification: `tests/test_toroidal_incident_bend_audit.py`.
 Primary note: `docs/toroidal_incident_bend_audit_v0.1.md`.
 
 
+## Toroidal incident-bend spacing scan
+
+`src/toroidal_bend_spacing_scan.py` varies edge-shell radial gap and positive
+bend-radius margin while preserving the existing graph, signed currents,
+annular junctions, Piola connectors, and smooth-bend maps. The deterministic
+25-point Vesica grid includes colliding controls and at least one
+collision-free sample.
+
+This converts the earlier compact bend/straight no-fit from an apparent
+topology gate into a parameter-boundary problem. Scale-consistent clearance
+and an optimal or conservative spacing law remain open.
+
+Primary verification: `tests/test_toroidal_bend_spacing_scan.py`.
+Primary note: `docs/toroidal_bend_spacing_scan_v0.1.md`.
+
+
 ## Canonical mod-9 quotient audit
 
 `src/canonical_mod9_interface_audit.py` derives nine mod-9 fibers and twelve

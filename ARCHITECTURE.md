@@ -1036,12 +1036,29 @@ sharing the same junction face. Positive penetration requires both axial and
 radial interior membership.
 
 The audit shows that separated channel shells solve the coaxial connector
-overlap but do not solve the later bend/straight interaction. The next geometry
-layer must fan incident edges onto separate spatial axes before their first
-large-radius bends.
+overlap but do not solve the later bend/straight interaction for the tested
+compact reference parameters.
 
 Primary verification: `tests/test_toroidal_incident_bend_audit.py`.
 Primary note: `docs/toroidal_incident_bend_audit_v0.1.md`.
+
+
+## Toroidal bend-spacing parameter gate
+
+`src/toroidal_bend_spacing_scan.py` preserves the existing graph, signed
+currents, annular junctions, Piola connector maps, and smooth-bend field while
+varying edge-shell radial gap and positive bend-radius margin.
+
+The deterministic 25-point Vesica grid contains both colliding samples and at
+least one collision-free sample. The compact incident-bend result is therefore
+a parameter-dependent no-fit rather than a topology theorem.
+
+The next geometry layer is boundary mapping and scale-consistency testing. A
+separate-axis fan-out is reserved as a fallback if no compact
+scale-consistent clearance region survives.
+
+Primary verification: `tests/test_toroidal_bend_spacing_scan.py`.
+Primary note: `docs/toroidal_bend_spacing_scan_v0.1.md`.
 
 
 ## Canonical mod-9 quotient audit

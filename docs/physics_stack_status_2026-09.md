@@ -278,10 +278,28 @@ same-face connector shells remain individually conservative but still collide
 when one incident edge enters its first smooth bend while another remains on
 the shared endpoint axis.
 
-This leaves the toroidal network at a geometric fan-out gate. Same-face
-incident edges must first be placed on pairwise separated spatial axes by a
-positive-Jacobian divergence-free map. No dynamics or physical normalization
-is inferred from this obstruction.
+This establishes a no-fit for the tested compact separated-shell geometry. It
+does not establish a topology theorem requiring fan-out for every possible
+shell spacing and bend radius.
+
+### Incident bend spacing scan
+
+`src/toroidal_bend_spacing_scan.py` holds the graph, signed currents, annular
+junctions, Piola connectors, and smooth-bend construction fixed while varying
+only edge-shell radial gap and positive bend-radius margin.
+
+The deterministic 25-point Vesica grid contains both colliding samples and at
+least one collision-free sample. The earlier compact collision is therefore a
+parameter-dependent geometric obstruction, not yet a proof that the
+separated-shell topology must be replaced.
+
+The next gate is to map the collision/no-collision boundary, test dimensionless
+clearance ratios across Flower/Tree scales and recursive depths, and derive a
+conservative scale-consistent clearance rule. A separate-axis fan-out remains
+the fallback only if no compact scale-consistent region survives those tests.
+
+No physical length scale, dynamics law, or physical normalization is inferred
+from this scan.
 
 ---
 
