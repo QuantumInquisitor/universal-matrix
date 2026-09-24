@@ -59,6 +59,19 @@ globally continuous field derivatives is made.
 
 ## Geometric checks
 
+Every transition endpoint is checked against its declared port or channel
+annulus independently of current magnitude. Placed endpoint frames must
+match the actual junction ports, and signed flux records must agree with
+relative tolerance 1e-12 and no absolute allowance. This prevents a very
+weak current from hiding a disconnected annulus or a fractional flux leak
+inside the absolute field-residual tolerance. Geometric radius comparisons
+use absolute tolerance 1e-10; this remains floating-point evidence.
+
+The shared channel-shell gap must exceed the audit tolerance 1e-10. A zero
+requested gap can otherwise round to a tiny positive value and incorrectly
+pass a strict-positive test. This rule concerns the channel shells; the
+intentional zero gap between neighboring port bands remains allowed.
+
 The audit verifies that every placed component equals the one derived from
 the declared route and transitions before using the route certificate.
 The shared-route certificate covers the return tube interiors; trimming
@@ -135,4 +148,29 @@ be checked independently. General fan-out to different destinations and
 recursive Flower/Tree graphs are not certified here. The next bounded
 question is which graph/port configurations permit shared routing and
 where distinct destinations require another construction; dormant-path
-semantics remain relevant before recursive claims.
+semantics remain relevant before recursive claims. The first such control
+is recorded in `toroidal_shared_prefix_fanout_v0.1.md`: a shared prefix
+retains local regularity but intersects where the two destinations split.
+
+## Bounded parameter and adversarial checks
+
+`tests/test_toroidal_shared_return_parameters.py` checks six combinations:
+
+| Current | Return split | Shell gap | Bend margin | Connector length |
+| --- | --- | --- | --- | --- |
+| 0.001 | 0.15 | 3 | 0.05 | 0.25 |
+| -8 | 0.85 | 3 | 0.05 | 4 |
+| 2 | 0.5 | 0.5 | 0.05 | 1 |
+| -0.125 | 0.1 | 1 | 0.1 | 0.5 |
+| 5 | 0.9 | 6 | 0.2 | 2 |
+| 1 | 0.4 | 3 | 0.001 | 1 |
+
+Each passes geometric checks, all interfaces and independent integration
+of the global current through physical planar cuts of all eight connectors
+at two interior positions. These are individual cases, not a certified
+continuous parameter range. An unresolved positive bend margin and an
+overlong connector are conservatively rejected.
+
+`tests/test_toroidal_shared_return_adversarial.py` covers every radial
+interface and both signs at current magnitude 2e-10, fractional flux leaks,
+and zero/tiny shell gaps. The fixed public reference builder is unchanged.

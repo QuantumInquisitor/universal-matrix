@@ -144,8 +144,8 @@ def move_inner_return_to_shared_route(
     if (inner.route.source_frame != outer.route.source_frame
             or inner.route.target_frame != outer.route.target_frame):
         raise ValueError("return channels must have identical port frames")
-    if inner.bends[0].outer_radius >= outer.bends[0].inner_radius:
-        raise ValueError("return channel shells must be strictly separated")
+    if outer.bends[0].inner_radius - inner.bends[0].outer_radius <= _TOLERANCE:
+        raise ValueError("return channel shells must be separated beyond the audit tolerance")
     for edge in (inner, outer):
         routed_tube_pieces(edge)
         if len({bend.bend_radius for bend in edge.bends}) != 1:
@@ -196,8 +196,8 @@ def certify_shared_return_endpoint(routing: SmoothGlobalToroidalRouting) -> Shar
     if any(a.bend_radius != b.bend_radius for a, b in zip(inner.bends, outer.bends, strict=True)):
         raise ValueError("shared endpoint requires identical bend radii")
     gap = outer.bends[0].inner_radius - inner.bends[0].outer_radius
-    if gap <= 0:
-        raise ValueError("nested shells must have positive separation")
+    if gap <= _TOLERANCE:
+        raise ValueError("nested shells must have positive separation beyond the audit tolerance")
     pieces = routed_tube_pieces(outer)
     nonadjacent = min(box_clearance(a, b) for i, a in enumerate(pieces) for b in pieces[i + 2:])
     other = min(box_clearance(a, b) for a in pieces for edge in routing.edges[:2]

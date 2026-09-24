@@ -121,6 +121,37 @@ class ConnectedRoutedEdge:
         return None
 
 
+def _validate_interface_geometry(routing, edge) -> None:
+    """Check geometric attachment independently of the current's magnitude."""
+    route, assembly = edge.route, edge.route.assembly
+    channel = assembly.channel
+    for transition, side, annulus in (
+        (assembly.inlet, "source", assembly.source_port),
+        (assembly.inlet, "target", channel),
+        (assembly.outlet, "source", channel),
+        (assembly.outlet, "target", assembly.target_port),
+    ):
+        for radius in ("inner_radius", "outer_radius"):
+            if not math.isclose(getattr(transition, f"{side}_{radius}"), getattr(annulus, radius),
+                                rel_tol=0.0, abs_tol=_TOLERANCE):
+                raise ValueError("connector interface annuli must match their port/channel geometry")
+    current = assembly.edge.current
+    fluxes = (assembly.source_port.outward_flux, -assembly.target_port.outward_flux,
+              assembly.inlet.flux, channel.field.poloidal_flux, assembly.outlet.flux)
+    if any(not math.isclose(value, current, rel_tol=1e-12, abs_tol=0.0) for value in fluxes):
+        raise ValueError("connector interface fluxes must match the signed edge current")
+    sign = 1 if current >= 0 else -1
+    if assembly.axis_sign != sign:
+        raise ValueError("connector orientation must match the signed edge current")
+    for frame, port, node in ((route.source_frame, assembly.source_port, assembly.edge.source),
+                              (route.target_frame, assembly.target_port, assembly.edge.target)):
+        placement = routing.global_routing.junction(node)
+        if (port != placement.junction.port_by_edge(edge.edge_index)
+                or frame.node != node or frame.axis != (0.0, 0.0, sign)
+                or frame.origin != placement.port_axis_point(edge.edge_index)):
+            raise ValueError("connector endpoint frame must match its declared junction port")
+
+
 def _connect_edge(edge) -> ConnectedRoutedEdge:
     assembly, route = edge.route.assembly, edge.route
     sign = assembly.axis_sign
@@ -183,6 +214,8 @@ class ConnectedSharedReturnNetwork:
 def attach_shared_return_connectors(routing: SmoothGlobalToroidalRouting) -> ConnectedSharedReturnNetwork:
     """Trim each channel and place its existing local transitions rigidly."""
     certify_shared_return_endpoint(routing)
+    for edge in routing.edges:
+        _validate_interface_geometry(routing, edge)
     connected = ConnectedSharedReturnNetwork(routing, tuple(_connect_edge(edge) for edge in routing.edges))
     if connected.maximum_interface_residual() > _TOLERANCE:
         raise ValueError("placed connector fields do not match junction/channel interfaces")
@@ -219,6 +252,8 @@ def audit_connected_geometry(network: ConnectedSharedReturnNetwork) -> Connected
     This is floating-point geometric evidence, not interval arithmetic.
     """
     certify_shared_return_endpoint(network.routing)
+    for edge in network.routing.edges:
+        _validate_interface_geometry(network.routing, edge)
     if network.edges != tuple(_connect_edge(edge) for edge in network.routing.edges):
         raise ValueError("connected pieces must match the declared routing and transitions")
     unchanged = [edge.pieces for edge in network.edges[:2]]
