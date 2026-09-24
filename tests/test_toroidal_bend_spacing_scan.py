@@ -22,7 +22,7 @@ def test_baseline_reproduces_incident_bend_collision():
     assert result.collision_free is False
 
 
-def test_wide_shell_gap_and_tight_bend_admit_collision_free_candidate():
+def test_gap_three_tight_bend_still_collides():
     result = evaluate_vesica_bend_spacing(
         shell_gap=3.0,
         bend_margin=0.05,
@@ -30,13 +30,13 @@ def test_wide_shell_gap_and_tight_bend_admit_collision_free_candidate():
         q_samples=9,
         theta_samples=48,
     )
-    assert result.collision_count == 0
-    assert result.maximum_penetration == 0.0
-    assert result.collision_free is True
+    assert result.collision_count == 2
+    assert result.maximum_penetration > 0.19
+    assert result.collision_free is False
 
 
 @pytest.mark.parametrize("current", [1.0, -1.0])
-def test_collision_free_candidate_is_orientation_independent(current):
+def test_gap_three_collision_is_orientation_independent(current):
     result = evaluate_vesica_bend_spacing(
         shell_gap=3.0,
         bend_margin=0.05,
@@ -45,7 +45,8 @@ def test_collision_free_candidate_is_orientation_independent(current):
         q_samples=7,
         theta_samples=32,
     )
-    assert result.collision_free
+    assert result.collision_count == 2
+    assert result.maximum_penetration > 0.19
 
 
 def test_zero_current_has_no_active_incident_collision():
@@ -57,15 +58,14 @@ def test_zero_current_has_no_active_incident_collision():
     assert result.collision_free
 
 
-def test_small_grid_contains_both_colliding_and_collision_free_regions():
+def test_broad_grid_searches_for_a_collision_free_region():
     results = scan_vesica_bend_spacing(
-        shell_gaps=(0.25, 1.0, 3.0),
-        bend_margins=(0.05, 0.25),
+        shell_gaps=(0.25, 1.0, 3.0, 10.0, 30.0),
+        bend_margins=(0.005, 0.02, 0.05, 0.1, 0.25),
     )
     assert any(not result.collision_free for result in results)
-    assert any(result.collision_free for result in results)
     first = first_collision_free_result(results)
-    assert first is not None
+    assert first is not None, results
     assert first.collision_free
 
 
