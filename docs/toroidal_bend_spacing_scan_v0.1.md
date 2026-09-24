@@ -38,9 +38,20 @@ the obstruction.
 
 Therefore moderate radial widening plus a tighter bend is not sufficient.
 
-The current branch now expands the search to much larger shell gaps and smaller
-positive bend margins before deciding whether spacing alone can ever remove
-the collision.
+The completed regression scan expands the search to shell gaps
+
+`(0.25, 1.0, 3.0, 10.0, 30.0)`
+
+and positive bend margins
+
+`(0.005, 0.02, 0.05, 0.1, 0.25)`.
+
+Across that deterministic 25-point grid, at least one sample is collision-free.
+The regression therefore establishes existence of a collision-free tested
+parameter point while retaining known colliding controls.
+
+The current test intentionally establishes existence rather than claiming an
+optimal point or a complete clearance boundary.
 
 ## Interpretation
 
@@ -60,7 +71,8 @@ Established here:
 - reproduction of the earlier colliding reference;
 - persistence of the collision at shell gap 3.0 and bend margin 0.05;
 - orientation independence of that failed candidate;
-- deterministic finite parameter-grid scanning.
+- deterministic finite parameter-grid scanning;
+- existence of at least one collision-free sample in the tested 25-point grid.
 
 Not established here:
 
