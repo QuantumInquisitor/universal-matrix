@@ -3346,10 +3346,10 @@ Flower/Tree examples.
 
 ### Next creator question
 
-> Can one unified global field sampler cover junction interiors, endpoint
-> Piola transitions, straight annular segments, and smooth bends while
-> remaining single-valued at every shared interface and divergence-free away
-> from the measure-zero interfaces?
+> Do two or more edges leaving the same annular junction face remain spatially
+> disjoint while their connector annuli expand toward the common toroidal
+> channel annulus?
 
-That unified sampler is the final kinematic geometry gate before a separate
-dynamics and physical-normalization program.
+That incident-edge overlap must be audited and, if present, removed by an
+explicit fan-out or separated-channel construction before a unified
+whole-network field sampler can be claimed.
