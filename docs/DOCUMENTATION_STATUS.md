@@ -32,6 +32,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/HOW_TO_USE.md` | Current installation, API, verification, and safety usage guide. |
 | `docs/CURRENT_REPOSITORY_MANIFEST.md` | Current high-level repository and subsystem map. |
 | `docs/physics_stack_status_2026-09.md` | Current research-stack status and open scientific work. |
+| `docs/MATRIX_ENGINE_WORK_QUEUE.md` | Current prioritized scientific work queue and completion gates for active Matrix Engine research. |
 | `docs/omniverse_design_questions_v0.1.md` | Open generative-design questions and gap ledger. |
 | `docs/primitive_matrix_ontology_v0.1.md` | Current executable answer to ontology Questions 1-3. |
 | `docs/matrix_local_transition_v0.1.md` | Current minimal local transition-law candidate and creator-question checkpoint. |
