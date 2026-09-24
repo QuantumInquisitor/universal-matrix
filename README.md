@@ -352,7 +352,9 @@ Calibration to a known result must be identified as calibration, not derivation.
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Detailed software and subsystem architecture |
 | [scripts/](scripts/) | Rendering, analysis and repository utilities |
 | [sdk/](sdk/) | Python and JavaScript client SDKs |
-| [deploy/](deploy/) | Deployment and operations assets |
+| [k8s/](k8s/) | Kubernetes deployment manifests |
+| [charts/](charts/) | Helm deployment charts |
+| [Dockerfile](Dockerfile) / [docker-compose.yml](docker-compose.yml) | Container runtime and local orchestration |
 | [LICENSE](LICENSE) | PolyForm Noncommercial License 1.0.0 |
 | [COMMERCIAL_LICENSE.md](COMMERCIAL_LICENSE.md) | Commercial licensing framework |
 
