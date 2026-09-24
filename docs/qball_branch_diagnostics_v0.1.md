@@ -13,20 +13,20 @@ into a universal stability theorem.
 For a smooth family of constrained stationary solutions, the repository
 normalization implies
 
-\[
+$$
 \boxed{
 \frac{dE}{dQ}
 =
 \omega.
 }
-\]
+$$
 
 The implementation evaluates finite secants between neighboring accepted branch
 points:
 
-\[
+$$
 \frac{\Delta E}{\Delta Q}
-\]
+$$
 
 and compares them with the midpoint frequency.
 
@@ -37,9 +37,9 @@ like one stationary family rather than unrelated BVP roots.
 
 The branch diagnostic also records
 
-\[
+$$
 \frac{dQ}{d\omega}.
-\]
+$$
 
 For standard one-field Q-ball families, a negative value is commonly associated
 with the candidate classically stable branch under the relevant spectral
@@ -53,23 +53,23 @@ Direct nonlinear persistence remains separate evidence.
 
 The continuation already shows
 
-\[
+$$
 E/Q>1
-\]
+$$
 
 for lower-amplitude points and
 
-\[
+$$
 E/Q<1
-\]
+$$
 
-near \(A_0=1\).
+near $A_0=1$.
 
 This layer interpolates the crossing of
 
-\[
+$$
 E/Q=m_{\rm free}.
-\]
+$$
 
 That gives an approximate location where the energetic binding diagnostic
 changes sign along the tracked family.
@@ -81,9 +81,9 @@ The useful hierarchy is now:
 1. analytic Q-ball frequency window,
 2. converged nodeless continuation,
 3. small virial residual,
-4. stationary-family check \(dE/dQ\approx\omega\),
+4. stationary-family check $dE/dQ\approx\omega$,
 5. charge-frequency slope diagnostic,
-6. \(E/Q<m_{\rm free}\),
+6. $E/Q<m_{\rm free}$,
 7. direct 3D persistence,
 8. perturbed 3D persistence.
 
