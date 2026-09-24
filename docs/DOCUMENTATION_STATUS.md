@@ -255,5 +255,6 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 
 | `docs/toroidal_bend_spacing_scan_v0.1.md` | Current parameter scan showing the compact incident-bend collision is parameter dependent and that the tested 25-point spacing/curvature grid contains at least one collision-free sample; scale-consistent clearance remains open. |
 | `docs/toroidal_bend_clearance_boundary_v0.1.md` | Current sampled frontier extracting the first collision-free shell gap per tested bend margin and unresolved margins; continuous and scale-consistent clearance remain open. |
+| `docs/toroidal_bend_clearance_refinement_v0.1.md` | Current interior refinement of resolved sampled clearance brackets with explicit transition-count and re-entrant-collision diagnostics; continuous and scale-consistent clearance remain open. |
 
 | `docs/canonical_mod9_interface_audit_v0.1.md` | Exact derived Z_108 -> Z_9 quotient, nine interface fibers, twelve interface phases, and mod-9 doubling orbit audit; not a new canonical transition law. |
