@@ -11,7 +11,7 @@ physical interpretation requires separate derivation and tests.
 | Rao reference geometry | Implemented for one corrected reference row | All labelled vertices, edges, faces, and selected chambers correspond to Huet; formula discrepancies remain visible. |
 | Meru geometry | Conical candidate implemented; independent historical metric open | Complete surface edges preserve incidence; straight-root substitution fails at 53 projected vertices. Further metrics need their own proof or audit. |
 | Broader Rao family | Open | Implement remaining constraints; trace branches and identify degeneracy boundaries. |
-| Toroidal circulation | Separated connector shells verified, but incident bend/straight collisions detected | Coaxial connector overlap is fixed; first smooth bends still enter neighboring incident straight shells before routes separate. A separate-axis fan-out is required before unified field sampling. |
+| Toroidal circulation | Smooth bends verified; same-face incident connector overlap explicitly detected | Individual fields conserve flux, but connectors sharing a junction face converge onto the same channel annulus. A disjoint edge-specific channel or spatial fan-out construction is required before unified field sampling. |
 | Physical normalization | Open derivation | Independently fix content units, clock scale, energy scale, and scale-transfer normalization. |
 | Six-gate/sevenfold physical coupling | Open derivation beyond existing finite contracts | Derive coupling assumptions and a discriminating observable. |
 | Particle interpretation | Open physical identification | Relate existing matter/gauge modes to independently constrained mass, charge, and quantum observables. |

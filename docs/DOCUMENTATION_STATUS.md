@@ -249,6 +249,4 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 
 | `docs/toroidal_incident_overlap_audit_v0.1.md` | Current same-face incident connector overlap no-fit, including first-overlap progress and affected-node diagnostics. |
 
-| `docs/toroidal_separated_channels_v0.1.md` | Current edge-specific ordered annular channel-shell construction removing same-face connector overlap while preserving signed cut flux. |
-
-| `docs/toroidal_incident_bend_audit_v0.1.md` | Current numerical no-fit audit showing separated same-face connectors still collide when endpoint smooth bends begin before incident routes spatially separate. |
+| `docs/canonical_mod9_interface_audit_v0.1.md` | Exact derived Z_108 -> Z_9 quotient, nine interface fibers, twelve interface phases, and mod-9 doubling orbit audit; not a new canonical transition law. |
