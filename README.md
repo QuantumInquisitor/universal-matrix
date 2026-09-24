@@ -86,6 +86,27 @@ The 64-address layer is a finite addressing structure. When represented as six i
 - `docs/canonical_spec_v0.4.md`
 - `white_paper.md`
 
+
+
+### Derived mod-9 quotient and interface-phase audit
+
+`src/canonical_mod9_interface_audit.py` records an exact derived decomposition
+of the 108-state core into nine mod-9 fibers and twelve interface phases per
+fiber. The nine fibers are precisely the nine orbits of the canonical
+interface operator (E=T_9).
+
+The same audit records multiplication by two on (mathbb Z_9), whose orbit
+partition is
+
+[
+(0),qquad (3,6),qquad (1,2,4,8,7,5).
+]
+
+This quotient automorphism is not promoted to a canonical Matrix transition:
+(E) and (P) are identity on the mod-9 quotient, while (T_{21}) projects
+to additive (+3). See
+`docs/canonical_mod9_interface_audit_v0.1.md`.
+
 ## What the platform can do
 
 ### Finite discrete computation
