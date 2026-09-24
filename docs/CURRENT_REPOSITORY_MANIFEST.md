@@ -624,6 +624,20 @@ Primary verification: `tests/test_toroidal_inversion_control.py`.
 Primary note: `docs/toroidal_inversion_control_v0.1.md`.
 
 
+## Toroidal fixed bend-interface obstruction
+
+`src/toroidal_fixed_interface_obstruction.py` constructs strict end-face
+collision witnesses independently of volume sampling. In the gap-3,
+margin-0.05 reference, two internal bend interfaces penetrate a neighboring
+finite straight shell by 0.2. Continuous regular bend deformations fixing
+those faces and the neighboring shells cannot remove these overlaps.
+The restricted witness search does not certify unwitnessed pairs or global
+clearance, and it does not alter routing or current fields.
+
+Primary verification: `tests/test_toroidal_fixed_interface_obstruction.py`.
+Primary note: `docs/toroidal_fixed_interface_obstruction_v0.1.md`.
+
+
 ## Canonical mod-9 quotient audit
 
 `src/canonical_mod9_interface_audit.py` derives nine mod-9 fibers and twelve

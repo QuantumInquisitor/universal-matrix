@@ -133,6 +133,7 @@ Selected current geometry and routing notes:
 | `docs/toroidal_latent_path_geometry_audit_v0.1.md` | Current diagnostic comparing persistent zero-current Tree pathways against active-only current support before recursive topology-scale conclusions are trusted. |
 | `docs/toroidal_sampling_reliability_v0.1.md` | Current finite-grid reliability audit reproducing a missed collision with shifted and denser sampling; no-detection results are not clearance certificates. |
 | `docs/toroidal_inversion_control_v0.1.md` | Current inside-out endpoint control: reversible spherical inversion, explicit flux orientation, retained collision witnesses, and a singular straight-interpolation obstruction; no safe motion or collision repair claimed. |
+| `docs/toroidal_fixed_interface_obstruction_v0.1.md` | Current fixed-interface obstruction: two analytic face witnesses rule out bend-only deformations fixing the internal joins and neighboring shells in the reference geometry; no global clearance claim. |
 
 ## Historical or provenance documents
 
