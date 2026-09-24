@@ -1,0 +1,414 @@
+{
+  "schema_version": 1,
+  "scope": "evaluated_atomic_spectrum",
+  "evidence_class": "evaluated_reference_data",
+  "title": "NIST Handbook: complete strong-line table of hydrogen",
+  "retrieved_on": "2026-09-24",
+  "source_url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/hydrogentable2.htm",
+  "notes_url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/hydrogentable1.htm",
+  "references_url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/hydrogentable7.htm",
+  "conventions_url": "https://www.nist.gov/pml/handbook-basic-atomic-spectroscopic-data/basic-atomic-spectroscopic-data-handbook",
+  "coverage": {
+    "rows": 30,
+    "vacuum": 8,
+    "air": 22,
+    "persistent": 14
+  },
+  "intensity_note": "Relative source intensities are condition dependent and are not transition probabilities or calibrated oscillator strengths.",
+  "uncertainty_note": "No per-row uncertainty supplied in this table. Null is unknown, not zero. The general RCWM80 three-decimal bound is not substituted for a statistical uncertainty.",
+  "references": {
+    "MK00a": "P. J. Mohr and S. Kotochigova, unpublished calculations (2000).",
+    "RCWM80": "J. Reader, C. H. Corliss, W. L. Wiese and G. A. Martin, NSRDS-NBS 68 (1980)."
+  },
+  "rows": [
+    {
+      "id": "nist-h-1",
+      "wavelength_A": "926.2256",
+      "medium": "vacuum",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 15,
+      "flags": [],
+      "line_reference": "MK00a",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-2",
+      "wavelength_A": "930.7482",
+      "medium": "vacuum",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 20,
+      "flags": [],
+      "line_reference": "MK00a",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-3",
+      "wavelength_A": "937.8034",
+      "medium": "vacuum",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 30,
+      "flags": [],
+      "line_reference": "MK00a",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-4",
+      "wavelength_A": "949.7430",
+      "medium": "vacuum",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 50,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-5",
+      "wavelength_A": "972.5367",
+      "medium": "vacuum",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 100,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-6",
+      "wavelength_A": "1025.7222",
+      "medium": "vacuum",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 300,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-7",
+      "wavelength_A": "1215.66824",
+      "medium": "vacuum",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 1000,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "Ritz_resolved_fine_structure",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-8",
+      "wavelength_A": "1215.67364",
+      "medium": "vacuum",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 500,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "Ritz_resolved_fine_structure",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-9",
+      "wavelength_A": "3835.384",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 5,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-10",
+      "wavelength_A": "3889.049",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 6,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-11",
+      "wavelength_A": "3970.072",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 8,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-12",
+      "wavelength_A": "4101.74",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 15,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-13",
+      "wavelength_A": "4340.462",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 30,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-14",
+      "wavelength_A": "4861.2786",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 30,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "Ritz_resolved_fine_structure",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-15",
+      "wavelength_A": "4861.2870",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 10,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "Ritz_resolved_fine_structure",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-16",
+      "wavelength_A": "4861.3615",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 60,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "Ritz_resolved_fine_structure",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-17",
+      "wavelength_A": "6562.7110",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 90,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "Ritz_resolved_fine_structure",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-18",
+      "wavelength_A": "6562.7248",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 30,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "Ritz_resolved_fine_structure",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-19",
+      "wavelength_A": "6562.8518",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 180,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "Ritz_resolved_fine_structure",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-20",
+      "wavelength_A": "9545.97",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 5,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-21",
+      "wavelength_A": "10049.4",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 7,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-22",
+      "wavelength_A": "10938.1",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 12,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-23",
+      "wavelength_A": "12818.07",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 20,
+      "flags": [
+        "P"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-24",
+      "wavelength_A": "18751.01",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 40,
+      "flags": [
+        "P",
+        "c"
+      ],
+      "line_reference": "MK00a",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-25",
+      "wavelength_A": "21655.3",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 5,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-26",
+      "wavelength_A": "26251.5",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 8,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-27",
+      "wavelength_A": "40511.6",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 15,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-28",
+      "wavelength_A": "46525.1",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 4,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-29",
+      "wavelength_A": "74578",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 6,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    },
+    {
+      "id": "nist-h-30",
+      "wavelength_A": "123685",
+      "medium": "air",
+      "isotope": "1H",
+      "spectrum": "H I",
+      "relative_intensity": 3,
+      "flags": [],
+      "line_reference": "RCWM80",
+      "wavelength_type": "unresolved_multiplet_weighted_average_energies",
+      "wavelength_uncertainty_A": null
+    }
+  ]
+}
