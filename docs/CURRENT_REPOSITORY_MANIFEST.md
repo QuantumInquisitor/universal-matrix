@@ -600,6 +600,18 @@ Primary verification: `tests/test_toroidal_latent_path_geometry_audit.py`.
 Primary note: `docs/toroidal_latent_path_geometry_audit_v0.1.md`.
 
 
+## Toroidal sampling reliability audit
+
+`src/toroidal_sampling_reliability.py` holds geometry fixed and compares three
+sampling densities with original and half-step-shifted grids. It reproduces
+the coarse grid's missed gap-3 collision and reports every grid's provenance.
+No-detection results are explicitly finite-sampling observations, not
+continuous-clearance certificates or a convergence proof.
+
+Primary verification: `tests/test_toroidal_sampling_reliability.py`.
+Primary note: `docs/toroidal_sampling_reliability_v0.1.md`.
+
+
 ## Canonical mod-9 quotient audit
 
 `src/canonical_mod9_interface_audit.py` derives nine mod-9 fibers and twelve

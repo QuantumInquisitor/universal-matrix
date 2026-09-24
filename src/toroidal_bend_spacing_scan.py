@@ -6,8 +6,8 @@ redesign: can the same graph, fluxes, annular Piola connectors, and smooth bend
 maps become incident-collision-free by changing only shell gaps and bend
 curvature?
 
-The scan is geometric and dimensionless.  A collision-free parameter point is
-an existence result, not a derived physical scale law.
+The scan is geometric and dimensionless. Zero detected collisions on a finite
+grid do not establish continuous clearance or a physical scale law.
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ import math
 from collections.abc import Iterable
 from dataclasses import dataclass
 
-from .toroidal_incident_bend_audit import audit_incident_bend_collisions
+from .toroidal_incident_bend_audit import BendSamplingGrid, audit_incident_bend_collisions
 from .toroidal_separated_channels import build_separated_framed_edge_network
 from .vesica_tree_circulation import PORT_NODES, vesica_circulation
 
@@ -34,6 +34,7 @@ class BendSpacingResult:
     bend_margin: float
     collision_count: int
     maximum_penetration: float
+    sampling: BendSamplingGrid | None = None
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "shell_gap", _finite(self.shell_gap, "shell_gap"))
@@ -54,6 +55,7 @@ class BendSpacingResult:
 
     @property
     def collision_free(self) -> bool:
+        """Compatibility name: no collision was detected on this finite grid."""
         return self.collision_count == 0
 
 
@@ -67,6 +69,9 @@ def evaluate_vesica_bend_spacing(
     phi_samples: int = 17,
     q_samples: int = 7,
     theta_samples: int = 32,
+    phi_offset: float = 0.0,
+    q_offset: float = 0.0,
+    theta_offset: float = 0.0,
 ) -> BendSpacingResult:
     """Evaluate one Vesica separated-shell/bend parameter point."""
     shell_gap = _finite(shell_gap, "shell_gap")
@@ -95,12 +100,16 @@ def evaluate_vesica_bend_spacing(
         phi_samples=phi_samples,
         q_samples=q_samples,
         theta_samples=theta_samples,
+        phi_offset=phi_offset,
+        q_offset=q_offset,
+        theta_offset=theta_offset,
     )
     return BendSpacingResult(
         shell_gap=shell_gap,
         bend_margin=bend_margin,
         collision_count=audit.collision_count,
         maximum_penetration=audit.maximum_penetration,
+        sampling=audit.sampling,
     )
 
 

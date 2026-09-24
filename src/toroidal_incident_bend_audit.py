@@ -34,6 +34,41 @@ _TOLERANCE = 1e-10
 Point3D = tuple[float, float, float]
 
 
+@dataclass(frozen=True)
+class BendSamplingGrid:
+    """Finite volume sampler; offsets are fractions of one grid interval.
+
+    Zero offsets preserve the original grid. Positive phi/q offsets move
+    samples toward the preceding interval; theta offsets rotate the periodic
+    grid. A shifted grid supplements, rather than certifies, the original.
+    """
+
+    phi_samples: int = 25
+    q_samples: int = 9
+    theta_samples: int = 48
+    phi_offset: float = 0.0
+    q_offset: float = 0.0
+    theta_offset: float = 0.0
+
+    def __post_init__(self) -> None:
+        for name, minimum in (("phi_samples", 4), ("q_samples", 3), ("theta_samples", 8)):
+            value = getattr(self, name)
+            if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+                raise ValueError(f"{name} must be an integer at least {minimum}")
+        for name in ("phi_offset", "q_offset", "theta_offset"):
+            value = float(getattr(self, name))
+            if not math.isfinite(value) or not 0.0 <= value < 1.0:
+                raise ValueError(f"{name} must be finite and in [0, 1)")
+            object.__setattr__(self, name, value)
+
+    @property
+    def description(self) -> str:
+        return (
+            f"phi:{self.phi_samples},q:{self.q_samples},theta:{self.theta_samples},"
+            f"offsets:[{self.phi_offset:g},{self.q_offset:g},{self.theta_offset:g}]"
+        )
+
+
 def _dot(left: Sequence[float], right: Sequence[float]) -> float:
     return math.fsum(a * b for a, b in zip(left, right, strict=True))
 
@@ -118,6 +153,7 @@ class IncidentBendCollision[NodeT: Hashable]:
 class IncidentBendCollisionAudit[NodeT: Hashable]:
     smooth_routing: SmoothGlobalToroidalRouting[NodeT]
     collisions: tuple[IncidentBendCollision[NodeT], ...]
+    sampling: BendSamplingGrid = BendSamplingGrid()
 
     @property
     def collision_count(self) -> int:
@@ -165,17 +201,15 @@ def _sample_bend_against_straight(
     bend: AnnularQuarterBend,
     straight: AnnularStraightSegment,
     *,
-    phi_samples: int,
-    q_samples: int,
-    theta_samples: int,
+    sampling: BendSamplingGrid,
 ) -> tuple[float, Point3D, float, float, float] | None:
     best = None
-    for phi_index in range(1, phi_samples):
-        phi = (math.pi / 2) * phi_index / (phi_samples - 1)
-        for q_index in range(1, q_samples - 1):
-            q = q_index / (q_samples - 1)
-            for theta_index in range(theta_samples):
-                theta = 2 * math.pi * theta_index / theta_samples
+    for phi_index in range(1, sampling.phi_samples):
+        phi = (math.pi / 2) * (phi_index - sampling.phi_offset) / (sampling.phi_samples - 1)
+        for q_index in range(1, sampling.q_samples - 1):
+            q = (q_index - sampling.q_offset) / (sampling.q_samples - 1)
+            for theta_index in range(sampling.theta_samples):
+                theta = 2 * math.pi * (theta_index + sampling.theta_offset) / sampling.theta_samples
                 point = bend.map_point(phi, q, theta)
                 penetration = straight.penetration_margin(point)
                 if penetration <= _TOLERANCE:
@@ -194,14 +228,13 @@ def audit_incident_bend_collisions[NodeT: Hashable](
     phi_samples: int = 25,
     q_samples: int = 9,
     theta_samples: int = 48,
+    phi_offset: float = 0.0,
+    q_offset: float = 0.0,
+    theta_offset: float = 0.0,
 ) -> IncidentBendCollisionAudit[NodeT]:
-    for value, name, minimum in (
-        (phi_samples, "phi_samples", 4),
-        (q_samples, "q_samples", 3),
-        (theta_samples, "theta_samples", 8),
-    ):
-        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
-            raise ValueError(f"{name} must be an integer at least {minimum}")
+    sampling = BendSamplingGrid(
+        phi_samples, q_samples, theta_samples, phi_offset, q_offset, theta_offset
+    )
 
     smooth = build_smooth_global_toroidal_routing(
         separated_network.framed_network,
@@ -239,9 +272,7 @@ def audit_incident_bend_collisions[NodeT: Hashable](
                     witness = _sample_bend_against_straight(
                         bend,
                         straight,
-                        phi_samples=phi_samples,
-                        q_samples=q_samples,
-                        theta_samples=theta_samples,
+                        sampling=sampling,
                     )
                     if witness is None:
                         continue
@@ -263,4 +294,5 @@ def audit_incident_bend_collisions[NodeT: Hashable](
     return IncidentBendCollisionAudit(
         smooth_routing=smooth,
         collisions=tuple(collisions),
+        sampling=sampling,
     )

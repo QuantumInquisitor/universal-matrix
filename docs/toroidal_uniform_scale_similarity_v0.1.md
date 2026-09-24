@@ -67,6 +67,13 @@ by the clearance audit:
 
 Each case is evaluated at scale factors 0.5, 1, and 2.
 
+These labels describe the coarse `(13, 5, 24)` sampling grid only. In
+particular, `(3.0, 0.05)` has two detected collisions on the denser
+`(21, 9, 48)` grid and on a half-step-shifted coarse grid. Thus its coarse
+"collision-free" classification is a missed collision, not continuous
+clearance. The similarity test remains a fixed-grid covariance check. See
+`toroidal_sampling_reliability_v0.1.md` for the resolution comparison.
+
 ## Evidence boundary
 
 This audit can establish numerical similarity covariance for the tested Vesica

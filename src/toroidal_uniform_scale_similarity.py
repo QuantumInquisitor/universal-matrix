@@ -15,7 +15,7 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 
-from .toroidal_incident_bend_audit import audit_incident_bend_collisions
+from .toroidal_incident_bend_audit import BendSamplingGrid, audit_incident_bend_collisions
 from .toroidal_separated_channels import build_separated_framed_edge_network
 from .vesica_tree_circulation import PORT_NODES, vesica_circulation
 
@@ -95,6 +95,7 @@ class SimilarityClearanceResult:
     reference_bend_margin: float
     collision_count: int
     maximum_penetration: float
+    sampling: BendSamplingGrid | None = None
 
     def __post_init__(self) -> None:
         for name in (
@@ -117,6 +118,7 @@ class SimilarityClearanceResult:
 
     @property
     def collision_free(self) -> bool:
+        """Compatibility name: no collision detected, not certified clearance."""
         return self.collision_count == 0
 
     @property
@@ -189,6 +191,7 @@ def evaluate_vesica_similarity_clearance(
         reference_bend_margin=reference_bend_margin,
         collision_count=audit.collision_count,
         maximum_penetration=audit.maximum_penetration,
+        sampling=audit.sampling,
     )
 
 
@@ -214,7 +217,10 @@ def similarity_family(
 def format_similarity_report(
     families: tuple[tuple[SimilarityClearanceResult, ...], ...],
 ) -> str:
-    lines = ["TOROIDAL UNIFORM SCALE SIMILARITY"]
+    lines = [
+        "TOROIDAL UNIFORM SCALE SIMILARITY",
+        "evidence=finite_sampling_only; zero_collisions_is_not_a_clearance_proof",
+    ]
     for family in families:
         if not family:
             continue
@@ -225,12 +231,14 @@ def format_similarity_report(
             f"margin:{reference.reference_bend_margin:g}"
         )
         for result in family:
+            sampling = result.sampling.description if result.sampling else "unspecified"
             lines.append(
                 "scale="
                 f"{result.scale_factor:g},"
                 f"collision_count:{result.collision_count},"
                 f"penetration:{result.maximum_penetration:.12g},"
-                f"normalized_penetration:{result.normalized_penetration:.12g}"
+                f"normalized_penetration:{result.normalized_penetration:.12g},"
+                f"sampling:[{sampling}]"
             )
     return "\n".join(lines)
 

@@ -279,8 +279,11 @@ def refine_vesica_clearance_boundary(
 
 
 def format_clearance_refinement_report(audit: ClearanceRefinementAudit) -> str:
+    grids = dict.fromkeys(result.sampling for result in audit.coarse.results)
     lines = [
         "TOROIDAL BEND CLEARANCE REFINEMENT",
+        "evidence=finite_sampling_only; free_bracket_endpoints_are_not_certified",
+        "sampling=" + ";".join(grid.description if grid else "unspecified" for grid in grids),
         f"coarse_sample_count={audit.coarse.sample_count}",
         f"refined_row_count={len(audit.rows)}",
         f"refined_sample_count={audit.refined_sample_count}",

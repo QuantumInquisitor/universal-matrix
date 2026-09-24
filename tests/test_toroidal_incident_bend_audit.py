@@ -2,7 +2,10 @@ from __future__ import annotations
 
 import pytest
 
-from src.toroidal_incident_bend_audit import audit_incident_bend_collisions
+from src.toroidal_incident_bend_audit import (
+    _endpoint_bend_and_straight,
+    audit_incident_bend_collisions,
+)
 from src.toroidal_separated_channels import build_separated_framed_edge_network
 from src.vesica_tree_circulation import (
     PORT_NODES,
@@ -94,6 +97,30 @@ def test_audit_returns_reproducible_collision_witnesses():
     )
 
     assert first.collisions == second.collisions
+
+
+def test_shifted_collision_witnesses_lie_in_both_actual_volumes():
+    circulation = vesica_circulation(1.0, return_split=0.4)
+    separated = build_separated_framed_edge_network(
+        circulation.edges, PORT_NODES, shell_gap=3.0
+    )
+    audit = audit_incident_bend_collisions(
+        separated, bend_margin=0.05, phi_samples=13, q_samples=5, theta_samples=24,
+        phi_offset=0.5, q_offset=0.5, theta_offset=0.5,
+    )
+    assert audit.collision_count == 2
+    edges = {edge.edge_index: edge for edge in audit.smooth_routing.edges}
+    for witness in audit.collisions:
+        bend, _ = _endpoint_bend_and_straight(edges[witness.bending_edge_index], witness.node)
+        _, straight = _endpoint_bend_and_straight(edges[witness.straight_edge_index], witness.node)
+        assert 0.0 < witness.witness_q < 1.0
+        assert bend.map_point(
+            witness.witness_phi, witness.witness_q, witness.witness_theta
+        ) == pytest.approx(witness.witness_point)
+        assert straight.penetration_margin(witness.witness_point) == pytest.approx(
+            witness.maximum_penetration
+        )
+        assert witness.maximum_penetration > 0.19
 
 
 @pytest.mark.parametrize(
