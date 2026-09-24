@@ -22,31 +22,31 @@ Tests:
 
 The canonical polarity operator is
 
-$
+$$
 P=T_{54}.
-$
+$$
 
 Because
 
-$
+$$
 108=2\times54,
-$
+$$
 
 every core state has a unique representation
 
-$
+$$
 \boxed{
 n=a+54p
 }
-$
+$$
 
 with
 
-$
+$$
 a\in\{0,\ldots,53\},
 \qquad
 p\in\{0,1\}.
-$
+$$
 
 Here:
 
@@ -55,17 +55,17 @@ Here:
 
 Under the exact canonical polarity operation,
 
-$
+$$
 P(n)=n+54\pmod{108},
-$
+$$
 
 the decomposition becomes
 
-$
+$$
 \boxed{
 (a,p)\longrightarrow(a,1-p).
 }
-$
+$$
 
 Therefore the pair index is invariant under polarity and the polarity bit flips.
 
@@ -85,31 +85,31 @@ This does not prohibit additional physical polarity-like fields, but any such fi
 
 The exact local finite address is therefore
 
-$
+$$
 \boxed{
 \text{CoreAddress}=(a,p),
 }
-$
+$$
 
 where
 
-$
+$$
 a\in\mathbb Z_{54}
-$
+$$
 
 as a label set and
 
-$
+$$
 p\in\mathbb Z_2
-$
+$$
 
 as a branch bit.
 
 This is a coordinate decomposition of the 108 labels. It should not be interpreted as a claim that
 
-$
+$$
 \mathbb Z_{108}\cong\mathbb Z_{54}\times\mathbb Z_2
-$
+$$
 
 as groups.
 
@@ -121,19 +121,19 @@ The decomposition is a bijection of the finite state set adapted to the canonica
 
 The current minimal candidate dynamical state is represented as
 
-$
+$$
 \boxed{
 X_{\rm cell}
 =
 (a,p,\ell,\phi,\Pi_\phi).
 }
-$
+$$
 
 Only
 
-$
+$$
 (a,p)
-$
+$$
 
 is exact canonical structure.
 
@@ -166,15 +166,15 @@ Gauge connection variables are naturally associated with oriented links between 
 
 For an Abelian example,
 
-$
+$$
 U_{xy}=e^{i\theta_{xy}}.
-$
+$$
 
 For a non-Abelian group,
 
-$
+$$
 U_{xy}\in G.
-$
+$$
 
 Their conjugate electric fields also live naturally on links.
 
@@ -190,11 +190,11 @@ The ontology therefore classifies:
 
 The canonical boundary labels
 
-$
+$$
 B_6
 =
 \{+X,-X,+Y,-Y,+Z,-Z\}
-$
+$$
 
 are now treated, at the ontology layer, primarily as oriented connectivity labels.
 
@@ -202,23 +202,23 @@ The current repeated-cell candidate uses them as the six nearest-neighbor direct
 
 This yields the adjacency structure
 
-$
+$$
 (x,y,z)
 \leftrightarrow
 (x\pm1,y,z),
-$
+$$
 
-$
+$$
 (x,y,z)
 \leftrightarrow
 (x,y\pm1,z),
-$
+$$
 
-$
+$$
 (x,y,z)
 \leftrightarrow
 (x,y,z\pm1).
-$
+$$
 
 This is a candidate locality adapter.
 
@@ -232,11 +232,11 @@ The existing open-field engine already uses many spatial cells.
 
 The ontology therefore formalizes the current working hypothesis:
 
-$
+$$
 \boxed{
 \text{one spatial site carries one local Matrix cell state.}
 }
-$
+$$
 
 Many such cells are connected by the six oriented gates.
 
@@ -254,10 +254,10 @@ Therefore this ontology work does not solve the dimensional-scale problem.
 
 The mapping
 
-$
+$$
 (x,y,z)\mapsto
 (a_{\rm phys}x,a_{\rm phys}y,a_{\rm phys}z)
-$
+$$
 
 remains undefined until a physical scale is derived or independently calibrated.
 
@@ -312,29 +312,29 @@ Begin with the least structure already forced by the canonical mathematics.
 
 The exact discrete local address is
 
-$
+$$
 \boxed{
 (a,p).
 }
-$
+$$
 
 Then add only dynamical variables that cannot be derived from it.
 
 At present the minimal candidate extension is
 
-$
+$$
 \boxed{
 (a,p,\ell,\phi,\Pi_\phi),
 }
-$
+$$
 
 with gauge information placed on links.
 
 This is a cleaner ontology than
 
-$
+$$
 (n,\sigma,\phi,A,\ldots)
-$
+$$
 
 when $\sigma$ merely duplicates the polarity already encoded by $n$.
 
@@ -342,7 +342,7 @@ when $\sigma$ merely duplicates the polarity already encoded by $n$.
 
 The current classification is:
 
-$
+$$
 \boxed{
 \text{exact address}
 \neq
@@ -354,7 +354,7 @@ $
 \neq
 \text{gauge redundancy}.
 }
-$
+$$
 
 That separation is now executable in the ontology ledger.
 
@@ -362,13 +362,13 @@ That separation is now executable in the ontology ledger.
 
 The current engine architecture adopts the repeated-cell hypothesis:
 
-$
+$$
 \boxed{
 \text{many local Matrix cells}
 +
 \text{six-gate adjacency}.
 }
-$
+$$
 
 This is the topology used by the present local field engines.
 
