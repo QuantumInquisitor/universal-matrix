@@ -484,3 +484,19 @@ progress, and terminal overlap width.
 
 See `docs/toroidal_incident_overlap_audit_v0.1.md` for the no-fit result and
 the separated-channel/fan-out correction gate.
+
+
+## Build separated toroidal channel shells
+
+```sh
+python -m pytest -q tests/test_toroidal_separated_channels.py
+```
+
+Use `build_separated_framed_edge_network(...)` to allocate one ordered
+annular channel shell per graph edge, build the edge-specific toroidal bundle,
+attach the existing annular junctions, and reuse the framed-edge assembly
+logic. The helper reports terminal shell gaps and the same-face connector audit
+returns zero overlap pairs.
+
+See `docs/toroidal_separated_channels_v0.1.md` for the order-preservation
+argument and the remaining incident-bend collision gate.

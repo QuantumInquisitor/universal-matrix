@@ -3292,9 +3292,8 @@ in `src/toroidal_global_routing.py`.
 
 Every annular junction is moved by a rigid translation with its local axis kept
 parallel to global +z. Every graph edge receives a unique positive-y corridor
-and a unique high/low z level. Its routed centerline begins and ends along +z,
-so the endpoint frame contract from the local framed assembly is preserved
-exactly.
+and a unique high/low z level. Its routed centerline begins and ends along `axis_sign * +z`, so the signed
+endpoint frame contract from the local framed assembly is preserved exactly.
 
 Each route is surrounded by a conservative circular envelope whose radius is
 the largest annular outer radius used anywhere in that edge assembly plus an
@@ -3387,4 +3386,35 @@ connector remains divergence-free and flux preserving.
 
 The next subsystem should implement the simplest disjoint construction and
 prove same-face connector separation before returning to unified field
+sampling.
+
+
+---
+
+## Edge-specific separated channel-shell checkpoint v0.1
+
+The common-channel overlap no-fit now has a minimal local correction in
+`src/toroidal_separated_channels.py`.
+
+Every graph edge receives a distinct annular channel shell ordered by edge
+index. The shell becomes the canonical poloidal cut of an edge-specific
+purely-poloidal toroidal field while retaining the graph current as its signed
+cut flux.
+
+Junction face bands are already ordered by edge index. Since each Piola
+transition interpolates radial boundaries with one common smoothstep weight,
+ordered disjoint port intervals interpolated toward ordered disjoint channel
+shells remain ordered and disjoint for the entire transition.
+
+The original same-face overlap audit returns zero nonzero overlap pairs on the
+separated Vesica and Flower/Tree connector networks.
+
+### Next creator question
+
+> When the separated channel shells are carried through the global routed
+> centerlines and smooth bends, do incident edge volumes remain disjoint after
+> they stop being coaxial?
+
+That full incident-bend collision audit is required before the separated-shell
+construction can replace the common-channel candidate for whole-network field
 sampling.

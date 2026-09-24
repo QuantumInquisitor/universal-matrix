@@ -253,6 +253,22 @@ dynamics, or physical normalization.
 
 ---
 
+
+
+### Separated channel-shell correction
+
+`src/toroidal_separated_channels.py` removes the common-channel connector
+overlap by assigning one ordered annular channel shell to every graph edge.
+The signed graph current remains the toroidal poloidal cut flux, and the
+existing annular junction/framed-edge conservation contracts remain intact.
+
+The correction is geometric and kinematic. Incident-edge bend volumes still
+need a complete collision audit before the whole network can be treated as one
+single-valued field. No physical scale law is inferred from the chosen shell
+radii or gaps.
+
+---
+
 ## 3. Abelian U(1) gauge sector
 
 Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**

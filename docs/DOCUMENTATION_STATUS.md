@@ -248,3 +248,5 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 | `docs/toroidal_smooth_bends_v0.1.md` | Current positive-Jacobian annular quarter-bend map with Piola-transported flux profile and global collision-envelope certification. |
 
 | `docs/toroidal_incident_overlap_audit_v0.1.md` | Current same-face incident connector overlap no-fit, including first-overlap progress and affected-node diagnostics. |
+
+| `docs/toroidal_separated_channels_v0.1.md` | Current edge-specific ordered annular channel-shell construction removing same-face connector overlap while preserving signed cut flux. |
