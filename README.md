@@ -182,11 +182,14 @@ The current chain includes:
 8. smooth positive-Jacobian annular bends;
 9. same-face incident overlap auditing;
 10. edge-specific separated channel shells;
-11. incident bend/straight collision auditing.
+11. incident bend/straight collision auditing;
+12. spacing/curvature parameter scanning;
+13. sampled collision/free frontier extraction;
+14. interior collision/free bracket refinement.
 
-The present compact separated-shell geometry removes coaxial connector overlap but still produces incident bend/straight intersections in the tested Vesica and Flower/Tree references.
+The compact separated-shell reference removes coaxial connector overlap but still produces incident bend/straight intersections in the tested Vesica and Flower/Tree geometry. A broader spacing/curvature scan, sampled frontier, and bracket-refinement layer now show that the obstruction is parameter dependent and can be narrowed numerically without assuming a globally monotone clearance law.
 
-The active geometric gate is therefore to determine whether spacing and curvature alone admit a collision-free, scale-consistent region. If not, same-face incident edges require a separate-axis spatial fan-out before whole-network field sampling can be admitted.
+The active geometric gate is now scale consistency: expose the refined sampled brackets, increase local collision sampling where needed, and test dimensionless clearance ratios across Flower/Tree scales and recursive depths. Separate-axis spatial fan-out remains a fallback only if no compact scale-consistent region survives.
 
 Primary notes:
 
@@ -196,6 +199,8 @@ Primary notes:
 - [docs/toroidal_separated_channels_v0.1.md](docs/toroidal_separated_channels_v0.1.md)
 - [docs/toroidal_incident_bend_audit_v0.1.md](docs/toroidal_incident_bend_audit_v0.1.md)
 - [docs/toroidal_bend_spacing_scan_v0.1.md](docs/toroidal_bend_spacing_scan_v0.1.md)
+- [docs/toroidal_bend_clearance_boundary_v0.1.md](docs/toroidal_bend_clearance_boundary_v0.1.md)
+- [docs/toroidal_bend_clearance_refinement_v0.1.md](docs/toroidal_bend_clearance_refinement_v0.1.md)
 - [docs/MATRIX_ENGINE_WORK_QUEUE.md](docs/MATRIX_ENGINE_WORK_QUEUE.md)
 
 ### 5. Gauge, Dirac and chiral lattice research
@@ -318,7 +323,7 @@ The broader [src/api.py](src/api.py) surface remains a compatibility and experim
 | Rao great-circle reference | Implemented for one corrected reference row |
 | Meru geometry | Explicit conical candidate implemented, independent historical metric remains open |
 | Broader Rao family | Open |
-| Toroidal whole-network field | A collision-free spacing/curvature point exists in the tested grid; boundary mapping and scale-consistency remain open |
+| Toroidal whole-network field | Coarse scan, sampled frontier, and interior bracket refinement implemented; scale-consistent clearance remains open |
 | Physical normalization | Open derivation |
 | Six-gate/sevenfold physical coupling | Open derivation |
 | Particle interpretation | Open physical identification |
