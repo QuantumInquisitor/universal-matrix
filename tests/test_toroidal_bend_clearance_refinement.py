@@ -28,7 +28,7 @@ def test_default_refinement_preserves_coarse_endpoint_classes(default_refinement
     for row in default_refinement.rows:
         assert not row.results[0].collision_free
         assert row.results[-1].collision_free
-        assert row.refined_width <= row.coarse_width / row.subdivisions + 1e-12
+        assert row.refined_width <= row.coarse_width / default_refinement.subdivisions + 1e-12
 
 
 def test_refined_rows_preserve_margin_and_sorted_gap_order(default_refinement):
