@@ -15,6 +15,7 @@ For authority and historical-status rules, see `docs/DOCUMENTATION_STATUS.md`.
 Primary authority:
 
 - `src/canonical_kernel.py`
+- `src/canonical_mod9_interface_audit.py`
 - `tests/test_canonical_kernel.py`
 - `docs/canonical_spec_v0.4.md`
 - `white_paper.md`
@@ -495,3 +496,14 @@ though each connector separately preserves flux.
 
 Primary verification: `tests/test_toroidal_incident_overlap_audit.py`.
 Primary note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
+
+
+## Canonical mod-9 quotient audit
+
+`src/canonical_mod9_interface_audit.py` derives nine mod-9 fibers and twelve
+interface phases from the canonical 108-state core. It records exact coordinate
+actions for (E), (P), (F), and (T_{21}), plus the separate
+multiplication-by-two automorphism of (mathbb Z_9).
+
+Primary verification: `tests/test_canonical_mod9_interface_audit.py`.
+Primary note: `docs/canonical_mod9_interface_audit_v0.1.md`.
