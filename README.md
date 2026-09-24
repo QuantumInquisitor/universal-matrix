@@ -633,6 +633,7 @@ Start with:
 - `docs/toroidal_annular_junction_v0.1.md`
 - `docs/toroidal_framed_edge_assembly_v0.1.md`
 - `docs/toroidal_global_routing_v0.1.md`
+- `docs/toroidal_smooth_bends_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
@@ -847,3 +848,19 @@ yet claimed.
 
 Technical note: `docs/toroidal_global_routing_v0.1.md`.
 Verification: `tests/test_toroidal_global_routing.py`.
+
+
+## Smooth positive-Jacobian toroidal bends
+
+`src/toroidal_smooth_bends.py` replaces every right-angle global route corner
+with an explicit annular quarter bend. Bend radii are required to exceed the
+annular outer radius, which keeps the map Jacobian positive. The
+Piola-transported current preserves the existing annular flux profile and
+matches the adjacent straight fields point by point.
+
+Expanded global routing envelopes contain the curved bends, so the existing
+nonincident collision audit remains a conservative certificate for the
+smoothed geometry.
+
+Technical note: `docs/toroidal_smooth_bends_v0.1.md`.
+Verification: `tests/test_toroidal_smooth_bends.py`.
