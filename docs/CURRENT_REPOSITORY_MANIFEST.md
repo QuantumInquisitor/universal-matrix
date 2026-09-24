@@ -570,6 +570,21 @@ Primary verification: `tests/test_toroidal_bend_clearance_refinement.py`.
 Primary note: `docs/toroidal_bend_clearance_refinement_v0.1.md`.
 
 
+## Toroidal uniform-scale similarity audit
+
+`src/toroidal_uniform_scale_similarity.py` scales the complete declared
+toroidal routing length set by one positive similarity factor, including shell,
+junction, connector, channel, routing-gap, and bend-margin dimensions.
+
+The audit checks that collision classification is invariant under uniform
+similarity and that any dimensional penetration scales linearly, so normalized
+penetration remains constant. It is a numerical Vesica similarity test, not a
+physical scale law or recursive-depth theorem.
+
+Primary verification: `tests/test_toroidal_uniform_scale_similarity.py`.
+Primary note: `docs/toroidal_uniform_scale_similarity_v0.1.md`.
+
+
 ## Canonical mod-9 quotient audit
 
 `src/canonical_mod9_interface_audit.py` derives nine mod-9 fibers and twelve
