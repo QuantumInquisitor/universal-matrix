@@ -122,3 +122,12 @@ def test_documentation_status_lists_current_authority():
     for relative in CURRENT_AUTHORITY:
         assert f"`{relative}`" in status, relative
 
+def test_white_paper_major_sections_are_sequential():
+    text = _read("white_paper.md")
+    majors = [
+        int(match.group(1))
+        for line in text.splitlines()
+        if (match := re.match(r"^## (\d+)\. ", line))
+    ]
+    assert majors == list(range(1, 25))
+
