@@ -3292,9 +3292,8 @@ in `src/toroidal_global_routing.py`.
 
 Every annular junction is moved by a rigid translation with its local axis kept
 parallel to global +z. Every graph edge receives a unique positive-y corridor
-and a unique high/low z level. Its routed centerline begins and ends along +z,
-so the endpoint frame contract from the local framed assembly is preserved
-exactly.
+and a unique high/low z level. Its routed centerline begins and ends along `axis_sign * +z`, so the signed
+endpoint frame contract from the local framed assembly is preserved exactly.
 
 Each route is surrounded by a conservative circular envelope whose radius is
 the largest annular outer radius used anywhere in that edge assembly plus an
@@ -3388,3 +3387,68 @@ connector remains divergence-free and flux preserving.
 The next subsystem should implement the simplest disjoint construction and
 prove same-face connector separation before returning to unified field
 sampling.
+
+
+---
+
+## Edge-specific separated channel-shell checkpoint v0.1
+
+The common-channel overlap no-fit now has a minimal local correction in
+`src/toroidal_separated_channels.py`.
+
+Every graph edge receives a distinct annular channel shell ordered by edge
+index. The shell becomes the canonical poloidal cut of an edge-specific
+purely-poloidal toroidal field while retaining the graph current as its signed
+cut flux.
+
+Junction face bands are already ordered by edge index. Since each Piola
+transition interpolates radial boundaries with one common smoothstep weight,
+ordered disjoint port intervals interpolated toward ordered disjoint channel
+shells remain ordered and disjoint for the entire transition.
+
+The original same-face overlap audit returns zero nonzero overlap pairs on the
+separated Vesica and Flower/Tree connector networks.
+
+### Next creator question
+
+> When the separated channel shells are carried through the global routed
+> centerlines and smooth bends, do incident edge volumes remain disjoint after
+> they stop being coaxial?
+
+That full incident-bend collision audit is required before the separated-shell
+construction can replace the common-channel candidate for whole-network field
+sampling.
+
+
+---
+
+## Incident smooth-bend collision checkpoint v0.1
+
+The separated-shell connector construction removes same-face overlap while the
+connectors remain coaxial, but the later curved geometry exposes a second
+obstruction in `src/toroidal_incident_bend_audit.py`.
+
+For every same-face nonzero incident pair, the audit samples the actual smooth
+annular bend volume of one edge against the exact trimmed annular straight
+segment of the other. A collision witness is accepted only when the sampled
+point lies strictly inside both volumes with positive axial and radial
+penetration.
+
+The separated-shell Vesica reference produces collision witnesses for both
+positive and negative current orientations. The Flower/Tree reference also
+produces affected nodes. Zero-current edges are excluded from the active-pair
+audit and produce no nonzero collision.
+
+The failure therefore occurs after the port-to-channel interpolation: one
+annular edge bends away from the shared endpoint axis while another incident
+edge still occupies a straight annular shell on that axis.
+
+### Next creator question
+
+> Can each same-face incident edge be moved onto its own spatial axis by a
+> positive-Jacobian divergence-free fan-out before the first large-radius bend?
+
+That separate-axis fan-out is now required. It must preserve each port profile
+and signed flux, keep the fan-out domains disjoint, connect to the
+edge-specific channel shells, and retain the nonincident global collision
+certificate.
