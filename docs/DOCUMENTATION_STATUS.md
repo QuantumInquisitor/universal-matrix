@@ -132,6 +132,7 @@ Selected current geometry and routing notes:
 | `docs/toroidal_uniform_scale_similarity_v0.1.md` | Current uniform-similarity audit scaling the complete declared toroidal geometry and testing collision-class invariance plus linearly scaled penetration; recursive topology-scale consistency remains open. |
 | `docs/toroidal_latent_path_geometry_audit_v0.1.md` | Current diagnostic comparing persistent zero-current Tree pathways against active-only current support before recursive topology-scale conclusions are trusted. |
 | `docs/toroidal_sampling_reliability_v0.1.md` | Current finite-grid reliability audit reproducing a missed collision with shifted and denser sampling; no-detection results are not clearance certificates. |
+| `docs/toroidal_inversion_control_v0.1.md` | Current inside-out endpoint control: reversible spherical inversion, explicit flux orientation, retained collision witnesses, and a singular straight-interpolation obstruction; no safe motion or collision repair claimed. |
 
 ## Historical or provenance documents
 
