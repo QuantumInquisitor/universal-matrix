@@ -26,28 +26,28 @@ The normalized planar point
 
 is then sent to the unit sphere by inverse stereographic projection:
 
-\[
+$$
 X=\frac{2u}{1+u^2+v^2},
-\]
+$$
 
-\[
+$$
 Y=\frac{2v}{1+u^2+v^2},
-\]
+$$
 
-\[
+$$
 Z=\frac{1-u^2-v^2}{1+u^2+v^2}.
-\]
+$$
 
 Because the selected chamber vertices remain inside the unit disk, all selected
 vertices lie in the open northern hemisphere.
 
 The inverse chart is
 
-\[
+$$
 u=\frac{X}{1+Z},
 \qquad
 v=\frac{Y}{1+Z}.
-\]
+$$
 
 ## Edges are lifted as complete paths
 
@@ -73,16 +73,16 @@ The control answers a topology question, not a metric one.
 
 The Huet reconstruction is reflected in the rotated planar coordinate by
 
-\[
+$$
 (x,y)\mapsto(x,-y).
-\]
+$$
 
 The normalization does not translate the y coordinate. Under the spherical
 control this becomes
 
-\[
+$$
 (X,Y,Z)\mapsto(X,-Y,Z).
-\]
+$$
 
 The implementation verifies this equivariance at every arrangement node.
 
