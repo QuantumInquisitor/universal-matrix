@@ -554,6 +554,22 @@ Primary verification: `tests/test_toroidal_bend_clearance_boundary.py`.
 Primary note: `docs/toroidal_bend_clearance_boundary_v0.1.md`.
 
 
+## Toroidal bend-clearance refinement
+
+`src/toroidal_bend_clearance_refinement.py` subdivides each resolved sampled
+collision/free bracket from the coarse frontier, reuses the coarse endpoint
+classifications, evaluates only the interior gaps, and reports a narrower
+sampled bracket together with transition-count and re-entrant-collision
+diagnostics.
+
+The refinement does not assume that clearance is monotone in shell gap and
+does not promote the finite samples to a continuous boundary or physical scale
+law.
+
+Primary verification: `tests/test_toroidal_bend_clearance_refinement.py`.
+Primary note: `docs/toroidal_bend_clearance_refinement_v0.1.md`.
+
+
 ## Canonical mod-9 quotient audit
 
 `src/canonical_mod9_interface_audit.py` derives nine mod-9 fibers and twelve
