@@ -4,18 +4,18 @@
 
 This note connects four existing structures:
 
-1. the exact canonical polarity branch \(p\in\{0,1\}\);
-2. an independent local phase \(\phi\);
+1. the exact canonical polarity branch $p\in\{0,1\}$;
+2. an independent local phase $\phi$;
 3. polarity-sensitive link currents;
 4. the fixed-amplitude limit of the complex matter sector.
 
 Implementation:
 
-- \`src/matrix_polarity_phase_bridge.py\`
+- `src/matrix_polarity_phase_bridge.py`
 
 Tests:
 
-- \`tests/test_matrix_polarity_phase_bridge.py\`
+- `tests/test_matrix_polarity_phase_bridge.py`
 
 The goal is to remove duplicated polarity bookkeeping.
 
@@ -23,91 +23,91 @@ The goal is to remove duplicated polarity bookkeeping.
 
 The canonical address decomposition is
 
-\[
+$
 n=a+54p,
 \qquad
 p\in\{0,1\}.
-\]
+$
 
 Associate the branch sign
 
-\[
+$
 s_p=(-1)^p.
-\]
+$
 
 Then
 
-\[
+$
 p=0\Rightarrow s_p=+1,
-\]
+$
 
 and
 
-\[
+$
 p=1\Rightarrow s_p=-1.
-\]
+$
 
-Under the exact polarity operation \(P=T_{54}\),
+Under the exact polarity operation $P=T_{54}$,
 
-\[
+$
 p\rightarrow1-p,
-\]
+$
 
 so the sign reverses.
 
 ## 2. Branch as a phase offset
 
-If \(\phi\) is an independent local phase, define
+If $\phi$ is an independent local phase, define
 
-\[
+$
 \boxed{
 \phi_{\rm eff}
 =
 \phi+\pi p.
 }
-\]
+$
 
 Then
 
-\[
+$
 e^{i\phi_{\rm eff}}
 =
 (-1)^p e^{i\phi}.
-\]
+$
 
-Therefore the exact canonical branch can be represented as a \(\pi\) phase
+Therefore the exact canonical branch can be represented as a $\pi$ phase
 offset without introducing a second independent polarity degree of freedom.
 
 ## 3. Polarity-weighted current identity
 
 Consider the polarity-weighted link factor
 
-\[
+$
 s_x s_y
 \sin\left(
 \phi_y-\phi_x+\theta_{xy}
 \right).
-\]
+$
 
 Using
 
-\[
+$
 \phi_{{\rm eff},x}
 =
 \phi_x+\pi p_x,
-\]
+$
 
 and
 
-\[
+$
 \phi_{{\rm eff},y}
 =
 \phi_y+\pi p_y,
-\]
+$
 
 we obtain
 
-\[
+$
 \boxed{
 s_x s_y
 \sin\left(
@@ -122,53 +122,53 @@ s_x s_y
 \theta_{xy}
 \right).
 }
-\]
+$
 
 The regression tests verify this for all four branch pairings.
 
 This means that when the polarity variable in a current model means exactly the
-canonical \(T_{54}\) branch, it does not need to be stored independently from
+canonical $T_{54}$ branch, it does not need to be stored independently from
 an effective phase representation.
 
 ## 4. Fixed-amplitude complex matter reduces to the rotor link
 
 The existing complex matter sector uses the nearest-neighbor term
 
-\[
+$
 \left|
 e^{i\theta_{xy}}\Phi_y-\Phi_x
 \right|^2.
-\]
+$
 
 For equal fixed amplitude
 
-\[
+$
 |\Phi_x|
 =
 |\Phi_y|
 =
 R,
-\]
+$
 
 with
 
-\[
+$
 \Phi_x
 =
 R e^{i\phi_{{\rm eff},x}},
-\]
+$
 
 and
 
-\[
+$
 \Phi_y
 =
 R e^{i\phi_{{\rm eff},y}},
-\]
+$
 
 the link energy becomes
 
-\[
+$
 \boxed{
 \left|
 e^{i\theta_{xy}}\Phi_y-\Phi_x
@@ -179,11 +179,11 @@ e^{i\theta_{xy}}\Phi_y-\Phi_x
 1-\cos\Delta_{xy}
 \right]
 }
-\]
+$
 
 where
 
-\[
+$
 \Delta_{xy}
 =
 \phi_{{\rm eff},y}
@@ -191,25 +191,25 @@ where
 \phi_{{\rm eff},x}
 +
 \theta_{xy}.
-\]
+$
 
 Therefore the minimal rotor interaction
 
-\[
+$
 K
 \left[
 1-\cos\Delta_{xy}
 \right]
-\]
+$
 
 is exactly the fixed-amplitude sector of the existing complex matter gradient
 when
 
-\[
+$
 \boxed{
 K=2R^2
 }
-\]
+$
 
 for the current normalization.
 
@@ -219,31 +219,31 @@ This is an exact algebraic reduction, not an analogy.
 
 The canonical routing operator satisfies
 
-\[
+$
 T^{18}=P.
-\]
+$
 
 The polarity clock advances by
 
-\[
+$
 \Delta\phi_P
 =
 \pi
-\]
+$
 
 over the same 18 routing ticks.
 
 Therefore one half-cycle can be represented either as:
 
-- an exact branch flip \(p\rightarrow1-p\), or
-- a \(\pi\) advance of a phase variable that already represents the canonical
+- an exact branch flip $p\rightarrow1-p$, or
+- a $\pi$ advance of a phase variable that already represents the canonical
   polarity clock.
 
 If both are applied to the same physical polarity effect,
 
-\[
+$
 \pi+\pi=2\pi,
-\]
+$
 
 and the sign returns to its original value.
 
@@ -255,17 +255,17 @@ The engine should distinguish two cases.
 
 ### Independent-phase representation
 
-If \(\phi\) is an independent matter or cell phase, canonical polarity may be
+If $\phi$ is an independent matter or cell phase, canonical polarity may be
 encoded by
 
-\[
+$
 \phi_{\rm eff}=\phi+\pi p.
-\]
+$
 
 ### Clock-locked representation
 
-If \(\phi\) already is the canonical polarity-clock phase, then the half-cycle
-\(\pi\) shift already represents the polarity reversal.
+If $\phi$ already is the canonical polarity-clock phase, then the half-cycle
+$\pi$ shift already represents the polarity reversal.
 
 Do not multiply by another copy of the same canonical branch sign.
 
