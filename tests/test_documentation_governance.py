@@ -13,6 +13,7 @@ CURRENT_AUTHORITY = [
     "docs/CURRENT_REPOSITORY_MANIFEST.md",
     "docs/canonical_spec_v0.4.md",
     "docs/physics_stack_status_2026-09.md",
+    "docs/MATRIX_ENGINE_WORK_QUEUE.md",
     "docs/omniverse_design_questions_v0.1.md",
     "docs/COMMERCIAL_PRODUCT_SURFACES.md",
     "docs/ROBOTICS_XR_PRODUCT_ARCHITECTURE.md",
@@ -115,4 +116,9 @@ def test_architecture_major_sections_are_sequential():
         if (match := re.match(r"^## (\d+)\.", line))
     ]
     assert majors == list(range(1, 26))
+
+def test_documentation_status_lists_current_authority():
+    status = _read("docs/DOCUMENTATION_STATUS.md")
+    for relative in CURRENT_AUTHORITY:
+        assert f"`{relative}`" in status, relative
 
