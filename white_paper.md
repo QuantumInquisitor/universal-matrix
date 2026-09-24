@@ -1576,7 +1576,7 @@ See `docs/toroidal_framed_edge_assembly_v0.1.md`.
 `src/toroidal_global_routing.py` supplies a deterministic global placement of
 the annular junctions and local framed edge assemblies. Junctions are rigidly
 translated, while every graph edge receives a unique orthogonal centerline
-corridor with preserved +z endpoint frames.
+corridor with preserved signed endpoint frames.
 
 A conservative tube-envelope audit finds positive clearance between
 nonincident edge routes and between each route and every nonincident junction
