@@ -90,3 +90,18 @@ def test_current_white_paper_version_matches_readme():
     paper = _read("white_paper.md")
     assert "White paper:** Version 0.6" in readme
     assert "Version 0.6" in paper
+
+
+def test_current_authority_markdown_math_integrity():
+    forbidden_controls = ("\t", "\r", "\f", "\b", "\v")
+    for relative in CURRENT_AUTHORITY:
+        text = _read(relative)
+        assert not any(char in text for char in forbidden_controls), relative
+        assert "\\[" not in text, relative
+        assert "\\]" not in text, relative
+        assert "\\(" not in text, relative
+        assert "\\)" not in text, relative
+        assert "\\`" not in text, relative
+        assert not any(
+            line.strip() in {"[", "]"} for line in text.splitlines()
+        ), relative
