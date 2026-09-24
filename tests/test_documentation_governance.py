@@ -105,3 +105,26 @@ def test_current_authority_markdown_math_integrity():
         assert not any(
             line.strip() in {"[", "]", "$"} for line in text.splitlines()
         ), relative
+
+def test_architecture_section_order_is_coherent():
+    text = _read("ARCHITECTURE.md")
+    assert (
+        text.index("## 1. Canonical finite layer")
+        < text.index("### 1.1 Derived mod-9 quotient and interface-phase audit")
+        < text.index("## 2. Primitive ontology layer")
+    )
+    assert (
+        text.index("## 4F. Multidimensional Sri Yantra fibre")
+        < text.index("## 4G. Higher-dimensional regular families and E8 bridge")
+        < text.index("## 4T. Toroidal circulation and connected field geometry")
+        < text.index("## 5. Open discrete-exterior-calculus layer")
+    )
+    for heading in (
+        "### 7.1 Polarization-induced source",
+        "### 7.2 Free electric source",
+        "### 7.3 Six-gate boundary exchange",
+        "### 7.4 Topological magnetic source",
+    ):
+        assert heading in text
+    assert "### 6.1 Polarization-induced source" not in text
+
