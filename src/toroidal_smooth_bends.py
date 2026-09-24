@@ -316,7 +316,7 @@ class SmoothGlobalToroidalRouting[NodeT: Hashable]:
         )
 
 
-def _build_edge_bends(
+def _build_edge_bends[NodeT: Hashable](
     routed: RoutedEdgePlacement[NodeT],
     bend_radius: float,
 ) -> tuple[AnnularQuarterBend, ...]:
