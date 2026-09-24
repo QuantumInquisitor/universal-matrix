@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 
@@ -105,3 +106,13 @@ def test_current_authority_markdown_math_integrity():
         assert not any(
             line.strip() in {"[", "]", "$"} for line in text.splitlines()
         ), relative
+
+def test_architecture_major_sections_are_sequential():
+    text = _read("ARCHITECTURE.md")
+    majors = [
+        int(match.group(1))
+        for line in text.splitlines()
+        if (match := re.match(r"^## (\d+)\.", line))
+    ]
+    assert majors == list(range(1, 26))
+
