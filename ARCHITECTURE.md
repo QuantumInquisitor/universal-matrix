@@ -57,6 +57,19 @@ Executable authority:
 - tests/test_canonical_kernel.py
 - docs/canonical_spec_v0.4.md
 
+### 1.1 Derived mod-9 quotient audit
+
+`src/canonical_mod9_interface_audit.py` is a derived exact-arithmetic layer
+over the canonical `Z_108` kernel. It uses reduction modulo nine to label the
+nine `E = T_9` orbits and a twelve-step phase coordinate inside each orbit.
+
+It also records the independent multiplication-by-two automorphism of `Z_9`
+and its three orbit classes. That automorphism is not a canonical translation
+operator and remains separate from `E`, `P`, and `T_21`.
+
+Primary verification: `tests/test_canonical_mod9_interface_audit.py`.
+Primary note: `docs/canonical_mod9_interface_audit_v0.1.md`.
+
 ## 2. Primitive ontology layer
 
 The exact 108-state core address now has an ontology-adapted decomposition
@@ -103,7 +116,7 @@ $$
 
 The six directions serve as an orientation scaffold for later spatial and gauge adapters. This is a structural construction, not by itself a proof that the finite kernel derives physical Euclidean three-space.
 
-## 4. Nested polarity and scale layer
+## 4. Polarity, scale, recursive geometry, and higher-dimensional layer
 
 The experimental nested state is represented schematically by
 
@@ -143,7 +156,7 @@ Representative modules:
 - src/scale_transfer.py
 - src/canonical_scale_transfer.py
 
-## 4A. Minimal local Matrix transition layer
+### 4.1 Minimal local Matrix transition layer
 
 The ontology-level local transition candidate uses site phase and conjugate
 momentum,
@@ -192,7 +205,7 @@ The richer gauge-matter and fully coupled field modules are treated as
 extensions of this minimal ontology-level skeleton rather than as replacements
 for it.
 
-## 4B. Canonical polarity–phase reduction
+### 4.2 Canonical polarity–phase reduction
 
 The exact canonical branch bit can be represented as a sign
 
@@ -254,7 +267,7 @@ Implementation:
 - tests/test_matrix_polarity_phase_bridge.py
 - docs/matrix_polarity_phase_reduction_v0.1.md
 
-## 4C. Recursive universe-port geometry
+### 4.3 Recursive universe-port geometry
 
 The recursive spatial layer distinguishes outward Flower growth from inward
 universe containment.
@@ -289,7 +302,7 @@ Implementation:
 - tests/test_universe_port_engine.py
 - docs/universe_port_engine_v0.1.md
 
-## 4D. Conservative Vesica and Tree circulation
+### 4.4 Conservative Vesica and Tree circulation
 
 The port geometry now carries a minimal discrete continuity layer. For signed
 edge current (J), the node convention is outgoing current minus incoming
@@ -320,7 +333,7 @@ Implementation:
 - tests/test_vesica_tree_circulation.py
 - docs/vesica_tree_circulation_v0.1.md
 
-## 4E. Plane overlap and possibility branching
+### 4.5 Plane overlap and possibility branching
 
 The transitive-plane layer uses a product address
 
@@ -350,7 +363,7 @@ Implementation:
 - tests/test_transitive_plane_branching.py
 - docs/transitive_plane_branching_v0.1.md
 
-## 4F. Multidimensional Sri Yantra fibre
+### 4.6 Multidimensional Sri Yantra fibre
 
 The Sri Yantra layer is defined first as an embedding-independent ordered
 complex. Its canonical inventory retains nine generators, with four upward
@@ -395,7 +408,411 @@ Implementation:
 - tests/test_sri_yantra_multidimensional.py
 - docs/sri_yantra_multidimensional_v0.1.md
 
-## 5. Open discrete-exterior-calculus layer
+### 4.7 Higher-dimensional regular families and E8 bridge
+
+`src/higher_dimensional_geometry.py` extends the exact finite geometry into
+arbitrary-dimensional simplex, hypercube, and cross-polytope families. It
+keeps simplex mirror completion distinct from cross-polytope geometry and
+implements recursive coordinate projections for the two centrally symmetric
+families.
+
+The same module builds the 240-root E8 configuration in integer coordinates
+scaled by two, verifies exact root-reflection closure, and embeds the existing
+24-cell dual D4 root subsystem into E8. No E8 coordinate is assigned a physical
+interpretation in this layer.
+
+Primary verification: `tests/test_higher_dimensional_geometry.py`.
+Primary note: `docs/higher_dimensional_e8_bridge_v0.1.md`.
+
+### 4.8 Direct H4 to E8 lift
+
+`src/h4_direct_e8_lift.py` starts from the existing 120 H4 / 600-cell roots in
+Q(phi)^4, forms H4 union phi*H4, and uses the reduced rational-coefficient inner
+product to obtain an exact 240-root E8 system. Resolving each a+b*phi component
+into its two rational coefficients yields an eight-component representation
+with exact rank eight.
+
+Primary verification: `tests/test_h4_direct_e8_lift.py`.
+Primary note: `docs/h4_direct_e8_lift_v0.1.md`.
+
+### 4.9 Exact equivalence of the two E8 realizations
+
+`src/e8_equivalence_map.py` independently selects simple-root bases inside the
+H4-derived and standard E8 root sets, matches their Dynkin Gram structure, and
+derives the exact rational map between them. The map is a scale-sqrt(8)
+orthogonal transformation, maps all 240 roots bijectively, and intertwines
+central mirror and root reflections.
+
+Primary verification: `tests/test_e8_equivalence_map.py`.
+Primary note: `docs/e8_equivalence_map_v0.1.md`.
+
+### 4.10 E8 state representation audit
+
+`src/e8_state_audit.py` separates E8 root/Cartan coordinates from existing
+physical state variables. The canonical Z_108 core, the 8 x 8 register, and the
+eight-component SU(3) electric field are explicitly rejected as full E8 state
+representations. A dedicated `E8CartanState` carries only the rank-eight Weyl
+reflection action.
+
+Primary verification: `tests/test_e8_state_audit.py`.
+Primary note: `docs/e8_state_representation_audit_v0.1.md`.
+
+### 4.11 Gauge-compatible E8 scalar coupling
+
+`src/e8_invariant_coupling.py` supplies the minimal optional interaction
+`g ||h||^2 O`, where `h` is an `E8CartanState` and `O` is a scalar already
+invariant under the gauge group of its own sector. The E8 layer remains a gauge
+singlet with respect to U(1), SU(2), and SU(3); no componentwise identification
+with their fields is introduced.
+
+Primary verification: `tests/test_e8_invariant_coupling.py`.
+Primary note: `docs/e8_invariant_coupling_v0.1.md`.
+
+### 4.12 E8 coupling observable audit
+
+`src/e8_coupling_observable_audit.py` verifies that the quadratic E8 invariant
+is constant across the fixed 240-root orbit. The currently available scalar
+couplings are therefore classified as parameter renormalizations or source
+shifts rather than distinct orientation-sensitive E8 dynamics. No preferred
+physical observable is selected.
+
+Primary verification: `tests/test_e8_coupling_observable_audit.py`.
+Primary note: `docs/e8_coupling_observable_audit_v0.1.md`.
+
+### 4.13 E8 radial-degree audit
+
+`src/e8_radial_degree_audit.py` checks whether any existing amplitude, content,
+or scale variable can supply a genuinely independent E8 radius. Matter
+amplitude, port circulation amplitude, nested hierarchy amplitude, neutral
+content, and scale level are all rejected because they are already committed
+to other subsystem roles. A distinct E8 radial mode would require a new
+independently motivated degree of freedom.
+
+Primary verification: `tests/test_e8_radial_degree_audit.py`.
+Primary note: `docs/e8_radial_degree_audit_v0.1.md`.
+
+### 4.14 Sri Yantra incidence and topology audit
+
+`src/sri_yantra_incidence_topology_audit.py` separates declared abstract
+topology from historical incidence that is not yet encoded. It enumerates 72
+abstract enclosure locations, 70 same-enclosure cyclic edges, and eight
+adjacent-enclosure shell interfaces. The current spherical and spiral-cone
+candidate charts are tested for injective placement of all declared locations.
+
+The Huet planar chamber graph is now numerically derived by the extractor in
+section 4.17. Exact generator-pair intersection multiplicities and
+incidence-preserving equivalence with historical spherical and Meru
+realizations remain explicitly open.
+
+Primary verification:
+`tests/test_sri_yantra_incidence_topology_audit.py`.
+Primary note:
+`docs/sri_yantra_incidence_topology_audit_v0.1.md`.
+
+### 4.15 Sourced Sri Yantra concurrency contract
+
+`src/sri_yantra_chiodo_concurrency.py` encodes the minimal planar concurrency
+conditions in Chiodo 2021. It fixes the t1..t9 orientation convention, the
+t3/t7 common circumcircle, seven apex-to-base incidences, twelve three-line
+concurrencies, and the four ordered base parameters P,Q,R,S on the normalized
+diameter. The resulting graph describes maximal-triangle constraints; the
+separate extractor in section 4.17 computes chamber boundaries and contacts.
+
+Primary verification: `tests/test_sri_yantra_chiodo_concurrency.py`.
+Primary note: `docs/sri_yantra_chiodo_concurrency_v0.1.md`.
+
+### 4.16 Huet reference Sri Yantra planar reconstruction
+
+`src/sri_yantra_huet_planar.py` reconstructs the nine maximal planar
+triangles for the Huet parameter choice quoted by Chiodo. The common t3/t7
+circumcircle initializes the solution; the remaining apex locations, base
+locations, and leg slopes are derived from the sourced apex/base and
+three-line concurrency conditions. The implementation emits all 27 finite
+maximal-triangle edges and verifies closure to numerical precision.
+
+Primary verification: `tests/test_sri_yantra_huet_planar.py`.
+Primary note: `docs/sri_yantra_huet_planar_v0.1.md`.
+
+
+#### 4.16.1 Huet 43-chamber incidence extraction
+
+`src/sri_yantra_huet_chambers.py` reconstructs the traditional chamber complex
+from the 27 finite Huet parent edges rather than storing chamber coordinates.
+It derives 69 snapped arrangement nodes and 122 supported triangular circuits,
+finds the nine atomic symmetry-axis anchors, identifies the central t1/t5
+chamber, and solves the four nested mirror-closed ring constraints.
+
+The Huet reference has one globally conflict-free solution with chamber counts
+1, 8, 10, 10, and 14. Its rings are vertex-touching cycles with 3, 16, 20, 20,
+and 28 unique circuit vertices, and the complete chamber set has 129 distinct
+edges.
+
+Primary verification: `tests/test_sri_yantra_huet_chambers.py`.
+Primary note: `docs/sri_yantra_huet_chambers_v0.1.md`.
+
+### 4.17 Huet planar chamber complex
+
+`src/sri_yantra_chambers.py` constructs the planar arrangement of the 27
+finite edges, retaining every incidence vertex. It computes 74 bounded faces
+and independently classifies generator coverage and dual-graph exterior
+depth. The odd-coverage faces yield 43 triangles at depths 1, 3, 5, 7, 9, with
+ring sizes 14, 10, 10, 8, 1. Shared-vertex adjacency recovers four connected
+cycles and one central chamber. Face adjacency and chamber contact are
+different relations: selected chambers never share an atomic edge.
+
+The extractor exposes immutable geometry and uses only the standard library.
+Normalization makes its coincidence tolerance relative to the input extent.
+This is numerically verified Huet geometry; historical spherical/Meru maps
+and topology throughout the parameter family are not established.
+
+Primary verification: `tests/test_sri_yantra_chambers.py`.
+Primary note: `docs/sri_yantra_chambers_v0.1.md`.
+Diagram generator: `scripts/render_sri_yantra_chambers.py`.
+
+Primary verification: `tests/test_sri_yantra_huet_chambers.py`.
+Primary note: `docs/sri_yantra_huet_chambers_v0.1.md`.
+
+### 4.18 Spherical chamber-topology control
+
+`src/sri_yantra_spherical_topology_control.py` lifts the complete derived
+43-chamber planar complex through one inverse-stereographic homeomorphism.
+Chamber IDs, ring cycles, mirror pairing, and all incidence data are preserved
+by construction while the carrier becomes a unit sphere.
+
+This is a topology control, not Rao's sourced great-circle spherical Sri Yantra.
+It exists so later spherical reconstructions can distinguish genuine
+constraint-induced incidence changes from a harmless change of embedding.
+
+Primary verification: `tests/test_sri_yantra_spherical_topology_control.py`.
+Primary note: `docs/sri_yantra_spherical_topology_control_v0.1.md`.
+
+### 4.19 Rao great-circle incidence
+
+The audited Rao reference construction now supplies nine unit-sphere root
+triangles with great-circle edges. After refinement within the published
+rounding intervals and two explicitly documented formula fixes, its 69
+vertices, 142 atomic edges, 74 bounded faces, and 43 selected chambers match
+the Huet complex through a complete generator-edge-labelled correspondence.
+This numerical result applies to one reference row; broader spherical families
+and independently specified Meru geometry remain open.
+
+Implementation: `src/sri_yantra_rao_spherical_reference.py` and
+`src/sri_yantra_rao_great_circles.py`. Verification: the corresponding
+`tests/test_sri_yantra_rao_*.py` modules.
+See `docs/sri_yantra_rao_great_circles_v0.1.md` for the formula audit and
+`docs/MATRIX_ENGINE_WORK_QUEUE.md` for remaining gates.
+
+### 4.20 Explicit Meru candidate control
+
+`src/sri_yantra_meru_candidate.py` now provides a conical graph-surface
+control with explicit vertices, complete edge paths, and an invertible
+horizontal projection. It preserves the computed 43-chamber incidence for
+positive horizontal scale. A separate audit detects 53 failed projected
+concurrencies if the default raised root corners are instead joined by straight
+spatial chords. This is an explicitly chosen candidate metric, not a sourced
+historical Meru reconstruction.
+
+Technical note: `docs/sri_yantra_meru_candidate_v0.1.md`.
+Verification: `tests/test_sri_yantra_meru_candidate.py`.
+
+## 5. Toroidal circulation and routing layer
+
+This layer turns conservative graph currents into explicit three-dimensional
+annular field domains, connected junctions, current-preserving connectors, and
+collision-audited routed geometry. Each checkpoint preserves its own evidence
+boundary: geometric and numerical verification does not by itself establish a
+physical force law or physical length scale.
+
+### 5.1 Conservative toroidal field candidate
+
+`src/conservative_toroidal_field.py` defines a compact, divergence-free
+three-dimensional content current on an explicit solid ring torus. A stream
+function fixes local conservation; signed parameters equal independently
+integrated poloidal and toroidal cut fluxes. Cartesian tests distinguish
+central mirroring, axial-plane mirroring, and flow reversal. This is a
+prescribed dimensionless kinematic candidate with no derived force law or
+physical content identification.
+
+Technical note: `docs/conservative_toroidal_field_v0.1.md`.
+Verification: `tests/test_conservative_toroidal_field.py`.
+
+### 5.2 Graph-to-toroidal flux bundle
+
+`src/graph_toroidal_flux_bundle.py` is the first explicit graph-to-volume
+coupling layer. It assigns one translated compact toroidal field domain to
+each `DirectedCurrent`, uses the graph edge current as the signed poloidal cut
+flux, and preserves the source/target incidence ledger for node-divergence
+checks. Pairwise-disjoint supports keep the summed prescribed field locally
+divergence-free without introducing hidden junction dynamics.
+
+Primary verification: `tests/test_graph_toroidal_flux_bundle.py`.
+Primary note: `docs/graph_toroidal_flux_bundle_v0.1.md`.
+
+### 5.3 Connected toroidal junction control volumes
+
+`src/toroidal_junction_control_volume.py` replaces conservative graph-node
+balance as ledger-only bookkeeping with explicit connected 3D control volumes.
+Incident edge contributions are classified as inlet or outlet boundary fluxes,
+decomposed into nonoverlapping transfer lanes, and carried by analytic fields
+of the form `(f(y,z),0,0)`, which have zero interior divergence.
+
+The layer is coupled to `GraphToroidalFluxBundle` and checks source-port,
+toroidal-cut, and target-port flux continuity for every edge.
+
+Primary verification: `tests/test_toroidal_junction_control_volume.py`.
+Primary note: `docs/toroidal_junction_control_volume_v0.1.md`.
+
+### 5.4 Toroidal connector topology and annular Piola bridge
+
+`src/toroidal_connector_topology.py` audits the cross-section topology of the
+junction and toroidal interfaces. Disk-like rectangular lane ports are not
+diffeomorphic to the annular poloidal cut, so a nonsingular one-to-one sweep is
+rejected. The torus is represented as cut open along the annulus, exposing two
+boundary copies with opposite outward flux.
+
+For annular source ports, an explicit smoothstep coordinate map and
+contravariant Piola transform give a zero-divergence connector with positive
+Jacobian, preserved transverse flux, and pointwise target-vector agreement with
+the purely poloidal toroidal field.
+
+Primary verification: `tests/test_toroidal_connector_topology.py`.
+Primary note: `docs/toroidal_connector_topology_v0.1.md`.
+
+### 5.5 Annular junction edge ports
+
+`src/toroidal_annular_junction.py` replaces disk-like external junction ports
+with concentric annular bands. Lower and upper face streamfunctions encode the
+incident flux distributions; cubic interpolation between them produces an
+axisymmetric zero-divergence internal current. Cumulative-flux interval
+overlaps recover the deterministic conservative transfer plan.
+
+The annular boundary profile is algebraically identical to the source profile
+of `AnnularPiolaConnector`, providing local topology and flux-density
+compatibility.
+
+Primary verification: `tests/test_toroidal_annular_junction.py`.
+Primary note: `docs/toroidal_annular_junction_v0.1.md`.
+
+### 5.6 Framed toroidal edge assemblies
+
+`src/toroidal_framed_edge_assembly.py` composes annular junction ports,
+general annular Piola transitions, and a straightened flux-equivalent
+cut-open toroidal chart into one local edge assembly. Internal interface
+vectors agree pointwise and all adjacent outward fluxes cancel.
+
+The edge-local axial frame uses `sign(current)` to align negative-current
+assemblies with the fixed axial direction of the annular junction fields while
+retaining the signed graph flux.
+
+Primary verification: `tests/test_toroidal_framed_edge_assembly.py`.
+Primary note: `docs/toroidal_framed_edge_assembly_v0.1.md`.
+
+### 5.7 Global collision-audited toroidal routing
+
+`src/toroidal_global_routing.py` supplies a deterministic global embedding
+contract for the local framed edge assemblies. Annular junctions are translated
+rigidly along x; every edge receives a unique y corridor and high/low z level.
+Endpoint tangents follow `axis_sign * +z` and therefore preserve the signed
+annular junction frame contract.
+
+The routing layer uses conservative tube envelopes and exact finite-segment
+distance calculations to reject nonincident edge collisions and
+edge-to-nonincident-junction overlaps.
+
+Primary verification: `tests/test_toroidal_global_routing.py`.
+Primary note: `docs/toroidal_global_routing_v0.1.md`.
+
+### 5.8 Smooth positive-Jacobian toroidal bends
+
+`src/toroidal_smooth_bends.py` turns each orthogonal global route corner into
+a quarter-circle annular tube. The bend map retains a positive Jacobian when
+its bend radius exceeds the annular outer radius. The straight annular current
+is transported by the contravariant Piola map, yielding the same radial flux
+density along the bend tangent and exact vector matching at both interfaces.
+
+The global routing envelope is expanded by the bend radius so the previously
+verified collision audit also bounds the curved volume.
+
+Primary verification: `tests/test_toroidal_smooth_bends.py`.
+Primary note: `docs/toroidal_smooth_bends_v0.1.md`.
+
+### 5.9 Same-face incident connector overlap audit
+
+`src/toroidal_incident_overlap_audit.py` evaluates pairs of nonzero edge
+connectors sharing one annular junction face. It parameterizes each connector
+from the junction port to the channel annulus and detects radial-interval
+overlap by bisection.
+
+The current common-channel construction necessarily overlaps because disjoint
+port bands continuously converge to one identical channel annulus. This
+obstruction prevents promotion of the nonincident routing certificate to a
+complete whole-network collision certificate.
+
+Primary verification: `tests/test_toroidal_incident_overlap_audit.py`.
+Primary note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
+
+### 5.10 Edge-specific separated toroidal channel shells
+
+`src/toroidal_separated_channels.py` replaces the common cut annulus used by
+all framed edges with globally ordered, pairwise-disjoint edge-specific
+annular shells. Each shell is the inner poloidal cut of its own purely poloidal
+toroidal field and preserves the signed graph current.
+
+Since same-face junction bands and channel shells share edge-index order, the
+smooth radial Piola interpolation cannot reverse interval order. The earlier
+same-face connector overlap is therefore removed without changing the annular
+junction or framed-edge APIs.
+
+Primary verification: `tests/test_toroidal_separated_channels.py`.
+Primary note: `docs/toroidal_separated_channels_v0.1.md`.
+
+### 5.11 Incident smooth-bend collision audit
+
+`src/toroidal_incident_bend_audit.py` evaluates actual annular bend samples
+against the exact finite endpoint straight shell of every other nonzero edge
+sharing the same junction face. Positive penetration requires both axial and
+radial interior membership.
+
+The audit shows that separated channel shells solve the coaxial connector
+overlap but do not solve the later bend/straight interaction for the tested
+compact reference parameters.
+
+Primary verification: `tests/test_toroidal_incident_bend_audit.py`.
+Primary note: `docs/toroidal_incident_bend_audit_v0.1.md`.
+
+### 5.12 Toroidal bend-spacing parameter gate
+
+`src/toroidal_bend_spacing_scan.py` preserves the existing graph, signed
+currents, annular junctions, Piola connector maps, and smooth-bend field while
+varying edge-shell radial gap and positive bend-radius margin.
+
+The deterministic 25-point Vesica grid contains both colliding samples and at
+least one collision-free sample. The compact incident-bend result is therefore
+a parameter-dependent no-fit rather than a topology theorem.
+
+The next geometry layer is boundary mapping and scale-consistency testing. A
+separate-axis fan-out is reserved as a fallback if no compact
+scale-consistent clearance region survives.
+
+Primary verification: `tests/test_toroidal_bend_spacing_scan.py`.
+Primary note: `docs/toroidal_bend_spacing_scan_v0.1.md`.
+
+### 5.13 Sampled bend-clearance frontier
+
+`src/toroidal_bend_clearance_boundary.py` groups the finite bend-spacing
+samples by bend margin and records the first collision-free sampled shell gap,
+the nearest lower colliding sample when available, and any margin that remains
+unresolved on the tested grid.
+
+This checkpoint preserves the existing graph, signed currents, annular
+junctions, Piola connectors, and smooth-bend maps. It summarizes a finite
+sampled frontier only; it does not establish a continuous monotone boundary,
+an optimal compactness law, scale invariance, or a physical length scale.
+
+Primary verification: `tests/test_toroidal_bend_clearance_boundary.py`.
+Primary note: `docs/toroidal_bend_clearance_boundary_v0.1.md`.
+
+## 6. Open discrete-exterior-calculus layer
 
 The default open field adapter uses a cubical complex with cochain sequence
 
@@ -426,7 +843,7 @@ Representative modules:
 - src/open_polarity_sources.py
 - src/unified_engine.py
 
-## 6. Six-gate open Gauss layer
+## 7. Six-gate open Gauss layer
 
 The open finite-volume field satisfies a source/flux balance of the form
 
@@ -446,11 +863,11 @@ Implementation:
 
 - src/open_boundary_solver.py
 
-## 7. Source layer
+## 8. Source layer
 
 The engine separates several source mechanisms rather than collapsing them into one quantity.
 
-### 6.1 Polarization-induced source
+### 8.1 Polarization-induced source
 
 $$
 P=A\sigma\hat u,
@@ -460,17 +877,17 @@ $$
 \rho_{\rm pol}=-\nabla\cdot P.
 $$
 
-### 6.2 Free electric source
+### 8.2 Free electric source
 
 $$
 \dot\rho_{\rm free}+\nabla\cdot J_{\rm free}=0.
 $$
 
-### 6.3 Six-gate boundary exchange
+### 8.3 Six-gate boundary exchange
 
 Internal total electric charge changes only through explicit boundary exchange.
 
-### 6.4 Topological magnetic source
+### 8.4 Topological magnetic source
 
 Compact plaquette winding can generate integer-valued magnetic/topological defects. These are kept separate from ordinary electric charge.
 
@@ -481,7 +898,7 @@ Representative modules:
 - src/source_channels.py
 - src/source_interaction.py
 
-## 8. Abelian and non-Abelian gauge layer
+## 9. Abelian and non-Abelian gauge layer
 
 The repository contains compact U(1), SU(2), and SU(3) lattice-gauge implementations.
 
@@ -499,7 +916,7 @@ $$
 
 Implemented capabilities include plaquettes and Wilson actions, Hamiltonian electric-field dynamics, Gauss constraints, analytic staple forces, fundamental matter coupling, gauge/matter backreaction, and geometry-dependent weighting.
 
-## 9. Reciprocity geometry layer
+## 10. Reciprocity geometry layer
 
 The experimental reciprocity metric is
 
@@ -511,11 +928,11 @@ The current stack includes a self-consistent scalar action, matter and gauge cou
 
 The reciprocity premises remain experimental assumptions until derived from deeper canonical structure or validated empirically.
 
-## 10. Dirac and chiral fermion layer
+## 11. Dirac and chiral fermion layer
 
 The repository contains Wilson-Dirac reference operators, reciprocity-background Dirac Hamiltonians, one-particle geometry backreaction, overlap-Dirac operators, Ginsparg-Wilson chirality, modified chiral projectors, overlap-index diagnostics, Weyl measure curvature and holonomy, finite Weyl determinants, charged-U(1) anomaly diagnostics, SU(2)/SU(3) overlap fermions, and product-group overlap representations.
 
-## 11. Product-group anomaly layer
+## 12. Product-group anomaly layer
 
 The repository computes supported anomaly coefficients for supplied Weyl spectra, including
 
@@ -531,31 +948,31 @@ The SU(2) global mod-2 doublet condition is tracked separately.
 
 This layer tests candidate spectra. It does not derive the observed Standard Model representation content.
 
-## 12. Spatial protocol layer
+## 13. Spatial protocol layer
 
 src/spatial_protocol.py defines versioned transport-neutral messages for commands, acknowledgements, telemetry, stop requests, and capability discovery.
 
 This allows WebXR, robotics adapters, digital twins, APIs, and customer-specific transports to share one command vocabulary.
 
-## 13. Spatial operations safety layer
+## 14. Spatial operations safety layer
 
 src/spatial_operations_control.py provides software-level validation for stale-command rejection, replay protection, deadman controls, workspace boundaries, position-delta limits, linear-speed limits, angular-speed limits, emergency-stop request propagation, and deterministic bounded waypoint generation.
 
 It does not itself authorize real hardware execution.
 
-## 14. Robot adapter layer
+## 15. Robot adapter layer
 
 src/robot_adapter.py defines a common robot contract for capabilities, state, command submission, stop requests, and acknowledgements.
 
 The same interface can back simulated robots, ROS2 bridges, CAN devices, CNC systems, or customer-specific OEM hardware.
 
-## 15. XR-to-robot bridge
+## 16. XR-to-robot bridge
 
 src/xr_robot_bridge.py connects versioned spatial commands to the common robot adapter only after validation through the spatial operations control plane.
 
 An XR or browser client therefore cannot bypass software command validation through this bridge.
 
-## 16. Digital-twin layer
+## 17. Digital-twin layer
 
 src/digital_twin_contract.py distinguishes measured telemetry from derived estimates and carries units, source, timestamp, quality, calibration, and uncertainty.
 
@@ -563,13 +980,13 @@ src/digital_twin_store.py provides a bounded thread-safe reference history store
 
 Production deployments can replace the in-memory store with a persistent database or stream backend without changing the telemetry contract.
 
-## 17. Manufacturing layer
+## 18. Manufacturing layer
 
 Current manufacturing and toolpath surfaces include authenticated G-code compilation, parametric path generation, CNC/GRBL compatibility, winding-path tools, visualization, geometry optimization prototypes, and stress/thermal digital-twin utilities.
 
 Historical manufacturing modules can contain older SO(13), 114-node, toroidal, or 3/6/9 labels. Those labels are not canonical unless explicitly migrated and tested.
 
-## 18. API and SDK layer
+## 19. API and SDK layer
 
 The current secured API is src/api_server.py.
 
@@ -582,13 +999,13 @@ SDKs:
 
 The larger src/api.py remains a compatibility/experimental surface and should not be exposed publicly by default.
 
-## 19. Commercial entitlement layer
+## 20. Commercial entitlement layer
 
 src/commercial_entitlements.py models licensable product families and feature entitlements.
 
 Technical entitlements do not themselves grant legal rights. The governing public license or executed commercial agreement controls.
 
-## 20. Licensing and governance layer
+## 21. Licensing and governance layer
 
 The public repository is source-available for permitted noncommercial use under the PolyForm Noncommercial License 1.0.0.
 
@@ -604,7 +1021,7 @@ Relevant files:
 
 Commercial use outside the public license requires a separate written Waters Legacy Trust commercial license unless otherwise permitted by applicable law.
 
-## 21. Legacy compatibility layer
+## 22. Legacy compatibility layer
 
 Older modules can contain terminology such as Z_114 as a routing group, SO(13) physical spacetime, 64-bit physical geometry, fixed 3/6/9 physical laws, M-theory/string/brane equivalence labels, toroidal physical geometry, biological/chakra/meridian mappings, or hand-authored physical constants.
 
@@ -612,7 +1029,7 @@ These are historical, compatibility, visualization, or experimental surfaces unl
 
 No legacy module overrides src/canonical_kernel.py, tests/test_canonical_kernel.py, or the current canonical specification.
 
-## 22. Verification hierarchy
+## 23. Verification hierarchy
 
 The repository uses three scientific verification levels.
 
@@ -630,7 +1047,7 @@ External experiment or observation with units, independently fixed parameters, u
 
 A Level A or Level B result must not be presented as Level C evidence.
 
-## 23. Software verification
+## 24. Software verification
 
 Current CI includes Python 3.12 core verification, Python 3.14 core verification, full legacy compatibility tests, container smoke tests, CodeQL analysis, and licensing-governance regression checks.
 
@@ -643,7 +1060,7 @@ uv run ruff format --check src tests
 uv run pytest
 ~~~
 
-## 24. Documentation authority
+## 25. Documentation authority
 
 When repository documents disagree, use:
 
@@ -656,420 +1073,3 @@ When repository documents disagree, use:
 7. historical inventories and legacy documentation.
 
 See docs/DOCUMENTATION_STATUS.md.
-
-
-## 4G. Higher-dimensional regular families and E8 bridge
-
-`src/higher_dimensional_geometry.py` extends the exact finite geometry into
-arbitrary-dimensional simplex, hypercube, and cross-polytope families. It
-keeps simplex mirror completion distinct from cross-polytope geometry and
-implements recursive coordinate projections for the two centrally symmetric
-families.
-
-The same module builds the 240-root E8 configuration in integer coordinates
-scaled by two, verifies exact root-reflection closure, and embeds the existing
-24-cell dual D4 root subsystem into E8. No E8 coordinate is assigned a physical
-interpretation in this layer.
-
-Primary verification: `tests/test_higher_dimensional_geometry.py`.
-Primary note: `docs/higher_dimensional_e8_bridge_v0.1.md`.
-
-
-## 4H. Direct H4 to E8 lift
-
-`src/h4_direct_e8_lift.py` starts from the existing 120 H4 / 600-cell roots in
-Q(phi)^4, forms H4 union phi*H4, and uses the reduced rational-coefficient inner
-product to obtain an exact 240-root E8 system. Resolving each a+b*phi component
-into its two rational coefficients yields an eight-component representation
-with exact rank eight.
-
-Primary verification: `tests/test_h4_direct_e8_lift.py`.
-Primary note: `docs/h4_direct_e8_lift_v0.1.md`.
-
-
-## 4I. Exact equivalence of the two E8 realizations
-
-`src/e8_equivalence_map.py` independently selects simple-root bases inside the
-H4-derived and standard E8 root sets, matches their Dynkin Gram structure, and
-derives the exact rational map between them. The map is a scale-sqrt(8)
-orthogonal transformation, maps all 240 roots bijectively, and intertwines
-central mirror and root reflections.
-
-Primary verification: `tests/test_e8_equivalence_map.py`.
-Primary note: `docs/e8_equivalence_map_v0.1.md`.
-
-
-## 4J. E8 state representation audit
-
-`src/e8_state_audit.py` separates E8 root/Cartan coordinates from existing
-physical state variables. The canonical Z_108 core, the 8 x 8 register, and the
-eight-component SU(3) electric field are explicitly rejected as full E8 state
-representations. A dedicated `E8CartanState` carries only the rank-eight Weyl
-reflection action.
-
-Primary verification: `tests/test_e8_state_audit.py`.
-Primary note: `docs/e8_state_representation_audit_v0.1.md`.
-
-
-## 4K. Gauge-compatible E8 scalar coupling
-
-`src/e8_invariant_coupling.py` supplies the minimal optional interaction
-`g ||h||^2 O`, where `h` is an `E8CartanState` and `O` is a scalar already
-invariant under the gauge group of its own sector. The E8 layer remains a gauge
-singlet with respect to U(1), SU(2), and SU(3); no componentwise identification
-with their fields is introduced.
-
-Primary verification: `tests/test_e8_invariant_coupling.py`.
-Primary note: `docs/e8_invariant_coupling_v0.1.md`.
-
-
-## 4L. E8 coupling observable audit
-
-`src/e8_coupling_observable_audit.py` verifies that the quadratic E8 invariant
-is constant across the fixed 240-root orbit. The currently available scalar
-couplings are therefore classified as parameter renormalizations or source
-shifts rather than distinct orientation-sensitive E8 dynamics. No preferred
-physical observable is selected.
-
-Primary verification: `tests/test_e8_coupling_observable_audit.py`.
-Primary note: `docs/e8_coupling_observable_audit_v0.1.md`.
-
-
-## 4M. E8 radial-degree audit
-
-`src/e8_radial_degree_audit.py` checks whether any existing amplitude, content,
-or scale variable can supply a genuinely independent E8 radius. Matter
-amplitude, port circulation amplitude, nested hierarchy amplitude, neutral
-content, and scale level are all rejected because they are already committed
-to other subsystem roles. A distinct E8 radial mode would require a new
-independently motivated degree of freedom.
-
-Primary verification: `tests/test_e8_radial_degree_audit.py`.
-Primary note: `docs/e8_radial_degree_audit_v0.1.md`.
-
-
-## 4N. Sri Yantra incidence and topology audit
-
-`src/sri_yantra_incidence_topology_audit.py` separates declared abstract
-topology from historical incidence that is not yet encoded. It enumerates 72
-abstract enclosure locations, 70 same-enclosure cyclic edges, and eight
-adjacent-enclosure shell interfaces. The current spherical and spiral-cone
-candidate charts are tested for injective placement of all declared locations.
-
-The Huet planar chamber graph is now numerically derived by the extractor in
-section 4Q. Exact generator-pair intersection multiplicities and
-incidence-preserving equivalence with historical spherical and Meru
-realizations remain explicitly open.
-
-Primary verification:
-`tests/test_sri_yantra_incidence_topology_audit.py`.
-Primary note:
-`docs/sri_yantra_incidence_topology_audit_v0.1.md`.
-
-
-## 4O. Sourced Sri Yantra concurrency contract
-
-`src/sri_yantra_chiodo_concurrency.py` encodes the minimal planar concurrency
-conditions in Chiodo 2021. It fixes the t1..t9 orientation convention, the
-t3/t7 common circumcircle, seven apex-to-base incidences, twelve three-line
-concurrencies, and the four ordered base parameters P,Q,R,S on the normalized
-diameter. The resulting graph describes maximal-triangle constraints; the
-separate extractor in section 4Q computes chamber boundaries and contacts.
-
-Primary verification: `tests/test_sri_yantra_chiodo_concurrency.py`.
-Primary note: `docs/sri_yantra_chiodo_concurrency_v0.1.md`.
-
-
-## 4P. Huet reference Sri Yantra planar reconstruction
-
-`src/sri_yantra_huet_planar.py` reconstructs the nine maximal planar
-triangles for the Huet parameter choice quoted by Chiodo. The common t3/t7
-circumcircle initializes the solution; the remaining apex locations, base
-locations, and leg slopes are derived from the sourced apex/base and
-three-line concurrency conditions. The implementation emits all 27 finite
-maximal-triangle edges and verifies closure to numerical precision.
-
-Primary verification: `tests/test_sri_yantra_huet_planar.py`.
-Primary note: `docs/sri_yantra_huet_planar_v0.1.md`.
-
-
-### Huet 43-chamber incidence extraction
-
-`src/sri_yantra_huet_chambers.py` reconstructs the traditional chamber complex
-from the 27 finite Huet parent edges rather than storing chamber coordinates.
-It derives 69 snapped arrangement nodes and 122 supported triangular circuits,
-finds the nine atomic symmetry-axis anchors, identifies the central t1/t5
-chamber, and solves the four nested mirror-closed ring constraints.
-
-The Huet reference has one globally conflict-free solution with chamber counts
-1, 8, 10, 10, and 14. Its rings are vertex-touching cycles with 3, 16, 20, 20,
-and 28 unique circuit vertices, and the complete chamber set has 129 distinct
-edges.
-
-Primary verification: `tests/test_sri_yantra_huet_chambers.py`.
-Primary note: `docs/sri_yantra_huet_chambers_v0.1.md`.
-
-## 4Q. Huet planar chamber complex
-
-`src/sri_yantra_chambers.py` constructs the planar arrangement of the 27
-finite edges, retaining every incidence vertex. It computes 74 bounded faces
-and independently classifies generator coverage and dual-graph exterior
-depth. The odd-coverage faces yield 43 triangles at depths 1, 3, 5, 7, 9, with
-ring sizes 14, 10, 10, 8, 1. Shared-vertex adjacency recovers four connected
-cycles and one central chamber. Face adjacency and chamber contact are
-different relations: selected chambers never share an atomic edge.
-
-The extractor exposes immutable geometry and uses only the standard library.
-Normalization makes its coincidence tolerance relative to the input extent.
-This is numerically verified Huet geometry; historical spherical/Meru maps
-and topology throughout the parameter family are not established.
-
-Primary verification: `tests/test_sri_yantra_chambers.py`.
-Primary note: `docs/sri_yantra_chambers_v0.1.md`.
-Diagram generator: `scripts/render_sri_yantra_chambers.py`.
-
-Primary verification: `tests/test_sri_yantra_huet_chambers.py`.
-Primary note: `docs/sri_yantra_huet_chambers_v0.1.md`.
-
-
-### Spherical chamber-topology control
-
-`src/sri_yantra_spherical_topology_control.py` lifts the complete derived
-43-chamber planar complex through one inverse-stereographic homeomorphism.
-Chamber IDs, ring cycles, mirror pairing, and all incidence data are preserved
-by construction while the carrier becomes a unit sphere.
-
-This is a topology control, not Rao's sourced great-circle spherical Sri Yantra.
-It exists so later spherical reconstructions can distinguish genuine
-constraint-induced incidence changes from a harmless change of embedding.
-
-Primary verification: `tests/test_sri_yantra_spherical_topology_control.py`.
-Primary note: `docs/sri_yantra_spherical_topology_control_v0.1.md`.
-
-## Rao great-circle incidence
-
-The audited Rao reference construction now supplies nine unit-sphere root
-triangles with great-circle edges. After refinement within the published
-rounding intervals and two explicitly documented formula fixes, its 69
-vertices, 142 atomic edges, 74 bounded faces, and 43 selected chambers match
-the Huet complex through a complete generator-edge-labelled correspondence.
-This numerical result applies to one reference row; broader spherical families
-and independently specified Meru geometry remain open.
-
-Implementation: `src/sri_yantra_rao_spherical_reference.py` and
-`src/sri_yantra_rao_great_circles.py`. Verification: the corresponding
-`tests/test_sri_yantra_rao_*.py` modules.
-See `docs/sri_yantra_rao_great_circles_v0.1.md` for the formula audit and
-`docs/MATRIX_ENGINE_WORK_QUEUE.md` for remaining gates.
-
-## Explicit Meru candidate control
-
-`src/sri_yantra_meru_candidate.py` now provides a conical graph-surface
-control with explicit vertices, complete edge paths, and an invertible
-horizontal projection. It preserves the computed 43-chamber incidence for
-positive horizontal scale. A separate audit detects 53 failed projected
-concurrencies if the default raised root corners are instead joined by straight
-spatial chords. This is an explicitly chosen candidate metric, not a sourced
-historical Meru reconstruction.
-
-Technical note: `docs/sri_yantra_meru_candidate_v0.1.md`.
-Verification: `tests/test_sri_yantra_meru_candidate.py`.
-
-## Conservative toroidal field candidate
-
-`src/conservative_toroidal_field.py` defines a compact, divergence-free
-three-dimensional content current on an explicit solid ring torus. A stream
-function fixes local conservation; signed parameters equal independently
-integrated poloidal and toroidal cut fluxes. Cartesian tests distinguish
-central mirroring, axial-plane mirroring, and flow reversal. This is a
-prescribed dimensionless kinematic candidate with no derived force law or
-physical content identification.
-
-Technical note: `docs/conservative_toroidal_field_v0.1.md`.
-Verification: `tests/test_conservative_toroidal_field.py`.
-
-
-## Graph-to-toroidal flux bundle
-
-`src/graph_toroidal_flux_bundle.py` is the first explicit graph-to-volume
-coupling layer. It assigns one translated compact toroidal field domain to
-each `DirectedCurrent`, uses the graph edge current as the signed poloidal cut
-flux, and preserves the source/target incidence ledger for node-divergence
-checks. Pairwise-disjoint supports keep the summed prescribed field locally
-divergence-free without introducing hidden junction dynamics.
-
-Primary verification: `tests/test_graph_toroidal_flux_bundle.py`.
-Primary note: `docs/graph_toroidal_flux_bundle_v0.1.md`.
-
-
-## Connected toroidal junction control volumes
-
-`src/toroidal_junction_control_volume.py` replaces conservative graph-node
-balance as ledger-only bookkeeping with explicit connected 3D control volumes.
-Incident edge contributions are classified as inlet or outlet boundary fluxes,
-decomposed into nonoverlapping transfer lanes, and carried by analytic fields
-of the form `(f(y,z),0,0)`, which have zero interior divergence.
-
-The layer is coupled to `GraphToroidalFluxBundle` and checks source-port,
-toroidal-cut, and target-port flux continuity for every edge.
-
-Primary verification: `tests/test_toroidal_junction_control_volume.py`.
-Primary note: `docs/toroidal_junction_control_volume_v0.1.md`.
-
-
-## Toroidal connector topology and annular Piola bridge
-
-`src/toroidal_connector_topology.py` audits the cross-section topology of the
-junction and toroidal interfaces. Disk-like rectangular lane ports are not
-diffeomorphic to the annular poloidal cut, so a nonsingular one-to-one sweep is
-rejected. The torus is represented as cut open along the annulus, exposing two
-boundary copies with opposite outward flux.
-
-For annular source ports, an explicit smoothstep coordinate map and
-contravariant Piola transform give a zero-divergence connector with positive
-Jacobian, preserved transverse flux, and pointwise target-vector agreement with
-the purely poloidal toroidal field.
-
-Primary verification: `tests/test_toroidal_connector_topology.py`.
-Primary note: `docs/toroidal_connector_topology_v0.1.md`.
-
-
-## Annular junction edge ports
-
-`src/toroidal_annular_junction.py` replaces disk-like external junction ports
-with concentric annular bands. Lower and upper face streamfunctions encode the
-incident flux distributions; cubic interpolation between them produces an
-axisymmetric zero-divergence internal current. Cumulative-flux interval
-overlaps recover the deterministic conservative transfer plan.
-
-The annular boundary profile is algebraically identical to the source profile
-of `AnnularPiolaConnector`, providing local topology and flux-density
-compatibility.
-
-Primary verification: `tests/test_toroidal_annular_junction.py`.
-Primary note: `docs/toroidal_annular_junction_v0.1.md`.
-
-
-## Framed toroidal edge assemblies
-
-`src/toroidal_framed_edge_assembly.py` composes annular junction ports,
-general annular Piola transitions, and a straightened flux-equivalent
-cut-open toroidal chart into one local edge assembly. Internal interface
-vectors agree pointwise and all adjacent outward fluxes cancel.
-
-The edge-local axial frame uses `sign(current)` to align negative-current
-assemblies with the fixed axial direction of the annular junction fields while
-retaining the signed graph flux.
-
-Primary verification: `tests/test_toroidal_framed_edge_assembly.py`.
-Primary note: `docs/toroidal_framed_edge_assembly_v0.1.md`.
-
-
-## Global collision-audited toroidal routing
-
-`src/toroidal_global_routing.py` supplies a deterministic global embedding
-contract for the local framed edge assemblies. Annular junctions are translated
-rigidly along x; every edge receives a unique y corridor and high/low z level.
-Endpoint tangents follow `axis_sign * +z` and therefore preserve the signed
-annular junction frame contract.
-
-The routing layer uses conservative tube envelopes and exact finite-segment
-distance calculations to reject nonincident edge collisions and
-edge-to-nonincident-junction overlaps.
-
-Primary verification: `tests/test_toroidal_global_routing.py`.
-Primary note: `docs/toroidal_global_routing_v0.1.md`.
-
-
-## Smooth positive-Jacobian toroidal bends
-
-`src/toroidal_smooth_bends.py` turns each orthogonal global route corner into
-a quarter-circle annular tube. The bend map retains a positive Jacobian when
-its bend radius exceeds the annular outer radius. The straight annular current
-is transported by the contravariant Piola map, yielding the same radial flux
-density along the bend tangent and exact vector matching at both interfaces.
-
-The global routing envelope is expanded by the bend radius so the previously
-verified collision audit also bounds the curved volume.
-
-Primary verification: `tests/test_toroidal_smooth_bends.py`.
-Primary note: `docs/toroidal_smooth_bends_v0.1.md`.
-
-
-## Same-face incident connector overlap audit
-
-`src/toroidal_incident_overlap_audit.py` evaluates pairs of nonzero edge
-connectors sharing one annular junction face. It parameterizes each connector
-from the junction port to the channel annulus and detects radial-interval
-overlap by bisection.
-
-The current common-channel construction necessarily overlaps because disjoint
-port bands continuously converge to one identical channel annulus. This
-obstruction prevents promotion of the nonincident routing certificate to a
-complete whole-network collision certificate.
-
-Primary verification: `tests/test_toroidal_incident_overlap_audit.py`.
-Primary note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
-
-
-## Edge-specific separated toroidal channel shells
-
-`src/toroidal_separated_channels.py` replaces the common cut annulus used by
-all framed edges with globally ordered, pairwise-disjoint edge-specific
-annular shells. Each shell is the inner poloidal cut of its own purely poloidal
-toroidal field and preserves the signed graph current.
-
-Since same-face junction bands and channel shells share edge-index order, the
-smooth radial Piola interpolation cannot reverse interval order. The earlier
-same-face connector overlap is therefore removed without changing the annular
-junction or framed-edge APIs.
-
-Primary verification: `tests/test_toroidal_separated_channels.py`.
-Primary note: `docs/toroidal_separated_channels_v0.1.md`.
-
-
-## Incident smooth-bend collision audit
-
-`src/toroidal_incident_bend_audit.py` evaluates actual annular bend samples
-against the exact finite endpoint straight shell of every other nonzero edge
-sharing the same junction face. Positive penetration requires both axial and
-radial interior membership.
-
-The audit shows that separated channel shells solve the coaxial connector
-overlap but do not solve the later bend/straight interaction for the tested
-compact reference parameters.
-
-Primary verification: `tests/test_toroidal_incident_bend_audit.py`.
-Primary note: `docs/toroidal_incident_bend_audit_v0.1.md`.
-
-
-## Toroidal bend-spacing parameter gate
-
-`src/toroidal_bend_spacing_scan.py` preserves the existing graph, signed
-currents, annular junctions, Piola connector maps, and smooth-bend field while
-varying edge-shell radial gap and positive bend-radius margin.
-
-The deterministic 25-point Vesica grid contains both colliding samples and at
-least one collision-free sample. The compact incident-bend result is therefore
-a parameter-dependent no-fit rather than a topology theorem.
-
-The next geometry layer is boundary mapping and scale-consistency testing. A
-separate-axis fan-out is reserved as a fallback if no compact
-scale-consistent clearance region survives.
-
-Primary verification: `tests/test_toroidal_bend_spacing_scan.py`.
-Primary note: `docs/toroidal_bend_spacing_scan_v0.1.md`.
-
-
-## Canonical mod-9 quotient audit
-
-`src/canonical_mod9_interface_audit.py` is a derived exact-arithmetic layer
-over the canonical `Z_108` kernel. It uses reduction modulo nine to label the
-nine `E = T_9` orbits and a twelve-step phase coordinate inside each orbit.
-
-It also records the independent multiplication-by-two automorphism of `Z_9`
-and its three orbit classes. That automorphism is not a canonical translation
-operator and remains separate from `E`, `P`, and `T_21`.
-
-Primary verification: `tests/test_canonical_mod9_interface_audit.py`.
-Primary note: `docs/canonical_mod9_interface_audit_v0.1.md`.
