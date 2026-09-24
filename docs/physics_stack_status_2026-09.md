@@ -220,6 +220,23 @@ before the routed network is a globally continuous divergence-free field.
 
 ---
 
+
+
+### Smooth routed annular bends
+
+`src/toroidal_smooth_bends.py` supplies explicit quarter-circle annular bend
+maps for every orthogonal global route corner. The bend radius is constrained
+to exceed the annular outer radius, keeping the map Jacobian positive.
+Contravariant Piola transport preserves the existing annular flux profile and
+matches the neighboring straight fields point by point.
+
+Expanded routing envelopes contain the curved volumes and retain positive
+nonincident clearance in the tested finite networks. A unified whole-network
+field sampler is still required before the routed kinematic field is complete.
+No dynamics, units, or experimental interpretation are introduced here.
+
+---
+
 ## 3. Abelian U(1) gauge sector
 
 Status: **DERIVED-CLASSICAL + NUMERICALLY VERIFIED**
