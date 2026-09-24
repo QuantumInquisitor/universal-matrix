@@ -1645,6 +1645,24 @@ routes bend away from the common junction axis.
 
 See `docs/toroidal_separated_channels_v0.1.md`.
 
+
+
+## Incident bend collision no-fit
+
+After edge-specific annular channel shells remove the coaxial connector
+overlap, `src/toroidal_incident_bend_audit.py` checks the actual first smooth
+bend of each nonzero edge against neighboring incident straight shells.
+
+The tested Vesica and Flower/Tree separated-shell networks still contain
+strict bend/straight intersections before same-face routes have moved onto
+independent spatial axes. This is a geometric routing obstruction rather than a
+failure of local flux conservation or the Piola bend field.
+
+The next construction must fan same-face incident edges onto separate axes
+before their first large-radius bends.
+
+See `docs/toroidal_incident_bend_audit_v0.1.md`.
+
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.

@@ -636,6 +636,7 @@ Start with:
 - `docs/toroidal_smooth_bends_v0.1.md`
 - `docs/toroidal_incident_overlap_audit_v0.1.md`
 - `docs/toroidal_separated_channels_v0.1.md`
+- `docs/toroidal_incident_bend_audit_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
@@ -899,3 +900,19 @@ full collision audit.
 
 Technical note: `docs/toroidal_separated_channels_v0.1.md`.
 Verification: `tests/test_toroidal_separated_channels.py`.
+
+
+## Incident smooth-bend collision audit
+
+`src/toroidal_incident_bend_audit.py` tests the first smooth bend of every
+nonzero edge against the trimmed endpoint straight shells of other edges
+sharing the same annular junction face. The separated-shell construction
+removes coaxial connector overlap, but the current routed bend ordering still
+produces strict bend/straight volume intersections in the Vesica and
+Flower/Tree references.
+
+This is a geometry no-fit, not a conservation failure. A separate-axis
+fan-out is required before smooth whole-network routing can be claimed.
+
+Technical note: `docs/toroidal_incident_bend_audit_v0.1.md`.
+Verification: `tests/test_toroidal_incident_bend_audit.py`.
