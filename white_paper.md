@@ -1658,10 +1658,31 @@ strict bend/straight intersections before same-face routes have moved onto
 independent spatial axes. This is a geometric routing obstruction rather than a
 failure of local flux conservation or the Piola bend field.
 
-The next construction must fan same-face incident edges onto separate axes
-before their first large-radius bends.
+That result is a no-fit for the tested compact geometry, not a topology theorem.
 
 See `docs/toroidal_incident_bend_audit_v0.1.md`.
+
+## Incident bend spacing and curvature scan
+
+A follow-up parameter audit in `src/toroidal_bend_spacing_scan.py` keeps the
+graph, fluxes, annular junctions, Piola connectors, and smooth-bend maps fixed
+while varying only shell gap and positive bend-radius margin.
+
+The deterministic 25-point Vesica grid contains the known colliding compact
+reference, retains collisions at shell gap 3.0 with bend margin 0.05, and also
+contains at least one collision-free sample. This establishes that the earlier
+bend/straight obstruction depends on geometric parameters and does not by
+itself force an off-axis junction redesign.
+
+The next geometric gate is to map the clearance boundary, test the same
+dimensionless ratios across Flower/Tree scales and recursive depths, and seek a
+conservative scale-consistent clearance inequality. A separate-axis fan-out
+remains a fallback if no compact scale-consistent region survives.
+
+This scan is dimensionless and geometric. It does not derive a physical length
+scale, a dynamics law for adaptive geometry, or a physical interpretation.
+
+See `docs/toroidal_bend_spacing_scan_v0.1.md`.
 
 # Conclusion
 
