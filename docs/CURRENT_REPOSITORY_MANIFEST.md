@@ -721,3 +721,17 @@ canonical-state change is introduced.
 
 Primary verification: `tests/test_frequency_source_catalog.py`.
 Primary note: `docs/frequency_source_audit_v0.1.md`.
+
+## Single-mode piezoelectric reference
+
+`src/piezoelectric_mode_reference.py` implements an optional linear modal
+electromechanical model with explicit SI parameters and their source. It
+provides short/open and voltage-driven harmonic responses, ordered frequency
+sweeps, and midpoint time steps with external work and passive losses. The
+short-circuit guard rejects inconsistent charge rather than discarding energy.
+Its synthetic control verifies analytic limits and numerical conservation;
+material-tensor reduction, spatial ring geometry and measured validation
+remain open.
+
+Primary verification: `tests/test_piezoelectric_mode_reference.py`.
+Primary note: `docs/piezoelectric_mode_reference_v0.1.md`.
