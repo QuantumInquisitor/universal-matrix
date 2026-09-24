@@ -177,8 +177,11 @@ def audit_vesica_clearance_boundary(
 
 
 def format_clearance_boundary_report(audit: ClearanceBoundaryAudit) -> str:
+    grids = dict.fromkeys(result.sampling for result in audit.results)
     lines = [
         "TOROIDAL BEND CLEARANCE BOUNDARY",
+        "evidence=finite_sampling_only; collision_free_means_no_collision_detected",
+        "sampling=" + ";".join(grid.description if grid else "unspecified" for grid in grids),
         f"sample_count={audit.sample_count}",
         f"collision_count={audit.collision_count}",
         f"collision_free_count={audit.collision_free_count}",

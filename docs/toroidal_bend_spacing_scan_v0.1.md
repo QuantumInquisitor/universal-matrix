@@ -46,9 +46,11 @@ and positive bend margins
 
 `(0.005, 0.02, 0.05, 0.1, 0.25)`.
 
-Across that deterministic 25-point grid, at least one sample is collision-free.
-The regression therefore establishes existence of a collision-free tested
-parameter point while retaining known colliding controls.
+Across that deterministic 25-point grid, at least one parameter point has no
+collision detected by the finite sampler. This does not establish existence
+of a continuously collision-free geometry. In particular, the default coarse
+scan misses the known gap-3 collision detected by the denser single-point
+test above; see `toroidal_sampling_reliability_v0.1.md`.
 
 The current test intentionally establishes existence rather than claiming an
 optimal point or a complete clearance boundary.
@@ -72,7 +74,7 @@ Established here:
 - persistence of the collision at shell gap 3.0 and bend margin 0.05;
 - orientation independence of that failed candidate;
 - deterministic finite parameter-grid scanning;
-- existence of at least one collision-free sample in the tested 25-point grid.
+- existence of at least one point with no collision detected on the tested grid.
 
 Not established here:
 
