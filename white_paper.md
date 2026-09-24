@@ -1605,6 +1605,26 @@ connectors must be shown spatially disjoint or redesigned.
 
 See `docs/toroidal_smooth_bends_v0.1.md`.
 
+
+
+## Incident connector overlap no-fit
+
+The nonincident routing and smooth-bend certificates do not by themselves
+guarantee that edge volumes sharing one graph node are disjoint.
+`src/toroidal_incident_overlap_audit.py` evaluates the present annular
+connectors from the junction face to the channel annulus.
+
+Same-face port bands begin disjoint but continuously converge to the same
+channel annulus. Nonzero same-face connector pairs therefore overlap before the
+channel endpoint. The implementation measures the first overlap progress and
+terminal overlap width in the Vesica and Flower/Tree references.
+
+This is a geometric obstruction, not a violation of the individual
+divergence-free flux laws. A disjoint channel or fan-out construction is
+required before a whole-network field is admitted.
+
+See `docs/toroidal_incident_overlap_audit_v0.1.md`.
+
 # Conclusion
 
 The Universal Matrix now has three clearly separated layers.
