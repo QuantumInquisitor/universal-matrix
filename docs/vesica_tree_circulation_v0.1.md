@@ -16,39 +16,39 @@ other measured quantity.
 
 ## Discrete continuity law
 
-Let \(q_a\) be the content at graph node \(a\). For a signed current
-\(J_{a\to b}\) on each directed edge, the adopted divergence is
+Let $q_a$ be the content at graph node $a$. For a signed current
+$J_{a\to b}$ on each directed edge, the adopted divergence is
 
-\[
+$
 (\operatorname{div}J)_a
 =
 \sum_{a\to b}J_{a\to b}
 -
 \sum_{c\to a}J_{c\to a}.
-\]
+$
 
 The local continuity equation is
 
-\[
+$
 \frac{dq_a}{dt}+(\operatorname{div}J)_a=0.
-\]
+$
 
 The explicit diagnostic step is
 
-\[
+$
 q_a^{n+1}
 =
 q_a^n-\Delta t\,(\operatorname{div}J)_a.
-\]
+$
 
 Every internal edge contributes once with each sign. Therefore, on a closed
 finite graph,
 
-\[
+$
 \sum_a(\operatorname{div}J)_a=0
 \quad\Longrightarrow\quad
 \sum_a q_a^{n+1}=\sum_a q_a^n.
-\]
+$
 
 This is an exact graph identity up to floating-point arithmetic. A current is
 locally stationary when its divergence vanishes at every node.
@@ -57,39 +57,39 @@ locally stationary when its divergence vanishes at every node.
 
 The minimal port graph has three nodes:
 
-- cusp \\(A\\);
-- neutral center \\(N\\);
-- cusp \\(B\\).
+- cusp \$A\$;
+- neutral center \$N\$;
+- cusp \$B\$.
 
-For through-current \(I\) and return split \(0\leq\alpha\leq1\), its four
+For through-current $I$ and return split $0\leq\alpha\leq1$, its four
 channels are
 
-\[
+$
 A\to N:I,
 \qquad
 N\to B:I,
-\]
+$
 
-\[
+$
 B\to A:\alpha I,
 \qquad
 B\to A:(1-\alpha)I.
-\]
+$
 
 The two return edges have distinct upper and lower channel identities even
-though they join the same graph nodes. Their sum is \(I\), so
+though they join the same graph nodes. Their sum is $I$, so
 
-\[
+$
 \operatorname{div}J(A)
 =
 \operatorname{div}J(N)
 =
 \operatorname{div}J(B)
 =0.
-\]
+$
 
-Negative \(I\) reverses the effective circulation without changing the stored
-edge topology. The mirror-symmetric default is \(\alpha=1/2\); unequal splits
+Negative $I$ reverses the effective circulation without changing the stored
+edge topology. The mirror-symmetric default is $\alpha=1/2$; unequal splits
 remain conservative but introduce an explicit return-channel asymmetry.
 
 This loop is a minimal **toroidal cross-section candidate**. A closed planar
@@ -103,30 +103,30 @@ node, all received flow is divided equally among that node's outward routes.
 When multiple routes meet a node, their contributions are accumulated before
 the next ring is processed.
 
-If \(w_{uv}\) is the resulting weight on outward edge \(u\to v\), then every
+If $w_{uv}$ is the resulting weight on outward edge $u\to v$, then every
 radial cut carries unit flux:
 
-\[
+$
 \sum_{u\in R_d,\,v\in R_{d+1}}w_{uv}=1
 \qquad
 0\leq d<n.
-\]
+$
 
-For radial current \(I_r\), the outer Tree carries \(I_r w_{uv}\). The inner
+For radial current $I_r$, the outer Tree carries $I_r w_{uv}$. The inner
 Tree places the same weighted current on the exact reverse edge. The pair
 therefore cancels node by node. Every same-radius Flower ring may additionally
-carry a closed weave current \(I_w\) with either handedness. A ring cycle also
+carry a closed weave current $I_w$ with either handedness. A ring cycle also
 has zero divergence at every node.
 
 Consequently,
 
-\[
+$
 \operatorname{div}
 \left(
 J_{\mathrm{outer}}+J_{\mathrm{inner}}+J_{\mathrm{weave}}
 \right)
 =0.
-\]
+$
 
 Central mirroring preserves the normalized route weights, exchanges the
 positive and negative pillars, and preserves the neutral pillar. It therefore
@@ -138,8 +138,8 @@ all three pillar fluxes to be equal.
 Spatial Tree routing and recursive scale transfer are intentionally different
 types.
 
-A scale edge may join only a parent address \(p\) to a child address
-\(p\mathbin{+}(i)\). The child must extend the parent path by exactly one valid
+A scale edge may join only a parent address $p$ to a child address
+$p\mathbin{+}(i)$. The child must extend the parent path by exactly one valid
 Vesica index. Positive current points into the child and negative current
 points into the parent.
 
@@ -156,10 +156,10 @@ recursive universe address, so it cannot silently become a scale edge.
 
 ## Canonical clock coupling
 
-For amplitude \(A\geq0\), parent depth \(\ell\), and clock phase
-\(\phi_t=\pi t/18\), the candidate adapter uses
+For amplitude $A\geq0$, parent depth $\ell$, and clock phase
+$\phi_t=\pi t/18$, the candidate adapter uses
 
-\[
+$
 I_{\mathrm{local}}
 =
 A(-1)^\ell\cos\phi_t,
@@ -167,23 +167,23 @@ A(-1)^\ell\cos\phi_t,
 I_{\mathrm{scale}}
 =
 A(-1)^\ell\sin\phi_t.
-\]
+$
 
 Thus,
 
-\[
+$
 I_{\mathrm{local}}^2+I_{\mathrm{scale}}^2=A^2.
-\]
+$
 
-At ticks \(0,9,18,27,36\), the adapter cycles through maximum local outward
+At ticks $0,9,18,27,36$, the adapter cycles through maximum local outward
 circulation, maximum transfer into the child, maximum local inward
 circulation, maximum transfer into the parent, and back to the initial state.
 Adjacent recursive depths reverse both signed carriers.
 
 There are two separate invariants here:
 
-1. the continuity invariant \(\sum_a q_a\) on a closed graph;
-2. the clock-carrier norm \(I_{\mathrm{local}}^2+I_{\mathrm{scale}}^2\).
+1. the continuity invariant $\sum_a q_a$ on a closed graph;
+2. the clock-carrier norm $I_{\mathrm{local}}^2+I_{\mathrm{scale}}^2$.
 
 The second does not, by itself, prove that the currents are physical energy or
 that the clock dynamically generates them.
