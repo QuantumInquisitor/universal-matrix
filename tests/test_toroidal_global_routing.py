@@ -41,10 +41,13 @@ def test_vesica_global_routes_preserve_endpoint_frames(current):
         before_last = edge.route[-2]
         assert first[0] == pytest.approx(start[0])
         assert first[1] == pytest.approx(start[1])
-        assert first[2] > start[2]
+        expected_sign = edge.assembly.axis_sign
+        assert expected_sign * (first[2] - start[2]) > 0.0
         assert last[0] == pytest.approx(before_last[0])
         assert last[1] == pytest.approx(before_last[1])
-        assert last[2] > before_last[2]
+        assert expected_sign * (last[2] - before_last[2]) > 0.0
+        assert edge.source_frame.axis == pytest.approx((0.0, 0.0, expected_sign))
+        assert edge.target_frame.axis == pytest.approx((0.0, 0.0, expected_sign))
         assert edge.length > edge.assembly.total_length
 
 
