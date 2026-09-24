@@ -129,6 +129,7 @@ Selected current geometry and routing notes:
 | `docs/toroidal_bend_spacing_scan_v0.1.md` | Current finite spacing/curvature scan showing both colliding and collision-free tested parameter points. |
 | `docs/toroidal_bend_clearance_boundary_v0.1.md` | Current sampled frontier extracting first collision-free tested shell gaps and unresolved margins. |
 | `docs/toroidal_bend_clearance_refinement_v0.1.md` | Current interior refinement of resolved sampled clearance brackets with transition-count and re-entrant-collision diagnostics. |
+| `docs/toroidal_uniform_scale_similarity_v0.1.md` | Current uniform-similarity audit scaling the complete declared toroidal geometry and testing collision-class invariance plus linearly scaled penetration; recursive topology-scale consistency remains open. |
 
 ## Historical or provenance documents
 
