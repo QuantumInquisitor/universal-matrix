@@ -368,8 +368,8 @@ def build_global_toroidal_routing[NodeT: Hashable](
 
     All junction axes remain parallel to global +z, so junction placement is a
     rigid translation.  Each edge receives a unique positive y corridor and a
-    unique symmetric high/low z level.  The route starts and ends in +z,
-    preserving the endpoint frame contract established by the framed assembly.
+    unique symmetric high/low z level.  The route starts and ends along ``axis_sign * +z``, preserving the signed
+    endpoint frame contract established by the framed assembly.
     """
     node_gap = _finite(node_gap, "node_gap")
     edge_gap = _finite(edge_gap, "edge_gap")
@@ -418,20 +418,24 @@ def build_global_toroidal_routing[NodeT: Hashable](
         lane_y = (assembly.edge_index + 1) * edge_spacing
         lane_height = base_height + (assembly.edge_index + 1) * edge_spacing
 
+        axis_sign = assembly.axis_sign
+        source_level = axis_sign * lane_height
+        target_level = -axis_sign * lane_height
+        endpoint_axis = (0.0, 0.0, float(axis_sign))
         route = (
             source_origin,
-            (source_origin[0], 0.0, lane_height),
-            (source_origin[0], lane_y, lane_height),
-            (source_origin[0], lane_y, -lane_height),
-            (target_origin[0], lane_y, -lane_height),
-            (target_origin[0], 0.0, -lane_height),
+            (source_origin[0], 0.0, source_level),
+            (source_origin[0], lane_y, source_level),
+            (source_origin[0], lane_y, target_level),
+            (target_origin[0], lane_y, target_level),
+            (target_origin[0], 0.0, target_level),
             target_origin,
         )
         routed.append(
             RoutedEdgePlacement(
                 assembly=assembly,
-                source_frame=EdgeEndpointFrame(assembly.edge.source, source_origin, (0.0, 0.0, 1.0)),
-                target_frame=EdgeEndpointFrame(assembly.edge.target, target_origin, (0.0, 0.0, 1.0)),
+                source_frame=EdgeEndpointFrame(assembly.edge.source, source_origin, endpoint_axis),
+                target_frame=EdgeEndpointFrame(assembly.edge.target, target_origin, endpoint_axis),
                 route=route,
                 clearance_radius=_assembly_clearance_radius(assembly) + route_padding,
                 lane_y=lane_y,
