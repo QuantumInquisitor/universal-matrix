@@ -16,9 +16,9 @@ The questions are ordered from deepest foundations to emergent real-world observ
 
 Is the complete local state only
 
-\[
+$
 (n,\sigma,\phi,A)
-\]
+$
 
 or does a physically complete state also require:
 
@@ -44,15 +44,15 @@ For each quantity, decide whether it is:
 
 In particular:
 
-\[
+$
 n,\sigma,\phi,A,\theta,E,F,\ell,k,B_6
-\]
+$
 
 cannot all automatically be independent physical observables.
 
 ### 3. Is the 108-state core local, global, or repeated?
 
-Does one physical "cell" contain a copy of \(\mathbb Z_{108}\), or is the whole universe one 108-state core?
+Does one physical "cell" contain a copy of $\mathbb Z_{108}$, or is the whole universe one 108-state core?
 
 If repeated, what is the adjacency law between neighboring copies?
 
@@ -66,9 +66,9 @@ If global, how does macroscopic spatial locality emerge?
 
 The six boundary orientations naturally support
 
-\[
+$
 \{\pm X,\pm Y,\pm Z\}.
-\]
+$
 
 But the model still needs a reason that these become three large physical dimensions rather than merely three labels.
 
@@ -88,7 +88,7 @@ Is distance determined by:
 - a derived metric tensor,
 - something else?
 
-Without this, the lattice spacing \(a\) remains arbitrary.
+Without this, the lattice spacing $a$ remains arbitrary.
 
 ### 6. Is space fundamentally discrete?
 
@@ -130,7 +130,7 @@ A specific mathematical object is required.
 
 ### 9. What is time?
 
-The present Hamiltonian uses an external evolution parameter \(t\).
+The present Hamiltonian uses an external evolution parameter $t$.
 
 Is physical time:
 
@@ -151,17 +151,17 @@ A complete answer needs a relation between microscopic reversible laws and macro
 
 The weak gauge sector gives
 
-\[
+$
 c_{\rm lat}=\sqrt{\beta}
-\]
+$
 
 in lattice units.
 
-What fixes \(\beta\), one length unit \(a\), and one time unit \(\tau\) independently so that
+What fixes $\beta$, one length unit $a$, and one time unit $\tau$ independently so that
 
-\[
+$
 c_{\rm phys}=\sqrt{\beta}\frac{a}{\tau}
-\]
+$
 
 becomes a prediction rather than a calibration?
 
@@ -203,9 +203,9 @@ rather than arbitrary stable patterns?
 
 There must be a dimensional observable corresponding to
 
-\[
+$
 E_0=mc^2
-\]
+$
 
 or an alternative experimentally equivalent relation.
 
@@ -247,15 +247,15 @@ Does that correspond to electromagnetism, or is it only the first Abelian sector
 
 Real particle physics requires structures corresponding to
 
-\[
+$
 SU(2)
-\]
+$
 
 and
 
-\[
+$
 SU(3).
-\]
+$
 
 Does the finite kernel naturally admit internal multiplets, noncommuting link variables, or representation spaces from which these could emerge?
 
@@ -312,9 +312,9 @@ If no metric curvature exists fundamentally, what propagating excitation corresp
 
 Without at least one observable where
 
-\[
+$
 O_{\rm Matrix}\neq O_{\rm GR},
-\]
+$
 
 the new theory is not distinguishable from an effective rewriting.
 
@@ -332,9 +332,9 @@ Why should physical predictions use complex amplitudes rather than ordinary prob
 
 The model needs a reason for
 
-\[
+$
 P=|\psi|^2
-\]
+$
 
 or a demonstrably equivalent observable rule.
 
@@ -372,9 +372,9 @@ The finite kernel is dimensionless.
 
 What physical mechanism determines:
 
-\[
+$
 a,\quad \tau,\quad E_0,\quad Q_0
-\]
+$
 
 for length, time, energy, and charge?
 
@@ -496,9 +496,9 @@ The nested architecture needs a specific inter-scale mapping.
 
 Is there a universal factor
 
-\[
+$
 \lambda
-\]
+$
 
 between adjacent levels?
 
@@ -525,13 +525,13 @@ The present six-gate field-flux weighting is an adapter convention.
 
 A complete theory should derive
 
-\[
+$
 \mathcal T_\ell
 \leftrightarrow
 B_6
 \leftrightarrow
 \mathcal T_{\ell+1}
-\]
+$
 
 dynamically.
 
@@ -604,11 +604,11 @@ If the six-gate architecture is fundamental, it should leave some experimentally
 
 For finite wavelength,
 
-\[
+$
 \omega^2
 =
 4\beta\sum_i\sin^2(q_i/2)
-\]
+$
 
 differs from exactly linear continuum propagation.
 
@@ -727,25 +727,25 @@ Questions 1 through 3 now have a first executable answer in `src/matrix_ontology
 
 The exact canonical core address is uniquely decomposed as
 
-\[
+$
 n=a+54p,
 \qquad
 a\in\{0,\ldots,53\},
 \quad
 p\in\{0,1\}.
-\]
+$
 
-The canonical polarity operator toggles \(p\) while preserving \(a\).
+The canonical polarity operator toggles $p$ while preserving $a$.
 
 Therefore an extra independent polarity variable must not duplicate this branch bit.
 
 The current minimal candidate dynamical cell state is
 
-\[
+$
 (a,p,\ell,\phi,\Pi_\phi),
-\]
+$
 
-where only \((a,p)\) is exact canonical structure and the remaining variables are explicit hypotheses.
+where only $(a,p)$ is exact canonical structure and the remaining variables are explicit hypotheses.
 
 ### Question 2: reality versus bookkeeping
 
@@ -777,21 +777,21 @@ The next highest-leverage question is:
 ## Local-transition answer checkpoint — v0.1
 
 The next creator question now has a first executable answer in
-\`src/matrix_local_transition.py\`.
+`src/matrix_local_transition.py`.
 
 ### Minimal law
 
 The candidate repeated-cell transition law uses
 
-\[
+$
 (\phi_x,\Pi_x)
-\]
+$
 
-on sites and compact transport phase \(\theta_{xy}\) on nearest-neighbor links.
+on sites and compact transport phase $\theta_{xy}$ on nearest-neighbor links.
 
 The Hamiltonian is
 
-\[
+$
 H
 =
 \sum_x\frac{\Pi_x^2}{2I}
@@ -801,7 +801,7 @@ H
 \left[
 1-\cos\left(\phi_y-\phi_x+\theta_{xy}\right)
 \right].
-\]
+$
 
 ### What is now answered
 
@@ -809,31 +809,31 @@ H
 
 **Conservative exchange:** link forces are equal and opposite, giving
 
-\[
+$
 \frac{d}{dt}\sum_x\Pi_x=0.
-\]
+$
 
 **Gauge transport:** the interaction depends only on the invariant combination
 
-\[
+$
 \phi_y-\phi_x+\theta_{xy}.
-\]
+$
 
 **Wave limit:** for small gradients,
 
-\[
+$
 I\ddot\phi
 =
 \kappa\Delta_{\rm lat}\phi.
-\]
+$
 
 **Dimensionless causal scale:**
 
-\[
+$
 c_{\rm lat}
 =
 \sqrt{\kappa/I}.
-\]
+$
 
 ### Questions moved from open to partial
 
@@ -853,10 +853,10 @@ c_{\rm lat}
 The new law does not yet explain:
 
 1. why this Hamiltonian is unique;
-2. what fixes \(I\) and \(\kappa\);
+2. what fixes $I$ and $\kappa$;
 3. physical length and time units;
-4. how canonical polarity \(p\) modifies interaction, if at all;
-5. how scale level \(\ell\) couples to spatial neighbors;
+4. how canonical polarity $p$ modifies interaction, if at all;
+5. how scale level $\ell$ couples to spatial neighbors;
 6. whether link phases are fundamental or derived;
 7. how dynamical gauge electric fields and site dynamics emerge from one common
    local action;
@@ -874,7 +874,7 @@ The next highest-leverage question is:
 > selected independently?
 
 The repository already contains candidate pieces in
-\`fully_coupled_compact_fields.py\`. The next task is to perform that reduction
+`fully_coupled_compact_fields.py`. The next task is to perform that reduction
 and classify every term as symmetry-required, optional interaction, calibrated
 parameter, or unresolved hypothesis.
 
@@ -888,26 +888,26 @@ explicit algebraic answer.
 
 ### Exact branch representation
 
-For canonical branch bit \(p\),
+For canonical branch bit $p$,
 
-\[
+$
 s_p=(-1)^p.
-\]
+$
 
 If local phase is otherwise independent, define
 
-\[
+$
 \phi_{\rm eff}=\phi+\pi p.
-\]
+$
 
 Then the explicit polarity-weighted link factor is exactly equal to the ordinary
 gauge-covariant sine of the effective phases.
 
 ### Fixed-amplitude matter reduction
 
-For the existing complex matter link term with equal field magnitude \(R\),
+For the existing complex matter link term with equal field magnitude $R$,
 
-\[
+$
 \left|
 e^{i\theta}\Phi_y-\Phi_x
 \right|^2
@@ -916,7 +916,7 @@ e^{i\theta}\Phi_y-\Phi_x
 \left[
 1-\cos\Delta
 \right].
-\]
+$
 
 Therefore the minimal rotor law is not a disconnected new sector. It is the
 fixed-amplitude reduction of the existing complex matter gradient.
@@ -925,15 +925,15 @@ fixed-amplitude reduction of the existing complex matter gradient.
 
 Because
 
-\[
+$
 T^{18}=P
-\]
+$
 
-and the canonical polarity clock advances by \(\pi\) over the same half-cycle,
+and the canonical polarity clock advances by $\pi$ over the same half-cycle,
 the same polarity reversal can be represented either by branch flip or by a
-clock-locked \(\pi\) phase advance.
+clock-locked $\pi$ phase advance.
 
-Applying both to the same physical effect adds \(2\pi\) and cancels the sign
+Applying both to the same physical effect adds $2\pi$ and cancels the sign
 change. This is now treated as a double-counting error.
 
 ### Creator question answered
@@ -971,35 +971,35 @@ The linear collective-mode question for the polarity-aware rotor is now executab
 
 For independent phase plus canonical polarity bit,
 
-\[
+$
 \phi_x^{\mathrm{eff}}
 =
 \phi_x
 +
 \pi p_x.
-\]
+$
 
 A zero-link energy minimum can be written
 
-\[
+$
 \phi_x^{(0)}
 =
 \phi_{\mathrm{ref}}
 -
 \pi p_x,
-\]
+$
 
 so the effective background phase is uniform.
 
 Linearizing about this state gives
 
-\[
+$
 \omega^2(\mathbf{k})
 =
 \frac{4\kappa}{I}
 \sum_{a=x,y,z}
 \sin^2\frac{k_a}{2}.
-\]
+$
 
 The spectrum is independent of the static canonical polarity pattern.
 
@@ -1007,17 +1007,17 @@ Therefore the exact branch offset alone does not create a second stable normal-m
 
 ### Uncompensated opposite-branch links
 
-If opposite branches are assigned the same independent base phase, their zero-link phase difference is \(\pi\).
+If opposite branches are assigned the same independent base phase, their zero-link phase difference is $\pi$.
 
 The quadratic link stiffness is then
 
-\[
+$
 \kappa\cos\pi
 =
 -\kappa.
-\]
+$
 
-A periodic checkerboard polarity background is stationary but linearly unstable: one global zero mode remains and every nonzero rotor mode has negative \(\omega^2\).
+A periodic checkerboard polarity background is stationary but linearly unstable: one global zero mode remains and every nonzero rotor mode has negative $\omega^2$.
 
 This distinguishes a true additional stable degree of freedom from a frustrated background.
 
@@ -1051,7 +1051,7 @@ derived in `src/matter_amplitude_modes.py`.
 
 The current scalar sector uses
 
-\[
+$
 U(\rho)
 =
 m^2\rho
@@ -1061,13 +1061,13 @@ m^2\rho
 \lambda_6\rho^3,
 \qquad
 \rho=|\Phi|^2.
-\]
+$
 
 For a uniform nonzero stationary background,
 
-\[
+$
 U'(\rho_0)=0.
-\]
+$
 
 Small perturbations split into a tangential phase mode and a radial amplitude
 mode.
@@ -1076,21 +1076,21 @@ mode.
 
 The phase branch is
 
-\[
+$
 \omega_{\rm phase}^2(\mathbf{k})
 =
 4\sum_a\sin^2\frac{k_a}{2}.
-\]
+$
 
 The radial branch is
 
-\[
+$
 \omega_{\rm radial}^2(\mathbf{k})
 =
 4\sum_a\sin^2\frac{k_a}{2}
 +
 2\rho_0 U''(\rho_0).
-\]
+$
 
 The radial mode is therefore independent of the canonical polarity-to-phase
 identity and supplies the first genuinely additional stable linear branch in
@@ -1100,54 +1100,54 @@ this reduction.
 
 For the current default
 
-\[
+$
 U(\rho)=\rho-2\rho^2+\rho^3,
-\]
+$
 
 the nonzero stationary densities are
 
-\[
+$
 \rho=\frac13,
 \qquad
 \rho=1.
-\]
+$
 
-At \(\rho=1/3\),
+At $\rho=1/3$,
 
-\[
+$
 m_R^2=-\frac43,
-\]
+$
 
 so the background is radially unstable.
 
-At \(\rho=1\),
+At $\rho=1$,
 
-\[
+$
 m_R^2=4,
-\]
+$
 
 so the radial gap is
 
-\[
+$
 \omega_R(0)=2.
-\]
+$
 
 ### Completed rotor reduction
 
-For fixed amplitude \(\rho=R^2\), matching the existing complex scalar
+For fixed amplitude $\rho=R^2$, matching the existing complex scalar
 kinetic and link energies to the rotor Hamiltonian gives
 
-\[
+$
 I=2\rho,
 \qquad
 \kappa=2\rho.
-\]
+$
 
 Therefore
 
-\[
+$
 \kappa/I=1
-\]
+$
 
 in the scalar field's native lattice units.
 
@@ -1173,57 +1173,57 @@ The default matter potential now has an exact nonlinear defect analysis in
 
 ### Exact factorization
 
-For a real amplitude \(f\),
+For a real amplitude $f$,
 
-\[
+$
 U(f^2)
 =
 f^2(1-f^2)^2.
-\]
+$
 
-Thus \(f=0\) and \(|f|=1\) are degenerate zero-energy vacua.
+Thus $f=0$ and $|f|=1$ are degenerate zero-energy vacua.
 
 ### Exact wall
 
 A one-dimensional static wall satisfies
 
-\[
+$
 f'
 =
 f(1-f^2),
-\]
+$
 
 with exact solution
 
-\[
+$
 f(x)
 =
 \frac{1}{\sqrt{1+e^{-2(x-x_0)}}}.
-\]
+$
 
 Its exact tension in the current scalar normalization is
 
-\[
+$
 T_{\rm wall}=\frac12.
-\]
+$
 
 ### Three-dimensional localization constraint
 
 For a static scalar field under Derrick scaling,
 
-\[
+$
 E(\lambda)
 =
 \lambda^{2-d}T
 +
 \lambda^{-d}V.
-\]
+$
 
-In \(d=3\), stationarity requires
+In $d=3$, stationarity requires
 
-\[
+$
 -T-3V=0.
-\]
+$
 
 Because the default potential is nonnegative, a nontrivial static finite-energy
 scalar lump cannot satisfy this condition.
@@ -1253,7 +1253,7 @@ window in `src/qball_existence_window.py`.
 
 For
 
-\[
+$
 U(\rho)
 =
 m^2\rho
@@ -1261,22 +1261,22 @@ m^2\rho
 \lambda_4\rho^2
 +
 \lambda_6\rho^3,
-\]
+$
 
 a zero-vacuum time-harmonic lump requires
 
-\[
+$
 \min_{\rho>0}
 \frac{U(\rho)}{\rho}
 <
 \omega^2
 <
 m^2.
-\]
+$
 
 For the default repository potential,
 
-\[
+$
 U(\rho)
 =
 \rho
@@ -1284,51 +1284,51 @@ U(\rho)
 2\rho^2
 +
 \rho^3,
-\]
+$
 
 the ratio is
 
-\[
+$
 \frac{U(\rho)}{\rho}
 =
 (1-\rho)^2.
-\]
+$
 
 Its minimum is zero at
 
-\[
+$
 \rho=1.
-\]
+$
 
 Therefore the necessary frequency interval is
 
-\[
+$
 \boxed{
 0<\omega^2<1.
 }
-\]
+$
 
 Equivalently,
 
-\[
+$
 0<\omega<1.
-\]
+$
 
 The asymptotic decay rate is
 
-\[
+$
 \mu_\infty
 =
 \sqrt{1-\omega^2}.
-\]
+$
 
 ### Numerical consequence
 
 A radial boundary-value solution that converges outside
 
-\[
+$
 0<\omega<1
-\]
+$
 
 is not on the intended localized positive-frequency branch, even if the solver
 reports convergence.
@@ -1339,7 +1339,7 @@ This gives the continuation solver a hard analytic branch filter.
 
 > Can the radial solver be upgraded from isolated Gaussian guesses to numerical
 > continuation along a converged nodeless branch, while enforcing the analytic
-> frequency window and tracking \(E/Q\), charge, virial residual, and
+> frequency window and tracking $E/Q$, charge, virial residual, and
 > persistence?
 
 That is the next numerical reliability step before interpreting any charged
@@ -1362,7 +1362,7 @@ the new workflow:
 2. uses each accepted solution to seed the next amplitude,
 3. enforces solver convergence,
 4. enforces nodelessness,
-5. enforces the analytic window \(0<\omega<1\),
+5. enforces the analytic window $0<\omega<1$,
 6. enforces a small relative virial residual,
 7. and only then permits a point to seed the next solve.
 
@@ -1370,7 +1370,7 @@ the new workflow:
 
 For
 
-\[
+$
 A_0
 =
 0.5,,
@@ -1379,28 +1379,28 @@ A_0
 0.8,,
 0.9,,
 1.0,
-\]
+$
 
 the tracked branch remains converged, nodeless, inside the analytic frequency
 window, and virially controlled.
 
 The frequency decreases smoothly along the branch and reaches approximately
 
-\[
+$
 \omega(A_0=1)
 \approx
 0.80015.
-\]
+$
 
 At that point,
 
-\[
+$
 E/Q
 \approx
 0.9873
 <
 m_{\rm free}=1.
-\]
+$
 
 ### Interpretation boundary
 
@@ -1429,19 +1429,19 @@ now been corrected.
 
 ### Consistent spatial spacing
 
-For cubic spacing \(h\),
+For cubic spacing $h$,
 
-\[
+$
 \Delta_A
 \propto
 \frac{1}{h^2},
-\]
+$
 
 while energy and charge integrals carry site volume
 
-\[
+$
 h^3.
-\]
+$
 
 The radial-to-Cartesian mapper now transfers its spacing directly into
 `ClassicalMatterDynamics`.
@@ -1450,16 +1450,16 @@ The radial-to-Cartesian mapper now transfers its spacing directly into
 
 The default is still
 
-\[
+$
 h=1,
-\]
+$
 
 so historical unit-spacing calculations are unchanged.
 
 ### Why this was required
 
-Previously, a radial profile could be interpolated at \(h=0.5\) while the
-dynamical Laplacian still behaved as though \(h=1\).
+Previously, a radial profile could be interpolated at $h=0.5$ while the
+dynamical Laplacian still behaved as though $h=1$.
 
 That mixed two spatial scales inside one persistence calculation.
 
@@ -1491,23 +1491,23 @@ three dimensions with one consistent lattice spacing.
 
 The selected continuation endpoint is near
 
-\[
+$
 A_0=1,
 \qquad
 \omega\approx0.80015,
 \qquad
 E/Q<1.
-\]
+$
 
 It is mapped to a cubic lattice with
 
-\[
+$
 h=0.5.
-\]
+$
 
 ### Mapping check
 
-Before evolution, the three-dimensional lattice \(E/Q\) is compared with the
+Before evolution, the three-dimensional lattice $E/Q$ is compared with the
 radial value.
 
 This prevents a discretization artifact from being mistaken for improved or
@@ -1555,11 +1555,11 @@ in `src/qball_branch_diagnostics.py`.
 
 Neighboring accepted continuation points are tested against
 
-\[
+$
 \frac{dE}{dQ}
 \approx
 \omega.
-\]
+$
 
 This checks whether the branch behaves numerically like one constrained
 stationary family rather than a collection of unrelated BVP roots.
@@ -1568,9 +1568,9 @@ stationary family rather than a collection of unrelated BVP roots.
 
 The branch also records
 
-\[
+$
 \frac{dQ}{d\omega}.
-\]
+$
 
 Its sign is retained as a candidate branch-stability diagnostic, not as a proof.
 
@@ -1578,9 +1578,9 @@ Its sign is retained as a candidate branch-stability diagnostic, not as a proof.
 
 The code locates the crossing of
 
-\[
+$
 E/Q=m_{\rm free}
-\]
+$
 
 between neighboring accepted points.
 
@@ -1643,21 +1643,21 @@ The solver repeatedly:
 
 1. continues the accepted charged branch across the ordered amplitude set;
 2. finds the neighboring accepted pair that brackets
-   \(E/Q=m_{\rm free}\);
+   $E/Q=m_{\rm free}$;
 3. inserts new central amplitudes only inside that bracket;
 4. resolves the full ordered branch so branch identity remains controlled.
 
 With two refinement rounds and four interior points per round, the original
-\([0.9,1.0]\) amplitude bracket is required by the regression test to narrow
-to approximately \(4\times10^{-3}\) or less.
+$[0.9,1.0]$ amplitude bracket is required by the regression test to narrow
+to approximately $4\times10^{-3}$ or less.
 
 The interpolated crossing itself remains solver-generated rather than encoded as
 a constant.
 
 ### Evidence kept separate
 
-At the refined crossing, the engine records the local \(dQ/d\omega\) secant
-and the \(dE/dQ\approx\omega\) consistency error, but does not equate either
+At the refined crossing, the engine records the local $dQ/d\omega$ secant
+and the $dE/dQ\approx\omega$ consistency error, but does not equate either
 with finite-time nonlinear survival.
 
 ### Next creator question
@@ -1677,7 +1677,7 @@ The next comparison is now executable in
 `src/qball_threshold_persistence_scan.py`.
 
 The experiment automatically takes the two accepted refined branch points that
-straddle \(E/Q=m_{\rm free}\), maps each to the same 3D lattice, and runs:
+straddle $E/Q=m_{\rm free}$, maps each to the same 3D lattice, and runs:
 
 - direct finite-time evolution;
 - the same evolution after the standard localized amplitude perturbation.
@@ -1693,7 +1693,7 @@ first finite-time persistence failure is found.
 If one side survives and one fails, the engine refines between those points.
 
 If both fail, the search moves inward toward the previously persistent
-\(A_0=1\) candidate and audits whether the change is caused by branch location,
+$A_0=1$ candidate and audits whether the change is caused by branch location,
 grid mapping, perturbation strength, or numerical duration.
 
 ### Next creator question
@@ -1710,8 +1710,8 @@ two criteria are equivalent.
 The first near-threshold run exposed a numerical subtlety that is now treated as
 part of the experiment rather than hidden.
 
-The radial point just above \(E/Q=m_{\rm free}\) mapped to a Cartesian state
-whose discretized \(E/Q\) fell just below the same threshold. The relative
+The radial point just above $E/Q=m_{\rm free}$ mapped to a Cartesian state
+whose discretized $E/Q$ fell just below the same threshold. The relative
 mapping difference was small, but the point was close enough to the boundary
 that the classification changed.
 
@@ -1772,9 +1772,9 @@ numerical studies.
 
 At fixed half-width (L=6), the mapping is evaluated at
 
-[
-h=0.5, 0.4, 0.3, 0.25.
-]
+$$
+h=0.5,\ 0.4,\ 0.3,\ 0.25.
+$$
 
 This isolates the spacing-resolution trend.
 
@@ -1782,9 +1782,9 @@ This isolates the spacing-resolution trend.
 
 At fixed (h=0.3), the physical half-width is varied through
 
-[
-L=4.8, 6.0, 7.2, 8.4.
-]
+$$
+L=4.8,\ 6.0,\ 7.2,\ 8.4.
+$$
 
 This isolates finite-volume truncation sensitivity.
 
@@ -1809,16 +1809,15 @@ same refined radial branch point.
 
 The extrapolation model is
 
-[
-E/Q(h,L)=c_0+c_hh^2+c_LT(L;mu),
-]
+$$
+\frac{E}{Q}(h,L)=c_0+c_h h^2+c_L T(L;\mu),
+$$
 
 with the finite-volume basis tied to the branch's asymptotic localization scale
 
-[
-mu=sqrt{m_{
-m free}^2-omega^2}.
-]
+$$
+\mu=\sqrt{m_{\mathrm{free}}^2-\omega^2}.
+$$
 
 The fit uses twelve Cartesian mappings spanning four lattice spacings and three
 physical box sizes.
@@ -1830,7 +1829,7 @@ raise the mapped (E/Q) toward the radial value. A one-dimensional
 extrapolation therefore mixes unresolved error from the other axis.
 
 The new intercept (c_0) is the first controlled joint diagnostic for the
-(h	o0), (L	oinfty) mapping limit.
+(h\to0), (L\toinfty) mapping limit.
 
 ### Next creator question
 
@@ -1852,14 +1851,9 @@ classification as the refined radial solution.
 
 A direct confirmation is now defined at
 
-[
-h=0.175,
-qquad
-L=7.875,
-qquad
-91^3 {
-m sites}.
-]
+$$
+h=0.175,\qquad L=7.875,\qquad 91^3\ \mathrm{sites}.
+$$
 
 The calculation records the actual mapped (E/Q) and compares it with both the
 radial value and the joint-fit prediction.
@@ -1889,9 +1883,9 @@ three distinct evidence layers.
 A short direct and perturbed dynamical test is now defined on the confirmed
 threshold-preserving finite grid:
 
-[
-91^3,qquad h=0.175,qquad L=7.875.
-]
+$$
+91^3,\qquad h=0.175,\qquad L=7.875.
+$$
 
 The first stage deliberately uses only 25 steps at (dt=0.001).
 
@@ -1922,10 +1916,9 @@ stability diagnosis.
 The same threshold-preserving finite grid and perturbation are now evolved for
 four times the Stage-1 duration:
 
-[
-100 {
-m steps},qquad dt=0.001,qquad t=0.1.
-]
+$$
+100\ \mathrm{steps},\qquad dt=0.001,\qquad t=0.1.
+$$
 
 No grid, energetic, or perturbation parameter is changed.
 
@@ -1956,10 +1949,9 @@ becomes the object of study.
 
 The same threshold-preserving grid and perturbation are now evolved to
 
-[
-250 {
-m steps},qquad dt=0.001,qquad t=0.25.
-]
+$$
+250\ \mathrm{steps},\qquad dt=0.001,\qquad t=0.25.
+$$
 
 This extends the duration to ten times Stage 1 and 2.5 times Stage 2 without
 changing any other numerical or physical parameter.
@@ -1985,9 +1977,9 @@ direct fit of the early-time relaxation law.
 
 Three completed high-resolution persistence observations now exist at
 
-[
-t=0.025,quad 0.1,quad 0.25.
-]
+$$
+t=0.025,\quad 0.1,\quad 0.25.
+$$
 
 A dedicated diagnostic now compares conservation and structural scaling across
 those stages before selecting the next duration.
@@ -2029,10 +2021,9 @@ not an arbitrary duration increase.
 
 The first duration selected by the explicit scaling diagnostic is now
 
-[
-500 {
-m steps},qquad dt=0.001,qquad t=0.5.
-]
+$$
+500\ \mathrm{steps},\qquad dt=0.001,\qquad t=0.5.
+$$
 
 The grid, timestep, energetic classification, and perturbation are unchanged.
 
@@ -2067,10 +2058,9 @@ points.
 
 The run remains
 
-[
-500 {
-m steps},qquad dt=0.001,qquad t=0.5,
-]
+$$
+500\ \mathrm{steps},\qquad dt=0.001,\qquad t=0.5,
+$$
 
 with diagnostics sampled every 25 steps.
 
@@ -2105,15 +2095,15 @@ larger endpoint-only jump.
 
 The same threshold-preserving (91^3) state is now sampled continuously through
 
-[
+$$
 t=1.0
-]
+$$
 
 with the same
 
-[
+$$
 dt=0.001
-]
+$$
 
 and the same 25-step sampling cadence.
 
@@ -2148,9 +2138,9 @@ breathing-mode oscillation.
 
 The same threshold-preserving (91^3) state is now sampled through
 
-[
+$$
 t=1.5
-]
+$$
 
 with unchanged timestep, grid, perturbation, and 25-step cadence.
 
@@ -2180,9 +2170,9 @@ between amplitude and radius oscillations.
 
 The same threshold-preserving (91^3) state is now sampled through
 
-[
+$$
 t=2.0
-]
+$$
 
 with unchanged grid, timestep, perturbation, and 25-step cadence.
 
@@ -2215,9 +2205,9 @@ than forced into a periodic model.
 
 The same threshold-preserving (91^3) state is now sampled through
 
-[
+$$
 t=2.5
-]
+$$
 
 with unchanged grid, timestep, perturbation, and 25-step cadence.
 
@@ -2317,11 +2307,11 @@ inside it. Each of the Seed's twelve adjacent circle pairs creates a Vesica,
 and the maximal circle centered in that lens has one quarter of the parent
 vessel's radius. Recursing gives
 
-\[
+$
 R_d=R_0/4^d,
 \qquad
 N_d=12^d.
-\]
+$
 
 This answers the earlier scale-expression question only for the selected
 planar containment convention. It does not determine a physical unit or show
@@ -2361,7 +2351,7 @@ quantity.
 
 For directed edge current (J), the local law is
 
-\[
+$
 \frac{dq_a}{dt}+(\operatorname{div}J)_a=0,
 \qquad
 (\operatorname{div}J)_a
@@ -2369,7 +2359,7 @@ For directed edge current (J), the local law is
 \sum_{a\to b}J_{a\to b}
 -
 \sum_{c\to a}J_{c\to a}.
-\]
+$
 
 The implemented Vesica cross-section sends a through-current from cusp (A)
 through the neutral center to cusp (B). Two separately labeled lens-side
@@ -2384,17 +2374,17 @@ route weights while exchanging positive and negative pillar flux.
 
 The port clock now supplies a candidate quadrature:
 
-\[
+$
 I_{\mathrm{local}}
 =A(-1)^\ell\cos\phi,
 \qquad
 I_{\mathrm{scale}}
 =A(-1)^\ell\sin\phi,
-\]
+$
 
-\[
+$
 I_{\mathrm{local}}^2+I_{\mathrm{scale}}^2=A^2.
-\]
+$
 
 Recursive scale transfer is a separately typed edge between a parent address
 and a child address that extends it by exactly one Vesica index. It is not a
@@ -2430,17 +2420,17 @@ The preceding creator question now has a first executable answer in
 
 The minimal state is the product address
 
-\[
+$
 X=(u,p,b),
-\]
+$
 
-where \(u\) is a recursive Vesica-universe address, \(p\) is an open named
-plane identifier, and \(b\) is a signed possibility path. An elementary move
+where $u$ is a recursive Vesica-universe address, $p$ is an open named
+plane identifier, and $b$ is a signed possibility path. An elementary move
 may change exactly one of these coordinates:
 
-- scale transfer changes \(u\) by one parent-child depth;
-- plane transition changes \(p\) across one declared overlap;
-- possibility branching changes \(b\) by one outcome token.
+- scale transfer changes $u$ by one parent-child depth;
+- plane transition changes $p$ across one declared overlap;
+- possibility branching changes $b$ by one outcome token.
 
 A mixed-coordinate move fails closed. This is the invariant that prevents a
 plane change from becoming scale recursion by renaming it.
@@ -2453,17 +2443,17 @@ an invented edge.
 Possibility outcomes use neutral zero and any finite number of signed mirror
 pairs. Their nonnegative weights obey
 
-\[
+$
 w_k=w_{-k},
 \qquad
 \sum_k w_k=1.
-\]
+$
 
-An outward branch current \(I\) therefore preserves the cut flux
+An outward branch current $I$ therefore preserves the cut flux
 
-\[
+$
 \sum_k Iw_k=I,
-\]
+$
 
 and the graph continuity law preserves total dimensionless content. Exact
 reverse edges form a divergence-free closed branch circulation. One pair plus
@@ -2511,9 +2501,9 @@ different counts as interchangeable.
 The existing product address is not replaced. Instead, the local Yantra state
 is a fibre over it:
 
-\[
+$
 Y=((u,p,b),a,m,\varphi;R,f,h).
-\]
+$
 
 The new coordinates record enclosure, local member, rational phase,
 realization, inward/stationary/outward flow, and handedness. Plane, spherical,
@@ -2523,13 +2513,13 @@ the realization only; it cannot silently change recursive universe, named
 plane, or possibility path.
 
 The dimension-open construction replaces an oriented triangle with the
-centered regular \(d\)-simplex
+centered regular $d$-simplex
 
-\[
+$
 v_i=e_i-\frac{1}{d+1}\mathbf1.
-\]
+$
 
-The complementary orientation is \(-v_i\). In three intrinsic dimensions the
+The complementary orientation is $-v_i$. In three intrinsic dimensions the
 two orientation templates form a dual-tetrahedron compound with eight
 vertices. This gives an exact local bridge to the stella octangula while
 retaining the important no-fit: the complete four-plus-five generator Sri
@@ -2941,16 +2931,16 @@ The Huet reference admits exactly one global solution.
 
 That solution has
 
-\[
+$
 1+8+10+10+14=43
-\]
+$
 
 chambers, 129 distinct chamber sides, mirror closure in every noncentral ring,
 and circuit-vertex counts
 
-\[
+$
 3,\ 16,\ 20,\ 20,\ 28.
-\]
+$
 
 The individual chamber coordinates are therefore derived rather than inserted
 as a 43-entry lookup table.
@@ -3152,9 +3142,9 @@ flux leaves the right face.
 A deterministic transport decomposition pairs inlet and outlet magnitudes into
 nonoverlapping internal lanes. Each lane carries a field of the form
 
-[
+$$
 J=(f(y,z),0,0),
-]
+$$
 
 independent of x. The interior divergence is therefore zero, the side-wall
 normal flux is zero, and the normalized lane profile integrates exactly to its
@@ -3231,9 +3221,9 @@ overlaps of cumulative-flux intervals.
 
 The boundary cumulative law
 
-[
+$$
 H(q)=(2q-q^2)^3
-]
+$$
 
 has exactly the derivative required by the annular Piola connector. Every
 external edge port therefore matches both the connector topology and its
@@ -3326,9 +3316,9 @@ Every 90-degree route corner is replaced by an annular quarter-circle bend. For
 bend radius R_b and annular radius r, the Cartesian Jacobian scale relative to
 a straight tube is
 
-[
-1-rac{r}{R_b}cos	heta.
-]
+$$
+1-\frac{r}{R_b}\cos\theta.
+$$
 
 The implementation requires R_b to exceed the annular outer radius, so the
 Jacobian stays positive everywhere.
