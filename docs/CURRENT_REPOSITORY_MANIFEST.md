@@ -749,3 +749,7 @@ Primary note: `docs/piezoelectric_mode_reference_v0.1.md`.
 These optional references do not normalize the Matrix clock, establish clinical efficacy or identify the pictured M4 cosmology.
 
 The optional `src/microplane_projection_reference.py` checks normal/tangential projections and virtual work against macroscopic tensor contractions. It is a spherical projection reference, not the full nonlinear concrete M4 model, an OOFEM quadrature reproduction, or a piezoelectric material law. See `docs/microplane_projection_reference_v0.1.md`.
+
+## Proposed scalar standing-wave experiment
+
+`src/proposed_scalar_wave_control.py` introduces our explicit M4-inspired working hypothesis for a parametrically driven ring mode. It tests linear standing-mode growth, damping and off-resonance controls, a drive/work/loss balance, and joint space/time scaling. A fixed material gap supplies a negative similarity control. The equations and assumptions are declared in `docs/proposed_scalar_wave_control_v0.1.md`; they are not attributed to the unverified social source. Nonlinear pattern selection and saturation remain future extensions.
