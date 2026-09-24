@@ -25,9 +25,9 @@ repository.
 
 The minimal site state used here is
 
-$
+$$
 (\phi_x,\Pi_x),
-$
+$$
 
 where
 
@@ -36,9 +36,9 @@ where
 
 The exact canonical address
 
-$
+$$
 (a,p)
-$
+$$
 
 from the primitive ontology remains separate metadata. The canonical polarity
 bit is not duplicated as another independent site variable.
@@ -46,31 +46,31 @@ bit is not duplicated as another independent site variable.
 Each positively oriented nearest-neighbor link carries a compact transport
 phase
 
-$
+$$
 \theta_{xy}.
-$
+$$
 
 ## 2. Gauge-covariant local difference
 
 Under the local transformation
 
-$
+$$
 \phi_x\rightarrow\phi_x+\alpha_x,
-$
+$$
 
-$
+$$
 \theta_{xy}
 \rightarrow
 \theta_{xy}+\alpha_x-\alpha_y,
-$
+$$
 
 the combination
 
-$
+$$
 \Delta_{xy}
 =
 \phi_y-\phi_x+\theta_{xy}
-$
+$$
 
 is invariant.
 
@@ -81,7 +81,7 @@ on an arbitrary local phase convention.
 
 The current candidate law is
 
-$
+$$
 \boxed{
 H
 =
@@ -94,15 +94,15 @@ H
 1-\cos(\Delta_{xy})
 \right]
 }
-$
+$$
 
 with
 
-$
+$$
 I>0,
 \qquad
 \kappa>0.
-$
+$$
 
 Here $I$ is a dimensionless inertia parameter and $\kappa$ is a
 dimensionless nearest-neighbor coupling.
@@ -113,33 +113,33 @@ This is the compact rotor form of the minimal local exchange law.
 
 Hamilton's equations give
 
-$
+$$
 \dot\phi_x
 =
 \frac{\Pi_x}{I},
-$
+$$
 
 and
 
-$
+$$
 \dot\Pi_x
 =
 -\frac{\partial H}{\partial\phi_x}.
-$
+$$
 
 Every link contributes equal and opposite momentum exchange to its two
 endpoints.
 
 Therefore
 
-$
+$$
 \boxed{
 \frac{d}{dt}
 \sum_x\Pi_x
 =
 0
 }
-$
+$$
 
 in continuous time.
 
@@ -165,37 +165,37 @@ long-range microscopic action.
 
 For small gauge-covariant phase differences,
 
-$
+$$
 |\Delta_{xy}|\ll1,
-$
+$$
 
 we have
 
-$
+$$
 \sin\Delta_{xy}
 \approx
 \Delta_{xy}.
-$
+$$
 
 With zero background link phase, the site equation becomes
 
-$
+$$
 I\ddot\phi
 =
 \kappa\Delta_{\rm lat}\phi,
-$
+$$
 
 where $\Delta_{\rm lat}$ is the nearest-neighbor graph Laplacian.
 
 The characteristic lattice speed is therefore
 
-$
+$$
 \boxed{
 c_{\rm lat}
 =
 \sqrt{\frac{\kappa}{I}}
 }
-$
+$$
 
 in lattice sites per model-time unit.
 
@@ -255,9 +255,9 @@ Yes, the weak-field limit reduces to a discrete wave equation.
 
 Yes, a dimensionless lattice characteristic speed exists:
 
-$
+$$
 c_{\rm lat}=\sqrt{\kappa/I}.
-$
+$$
 
 ## 9. What this does not answer
 
