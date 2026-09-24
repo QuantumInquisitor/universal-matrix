@@ -2,247 +2,231 @@
 
 ## Purpose
 
-The canonical routing algebra already fixes the dimensionless polarity phase
-advance per routing tick:
+The canonical routing algebra fixes the dimensionless polarity phase advance per routing tick:
 
-\\[
-Deltaphi_P=rac{pi}{18}.
-\\]
+$$
+\Delta\phi_P=\frac{\pi}{18}.
+$$
 
-This extension asks whether the **physical duration** of that tick can depend on
-local conserved content without modifying the canonical discrete clock.
+This extension asks whether the **physical duration** of that tick can depend on local conserved content without modifying the canonical discrete clock.
 
-Implementation:
+Implementation: [src/content_clock.py](../src/content_clock.py)
 
-`src/content_clock.py`
-
-Tests:
-
-`tests/test_content_clock.py`
+Verification: [tests/test_content_clock.py](../tests/test_content_clock.py)
 
 ## 1. Excess content
 
 Let
 
-\\[
-x=
-mathcal C_{m local}
--
-mathcal C_{m ref}
-\\]
+$$
+x=\mathcal C_{\mathrm{local}}-\mathcal C_{\mathrm{ref}}
+$$
 
 be dimensionless excess local content relative to a reference or vacuum level.
 
-The current conserved nested quantity is based on quadratic amplitude content,
+The nested-state program uses quadratic amplitude content schematically as
 
-\\[
-mathcal C_ell=a_ell^2.
-\\]
+$$
+\mathcal C_\ell=a_\ell^2.
+$$
 
-The interpretation of this quantity as physical energy remains experimental.
+Its identification with physical energy is experimental and is not assumed by the canonical kernel.
 
 ## 2. Lapse assumptions
 
-Let
+Let $L(x)>0$ multiply the reference physical tick duration. The bridge model imposes
 
-\\[
-L(x)>0
-\\]
-
-multiply the reference physical tick duration.
-
-Impose
-
-\\[
+$$
 L(0)=1
-\\]
+$$
 
 and the composition rule
 
-\\[
+$$
 L(x+y)=L(x)L(y).
-\\]
+$$
 
-If (L) is continuous, the positive solution family is
+If $L$ is continuous, the positive solution family is
 
-\\[
-oxed{
-L(x)=e^{g x}
-}
-\\]
+$$
+\boxed{L(x)=e^{gx}}
+$$
 
-for a dimensionless coupling (g).
+for a dimensionless coupling $g$.
 
-This is the least-structured positive multiplicative family compatible with the
-composition assumption.
-
-The assumption itself is not a theorem of the canonical kernel.
+This is the least-structured positive multiplicative family compatible with the stated composition assumption. The composition assumption itself is not a theorem of the canonical kernel.
 
 ## 3. Physical tick duration
 
 Define
 
-\\[
-oxed{
-	au_{m eff}
-=
-	au_0
-e^{g x}.
-}
-\\]
+$$
+\boxed{\tau_{\mathrm{eff}}=\tau_0 e^{gx}}.
+$$
 
 For positive coupling and positive excess content,
 
-\\[
-	au_{m eff}>	au_0.
-\\]
+$$
+\tau_{\mathrm{eff}}>\tau_0.
+$$
 
-The local physical clock is therefore slower relative to the reference clock.
+Within this bridge model, the local physical clock is therefore slower relative to the reference clock.
 
 ## 4. Clock-rate ratio
 
-The relative physical clock rate is
+The local physical clock rate divided by the reference rate is
 
-\\[
-oxed{
-rac{r_{m local}}{r_{m ref}}
-=
-e^{-g x}.
-}
-\\]
+$$
+\boxed{\frac{r_{\mathrm{local}}}{r_{\mathrm{ref}}}=e^{-gx}}.
+$$
 
-For weak content,
+For weak excess content,
 
-\\[
-rac{r_{m local}}{r_{m ref}}
+$$
+\frac{r_{\mathrm{local}}}{r_{\mathrm{ref}}}
 =
 1-gx+O(x^2).
-\\]
+$$
+
+The corresponding lapse expansion is
+
+$$
+L(x)=1+gx+O(x^2).
+$$
 
 ## 5. Canonical phase remains fixed
 
 The canonical phase advance per routing tick is unchanged:
 
-\\[
-Deltaphi_P
-=
-rac{pi}{18}.
-\\]
+$$
+\Delta\phi_P=\frac{\pi}{18}.
+$$
 
-Therefore
+The physical polarity angular frequency is therefore
 
-\\[
-omega_{P,m phys}
+$$
+\omega_{P,\mathrm{phys}}
 =
-rac{pi}{18	au_{m eff}}.
-\\]
+\frac{\pi}{18\tau_{\mathrm{eff}}}.
+$$
 
 Hence
 
-\\[
-oxed{
-omega_{P,m phys}	au_{m eff}
+$$
+\boxed{
+\omega_{P,\mathrm{phys}}\tau_{\mathrm{eff}}
 =
-rac{pi}{18}.
-}
-\\]
+\frac{\pi}{18}
+}.
+$$
 
-The physical clock rate changes while the discrete routing structure remains
-exactly the same.
+The proposed physical clock rate can change while the discrete routing phase increment remains fixed.
 
 ## 6. Propagation hypothesis
 
-If a fixed physical link length (a) is traversed in one local routing tick,
+If one fixed physical link length $a$ is traversed per local routing tick, then
 
-\\[
-v_{m eff}
+$$
+v_{\mathrm{eff}}
 =
-rac{a}{	au_{m eff}}.
-\\]
+\frac{a}{\tau_{\mathrm{eff}}}.
+$$
 
 Relative to the reference region,
 
-\\[
-oxed{
-rac{v_{m eff}}{v_0}
+$$
+\boxed{
+\frac{v_{\mathrm{eff}}}{v_0}
 =
-e^{-g x}.
-}
-\\]
+e^{-gx}
+}.
+$$
 
-Equivalently, define an effective travel-time index
+An equivalent travel-time index is
 
-\\[
-oxed{
-n_{m eff}
+$$
+\boxed{
+n_{\mathrm{eff}}
 =
-e^{g x}.
-}
-\\]
+e^{gx}
+}.
+$$
 
-This resembles a variable propagation medium mathematically.
+This is mathematically analogous to a variable propagation medium. It is not a derived gravitational law.
 
-It is **not** yet a derived gravitational law.
+## 7. Why the exponential family is used
 
-## 7. Why exponential rather than linear
+A linear rule such as
 
-A purely linear rule
+$$
+L(x)=1+gx
+$$
 
-\\[
-L=1+gx
-\\]
+does not satisfy exact additive composition,
 
-can become negative for sufficiently negative (x) and does not compose
-multiplicatively.
+$$
+L(x+y)=L(x)L(y),
+$$
 
-The exponential law remains positive and satisfies exact additive composition.
+and can become nonpositive outside a restricted domain.
 
-Its weak-content expansion automatically gives the linear limit.
+The exponential family remains positive and satisfies the declared composition rule exactly. Its weak-content expansion reproduces the linear first-order limit.
 
-## 8. What remains free
+## 8. Free physical quantities
 
-Two dimensional/physical quantities remain unresolved:
+Two physical quantities remain unresolved by the canonical finite kernel.
 
-\\[
-oxed{	au_0}
-\\]
+The reference physical duration per canonical routing tick is
 
-the reference seconds per canonical routing tick, and
+$$
+\boxed{\tau_0},
+$$
 
-\\[
-oxed{g}
-\\]
+and the dimensionless content-clock coupling is
 
-the content-clock coupling.
+$$
+\boxed{g}.
+$$
 
-Neither is currently derived from the canonical kernel.
+Neither is currently derived from the canonical architecture.
 
-## 9. Possible route toward a gravity-like sector
+## 9. Route toward a gravity-like correspondence
 
-If localized stable matter carries positive excess conserved content and if
-content increases local tick duration, then gradients in content produce
-gradients in effective clock rate and propagation time.
+If stable localized matter carries positive excess conserved content, and if excess content increases local physical tick duration, then spatial content gradients produce clock-rate and propagation-time gradients.
 
-That suggests the chain
+The proposed bridge is therefore
 
-\\[
-oxed{
-mathcal C
-ightarrow
-	au_{m eff}
-ightarrow
-	ext{clock-rate gradient}
-ightarrow
-	ext{propagation gradient}.
-}
-\\]
+$$
+\boxed{
+\mathcal C
+\rightarrow
+\tau_{\mathrm{eff}}
+\rightarrow
+\text{clock-rate gradient}
+\rightarrow
+\text{propagation gradient}
+}.
+$$
 
-Whether this can reproduce universal attraction, redshift, trajectory bending,
-or gravitational-wave observations is a separate question and must be derived
-and tested.
+Whether that chain can reproduce universal free fall, redshift, trajectory bending, gravitational-wave propagation, or another observed gravitational phenomenon is a separate derivation and validation problem.
+
+## Evidence boundary
+
+Established by the executable bridge:
+
+- the canonical phase increment remains $\pi/18$ per routing tick;
+- the declared continuous multiplicative lapse family is exponential;
+- effective tick duration, clock-rate ratio, propagation-speed ratio, and travel-time index are computed consistently from that family.
+
+Not established:
+
+- a physical value of $\tau_0$;
+- a physical value of $g$;
+- identification of $\mathcal C$ with measured mass-energy;
+- equivalence with General Relativity;
+- universal gravitational coupling;
+- experimental validation of the propagation hypothesis.
 
 ## Status
 
-This module is an experimental bridge law selected from explicit composition
-assumptions. It is not part of the canonical kernel and is not evidence against
-or a replacement for General Relativity.
+This module is an **experimental bridge law** selected from explicit composition assumptions. It is not part of the canonical kernel, is not an experimentally established gravity law, and does not replace General Relativity.
