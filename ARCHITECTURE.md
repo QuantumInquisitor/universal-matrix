@@ -1010,3 +1010,19 @@ complete whole-network collision certificate.
 
 Primary verification: `tests/test_toroidal_incident_overlap_audit.py`.
 Primary note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
+
+
+## Canonical mod-9 quotient audit
+
+`src/canonical_mod9_interface_audit.py` is a derived exact-arithmetic layer
+over the canonical (mathbb Z_{108}) kernel. It uses reduction modulo nine to
+label the nine (E=T_9) orbits and a twelve-step phase coordinate inside each
+orbit.
+
+It also records the independent multiplication-by-two automorphism of
+(mathbb Z_9) and its three orbit classes. That automorphism is not a
+canonical translation operator and remains separate from (E), (P), and
+(T_{21}).
+
+Primary verification: `tests/test_canonical_mod9_interface_audit.py`.
+Primary note: `docs/canonical_mod9_interface_audit_v0.1.md`.
