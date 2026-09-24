@@ -569,9 +569,6 @@ Primary verification: `tests/test_sri_yantra_chambers.py`.
 Primary note: `docs/sri_yantra_chambers_v0.1.md`.
 Diagram generator: `scripts/render_sri_yantra_chambers.py`.
 
-Primary verification: `tests/test_sri_yantra_huet_chambers.py`.
-Primary note: `docs/sri_yantra_huet_chambers_v0.1.md`.
-
 ### 4.18 Spherical chamber-topology control
 
 `src/sri_yantra_spherical_topology_control.py` lifts the complete derived
