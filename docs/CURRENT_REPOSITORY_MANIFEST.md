@@ -735,3 +735,17 @@ remain open.
 
 Primary verification: `tests/test_piezoelectric_mode_reference.py`.
 Primary note: `docs/piezoelectric_mode_reference_v0.1.md`.
+
+## Classified spectral references and theory controls
+
+- `src/spectral_reference_catalog.py`: separate CAFL anecdotal entries and evaluated NIST hydrogen wavelengths, with explicit media and uncertainty.
+- `src/reference_data/cafl_explicit_catalog.json`: 1,557 source entries, including 1,403 numeric lists; 11,668 occurrences, not distinct discoveries.
+- `src/reference_data/nist_hydrogen_lines.json`: all 30 rows of the NIST hydrogen strong-line table, not all physical spectra.
+- `src/reference_data/universal_one_numeric_leads.json` and `docs/universal_one_source_audit_v0.1.md`: historical proposals and unresolved units with book context.
+- `src/physical_theory_controls.py`: declared hydrogen approximation and periodic ABC field controls; no fit of canonical geometry.
+- `docs/m4_source_and_claim_audit_v0.1.md`: image claim constraints, source attribution gaps and supplied-link triage.
+- `docs/spectral_reference_catalog_v0.1.md` and `docs/physical_theory_controls_v0.1.md`: evidence classes, numerical results and remaining scope.
+
+These optional references do not normalize the Matrix clock, establish clinical efficacy or identify the pictured M4 cosmology.
+
+The optional `src/microplane_projection_reference.py` checks normal/tangential projections and virtual work against macroscopic tensor contractions. It is a spherical projection reference, not the full nonlinear concrete M4 model, an OOFEM quadrature reproduction, or a piezoelectric material law. See `docs/microplane_projection_reference_v0.1.md`.

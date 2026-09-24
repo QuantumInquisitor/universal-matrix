@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "scope": "historical_hypotheses_and_unresolved_units",
+  "evidence_class": "historical_author_proposal",
+  "title": "The Universal One (1926): selected numerical leads",
+  "author": "Walter Russell",
+  "source_url": "https://www.loc.gov/item/27004508/",
+  "text_surrogate_url": "https://pdfcoffee.com/the-universal-one-pdf-free.html",
+  "retrieved_on": "2026-09-24",
+  "coverage": "Five selected leads, not an exhaustive transcription or a calibrated element-frequency table. Original diagrams and surrounding units still need visual verification. Later-preface material excluded.",
+  "records": [
+    {
+      "id": "russell-pulse",
+      "source_location": "Book II, VIII, The Universal Pulse; original chapter starts p106; later reproduction p148",
+      "quantity": "hypothetical light-unit pulse rate",
+      "value": "30000000000000",
+      "unit": "s^-1",
+      "evidence": "hypothetical_rate",
+      "uncertainty": null,
+      "approximate": true,
+      "usable_as_measured_frequency": false,
+      "original_expression": "thirty trillion to a second",
+      "source_qualifier": "may"
+    },
+    {
+      "id": "russell-revolution",
+      "source_location": "Book II, IX, Concerning Energy; original chapter starts p112; later reproduction p153",
+      "quantity": "hypothetical revolution rate in a scale analogy",
+      "value": "30000000",
+      "unit": "s^-1",
+      "evidence": "hypothetical_rate",
+      "uncertainty": null,
+      "approximate": true,
+      "usable_as_measured_frequency": false,
+      "original_expression": "thirty million times per second",
+      "source_qualifier": "probably"
+    },
+    {
+      "id": "russell-wavelength-1",
+      "source_location": "Book II, XIX, Color; original chapter starts p202; later reproduction p251",
+      "quantity": "wavelength in iron/history discussion",
+      "value": "7817.2",
+      "unit": null,
+      "medium": null,
+      "evidence": "unresolved_units",
+      "uncertainty": null,
+      "usable_as_measured_frequency": false
+    },
+    {
+      "id": "russell-wavelength-2",
+      "source_location": "Book II, XIX, Color; original chapter starts p202; later reproduction p251",
+      "quantity": "wavelength in recent-history discussion",
+      "value": "7392.3",
+      "unit": null,
+      "medium": null,
+      "evidence": "unresolved_units",
+      "uncertainty": null,
+      "usable_as_measured_frequency": false
+    },
+    {
+      "id": "russell-wavelength-3",
+      "source_location": "Book II, XIX, Color; original chapter starts p202; later reproduction p251",
+      "quantity": "wavelength in remote-history discussion",
+      "value": "6944.8",
+      "unit": null,
+      "medium": null,
+      "evidence": "unresolved_units",
+      "uncertainty": null,
+      "usable_as_measured_frequency": false
+    }
+  ],
+  "not_frequency_values": [
+    "Ten-octave element classes",
+    "Carbon turning-point symbol 504+",
+    "Locked potentials 0, 2, 3, 4",
+    "Atomic weights and melting points in charts"
+  ]
+}
