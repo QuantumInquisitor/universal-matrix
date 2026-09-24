@@ -1600,8 +1600,8 @@ same density directed along the local bend tangent, preserving divergence-free
 flow and signed cross-sectional flux.
 
 The curved bends are contained inside expanded collision-audited routing
-envelopes. The remaining kinematic task is a single global field sampler over
-junctions, endpoint transitions, straight segments, and bends.
+envelopes. Before a single global field sampler is admitted, same-face incident edge
+connectors must be shown spatially disjoint or redesigned.
 
 See `docs/toroidal_smooth_bends_v0.1.md`.
 
