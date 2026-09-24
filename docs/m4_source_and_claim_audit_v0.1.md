@@ -8,6 +8,11 @@ pasted answer supplies specific claims and social-source leads that can be
 assessed provisionally. It does not establish an author's complete theory,
 and this audit does not claim to disprove one.
 
+Proposed formulations are active research inputs here. Missing prior validation
+does not by itself exclude an idea from numerical exploration. We distinguish
+source claims from the assumptions we introduce so that each candidate can be
+modified or rejected through its stated tests.
+
 ## Source identification
 
 Searches covered the supplied name, `multi-scalar` and `multiscale` variants,
@@ -244,3 +249,23 @@ reference measurement or analytic limit and state a criterion that could
 reject that prediction. The image's nested or toroidal geometry may meanwhile
 be explored as a labeled geometric hypothesis. The repository's geometry
 checks alone cannot resolve its proposed particle or stellar identities.
+
+## Working formulation introduced in this repository
+
+The [proposed scalar standing-wave experiment](proposed_scalar_wave_control_v0.1.md)
+turns the standing-wave suggestion into an explicit candidate equation for one
+periodic ring mode. This is our M4-inspired working formulation, not an
+attribution of equations to the social-media source. It asks whether a
+positive, periodically modulated stiffness amplifies a chosen standing mode,
+which drive/damping conditions suppress that amplification, and which declared
+scale transformations preserve it. Independent work and loss integrals account
+for the changing modal energy.
+
+The test results support a linear parametric-growth region near twice the
+mode frequency, while the declared off-resonance and stronger-damping controls
+decay. Joint length/time parameter scaling preserves the dimensionless response;
+changing length while holding the material gap fixed generally does not.
+The spatial mode is prescribed. Nonlinear saturation, spontaneous pattern
+selection, finite-geometry boundaries, and a map to a measured particle remain
+separate extensions. These are limits of this first experiment, not a reason
+to discard proposed formulations as a research class.
