@@ -37,9 +37,9 @@ The canonical inventory is recorded before any coordinates are assigned:
 
 Thus the triangular region inventory is
 
-\[
+$$
 14+10+10+8+1=43.
-\]
+$$
 
 The generating family remains four upward and five downward triangles. The
 bindu is represented separately from the 43 triangular cells. Likewise, the
@@ -60,7 +60,7 @@ The contract distinguishes **intrinsic dimension** from **ambient dimension**:
 | plane | 2 | 2 | documented mathematical form |
 | spherical | 2 | 3 | documented mathematical form |
 | Meru | 3 | 3 | source-derived traditional form |
-| oriented simplex field | arbitrary \(d\geq2\) | \(d+1\) barycentric coordinates | engine candidate |
+| oriented simplex field | arbitrary $d\geq2$ | $d+1$ barycentric coordinates | engine candidate |
 | spiral cone | 3 | 3 | engine candidate tied to the book's scale map |
 
 A spherical network is intrinsically a curved two-dimensional surface even
@@ -78,25 +78,25 @@ or phase is being represented.
 
 The preceding subsystem established the base address
 
-\[
+$$
 X=(u,p,b),
-\]
+$$
 
-where \(u\) is a recursive universe address, \(p\) is a named plane, and \(b\)
+where $u$ is a recursive universe address, $p$ is a named plane, and $b$
 is a possibility path. The Sri Yantra coordinate is attached over that base:
 
-\[
+$$
 Y=(X,a,m,\varphi;R,f,h).
-\]
+$$
 
 Here:
 
-- \(a\) is the ordered enclosure;
-- \(m\) is a cyclic local-member index within that enclosure;
-- \(\varphi\in\mathbb{Q}/\mathbb{Z}\) is an exact phase in turns;
-- \(R\) is the selected realization;
-- \(f\in\{-1,0,+1\}\) is inward, stationary, or outward flow;
-- \(h\in\{-1,+1\}\) is handedness.
+- $a$ is the ordered enclosure;
+- $m$ is a cyclic local-member index within that enclosure;
+- $\varphi\in\mathbb{Q}/\mathbb{Z}$ is an exact phase in turns;
+- $R$ is the selected realization;
+- $f\in\{-1,0,+1\}$ is inward, stationary, or outward flow;
+- $h\in\{-1,+1\}$ is handedness.
 
 The complete software state consequently exposes these independent factors:
 
@@ -114,27 +114,27 @@ have a continuous geometric carrier.
 ## Triangle-to-simplex dimensional lift
 
 The minimal dimension-open generalization replaces an oriented triangle by an
-oriented regular \(d\)-simplex. In \(d+1\) barycentric coordinates its vertices
+oriented regular $d$-simplex. In $d+1$ barycentric coordinates its vertices
 are
 
-\[
+$$
 v_i=e_i-\frac{1}{d+1}\mathbf 1,
 \qquad i=0,\ldots,d.
-\]
+$$
 
 They obey
 
-\[
+$$
 \sum_i v_i=0,
 \qquad
 \|v_i-v_j\|^2=2 \quad (i\ne j).
-\]
+$$
 
 The complementary orientation is exact central inversion:
 
-\[
+$$
 v_i^-=-v_i^+.
-\]
+$$
 
 This produces a sequence rather than a two-dimensional endpoint:
 
@@ -143,7 +143,7 @@ This produces a sequence rather than a two-dimensional endpoint:
 | 2 | triangle | 6 vertices |
 | 3 | tetrahedron | 8 vertices |
 | 4 | 4-simplex | 10 vertices |
-| \(d\) | \(d\)-simplex | \(2(d+1)\) vertices |
+| $d$ | $d$-simplex | $2(d+1)$ vertices |
 
 The three-dimensional row supplies a precise local bridge to the existing
 stella-octangula work: two centrally inverted regular tetrahedra have eight
@@ -175,26 +175,26 @@ claim that every commercial or ritual Meru follows one unique metric.
 
 The book's spiral-cone scale expression is represented as a candidate chart,
 not as a historical replacement for the Sri Meru. For enclosure depth
-\(d_a\in[0,1]\), local phase \(\varphi\), handedness \(h\), base radius \(R\),
-and height \(H\), the chart uses
+$d_a\in[0,1]$, local phase $\varphi$, handedness $h$, base radius $R$,
+and height $H$, the chart uses
 
-\[
+$$
 r_a=R(1-d_a),
-\]
+$$
 
-\[
+$$
 \theta=2\pi\left(\frac{m}{N_a}+h\varphi\right),
-\]
+$$
 
-\[
+$$
 (x,y,z)=\left(r_a\cos\theta,r_a\sin\theta,Hd_a\right).
-\]
+$$
 
 The bhupura lies on the cone base and the bindu lies at its apex. Phase rotates
 the noncentral components, and handedness reverses that rotation. Recursion is
 not simulated by shrinking the drawing and calling it another universe. A
 new recursive universe is created only by changing the separately typed base
-address \(u\); the full local Yantra fibre may then be attached to that child.
+address $u$; the full local Yantra fibre may then be attached to that child.
 
 This gives a disciplined interpretation of “the whole exists within each
 part”: each recursive base address can carry a complete local fibre, while its
@@ -205,11 +205,11 @@ scale identity remains explicit.
 The word *mirror* now denotes several independent involutions:
 
 1. the existing recursive-universe and signed-possibility mirror;
-2. cyclic local reflection \(m\mapsto-m\pmod{N_a}\);
-3. phase reflection \(\varphi\mapsto-\varphi\pmod1\);
-4. flow reversal, inward \(\leftrightarrow\) outward;
-5. handedness reversal, left \(\leftrightarrow\) right;
-6. simplex orientation reversal, \(v\mapsto-v\).
+2. cyclic local reflection $m\mapsto-m\pmod{N_a}$;
+3. phase reflection $\varphi\mapsto-\varphi\pmod1$;
+4. flow reversal, inward $\leftrightarrow$ outward;
+5. handedness reversal, left $\leftrightarrow$ right;
+6. simplex orientation reversal, $v\mapsto-v$.
 
 Each operation squares to the identity. They are not silently identified with
 one another. In particular, geometric reflection need not reverse flow, and
@@ -221,32 +221,32 @@ fixed.
 
 ## Conservative inward and outward shell flow
 
-The nine enclosures form eight adjacent interfaces. A declared cut flux \(I\)
+The nine enclosures form eight adjacent interfaces. A declared cut flux $I$
 is placed on each interface of an inward route:
 
-\[
+$$
 a_1\rightarrow a_2\rightarrow\cdots\rightarrow a_9.
-\]
+$$
 
 With outgoing-minus-incoming graph divergence, every intermediate enclosure
 has zero divergence. Only the outer boundary and bindu are endpoints. The
 outward route is the exact reverse. Superposing equal inward and outward routes
 gives
 
-\[
+$$
 \operatorname{div}J=0
-\]
+$$
 
 at all nine enclosures.
 
 Component counts differ from shell to shell, so equal flux per component is
-not imposed globally. The optional uniform distribution on enclosure \(a\) is
+not imposed globally. The optional uniform distribution on enclosure $a$ is
 
-\[
+$$
 I_{a,m}=\frac{I}{N_a},
 \qquad
 \sum_{m=0}^{N_a-1}I_{a,m}=I.
-\]
+$$
 
 This preserves total cut flux without pretending that four gates, sixteen
 petals, fourteen cells, and the bindu are interchangeable objects.
@@ -282,12 +282,12 @@ does not identify them.
 
 An accepted bridge will require an explicit bijection
 
-\[
+$$
 f:\mathbb Z_{108}\longrightarrow D_{108}
-\]
+$$
 
-and must show what the canonical translations \(T_9\), \(T_{21}\), polarity
-\(T_{54}\), and reflection \(F(n)=107-n\) become on the target set. Equal
+and must show what the canonical translations $T_9$, $T_{21}$, polarity
+$T_{54}$, and reflection $F(n)=107-n$ become on the target set. Equal
 cardinality alone is insufficient.
 
 ## Evidence boundary
@@ -295,10 +295,10 @@ cardinality alone is insufficient.
 | Statement | Status |
 | --- | --- |
 | The implemented canonical inventory has nine enclosures and nine generators | Exact software structure |
-| Its triangular components total 43 as \(14+10+10+8+1\) | Exact finite count under the inventory |
+| Its triangular components total 43 as $14+10+10+8+1$ | Exact finite count under the inventory |
 | The generator orientations total four upward and five downward | Source-derived inventory and exact software count |
 | Plane, spherical, and Meru are kept as distinct realization types | Exact software separation informed by source forms |
-| A regular \(d\)-simplex template has \(d+1\) centered equidistant vertices | Exact geometry |
+| A regular $d$-simplex template has $d+1$ centered equidistant vertices | Exact geometry |
 | Opposite simplex templates are related by central inversion | Exact geometry |
 | Projection and lift preserve the fibre address | Exact software invariant |
 | Equal inward and outward shell routes have zero graph divergence | Exact finite-graph identity |
@@ -321,7 +321,7 @@ The implementation fails closed when:
 - shell flux is negative or nonfinite;
 - a stationary route carries nonzero flux;
 - phase is not an exact integer or rational turn;
-- handedness is not \(-1\) or \(+1\);
+- handedness is not $-1$ or $+1$;
 - a supplied lifted generator differs from the canonical simplex template.
 
 ## Verification
