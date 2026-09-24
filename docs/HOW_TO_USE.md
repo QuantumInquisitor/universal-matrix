@@ -453,3 +453,19 @@ clearance.
 
 See `docs/toroidal_global_routing_v0.1.md` for the routing construction and
 the remaining smooth-bend field gate.
+
+
+## Smooth the global toroidal routing
+
+```sh
+python -m pytest -q tests/test_toroidal_smooth_bends.py
+```
+
+Call `build_smooth_global_toroidal_routing(...)` on a framed edge network.
+The builder regenerates the global routing with bend-aware clearance, inserts
+one positive-Jacobian annular quarter bend at every internal corner, and
+verifies straight-to-bend vector matching, positive Jacobian margin, trimmed
+straight length, and global collision certification.
+
+See `docs/toroidal_smooth_bends_v0.1.md` for the Piola derivation and the
+remaining unified-field sampler gate.
