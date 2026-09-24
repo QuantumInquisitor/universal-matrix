@@ -246,3 +246,5 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 | `docs/toroidal_global_routing_v0.1.md` | Current deterministic global rigid placement and collision-audited routed centerline contract for framed toroidal graph edges. |
 
 | `docs/toroidal_smooth_bends_v0.1.md` | Current positive-Jacobian annular quarter-bend map with Piola-transported flux profile and global collision-envelope certification. |
+
+| `docs/toroidal_incident_overlap_audit_v0.1.md` | Current same-face incident connector overlap no-fit, including first-overlap progress and affected-node diagnostics. |
