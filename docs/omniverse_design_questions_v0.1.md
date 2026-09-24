@@ -3292,9 +3292,8 @@ in `src/toroidal_global_routing.py`.
 
 Every annular junction is moved by a rigid translation with its local axis kept
 parallel to global +z. Every graph edge receives a unique positive-y corridor
-and a unique high/low z level. Its routed centerline begins and ends along +z,
-so the endpoint frame contract from the local framed assembly is preserved
-exactly.
+and a unique high/low z level. Its routed centerline begins and ends along `axis_sign * +z`, so the signed
+endpoint frame contract from the local framed assembly is preserved exactly.
 
 Each route is surrounded by a conservative circular envelope whose radius is
 the largest annular outer radius used anywhere in that edge assembly plus an
