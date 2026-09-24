@@ -1012,17 +1012,47 @@ Primary verification: `tests/test_toroidal_incident_overlap_audit.py`.
 Primary note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
 
 
+## Edge-specific separated toroidal channel shells
+
+`src/toroidal_separated_channels.py` replaces the common cut annulus used by
+all framed edges with globally ordered, pairwise-disjoint edge-specific
+annular shells. Each shell is the inner poloidal cut of its own purely poloidal
+toroidal field and preserves the signed graph current.
+
+Since same-face junction bands and channel shells share edge-index order, the
+smooth radial Piola interpolation cannot reverse interval order. The earlier
+same-face connector overlap is therefore removed without changing the annular
+junction or framed-edge APIs.
+
+Primary verification: `tests/test_toroidal_separated_channels.py`.
+Primary note: `docs/toroidal_separated_channels_v0.1.md`.
+
+
+## Incident smooth-bend collision audit
+
+`src/toroidal_incident_bend_audit.py` evaluates actual annular bend samples
+against the exact finite endpoint straight shell of every other nonzero edge
+sharing the same junction face. Positive penetration requires both axial and
+radial interior membership.
+
+The audit shows that separated channel shells solve the coaxial connector
+overlap but do not solve the later bend/straight interaction. The next geometry
+layer must fan incident edges onto separate spatial axes before their first
+large-radius bends.
+
+Primary verification: `tests/test_toroidal_incident_bend_audit.py`.
+Primary note: `docs/toroidal_incident_bend_audit_v0.1.md`.
+
+
 ## Canonical mod-9 quotient audit
 
 `src/canonical_mod9_interface_audit.py` is a derived exact-arithmetic layer
-over the canonical (mathbb Z_{108}) kernel. It uses reduction modulo nine to
-label the nine (E=T_9) orbits and a twelve-step phase coordinate inside each
-orbit.
+over the canonical `Z_108` kernel. It uses reduction modulo nine to label the
+nine `E = T_9` orbits and a twelve-step phase coordinate inside each orbit.
 
-It also records the independent multiplication-by-two automorphism of
-(mathbb Z_9) and its three orbit classes. That automorphism is not a
-canonical translation operator and remains separate from (E), (P), and
-(T_{21}).
+It also records the independent multiplication-by-two automorphism of `Z_9`
+and its three orbit classes. That automorphism is not a canonical translation
+operator and remains separate from `E`, `P`, and `T_21`.
 
 Primary verification: `tests/test_canonical_mod9_interface_audit.py`.
 Primary note: `docs/canonical_mod9_interface_audit_v0.1.md`.

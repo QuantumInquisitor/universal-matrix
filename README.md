@@ -93,19 +93,18 @@ The 64-address layer is a finite addressing structure. When represented as six i
 `src/canonical_mod9_interface_audit.py` records an exact derived decomposition
 of the 108-state core into nine mod-9 fibers and twelve interface phases per
 fiber. The nine fibers are precisely the nine orbits of the canonical
-interface operator (E=T_9).
+interface operator `E = T_9`.
 
-The same audit records multiplication by two on (mathbb Z_9), whose orbit
-partition is
+The same audit records multiplication by two on `Z_9`, whose orbit partition
+is
 
-[
-(0),qquad (3,6),qquad (1,2,4,8,7,5).
-]
+```
+(0), (3, 6), (1, 2, 4, 8, 7, 5)
+```
 
-This quotient automorphism is not promoted to a canonical Matrix transition:
-(E) and (P) are identity on the mod-9 quotient, while (T_{21}) projects
-to additive (+3). See
-`docs/canonical_mod9_interface_audit_v0.1.md`.
+This quotient automorphism is not promoted to a canonical Matrix transition.
+`E` and `P` act trivially on the mod-9 quotient, while `T_21` projects to
+additive `+3`. See `docs/canonical_mod9_interface_audit_v0.1.md`.
 
 ## What the platform can do
 
@@ -656,6 +655,8 @@ Start with:
 - `docs/toroidal_global_routing_v0.1.md`
 - `docs/toroidal_smooth_bends_v0.1.md`
 - `docs/toroidal_incident_overlap_audit_v0.1.md`
+- `docs/toroidal_separated_channels_v0.1.md`
+- `docs/toroidal_incident_bend_audit_v0.1.md`
 
 Historical files are retained for provenance but do not override current canonical or experimental documentation.
 
@@ -902,3 +903,36 @@ single whole-network field can be claimed.
 
 Technical note: `docs/toroidal_incident_overlap_audit_v0.1.md`.
 Verification: `tests/test_toroidal_incident_overlap_audit.py`.
+
+
+## Edge-specific separated toroidal channel shells
+
+`src/toroidal_separated_channels.py` assigns every graph edge a distinct
+annular channel shell ordered by edge index. The corresponding edge-specific
+toroidal field keeps the graph current as its poloidal cut flux.
+
+Because annular junction port bands use the same edge-index ordering, the Piola
+connector interpolation preserves radial order. The common-channel same-face
+connector overlap disappears in the Vesica and Flower/Tree reference networks.
+
+This fixes the connector overlap only. Incident smooth bends still require a
+full collision audit.
+
+Technical note: `docs/toroidal_separated_channels_v0.1.md`.
+Verification: `tests/test_toroidal_separated_channels.py`.
+
+
+## Incident smooth-bend collision audit
+
+`src/toroidal_incident_bend_audit.py` tests the first smooth bend of every
+nonzero edge against the trimmed endpoint straight shells of other edges
+sharing the same annular junction face. The separated-shell construction
+removes coaxial connector overlap, but the current routed bend ordering still
+produces strict bend/straight volume intersections in the Vesica and
+Flower/Tree references.
+
+This is a geometry no-fit, not a conservation failure. A separate-axis
+fan-out is required before smooth whole-network routing can be claimed.
+
+Technical note: `docs/toroidal_incident_bend_audit_v0.1.md`.
+Verification: `tests/test_toroidal_incident_bend_audit.py`.
