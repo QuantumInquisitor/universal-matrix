@@ -6,9 +6,9 @@ This subsystem gives Chapter 8's plane language a minimal formal topology
 without treating a change of plane as a change of recursive universe scale.
 It implements three independent address coordinates:
 
-$
+$$
 X=(u,p,b),
-$
+$$
 
 where $u$ is a recursive Vesica-universe address, $p$ is an open named
 plane identifier, and $b$ is a possibility path.
@@ -77,9 +77,9 @@ does not invent an adjacency simply to make the graph connected.
 
 For a routed current $I$ along
 
-$
+$$
 p_0\to p_1\to\cdots\to p_n,
-$
+$$
 
 the same current is placed on each edge. Every intermediary has one incoming
 and one outgoing current, hence zero divergence. Only the source and target
@@ -89,17 +89,17 @@ change content under the one-way continuity step.
 
 A possibility path is a tuple of integer outcome tokens:
 
-$
+$$
 b=(b_1,b_2,\ldots,b_d),\qquad b_i\in\mathbb Z.
-$
+$$
 
 Zero is the neutral token. Positive and negative tokens form mirror pairs. The
 local possibility mirror is
 
-$
+$$
 M_b(b_1,\ldots,b_d)=(-b_1,\ldots,-b_d),
 \qquad M_b^2=I.
-$
+$$
 
 The global address mirror combines this sign reversal with the existing Seed
 half-turn at every recursive universe depth, while preserving the plane name.
@@ -111,31 +111,31 @@ universal plane-pair involution.
 Let a branch have labels $K\subset\mathbb Z$, weights $w_k$, and
 nonnegative through-current $I$. The accepted branch law requires
 
-$
+$$
 0\in K,
 \qquad
 k\in K\Longleftrightarrow-k\in K,
-$
+$$
 
-$
+$$
 w_k\geq0,
 \qquad
 w_k=w_{-k},
 \qquad
 \sum_{k\in K}w_k=1.
-$
+$$
 
 The outward current from parent $b$ to child $b+(k)$ is
 
-$
+$$
 J_{b\to b+(k)}=I w_k.
-$
+$$
 
 Therefore, every branch cut carries the same total current:
 
-$
+$$
 \sum_{k\in K}J_{b\to b+(k)}=I.
-$
+$$
 
 The one-way branch depletes the parent and distributes exactly the same total
 dimensionless content among its children. The finite-graph continuity law
