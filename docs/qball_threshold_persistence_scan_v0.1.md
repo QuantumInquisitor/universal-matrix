@@ -6,9 +6,9 @@ This experiment compares finite-time nonlinear persistence on the two accepted
 continued branch points that immediately straddle the refined energetic
 condition
 
-\[
+$$
 E/Q=m_{\rm free}.
-\]
+$$
 
 Implementation:
 
@@ -21,7 +21,7 @@ The scan is executed in CI on Python 3.12 after the critical verification suite.
 1. Refine the energetic crossing with the accepted seeded continuation.
 2. Select the two accepted neighboring points that bracket the crossing.
 3. Map each radial solution onto the same spacing-consistent 3D lattice.
-4. Compare radial and Cartesian \(E/Q\).
+4. Compare radial and Cartesian $E/Q$.
 5. Evolve each unperturbed state.
 6. Re-map each state, apply the same localized amplitude perturbation, and evolve again.
 7. Apply the existing explicit finite-window survival criteria.
@@ -34,7 +34,7 @@ The scan is executed in CI on Python 3.12 after the critical verification suite.
 The energetic criterion and the finite-time survival criterion are not assumed
 to coincide.
 
-A branch point with \(E/Q>m_{\rm free}\) can in principle remain localized
+A branch point with $E/Q>m_{\rm free}$ can in principle remain localized
 for the finite simulated window, while an energetically bound point could fail
 a sufficiently strong dynamical perturbation.
 
@@ -62,8 +62,8 @@ boundary.
 The first scan showed why the radial and Cartesian energetic classifications
 must be tracked separately near the threshold.
 
-For the refined point with radial \(E/Q\) slightly above one, the finite 3D
-mapping shifted Cartesian \(E/Q\) slightly below one even though the relative
+For the refined point with radial $E/Q$ slightly above one, the finite 3D
+mapping shifted Cartesian $E/Q$ slightly below one even though the relative
 mapping difference was below one percent.
 
 The scan now therefore records:
