@@ -15,18 +15,18 @@ zero outside, so its implementation never divides by rho on that axis.
 
 With signed poloidal cut flux I and toroidal cut flux T, define
 
-$
+$$
 \psi=\frac{I}{2\pi}q^3,
 \qquad
 J_\rho=-\frac{1}{\rho}\partial_z\psi
 =\frac{3Iz}{\pi a^2\rho}q^2,
-$
-$
+$$
+$$
 J_z=\frac{1}{\rho}\partial_\rho\psi
 =-\frac{3Iu}{\pi a^2\rho}q^2,
 \qquad
 J_\phi=\frac{3T}{\pi a^2}q^2.
-$
+$$
 
 The Cartesian vector is
 `(J_rho*x/rho-J_phi*y/rho, J_rho*y/rho+J_phi*x/rho, J_z)`.
@@ -38,11 +38,11 @@ zero extension introduces no boundary source or singular surface flux.
 Axisymmetry makes the azimuthal divergence term zero. The remaining terms
 cancel by equality of mixed derivatives:
 
-$
+$$
 \nabla\cdot J
 =\rho^{-1}[-\partial_\rho\partial_z\psi
 +\partial_z\partial_\rho\psi]=0.
-$
+$$
 
 For the stationary continuity equation, `dq_content/dt + div(J) = 0`, this
 prescribed current causes no local content accumulation. The coordinate cutoff
