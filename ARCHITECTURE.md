@@ -1026,3 +1026,19 @@ junction or framed-edge APIs.
 
 Primary verification: `tests/test_toroidal_separated_channels.py`.
 Primary note: `docs/toroidal_separated_channels_v0.1.md`.
+
+
+## Incident smooth-bend collision audit
+
+`src/toroidal_incident_bend_audit.py` evaluates actual annular bend samples
+against the exact finite endpoint straight shell of every other nonzero edge
+sharing the same junction face. Positive penetration requires both axial and
+radial interior membership.
+
+The audit shows that separated channel shells solve the coaxial connector
+overlap but do not solve the later bend/straight interaction. The next geometry
+layer must fan incident edges onto separate spatial axes before their first
+large-radius bends.
+
+Primary verification: `tests/test_toroidal_incident_bend_audit.py`.
+Primary note: `docs/toroidal_incident_bend_audit_v0.1.md`.
