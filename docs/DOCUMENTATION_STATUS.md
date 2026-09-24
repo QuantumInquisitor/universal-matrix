@@ -28,10 +28,12 @@ A historical file never overrides the current canonical specification or tested 
 | `README.md` | Current repository overview, capabilities, licensing, and usage entry point. |
 | `white_paper.md` | Current scientific and mathematical preprint, Version 0.6. |
 | `ARCHITECTURE.md` | Current software and subsystem architecture. |
+| `docs/DOCUMENTATION_STATUS.md` | Current documentation authority hierarchy, status classification, and maintenance policy. |
 | `docs/canonical_spec_v0.4.md` | Canonical finite-kernel specification. |
 | `docs/HOW_TO_USE.md` | Current installation, API, verification, and safety usage guide. |
 | `docs/CURRENT_REPOSITORY_MANIFEST.md` | Current high-level repository and subsystem map. |
 | `docs/physics_stack_status_2026-09.md` | Current research-stack status and open scientific work. |
+| `docs/MATRIX_ENGINE_WORK_QUEUE.md` | Current prioritized scientific work queue and completion gates for active Matrix Engine research. |
 | `docs/omniverse_design_questions_v0.1.md` | Open generative-design questions and gap ledger. |
 | `docs/primitive_matrix_ontology_v0.1.md` | Current executable answer to ontology Questions 1-3. |
 | `docs/matrix_local_transition_v0.1.md` | Current minimal local transition-law candidate and creator-question checkpoint. |
@@ -44,9 +46,7 @@ A historical file never overrides the current canonical specification or tested 
 | `docs/sri_yantra_chiodo_concurrency_v0.1.md` | Current sourced Chiodo 2021 planar concurrency contract for all nine maximal Sri Yantra triangles. |
 | `docs/sri_yantra_huet_planar_v0.1.md` | Current Huet-reference planar coordinate reconstruction satisfying the sourced Chiodo concurrency constraints. |
 | `docs/sri_yantra_huet_chambers_v0.1.md` | Current geometry-derived 43-chamber Huet incidence complex with 1 + 8 + 10 + 10 + 14 rings and 129 distinct chamber edges. |
-
 | `docs/sri_yantra_chambers_v0.1.md` | Numerically verified Huet planar chamber extraction, odd-coverage selection, contact circuits, and computed diagram. |
-
 | `docs/sri_yantra_spherical_topology_control_v0.1.md` | Current homeomorphic spherical control carrying the complete derived 43-chamber incidence complex without topology change; explicitly distinct from Rao's great-circle construction. |
 | `docs/higher_dimensional_e8_bridge_v0.1.md` | Current exact arbitrary-dimensional regular-family audit and exploratory E8/D4 construction bridge. |
 | `docs/h4_direct_e8_lift_v0.1.md` | Current direct H4/600-cell to E8 lift using the reduced Q(phi) inner product and eight rational coefficient coordinates. |
@@ -107,6 +107,28 @@ Examples include:
 - Weyl measure and anomaly diagnostics;
 - source and boundary solver notes;
 - nested-scale and polarity notes.
+
+Selected current geometry and routing notes:
+
+| File | Role |
+| --- | --- |
+| `docs/canonical_mod9_interface_audit_v0.1.md` | Exact derived Z_108 -> Z_9 quotient, nine interface fibers, twelve interface phases, and mod-9 doubling orbit audit; not a new canonical transition law. |
+| `docs/sri_yantra_rao_great_circles_v0.1.md` | Current audited Rao great-circle reference and formula-correction record for one reference row. |
+| `docs/sri_yantra_meru_candidate_v0.1.md` | Current explicit conical Meru candidate control and straight-chord failure audit. |
+| `docs/conservative_toroidal_field_v0.1.md` | Current dimensionless conservative toroidal-current candidate with independently integrated cut fluxes. |
+| `docs/graph_toroidal_flux_bundle_v0.1.md` | Current one-to-one mapping from conservative graph currents to disjoint 3D toroidal flux domains with exact signed cut-flux preservation. |
+| `docs/toroidal_junction_control_volume_v0.1.md` | Current connected conservative graph-node control volumes with explicit 3D boundary-port flux routing and toroidal edge-interface checks. |
+| `docs/toroidal_connector_topology_v0.1.md` | Current topology audit for junction/toroidal interfaces and divergence-free annular Piola connector to the cut-open purely poloidal torus. |
+| `docs/toroidal_annular_junction_v0.1.md` | Current annular graph-node junction ports with axisymmetric divergence-free transfer and Piola-compatible boundary profiles. |
+| `docs/toroidal_framed_edge_assembly_v0.1.md` | Current local framed graph-edge assembly joining annular junction ports, Piola transitions, and flux-equivalent cut-open toroidal channels. |
+| `docs/toroidal_global_routing_v0.1.md` | Current deterministic global rigid placement and collision-audited routed centerline contract for framed toroidal graph edges. |
+| `docs/toroidal_smooth_bends_v0.1.md` | Current positive-Jacobian annular quarter-bend map with Piola-transported flux profile and global collision-envelope certification. |
+| `docs/toroidal_incident_overlap_audit_v0.1.md` | Current same-face incident connector overlap no-fit, including first-overlap progress and affected-node diagnostics. |
+| `docs/toroidal_separated_channels_v0.1.md` | Current edge-specific ordered annular channel-shell construction removing same-face connector overlap while preserving signed cut flux. |
+| `docs/toroidal_incident_bend_audit_v0.1.md` | Current numerical no-fit audit for incident bend/straight interactions in the compact separated-shell reference. |
+| `docs/toroidal_bend_spacing_scan_v0.1.md` | Current finite spacing/curvature scan showing both colliding and collision-free tested parameter points. |
+| `docs/toroidal_bend_clearance_boundary_v0.1.md` | Current sampled frontier extracting first collision-free tested shell gaps and unresolved margins. |
+| `docs/toroidal_bend_clearance_refinement_v0.1.md` | Current interior refinement of resolved sampled clearance brackets with transition-count and re-entrant-collision diagnostics. |
 
 ## Historical or provenance documents
 
@@ -179,19 +201,9 @@ telemetry / history / audit
 
 Real hardware remains fail-closed and requires independent physical safety systems.
 
-## Maintenance rule
+## Current geometry checkpoints
 
-Whenever a major subsystem is merged:
-
-1. update `README.md`;
-2. update `ARCHITECTURE.md`;
-3. update `white_paper.md` if the scientific state changed;
-4. update `docs/HOW_TO_USE.md` if the user workflow changed;
-5. update this file if authority or document status changed;
-6. update the relevant subsystem technical note;
-7. add tests that prevent stale licensing or authority claims from reappearing.
-
-## Rao geometric checkpoint
+### Rao geometric checkpoint
 
 The audited Rao reference construction now supplies nine unit-sphere root
 triangles with great-circle edges. After refinement within the published
@@ -207,7 +219,7 @@ Implementation: `src/sri_yantra_rao_spherical_reference.py` and
 See `docs/sri_yantra_rao_great_circles_v0.1.md` for the formula audit and
 `docs/MATRIX_ENGINE_WORK_QUEUE.md` for remaining gates.
 
-## Explicit Meru candidate control
+### Explicit Meru candidate control
 
 `src/sri_yantra_meru_candidate.py` now provides a conical graph-surface
 control with explicit vertices, complete edge paths, and an invertible
@@ -220,7 +232,7 @@ historical Meru reconstruction.
 Technical note: `docs/sri_yantra_meru_candidate_v0.1.md`.
 Verification: `tests/test_sri_yantra_meru_candidate.py`.
 
-## Conservative toroidal field candidate
+### Conservative toroidal field candidate
 
 `src/conservative_toroidal_field.py` defines a compact, divergence-free
 three-dimensional content current on an explicit solid ring torus. A stream
@@ -233,28 +245,14 @@ physical content identification.
 Technical note: `docs/conservative_toroidal_field_v0.1.md`.
 Verification: `tests/test_conservative_toroidal_field.py`.
 
-| `docs/graph_toroidal_flux_bundle_v0.1.md` | Current one-to-one mapping from conservative graph currents to disjoint 3D toroidal flux domains with exact signed cut-flux preservation. |
+## Maintenance rule
 
-| `docs/toroidal_junction_control_volume_v0.1.md` | Current connected conservative graph-node control volumes with explicit 3D boundary-port flux routing and toroidal edge-interface checks. |
+Whenever a major subsystem is merged:
 
-| `docs/toroidal_connector_topology_v0.1.md` | Current topology audit for junction/toroidal interfaces and divergence-free annular Piola connector to the cut-open purely poloidal torus. |
-
-| `docs/toroidal_annular_junction_v0.1.md` | Current annular graph-node junction ports with axisymmetric divergence-free transfer and Piola-compatible boundary profiles. |
-
-| `docs/toroidal_framed_edge_assembly_v0.1.md` | Current local five-part framed graph-edge assembly joining annular junction ports, Piola transitions, and flux-equivalent cut-open toroidal channels. |
-
-| `docs/toroidal_global_routing_v0.1.md` | Current deterministic global rigid placement and collision-audited routed centerline contract for framed toroidal graph edges. |
-
-| `docs/toroidal_smooth_bends_v0.1.md` | Current positive-Jacobian annular quarter-bend map with Piola-transported flux profile and global collision-envelope certification. |
-
-| `docs/toroidal_incident_overlap_audit_v0.1.md` | Current same-face incident connector overlap no-fit, including first-overlap progress and affected-node diagnostics. |
-
-| `docs/toroidal_separated_channels_v0.1.md` | Current edge-specific ordered annular channel-shell construction removing same-face connector overlap while preserving signed cut flux. |
-
-| `docs/toroidal_incident_bend_audit_v0.1.md` | Current numerical no-fit audit showing separated same-face connectors still collide when endpoint smooth bends begin before incident routes spatially separate. |
-
-| `docs/toroidal_bend_spacing_scan_v0.1.md` | Current parameter scan showing the compact incident-bend collision is parameter dependent and that the tested 25-point spacing/curvature grid contains at least one collision-free sample; scale-consistent clearance remains open. |
-| `docs/toroidal_bend_clearance_boundary_v0.1.md` | Current sampled frontier extracting the first collision-free shell gap per tested bend margin and unresolved margins; continuous and scale-consistent clearance remain open. |
-| `docs/toroidal_bend_clearance_refinement_v0.1.md` | Current interior refinement of resolved sampled clearance brackets with explicit transition-count and re-entrant-collision diagnostics; continuous and scale-consistent clearance remain open. |
-
-| `docs/canonical_mod9_interface_audit_v0.1.md` | Exact derived Z_108 -> Z_9 quotient, nine interface fibers, twelve interface phases, and mod-9 doubling orbit audit; not a new canonical transition law. |
+1. update `README.md`;
+2. update `ARCHITECTURE.md`;
+3. update `white_paper.md` if the scientific state changed;
+4. update `docs/HOW_TO_USE.md` if the user workflow changed;
+5. update this file if authority or document status changed;
+6. update the relevant subsystem technical note;
+7. add tests that prevent stale licensing or authority claims from reappearing.

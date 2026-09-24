@@ -287,13 +287,25 @@ least one collision-free sample. The earlier compact collision is therefore a
 parameter-dependent geometric obstruction, not yet a proof that the
 separated-shell topology must be replaced.
 
-The next gate is to map the collision/no-collision boundary, test dimensionless
-clearance ratios across Flower/Tree scales and recursive depths, and derive a
-conservative scale-consistent clearance rule. A separate-axis fan-out remains
-the fallback only if no compact scale-consistent region survives those tests.
+A sampled boundary layer in `src/toroidal_bend_clearance_boundary.py` now
+records the first collision-free tested shell gap for each bend margin, the
+nearest lower colliding sample when available, and margins that remain
+unresolved on the finite grid.
 
-No physical length scale, dynamics law, or physical normalization is inferred
-from this scan.
+A follow-up refinement layer in
+`src/toroidal_bend_clearance_refinement.py` subdivides each resolved coarse
+collision/free bracket and reports a narrower sampled bracket together with
+transition-count and re-entrant-collision diagnostics. The implementation does
+not assume that increasing shell gap produces a globally monotone transition.
+
+The next gate is to surface the deterministic refined-bracket report, increase
+local geometric sampling where a row warrants it, and test dimensionless
+clearance ratios across Flower/Tree scales and recursive depths. A
+separate-axis fan-out remains the fallback only if no compact scale-consistent
+region survives those tests.
+
+No continuous clearance theorem, physical length scale, dynamics law, or
+physical normalization is inferred from these finite scans.
 
 ---
 

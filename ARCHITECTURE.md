@@ -787,8 +787,8 @@ The deterministic 25-point Vesica grid contains both colliding samples and at
 least one collision-free sample. The compact incident-bend result is therefore
 a parameter-dependent no-fit rather than a topology theorem.
 
-The next geometry layer is boundary mapping and scale-consistency testing. A
-separate-axis fan-out is reserved as a fallback if no compact
+This scan motivates the explicit sampled boundary and refinement layers below.
+A separate-axis fan-out is reserved as a fallback if no compact
 scale-consistent clearance region survives.
 
 Primary verification: `tests/test_toroidal_bend_spacing_scan.py`.
@@ -808,6 +808,27 @@ an optimal compactness law, scale invariance, or a physical length scale.
 
 Primary verification: `tests/test_toroidal_bend_clearance_boundary.py`.
 Primary note: `docs/toroidal_bend_clearance_boundary_v0.1.md`.
+
+### 5.14 Bend-clearance bracket refinement
+
+`src/toroidal_bend_clearance_refinement.py` subdivides each resolved sampled
+collision/free bracket, reuses the coarse endpoint classifications, and
+evaluates only the interior shell-gap samples under the same declared geometry
+and collision-sampling parameters.
+
+Each refined row records a narrower sampled collision/free bracket, the number
+of classification transitions, and whether a collision reappears after a
+collision-free sample. Re-entrant behavior is reported rather than suppressed
+by an assumed monotone clearance law.
+
+This remains a finite numerical boundary audit. It does not establish a
+continuous boundary, an optimal shell gap, scale invariance, a physical length
+scale, or adaptive geometry dynamics. The next geometric gate is to expose the
+refined bracket report and test normalized clearance ratios across scaled
+Vesica and Flower/Tree constructions.
+
+Primary verification: `tests/test_toroidal_bend_clearance_refinement.py`.
+Primary note: `docs/toroidal_bend_clearance_refinement_v0.1.md`.
 
 ## 6. Open discrete-exterior-calculus layer
 
