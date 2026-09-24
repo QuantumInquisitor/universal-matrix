@@ -221,18 +221,18 @@ divides 108. It labels the nine orbits of (E=T_9).
 
 Every canonical representative has a unique set-coordinate decomposition
 
-[
-n=r+9k,qquad 0le r<9,quad 0le k<12.
-]
+$
+n=r+9k,\qquad 0\le r<9,\quad 0\le k<12.
+$
 
 Thus the core has nine interface fibers with twelve phases in each fiber.
 
 This is a derived audit, not an additional canonical transition definition.
-Multiplication by two in (mathbb Z_9) has orbit partition
+Multiplication by two in $\mathbb Z_9$ has orbit partition
 
-[
-(0),quad (3,6),quad (1,2,4,8,7,5),
-]
+$
+(0),\quad (3,6),\quad (1,2,4,8,7,5).
+$
 
 but that automorphism is distinct from the additive canonical operators.
 Executable details are in
