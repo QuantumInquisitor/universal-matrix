@@ -2,8 +2,8 @@
 
 **Author:** Matthew Waters  
 **Steward:** Waters Legacy Trust  
-**Software:** v0.4.0  
-**White paper:** v0.6  
+**Software version:** 0.4.0  
+**White paper:** Version 0.6  
 **Runtime:** Python 3.12+
 
 ![Verification](https://github.com/QuantumInquisitor/universal-matrix/actions/workflows/verification.yml/badge.svg)
@@ -35,7 +35,7 @@ A passing test establishes behavior under the tested assumptions. It does not by
 The current finite architecture is
 
 $$
-\mathcal{A}=\mathbb{Z}_{108}\sqcup B_6,
+\mathcal A=\mathbb Z_{108}\sqcup B_6,
 $$
 
 with
@@ -469,7 +469,7 @@ See [docs/COMMERCIAL_PRODUCT_SURFACES.md](docs/COMMERCIAL_PRODUCT_SURFACES.md).
 
 Universal Matrix uses a source-available noncommercial plus proprietary commercial licensing model.
 
-The public repository is licensed under the **PolyForm Noncommercial License 1.0.0** for covered noncommercial use. It is not OSI open source because general commercial use is restricted.
+The public repository is licensed under the **PolyForm Noncommercial License 1.0.0** for covered noncommercial use. It is **source-available, not OSI open source**, because general commercial use is restricted.
 
 Commercial use outside the public license requires a separate written Waters Legacy Trust commercial license unless applicable law independently permits the use.
 
