@@ -103,5 +103,5 @@ def test_current_authority_markdown_math_integrity():
         assert "\\)" not in text, relative
         assert "\\`" not in text, relative
         assert not any(
-            line.strip() in {"[", "]"} for line in text.splitlines()
+            line.strip() in {"[", "]", "$"} for line in text.splitlines()
         ), relative

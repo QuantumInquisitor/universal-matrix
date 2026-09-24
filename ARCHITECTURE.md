@@ -13,43 +13,43 @@ See docs/DOCUMENTATION_STATUS.md for the repository documentation hierarchy.
 
 The canonical state architecture is
 
-$
+$$
 \mathcal A=\mathbb Z_{108}\sqcup B_6,
-$
+$$
 
 with
 
-$
+$$
 B_6=\{+X,-X,+Y,-Y,+Z,-Z\}.
-$
+$$
 
 The six boundary orientations are external to the $\mathbb Z_{108}$ routing core.
 
 Primary operators are
 
-$
+$$
 E=T_9,\qquad T=T_{21},\qquad P=T_{54},\qquad F(n)=107-n.
-$
+$$
 
 Important exact identities include
 
-$
+$$
 E^{12}=I,\qquad T^{36}=I,\qquad T^{18}=P,\qquad P^2=I.
-$
+$$
 
 The synchronized routing class is
 
-$
+$$
 \{21,57,93\}.
-$
+$$
 
 The current canonical routing step 21 is selected by a minimal-positive-lift convention. It is not claimed as a uniqueness theorem.
 
 The register projection is
 
-$
+$$
 \pi(n)=7n\bmod64.
-$
+$$
 
 Executable authority:
 
@@ -61,17 +61,17 @@ Executable authority:
 
 The exact 108-state core address now has an ontology-adapted decomposition
 
-$
+$$
 n=a+54p,
-$
+$$
 
 with
 
-$
+$$
 a\in\{0,\ldots,53\},
 \qquad
 p\in\{0,1\}.
-$
+$$
 
 The canonical polarity operation preserves $a$ and toggles $p$.
 
@@ -91,15 +91,15 @@ The repeated-cell complex is dimensionless and does not assign a physical lattic
 
 The six orientations form the signed three-axis set
 
-$
+$$
 \{\pm e_x,\pm e_y,\pm e_z\}.
-$
+$$
 
 Its abstract signed-permutation symmetry has order
 
-$
+$$
 2^3 3!=48.
-$
+$$
 
 The six directions serve as an orientation scaffold for later spatial and gauge adapters. This is a structural construction, not by itself a proof that the finite kernel derives physical Euclidean three-space.
 
@@ -107,31 +107,31 @@ The six directions serve as an orientation scaffold for later spatial and gauge 
 
 The experimental nested state is represented schematically by
 
-$
+$$
 X_\ell=(n_\ell,\sigma_\ell,\phi_\ell,A_\ell).
-$
+$$
 
 The polarity flip is
 
-$
+$$
 Q(n,\sigma)=(n+54,-\sigma),
-$
+$$
 
 so
 
-$
+$$
 Q^2=I.
-$
+$$
 
 Routing is polarity sensitive,
 
-$
+$$
 \sigma=+1\Rightarrow T_{21},
-$
+$$
 
-$
+$$
 \sigma=-1\Rightarrow T_{-21}.
-$
+$$
 
 The current layer also contains experimental nested-scale orientation, conservative exchange, phase clocks, and source coupling.
 
@@ -148,15 +148,15 @@ Representative modules:
 The ontology-level local transition candidate uses site phase and conjugate
 momentum,
 
-$
+$$
 (\phi_x,\Pi_x),
-$
+$$
 
 with compact transport phase $\theta_{xy}$ on nearest-neighbor links.
 
 The minimal Hamiltonian is
 
-$
+$$
 H
 =
 \sum_x \frac{\Pi_x^2}{2I}
@@ -166,7 +166,7 @@ H
 \left[
 1-\cos\left(\phi_y-\phi_x+\theta_{xy}\right)
 \right].
-$
+$$
 
 This layer supplies:
 
@@ -176,9 +176,9 @@ This layer supplies:
 - continuous-time conservation of total phase momentum;
 - a weak-field graph-Laplacian limit;
 - dimensionless lattice characteristic speed
-  $
+  $$
   c_{\rm lat}=\sqrt{\kappa/I}.
-  $
+  $$
 
 It does not determine physical lattice spacing or physical time units.
 
@@ -196,19 +196,19 @@ for it.
 
 The exact canonical branch bit can be represented as a sign
 
-$
+$$
 s_p=(-1)^p,
-$
+$$
 
 or, when the local phase is independent, as a phase offset
 
-$
+$$
 \phi_{\rm eff}=\phi+\pi p.
-$
+$$
 
 This gives the exact identity
 
-$
+$$
 s_xs_y\sin(\phi_y-\phi_x+\theta_{xy})
 =
 \sin(
@@ -218,12 +218,12 @@ s_xs_y\sin(\phi_y-\phi_x+\theta_{xy})
 +
 \theta_{xy}
 ).
-$
+$$
 
 The fixed-amplitude complex matter link energy also reduces exactly to the
 minimal rotor interaction:
 
-$
+$$
 \left|
 e^{i\theta_{xy}}\Phi_y-\Phi_x
 \right|^2
@@ -232,13 +232,13 @@ e^{i\theta_{xy}}\Phi_y-\Phi_x
 \left[
 1-\cos\Delta_{xy}
 \right].
-$
+$$
 
 Thus, under the current normalization, the rotor coupling is
 
-$
+$$
 K=2R^2.
-$
+$$
 
 The engine therefore treats canonical branch sign, branch-as-$\pi$-offset,
 and fixed-amplitude rotor coupling as reducible representations where their
@@ -264,9 +264,9 @@ uses seven circles of radius (R_d/2). Every one of its twelve neighboring
 circle pairs forms an equal-circle Vesica. The largest circle centered at a
 Vesica midpoint has radius
 
-$
+$$
 R_{d+1}=R_d/4.
-$
+$$
 
 The child contains a new complete Seed, giving (12^d) recursive addresses at
 exact depth (d). Central mirroring is exact in both address and planar
@@ -295,9 +295,9 @@ The port geometry now carries a minimal discrete continuity layer. For signed
 edge current (J), the node convention is outgoing current minus incoming
 current, and the local update obeys
 
-$
+$$
 \frac{dq_a}{dt}+(\operatorname{div}J)_a=0.
-$
+$$
 
 The local Vesica graph routes one through-current from cusp (A), through the
 neutral center, to cusp (B), then returns it over two separately labeled lens
@@ -324,9 +324,9 @@ Implementation:
 
 The transitive-plane layer uses a product address
 
-$
+$$
 X=(u,p,b)
-$
+$$
 
 with independent recursive-universe, named-plane, and possibility-path
 coordinates. An elementary move changes exactly one coordinate. Scale moves
@@ -357,9 +357,9 @@ complex. Its canonical inventory retains nine generators, with four upward
 and five downward orientations, and nine outer-to-inner enclosures. The five
 triangular enclosure counts sum to
 
-$
+$$
 14+10+10+8+1=43.
-$
+$$
 
 Plane, spherical, and Meru forms are distinct typed realizations. The engine
 also provides explicitly labelled higher-simplex and spiral-cone candidates.
@@ -369,9 +369,9 @@ called a three-dimensional volume.
 
 The fibre state extends the existing base address without replacing it:
 
-$
+$$
 Y=((u,p,b),a,m,\varphi;R,f,h),
-$
+$$
 
 where $a$ is enclosure, $m$ is local member, $\varphi$ is rational
 phase, $R$ is realization, $f$ is inward/stationary/outward flow, and
@@ -399,25 +399,25 @@ Implementation:
 
 The default open field adapter uses a cubical complex with cochain sequence
 
-$
+$$
 C^0\xrightarrow{d_0}C^1\xrightarrow{d_1}C^2
-$
+$$
 
 and exact identity
 
-$
+$$
 d_1d_0=0.
-$
+$$
 
 The weak Hamiltonian form is
 
-$
+$$
 H
 =
 \frac12\langle E,E\rangle
 +
 \frac{\beta}{2}\langle d_1A,d_1A\rangle.
-$
+$$
 
 Representative modules:
 
@@ -430,15 +430,15 @@ Representative modules:
 
 The open finite-volume field satisfies a source/flux balance of the form
 
-$
+$$
 \nabla_{\rm open}\cdot E+b_{\partial V}=\rho.
-$
+$$
 
 Global compatibility is
 
-$
+$$
 \sum_x\rho(x)=\sum_{g\in B_6}\Phi_g^{E,\mathrm{outward}}.
-$
+$$
 
 The scalar-potential solve uses a matrix-free Neumann Laplacian and projected preconditioned conjugate gradients.
 
@@ -452,19 +452,19 @@ The engine separates several source mechanisms rather than collapsing them into 
 
 ### 6.1 Polarization-induced source
 
-$
+$$
 P=A\sigma\hat u,
-$
+$$
 
-$
+$$
 \rho_{\rm pol}=-\nabla\cdot P.
-$
+$$
 
 ### 6.2 Free electric source
 
-$
+$$
 \dot\rho_{\rm free}+\nabla\cdot J_{\rm free}=0.
-$
+$$
 
 ### 6.3 Six-gate boundary exchange
 
@@ -487,15 +487,15 @@ The repository contains compact U(1), SU(2), and SU(3) lattice-gauge implementat
 
 For U(1),
 
-$
+$$
 U_{ij}=e^{i\theta_{ij}}.
-$
+$$
 
 For non-Abelian sectors,
 
-$
+$$
 U_\mu(x)\to G(x)U_\mu(x)G^\dagger(x+\hat\mu).
-$
+$$
 
 Implemented capabilities include plaquettes and Wilson actions, Hamiltonian electric-field dynamics, Gauss constraints, analytic staple forces, fundamental matter coupling, gauge/matter backreaction, and geometry-dependent weighting.
 
@@ -503,9 +503,9 @@ Implemented capabilities include plaquettes and Wilson actions, Hamiltonian elec
 
 The experimental reciprocity metric is
 
-$
+$$
 ds^2=-e^{-2\psi}c_*^2dt^2+e^{2\psi}d\mathbf x^2.
-$
+$$
 
 The current stack includes a self-consistent scalar action, matter and gauge coupling, static spherical vacuum solutions, weak-field and higher-order correspondence, circular-orbit and light-deflection calculations, and geometry backreaction.
 
@@ -519,13 +519,13 @@ The repository contains Wilson-Dirac reference operators, reciprocity-background
 
 The repository computes supported anomaly coefficients for supplied Weyl spectra, including
 
-$
+$$
 C_{SU(3)^3},\qquad
 C_{SU(3)^2U(1)},\qquad
 C_{SU(2)^2U(1)},\qquad
 C_{U(1)^3},\qquad
 C_{{\rm grav}^2U(1)}.
-$
+$$
 
 The SU(2) global mod-2 doublet condition is tracked separately.
 
