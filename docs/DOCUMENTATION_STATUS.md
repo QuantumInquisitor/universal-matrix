@@ -253,4 +253,6 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 
 | `docs/toroidal_incident_bend_audit_v0.1.md` | Current numerical no-fit audit showing separated same-face connectors still collide when endpoint smooth bends begin before incident routes spatially separate. |
 
+| `docs/toroidal_bend_spacing_scan_v0.1.md` | Current parameter scan showing the compact incident-bend collision is parameter dependent and that the tested 25-point spacing/curvature grid contains at least one collision-free sample; scale-consistent clearance remains open. |
+
 | `docs/canonical_mod9_interface_audit_v0.1.md` | Exact derived Z_108 -> Z_9 quotient, nine interface fibers, twelve interface phases, and mod-9 doubling orbit audit; not a new canonical transition law. |
