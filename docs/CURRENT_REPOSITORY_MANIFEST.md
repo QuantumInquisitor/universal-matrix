@@ -397,6 +397,7 @@ Verification: `tests/test_conservative_toroidal_field.py`.
 - `src/toroidal_smooth_bends.py`
 - `src/toroidal_incident_overlap_audit.py`
 - `src/toroidal_separated_channels.py`
+- `src/toroidal_incident_bend_audit.py`
 
 
 ## Graph-to-toroidal flux bundle
@@ -508,3 +509,14 @@ Flower/Tree connector networks.
 
 Primary verification: `tests/test_toroidal_separated_channels.py`.
 Primary note: `docs/toroidal_separated_channels_v0.1.md`.
+
+
+## Incident smooth-bend collision audit
+
+`src/toroidal_incident_bend_audit.py` samples actual endpoint annular bend
+volumes against neighboring same-face trimmed straight shells. It demonstrates
+that edge-specific separated channel shells remove connector interpolation
+overlap but do not prevent later incident bend/straight collisions.
+
+Primary verification: `tests/test_toroidal_incident_bend_audit.py`.
+Primary note: `docs/toroidal_incident_bend_audit_v0.1.md`.
