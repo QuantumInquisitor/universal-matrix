@@ -612,6 +612,18 @@ Primary verification: `tests/test_toroidal_sampling_reliability.py`.
 Primary note: `docs/toroidal_sampling_reliability_v0.1.md`.
 
 
+## Toroidal inside-out inversion control
+
+`src/toroidal_inversion_control.py` defines spherical inversion, explicit
+orientation-aware Piola/area transport, and a control that preserves known
+collision witnesses while excluding the pole from their volume pairs. It also
+identifies the singularity of a straight interpolation to the inverted map.
+It introduces no collision repair or continuous deformation law.
+
+Primary verification: `tests/test_toroidal_inversion_control.py`.
+Primary note: `docs/toroidal_inversion_control_v0.1.md`.
+
+
 ## Canonical mod-9 quotient audit
 
 `src/canonical_mod9_interface_audit.py` derives nine mod-9 fibers and twelve
