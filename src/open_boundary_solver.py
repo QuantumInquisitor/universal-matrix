@@ -43,10 +43,11 @@ a separate physical problem.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 import math
-import numpy as np
+from dataclasses import dataclass
+from numbers import Integral, Real
 
+import numpy as np
 
 FACE_NAMES = ("x_pos", "x_neg", "y_pos", "y_neg", "z_pos", "z_neg")
 
@@ -66,11 +67,7 @@ class GateFieldFlux:
     z_neg: float = 0.0
 
     def total_outward_flux(self) -> float:
-        return (
-            self.x_pos + self.x_neg
-            + self.y_pos + self.y_neg
-            + self.z_pos + self.z_neg
-        )
+        return self.x_pos + self.x_neg + self.y_pos + self.y_neg + self.z_pos + self.z_neg
 
     def as_dict(self) -> dict[str, float]:
         return {name: getattr(self, name) for name in FACE_NAMES}
@@ -94,10 +91,7 @@ class OpenBoundarySolution:
         return float(np.max(np.abs(residual)))
 
     def field_energy(self) -> float:
-        interior = 0.5 * sum(
-            float(np.sum(e * e))
-            for e in self.electric_links.values()
-        )
+        interior = 0.5 * sum(float(np.sum(e * e)) for e in self.electric_links.values())
         # Boundary flux is prescribed Neumann data, not an independent interior
         # link degree of freedom, so it is excluded from this cell-link energy.
         return interior
@@ -161,11 +155,69 @@ def boundary_flux_density(
     }
 
 
+def expected_face_shapes(
+    shape: tuple[int, int, int],
+) -> dict[str, tuple[int, int]]:
+    """Return the required 2D array shape for each physical boundary face."""
+    if len(shape) != 3 or any(
+        isinstance(n, (bool, np.bool_)) or not isinstance(n, Integral) or n < 1 for n in shape
+    ):
+        raise ValueError("shape must contain three positive entries")
+    nx, ny, nz = shape
+    return {
+        "x_pos": (ny, nz),
+        "x_neg": (ny, nz),
+        "y_pos": (nx, nz),
+        "y_neg": (nx, nz),
+        "z_pos": (nx, ny),
+        "z_neg": (nx, ny),
+    }
+
+
+def validate_face_flux_density(
+    shape: tuple[int, int, int],
+    face_flux: dict[str, np.ndarray],
+) -> dict[str, np.ndarray]:
+    """Validate and copy spatially patterned outward flux-density arrays."""
+    expected = expected_face_shapes(shape)
+    supplied = set(face_flux)
+    required = set(FACE_NAMES)
+    missing = required - supplied
+    extra = supplied - required
+    if missing:
+        raise ValueError(f"missing boundary faces: {sorted(missing)}")
+    if extra:
+        raise ValueError(f"unknown boundary faces: {sorted(extra)}")
+
+    validated: dict[str, np.ndarray] = {}
+    for name in FACE_NAMES:
+        raw = np.asarray(face_flux[name])
+        if raw.dtype.kind not in "iuf":
+            raise ValueError(f"{name} flux array must contain real numeric values")
+        values = np.asarray(raw, dtype=float)
+        if values.shape != expected[name]:
+            raise ValueError(
+                f"{name} flux array must have shape {expected[name]}, got {values.shape}"
+            )
+        if not np.all(np.isfinite(values)):
+            raise ValueError(f"{name} flux array must contain only finite values")
+        validated[name] = np.array(values, copy=True)
+    return validated
+
+
+def total_boundary_flux(face_flux: dict[str, np.ndarray]) -> float:
+    """Return total signed outward flux across all supplied boundary faces."""
+    return float(
+        math.fsum(float(np.sum(np.asarray(face_flux[name], dtype=float))) for name in FACE_NAMES)
+    )
+
+
 def boundary_source_array(
     shape: tuple[int, int, int],
     face_flux: dict[str, np.ndarray],
 ) -> np.ndarray:
     """Per-cell outward boundary-flux contribution b(x)."""
+    face_flux = validate_face_flux_density(shape, face_flux)
     nx, ny, nz = shape
     b = np.zeros(shape, dtype=float)
     b[nx - 1, :, :] += face_flux["x_pos"]
@@ -181,31 +233,66 @@ def compatibility_residual(rho: np.ndarray, flux: GateFieldFlux) -> float:
     return float(np.sum(rho) - flux.total_outward_flux())
 
 
-def solve_open_gauss(
+def patterned_compatibility_residual(
     rho: np.ndarray,
-    flux: GateFieldFlux,
-    tolerance: float = 1e-11,
-    max_iterations: int = 20000,
-) -> OpenBoundarySolution:
-    """Solve the finite-volume open-boundary Gauss problem with projected PCG."""
+    face_flux: dict[str, np.ndarray],
+) -> float:
+    """Return total enclosed source minus total patterned outward boundary flux."""
     rho = np.asarray(rho, dtype=float)
+    validated = validate_face_flux_density(rho.shape, face_flux)
+    return float(np.sum(rho) - total_boundary_flux(validated))
+
+
+def _validate_solver_inputs(
+    rho: np.ndarray,
+    tolerance: float,
+    max_iterations: int,
+) -> np.ndarray:
+    raw = np.asarray(rho)
+    if raw.dtype.kind not in "iuf":
+        raise ValueError("rho must contain real numeric values")
+    rho = np.asarray(raw, dtype=float)
     if rho.ndim != 3:
         raise ValueError("rho must be a 3D array")
     if min(rho.shape) < 2:
         raise ValueError("each dimension must be at least 2")
-    if tolerance <= 0:
-        raise ValueError("tolerance must be positive")
-    if max_iterations <= 0:
-        raise ValueError("max_iterations must be positive")
+    if not np.all(np.isfinite(rho)):
+        raise ValueError("rho must contain only finite values")
+    if (
+        isinstance(tolerance, (bool, np.bool_))
+        or not isinstance(tolerance, Real)
+        or not math.isfinite(tolerance)
+        or tolerance <= 0
+    ):
+        raise ValueError("tolerance must be finite and positive")
+    if (
+        isinstance(max_iterations, (bool, np.bool_))
+        or not isinstance(max_iterations, Integral)
+        or max_iterations <= 0
+    ):
+        raise ValueError("max_iterations must be a positive integer")
+    return rho
 
-    compat = compatibility_residual(rho, flux)
-    scale = max(1.0, abs(float(np.sum(rho))), abs(flux.total_outward_flux()))
+
+def solve_open_gauss_with_face_flux(
+    rho: np.ndarray,
+    face_flux: dict[str, np.ndarray],
+    tolerance: float = 1e-11,
+    max_iterations: int = 20000,
+) -> OpenBoundarySolution:
+    """Solve open Gauss law for arbitrary validated spatial face-flux patterns."""
+    rho = _validate_solver_inputs(rho, tolerance, max_iterations)
+    face_flux = validate_face_flux_density(rho.shape, face_flux)
+
+    compat = float(np.sum(rho) - total_boundary_flux(face_flux))
+    scale = max(
+        1.0,
+        abs(float(np.sum(rho))),
+        abs(total_boundary_flux(face_flux)),
+    )
     if abs(compat) > tolerance * scale:
-        raise ValueError(
-            "incompatible Neumann data: total charge must equal total outward flux"
-        )
+        raise ValueError("incompatible Neumann data: total charge must equal total outward flux")
 
-    face_flux = boundary_flux_density(rho.shape, flux)
     bnd = boundary_source_array(rho.shape, face_flux)
     rhs = _project_mean_zero(rho - bnd)
 
@@ -215,14 +302,14 @@ def solve_open_gauss(
     inv_diag[mask] = 1.0 / degree[mask]
 
     x = np.zeros_like(rho)
-    r = _project_mean_zero(rhs - neumann_laplacian(x))
-    z = _project_mean_zero(inv_diag * r)
+    residual = _project_mean_zero(rhs - neumann_laplacian(x))
+    z = _project_mean_zero(inv_diag * residual)
     p = np.array(z, copy=True)
-    rz_old = float(np.vdot(r, z).real)
+    rz_old = float(np.vdot(residual, z).real)
 
     rhs_norm = float(np.linalg.norm(rhs.ravel()))
     target = tolerance * max(1.0, rhs_norm)
-    residual_norm = float(np.linalg.norm(r.ravel()))
+    residual_norm = float(np.linalg.norm(residual.ravel()))
 
     if residual_norm <= target:
         iterations = 0
@@ -235,33 +322,30 @@ def solve_open_gauss(
                 raise RuntimeError("PCG breakdown in Neumann solve")
             alpha = rz_old / denom
             x = _project_mean_zero(x + alpha * p)
-            r = _project_mean_zero(r - alpha * ap)
-            residual_norm = float(np.linalg.norm(r.ravel()))
+            residual = _project_mean_zero(residual - alpha * ap)
+            residual_norm = float(np.linalg.norm(residual.ravel()))
             iterations = iteration
             if residual_norm <= target:
                 break
 
-            z = _project_mean_zero(inv_diag * r)
-            rz_new = float(np.vdot(r, z).real)
+            z = _project_mean_zero(inv_diag * residual)
+            rz_new = float(np.vdot(residual, z).real)
             if abs(rz_old) < 1e-30:
                 raise RuntimeError("PCG breakdown in preconditioned residual")
             beta = rz_new / rz_old
             p = _project_mean_zero(z + beta * p)
             rz_old = rz_new
         else:
-            raise RuntimeError(
-                f"open-boundary PCG did not converge in {max_iterations} iterations"
-            )
+            raise RuntimeError(f"open-boundary PCG did not converge in {max_iterations} iterations")
 
     phi = _project_mean_zero(x)
-
     electric = {
         "x": phi[:-1, :, :] - phi[1:, :, :],
         "y": phi[:, :-1, :] - phi[:, 1:, :],
         "z": phi[:, :, :-1] - phi[:, :, 1:],
     }
 
-    solution = OpenBoundarySolution(
+    return OpenBoundarySolution(
         potential=phi,
         electric_links=electric,
         boundary_flux_density=face_flux,
@@ -270,7 +354,22 @@ def solve_open_gauss(
         compatibility_residual=compat,
     )
 
-    return solution
+
+def solve_open_gauss(
+    rho: np.ndarray,
+    flux: GateFieldFlux,
+    tolerance: float = 1e-11,
+    max_iterations: int = 20000,
+) -> OpenBoundarySolution:
+    """Solve the finite-volume open-boundary Gauss problem with projected PCG."""
+    rho = _validate_solver_inputs(rho, tolerance, max_iterations)
+    face_flux = boundary_flux_density(rho.shape, flux)
+    return solve_open_gauss_with_face_flux(
+        rho,
+        face_flux,
+        tolerance=tolerance,
+        max_iterations=max_iterations,
+    )
 
 
 def gauss_residual(
@@ -325,8 +424,5 @@ def balanced_gate_flux(
     total_weight = sum(vals.values())
     if total_weight <= 0:
         raise ValueError("at least one gate weight must be positive")
-    allocated = {
-        name: total_charge * vals[name] / total_weight
-        for name in FACE_NAMES
-    }
+    allocated = {name: total_charge * vals[name] / total_weight for name in FACE_NAMES}
     return GateFieldFlux(**allocated)
