@@ -1,0 +1,406 @@
+{
+  "status": "bounded_numerical_checkpoint",
+  "results": {
+    "time_order": {
+      "nonlinear": {
+        "sample_count": 128,
+        "centered_state_rms": 0.3590132129734926,
+        "signal_resolved": true,
+        "one_cycle_error": 2.0000000008912133,
+        "two_cycle_error": 1.765614756120521e-08,
+        "alternating_coherence": 0.9999999999999996,
+        "late_to_early_rms": 0.9999999977007551,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "linear": {
+        "sample_count": 128,
+        "centered_state_rms": 33214860277961.16,
+        "signal_resolved": true,
+        "one_cycle_error": 1.9180620463949791,
+        "two_cycle_error": 0.17291628812153823,
+        "alternating_coherence": 0.4077404254431743,
+        "late_to_early_rms": 412.2100669798383,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "drive_off": {
+        "sample_count": 128,
+        "centered_state_rms": 9.104537736617643e-11,
+        "signal_resolved": false,
+        "one_cycle_error": null,
+        "two_cycle_error": null,
+        "alternating_coherence": null,
+        "late_to_early_rms": null,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "strong_damping": {
+        "sample_count": 128,
+        "centered_state_rms": 9.05479822498445e-15,
+        "signal_resolved": false,
+        "one_cycle_error": null,
+        "two_cycle_error": null,
+        "alternating_coherence": null,
+        "late_to_early_rms": null,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "zero_seed": {
+        "sample_count": 128,
+        "centered_state_rms": 0.0,
+        "signal_resolved": false,
+        "one_cycle_error": null,
+        "two_cycle_error": null,
+        "alternating_coherence": null,
+        "late_to_early_rms": null,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "opposite_seed": {
+        "sample_count": 128,
+        "centered_state_rms": 0.3590132129734926,
+        "signal_resolved": true,
+        "one_cycle_error": 2.0000000008912133,
+        "two_cycle_error": 1.765614756120521e-08,
+        "alternating_coherence": 0.9999999999999996,
+        "late_to_early_rms": 0.9999999977007551,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "velocity_seed": {
+        "sample_count": 128,
+        "centered_state_rms": 0.3590132130001786,
+        "signal_resolved": true,
+        "one_cycle_error": 2.00000000087522,
+        "two_cycle_error": 1.7584554246747654e-08,
+        "alternating_coherence": 0.9999999999999996,
+        "late_to_early_rms": 0.9999999975545325,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "drive_1.8": {
+        "sample_count": 128,
+        "centered_state_rms": 1.8100045037205073e-11,
+        "signal_resolved": false,
+        "one_cycle_error": null,
+        "two_cycle_error": null,
+        "alternating_coherence": null,
+        "late_to_early_rms": null,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "drive_1.92": {
+        "sample_count": 128,
+        "centered_state_rms": 0.13037332594216408,
+        "signal_resolved": true,
+        "one_cycle_error": 2.0000000008819834,
+        "two_cycle_error": 7.51481877659427e-09,
+        "alternating_coherence": 0.9999999999999998,
+        "late_to_early_rms": 0.9999999967241167,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "drive_2.08": {
+        "sample_count": 128,
+        "centered_state_rms": 0.5072534211628374,
+        "signal_resolved": true,
+        "one_cycle_error": 2.0000000533762208,
+        "two_cycle_error": 1.327692456155183e-05,
+        "alternating_coherence": 0.9999999998036815,
+        "late_to_early_rms": 1.0000033526327465,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "drive_2.2": {
+        "sample_count": 128,
+        "centered_state_rms": 3.912994183451613e-10,
+        "signal_resolved": false,
+        "one_cycle_error": null,
+        "two_cycle_error": null,
+        "alternating_coherence": null,
+        "late_to_early_rms": null,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "refined": {
+        "sample_count": 128,
+        "centered_state_rms": 0.3590132129734719,
+        "signal_resolved": true,
+        "one_cycle_error": 2.0000000008912133,
+        "two_cycle_error": 1.765615126691371e-08,
+        "alternating_coherence": 0.9999999999999993,
+        "late_to_early_rms": 0.9999999977006536,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "longer": {
+        "sample_count": 128,
+        "centered_state_rms": 0.35901321261161817,
+        "signal_resolved": true,
+        "one_cycle_error": 2.000000000000001,
+        "two_cycle_error": 2.2664726702384401e-13,
+        "alternating_coherence": 1.0000000000000002,
+        "late_to_early_rms": 0.9999999999999956,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      },
+      "disturbed_restart": {
+        "sample_count": 128,
+        "centered_state_rms": 0.35901945922865464,
+        "signal_resolved": true,
+        "one_cycle_error": 2.0000004336959925,
+        "two_cycle_error": 8.282618265957224e-05,
+        "alternating_coherence": 0.9999999883280709,
+        "late_to_early_rms": 0.9999645791990598,
+        "classification": "finite-record diagnostic only; not evidence sufficient for a time crystal"
+      }
+    },
+    "time_order_comparisons": {
+      "refinement_final_state_difference": 1.4499119594121937e-13,
+      "duration_final_state_difference": 1.7450534385410104e-11,
+      "disturbed_phase_equivalent_final_distance": 7.91191641347131e-08,
+      "opposite_seed_symmetry_error": 0.0
+    },
+    "controller": {
+      "ideal": {
+        "parameters": {
+          "force_limit": 10.0,
+          "delay_s": 0.0,
+          "measurement_amplitude": 0.0,
+          "stiffness_ratio": 1.0
+        },
+        "late_position_rms_m": 9.552800126929593e-09,
+        "late_velocity_rms_m_s": 9.63169245809368e-09,
+        "maximum_sampled_force_per_mass": 0.26127679323689634,
+        "sampled_saturation_fraction": 0.0,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": true,
+        "scope": "finite-run active controller; target <=.05 m late position RMS; not a proven stability boundary"
+      },
+      "force_0.05": {
+        "parameters": {
+          "force_limit": 0.05,
+          "delay_s": 0.0,
+          "measurement_amplitude": 0.0,
+          "stiffness_ratio": 1.0
+        },
+        "late_position_rms_m": 5.212766301838774,
+        "late_velocity_rms_m_s": 5.064503477175927,
+        "maximum_sampled_force_per_mass": 0.05,
+        "sampled_saturation_fraction": 1.0,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": false,
+        "scope": "finite-run active controller; target <=.05 m late position RMS; not a proven stability boundary"
+      },
+      "delay_0.1": {
+        "parameters": {
+          "force_limit": 10.0,
+          "delay_s": 0.1,
+          "measurement_amplitude": 0.0,
+          "stiffness_ratio": 1.0
+        },
+        "late_position_rms_m": 5.32197980368702e-05,
+        "late_velocity_rms_m_s": 5.326255544527625e-05,
+        "maximum_sampled_force_per_mass": 0.25317977802344316,
+        "sampled_saturation_fraction": 0.0,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": true,
+        "scope": "finite-run active controller; target <=.05 m late position RMS; not a proven stability boundary"
+      },
+      "delay_1": {
+        "parameters": {
+          "force_limit": 10.0,
+          "delay_s": 1.0,
+          "measurement_amplitude": 0.0,
+          "stiffness_ratio": 1.0
+        },
+        "late_position_rms_m": 5.545086888537303e-05,
+        "late_velocity_rms_m_s": 5.5503383786127316e-05,
+        "maximum_sampled_force_per_mass": 0.26396032752150095,
+        "sampled_saturation_fraction": 0.0,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": true,
+        "scope": "finite-run active controller; target <=.05 m late position RMS; not a proven stability boundary"
+      },
+      "measurement_0.02": {
+        "parameters": {
+          "force_limit": 10.0,
+          "delay_s": 0.0,
+          "measurement_amplitude": 0.02,
+          "stiffness_ratio": 1.0
+        },
+        "late_position_rms_m": 0.00020016716243169685,
+        "late_velocity_rms_m_s": 0.001506171972571083,
+        "maximum_sampled_force_per_mass": 0.2563218103970279,
+        "sampled_saturation_fraction": 0.0,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": true,
+        "scope": "finite-run active controller; target <=.05 m late position RMS; not a proven stability boundary"
+      },
+      "stiffness_1.2": {
+        "parameters": {
+          "force_limit": 10.0,
+          "delay_s": 0.0,
+          "measurement_amplitude": 0.0,
+          "stiffness_ratio": 1.2
+        },
+        "late_position_rms_m": 0.29970376367009993,
+        "late_velocity_rms_m_s": 0.29977932662544665,
+        "maximum_sampled_force_per_mass": 0.39961938107034367,
+        "sampled_saturation_fraction": 0.0,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": false,
+        "scope": "finite-run active controller; target <=.05 m late position RMS; not a proven stability boundary"
+      },
+      "combined": {
+        "parameters": {
+          "force_limit": 0.15,
+          "delay_s": 0.1,
+          "measurement_amplitude": 0.02,
+          "stiffness_ratio": 1.2
+        },
+        "late_position_rms_m": 0.6891249523128166,
+        "late_velocity_rms_m_s": 0.6903347897765665,
+        "maximum_sampled_force_per_mass": 0.15,
+        "sampled_saturation_fraction": 0.8265963678968952,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": false,
+        "scope": "finite-run active controller; target <=.05 m late position RMS; not a proven stability boundary"
+      },
+      "delay_2": {
+        "parameters": {
+          "force_limit": 10.0,
+          "delay_s": 2.0,
+          "measurement_amplitude": 0.0,
+          "stiffness_ratio": 1.0
+        },
+        "late_position_rms_m": 810.9912715768753,
+        "late_velocity_rms_m_s": 783.255969019716,
+        "maximum_sampled_force_per_mass": 10.0,
+        "sampled_saturation_fraction": 0.6861941027143136,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": false,
+        "scope": "finite-run active controller; target <=.05 m late position RMS; not a proven stability boundary"
+      },
+      "stiffness_1.02": {
+        "parameters": {
+          "force_limit": 10.0,
+          "delay_s": 0.0,
+          "measurement_amplitude": 0.0,
+          "stiffness_ratio": 1.02
+        },
+        "late_position_rms_m": 0.031392058081777606,
+        "late_velocity_rms_m_s": 0.03139961741391902,
+        "maximum_sampled_force_per_mass": 0.2633078018300153,
+        "sampled_saturation_fraction": 0.0,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": true,
+        "scope": "finite-run active controller; target <=.05 m late position RMS; not a proven stability boundary"
+      },
+      "stiffness_1.05": {
+        "parameters": {
+          "force_limit": 10.0,
+          "delay_s": 0.0,
+          "measurement_amplitude": 0.0,
+          "stiffness_ratio": 1.05
+        },
+        "late_position_rms_m": 0.07828071041277612,
+        "late_velocity_rms_m_s": 0.07829969548613648,
+        "maximum_sampled_force_per_mass": 0.26672649556580325,
+        "sampled_saturation_fraction": 0.0,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": false,
+        "scope": "finite-run active controller; target <=.05 m late position RMS; not a proven stability boundary"
+      },
+      "delay_2_refined": {
+        "parameters": {
+          "force_limit": 10.0,
+          "delay_s": 2.0,
+          "measurement_amplitude": 0.0,
+          "stiffness_ratio": 1.0
+        },
+        "late_position_rms_m": 810.8282820481339,
+        "late_velocity_rms_m_s": 783.0527878299627,
+        "maximum_sampled_force_per_mass": 10.0,
+        "sampled_saturation_fraction": 0.6857728737427986,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": false,
+        "scope": "finite-run active controller; target <=.05 m late position RMS; not a proven stability boundary"
+      }
+    },
+    "multimode": {
+      "projected_coupling": {
+        "modal_state_rms_m": [
+          0.29411508441560763,
+          0.20588055909092506
+        ],
+        "total_state_rms_m": 0.3590132135345326,
+        "max_energy_balance_residual": 2.8110846983508964e-13,
+        "alpha": 1.3333333333333333,
+        "coupling": 1.0
+      },
+      "independent_comparison": {
+        "modal_state_rms_m": [
+          0.3590132129734964,
+          0.3590132113505692
+        ],
+        "total_state_rms_m": 0.5077213537106762,
+        "max_energy_balance_residual": 4.956035581926699e-13,
+        "alpha": 1.3333333333333333,
+        "coupling": 0.0
+      },
+      "rotated_seed": {
+        "modal_state_rms_m": [
+          0.20588055909092506,
+          0.29411508441560763
+        ],
+        "total_state_rms_m": 0.3590132135345326,
+        "max_energy_balance_residual": 2.8110846983508964e-13,
+        "alpha": 1.3333333333333333,
+        "coupling": 1.0
+      },
+      "one_mode_seed": {
+        "modal_state_rms_m": [
+          0.35901321297349803,
+          0.0
+        ],
+        "total_state_rms_m": 0.35901321297349803,
+        "max_energy_balance_residual": 2.4868995751603507e-13,
+        "alpha": 1.3333333333333333,
+        "coupling": 1.0
+      },
+      "refinement": {
+        "modal_state_rms_m": [
+          0.29411508441558604,
+          0.2058805590909133
+        ],
+        "total_state_rms_m": 0.35901321353450816,
+        "max_energy_balance_residual": 7.105427357601002e-15,
+        "alpha": 1.3333333333333333,
+        "coupling": 1.0
+      },
+      "longer": {
+        "modal_state_rms_m": [
+          0.29411508365953015,
+          0.2058805585616702
+        ],
+        "total_state_rms_m": 0.35901321261162206,
+        "max_energy_balance_residual": 5.115907697472721e-13,
+        "alpha": 1.3333333333333333,
+        "coupling": 1.0
+      },
+      "weaker_nonlinearity": {
+        "modal_state_rms_m": [
+          0.41594153990694716,
+          0.29115907793486295
+        ],
+        "total_state_rms_m": 0.507721353976807,
+        "max_energy_balance_residual": 5.275779813018744e-13,
+        "alpha": 0.6666666666666666,
+        "coupling": 1.0
+      },
+      "no_pump": {
+        "modal_state_rms_m": [
+          9.105802716598158e-11,
+          6.374061901618726e-11
+        ],
+        "total_state_rms_m": 1.1115048728605454e-10,
+        "max_energy_balance_residual": 1.0164395367051604e-18,
+        "alpha": 1.3333333333333333,
+        "coupling": 1.0
+      }
+    },
+    "multimode_refinement": {
+      "refinement": 1.4573513609449585e-13,
+      "longer": 1.5400198621025682e-11
+    }
+  }
+}
