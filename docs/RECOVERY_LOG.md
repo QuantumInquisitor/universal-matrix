@@ -247,3 +247,44 @@ changed. Material forces, energy closure, emergent motion, recursive coupling,
 wall-opening feasibility and the stagnating streamline remain open. W1/W2,
 timing-subsystem comparisons and remaining source recovery retain their separate
 dispositions. The register still contains 40 records; no tasks were silently closed.
+
+## 30 September 2026: eight-image research and equation review
+
+Individually examined all eight supplied originals, including equations,
+diagrams, units, process panels and limits of legibility. Preserved originals
+locally and recorded dimensions and SHA-256 hashes without publishing the
+images themselves. Review: `docs/eight_image_research_review_2026-09-30.md`;
+manifest: `docs/experiments/eight-image-manifest.json`. Primary sources are
+linked beside biomedical, relativity, topology and quantum-operation claims.
+
+Useful additions are explicit phase/winding/state bookkeeping, separation of
+geometry/field/dynamics/observable layers, target-relative synchronization
+diagnostics, resource/momentum/energy/heat accounting and data-backed cutaway
+views. These are assigned to existing P04-P12 tracks rather than replacing
+the catch-up program. None of the pictures supplies the missing hinge-to-flow
+correspondence or a material/energy law.
+
+Executed `scripts/report_image_claim_controls.py` and stored its results in
+`docs/experiments/image-claim-controls.json`: 613 THz converts to 489.058 nm;
+the literal 16-node azimuth formula has only 0/30/60/90-degree positions; the
+printed frequency ladder grows twelvefold rather than one octave in twelve
+increments; Hermitian phase decoration preserves eigenvalues to 5.33e-15 in
+the seeded control; a specified traveling-phase pattern has zero common-phase
+order but unit target alignment; a projector with 1% success gives a perfect
+conditional target while retaining 99% failures. Conditional recurrence and
+reflection-versus-rotation controls were also executed. These are mathematical
+counterexamples/diagnostics, not physical device simulations. Script assertions
+and Ruff check/format passed.
+
+Continued the existing folding investigation by revisiting the implemented
+inversion endpoint/path obstruction in light of Image 3. Its 23 existing tests
+passed in 2.34 seconds. Kept its pole, determinant-sign and collision limits;
+did not replace it with the picture's unsupported singularless threshold.
+The 0.018451 number remains undefined as a physical parameter. No engine
+defaults, source geometry or viewer were changed.
+
+One new image-review record brings the catch-up register to 41 records. Review
+and arithmetic controls are complete; new oscillator/material/recurrence
+experiments remain explicitly proposed under existing task IDs. This does not
+close relative folding, emergent motion, energy closure, recursive coupling,
+the central stagnating streamline or any matter-synthesis claim.

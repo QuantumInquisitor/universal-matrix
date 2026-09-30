@@ -40,21 +40,24 @@
       ],
       "next_action": "Define an explicit correspondence from PR119 compliant hinge/panel specimen to the 66 conduits and three junctions, or justify a different nonuniform map. Specify transported route and host-cut charts, then test all Jacobians, interfaces and continuous clearance. Do not relabel common scaling as relative folding.",
       "latest_result": "PR124 head 3249637f96c748ba2a08b7ad2c963fa0c5a33d59 adds prescribed common 0.9-1.1 breathing of all 69 components and both host cuts. Continuous positive-similarity argument covers 2346 pairs; 24 new tests and six signed report cases pass, including 48 moving cuts per case. Relative inward folding is not yet assigned to the flow graph.",
-      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
+      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
+      "image_review": "docs/eight_image_research_review_2026-09-30.md"
     },
     {
       "id": "P05",
       "title": "Finish the wave and control experiments already started.",
       "status": "queued",
       "scope_and_completion": "W1 now has nonlinear saturation and two coupled modes; add generated harmonics, multiple wavelengths, boundary effects, mode-count/time convergence and noise/seed ensembles. Test whether any pattern is selected rather than inherited from its seed. W2 now has an optional implementation and measured failure cases; add actuator saturation, noise, delay and mismatch envelopes, then evaluate any redesign against those same cases. Resolve the saved Q-ball period question with an explicit observable and convergence protocol; leave it unresolved if the data do not identify a period. **Done when:** each question has a reproducible result and operating/failure range. Keep W3 quantum bath/noise completion separate from these classical controls.",
-      "dependencies": []
+      "dependencies": [],
+      "image_review": "docs/eight_image_research_review_2026-09-30.md"
     },
     {
       "id": "P06",
       "title": "Decide whether crystal components provide a useful engine capability.",
       "status": "queued",
       "scope_and_completion": "The timing adapter works in finite simulation, and the ordinary divider also passes. Choose a useful role and predeclare a matched comparison. Add readout/backaction assumptions, latency, loading, resource and energy costs; test longer duration, noise, size and parameter ranges. Retain, redesign or defer the component based on the result. For spatial crystals/quasicrystals, measure structure factors and correlations on actual coordinates with periodic, quasiperiodic and randomized controls; separate lab and co-moving measurements and vary recursion depth/size. Combined space-time measurements wait for a justified dynamical model. **Done when:** the proposed role has a supported benefit, limitation or no-advantage finding. Classifying the entire engine as a time crystal is not a completion requirement. The inaccessible Instagram reel remains unverified.",
-      "dependencies": []
+      "dependencies": [],
+      "image_review": "docs/eight_image_research_review_2026-09-30.md"
     },
     {
       "id": "P07",
@@ -65,7 +68,8 @@
         "P04",
         "P05",
         "P06"
-      ]
+      ],
+      "image_review": "docs/eight_image_research_review_2026-09-30.md"
     },
     {
       "id": "P08",
@@ -74,7 +78,8 @@
       "scope_and_completion": "Account for mechanical and electrical stored energy, actuator/source work, damping, contact losses, boundary transport and any timing/readout power included in the model. Use reciprocal couplings and eliminate duplicated storage, including capacitance when connecting resonator and piezoelectric ports. Include moving-boundary flow where claimed. **Done when:** independently accumulated work, energy change and losses agree within a declared, converged error bound, including drive-off/passive controls.",
       "dependencies": [
         "P07"
-      ]
+      ],
+      "image_review": "docs/eight_image_research_review_2026-09-30.md"
     },
     {
       "id": "P09",
@@ -83,7 +88,8 @@
       "scope_and_completion": "Replace prescribed output motion with evolving states driven by the forces and power inputs. Keep the prescribed breathing cycle as a comparison. Test rest, perturbations, different initial phases, input-off, coupling-off, damping, stability and recovery. **Done when:** the simulation establishes whether sustained breathing/folding occurs, under which inputs, and where it fails; geometry and energy checks remain valid throughout. Do not force a positive outcome by programming the desired trajectory.",
       "dependencies": [
         "P08"
-      ]
+      ],
+      "image_review": "docs/eight_image_research_review_2026-09-30.md"
     },
     {
       "id": "P10",
@@ -92,21 +98,24 @@
       "scope_and_completion": "Implement shared component identities, parent-child and peer ports, independent child states, ownership/no-double-counting rules, positivity bounds and conservative exchange. Make dormant pathways explicit: persistent, inactive-only, contracting or another declared rule. Add multiple levels, feedback, finite propagation/delay and depth convergence. Integrate the helix-clock interpretation only as a declared adapter. **Done when:** a disturbance and exchange can be traced across levels with preserved identities and conservation, and independent state survives replay/save/resume. An aggregate color overlay is not completion of this step.",
       "dependencies": [
         "P09"
-      ]
+      ],
+      "image_review": "docs/eight_image_research_review_2026-09-30.md"
     },
     {
       "id": "P11",
       "title": "Use the viewer to inspect the same computed engine state.",
       "status": "queued",
       "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3\u201310. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
-      "dependencies": []
+      "dependencies": [],
+      "image_review": "docs/eight_image_research_review_2026-09-30.md"
     },
     {
       "id": "P12",
       "title": "Close the remaining independent experiment and source queues.",
       "status": "queued",
       "scope_and_completion": "These tracks need their own bounded outcomes and must not disappear behind engine integration. Use the detailed queue below. **Done when:** each recovered item is completed, rejected with evidence, explicitly deferred, or blocked on a named input with a concrete recovery action. Unavailable evidence remains unavailable rather than being replaced with invented values.",
-      "dependencies": []
+      "dependencies": [],
+      "image_review": "docs/eight_image_research_review_2026-09-30.md"
     },
     {
       "id": "R01",
@@ -328,6 +337,28 @@
       ],
       "next_action": "Inspect remote CI and review; proceed to P04 combined inventory without claiming motion completion.",
       "latest_head": "3249637f96c748ba2a08b7ad2c963fa0c5a33d59"
+    },
+    {
+      "id": "REC-IMAGES-8",
+      "title": "Audit eight supplied scientific/concept images and map useful ideas to existing experiments",
+      "status": "reviewed_controls_passed_published_draft",
+      "evidence": [
+        "docs/eight_image_research_review_2026-09-30.md",
+        "docs/experiments/eight-image-manifest.json",
+        "docs/experiments/image-claim-controls.json"
+      ],
+      "validation": {
+        "images_reviewed": 8,
+        "existing_inversion_tests_passed": 23,
+        "arithmetic_and_counterexample_assertions": "passed"
+      },
+      "next_action": "Use the acceptance gates under existing P04-P12 tasks; proposed oscillator, full-state recurrence and material-ledger experiments remain queued. Obtain original UFT4/Delta derivation if available.",
+      "limits": [
+        "No new physical device or consciousness mechanism validated",
+        "No hinge-to-flow correspondence supplied by the images",
+        "Original pictures preserved locally; only hashes and analysis published"
+      ],
+      "publication": "https://github.com/QuantumInquisitor/universal-matrix/pull/122"
     }
   ]
 }
