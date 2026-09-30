@@ -235,7 +235,7 @@ Review entry: `docs/toroidal_assembly_breathing_v0.1.md`; snapshot:
 `docs/experiments/assembly-breathing-summary.json`. Reproduce with
 `uv run python scripts/report_assembly_breathing.py --output-dir
 artifacts/assembly-breathing`. Dedicated CI now repeats the new tests and reports;
-current-head remote checks were pending at publication. No merge was performed.
+current-head dedicated experiment, CodeQL and container checks passed; broad repository verification remains pending. No merge was performed.
 
 P04 remains in progress. This control proves prescribed common expansion and
 contraction subject to the static floating-point assumptions, not inward relative
