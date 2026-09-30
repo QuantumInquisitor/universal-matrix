@@ -1,0 +1,71 @@
+name: Experimental control baselines
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_phase_pattern_controls.py'
+      - 'scripts/report_chiral_phase_controls.py'
+      - 'scripts/report_phase_delay_controls.py'
+      - 'scripts/report_material_specimen.py'
+      - 'tests/test_phase_pattern_controls.py'
+      - 'tests/test_chiral_phase_controls.py'
+      - 'tests/test_phase_delay_controls.py'
+      - 'tests/test_material_specimen.py'
+      - '.github/workflows/experimental-control-baselines.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --group test --group lint
+      - name: Check bounded experiment implementations
+        run: |
+          uv run ruff check scripts/report_phase_pattern_controls.py scripts/report_chiral_phase_controls.py scripts/report_phase_delay_controls.py scripts/report_material_specimen.py tests/test_phase_pattern_controls.py tests/test_chiral_phase_controls.py tests/test_phase_delay_controls.py tests/test_material_specimen.py
+          uv run ruff format --check scripts/report_phase_pattern_controls.py scripts/report_chiral_phase_controls.py scripts/report_phase_delay_controls.py scripts/report_material_specimen.py tests/test_phase_pattern_controls.py tests/test_chiral_phase_controls.py tests/test_phase_delay_controls.py tests/test_material_specimen.py
+          uv run python -m pytest tests/test_phase_pattern_controls.py tests/test_chiral_phase_controls.py tests/test_phase_delay_controls.py tests/test_material_specimen.py
+      - name: Reproduce baseline reports
+        run: |
+          uv run python scripts/report_phase_pattern_controls.py --output artifacts/control-baselines/phase-pattern.json
+          uv run python scripts/report_chiral_phase_controls.py --output artifacts/control-baselines/chiral.json
+          uv run python scripts/report_phase_delay_controls.py --output artifacts/control-baselines/delay.json
+          uv run python scripts/report_material_specimen.py --output artifacts/control-baselines/material.json
+      - name: Verify reported controls and provenance
+        run: |
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          reports = {}
+          for name, script in [('phase-pattern', 'phase_pattern_controls'), ('chiral', 'chiral_phase_controls'), ('delay', 'phase_delay_controls'), ('material', 'material_specimen')]:
+              report = json.loads(Path(f'artifacts/control-baselines/{name}.json').read_text())
+              expected = hashlib.sha256(Path(f'scripts/report_{script}.py').read_text().encode()).hexdigest()
+              assert report['source_sha256'] == expected
+              reports[name] = report
+          phase = reports['phase-pattern']
+          assert phase['case_count'] == len(phase['cases']) == 108
+          assert max(abs(r['balance_residual']) for r in phase['cases']) < 2e-6
+          chiral = reports['chiral']
+          assert chiral['case_count'] == len(chiral['cases']) == 36
+          assert max(abs(r['balance_residual']) for r in chiral['cases']) < 1e-7
+          delay = reports['delay']
+          assert delay['case_count'] == len(delay['cases']) == 54
+          for r in delay['cases']:
+              assert r['maximum_prearrival_paired_difference'] == 0
+              if r['parameters']['coupling'] == 0:
+                  assert r['first_detected_paired_difference'] is None
+              else:
+                  assert r['first_detected_paired_difference'] > r['earliest_allowed_arrival']
+          material = reports['material']['cases']
+          assert len(material) == 4 and sum(map(len, material.values())) == 12
+          assert abs(material['driven_damped'][-1]['balance_residual_j']) < 1e-8
+          PY

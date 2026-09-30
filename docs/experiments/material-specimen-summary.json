@@ -1,0 +1,410 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic 1D connected two-mass specimen, not a material reduction of the 69-component assembly",
+  "parameter_source": "Illustrative chosen SI coefficients; no experimental fit",
+  "source_sha256": "c8af4e822f82e32cecf6dfad948428c803a82f375b103a17b89e92f28379a790",
+  "energy_equation": "E(final)-E(initial)=external_work-dissipated",
+  "integration": "fixed-step RK4; work and dissipation quadrature at RK stages",
+  "refinement": {
+    "displacement_m": {
+      "coarse_medium_difference": 4.0237307473734854e-07,
+      "medium_fine_difference": 2.556412510747275e-08,
+      "difference_ratio": 15.739755342526049
+    },
+    "velocity_m_per_s": {
+      "coarse_medium_difference": 4.2148467465210817e-07,
+      "medium_fine_difference": 2.3597456890289553e-08,
+      "difference_ratio": 17.861444841776606
+    }
+  },
+  "cases": {
+    "driven_damped": [
+      {
+        "dt_s": 0.04,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 2.0,
+          "anchor_damping_n_s_per_m": 0.1,
+          "link_damping_n_s_per_m": 0.2,
+          "drive_amplitude_n": 0.2,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.030000000000000006,
+        "final_state": [
+          -0.0787732026184741,
+          -0.04521794978079506,
+          0.17612325662778144,
+          0.10991329998567877
+        ],
+        "final_energy_j": 0.03917588337875852,
+        "external_work_j": 0.041206148480023456,
+        "dissipated_j": 0.0320303081672279,
+        "balance_residual_j": 4.306596295550191e-08,
+        "max_abs_balance_residual_j": 4.4079140316954923e-08
+      },
+      {
+        "dt_s": 0.02,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 2.0,
+          "anchor_damping_n_s_per_m": 0.1,
+          "link_damping_n_s_per_m": 0.2,
+          "drive_amplitude_n": 0.2,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.030000000000000006,
+        "final_state": [
+          -0.07877280229982113,
+          -0.04521790917208476,
+          0.17612366364366921,
+          0.10991319049870206
+        ],
+        "final_energy_j": 0.03917578540737318,
+        "external_work_j": 0.041206084193053084,
+        "dissipated_j": 0.03203030272106876,
+        "balance_residual_j": 3.9353888481308275e-09,
+        "max_abs_balance_residual_j": 3.939395840785176e-09
+      },
+      {
+        "dt_s": 0.01,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 2.0,
+          "anchor_damping_n_s_per_m": 0.1,
+          "link_damping_n_s_per_m": 0.2,
+          "drive_amplitude_n": 0.2,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.030000000000000006,
+        "final_state": [
+          -0.07877277685155853,
+          -0.04521790674094851,
+          0.17612368643460416,
+          0.10991318438206442
+        ],
+        "final_energy_j": 0.039175778746177246,
+        "external_work_j": 0.04120607989759711,
+        "dissipated_j": 0.0320303014362032,
+        "balance_residual_j": 2.847833358021745e-10,
+        "max_abs_balance_residual_j": 2.847833358021745e-10
+      }
+    ],
+    "drive_off": [
+      {
+        "dt_s": 0.04,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 2.0,
+          "anchor_damping_n_s_per_m": 0.1,
+          "link_damping_n_s_per_m": 0.2,
+          "drive_amplitude_n": 0,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.030000000000000006,
+        "final_state": [
+          -0.03847187616932434,
+          -0.026292364989550582,
+          0.028988275371882775,
+          0.00897785513829787
+        ],
+        "final_energy_j": 0.00495154891400156,
+        "external_work_j": 0.0,
+        "dissipated_j": 0.025048491090851138,
+        "balance_residual_j": 4.0004852694397464e-08,
+        "max_abs_balance_residual_j": 4.021936151135663e-08
+      },
+      {
+        "dt_s": 0.02,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 2.0,
+          "anchor_damping_n_s_per_m": 0.1,
+          "link_damping_n_s_per_m": 0.2,
+          "drive_amplitude_n": 0,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.030000000000000006,
+        "final_state": [
+          -0.03847167937819712,
+          -0.026292454199204795,
+          0.02898895112099293,
+          0.008977827071814272
+        ],
+        "final_energy_j": 0.00495154038296612,
+        "external_work_j": 0.0,
+        "dissipated_j": 0.025048463171180035,
+        "balance_residual_j": 3.5541461509969174e-09,
+        "max_abs_balance_residual_j": 3.5580691726266878e-09
+      },
+      {
+        "dt_s": 0.01,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 2.0,
+          "anchor_damping_n_s_per_m": 0.1,
+          "link_damping_n_s_per_m": 0.2,
+          "drive_amplitude_n": 0,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.030000000000000006,
+        "final_state": [
+          -0.03847166636548045,
+          -0.026292459795421403,
+          0.0289889916374813,
+          0.00897782647989146
+        ],
+        "final_energy_j": 0.0049515396849680515,
+        "external_work_j": 0.0,
+        "dissipated_j": 0.025048460570054144,
+        "balance_residual_j": 2.550221908648176e-10,
+        "max_abs_balance_residual_j": 2.550221908648176e-10
+      }
+    ],
+    "conservative": [
+      {
+        "dt_s": 0.04,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 2.0,
+          "anchor_damping_n_s_per_m": 0,
+          "link_damping_n_s_per_m": 0,
+          "drive_amplitude_n": 0,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.030000000000000006,
+        "final_state": [
+          -0.08809976418241923,
+          -0.007666305883379255,
+          0.11281837338918238,
+          -0.0552387746339688
+        ],
+        "final_energy_j": 0.029999876402355914,
+        "external_work_j": 0.0,
+        "dissipated_j": 0.0,
+        "balance_residual_j": -1.235976440916442e-07,
+        "max_abs_balance_residual_j": 1.235976440916442e-07
+      },
+      {
+        "dt_s": 0.02,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 2.0,
+          "anchor_damping_n_s_per_m": 0,
+          "link_damping_n_s_per_m": 0,
+          "drive_amplitude_n": 0,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.030000000000000006,
+        "final_state": [
+          -0.088098964480012,
+          -0.007666992284419945,
+          0.11282238812367322,
+          -0.05524179078453813
+        ],
+        "final_energy_j": 0.02999999613305776,
+        "external_work_j": 0.0,
+        "dissipated_j": 0.0,
+        "balance_residual_j": -3.866942245578375e-09,
+        "max_abs_balance_residual_j": 3.866942245578375e-09
+      },
+      {
+        "dt_s": 0.01,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 2.0,
+          "anchor_damping_n_s_per_m": 0,
+          "link_damping_n_s_per_m": 0,
+          "drive_amplitude_n": 0,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.030000000000000006,
+        "final_state": [
+          -0.08809891023261313,
+          -0.007667038379782935,
+          0.11282263213308313,
+          -0.05524197290597234
+        ],
+        "final_energy_j": 0.029999999879122868,
+        "external_work_j": 0.0,
+        "dissipated_j": 0.0,
+        "balance_residual_j": -1.2087713816000267e-10,
+        "max_abs_balance_residual_j": 1.2087713816000267e-10
+      }
+    ],
+    "disconnected": [
+      {
+        "dt_s": 0.04,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 0,
+          "anchor_damping_n_s_per_m": 0.1,
+          "link_damping_n_s_per_m": 0,
+          "drive_amplitude_n": 0,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.020000000000000004,
+        "final_state": [
+          -0.06476424115887502,
+          0.0,
+          0.03796613051018074,
+          0.0
+        ],
+        "final_energy_j": 0.009109527398727882,
+        "external_work_j": 0.0,
+        "dissipated_j": 0.010890471892642401,
+        "balance_residual_j": -7.086297208747094e-10,
+        "max_abs_balance_residual_j": 7.497228827341162e-10
+      },
+      {
+        "dt_s": 0.02,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 0,
+          "anchor_damping_n_s_per_m": 0.1,
+          "link_damping_n_s_per_m": 0,
+          "drive_amplitude_n": 0,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.020000000000000004,
+        "final_state": [
+          -0.06476413357740192,
+          0.0,
+          0.03796677819280704,
+          0.0
+        ],
+        "final_energy_j": 0.009109524119234021,
+        "external_work_j": 0.0,
+        "dissipated_j": 0.010890476149838721,
+        "balance_residual_j": 2.690727380488811e-10,
+        "max_abs_balance_residual_j": 2.77359787914655e-10
+      },
+      {
+        "dt_s": 0.01,
+        "duration_s": 8.0,
+        "initial_state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parameters": {
+          "mass_kg": 1.0,
+          "anchor_stiffness_n_per_m": 4.0,
+          "link_stiffness_n_per_m": 0,
+          "anchor_damping_n_s_per_m": 0.1,
+          "link_damping_n_s_per_m": 0,
+          "drive_amplitude_n": 0,
+          "drive_omega_rad_per_s": 1.5
+        },
+        "initial_energy_j": 0.020000000000000004,
+        "final_state": [
+          -0.06476412616090188,
+          0.0,
+          0.037966818117372785,
+          0.0
+        ],
+        "final_energy_j": 0.009109523713749264,
+        "external_work_j": 0.0,
+        "dissipated_j": 0.010890476312863405,
+        "balance_residual_j": 2.6612665196545926e-11,
+        "max_abs_balance_residual_j": 2.681130838178003e-11
+      }
+    ]
+  },
+  "remaining": [
+    "geometry-to-mass/stiffness mapping",
+    "material calibration",
+    "nonlinear deformation/contact",
+    "recursive coupling",
+    "autonomous sustained breathing"
+  ],
+  "snapshot_scope": "Compact case outcomes; full traces reproduced by reporter --output into artifacts. Source hash refers to reporter."
+}

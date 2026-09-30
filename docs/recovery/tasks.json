@@ -17,7 +17,8 @@
       "scope_and_completion": "Check the final broad CI results for the exact PR heads, investigate failures if any, review assumptions and numerical limits, and verify combined compatibility. Keep geometry, waves and timing independently reproducible. Merge only when review is complete and merging is authorized. **Done when:** every draft has an explicit reviewed disposition, and the accepted baseline and remaining exclusions are recorded. Publication alone is not integration or physical validation.",
       "dependencies": [
         "P01"
-      ]
+      ],
+      "latest_result": "Exact-head GitHub CI verified for PR119-124. PR119/120/121/123/124 all listed workflows successful; PR122 broad verification was still running at snapshot. Draft review/integration remains open. See docs/recovery/parallel-checkpoint-ci.json."
     },
     {
       "id": "P03",
@@ -50,37 +51,40 @@
       "scope_and_completion": "W1 now has nonlinear saturation and two coupled modes; add generated harmonics, multiple wavelengths, boundary effects, mode-count/time convergence and noise/seed ensembles. Test whether any pattern is selected rather than inherited from its seed. W2 now has an optional implementation and measured failure cases; add actuator saturation, noise, delay and mismatch envelopes, then evaluate any redesign against those same cases. Resolve the saved Q-ball period question with an explicit observable and convergence protocol; leave it unresolved if the data do not identify a period. **Done when:** each question has a reproducible result and operating/failure range. Keep W3 quantum bath/noise completion separate from these classical controls.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "108-case reciprocal ring phase-control baseline and 10 tests pass. Common and traveling targets are gauge-equivalent; no pattern advantage claimed. See docs/phase_pattern_and_time_hypotheses.md. Noise, delay, costs and assembly force mapping remain open."
+      "latest_result": "36 directed-phase cases and 54 delayed tracker cases completed; 26 tests pass. Signed transport follows imposed asymmetry; delayed responses obey programmed arrival with a noise/response tradeoff. Existing wave harmonics, detuning, saturation and quantum bath queues remain open."
     },
     {
       "id": "P06",
       "title": "Decide whether crystal components provide a useful engine capability.",
-      "status": "queued",
+      "status": "in_progress",
       "scope_and_completion": "The timing adapter works in finite simulation, and the ordinary divider also passes. Choose a useful role and predeclare a matched comparison. Add readout/backaction assumptions, latency, loading, resource and energy costs; test longer duration, noise, size and parameter ranges. Retain, redesign or defer the component based on the result. For spatial crystals/quasicrystals, measure structure factors and correlations on actual coordinates with periodic, quasiperiodic and randomized controls; separate lab and co-moving measurements and vary recursion depth/size. Combined space-time measurements wait for a justified dynamical model. **Done when:** the proposed role has a supported benefit, limitation or no-advantage finding. Classifying the entire engine as a time crystal is not a completion requirement. The inaccessible Instagram reel remains unverified.",
       "dependencies": [],
-      "image_review": "docs/eight_image_research_review_2026-09-30.md"
+      "image_review": "docs/eight_image_research_review_2026-09-30.md",
+      "latest_result": "Ordinary delayed phase tracker baseline completed. Existing six-qubit timing/divider result inspected, not rerun. No matched time-crystal advantage comparison completed; loading, readout, energy costs and spatial structure factors remain open."
     },
     {
       "id": "P07",
       "title": "Define material forces for one explicit connected specimen.",
-      "status": "queued",
+      "status": "in_progress",
       "scope_and_completion": "Choose physical units, geometry, masses/inertia, stiffness, damping, contact law, joint compliance, supports and drive. Label synthetic parameters; measured material behavior requires actual material data. Define geometry-to-mode reduction where used. **Done when:** the equations and parameters are complete, static and small-perturbation controls pass, and sensitivity/convergence are documented. Then expand scope; do not infer a material law from geometry alone.",
       "dependencies": [
         "P04",
         "P05",
         "P06"
       ],
-      "image_review": "docs/eight_image_research_review_2026-09-30.md"
+      "image_review": "docs/eight_image_research_review_2026-09-30.md",
+      "latest_result": "Synthetic connected two-mass SI specimen with spring/dashpot laws, supports and drive specified; 12 material tests pass. Preparatory isolated baseline only: mapping and calibrated material reduction of the 69-component assembly still depend on P04-P06."
     },
     {
       "id": "P08",
       "title": "Close the energy budget across the coupled specimen.",
-      "status": "queued",
+      "status": "in_progress",
       "scope_and_completion": "Account for mechanical and electrical stored energy, actuator/source work, damping, contact losses, boundary transport and any timing/readout power included in the model. Use reciprocal couplings and eliminate duplicated storage, including capacitance when connecting resonator and piezoelectric ports. Include moving-boundary flow where claimed. **Done when:** independently accumulated work, energy change and losses agree within a declared, converged error bound, including drive-off/passive controls.",
       "dependencies": [
         "P07"
       ],
-      "image_review": "docs/eight_image_research_review_2026-09-30.md"
+      "image_review": "docs/eight_image_research_review_2026-09-30.md",
+      "latest_result": "12 mechanical baseline runs independently integrate work/loss and endpoint energy. Finest driven residual 2.85e-10 J; separate position/velocity refinement ratios about 15.74/17.86. Electrical, contact, moving-boundary and whole-assembly energy accounting remain open."
     },
     {
       "id": "P09",
@@ -313,7 +317,8 @@
       "title": "Resolve remaining historical branch content differences",
       "status": "in_progress",
       "evidence": "docs/recovery/exception-file-comparison.json",
-      "next_action": "E8 tip discrepancy closed as duplicate documentation only. Continue other source/test and historical documentation comparisons."
+      "next_action": "E8 tip discrepancy closed as duplicate documentation only. Continue other source/test and historical documentation comparisons.",
+      "latest_result": "Bend-spacing source/document exception reviewed: current baseline preserves scan and adds sampling provenance and finite-grid qualifications. Historical version superseded; other exceptions remain open. See docs/recovery/bend-spacing-disposition.json."
     },
     {
       "id": "REC-APERTURE",

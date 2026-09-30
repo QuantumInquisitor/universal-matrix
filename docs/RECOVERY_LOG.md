@@ -366,3 +366,51 @@ step is an explicit chiral/nonreciprocal alternative with zero/sign controls,
 followed by detuning/noise/delay and physical work/reservoir accounting. Full
 assembly force coupling and recurrence integration are not part of this batch.
 Publication target: existing recovery draft PR122; no merge authorized/performed.
+
+
+## 2026-09-30 - Parallel directed-phase, delay and material baselines
+
+User requested continued parallel execution. Three bounded agents implemented
+independent experiments while the parent checked exact remote heads, CI, the
+task dependencies and one historical branch exception. No existing green engine
+source was rewritten. The catch-up register remains 41 tasks, not 41 completions.
+
+- Directed phase coupling: 36 zero/sign/coupling/size controls; 13 tests. A named
+  asymmetry produces opposite signed transport rates (~+/-0.38257 for the N16
+  illustrative case), while explicit model work and dissipation balance. It
+  does not discover a preferred handedness or extract energy from time.
+- Ordinary delayed tracker: 54 controls; 13 tests. Paired interventions have
+  zero effect before imposed transport arrival; finite-record recovery and
+  noise/response tradeoff are reported. This is an ordinary comparison baseline,
+  not a proven time-crystal advantage or physical propagation experiment.
+- Connected material specimen: 12 runs; 12 tests. Synthetic SI two-mass forces
+  generate motion, with independently accumulated work, stored energy and
+  damping loss. Finest driven residual 2.85e-10 J. Displacement/velocity
+  refinement ratios ~15.74/17.86; no mixed-unit physical error norm is claimed.
+
+Peer reviews checked each other's equations, causal controls and limits. Added
+Fourier observability guards so vanished modes cannot produce invented phase
+rates; bounded the chiral measurement's amplitude/timestep envelope. Clarified
+the material convergence units and ensured reporter output directories exist.
+Combined validation: 60 tests pass in 3.11 seconds (48 experiment tests plus 12
+documentation tests). Ruff check and format pass for all eight experiment files.
+All reporters are reproduced through a dedicated CI workflow with source-hash
+and numerical acceptance checks. Compact snapshots omit long traces; full
+local reports are under artifacts/control-baselines and reproducible via CLI.
+
+The exact-head CI snapshot records successful listed workflows for draft
+PR119/120/121/123/124. PR122 had container and CodeQL success with broad checks
+running when inspected. The new publication requires its own fresh CI results.
+No merge was performed. Existing draft PR122 carries this recovery experiment
+batch and log; main and the other draft heads remain unchanged.
+
+Historical recovery also dispositioned the bend-spacing exception as superseded:
+the baseline keeps the scan and adds finite-sampling provenance/corrected scope.
+Other branch exceptions still need semantic review.
+
+Remaining order: map material forces and directional couplings to actual
+geometry; apply matched timing readout/loading/cost assumptions; add feedback
+delay/detuning/saturation; then test sustained autonomous breathing, conservative
+recursive exchange and viewer replay of those computed states. P04-P10 are not
+closed by isolated baselines. Independent R01-R24 research remains recorded in
+tasks.json and must not disappear behind these integration experiments.
