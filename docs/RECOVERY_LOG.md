@@ -184,8 +184,7 @@ Published by updating draft PR124 to
 `docs/experiments/combined-aperture-summary.json`. Reproduce full pair and port
 records with `uv run python scripts/report_combined_aperture.py
 --output-dir artifacts/combined-aperture`. The dedicated workflow now repeats
-the combined tests, exporter and acceptance assertions. Current-head remote CI
-is pending. No merge was performed. The prior PR124 head had passed dedicated
+the combined tests, exporter and acceptance assertions. Current-head dedicated experiment, CodeQL and container CI passed; broad verification remains queued. No merge was performed. The prior PR124 head had passed dedicated
 experiment, CodeQL and container checks; its broad verification was still running.
 
 Important geometry-to-viewer constraint: `combined_components()` contains the
