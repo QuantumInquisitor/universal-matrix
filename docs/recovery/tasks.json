@@ -46,10 +46,11 @@
     {
       "id": "P05",
       "title": "Finish the wave and control experiments already started.",
-      "status": "queued",
+      "status": "in_progress",
       "scope_and_completion": "W1 now has nonlinear saturation and two coupled modes; add generated harmonics, multiple wavelengths, boundary effects, mode-count/time convergence and noise/seed ensembles. Test whether any pattern is selected rather than inherited from its seed. W2 now has an optional implementation and measured failure cases; add actuator saturation, noise, delay and mismatch envelopes, then evaluate any redesign against those same cases. Resolve the saved Q-ball period question with an explicit observable and convergence protocol; leave it unresolved if the data do not identify a period. **Done when:** each question has a reproducible result and operating/failure range. Keep W3 quantum bath/noise completion separate from these classical controls.",
       "dependencies": [],
-      "image_review": "docs/eight_image_research_review_2026-09-30.md"
+      "image_review": "docs/eight_image_research_review_2026-09-30.md",
+      "latest_result": "108-case reciprocal ring phase-control baseline and 10 tests pass. Common and traveling targets are gauge-equivalent; no pattern advantage claimed. See docs/phase_pattern_and_time_hypotheses.md. Noise, delay, costs and assembly force mapping remain open."
     },
     {
       "id": "P06",

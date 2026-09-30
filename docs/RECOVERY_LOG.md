@@ -338,3 +338,31 @@ noise/delay sensitivity, recovery and resource costs. Use the recorder for
 state/history observations; no memory force is supplied by a policy flag.
 Relative inward folding, material forces, energy closure, emergent motion,
 recursive dynamics and observed-world calibration remain separate open work.
+
+
+## 2026-09-30 - Phase-pattern controls and time-hypothesis source review
+
+Read the user's pasted time/Kozyrev thoughts as reference ideas, not instructions.
+Preserved primary-attributed source distinctions and falsifiable next steps in
+`docs/phase_pattern_and_time_hypotheses.md`. No time-energy source, preferred
+handedness or physical time-crystal claim was installed in the engine.
+
+Completed 108 dimensionless reciprocal-ring cases (8/16/24 nodes, three seeds,
+two encoded targets, three uniform drifts and coupling on/off). Ten new tests
+pass in 0.62 seconds; Ruff check and formatting pass. Step halving reduces the
+reference balance residual from 9.29477e-7 to 5.63146e-8, with final phase
+disagreement 7.28e-13. Conjugate-phase trajectory error is zero in that control.
+The full local report is artifacts/phase-pattern-controls/results.json; compact
+results and executable reproduction are included in the recovery publication.
+
+Independent review confirmed the negative-gradient sign and dissipation identity.
+It also established that encoded common/traveling targets are exactly equivalent
+after subtracting their offsets. This is a diagnostic/control result, not a
+discovery of spontaneous waves. Added an explicit equivalence and mean-phase
+test, and renamed the balance test to avoid implying physical energy validation.
+
+P05 remains in progress; P06/P08/P09/P10 remain incomplete. The next discriminating
+step is an explicit chiral/nonreciprocal alternative with zero/sign controls,
+followed by detuning/noise/delay and physical work/reservoir accounting. Full
+assembly force coupling and recurrence integration are not part of this batch.
+Publication target: existing recovery draft PR122; no merge authorized/performed.
