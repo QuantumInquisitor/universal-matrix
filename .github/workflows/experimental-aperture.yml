@@ -4,6 +4,14 @@ on:
   pull_request:
     paths:
       - 'src/toroidal_*.py'
+      - 'src/declared_state_recurrence.py'
+      - 'src/canonical_polarity_clock.py'
+      - 'src/canonical_kernel.py'
+      - 'tests/test_declared_state_recurrence.py'
+      - 'tests/test_canonical_polarity_clock.py'
+      - 'scripts/report_assembly_recurrence.py'
+      - 'docs/declared_state_recurrence_v0.1.md'
+      - 'docs/experiments/assembly-recurrence-summary.json'
       - 'tests/test_toroidal_*.py'
       - 'scripts/report_aperture_integration.py'
       - 'scripts/report_combined_aperture.py'
@@ -88,4 +96,22 @@ jobs:
               assert r['maximum_relative_cut_error'] < 1e-10
               assert not r['relative_folding_validated']
               assert not r['emergent_motion_validated'] and not r['material_energy_validated']
+          PY
+      - name: Check declared state recurrence and persistent history
+        run: |
+          uv run ruff check src/declared_state_recurrence.py tests/test_declared_state_recurrence.py scripts/report_assembly_recurrence.py
+          uv run ruff format --check src/declared_state_recurrence.py tests/test_declared_state_recurrence.py scripts/report_assembly_recurrence.py
+          uv run python -m pytest tests/test_declared_state_recurrence.py tests/test_canonical_polarity_clock.py
+          uv run python scripts/report_assembly_recurrence.py --output-dir artifacts/assembly-recurrence
+          uv run python - <<'PY'
+          import json
+          from pathlib import Path
+          rows = json.loads(Path('artifacts/assembly-recurrence/summary.json').read_text())['cases']
+          assert len(rows) == 2 and {r['current'] for r in rows} == {1, -1}
+          for r in rows:
+              assert r['component_count'] == r['history_changed_components'] == 69
+              assert r['half_cycle_position_returns'] and not r['half_cycle_declared_state_returns']
+              assert r['full_cycle_declared_state_returns'] and not r['full_cycle_history_returns']
+              assert not r['winding_coupled_policy_returns'] and not r['changed_internal_returns']
+              assert r['save_resume_exact'] and r['prescribed_clock_replay_exact']
           PY
