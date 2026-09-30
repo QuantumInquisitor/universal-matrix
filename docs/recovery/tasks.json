@@ -1,0 +1,300 @@
+{
+  "version": 1,
+  "updated": "2026-09-30",
+  "scope": "Resumable catch-up register; discovery counts do not measure completion. Only statuses backed by cited evidence may close work.",
+  "tasks": [
+    {
+      "id": "P01",
+      "title": "Recover surviving work from disk and Git before finalizing the task register.",
+      "status": "in_progress",
+      "scope_and_completion": "Inspect both known local repositories, their worktrees, uncommitted files, branches, stashes, reflogs and unreachable objects without cleanup or resets. Inspect current and older scratch directories, source-review folders, raw numerical results, test logs, manifests, viewer exports and packaged versions. Enumerate all remote branches and all PRs, including closed-unmerged attempts; distinguish work already incorporated by later commits from genuinely missing changes. Check issues and unfinished workflow runs. Use targeted interruption/session logs only to resolve artifacts whose purpose or final command outcome is unclear. Check additional project-linked checkouts discovered through worktree metadata; do not assume the two familiar folders are the entire history. Follow docs/DOCUMENTATION_STATUS.md: executable implementation/tests take precedence over stale inventories. **Recovery gate:** every discovered project location and work family has a disposition; each branch with unique changes is either preserved for review, proven superseded, or explicitly unresolved. Do not turn a keyword hit or an unreachable Git object into a new task without examining it.\n   Start with the existing G1\u2013G8, W1\u2013W3, A1\u2013A2, P1, T1\u2013T3, S1\u2013S2, H1\u2013H2, C1\u2013C2, F1\u2013F2, R1\u2013R2 and V1 ledger. Link each record to its latest code, report, inputs, tests and publication status. Classify the 607 inventoried files by experiment family, deduplicate copies, and distinguish commitments from suggested follow-ons. Check older repository questions against current code before reopening them. Give every open task a next action, dependency, completion criterion and blocker. **Done when:** each recovered commitment has one current disposition and superseded status has an explicit replacement. This plan is the starting queue; detailed file-by-file reconciliation remains work.",
+      "dependencies": []
+    },
+    {
+      "id": "P02",
+      "title": "Finish review of the three published checkpoints.",
+      "status": "in_progress",
+      "scope_and_completion": "Check the final broad CI results for the exact PR heads, investigate failures if any, review assumptions and numerical limits, and verify combined compatibility. Keep geometry, waves and timing independently reproducible. Merge only when review is complete and merging is authorized. **Done when:** every draft has an explicit reviewed disposition, and the accepted baseline and remaining exclusions are recorded. Publication alone is not integration or physical validation.",
+      "dependencies": [
+        "P01"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "Promote the remaining validated local candidates in small groups.",
+      "status": "queued",
+      "scope_and_completion": "First integrate the modified-host aperture, inner attachment, B-to-outer attachment, and second-aperture edge-2 replacement as optional reference constructions. Existing passing local results mean these should be carried forward rather than rediscovered. Review Tesla phase/resonator and helix-clock candidates separately. Package relevant source records and viewer changes only with their reproduction and provenance. **Done when:** each selected candidate has independent checks, documented scope and a reviewable publication; every unpromoted family has a recorded reason. Preserve older scratch material.",
+      "dependencies": [
+        "P01"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "Close the whole-assembly geometry and motion questions.",
+      "status": "queued",
+      "scope_and_completion": "Reuse the known hinge incidences and recursive maps; distinguish the critical inversion singularities from valid fold points. Assemble a complete component/contact/port inventory, including retained-retained pairs. Reconcile local rerouting with the entire network and generalized branching. Specify allowed deformation, dimensional assumptions, reconnection rules and dormant-path behavior. Extend the bounded connected breathing specimen to the declared assembly, checking finite thickness, ports, Jacobians, signed flux and continuous clearance throughout an out-and-back cycle. **Done when:** the complete declared assembly passes those checks with explicit tolerances, or remaining obstructing pairs/intervals are identified. A 4D mathematical path does not by itself establish a physically realizable 3D mechanism.",
+      "dependencies": [
+        "P03"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "Finish the wave and control experiments already started.",
+      "status": "queued",
+      "scope_and_completion": "W1 now has nonlinear saturation and two coupled modes; add generated harmonics, multiple wavelengths, boundary effects, mode-count/time convergence and noise/seed ensembles. Test whether any pattern is selected rather than inherited from its seed. W2 now has an optional implementation and measured failure cases; add actuator saturation, noise, delay and mismatch envelopes, then evaluate any redesign against those same cases. Resolve the saved Q-ball period question with an explicit observable and convergence protocol; leave it unresolved if the data do not identify a period. **Done when:** each question has a reproducible result and operating/failure range. Keep W3 quantum bath/noise completion separate from these classical controls.",
+      "dependencies": []
+    },
+    {
+      "id": "P06",
+      "title": "Decide whether crystal components provide a useful engine capability.",
+      "status": "queued",
+      "scope_and_completion": "The timing adapter works in finite simulation, and the ordinary divider also passes. Choose a useful role and predeclare a matched comparison. Add readout/backaction assumptions, latency, loading, resource and energy costs; test longer duration, noise, size and parameter ranges. Retain, redesign or defer the component based on the result. For spatial crystals/quasicrystals, measure structure factors and correlations on actual coordinates with periodic, quasiperiodic and randomized controls; separate lab and co-moving measurements and vary recursion depth/size. Combined space-time measurements wait for a justified dynamical model. **Done when:** the proposed role has a supported benefit, limitation or no-advantage finding. Classifying the entire engine as a time crystal is not a completion requirement. The inaccessible Instagram reel remains unverified.",
+      "dependencies": []
+    },
+    {
+      "id": "P07",
+      "title": "Define material forces for one explicit connected specimen.",
+      "status": "queued",
+      "scope_and_completion": "Choose physical units, geometry, masses/inertia, stiffness, damping, contact law, joint compliance, supports and drive. Label synthetic parameters; measured material behavior requires actual material data. Define geometry-to-mode reduction where used. **Done when:** the equations and parameters are complete, static and small-perturbation controls pass, and sensitivity/convergence are documented. Then expand scope; do not infer a material law from geometry alone.",
+      "dependencies": [
+        "P04",
+        "P05",
+        "P06"
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "Close the energy budget across the coupled specimen.",
+      "status": "queued",
+      "scope_and_completion": "Account for mechanical and electrical stored energy, actuator/source work, damping, contact losses, boundary transport and any timing/readout power included in the model. Use reciprocal couplings and eliminate duplicated storage, including capacitance when connecting resonator and piezoelectric ports. Include moving-boundary flow where claimed. **Done when:** independently accumulated work, energy change and losses agree within a declared, converged error bound, including drive-off/passive controls.",
+      "dependencies": [
+        "P07"
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "Test whether breathing and folding emerge from the equations.",
+      "status": "queued",
+      "scope_and_completion": "Replace prescribed output motion with evolving states driven by the forces and power inputs. Keep the prescribed breathing cycle as a comparison. Test rest, perturbations, different initial phases, input-off, coupling-off, damping, stability and recovery. **Done when:** the simulation establishes whether sustained breathing/folding occurs, under which inputs, and where it fails; geometry and energy checks remain valid throughout. Do not force a positive outcome by programming the desired trajectory.",
+      "dependencies": [
+        "P08"
+      ]
+    },
+    {
+      "id": "P10",
+      "title": "Extend to recursive coupling and persistent state.",
+      "status": "queued",
+      "scope_and_completion": "Implement shared component identities, parent-child and peer ports, independent child states, ownership/no-double-counting rules, positivity bounds and conservative exchange. Make dormant pathways explicit: persistent, inactive-only, contracting or another declared rule. Add multiple levels, feedback, finite propagation/delay and depth convergence. Integrate the helix-clock interpretation only as a declared adapter. **Done when:** a disturbance and exchange can be traced across levels with preserved identities and conservation, and independent state survives replay/save/resume. An aggregate color overlay is not completion of this step.",
+      "dependencies": [
+        "P09"
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "Use the viewer to inspect the same computed engine state.",
+      "status": "queued",
+      "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3\u201310. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
+      "dependencies": []
+    },
+    {
+      "id": "P12",
+      "title": "Close the remaining independent experiment and source queues.",
+      "status": "queued",
+      "scope_and_completion": "These tracks need their own bounded outcomes and must not disappear behind engine integration. Use the detailed queue below. **Done when:** each recovered item is completed, rejected with evidence, explicitly deferred, or blocked on a named input with a concrete recovery action. Unavailable evidence remains unavailable rather than being replaced with invented values.",
+      "dependencies": []
+    },
+    {
+      "id": "R01",
+      "title": "A1 shell-model observations",
+      "status": "queued_for_scope_review",
+      "context": "Freeze the SPARC sample, priors, baryonic/nuisance treatment and comparison before fitting. Run mock injection/recovery, smooth-versus-modulated fits and held-out predictions. Then assess a matched KiDS population with covariance and selection.",
+      "completion": "Reproducible data selection, baseline comparison, uncertainties and positive or negative findings. Synthetic shell calculations alone do not answer this."
+    },
+    {
+      "id": "R02",
+      "title": "A2 shell realizability",
+      "status": "queued_for_scope_review",
+      "context": "Test collisionless realizability and stability; specify formation and relativistic-source questions separately.",
+      "completion": "Scoped dynamical results or explicit failure, without inferring dark-matter/gluon equivalence."
+    },
+    {
+      "id": "R03",
+      "title": "P1 and T1\u2013T2 electromechanics",
+      "status": "queued_for_scope_review",
+      "context": "Integrate optional Tesla controls; map geometry to electrical parameters and couple reciprocally to the piezoelectric port. Obtain ring geometry, material tensors/poling, supports, electrodes and measured loss/response.",
+      "completion": "One consistent energy budget and comparison against stated inputs. Rotation of an imposed field does not solve torque, heating, slip or the egg's rise."
+    },
+    {
+      "id": "R04",
+      "title": "T3 wider Tesla mechanisms",
+      "status": "queued_for_scope_review",
+      "context": "Triage mechanical backreaction, bifilar networks, loaded wireless transfer, turbine and valve proposals. Select bounded experiments only when inputs and priority exist.",
+      "completion": "Explicit selection/defer decisions; these were suggestions, not five active experiments. Preserve archive/patent access gaps."
+    },
+    {
+      "id": "R05",
+      "title": "W3 quantum mode pair",
+      "status": "queued_for_scope_review",
+      "context": "Specify bath/noise, observables and couplings before quantum trajectories.",
+      "completion": "Consistent open-system controls; no particle or quantum-gravity identification inferred from the classical oscillator."
+    },
+    {
+      "id": "R06",
+      "title": "H1\u2013H2 helix geometry",
+      "status": "queued_for_scope_review",
+      "context": "Specify thickness, junctions, pitch/depth assumptions, flow law and physical time calibration.",
+      "completion": "A chosen, testable adapter and mechanics where claimed; drawings alone do not uniquely determine geometry or biology."
+    },
+    {
+      "id": "R07",
+      "title": "R1 Russell corpus and apparatus",
+      "status": "queued_for_scope_review",
+      "context": "Update the 20-record claim catalog with later evidence, retain edition distinctions, collate printed chart targets and authenticated course lessons, inspect the five pending page images, and track recordings/art coverage. Seek drawings, dimensions, wiring, loads, traces, gas controls and energy boundaries for apparatus proposals.",
+      "completion": "Source-linked findings; explicit blockers where primary records are unavailable."
+    },
+    {
+      "id": "R08",
+      "title": "R2 Watts and spectral matching",
+      "status": "queued_for_scope_review",
+      "context": "Establish the separate iron-table medium, original Russell readings, modern line identities/uncertainties and unmatched 7817.2.",
+      "completion": "Supported identifications or unresolved entries; do not silently substitute 7187.2."
+    },
+    {
+      "id": "R09",
+      "title": "F1 frequency and conventional controls",
+      "status": "queued_for_scope_review",
+      "context": "Resolve the 12 instrument settings where possible; bound further species/transitions and provenance. Distinguish catalog labels from predicted resonances, microplane controls from full M4 damage mechanics, and ABC identities from stable plasma solutions.",
+      "completion": "Defined datasets and tests with stated limits; no claim of covering all frequencies."
+    },
+    {
+      "id": "R10",
+      "title": "F2 alternative theories and M4",
+      "status": "queued_for_scope_review",
+      "context": "Recover cosmological M4 authorship/equations. Specify testable quantities for dark-matter/gluon, Higgs/Faraday, extrusion and Planck-information claims before simulations. Keep BFSS, IKKT, Jacobson and Hawking-star suggestions separately queued.",
+      "completion": "Source resolution plus a concrete test, or an explicit unsupported/deferred disposition."
+    },
+    {
+      "id": "R11",
+      "title": "Earlier geometry references",
+      "status": "queued_for_scope_review",
+      "context": "Reconcile broader Rao/Sri Yantra constraints and the missing independent historical Meru metric.",
+      "completion": "Explicit reference constraints and comparisons; preserve existing bounded controls."
+    },
+    {
+      "id": "R12",
+      "title": "S1\u2013S2 historical apparatus",
+      "status": "queued_for_scope_review",
+      "context": "Retain completed storage/acoustic modules. Investigate claimed apparatus only with its actual geometry, boundaries and measured inputs, including the octave-direction discrepancy.",
+      "completion": "A faithful specified test or a documented source blocker; do not redo the generic modules as unfinished."
+    },
+    {
+      "id": "R13",
+      "title": "Primitive state and local dynamics",
+      "status": "queued_for_scope_review",
+      "context": "Executable ontology, repeated-cell hypothesis, canonical phase reduction and minimal local Hamiltonian already exist.",
+      "completion": "Determine which richer matter/gauge terms follow from the canonical structure, locality and conservation and which are independent assumptions; establish physical locality and continuum limits. Do not restart ontology Questions 1\u20133 as unimplemented."
+    },
+    {
+      "id": "R14",
+      "title": "Physical normalization and clock mapping",
+      "status": "queued_for_scope_review",
+      "context": "Dimensionless dynamics, conditional scale laws and nested polarity controls exist.",
+      "completion": "Independently justify length, time, energy and charge scales, scale-transfer normalization, a physical layer/amplitude definition, and mapping phase rate to measured clocks. Separate practical calibration from a claim of fundamental derivation."
+    },
+    {
+      "id": "R15",
+      "title": "Boundary and six-gate coupling",
+      "status": "queued_for_scope_review",
+      "context": "Finite port/Seed contracts and boundary controls exist.",
+      "completion": "Justify boundary-to-core dynamics and six-gate/sevenfold coupling; derive a discriminating observable with parameters fixed before comparison. Preserve the bare-core differential-clock-shift no-go result and its limited scope."
+    },
+    {
+      "id": "R16",
+      "title": "Matter and particle interpretation",
+      "status": "queued_for_scope_review",
+      "context": "Classical matter/gauge dynamics and finite Q-ball existence/persistence diagnostics exist.",
+      "completion": "Establish stability and excitation observables beyond finite-time boundedness; assess independently constrained mass/charge identification. Recover unresolved stability/continuum questions from each subsystem rather than equating a Q-ball with an observed particle."
+    },
+    {
+      "id": "R17",
+      "title": "Charge, representations and couplings",
+      "status": "queued_for_scope_review",
+      "context": "Supported product-group representations and anomaly bookkeeping are implemented.",
+      "completion": "Derive charge quantization, representation spectrum, coupling constants and scale running rather than supplying them as inputs."
+    },
+    {
+      "id": "R18",
+      "title": "Chiral consistency",
+      "status": "queued_for_scope_review",
+      "context": "U(1), SU(2), SU(3) overlap tools, Weyl geometry, determinants and representation-level anomaly ledgers exist.",
+      "completion": "Complete the global fermion-measure prescription and its gauge variation, and local/global anomaly consistency. Older requests merely to add SU(2)/SU(3) overlap are superseded."
+    },
+    {
+      "id": "R19",
+      "title": "Quantum state and measurement",
+      "status": "queued_for_scope_review",
+      "context": "Existing classical/finite operator controls are useful reference layers.",
+      "completion": "Specify a genuine many-body quantum state space, entanglement/Bell-compatible observables and a justified probability/measurement rule. Define falsifiable comparisons without treating a classical analogue as completion."
+    },
+    {
+      "id": "R20",
+      "title": "Reciprocity and gravity",
+      "status": "queued_for_scope_review",
+      "context": "Conditional reciprocity actions, source controls, weak/strong-field calculations and some backreaction modules exist.",
+      "completion": "Derive premises from the canonical kernel and the dimensional coupling independently; audit what evolving geometry is actually coupled to full matter/U(1)/SU(2)/SU(3). Compare 2PN, lensing, ISCO and strong-field predictions to independent observations. For EHT comparisons specify ray tracing, emission, spin, mass/distance and surface/throat boundary behavior; do not infer success from one rough size comparison."
+    },
+    {
+      "id": "R21",
+      "title": "Thermodynamics and cosmology",
+      "status": "queued_for_scope_review",
+      "context": "Separate conditional reference models exist.",
+      "completion": "Derive coarse graining, entropy and an arrow of time; specify cosmological evolution and initial conditions from declared laws. Keep the empirical shell-model test separate from a complete cosmology."
+    },
+    {
+      "id": "R22",
+      "title": "E8 physical extension",
+      "status": "queued_for_scope_review",
+      "context": "Exact geometry/lifts/equivalence and explicit coupling/no-duplication audits already exist.",
+      "completion": "Keep new radial dynamics deferred unless an independent empirical or theoretical requirement motivates a new state variable. Fixed-root renormalization is an established limitation, not a lost unimplemented feature."
+    },
+    {
+      "id": "R23",
+      "title": "Independent prediction",
+      "status": "queued_for_scope_review",
+      "context": "Constraint ledger and benchmark protocols exist.",
+      "completion": "Choose at least one independently fixed dimensionless prediction; freeze inputs, uncertainty and rejection criteria before comparison. A failed prediction is a scientific outcome to publish."
+    },
+    {
+      "id": "R24",
+      "title": "Software and engineering backlog",
+      "status": "queued_for_scope_review",
+      "context": "Repository has spatial/robotic/digital-twin contracts and broad verification infrastructure.",
+      "completion": "Audit actual coverage versus product claims, optional external/hardware adapters, packaging and documentation freshness. Review dependency PRs 117/118 separately from scientific conclusions. Module names alone do not establish functioning hardware integration."
+    },
+    {
+      "id": "REC-NEUMANN",
+      "title": "Recover patterned face-flux boundary solver candidate",
+      "status": "original_branch_tests_reproduced_independent_review_pending",
+      "evidence": "codex/patterned-neumann-face-flux at daa54376e72470e9ea6c01cbead817db9d9f0c36",
+      "next_action": "Add independent manufactured-solution and robustness review before proposing source integration.",
+      "validation": {
+        "candidate_tests_passed": 11,
+        "unchanged_main_tests_passed": 6
+      }
+    },
+    {
+      "id": "REC-OLD-KERNEL",
+      "title": "Preserve disposition of closed local transition PR 7",
+      "status": "closed_superseded",
+      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/7#issuecomment-5770950959",
+      "next_action": "Do not restore the obsolete polarity-gradient channel without new justification."
+    },
+    {
+      "id": "REC-BRANCH-DIFFS",
+      "title": "Resolve remaining historical branch content differences",
+      "status": "in_progress",
+      "evidence": "docs/recovery/exception-file-comparison.json",
+      "next_action": "Classify source/test differences and document whether historical doc changes were superseded; review the one merged-name branch whose tip differs from recorded PR head."
+    }
+  ]
+}

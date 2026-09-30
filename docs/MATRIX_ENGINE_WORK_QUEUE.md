@@ -1,5 +1,11 @@
 # Matrix Engine work queue
 
+For the cross-project catch-up sequence, recovered branch evidence and resumable
+execution state, see [the recovery plan](RECOVERY_PLAN.md),
+[the progress log](RECOVERY_LOG.md), and [task records](recovery/tasks.json).
+These preserve newer experimental checkpoints and distinguish pending PRs from
+merged implementation; historical rows below must be read with those updates.
+
 This queue records the current Sri Yantra continuation and the later research
 gates. Completed mathematical modules are evidence of their stated contracts;
 physical interpretation requires separate derivation and tests.

@@ -1,0 +1,4138 @@
+{
+  "baseline": "a78576f83854a5b75c90815db121b1ca40a4f606",
+  "date": "2026-09-30",
+  "scope": "Git ancestry, remote comparison, PR-tip linkage, and selected exception checks. Merged work can still have later main changes.",
+  "branches": [
+    {
+      "name": "canonical-kernel-v0.3",
+      "sha": "94ede574ed377a6ec2bf9f5225cf346267e3c70b",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 1,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/1",
+          "state": "closed",
+          "merged_at": "2026-09-21T21:51:44Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "charged-matter-persistence-v0.1-main",
+      "sha": "30bbb605112b74deb8bf5dcad0871542447362bf",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 5,
+      "behind_by": 455,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/charged_matter_persistence_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/charged_matter_persistence.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_charged_matter_persistence.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 19,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/19",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:27:41Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "charged-matter-persistence-v0.1",
+      "sha": "3b4c2ac6975d97ed81471def54f13c98e2e7e826",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 10,
+      "behind_by": 456,
+      "changed_files": [
+        {
+          "path": "docs/charged_matter_persistence_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/matter_lattice_spacing_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/charged_matter_persistence.py",
+          "status": "added"
+        },
+        {
+          "path": "src/classical_matter_dynamics.py",
+          "status": "modified"
+        },
+        {
+          "path": "src/localized_matter_persistence.py",
+          "status": "modified"
+        },
+        {
+          "path": "tests/test_charged_matter_persistence.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_classical_matter_dynamics.py",
+          "status": "modified"
+        },
+        {
+          "path": "tests/test_localized_matter_persistence.py",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [],
+      "disposition": "no_matching_pr_review_patch"
+    },
+    {
+      "name": "charged-stability-map-v0.1",
+      "sha": "06d94f9bf16fe9cc65fda0f26dee6c433c738dd4",
+      "ancestry": "included in main history",
+      "related_prs": [],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/active-universe-ports",
+      "sha": "fe571489ef27f6fb09f06c7951db059852f31c12",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 1,
+      "behind_by": 422,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/assets/universe_port_engine.svg",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/physics_stack_status_2026-09.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/recursive_omniverse_contract_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/sevenfold_seed_contract_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/universal_playing_field_traceability_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/universe_port_engine_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/universe_port_engine.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_universe_port_engine.py",
+          "status": "added"
+        },
+        {
+          "path": "white_paper.md",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 53,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/53",
+          "state": "closed",
+          "merged_at": "2026-09-23T03:37:41Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/architecture-professional-reorganization",
+      "sha": "1ac167a8784e6abb442bd351cb5e894f8f65b1af",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 92,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/92",
+          "state": "closed",
+          "merged_at": "2026-09-24T04:40:24Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/canonical-mod9-interface-audit",
+      "sha": "c26da18448c19908db6c9e220f52ec56c10af48a",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 83,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/83",
+          "state": "closed",
+          "merged_at": "2026-09-24T02:23:54Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/checkpoint-folding-breathing",
+      "sha": "60a7fd60f57d73b89ea5397db58a3ff5d291556c",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "ahead",
+      "ahead_by": 1,
+      "behind_by": 0,
+      "changed_files": [
+        {
+          "path": ".github/workflows/experimental-geometry.yml",
+          "status": "added"
+        },
+        {
+          "path": "docs/experiments/geometry-summary.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/experiments/geometry.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/experiments/local-work-inventory.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/lynchpin_breathing_control_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/lynchpin_connected_control_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/lynchpin_finite_panel_control_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/lynchpin_relative_motion_control_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/recursive_mirror_motion_control_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "scripts/report_lynchpin_breathing.py",
+          "status": "added"
+        },
+        {
+          "path": "scripts/report_lynchpin_connected.py",
+          "status": "added"
+        },
+        {
+          "path": "scripts/report_lynchpin_finite_panels.py",
+          "status": "added"
+        },
+        {
+          "path": "scripts/report_lynchpin_relative_motion.py",
+          "status": "added"
+        },
+        {
+          "path": "scripts/report_recursive_mirror_motion.py",
+          "status": "added"
+        },
+        {
+          "path": "src/lynchpin_breathing_control.py",
+          "status": "added"
+        },
+        {
+          "path": "src/lynchpin_connected_control.py",
+          "status": "added"
+        },
+        {
+          "path": "src/lynchpin_finite_panel_control.py",
+          "status": "added"
+        },
+        {
+          "path": "src/lynchpin_relative_motion_control.py",
+          "status": "added"
+        },
+        {
+          "path": "src/recursive_mirror_motion_control.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_lynchpin_breathing_control.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_lynchpin_connected_control.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_lynchpin_finite_panel_control.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_lynchpin_relative_motion_control.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_recursive_mirror_motion_control.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 119,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/119",
+          "state": "open",
+          "merged_at": null
+        }
+      ],
+      "disposition": "open_pr"
+    },
+    {
+      "name": "codex/checkpoint-time-crystal-subsystem",
+      "sha": "ec6489c56953ea0f2de1c78a7ed2adc8a298a710",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "ahead",
+      "ahead_by": 1,
+      "behind_by": 0,
+      "changed_files": [
+        {
+          "path": ".github/workflows/experimental-time-crystal.yml",
+          "status": "added"
+        },
+        {
+          "path": "docs/crystal-research-fit.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/experiments/time-crystal-summary.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/experiments/time-crystal.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/time_crystal_clock_subsystem_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "scripts/report_time_crystal_subsystem.py",
+          "status": "added"
+        },
+        {
+          "path": "src/time_crystal_clock_subsystem.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_time_crystal_clock_subsystem.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 121,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/121",
+          "state": "open",
+          "merged_at": null
+        }
+      ],
+      "disposition": "open_pr"
+    },
+    {
+      "name": "codex/checkpoint-wave-controls",
+      "sha": "615cee59c51df77406555ac56d40e8a1f1e73ec8",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "ahead",
+      "ahead_by": 1,
+      "behind_by": 0,
+      "changed_files": [
+        {
+          "path": ".github/workflows/experimental-waves.yml",
+          "status": "added"
+        },
+        {
+          "path": "docs/experiments/waves-summary.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/experiments/waves.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/mode_pair_robustness_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/multimode_wave_control_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/time_order_and_wave_controls_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "scripts/report_mode_pair_robustness.py",
+          "status": "added"
+        },
+        {
+          "path": "scripts/report_multimode_wave_control.py",
+          "status": "added"
+        },
+        {
+          "path": "scripts/report_time_order_controls.py",
+          "status": "added"
+        },
+        {
+          "path": "src/proposed_mode_pair_control.py",
+          "status": "added"
+        },
+        {
+          "path": "src/proposed_multimode_wave_control.py",
+          "status": "added"
+        },
+        {
+          "path": "src/proposed_nonlinear_wave_control.py",
+          "status": "added"
+        },
+        {
+          "path": "src/time_order_diagnostics.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_proposed_mode_pair_control.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_proposed_multimode_wave_control.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_proposed_nonlinear_wave_control.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_time_order_diagnostics.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 120,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/120",
+          "state": "open",
+          "merged_at": null
+        }
+      ],
+      "disposition": "open_pr"
+    },
+    {
+      "name": "codex/conservative-toroidal-field",
+      "sha": "49a375fe0fa61ae7e3a966ae3b9fd5ff37ced53e",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 72,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/72",
+          "state": "closed",
+          "merged_at": "2026-09-23T20:48:55Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/documentation-modernization-proof",
+      "sha": "f54f6625d1fcae711fd1e6ef52a0702082ba709e",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 95,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/95",
+          "state": "closed",
+          "merged_at": "2026-09-24T05:05:55Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/e8-coupling-observable-audit",
+      "sha": "2b309578079294706b200e5c772d649da3fefc0d",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 8,
+      "behind_by": 413,
+      "changed_files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/e8_coupling_observable_audit_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/e8_coupling_observable_audit.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_e8_coupling_observable_audit.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 62,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/62",
+          "state": "closed",
+          "merged_at": "2026-09-23T17:59:01Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/e8-equivalence-map",
+      "sha": "0614ac24142a60252965159ffca54882a991e745",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 11,
+      "behind_by": 416,
+      "changed_files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/e8_equivalence_map_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/e8_equivalence_map.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_e8_equivalence_map.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 59,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/59",
+          "state": "closed",
+          "merged_at": "2026-09-23T17:51:33Z"
+        }
+      ],
+      "disposition": "merged_pr_record_found_check_later_edits"
+    },
+    {
+      "name": "codex/e8-invariant-coupling",
+      "sha": "65cdab6d608084f493975eb175eb2b8605757287",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 8,
+      "behind_by": 414,
+      "changed_files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/e8_invariant_coupling_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/e8_invariant_coupling.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_e8_invariant_coupling.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 61,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/61",
+          "state": "closed",
+          "merged_at": "2026-09-23T17:56:35Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/e8-radial-degree-audit",
+      "sha": "bdec3f04df87dec2c6fb879486ab042ccaf60466",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 8,
+      "behind_by": 412,
+      "changed_files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/e8_radial_degree_audit_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/e8_radial_degree_audit.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_e8_radial_degree_audit.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 63,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/63",
+          "state": "closed",
+          "merged_at": "2026-09-23T18:01:09Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/e8-state-audit",
+      "sha": "951d69a91eac158b83ae325f4c71619edf39f885",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 8,
+      "behind_by": 415,
+      "changed_files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/e8_state_representation_audit_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/e8_state_audit.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_e8_state_audit.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 60,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/60",
+          "state": "closed",
+          "merged_at": "2026-09-23T17:54:11Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/fix-display-math-delimiters",
+      "sha": "8662f3c180003e3a2d91264255de208d92767ee1",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 91,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/91",
+          "state": "closed",
+          "merged_at": "2026-09-24T04:18:53Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/four-dimensional-polytope-bridge",
+      "sha": "b2cd779f8b93baeb8c58b710e1e038bb8468ade3",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 430,
+      "changed_files": [
+        {
+          "path": "docs/four_dimensional_polytope_bridge_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/four_dimensional_polytope_bridge.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_four_dimensional_polytope_bridge.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 45,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/45",
+          "state": "closed",
+          "merged_at": "2026-09-22T22:22:34Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/frequency-source-catalog",
+      "sha": "9d6aced77d4cbab001a63ce60e88575eb794f168",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 111,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/111",
+          "state": "closed",
+          "merged_at": "2026-09-24T19:23:11Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/graph-toroidal-flux-bundle",
+      "sha": "8f40874a57129527da74d14680d1ef0aa0e3df08",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 73,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/73",
+          "state": "closed",
+          "merged_at": "2026-09-23T21:48:44Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/h3-600-cell-bridge",
+      "sha": "a9ba143a247df97c98750222adf9e9e586298787",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 4,
+      "behind_by": 426,
+      "changed_files": [
+        {
+          "path": "docs/h3_600_cell_bridge_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/h3_600_cell_bridge.py",
+          "status": "added"
+        },
+        {
+          "path": "src/platonic_solid_bridge.py",
+          "status": "modified"
+        },
+        {
+          "path": "tests/test_h3_600_cell_bridge.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 49,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/49",
+          "state": "closed",
+          "merged_at": "2026-09-23T00:21:02Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/h4-direct-e8-lift",
+      "sha": "690f0bf97c8dc03aca8e857bb23d9536bb78af59",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 8,
+      "behind_by": 417,
+      "changed_files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/h4_direct_e8_lift_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/h4_direct_e8_lift.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_h4_direct_e8_lift.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 58,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/58",
+          "state": "closed",
+          "merged_at": "2026-09-23T17:48:28Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/higher-dimensional-e8-bridge",
+      "sha": "7fc15e820350d7fbff52062899714596ce5de054",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 8,
+      "behind_by": 418,
+      "changed_files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/higher_dimensional_e8_bridge_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/higher_dimensional_geometry.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_higher_dimensional_geometry.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 57,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/57",
+          "state": "closed",
+          "merged_at": "2026-09-23T17:34:19Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/latent-path-audit-controls",
+      "sha": "7a775ca6ea322be9ff9690d8a620ae149e4b8bc4",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 103,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/103",
+          "state": "closed",
+          "merged_at": "2026-09-24T06:23:23Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/lynchpin-geometry-audit",
+      "sha": "203366c2911b1e467cb4cacaa4da44bd9b32ebe2",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 425,
+      "changed_files": [
+        {
+          "path": "docs/lynchpin_geometry_audit_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/lynchpin_geometry_audit.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_lynchpin_geometry_audit.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 50,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/50",
+          "state": "closed",
+          "merged_at": "2026-09-23T00:49:54Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/markdown-math-integrity",
+      "sha": "a7f431a930b8b2b18d73fa44c14bf2d0b5b8b400",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 89,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/89",
+          "state": "closed",
+          "merged_at": "2026-09-24T03:50:43Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/markdown-math-modernization-safe",
+      "sha": "b1630eeaded7bc9bd275b86962a9c561e6b84f77",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 21,
+      "behind_by": 131,
+      "changed_files": [
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/conservative_toroidal_field_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/graph_toroidal_flux_bundle_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/matrix_local_transition_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/matrix_polarity_phase_reduction_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/primitive_matrix_ontology_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/sri_yantra_multidimensional_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/transitive_plane_branching_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/unified_engine_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/universe_port_engine_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/vesica_tree_circulation_v0.1.md",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [],
+      "disposition": "no_matching_pr_review_patch"
+    },
+    {
+      "name": "codex/meru-incidence-control",
+      "sha": "83c7b51b80ef31a04541b906748d95e2fa919917",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 71,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/71",
+          "state": "closed",
+          "merged_at": "2026-09-23T20:41:15Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/micro-to-whole-geometry",
+      "sha": "c09b13a3ebc23982806e40ee03475be01e161d02",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 3,
+      "behind_by": 428,
+      "changed_files": [
+        {
+          "path": "docs/micro_to_whole_geometry_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/micro_to_whole_geometry.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_micro_to_whole_geometry.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 47,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/47",
+          "state": "closed",
+          "merged_at": "2026-09-22T22:54:52Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/modernize-safe-math-batch-2",
+      "sha": "fdde7ef475c9cf33ba7653be271076c07d99757e",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 100,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/100",
+          "state": "closed",
+          "merged_at": "2026-09-24T05:44:05Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/patterned-neumann-face-flux",
+      "sha": "daa54376e72470e9ea6c01cbead817db9d9f0c36",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 2,
+      "behind_by": 179,
+      "changed_files": [
+        {
+          "path": "src/open_boundary_solver.py",
+          "status": "modified"
+        },
+        {
+          "path": "tests/test_open_boundary_solver.py",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [],
+      "disposition": "no_matching_pr_review_patch"
+    },
+    {
+      "name": "codex/piezoelectric-mode-reference",
+      "sha": "bef201a92596426fb9683c8e2e0dfb12871894c7",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 112,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/112",
+          "state": "closed",
+          "merged_at": "2026-09-24T20:02:45Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/platonic-solid-bridge",
+      "sha": "61451ecea74e620cb419dd0bd715b86571aad348",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 3,
+      "behind_by": 427,
+      "changed_files": [
+        {
+          "path": "docs/platonic_solid_bridge_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/platonic_solid_bridge.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_platonic_solid_bridge.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 48,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/48",
+          "state": "closed",
+          "merged_at": "2026-09-22T23:12:21Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/proposed-scalar-standing-wave",
+      "sha": "30bd33f732c68738209e7433484b98824456c669",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 114,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/114",
+          "state": "closed",
+          "merged_at": "2026-09-24T21:14:30Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/proposed-storage-acoustic-controls",
+      "sha": "ab9f2e8c27a4f40b1799c6b733aa9727613b1491",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 116,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/116",
+          "state": "closed",
+          "merged_at": "2026-09-24T23:43:03Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/qball-period-classification",
+      "sha": "f37ce9322f2b4227d60f68b3eb2fef1250d44ca5",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 7,
+      "behind_by": 435,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_peak_period_classification_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_peak_period_classification.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_peak_period_classification.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 40,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/40",
+          "state": "closed",
+          "merged_at": "2026-09-22T19:36:48Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/rao-great-circle-incidence",
+      "sha": "c19b6adf421ee8ada39403594441d1bee4cbd1bc",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 70,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/70",
+          "state": "closed",
+          "merged_at": "2026-09-23T20:30:50Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/readme-deployment-map-fix",
+      "sha": "84809dc336149bcaf918e26823ffe15198c8034f",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 1,
+      "behind_by": 131,
+      "changed_files": [
+        {
+          "path": "README.md",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [],
+      "disposition": "no_matching_pr_review_patch"
+    },
+    {
+      "name": "codex/readme-professional-restructure",
+      "sha": "4b3d08405afc6498395a00afadc413738d7941fc",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 87,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/87",
+          "state": "closed",
+          "merged_at": "2026-09-24T03:14:17Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/recursive-omniverse-contract",
+      "sha": "1cb7b1bfbf67a8280a192fc94d9c03434b2406d1",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 4,
+      "behind_by": 434,
+      "changed_files": [
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/recursive_omniverse_contract_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/recursive_omniverse_contract.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_recursive_omniverse_contract.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 41,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/41",
+          "state": "closed",
+          "merged_at": "2026-09-22T20:00:21Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/reorganize-architecture",
+      "sha": "cfe64590e4cf7db2eccc6b435c145479ab1e548f",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 2,
+      "behind_by": 105,
+      "changed_files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "tests/test_documentation_governance.py",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [],
+      "disposition": "no_matching_pr_review_patch"
+    },
+    {
+      "name": "codex/repair-content-clock-note",
+      "sha": "bf6d2059bbcada793652be824d673ab5ade00d45",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 102,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/102",
+          "state": "closed",
+          "merged_at": "2026-09-24T21:27:55Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/restore-toroidal-after-mod9-merge",
+      "sha": "300e489adffdacb7fd38711a9d74abab5fedca70",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 85,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/85",
+          "state": "closed",
+          "merged_at": "2026-09-24T02:49:02Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/scope-qball-ci-for-docs",
+      "sha": "c163f57e036064bccf201413f5369e2f0aeea79a",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 94,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/94",
+          "state": "closed",
+          "merged_at": "2026-09-24T05:00:30Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/seed-matrix-book-bridge",
+      "sha": "3b5b9e003e5e5e8983ef7419a2cb127e77d41d56",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 9,
+      "behind_by": 432,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/seed_matrix_bridge_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/universal_playing_field_traceability_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/seed_matrix_bridge.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_seed_matrix_bridge.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 43,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/43",
+          "state": "closed",
+          "merged_at": "2026-09-22T21:21:49Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/sevenfold-seed-contract",
+      "sha": "c5ba545366067d0eab7cb01ac79dee1380397f43",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 433,
+      "changed_files": [
+        {
+          "path": "docs/sevenfold_seed_contract_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/sevenfold_seed_contract.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_sevenfold_seed_contract.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 42,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/42",
+          "state": "closed",
+          "merged_at": "2026-09-22T20:41:21Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/spectra-and-theory-audit",
+      "sha": "fff2cec654bb375e18de696f1b0b850560a4bca7",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 113,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/113",
+          "state": "closed",
+          "merged_at": "2026-09-24T20:58:33Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/sri-yantra-43-chamber-extractor",
+      "sha": "9ce3375db4da9db8f9a6c1ef19f28bc11ed47676",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 67,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/67",
+          "state": "closed",
+          "merged_at": "2026-09-23T19:42:56Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/sri-yantra-chamber-extraction",
+      "sha": "76c5e05374e4fb99e937d9310fe9d3bc9250d8da",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 69,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/69",
+          "state": "closed",
+          "merged_at": "2026-09-23T20:21:09Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/sri-yantra-chiodo-concurrency",
+      "sha": "00e941420a6ab60518bed7fea05e5e0dfecc0e1a",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 8,
+      "behind_by": 410,
+      "changed_files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/sri_yantra_chiodo_concurrency_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/sri_yantra_chiodo_concurrency.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_sri_yantra_chiodo_concurrency.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 65,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/65",
+          "state": "closed",
+          "merged_at": "2026-09-23T18:09:05Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/sri-yantra-huet-circuits",
+      "sha": "3a1beb7499c53a6b0525e3247d85e6d70601f498",
+      "ancestry": "included in main history",
+      "related_prs": [],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/sri-yantra-huet-planar-coordinates",
+      "sha": "517716c49ff0b6e318d3c524c6ff1fbee5f9815b",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 8,
+      "behind_by": 409,
+      "changed_files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/sri_yantra_huet_planar_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/sri_yantra_huet_planar.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_sri_yantra_huet_planar.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 66,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/66",
+          "state": "closed",
+          "merged_at": "2026-09-23T18:15:53Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/sri-yantra-incidence-topology-audit",
+      "sha": "30041b35988dcfd5c7231d20e96febd57ce98cf2",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 9,
+      "behind_by": 411,
+      "changed_files": [
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/sri_yantra_incidence_topology_audit_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/sri_yantra_incidence_topology_audit.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_sri_yantra_incidence_topology_audit.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 64,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/64",
+          "state": "closed",
+          "merged_at": "2026-09-23T18:05:05Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/sri-yantra-multidimensional",
+      "sha": "7b2c3deac386a8750630af818b212e55fe4bd051",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 1,
+      "behind_by": 419,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/HOW_TO_USE.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/assets/sri_yantra_multidimensional.svg",
+          "status": "added"
+        },
+        {
+          "path": "docs/micro_to_whole_geometry_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/physics_stack_status_2026-09.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/sri_yantra_multidimensional_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/stella_octangula_hassium_correspondence_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/transitive_plane_branching_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/universal_playing_field_traceability_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/sri_yantra_multidimensional.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_sri_yantra_multidimensional.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 56,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/56",
+          "state": "closed",
+          "merged_at": "2026-09-23T07:05:40Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/sri-yantra-rao-root-triangles",
+      "sha": "e009ce30aedc13e406ce55c71349a4bb61b39523",
+      "ancestry": "included in main history",
+      "related_prs": [],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/sri-yantra-rao-spherical-reference",
+      "sha": "e009ce30aedc13e406ce55c71349a4bb61b39523",
+      "ancestry": "included in main history",
+      "related_prs": [],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/sri-yantra-spherical-control",
+      "sha": "d5a344895a5a1472616430009b9ec92c18744e15",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 68,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/68",
+          "state": "closed",
+          "merged_at": "2026-09-23T20:30:20Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/sri-yantra-spherical-topology-control",
+      "sha": "554599389fbaf228a5fe86e85285a00b7bc74894",
+      "ancestry": "included in main history",
+      "related_prs": [],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/stella-octangula-64-bridge",
+      "sha": "2319a86f8d7c3ffbf43b498adb6464d480316fa5",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 10,
+      "behind_by": 431,
+      "changed_files": [
+        {
+          "path": "docs/recursive_omniverse_contract_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/sevenfold_seed_contract_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/stella_octangula_hassium_correspondence_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/sevenfold_seed_contract.py",
+          "status": "modified"
+        },
+        {
+          "path": "src/stella_octangula_register_bridge.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_sevenfold_seed_contract.py",
+          "status": "modified"
+        },
+        {
+          "path": "tests/test_stella_octangula_register_bridge.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 44,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/44",
+          "state": "closed",
+          "merged_at": "2026-09-22T22:00:44Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/sync-toroidal-spacing-status",
+      "sha": "53edfeb6e0361fd581cd54a14ffbba379941cbee",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 88,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/88",
+          "state": "closed",
+          "merged_at": "2026-09-24T03:29:47Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/terryen-negative-space",
+      "sha": "43e5f9700cbc81fda86fbf217e23d019cba1772e",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 7,
+      "behind_by": 423,
+      "changed_files": [
+        {
+          "path": "docs/assets/terryen_heavenly_projection.svg",
+          "status": "added"
+        },
+        {
+          "path": "docs/assets/terryen_negative_space_windows.svg",
+          "status": "added"
+        },
+        {
+          "path": "docs/terryen_negative_space_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/terryen_negative_space.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_terryen_negative_space.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 52,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/52",
+          "state": "closed",
+          "merged_at": "2026-09-23T02:38:03Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/terryology-audit",
+      "sha": "f4cd1f6498c930636b350fcc7b892e1782cdda64",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 3,
+      "behind_by": 424,
+      "changed_files": [
+        {
+          "path": "docs/terryology_audit_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/terryology_audit.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_terryology_audit.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 51,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/51",
+          "state": "closed",
+          "merged_at": "2026-09-23T01:39:17Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/toroidal-annular-connectors",
+      "sha": "90d48abf35309274ae04c29fb1b9442be43f6066",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 75,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/75",
+          "state": "closed",
+          "merged_at": "2026-09-23T22:25:35Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-annular-junction-ports",
+      "sha": "7718d49452eb5aaf3177199fccdd029e42268417",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 76,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/76",
+          "state": "closed",
+          "merged_at": "2026-09-24T00:18:11Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-bend-spacing-scan",
+      "sha": "8e60bd8d6fcaadce77e255689b98ecbf7a8de305",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 7,
+      "behind_by": 166,
+      "changed_files": [
+        {
+          "path": "docs/toroidal_bend_spacing_scan_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/toroidal_bend_spacing_scan.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_toroidal_bend_spacing_scan.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 84,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/84",
+          "state": "closed",
+          "merged_at": null
+        }
+      ],
+      "disposition": "closed_unmerged_review_replacement"
+    },
+    {
+      "name": "codex/toroidal-bend-spacing-scan-recovered",
+      "sha": "d0ccc4fab6c45d04a185f57d095de336071bb942",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 86,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/86",
+          "state": "closed",
+          "merged_at": "2026-09-24T03:00:17Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-bore-downstream",
+      "sha": "dc96dbc1ba8155f7ce0e20c4f78a77e6397d460b",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 115,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/115",
+          "state": "closed",
+          "merged_at": "2026-09-24T21:54:05Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-clearance-boundary",
+      "sha": "8a7d79d14954e74d07607a8364973ac369d5ea59",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 90,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/90",
+          "state": "closed",
+          "merged_at": "2026-09-24T03:56:25Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-clearance-ci-report",
+      "sha": "b5e1476c4b01cb0c06e4098ae319dc337f4d8406",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 96,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/96",
+          "state": "closed",
+          "merged_at": "2026-09-24T05:20:08Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-clearance-refinement",
+      "sha": "1c18f720567a2b56fa324ce69af25dc5d45720bd",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 93,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/93",
+          "state": "closed",
+          "merged_at": "2026-09-24T04:42:46Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-connector-topology",
+      "sha": "74aa434bdcea7245d573a206cbc5d3409ac420a3",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 74,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/74",
+          "state": "closed",
+          "merged_at": "2026-09-23T22:10:54Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-fixed-interface-obstruction",
+      "sha": "14d0f5e31f9e320af519ddab32d7b023d5ea76b9",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 106,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/106",
+          "state": "closed",
+          "merged_at": "2026-09-24T08:37:57Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-framed-edge-assembly",
+      "sha": "160690d165b501d4aa354440bb867119dc1ea133",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 77,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/77",
+          "state": "closed",
+          "merged_at": "2026-09-24T00:33:58Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-global-routing",
+      "sha": "99bea4eea14831200fe9df7c37a4618bc7166bac",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 78,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/78",
+          "state": "closed",
+          "merged_at": "2026-09-24T01:02:37Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-incident-bend-audit",
+      "sha": "3c4bca22a4d4694e34a2fc1073b74d56e75b41f9",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 82,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/82",
+          "state": "closed",
+          "merged_at": "2026-09-24T02:10:40Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-incident-overlap-audit",
+      "sha": "4cbfbd7157eb402977731b3313e042604a5441ba",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 80,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/80",
+          "state": "closed",
+          "merged_at": "2026-09-24T01:40:48Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-inversion-control",
+      "sha": "915696e2bce243967254afaedffd18533186bda6",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 105,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/105",
+          "state": "closed",
+          "merged_at": "2026-09-24T07:40:44Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-junction-bore-passage",
+      "sha": "4605ee0fc2cf292ef43c04aa41db57aac2b10836",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 110,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/110",
+          "state": "closed",
+          "merged_at": "2026-09-24T18:46:24Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-junction-control-volumes",
+      "sha": "74aa434bdcea7245d573a206cbc5d3409ac420a3",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 74,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/74",
+          "state": "closed",
+          "merged_at": "2026-09-23T22:10:54Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-latent-path-audit",
+      "sha": "82e510cbeb2e1ccaa6eed0bcdd5118027b01429e",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 101,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/101",
+          "state": "closed",
+          "merged_at": "2026-09-24T06:08:24Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-parallel-validation",
+      "sha": "a51a3e54acff0eebebd14c55bab0c3f5af7779e8",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 109,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/109",
+          "state": "closed",
+          "merged_at": "2026-09-24T10:26:02Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-sampling-reliability",
+      "sha": "3ac8517599c77445f6043ec600ef0f599549e8a8",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 104,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/104",
+          "state": "closed",
+          "merged_at": "2026-09-24T07:05:15Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-separated-channel-shells",
+      "sha": "de8bef6cd4996f37d054e9bc1da7785cc19e4c07",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 81,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/81",
+          "state": "closed",
+          "merged_at": "2026-09-24T01:55:50Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-shared-return-connectors",
+      "sha": "8ca47094d990d22214b5d26c3256321d1ac7e5a2",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 108,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/108",
+          "state": "closed",
+          "merged_at": "2026-09-24T09:51:14Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-shared-return-route",
+      "sha": "edb2d4dbc11dfb10b0eb6725aa2f3df64a95c9bd",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 107,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/107",
+          "state": "closed",
+          "merged_at": "2026-09-24T09:20:48Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-smooth-bends",
+      "sha": "e39063cd84732bf706100239ff6e31a69cc2c6bb",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 79,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/79",
+          "state": "closed",
+          "merged_at": "2026-09-24T01:27:47Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/toroidal-uniform-scale-similarity",
+      "sha": "51ca6e51fe5afbe099609078ce37000ac56db963",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 99,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/99",
+          "state": "closed",
+          "merged_at": "2026-09-24T05:39:43Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "codex/transitive-plane-branching",
+      "sha": "53a8c1318c8d4a3324ef9a41659f5ab71cdf652b",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 1,
+      "behind_by": 420,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/HOW_TO_USE.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/assets/transitive_plane_branching.svg",
+          "status": "added"
+        },
+        {
+          "path": "docs/assets/vesica_tree_circulation.svg",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/physics_stack_status_2026-09.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/transitive_plane_branching_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/universal_playing_field_traceability_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/universe_port_engine_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/vesica_tree_circulation_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/transitive_plane_branching.py",
+          "status": "added"
+        },
+        {
+          "path": "src/vesica_tree_circulation.py",
+          "status": "modified"
+        },
+        {
+          "path": "tests/test_transitive_plane_branching.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 55,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/55",
+          "state": "closed",
+          "merged_at": "2026-09-23T05:48:18Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/twenty-four-cell-bridge",
+      "sha": "160b6308424d4c045e106817e5e037bab8271bed",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 3,
+      "behind_by": 429,
+      "changed_files": [
+        {
+          "path": "docs/twenty_four_cell_bridge_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/twenty_four_cell_bridge.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_twenty_four_cell_bridge.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 46,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/46",
+          "state": "closed",
+          "merged_at": "2026-09-22T22:39:23Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/vesica-tree-circulation",
+      "sha": "83d99747165d20b1ead59f66ff0d7a437a292e44",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 1,
+      "behind_by": 421,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "README.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/CURRENT_REPOSITORY_MANIFEST.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/HOW_TO_USE.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/assets/vesica_tree_circulation.svg",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/physics_stack_status_2026-09.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/universal_playing_field_traceability_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/universe_port_engine_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/vesica_tree_circulation_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/vesica_tree_circulation.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_vesica_tree_circulation.py",
+          "status": "added"
+        },
+        {
+          "path": "white_paper.md",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 54,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/54",
+          "state": "closed",
+          "merged_at": "2026-09-23T04:38:40Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "codex/white-paper-checkpoint-hierarchy",
+      "sha": "42d6acd09dec9400736e4c3fb04fcb47a671fdff",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 2,
+      "behind_by": 65,
+      "changed_files": [
+        {
+          "path": "tests/test_documentation_governance.py",
+          "status": "modified"
+        },
+        {
+          "path": "white_paper.md",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 97,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/97",
+          "state": "closed",
+          "merged_at": null
+        }
+      ],
+      "disposition": "changed_blobs_identical_to_main"
+    },
+    {
+      "name": "codex/white-paper-hierarchy-recovered",
+      "sha": "8c558f0ae9de6a7eb37e20049c9d8adf21a5dd94",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 98,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/98",
+          "state": "closed",
+          "merged_at": "2026-09-24T05:29:10Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "commercial-robotics-xr-v0.2",
+      "sha": "a4981dd16bcc547cf3a41cb622e1ce7693db1e21",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 4,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/4",
+          "state": "closed",
+          "merged_at": "2026-09-22T00:37:51Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "commercial-spatial-ops-v0.1",
+      "sha": "ac8a91ed3f2e0bd591925b131c78da7494524f69",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 2,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/2",
+          "state": "closed",
+          "merged_at": "2026-09-21T22:29:21Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "container-buildx-attestation-fix",
+      "sha": "abaf600960a9bb1eaeffd9241a01579172fdd6eb",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 1,
+      "behind_by": 454,
+      "changed_files": [
+        {
+          "path": ".github/workflows/pipeline_test.yml",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 21,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/21",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:51:26Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "dependabot/github_actions/astral-sh/setup-uv-10.2.0",
+      "sha": "63fdacfb038e924313113adcbdb46cdc891adc4e",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "ahead",
+      "ahead_by": 1,
+      "behind_by": 0,
+      "changed_files": [
+        {
+          "path": ".github/workflows/pipeline_test.yml",
+          "status": "modified"
+        },
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 117,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/117",
+          "state": "open",
+          "merged_at": null
+        }
+      ],
+      "disposition": "open_pr"
+    },
+    {
+      "name": "dependabot/github_actions/docker/setup-buildx-action-4",
+      "sha": "d73f453327703d6f0bfa23487cf9c3fc6b23e4d5",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "ahead",
+      "ahead_by": 1,
+      "behind_by": 0,
+      "changed_files": [
+        {
+          "path": ".github/workflows/pipeline_test.yml",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 118,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/118",
+          "state": "open",
+          "merged_at": null
+        }
+      ],
+      "disposition": "open_pr"
+    },
+    {
+      "name": "docs-math-format-batch-01",
+      "sha": "41003995df303579c38606fc340857d37c9b1b80",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 9,
+      "behind_by": 463,
+      "changed_files": [
+        {
+          "path": "docs/canonical_polarity_clock_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/canonical_scale_transfer_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/classical_matter_dynamics_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/clock_space_reciprocity_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/comparative_theory_bridge_audit_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/content_clock_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/content_massive_motion_ambiguity_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/content_potential_field_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/content_ray_propagation_v0.1.md",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 11,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/11",
+          "state": "closed",
+          "merged_at": "2026-09-22T02:58:09Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "documentation-normalization-v0.6",
+      "sha": "898992f5e9d9e3050529506defbca3afabae3675",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 5,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/5",
+          "state": "closed",
+          "merged_at": "2026-09-22T00:53:11Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "licensing-governance-v0.1",
+      "sha": "f248dac9d9c398a2c297c4cf10b5dc4fc553007e",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 3,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/3",
+          "state": "closed",
+          "merged_at": "2026-09-22T00:23:18Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "local-transition-kernel-v0.1",
+      "sha": "dc5d572b21d834676196df9d89c3188765e36cc9",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 7,
+      "behind_by": 598,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "ARCHITECTURE.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/local_transition_kernel_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/local_transition_kernel.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_local_transition_kernel.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 7,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/7",
+          "state": "closed",
+          "merged_at": null
+        }
+      ],
+      "disposition": "intentionally_superseded",
+      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/7#issuecomment-5770950959"
+    },
+    {
+      "name": "main",
+      "sha": "a78576f83854a5b75c90815db121b1ca40a4f606",
+      "ancestry": "included in main history",
+      "related_prs": [],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "markdown-math-normalization-v0.1",
+      "sha": "ed6f39976b7da6adfe7ac7f93f1d1fdce6043a28",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 463,
+      "changed_files": [
+        {
+          "path": "docs/canonical_polarity_clock_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/canonical_scale_transfer_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/classical_matter_dynamics_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/clock_space_reciprocity_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/comparative_theory_bridge_audit_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/content_clock_v0.1.md",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [],
+      "disposition": "no_matching_pr_review_patch"
+    },
+    {
+      "name": "matrix-local-transition-v0.1",
+      "sha": "accd5dd9df8a1a38559b72c76197f501eccfce14",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 9,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/9",
+          "state": "closed",
+          "merged_at": "2026-09-22T02:06:40Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "matrix-polarity-phase-reduction-v0.1",
+      "sha": "288511291d79af9c7b1ff942656a6a5128025785",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 10,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/10",
+          "state": "closed",
+          "merged_at": "2026-09-22T02:14:55Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "matter-amplitude-modes-v0.1-main",
+      "sha": "99dd0e9e185582c19137627483483c9a8db3c071",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 460,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/matter_amplitude_modes_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/matter_amplitude_modes.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_matter_amplitude_modes.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 14,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/14",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:13:40Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "matter-amplitude-modes-v0.1",
+      "sha": "e6aa7ac928664d0d8d6c53f0e6296219e87ba391",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 8,
+      "behind_by": 461,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/matter_amplitude_modes_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/polarity_rotor_dispersion_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/matrix_polarity_rotor_dispersion.py",
+          "status": "added"
+        },
+        {
+          "path": "src/matter_amplitude_modes.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_matrix_polarity_rotor_dispersion.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_matter_amplitude_modes.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [],
+      "disposition": "no_matching_pr_review_patch"
+    },
+    {
+      "name": "matter-defect-structure-v0.1-main",
+      "sha": "f86c4fc499fc20d192148da64bbe5ef81b7bd4ef",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 5,
+      "behind_by": 459,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/matter_defect_structure_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/matter_defect_structure.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_matter_defect_structure.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 15,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/15",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:16:11Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "matter-defect-structure-v0.1",
+      "sha": "5c2fece679bdaf9c16c001027dfcd2a0fb74cf2c",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 9,
+      "behind_by": 460,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/matter_amplitude_modes_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/matter_defect_structure_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/matter_amplitude_modes.py",
+          "status": "added"
+        },
+        {
+          "path": "src/matter_defect_structure.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_matter_amplitude_modes.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_matter_defect_structure.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [],
+      "disposition": "no_matching_pr_review_patch"
+    },
+    {
+      "name": "matter-lattice-spacing-v0.1",
+      "sha": "dbcd3632fcb1ae97cf0eaf2f2b2414f196e962f7",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 456,
+      "changed_files": [
+        {
+          "path": "docs/matter_lattice_spacing_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "src/classical_matter_dynamics.py",
+          "status": "modified"
+        },
+        {
+          "path": "src/localized_matter_persistence.py",
+          "status": "modified"
+        },
+        {
+          "path": "tests/test_classical_matter_dynamics.py",
+          "status": "modified"
+        },
+        {
+          "path": "tests/test_localized_matter_persistence.py",
+          "status": "modified"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 18,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/18",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:25:25Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "polarity-rotor-dispersion-v0.1",
+      "sha": "72d388956ac328ca34895c80bab8dfb11185d052",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 5,
+      "behind_by": 461,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/polarity_rotor_dispersion_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/matrix_polarity_rotor_dispersion.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_matrix_polarity_rotor_dispersion.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 13,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/13",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:10:38Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "primitive-ontology-v0.1",
+      "sha": "f0935e92b3fdc4d881d77d76db7857a0cb6ad76a",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 6,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/6",
+          "state": "closed",
+          "merged_at": "2026-09-22T00:59:37Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "qball-branch-diagnostics-v0.1",
+      "sha": "9ecd35bcb88cc0feab188f84084e20d74ed1ca1b",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 454,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_branch_diagnostics_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_branch_diagnostics.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_branch_diagnostics.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 20,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/20",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:51:30Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-existence-window-v0.1-main",
+      "sha": "f80c3f790074b9966a315998f5215fe6392c9b53",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 5,
+      "behind_by": 458,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_existence_window_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_existence_window.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_existence_window.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 16,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/16",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:18:25Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-existence-window-v0.1",
+      "sha": "7f0449ef26206cc58d07335a8f45c22f1e2d6bdb",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 8,
+      "behind_by": 459,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/matter_defect_structure_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_existence_window_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/matter_defect_structure.py",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_existence_window.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_matter_defect_structure.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_existence_window.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [],
+      "disposition": "no_matching_pr_review_patch"
+    },
+    {
+      "name": "qball-highres-persistence-stage1-v0.1",
+      "sha": "863c338d9e13e15a7ae1d93e4fcc27b87f5bd9b7",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 445,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_highres_persistence_stage1_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_highres_persistence_stage1.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_highres_persistence_stage1.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 30,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/30",
+          "state": "closed",
+          "merged_at": "2026-09-22T04:25:38Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-highres-persistence-stage2-v0.1",
+      "sha": "4a74143b16af11c9c4d1e13de82d3e147ecadd6b",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 444,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_highres_persistence_stage2_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_highres_persistence_stage2.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_highres_persistence_stage2.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 31,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/31",
+          "state": "closed",
+          "merged_at": "2026-09-22T04:29:14Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-highres-persistence-stage3-v0.1",
+      "sha": "03af66204a925a172d08ae1770d1c14a3bb5c58f",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 443,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_highres_persistence_stage3_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_highres_persistence_stage3.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_highres_persistence_stage3.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 32,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/32",
+          "state": "closed",
+          "merged_at": "2026-09-22T04:36:05Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-highres-persistence-stage4-v0.1",
+      "sha": "4c50fa8982749c9242eb9c3154aa92d1997958e4",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 441,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_highres_persistence_stage4_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_highres_persistence_stage4.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_highres_persistence_stage4.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 34,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/34",
+          "state": "closed",
+          "merged_at": "2026-09-22T05:15:04Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-highres-time-scaling-v0.1",
+      "sha": "5f65de35283ea9d03844fd11a3e458b50f184d74",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 442,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_highres_time_scaling_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_highres_time_scaling.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_highres_time_scaling.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 33,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/33",
+          "state": "closed",
+          "merged_at": "2026-09-22T04:55:10Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-highres-timeseries-t1-v0.1",
+      "sha": "1710ef1c47fc26dbbd0986338aae1f21c01c5e24",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 439,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_highres_timeseries_t1_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_highres_timeseries_t1.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_highres_timeseries_t1.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 36,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/36",
+          "state": "closed",
+          "merged_at": "2026-09-22T06:08:31Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-highres-timeseries-t1p5-v0.1",
+      "sha": "538a0f9b0238d52a504d2ac9eecaf6ee5d16061c",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 7,
+      "behind_by": 438,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_highres_timeseries_t1p5_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_highres_timeseries_t1p5.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_highres_timeseries_t1p5.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 37,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/37",
+          "state": "closed",
+          "merged_at": "2026-09-22T06:58:34Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-highres-timeseries-t2-v0.1",
+      "sha": "6e96169eb140f31ce3c4ecc4839276cc4171a87d",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 7,
+      "behind_by": 437,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_highres_timeseries_t2_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_highres_timeseries_t2.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_highres_timeseries_t2.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 38,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/38",
+          "state": "closed",
+          "merged_at": "2026-09-22T18:06:06Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-highres-timeseries-t2p5-v0.1",
+      "sha": "4245fc56992134f8acab1fbf4dc88164615c9146",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 7,
+      "behind_by": 436,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_highres_timeseries_t2p5_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_highres_timeseries_t2p5.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_highres_timeseries_t2p5.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 39,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/39",
+          "state": "closed",
+          "merged_at": "2026-09-22T18:48:39Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-highres-timeseries-v0.1",
+      "sha": "2c8b6dc8f6ff8571c44f1dee90c055f13ec95ebf",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 440,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_highres_timeseries_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_highres_timeseries.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_highres_timeseries.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 35,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/35",
+          "state": "closed",
+          "merged_at": "2026-09-22T05:35:17Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-joint-mapping-extrapolation-v0.1",
+      "sha": "8f873756060f91b90357a035143ad34cc59c4d85",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 7,
+      "behind_by": 447,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_joint_mapping_extrapolation_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_joint_mapping_extrapolation.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_joint_mapping_extrapolation.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 28,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/28",
+          "state": "closed",
+          "merged_at": "2026-09-22T04:12:27Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-mapping-convergence-clean-v0.1",
+      "sha": "235f6b8bf0b0817bcb581756b9c726ace519312c",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 449,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_mapping_convergence_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_mapping_convergence.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_mapping_convergence.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 26,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/26",
+          "state": "closed",
+          "merged_at": "2026-09-22T04:07:48Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-mapping-convergence-v0.1",
+      "sha": "c03489ec9340dd15a55d3d46ef823512a499702c",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 20,
+      "behind_by": 450,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_mapping_convergence_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/qball_threshold_persistence_scan_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_mapping_convergence.py",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_threshold_persistence_scan.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_mapping_convergence.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_threshold_persistence_scan.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 25,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/25",
+          "state": "closed",
+          "merged_at": null
+        }
+      ],
+      "disposition": "closed_unmerged_review_replacement"
+    },
+    {
+      "name": "qball-mapping-error-decomposition-v0.1",
+      "sha": "1d62a72a05b30f27945eda7df0ed25b7a6e998f1",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 448,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_mapping_error_decomposition_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_mapping_error_decomposition.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_mapping_error_decomposition.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 27,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/27",
+          "state": "closed",
+          "merged_at": "2026-09-22T04:09:59Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-stability-map-v0.1",
+      "sha": "dcf4e3efcb69d572d25cee359d012185990fe32a",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 5,
+      "behind_by": 452,
+      "changed_files": [
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_stability_map_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_stability_map.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_stability_map.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 22,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/22",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:57:05Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-threshold-persistence-v0.1",
+      "sha": "9dd8e75e5791c837ed06bec0a285155180fa40ac",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 13,
+      "behind_by": 450,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_threshold_persistence_scan_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_threshold_persistence_scan.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_threshold_persistence_scan.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 24,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/24",
+          "state": "closed",
+          "merged_at": "2026-09-22T04:05:27Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-threshold-preserving-grid-v0.1",
+      "sha": "a0c2728eb83bcf3c0a77b4cdb7c3cd4cf357a6a0",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 446,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_threshold_preserving_grid_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_threshold_preserving_grid.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_threshold_preserving_grid.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 29,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/29",
+          "state": "closed",
+          "merged_at": "2026-09-22T04:14:42Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "qball-threshold-refinement-v0.1",
+      "sha": "5b3e8a628911b2746cf1c7fc30181d97ca88814c",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 7,
+      "behind_by": 451,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_threshold_refinement_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_threshold_refinement.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_threshold_refinement.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 23,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/23",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:59:26Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "radial-matter-continuation-v0.1-main",
+      "sha": "1fc9ed971f987c06d63c6917d8c57c3d99b0d51a",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 6,
+      "behind_by": 457,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/radial_matter_continuation_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/radial_matter_continuation.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_radial_matter_continuation.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 17,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/17",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:22:29Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    },
+    {
+      "name": "radial-matter-continuation-v0.1",
+      "sha": "01550bcdf491007bcbac8b1d3a3e791bf7b12eb6",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 8,
+      "behind_by": 458,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/omniverse_design_questions_v0.1.md",
+          "status": "modified"
+        },
+        {
+          "path": "docs/qball_existence_window_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/radial_matter_continuation_v0.1.md",
+          "status": "added"
+        },
+        {
+          "path": "src/qball_existence_window.py",
+          "status": "added"
+        },
+        {
+          "path": "src/radial_matter_continuation.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_qball_existence_window.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_radial_matter_continuation.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [],
+      "disposition": "no_matching_pr_review_patch"
+    },
+    {
+      "name": "repository-professionalization-v0.6",
+      "sha": "b2837320aa0265d629d13fc33fcd8a429acbad76",
+      "ancestry": "included in main history",
+      "related_prs": [
+        {
+          "number": 8,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/8",
+          "state": "closed",
+          "merged_at": "2026-09-22T01:59:47Z"
+        }
+      ],
+      "disposition": "ancestor_of_main"
+    },
+    {
+      "name": "rotor-transition-v0.2",
+      "sha": "b43b19dfcef407c66b9157e8d0a560988f7ec257",
+      "ancestry": "not available in current local object database; remote comparison required",
+      "comparison": "diverged",
+      "ahead_by": 5,
+      "behind_by": 462,
+      "changed_files": [
+        {
+          "path": ".github/workflows/verification.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/polarity_rotor_transition_v0.2.md",
+          "status": "added"
+        },
+        {
+          "path": "src/matrix_polarity_rotor_transition.py",
+          "status": "added"
+        },
+        {
+          "path": "tests/test_matrix_polarity_rotor_transition.py",
+          "status": "added"
+        }
+      ],
+      "related_prs": [
+        {
+          "number": 12,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/12",
+          "state": "closed",
+          "merged_at": "2026-09-22T03:06:27Z"
+        }
+      ],
+      "disposition": "current_tip_has_merged_pr_record"
+    }
+  ]
+}
