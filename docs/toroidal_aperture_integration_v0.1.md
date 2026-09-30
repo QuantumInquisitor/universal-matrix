@@ -78,9 +78,9 @@ carried forward unchanged.
 
 ## Remaining geometry and physical work
 
-Assemble a single authoritative combined inventory with both host patches,
-replacement ports and intended contacts, then audit every retained-retained and
-changed-retained pair under that same state. Follow with safe continuous motion,
+The subsequent [combined static audit](toroidal_combined_aperture_v0.1.md)
+adds one inventory with both host patches, replacement ports and intended
+contacts, including retained-retained and changed-retained pairs. Follow with safe continuous motion,
 wall-opening feasibility, material mechanics, full energy/flow accounting and
 recursive coupling. This checkpoint neither removes the central stagnating
 streamline nor supplies physical calibration or experimental validation.

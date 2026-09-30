@@ -6,6 +6,9 @@ on:
       - 'src/toroidal_*.py'
       - 'tests/test_toroidal_*.py'
       - 'scripts/report_aperture_integration.py'
+      - 'scripts/report_combined_aperture.py'
+      - 'docs/toroidal_combined_aperture_v0.1.md'
+      - 'docs/experiments/combined-aperture-summary.json'
       - 'docs/toroidal_aperture_integration_v0.1.md'
       - 'docs/experiments/aperture-summary.json'
       - '.github/workflows/experimental-aperture.yml'
@@ -33,6 +36,12 @@ jobs:
         run: uv run python -m pytest tests/test_toroidal_aperture_attachment.py tests/test_toroidal_outer_attachment.py tests/test_toroidal_aperture_fanout.py tests/test_toroidal_bore_downstream.py tests/test_toroidal_bore_downstream_adversarial.py
       - name: Reproduce all six signed cases
         run: uv run python scripts/report_aperture_integration.py --output-dir artifacts/aperture
+      - name: Check combined inventory and rejection controls
+        run: |
+          uv run ruff check src/toroidal_combined_aperture.py tests/test_toroidal_combined_aperture.py scripts/report_combined_aperture.py
+          uv run ruff format --check src/toroidal_combined_aperture.py tests/test_toroidal_combined_aperture.py scripts/report_combined_aperture.py
+          uv run python -m pytest tests/test_toroidal_combined_aperture.py
+          uv run python scripts/report_combined_aperture.py --output-dir artifacts/combined-aperture
       - name: Check report acceptance and scope
         run: |
           uv run python - <<'PY'
@@ -47,4 +56,12 @@ jobs:
               assert r['replacement_interfaces'] == 13
               assert r['outer_cut_flux_relative_error'] < 1e-10
               assert not r['full_network_certified'] and not r['motion_certified']
+          rows = json.loads(Path('artifacts/combined-aperture/summary.json').read_text())['cases']
+          assert {r['current'] for r in rows} == {1, -1, 2e-8, -2e-8, 7, -7}
+          assert len(rows) == 6
+          for r in rows:
+              assert (r['component_count'], r['pair_count'], r['port_count'], r['interface_count']) == (69, 2346, 8, 62)
+              assert r['static_pair_clearance_complete']
+              assert r['maximum_port_relative_residual'] < 1e-10
+              assert not r['motion_certified'] and not r['material_dynamics_validated']
           PY
