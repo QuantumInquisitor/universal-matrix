@@ -33,12 +33,14 @@
     {
       "id": "P04",
       "title": "Close the whole-assembly geometry and motion questions.",
-      "status": "queued",
+      "status": "in_progress",
       "scope_and_completion": "Reuse the known hinge incidences and recursive maps; distinguish the critical inversion singularities from valid fold points. Assemble a complete component/contact/port inventory, including retained-retained pairs. Reconcile local rerouting with the entire network and generalized branching. Specify allowed deformation, dimensional assumptions, reconnection rules and dormant-path behavior. Extend the bounded connected breathing specimen to the declared assembly, checking finite thickness, ports, Jacobians, signed flux and continuous clearance throughout an out-and-back cycle. **Done when:** the complete declared assembly passes those checks with explicit tolerances, or remaining obstructing pairs/intervals are identified. A 4D mathematical path does not by itself establish a physically realizable 3D mechanism.",
       "dependencies": [
         "P03"
       ],
-      "next_action": "Build one combined component/port/contact inventory with both modified hosts and classify every retained-retained pair before whole-assembly motion."
+      "next_action": "Freeze permitted whole-assembly deformation and host-cut transport maps using the existing fold/breathing work; test ports, Jacobians and clearance continuously through an out-and-back cycle. Static endpoints do not certify the path. Ensure any viewer applies both actual host aperture domains.",
+      "latest_result": "Complete fixed 69-component assembly: 2346 pairs classified allowing declared contacts, 62 interfaces and 8 junction ports; six signed-current cases and 15 new tests pass. Draft PR124 e515134ddafd358616cb87cd37b2e90a3602cfae. Motion and physical validation remain open.",
+      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {
       "id": "P05",
@@ -309,16 +311,21 @@
       "validation": {
         "selected_tests_passed": 121,
         "signed_report_cases_passed": 6,
-        "existing_dependencies_matching_main": 28
+        "existing_dependencies_matching_main": 28,
+        "combined_tests_passed": 15,
+        "combined_unique_pairs_per_case": 2346,
+        "combined_ports": 8,
+        "combined_interfaces": 62
       },
       "limits": [
         "changed-component certificates overlap",
-        "whole-network clearance unproved",
         "motion unproved",
         "material and recursive dynamics open",
-        "central stagnating streamline remains"
+        "central stagnating streamline remains",
+        "complete static pair audit added in PR124; deformation and physical validation remain unproved"
       ],
-      "next_action": "Inspect remote CI and review; proceed to P04 combined inventory without claiming motion completion."
+      "next_action": "Inspect remote CI and review; proceed to P04 combined inventory without claiming motion completion.",
+      "latest_head": "e515134ddafd358616cb87cd37b2e90a3602cfae"
     }
   ]
 }

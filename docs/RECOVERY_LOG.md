@@ -156,3 +156,50 @@ Reconcile every retained pair against that single state and emit explicit
 unresolved contacts or collision witnesses. Only after that static audit should
 the whole-assembly deformation path be tested. Keep W1/W2, crystal, material and
 independent research queues visible in the task register.
+
+## 30 September 2026: complete fixed assembly pair and port audit
+
+Continued the next batch recorded above without replacing prior green work.
+The combined construction removes the 13 original edge-2 components and uses
+both modified host domains. It contains 69 components (66 conduits and three
+junctions), four directed routes and 2,346 unique unordered pairs. Every pair
+is classified, with declared contacts allowed. There are 62 internal route
+interfaces and eight exact junction-port connections; signed current balances
+at all three junctions. Twelve pairs require fresh special aperture/bend,
+nested-transition or junction support-plane checks beyond the generic classifier.
+
+Validation: 15 new tests passed in 27.60 seconds, including independent pair,
+route and interface inventories and rejection controls for tiny displacement,
+radius, orientation, signed-current and nonfinite-field errors. The six final
+reports (I = +/-1, +/-2e-8, +/-7) reproduced after the last source change.
+Maximum relative port residual is 2.07e-16. New Python files pass Ruff check and
+format; report acceptance and source hashes were checked locally. This is in
+addition to the previously recorded 121-test integration run, not a fresh
+full-repository test run. An independent read-only code review found no blocking
+issue in the fixed numeric-current scope.
+
+Published by updating draft PR124 to
+`e515134ddafd358616cb87cd37b2e90a3602cfae`. Review entry:
+`docs/toroidal_combined_aperture_v0.1.md`; snapshot:
+`docs/experiments/combined-aperture-summary.json`. Reproduce full pair and port
+records with `uv run python scripts/report_combined_aperture.py
+--output-dir artifacts/combined-aperture`. The dedicated workflow now repeats
+the combined tests, exporter and acceptance assertions. Current-head remote CI
+is pending. No merge was performed. The prior PR124 head had passed dedicated
+experiment, CodeQL and container checks; its broad verification was still running.
+
+Important geometry-to-viewer constraint: `combined_components()` contains the
+original enclosing host geometry. Apply the first aperture's
+`modified_host_contains` and `SecondAperture.contains` for the actual cut domains;
+the raw tuple alone is not a renderable or globally sampled modified assembly.
+This closes the combined fixed-state pair-inventory question only. P04 remains
+in progress for safe continuous breathing. Floating-point bounds and sampled
+fields do not establish interval proof, generalized motion or material physics.
+
+Next executable batch: recover the existing permitted fold/breathing map from
+PR119, define how both host cuts and every route/port move, and test the entire
+out-and-back path with explicit Jacobian and clearance bounds. Report blocking
+pairs or intervals rather than inferring motion from safe endpoints. Material
+forces, energy accounting, emergent motion, recursive coupling, the central
+stagnating streamline, W1/W2, timing-subsystem comparisons and remaining source
+reconciliation retain their open dispositions in the unchanged 40-task register.
