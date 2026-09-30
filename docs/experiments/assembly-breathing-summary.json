@@ -1,0 +1,193 @@
+{
+  "cases": [
+    {
+      "current": 1.0,
+      "amplitude": 0.1,
+      "component_count": 69,
+      "pair_count": 2346,
+      "interface_count": 62,
+      "port_count": 8,
+      "phase_interval": [
+        0.0,
+        1.0
+      ],
+      "minimum_scale": 0.9,
+      "minimum_deformation_determinant": 0.7290000000000001,
+      "continuous_common_similarity_clearance": true,
+      "modified_hosts": [
+        "edge3_piece_10",
+        "edge3_piece_00"
+      ],
+      "maximum_relative_cut_error": 2.1094237467877974e-15,
+      "relative_folding_validated": false,
+      "emergent_motion_validated": false,
+      "material_energy_validated": false,
+      "scope": "Prescribed common similarity in dimensionless phase; inherits floating-point static bounds, not physical or interval validation",
+      "breathing_source": "PR119 60a7fd60f57d73b89ea5397db58a3ff5d291556c src/lynchpin_breathing_control.py",
+      "report": "current-1.json"
+    },
+    {
+      "current": -1.0,
+      "amplitude": 0.1,
+      "component_count": 69,
+      "pair_count": 2346,
+      "interface_count": 62,
+      "port_count": 8,
+      "phase_interval": [
+        0.0,
+        1.0
+      ],
+      "minimum_scale": 0.9,
+      "minimum_deformation_determinant": 0.7290000000000001,
+      "continuous_common_similarity_clearance": true,
+      "modified_hosts": [
+        "edge3_piece_10",
+        "edge3_piece_00"
+      ],
+      "maximum_relative_cut_error": 2.1094237467877974e-15,
+      "relative_folding_validated": false,
+      "emergent_motion_validated": false,
+      "material_energy_validated": false,
+      "scope": "Prescribed common similarity in dimensionless phase; inherits floating-point static bounds, not physical or interval validation",
+      "breathing_source": "PR119 60a7fd60f57d73b89ea5397db58a3ff5d291556c src/lynchpin_breathing_control.py",
+      "report": "current--1.json"
+    },
+    {
+      "current": 2e-08,
+      "amplitude": 0.1,
+      "component_count": 69,
+      "pair_count": 2346,
+      "interface_count": 62,
+      "port_count": 8,
+      "phase_interval": [
+        0.0,
+        1.0
+      ],
+      "minimum_scale": 0.9,
+      "minimum_deformation_determinant": 0.7290000000000001,
+      "continuous_common_similarity_clearance": true,
+      "modified_hosts": [
+        "edge3_piece_10",
+        "edge3_piece_00"
+      ],
+      "maximum_relative_cut_error": 2.067951531382569e-15,
+      "relative_folding_validated": false,
+      "emergent_motion_validated": false,
+      "material_energy_validated": false,
+      "scope": "Prescribed common similarity in dimensionless phase; inherits floating-point static bounds, not physical or interval validation",
+      "breathing_source": "PR119 60a7fd60f57d73b89ea5397db58a3ff5d291556c src/lynchpin_breathing_control.py",
+      "report": "current-2e-08.json"
+    },
+    {
+      "current": -2e-08,
+      "amplitude": 0.1,
+      "component_count": 69,
+      "pair_count": 2346,
+      "interface_count": 62,
+      "port_count": 8,
+      "phase_interval": [
+        0.0,
+        1.0
+      ],
+      "minimum_scale": 0.9,
+      "minimum_deformation_determinant": 0.7290000000000001,
+      "continuous_common_similarity_clearance": true,
+      "modified_hosts": [
+        "edge3_piece_10",
+        "edge3_piece_00"
+      ],
+      "maximum_relative_cut_error": 2.067951531382569e-15,
+      "relative_folding_validated": false,
+      "emergent_motion_validated": false,
+      "material_energy_validated": false,
+      "scope": "Prescribed common similarity in dimensionless phase; inherits floating-point static bounds, not physical or interval validation",
+      "breathing_source": "PR119 60a7fd60f57d73b89ea5397db58a3ff5d291556c src/lynchpin_breathing_control.py",
+      "report": "current--2e-08.json"
+    },
+    {
+      "current": 7.0,
+      "amplitude": 0.1,
+      "component_count": 69,
+      "pair_count": 2346,
+      "interface_count": 62,
+      "port_count": 8,
+      "phase_interval": [
+        0.0,
+        1.0
+      ],
+      "minimum_scale": 0.9,
+      "minimum_deformation_determinant": 0.7290000000000001,
+      "continuous_common_similarity_clearance": true,
+      "modified_hosts": [
+        "edge3_piece_10",
+        "edge3_piece_00"
+      ],
+      "maximum_relative_cut_error": 2.0301221021717147e-15,
+      "relative_folding_validated": false,
+      "emergent_motion_validated": false,
+      "material_energy_validated": false,
+      "scope": "Prescribed common similarity in dimensionless phase; inherits floating-point static bounds, not physical or interval validation",
+      "breathing_source": "PR119 60a7fd60f57d73b89ea5397db58a3ff5d291556c src/lynchpin_breathing_control.py",
+      "report": "current-7.json"
+    },
+    {
+      "current": -7.0,
+      "amplitude": 0.1,
+      "component_count": 69,
+      "pair_count": 2346,
+      "interface_count": 62,
+      "port_count": 8,
+      "phase_interval": [
+        0.0,
+        1.0
+      ],
+      "minimum_scale": 0.9,
+      "minimum_deformation_determinant": 0.7290000000000001,
+      "continuous_common_similarity_clearance": true,
+      "modified_hosts": [
+        "edge3_piece_10",
+        "edge3_piece_00"
+      ],
+      "maximum_relative_cut_error": 2.0301221021717147e-15,
+      "relative_folding_validated": false,
+      "emergent_motion_validated": false,
+      "material_energy_validated": false,
+      "scope": "Prescribed common similarity in dimensionless phase; inherits floating-point static bounds, not physical or interval validation",
+      "breathing_source": "PR119 60a7fd60f57d73b89ea5397db58a3ff5d291556c src/lynchpin_breathing_control.py",
+      "report": "current--7.json"
+    }
+  ],
+  "source_sha256": {
+    "src/toroidal_annular_junction.py": "9d0c443cbe4a4d81ae42c8ab34f946eeadab6701eefeb2726b420130dcdccec5",
+    "src/toroidal_aperture_attachment.py": "4e03ea4b2da7741f64be264c3994b552cdc57593d48216133e01c825329004d3",
+    "src/toroidal_aperture_fanout.py": "4642681b6fa5d76b083c89121c7a344e0e607f415f2d482902320b4eb673e146",
+    "src/toroidal_aperture_local.py": "5343928fe19d6b2deae67bb78be5c384068df16c97a0ca66e539aef06a1d28cb",
+    "src/toroidal_assembly_breathing.py": "1b5032b531886ce3715aca48820377049c6bc2528552177f521d2892770c909b",
+    "src/toroidal_bend_clearance_boundary.py": "ca7a862b9121ca59fe1dcd5d6606c4ea3af81cea4627db18d9b03318bcfc1a3f",
+    "src/toroidal_bend_clearance_refinement.py": "e506c2aa7c06eb3d4e5dee6c764e1d81cf3daac69ccfc1b707e39bc893d2807c",
+    "src/toroidal_bend_spacing_scan.py": "31f4b1ab1b654d070efede8f6cbb3721768daa48c7059e379b80190fac2fce60",
+    "src/toroidal_bore_downstream.py": "3d0d4f0e1458debbc170280621ebbdace33ec5a04daf60fdc9d29f6c2762ebb8",
+    "src/toroidal_combined_aperture.py": "19dc7ba8fec13bd2a59b71a583c0a58da9c05c9b0b7c35901154789c348fcf90",
+    "src/toroidal_connector_topology.py": "c13cbd1661254a3ca907e28026faf9cab341e1229d47aeaf077ae01b94b0a62f",
+    "src/toroidal_fixed_interface_obstruction.py": "c160e7df0100059deb870705c373138c0cfb6213cb6fbd6b58741a92023acff7",
+    "src/toroidal_framed_edge_assembly.py": "44b90d4aada5e9326b40b4ba540dbd54292174c66685dcec7199d5644a0a066c",
+    "src/toroidal_global_routing.py": "52835c22ac520d3a8dfd885ded04a960769dd64186044501aeb0b33197081414",
+    "src/toroidal_incident_bend_audit.py": "d2754416761db4c520498aa2f851791db4e864e6e2153cf0f1c079e822124a66",
+    "src/toroidal_incident_overlap_audit.py": "ba56905f73deeeb84055322c3488a3871afb2af8601a9730de661ed63d67ee6d",
+    "src/toroidal_inversion_control.py": "5f2cb0b02a3174b42b54ceb6a86d73f755c4de2150f3404a501b34e0d8cbf50d",
+    "src/toroidal_junction_bore_passage.py": "e55574ed19b8dd57d5153e1b5634a97909e47a577dcc1a1427d4d9739cb426d9",
+    "src/toroidal_junction_control_volume.py": "e8877815a278b5072870ef27486d1d0e9a57b2faf48fb53af529b9685f52630b",
+    "src/toroidal_latent_path_geometry_audit.py": "3588ed23e2b570bed9e1a18c6ea0d3d726fd23f881ea26ba0bbe800ce134530b",
+    "src/toroidal_outer_attachment.py": "2d9248341087206c3adde28997cadbdfab48e643056149e568b29eaca50cd106",
+    "src/toroidal_resonance_engine.py": "1c11f64b684b08630e1d95666ab2b3a216a823f0587abfe658f2cc15b661cd5c",
+    "src/toroidal_retained_collision.py": "379f307768c6a7aa3ca18a9e8cabbf1be457c225318e6899fe3e2e2467014cf2",
+    "src/toroidal_sampling_reliability.py": "b020ef69800d505df0a640f9bd2cf331d906516def6ce70b04ecdb17d77d6f7b",
+    "src/toroidal_separated_channels.py": "4149fc1db623dcd7c9937259827cf3f32349af200699f48324e73e0929337b80",
+    "src/toroidal_shared_prefix_fanout.py": "6c2783a3a417a2b780a966980bcd1edbee412e215548ea0cab521f6c52d9231c",
+    "src/toroidal_shared_return_connectors.py": "983a47088120f231b02720fd0d21ba13e7bf5cf467d2220e966c5bb09e80ba6a",
+    "src/toroidal_shared_return_route.py": "a50f8f1923ca884403d5a71a2c5398aacd577fc6c3e5b764421cf6ce481499a4",
+    "src/toroidal_smooth_bends.py": "42a25b27a37067a1b84c433c9c1db4fa6a7d276522f25fc61b73176dd5121db8",
+    "src/toroidal_uniform_scale_similarity.py": "fbfd628315eaf63fe6869f5682012d10dc308c31c543ad6c80f92333858477b9",
+    "src/toroidal_winding_engine.py": "1b9ab0cb010aa483daa1b928119ee809eef1a55ef9a53ad3b63ad00aadc3cc3d"
+  }
+}

@@ -57,12 +57,17 @@ The original enclosing host geometry is intentionally conservative except at
 the two explicitly removed aperture regions. This is not evidence for arbitrary
 deformations, generalized branching, every possible current or a physical device.
 
-Safe continuous breathing remains open. Next freeze the permitted deformation
+This static audit alone leaves continuous breathing open. Freeze the permitted deformation
 map and follow all components, host cuts, ports, Jacobians and clearance bounds
 through an out-and-back cycle. Collision-free static endpoints would not prove
 the intervening motion safe. The central stagnating streamline, wall-opening
 feasibility, material laws, energy accounting, emergent motion and recursive
 coupling remain unresolved. No time-crystal subsystem is installed by this audit.
+
+Follow-up: [prescribed common breathing](toroidal_assembly_breathing_v0.1.md)
+now transports this entire static assembly under the recovered 0.9–1.1 size
+cycle. Its continuous similarity argument covers that restricted motion;
+relative folding and physical motion remain open as described above.
 
 The [earlier integration report](toroidal_aperture_integration_v0.1.md) records
 the individual constructions. Its per-module whole-network flags remain false;

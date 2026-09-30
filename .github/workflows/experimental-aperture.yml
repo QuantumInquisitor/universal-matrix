@@ -7,6 +7,9 @@ on:
       - 'tests/test_toroidal_*.py'
       - 'scripts/report_aperture_integration.py'
       - 'scripts/report_combined_aperture.py'
+      - 'scripts/report_assembly_breathing.py'
+      - 'docs/toroidal_assembly_breathing_v0.1.md'
+      - 'docs/experiments/assembly-breathing-summary.json'
       - 'docs/toroidal_combined_aperture_v0.1.md'
       - 'docs/experiments/combined-aperture-summary.json'
       - 'docs/toroidal_aperture_integration_v0.1.md'
@@ -43,6 +46,7 @@ jobs:
           uv run python -m pytest tests/test_toroidal_combined_aperture.py
           uv run python scripts/report_combined_aperture.py --output-dir artifacts/combined-aperture
       - name: Check report acceptance and scope
+        # All three scopes remain separately inspectable.
         run: |
           uv run python - <<'PY'
           import json
@@ -64,4 +68,24 @@ jobs:
               assert r['static_pair_clearance_complete']
               assert r['maximum_port_relative_residual'] < 1e-10
               assert not r['motion_certified'] and not r['material_dynamics_validated']
+          PY
+      - name: Check prescribed common assembly breathing
+        run: |
+          uv run ruff check src/toroidal_assembly_breathing.py tests/test_toroidal_assembly_breathing.py scripts/report_assembly_breathing.py
+          uv run ruff format --check src/toroidal_assembly_breathing.py tests/test_toroidal_assembly_breathing.py scripts/report_assembly_breathing.py
+          uv run python -m pytest tests/test_toroidal_assembly_breathing.py
+          uv run python scripts/report_assembly_breathing.py --output-dir artifacts/assembly-breathing
+          uv run python - <<'PY'
+          import json
+          from pathlib import Path
+          rows = json.loads(Path('artifacts/assembly-breathing/summary.json').read_text())['cases']
+          assert len(rows) == 6
+          assert {r['current'] for r in rows} == {1, -1, 2e-8, -2e-8, 7, -7}
+          for r in rows:
+              assert (r['component_count'], r['pair_count'], r['interface_count'], r['port_count']) == (69, 2346, 62, 8)
+              assert r['continuous_common_similarity_clearance']
+              assert r['minimum_scale'] == 0.9 and r['minimum_deformation_determinant'] > 0.728
+              assert r['maximum_relative_cut_error'] < 1e-10
+              assert not r['relative_folding_validated']
+              assert not r['emergent_motion_validated'] and not r['material_energy_validated']
           PY
