@@ -39,7 +39,7 @@
       "dependencies": [
         "P03"
       ],
-      "next_action": "Define an explicit correspondence from PR119 compliant hinge/panel specimen to the 66 conduits and three junctions, or justify a different nonuniform map. Specify transported route and host-cut charts, then test all Jacobians, interfaces and continuous clearance. Do not relabel common scaling as relative folding.",
+      "next_action": "Implement a kinematic (s, theta) adapter for the pinned PR119 22-body compliant specimen with analytic derivatives, mass ownership and explicitly bounded admissibility. Then construct a distinct mapping to all 69 flow components. See docs/fold_material_mapping_audit.md.",
       "latest_result": "PR124 head 3249637f96c748ba2a08b7ad2c963fa0c5a33d59 adds prescribed common 0.9-1.1 breathing of all 69 components and both host cuts. Continuous positive-similarity argument covers 2346 pairs; 24 new tests and six signed report cases pass, including 48 moving cuts per case. Relative inward folding is not yet assigned to the flow graph.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "image_review": "docs/eight_image_research_review_2026-09-30.md"
@@ -73,7 +73,8 @@
         "P06"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Synthetic connected two-mass SI specimen with spring/dashpot laws, supports and drive specified; 12 material tests pass. Preparatory isolated baseline only: mapping and calibrated material reduction of the 69-component assembly still depend on P04-P06."
+      "latest_result": "Synthetic connected two-mass SI specimen with spring/dashpot laws, supports and drive specified; 12 material tests pass. Preparatory isolated baseline only: mapping and calibrated material reduction of the 69-component assembly still depend on P04-P06.",
+      "next_action": "Use the recovered 22-body geometry for a declared reduced material specimen. Specify disjoint/lumped mass ownership, material-point correspondence and physical scale before deriving inertia/potential; synthetic coefficients must remain labelled. See docs/fold_material_mapping_audit.md."
     },
     {
       "id": "P08",
@@ -84,28 +85,29 @@
         "P07"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "12 mechanical baseline runs independently integrate work/loss and endpoint energy. Finest driven residual 2.85e-10 J; separate position/velocity refinement ratios about 15.74/17.86. Electrical, contact, moving-boundary and whole-assembly energy accounting remain open."
+      "latest_result": "Connected two-mass energy ownership and switched-drive control added. Each body owns kinetic/anchor energy; link spring storage counted once. Three timestep cases refine total and per-owner residuals; finest total 3.25e-10 J. Not whole-assembly energy closure."
     },
     {
       "id": "P09",
       "title": "Test whether breathing and folding emerge from the equations.",
-      "status": "queued",
+      "status": "in_progress",
       "scope_and_completion": "Replace prescribed output motion with evolving states driven by the forces and power inputs. Keep the prescribed breathing cycle as a comparison. Test rest, perturbations, different initial phases, input-off, coupling-off, damping, stability and recovery. **Done when:** the simulation establishes whether sustained breathing/folding occurs, under which inputs, and where it fails; geometry and energy checks remain valid throughout. Do not force a positive outcome by programming the desired trajectory.",
       "dependencies": [
         "P08"
       ],
-      "image_review": "docs/eight_image_research_review_2026-09-30.md"
+      "image_review": "docs/eight_image_research_review_2026-09-30.md",
+      "latest_result": "Passive two-mass input-off continuation matches an independent damped modal solution. No nonzero sustained unforced periodic orbit exists for the declared positive anchor damping/stiffness; documented model-specific negative result, not a universal prohibition. Active reservoir/geometry model remains missing."
     },
     {
       "id": "P10",
       "title": "Extend to recursive coupling and persistent state.",
-      "status": "queued",
+      "status": "in_progress",
       "scope_and_completion": "Implement shared component identities, parent-child and peer ports, independent child states, ownership/no-double-counting rules, positivity bounds and conservative exchange. Make dormant pathways explicit: persistent, inactive-only, contracting or another declared rule. Add multiple levels, feedback, finite propagation/delay and depth convergence. Integrate the helix-clock interpretation only as a declared adapter. **Done when:** a disturbance and exchange can be traced across levels with preserved identities and conservation, and independent state survives replay/save/resume. An aggregate color overlay is not completion of this step.",
       "dependencies": [
         "P09"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Declared-state recorder and exact winding history published in PR124 3efe05db6ac3d247ac1e7bdec83a8a906d700036; 32 linked tests pass. All 69 components distinguish half-cycle position return from state return, full-cycle periodic return from history, and exact saved-clock replay. This is not recursive dynamics or an autonomous material restart.",
+      "latest_result": "Same-environment material checkpoint replay is exact across drive cutoff at three timesteps, including source/model/schedule identity and accumulated energy channels. 18 new tests pass. This is a persistence prerequisite only; parent-child topology and recursive exchange remain unimplemented.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {
@@ -345,7 +347,7 @@
         "central stagnating streamline remains",
         "complete static audit and prescribed common breathing validated; relative folding, emergent motion and material energy remain unproved"
       ],
-      "next_action": "Inspect remote CI and review; proceed to P04 combined inventory without claiming motion completion.",
+      "next_action": "Preserve validated static/common-scaling assembly and complete independent review. Relative fold mapping remains open; use docs/fold_material_mapping_audit.md correspondence gate rather than redoing the combined inventory.",
       "latest_head": "3efe05db6ac3d247ac1e7bdec83a8a906d700036"
     },
     {
@@ -362,7 +364,7 @@
         "existing_inversion_tests_passed": 23,
         "arithmetic_and_counterexample_assertions": "passed"
       },
-      "next_action": "Use the acceptance gates under existing P04-P12 tasks; proposed oscillator, full-state recurrence and material-ledger experiments remain queued. Obtain original UFT4/Delta derivation if available.",
+      "next_action": "Phase, material-ledger and recurrence baselines now have published results; continue actual fold/material correspondence and matched timing usefulness controls. Original UFT4/Delta derivation remains unavailable.",
       "limits": [
         "No new physical device or consciousness mechanism validated",
         "No hinge-to-flow correspondence supplied by the images",

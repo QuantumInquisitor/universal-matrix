@@ -7,10 +7,12 @@ on:
       - 'scripts/report_chiral_phase_controls.py'
       - 'scripts/report_phase_delay_controls.py'
       - 'scripts/report_material_specimen.py'
+      - 'scripts/report_material_restart.py'
       - 'tests/test_phase_pattern_controls.py'
       - 'tests/test_chiral_phase_controls.py'
       - 'tests/test_phase_delay_controls.py'
       - 'tests/test_material_specimen.py'
+      - 'tests/test_material_restart.py'
       - '.github/workflows/experimental-control-baselines.yml'
   workflow_dispatch:
 
@@ -68,4 +70,27 @@ jobs:
           material = reports['material']['cases']
           assert len(material) == 4 and sum(map(len, material.values())) == 12
           assert abs(material['driven_damped'][-1]['balance_residual_j']) < 1e-8
+          PY
+      - name: Check switched mechanical restart and energy ownership
+        run: |
+          uv run ruff check scripts/report_material_restart.py tests/test_material_restart.py
+          uv run ruff format --check scripts/report_material_restart.py tests/test_material_restart.py
+          uv run python -m pytest tests/test_material_restart.py tests/test_material_specimen.py
+          uv run python scripts/report_material_restart.py --output artifacts/control-baselines/material-restart.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/control-baselines/material-restart.json').read_text())
+          assert len(r['cases']) == 3
+          assert set(r['sources']) == {'report_material_restart.py', 'report_material_specimen.py'}
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for case in r['cases']:
+              assert case['exact_replay']
+              assert case['off_interval_work_j'] == 0
+              assert sum(case['final']['owned_energy_j']) < sum(case['cutoff']['owned_energy_j'])
+          fine = r['cases'][-1]['final']
+          assert abs(fine['total_balance_residual_j']) < 1e-8
+          assert max(map(abs, fine['ownership_residuals_j'])) < 1e-8
           PY

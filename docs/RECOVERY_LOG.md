@@ -414,3 +414,50 @@ delay/detuning/saturation; then test sustained autonomous breathing, conservativ
 recursive exchange and viewer replay of those computed states. P04-P10 are not
 closed by isolated baselines. Independent R01-R24 research remains recorded in
 tasks.json and must not disappear behind these integration experiments.
+
+
+## 2026-09-30 - Switched material replay, owner energy and recovered fold mapping
+
+Continued the parallel queue with a material persistence experiment and an
+independent geometry-to-material source audit. PR122 at 262ed151 had successful
+experimental-control, container and CodeQL workflows; broad verification was
+still running at the last check. No old branch was reset or merged.
+
+The new switched-drive adapter reuses the unchanged two-mass force law. It
+preserves absolute integer steps, timestep, cutoff schedule, both source hashes,
+parameters, x/v, cumulative external work, separate losses and link transfers.
+Three timestep cases replay bit-for-bit in the same environment through saved
+checkpoints before, at and after drive removal at 4 seconds. Post-cutoff work
+is exactly zero. A checksum detects unreflected payload alterations; it is not
+authentication or proof that a state came from a real experiment.
+
+Body kinetic/anchor energies and one link spring account avoid duplicated
+storage. Independent power integration closes each owner's budget; finest total
+residual is 3.25e-10 J. The input-off continuation agrees with an analytic damped
+modal solution. Positive anchor damping and stiffness exclude a sustained
+nonzero unforced periodic orbit in THIS model. No autonomous breathing claim is
+made; active reservoir laws and actual folding material remain open.
+
+Independent review verified ownership signs, interval-owned cutoff integration,
+source identity and analytic continuation. Eighteen new tests pass; combined
+validation with prior controls and documentation: 78 passed in 4.55 seconds.
+Ruff check/format pass. The fresh report and dedicated workflow acceptance block
+pass locally. New publication needs its own GitHub CI. Saved evidence:
+docs/material_restart.md, docs/experiments/material-restart-summary.json,
+docs/passive_material_motion_limits.md. Full reproduction remains scripted.
+
+Source audit recovered the existing PR119 connected 22-body geometry: six
+compliant cores, four hubs and twelve bridges. It supplies a concrete next
+specimen rather than another invented shape. The audit identifies two essential
+gaps: bonded overlap needs nonduplicated mass ownership; occupied sets do not
+uniquely define interior material-point correspondence. Independent size/fold
+coordinates also exceed the old prescribed path's clearance certificate.
+See docs/fold_material_mapping_audit.md for pinned sources, functions, equations
+and admissibility checks. Those 22 bodies are not automatically a deformation
+mapping for the separate 69-component flow graph.
+
+Next: implement the reduced fold specimen's kinematic adapter and derivatives,
+then declared mass/potential laws with geometric inertial terms and energy
+controls. Keep actual material calibration, whole-flow correspondence, recursive
+coupling, matched time-crystal usefulness and viewer integration visibly open.
+The register still contains 41 tasks; this batch does not close P04-P10.
