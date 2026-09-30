@@ -1,0 +1,4254 @@
+{
+  "scope": "text/code/report inventory; excludes dependency folders, existing repository clones, binary source documents and synced sources; hashes do not establish validation",
+  "records": [
+    {
+      "collection": "earlier-work",
+      "path": "integrate_optional_controls.py",
+      "bytes": 2261,
+      "sha256": "1bd24acd709d95905d4ddd32128a83139b89cf97b51b4464a35e3676ebb08a33",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "storage_manifest_addition.txt",
+      "bytes": 870,
+      "sha256": "7d987c4468b17a78176ae0a12b0adacefd0a73f558e72fb19888f5a82cab30f0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "book-audit/cafl_retrieved_lines.json",
+      "bytes": 165796,
+      "sha256": "5e11796d8c4f56874d59df8f948d2582488e5167a0fe087db1e2bfdbed1f6b4a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "book-audit/universal_one_source_audit.md",
+      "bytes": 26582,
+      "sha256": "de5cd396e92394ffafee4aa06b0e8abe00954dbe5f9099e16d8a299f6a7ef6f2",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "connected-fractals/compatibility_probe.py",
+      "bytes": 9941,
+      "sha256": "23e1edb20f7da9f11a9bc07166af4c216477d874543e222e77078c66eb215e1f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "fanout-audit/prefix_probe.py",
+      "bytes": 2862,
+      "sha256": "8fd8a05085e15e49a7e9edc38f65bf90c6bdb5f06bd578aa54ad79b84a6350df",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "geometry-next-gate/bore_downstream_finding.md",
+      "bytes": 2568,
+      "sha256": "b80403d0cf661b4a4f439fbe607d3648b0057bf503371f02297b8f1a4ad071b9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "geometry-next-gate/bore_downstream_inventory.json",
+      "bytes": 323396,
+      "sha256": "496863b9bd8774da11e235c087b2958a22d1ece5a74520a425e6bb2ac1c49faf",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "geometry-next-gate/bore_downstream_inventory.md",
+      "bytes": 5588,
+      "sha256": "eea51fb86d804ab26ba76b9c273d8fb42c4c2d826989e0b406c517aae6c1c94a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "geometry-next-gate/bore_downstream_inventory.py",
+      "bytes": 24515,
+      "sha256": "6633e24616c00832e7cfcfe103e516bbd2e0257eb62f46ed00fe9e7dbe5e31d3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "geometry-next-gate/bore_endpoint_probe.json",
+      "bytes": 4500,
+      "sha256": "212fc05fda376ca105ab4292ecef495e2aaad42f402be4c2af558a587934c346",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "geometry-next-gate/bore_endpoint_probe.py",
+      "bytes": 5820,
+      "sha256": "d915657c95bb8a7b20097ba7cf097a1e7ddb4c2fd26b94167970f84c349c2041",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/arithmetic_source_probe.py",
+      "bytes": 8885,
+      "sha256": "239e72f622444da8fd66bc30a1c8cc4ccf99b5a9ef7ed54bd44e39274e877411",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/arithmetic_source_result.json",
+      "bytes": 9806,
+      "sha256": "f5275bffc587c9b37def6f9324127a3dd4b5bb9dbe2d526170f4e9f4e4199fee",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/arithmetic_source_results.md",
+      "bytes": 5043,
+      "sha256": "53e0eb0c825d0c748c7283852203933275f1525b93708759aa6d9244dc1f44a2",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/build_visual_ch1_5.py",
+      "bytes": 8098,
+      "sha256": "551490e01db99d7b94988717db103156d011095737ec2e6e55b15b78115d5ac3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/build_visual_ch6_11.py",
+      "bytes": 13230,
+      "sha256": "7fdcb8382937923e75939d9bd26fdb79ec140c5fd3f9aa753c491cd3209a0d12",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch1-images.json",
+      "bytes": 2410,
+      "sha256": "4ee0329e1a08518852d8a0d3f85c9cf1cdd611fdf05bdca75fccb216f9585adf",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch10-images.json",
+      "bytes": 5867,
+      "sha256": "c25fd9ec185bdc9e1ce82283fb2536b4237c9fa515b0a1324f046288cd877568",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch11-images.json",
+      "bytes": 3372,
+      "sha256": "823c5ee2494ff6fca5d0e41300179da732f46010dfa55b258e84bd597c061032",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch2-images.json",
+      "bytes": 1915,
+      "sha256": "996010b6084818a09f223ea396619417e9d9dc6c493aea017d0467e714e788fd",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch3-images.json",
+      "bytes": 8411,
+      "sha256": "dc1620d667388f7dfba981d8e140e92e6c64c4129fa62b53913c53c00d5ef0b2",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch4-images.json",
+      "bytes": 18313,
+      "sha256": "ffc73230eb7b46ec59aa67f44f7f35c94e642dbd531a08ec3a2ecb7013eca651",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch4extra-images.json",
+      "bytes": 3398,
+      "sha256": "71c385c2d51f37eb3cfa19b24809603f01ad0c26f40aea184733a366f4a13984",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch5-images.json",
+      "bytes": 3833,
+      "sha256": "46c516037f4acac779c50d1f421091e828e251eb0caa63c114e9fb9e39d21fa3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch6-images.json",
+      "bytes": 5694,
+      "sha256": "d581665eb6aeeeaf5a14e395dc22cfc0746a69db7ed12337ed7d4a76ed3cc00b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch7-images.json",
+      "bytes": 1454,
+      "sha256": "8bce53c8335d3165a86be6a853020fe7ce3b2e00c57f993db61a633ec42fc8d6",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch8-images.json",
+      "bytes": 1454,
+      "sha256": "f68509661e958e6dcf1ba20b4121c44c2229da9ffdcd944b2a2cf9dc8af84668",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/ch9-images.json",
+      "bytes": 1454,
+      "sha256": "9053212ae1f0732d2cd85080de98a78dac6ed209ead9f7f6162630effff3c6cd",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/contact_sheets.py",
+      "bytes": 1572,
+      "sha256": "01236f52ec62551add32ac0f0beb96b521326897e1719b85f1e0b23a903e2b46",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/helix_clock_adapter_probe.py",
+      "bytes": 8105,
+      "sha256": "577b02dfd476973e97b08a9b424ceb6b1ecad2b109d727f72a5962265caf78e3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/paired-helix-motion-preview.html",
+      "bytes": 71596,
+      "sha256": "cb4edc68efbdc7aaf23720b083484ee80b642cf4cbde0dd385dd5f854dc36719",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/paired_helix_motion.md",
+      "bytes": 5630,
+      "sha256": "413e07522145d169ca919008136afb0efaa0ca5d2334cbad89e2bda5046d0ae0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/paired_helix_motion_probe.py",
+      "bytes": 4588,
+      "sha256": "68a80c3897f622013830a5eb9333f1eb21daaef06247e201b454ce2072593fb3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/paired_helix_motion_result.json",
+      "bytes": 3908,
+      "sha256": "f310aba5cfb7609e0242242274e7d91769856ed92c2f531f1187d21ec9a1931d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/projection_lift_formulation.md",
+      "bytes": 9296,
+      "sha256": "7e0d015b76dd855dab75a5e3a755432587caa62c4a06858f45783dee5e5b48bb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/projection_lift_probe.py",
+      "bytes": 8829,
+      "sha256": "1ba9bd86418e493194d57f070f5179b8f0d1f9621309422721975a17ce2605af",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/projection_lift_result.json",
+      "bytes": 3958,
+      "sha256": "2c6e3321c37b7a90b89485354681af708274b8463023d8a71f462067177b8517",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/text_ch1_5.md",
+      "bytes": 11720,
+      "sha256": "1b3d3c4d41019cd7185bff83a75475f277907a2d93576cd11cc2604bd9a8768e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/text_ch6_11.md",
+      "bytes": 17467,
+      "sha256": "020c8e84c2c4acef0e59d57f25d904235b9eafa9bf4eaca8262335c2b099edca",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/visual_ch6_11.json",
+      "bytes": 67380,
+      "sha256": "eed3cf954fe455465e9e613de0330e501ddba383dd50d93814cd5e9022ad6293",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "karmatic-image-audit/visual_ch6_11.md",
+      "bytes": 26640,
+      "sha256": "f1732f7474d4d906043f9242b7fb17126fc040516fa47985c76eb32768511a87",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/README.md",
+      "bytes": 11643,
+      "sha256": "f7e0dde99ff61bfcf4d53ec1e2aa8e4b580947e5ebd8ffdd53d4f4b374d92f32",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/atlas-scene.json",
+      "bytes": 39754,
+      "sha256": "e268353e947b67d4c59ac1dc07fa63a43a818991f5bd649b33c35605061ab4f6",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/check-spatial-exports.py",
+      "bytes": 5271,
+      "sha256": "9b7fc414b08e11f9c3383e6d3f1bb1e72fe95bdbdad1fe84a3a007aab18608f1",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/connected-scene.json",
+      "bytes": 3530284,
+      "sha256": "9440caab6390743a7f4b1110604dbc739a0cc22eedf01ae81e7358fdc0978633",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/engine-scene.json",
+      "bytes": 2934132,
+      "sha256": "63b9bb0cc2d17409ae5f181b2516bc35b7bb29ae0784ab87c415c5aeeadd9cc1",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/export-atlas-scene.py",
+      "bytes": 16041,
+      "sha256": "3013ffb6dd98c89a09b913b47c770b94ca919c354cfccbc4fd3759c493489b9c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/export-engine-scene.py",
+      "bytes": 18500,
+      "sha256": "2f2d6b9735e75f84f59a3a044f3675bd0e742d60f92e25124f3d6a5d3eeb4349",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/export-micro-macro.py",
+      "bytes": 20688,
+      "sha256": "ae67b76afb98d3467feeaea71e1cafc473e813efd151bd3ce366711535ef28a3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/export-recursive-scene.py",
+      "bytes": 5649,
+      "sha256": "2c9e03008264be82ea4183641f1fdf647a50eb417cd13b19234fef4e29cab2d1",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/export-spatial-extensions.py",
+      "bytes": 17007,
+      "sha256": "ee93953d7c8f43228d946bc3e9bf06944f99233b7934232ef8a8ca26eed63d6e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/flow-data.mjs",
+      "bytes": 5903,
+      "sha256": "b2ad575001a7dbe9b2b87c9ebbedfe13a0a55f2a9e3c0ddf13d6199c630d2300",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/flow-data.test.mjs",
+      "bytes": 7016,
+      "sha256": "53b1a58e53f50306e5ce558e57cd6a56458cec806be2161be327e176bc038169",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/geometry-layers.mjs",
+      "bytes": 6071,
+      "sha256": "f6876f6a19f0e734fc8942e4932ee8c51741d98ad02360d371bad2448236c944",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/index.html",
+      "bytes": 11833,
+      "sha256": "07e3e7ccd30b563ad37ec8571c61b23e0d31035bbb5b6106893e99f094a511e9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/micro-macro-states.json",
+      "bytes": 45413,
+      "sha256": "af7321e143f8473918b11557c084ad4bd9ec9311c665ebcc506e8f34769ef51e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/package-viewer.py",
+      "bytes": 3427,
+      "sha256": "324148a0a232c61338563be4f9d501b8d21238f9ce4f3f1941744804f6606dec",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/qa-session.json",
+      "bytes": 949,
+      "sha256": "433e1c7d8639e61925ef255fad3549d147990c03c7f7546df919577f32e5b831",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/recursive-scene.json",
+      "bytes": 2886548,
+      "sha256": "ee1f66006fd353ba690fc2686608a95aa3093e254967929ba8381d9991e1e80e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/remote-source-hashes.json",
+      "bytes": 23376,
+      "sha256": "4b816e78596bb9de69aa2707344b55ee1a78dc4c7c4cf4ab4008227fe6d51589",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/scene-data.mjs",
+      "bytes": 24999,
+      "sha256": "3864b433147e520e22bcb146d27607b9880eb838be46173687bbcf22fcc1b4cd",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/scene-data.test.mjs",
+      "bytes": 22647,
+      "sha256": "81c2edf008d202e6635c002c3f22faa57b2171ee04e26437e3627e3b037927b9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/serve.py",
+      "bytes": 1096,
+      "sha256": "8cab7842006973efd5e3ebe07caad8f836eabf75031cc4a357c92069e6393b7b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/spatial-extension-export-results.json",
+      "bytes": 1102,
+      "sha256": "790ebd26a52d65112478a1f7a41cfaa0b93f3e010c812c1727c0fd591d691d19",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/thirteen-dimensional-scene.json",
+      "bytes": 39851,
+      "sha256": "e918e7e89b62268b297b80e630121d0e7c51aeffe800d5d415fc063d59a9d757",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/viewer.css",
+      "bytes": 9495,
+      "sha256": "56a46a48bcd9fdf8784878b3a1cb1bfe9899a5d7e59b74e4a0485b4765e310ad",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "molecular-xr/viewer.mjs",
+      "bytes": 63137,
+      "sha256": "bd1d206ff49febf740e572cb215af040337a75d872cad335d65797c03d25faa0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/course_apparatus_access_followup.json",
+      "bytes": 10062,
+      "sha256": "97c3d9d2812d8adaad54d76928c4f30a041b88ae9d1d186cef472233e8ddd222",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/course_apparatus_access_followup.md",
+      "bytes": 12215,
+      "sha256": "eb09fd72b12c3c4ab89922b08d5275e371e8e88deba9d9f16d540d72027a3ea7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/original_chart_spectrum_followup.json",
+      "bytes": 5009,
+      "sha256": "8bae05592b71ad6981774d7788c0ed7f74387918e7e4aa7e9d09d9b6406fc2a0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/original_chart_spectrum_followup.md",
+      "bytes": 6742,
+      "sha256": "b1e67c3626dcbd4400d78e93eea9954e18f5cab79312e090055518eec18d3fad",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/pressure_exchange_formulation.md",
+      "bytes": 5733,
+      "sha256": "e56a898294967a339ec1aa5e3fa005479c0cb2e1343851f9dd7c11dddd462dbb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/pressure_exchange_probe.json",
+      "bytes": 2055,
+      "sha256": "f0ad9f152bf14f877b7121a21accf38f73db347534a86fcb97a35c4b31f44233",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/pressure_exchange_probe.py",
+      "bytes": 5140,
+      "sha256": "262af1287928f7c05ede0c6255ed784832300bafc21cf4a87840f422e289e258",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/russell_bibliography.json",
+      "bytes": 15941,
+      "sha256": "881fbb89d04d32fd5efe646ab4ed906ea2a31d0feedcb3c52f541dd31096e872",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/russell_bibliography.md",
+      "bytes": 24683,
+      "sha256": "01e002362773badb0a3f0e92be6cef2e8029e53020f09cf3b3dee98bea8b4dd8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/russell_claim_catalog_v0.1.json",
+      "bytes": 36160,
+      "sha256": "2d802386b7f128ed95f59f3b2842946e158fc338f3a936384e18925fcdbf7d63",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/russell_claim_catalog_v0.1.md",
+      "bytes": 9779,
+      "sha256": "7802dcff67386c9c4a871b75301d4352b03fa3d57e388c20eda4efbf456e1abd",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/russell_geometry_wave_audit.md",
+      "bytes": 13059,
+      "sha256": "e29b32904a7772a2065b18996ad1a3336cdb31fc53914e25d9afaeef4d969df0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/russell_geometry_wave_leads.json",
+      "bytes": 3841,
+      "sha256": "e160920b035fe1cba87ccc2de2f15ee6021b6a7bb78209f94f62b6c4dae1db39",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/russell_physical_claims.md",
+      "bytes": 14974,
+      "sha256": "93284e6a54e4b75660d6d6d5a49a0958ea156dfcfad891be38025270f624b2b7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/russell_pipe_probe.json",
+      "bytes": 2537,
+      "sha256": "338e667dc3fe596eebdf1ebde34d58c2eea051a34ace44c588ee27a150e60372",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/russell_pipe_probe.py",
+      "bytes": 3366,
+      "sha256": "84273773cbc35fe1ccf542143d84dc868a03f6dc16dc6238bd082d701da1a3ed",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/second_transcription_watts.md",
+      "bytes": 5980,
+      "sha256": "9e34549a5e33bf443f4c84d4de5ff04fcce82185e4e9ce7bc88b3b2b828d61c8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "russell-corpus/second_transcription_watts_units.md",
+      "bytes": 3191,
+      "sha256": "8b63ec27cf2691fc1b6664e0de576c8bfde5dc7b5536b1c8435d04a924333413",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "specialist-solutions/astrophysics_shell_formulation.md",
+      "bytes": 14980,
+      "sha256": "7fdda030781682be6006b5493ae8140342db38488ecde12c740218886a1e087c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "specialist-solutions/astrophysics_shell_probe.py",
+      "bytes": 15638,
+      "sha256": "9dccf857090ce54c0f4014f825c3cb1e9c943059d8f17469b0bfa6c9ef2aaffe",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "specialist-solutions/astrophysics_shell_result.json",
+      "bytes": 10439,
+      "sha256": "594bb50328c93f983885545150c1f3d963734b7a75d195bc029b98e7b1b64bc3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "specialist-solutions/quantum_mode_pair_probe.json",
+      "bytes": 15246,
+      "sha256": "9e33cdfac92e74eeb17a4052b55ab907a67322eb13ac98b8a8b795a7a919f067",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "specialist-solutions/quantum_mode_pair_probe.py",
+      "bytes": 11534,
+      "sha256": "e57a38d960e37ac5cbcc12135ef549351bae0ea3acbe2ff3f73f502e9ea37ec0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "specialist-solutions/quantum_mode_pair_solution.md",
+      "bytes": 12825,
+      "sha256": "d8bd1c0df4ddbb7df596503df445943f416519e9a6d12b3e1d34a4709740f2b2",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "specialist-solutions/transverse_access.json",
+      "bytes": 57489,
+      "sha256": "3d715109c9ce1537530be3ab901705d40274cf4f0c99d34c538860470141448b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "specialist-solutions/transverse_access.md",
+      "bytes": 12136,
+      "sha256": "cc09f6f549961570dcd8862b7a1031222d1e43ebcd388fbb28feacf4039811b6",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "specialist-solutions/transverse_access.py",
+      "bytes": 15374,
+      "sha256": "ceadc69c802ea560328af475ce04ee87984f54126fc0aa465d3c4d5b2c246853",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "tesla-research/coupled_resonance.json",
+      "bytes": 7863,
+      "sha256": "515884f60a7edb70e5da307740c934ff3ca51776737485b75b108a62717c7191",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "tesla-research/coupled_resonance.md",
+      "bytes": 9331,
+      "sha256": "8854887a1fd481491bef2144205149a18c579a23db2bd91f1a674bdf6003f3ba",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "tesla-research/coupled_resonance.py",
+      "bytes": 11940,
+      "sha256": "bf1fa88fe6dad993f15e13aea911fdc10fc918963509c290b06e2d712d5d20af",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "tesla-research/egg_of_columbus_phase_probe.json",
+      "bytes": 10658,
+      "sha256": "1574142e7fd6d8d990e75e7bf7974e71f8beb7fa5669608f9e388e56593a3404",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "tesla-research/egg_of_columbus_phase_probe.py",
+      "bytes": 8783,
+      "sha256": "a17525f8fbd23800738d6bb10af7f42119731a1d7569804cebca77568ec6e656",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "tesla-research/egg_of_columbus_source_and_model_audit.md",
+      "bytes": 13459,
+      "sha256": "d1fe43c41e97b203bc5d6d6c88e565906b9b56a56626677fb90b08936cd0b3e5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "tesla-research/tesla_work_sources.md",
+      "bytes": 17526,
+      "sha256": "c223e4d536c39d0e61fe28eda8e8546bac5ad298057c955633e42e9aa903b263",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "toroidal-next-attachment/export_results.py",
+      "bytes": 13840,
+      "sha256": "0e2ee22f0965ae87753e3a73be46e50262a4cc7cd248cf58093c35c437fff014",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "toroidal-next-attachment/inner_attachment_probe.py",
+      "bytes": 15488,
+      "sha256": "e09a5349f7f536aa092ab96f4cafb6a62360248fb1dc33df0a36b06450615bac",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "toroidal-next-attachment/inner_attachment_result.json",
+      "bytes": 298363,
+      "sha256": "3c95dd73f4f613e089b7ec1095c978aeb32c4960d9d3d4e317653fd5b13e5f47",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "upstream-access-audit/upstream_access_audit.json",
+      "bytes": 255239,
+      "sha256": "0df96cf576ba0c51de2b514cb42b23a60203d6fced6ef408dc2b0840f40ca92b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "upstream-access-audit/upstream_access_audit.md",
+      "bytes": 8765,
+      "sha256": "1359443f7983edd8780eeddce601243c41ebba335f9f12a5eddf49bfc686af31",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-work",
+      "path": "upstream-access-audit/upstream_access_audit.py",
+      "bytes": 14473,
+      "sha256": "36aa14cbc3fb29effe7ab1194766e339bacc0607f95736b6958aef73aa072b67",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "arithmetic_source_result.json",
+      "bytes": 9806,
+      "sha256": "f5275bffc587c9b37def6f9324127a3dd4b5bb9dbe2d526170f4e9f4e4199fee",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "arithmetic_source_results.md",
+      "bytes": 5756,
+      "sha256": "fa04c6de491e2c3928375d79d68885070599cdf4459485d98e0e914a2f1276b8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "astrophysics_shell_formulation.md",
+      "bytes": 14980,
+      "sha256": "7fdda030781682be6006b5493ae8140342db38488ecde12c740218886a1e087c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "astrophysics_shell_result.json",
+      "bytes": 10439,
+      "sha256": "594bb50328c93f983885545150c1f3d963734b7a75d195bc029b98e7b1b64bc3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "bore-downstream-probe.json",
+      "bytes": 4500,
+      "sha256": "212fc05fda376ca105ab4292ecef495e2aaad42f402be4c2af558a587934c346",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "bore_downstream_inventory.json",
+      "bytes": 323396,
+      "sha256": "496863b9bd8774da11e235c087b2958a22d1ece5a74520a425e6bb2ac1c49faf",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "bore_downstream_inventory.md",
+      "bytes": 5588,
+      "sha256": "eea51fb86d804ab26ba76b9c273d8fb42c4c2d826989e0b406c517aae6c1c94a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "cafl_explicit_catalog.json",
+      "bytes": 305148,
+      "sha256": "de6f091e843887c5d1c7f59886c6ed5cfcfa66d05367550dda259b08c0232454",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "connected-fractals-checks.json",
+      "bytes": 7019,
+      "sha256": "e0519234919aac3fa75d75b2bac8fad00bd45f7a347adc509712482cb17228f8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "connected-fractals-formulation.md",
+      "bytes": 10072,
+      "sha256": "2e66918d190b8ced57001fad5a6d118ea009e610e858c660c0e0838678de1c32",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "connected-return-checkpoint.md",
+      "bytes": 4316,
+      "sha256": "65e5d9d380caf130baa6e31f7ff41e13993a303e2aebfbb5dacf979570244999",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "coupled_resonance.json",
+      "bytes": 7863,
+      "sha256": "515884f60a7edb70e5da307740c934ff3ca51776737485b75b108a62717c7191",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "coupled_resonance.md",
+      "bytes": 9331,
+      "sha256": "8854887a1fd481491bef2144205149a18c579a23db2bd91f1a674bdf6003f3ba",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "course_apparatus_access_followup.json",
+      "bytes": 10266,
+      "sha256": "41d2cc62b57918af41bf7c2b9ea75f657d74a6de7c157ff7ccf47d6b31d6ef30",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "course_apparatus_access_followup.md",
+      "bytes": 12279,
+      "sha256": "f9f2a310835a5fe3f21e7a2a9c82f6ae86ababaa18a29a779890c9d2c1d04910",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "egg_of_columbus_phase_probe.json",
+      "bytes": 10658,
+      "sha256": "1574142e7fd6d8d990e75e7bf7974e71f8beb7fa5669608f9e388e56593a3404",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "egg_of_columbus_source_and_model_audit.md",
+      "bytes": 13459,
+      "sha256": "d1fe43c41e97b203bc5d6d6c88e565906b9b56a56626677fb90b08936cd0b3e5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "engine-scene-export.md",
+      "bytes": 4029,
+      "sha256": "5da8e025597b499efd9892b532587d4fd434f51a464ebd4dda22ce580b2c2788",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "fixed-interface-checkpoint.md",
+      "bytes": 3213,
+      "sha256": "12c23a3f4c7bf4cbd9d185904645ee98a6eaf902034d6873216acd75eef4bd7a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "frequency-source-catalog.json",
+      "bytes": 16124,
+      "sha256": "a7ca3956e2efaffdd1ddb47fb6ffaf31a256a6666511cafe4e74654b9696c65e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "frequency-source-checkpoint.md",
+      "bytes": 2714,
+      "sha256": "122a17dac546f11b5f652b1a324e0899411b01095bed2efced424f5b1d1d026f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "frequency-source-findings.md",
+      "bytes": 7642,
+      "sha256": "008660c501d9af4b0bcf5dcb71e9799cb804936968adb0d11d50943dd07b1046",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "geometry-remaining-work.md",
+      "bytes": 5533,
+      "sha256": "1a40d0f8897e9ced5af0b9c8a483f38e3379312a3e31ddee9f5a8b17312fd9f0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "helix-clock-adapter.json",
+      "bytes": 4213,
+      "sha256": "c5c80a5853c0b20118dcc0dc5ffc1cd42cc866a402a3f625aac939ef3bf2eba0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "helix-clock-adapter.md",
+      "bytes": 4800,
+      "sha256": "67829dd1fbb962c9d65e33a0ede09225e6ebd25206ad7b3f7a7793b3351856dc",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "inversion-control-checkpoint.md",
+      "bytes": 3467,
+      "sha256": "52f73efc0e5275d50ed9ad206762d894a48782ea2572307bbe375f36274df4cd",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "junction-bore-checkpoint.md",
+      "bytes": 3083,
+      "sha256": "236cb12a231fbe291d3f4e23d5df4955e44824421c98d09be2432cdf6dfcb903",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "m4_source_and_claim_audit_v0.1.md",
+      "bytes": 23293,
+      "sha256": "12580275b9dbaeb4586fdf416f06d1c8c726422e99f4a545a9ebf77f7b4fe080",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "micro-macro-existing-effect-audit.md",
+      "bytes": 6585,
+      "sha256": "977d15de8309c342663aa6e24b633e06f0146ffceda52cc7c77e0eb30fa688d5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "micro-macro-review.md",
+      "bytes": 8875,
+      "sha256": "f36fd9f735cf8e3d1aafd5368100887d78f48025b49bea034d362247a5562a66",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "microplane_projection_reference_v0.1.md",
+      "bytes": 7329,
+      "sha256": "c055dfdf85d1c299f7bcfa71c5c02ea3514aa7d4e56e70158385751f4dc181be",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "molecular-xr-baseline-audit.md",
+      "bytes": 11245,
+      "sha256": "495c3d356e58a2315c0664c21a28e442d93ac0d350bfaec4f90341a142017f21",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "molecular-xr-prior-art.md",
+      "bytes": 20232,
+      "sha256": "7bc1741de9258695eaf37b6492b4fbc3210eaa28ad30639bd73837eb6d66da65",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "nist_hydrogen_lines.json",
+      "bytes": 11646,
+      "sha256": "1bc0c049228a3a85cff9586477d923457660a7de905383f5769a8f05bb00d021",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "optional-controls-review.md",
+      "bytes": 2560,
+      "sha256": "fdf7ff51db7d563db53c3ef742cd731f9e7b317e6d3692d6215d8e33325c6c38",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "original-spectrum-verification.json",
+      "bytes": 9420,
+      "sha256": "fa05afb707961d9ee40dfe302069608b71cee5391e2c68d23753bace9b1a5c0e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "original-spectrum-verification.md",
+      "bytes": 8104,
+      "sha256": "65a8676d4f278efbcfafe5b9af4e337c1b7dc867d03494cbda64f80393cbc6c3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "paired_helix_motion.md",
+      "bytes": 6111,
+      "sha256": "99411ef3fd4f07ca81d4b4c146a815d11a4da78fe911ee8761da36b2e1442328",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "paired_helix_motion_result.json",
+      "bytes": 3908,
+      "sha256": "f310aba5cfb7609e0242242274e7d91769856ed92c2f531f1187d21ec9a1931d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "parallel-geometry-checkpoint.md",
+      "bytes": 4404,
+      "sha256": "0511e33d6b89c9c34d276d95fd7189ad48b7f380eb952720ccf5fd3b67c63217",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "parallel-validation-checkpoint.md",
+      "bytes": 2632,
+      "sha256": "b49be49705b4bf2be4f830bee22bba3720b875a90feae6cd358e81948180f07a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "physical_theory_controls_v0.1.md",
+      "bytes": 6047,
+      "sha256": "a46fe7e5580251c0068fb626262926bf814e33a93e7a3b3e5e49b6f4ec3af6c0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "piezoelectric-mode-checkpoint.md",
+      "bytes": 1170,
+      "sha256": "7cc616b977eb8be998aebbd22645d9b41ac3be2a04076366ff0cc64aa98c9042",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "piezoelectric-mode-findings.md",
+      "bytes": 5785,
+      "sha256": "cf2d6395938527f29d2df2a2cdeaadb2b52d1c24fc489bce07527e9793d42325",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "piezoelectric-validation-plan.md",
+      "bytes": 4276,
+      "sha256": "4872953aaded845c9719f64a37aba62e1a51ba19ba39e3a43a934ed83044f0af",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "piezoelectric_mode_reference_v0.1.md",
+      "bytes": 5785,
+      "sha256": "cf2d6395938527f29d2df2a2cdeaadb2b52d1c24fc489bce07527e9793d42325",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "pressure_exchange_formulation.md",
+      "bytes": 5733,
+      "sha256": "e56a898294967a339ec1aa5e3fa005479c0cb2e1343851f9dd7c11dddd462dbb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "pressure_exchange_probe.json",
+      "bytes": 2055,
+      "sha256": "f0ad9f152bf14f877b7121a21accf38f73db347534a86fcb97a35c4b31f44233",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "projection_lift_formulation.md",
+      "bytes": 9972,
+      "sha256": "fe3b85e28ba6f51df3c81dca18c83efd81a21dba788580bc03b61cc528e2ea4e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "projection_lift_result.json",
+      "bytes": 3958,
+      "sha256": "2c6e3321c37b7a90b89485354681af708274b8463023d8a71f462067177b8517",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "proposed-wave-checkpoint.md",
+      "bytes": 1950,
+      "sha256": "92ae0f95c3c9ce08a635a425c3590dcfb95b77647bcf1b0ecf8b916ce956f7ca",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "proposed-wave-results.json",
+      "bytes": 3125,
+      "sha256": "40d96e793fddbc2a9be2322ea0cf341c858e1ae2249577a74bb799b74c074926",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "proposed_scalar_wave_control_v0.1.md",
+      "bytes": 9054,
+      "sha256": "8955af6cd2dc74914c32f74299457e200819277f71b3c6444e43d128573a7bec",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "quantum_mode_pair_probe.json",
+      "bytes": 15246,
+      "sha256": "9e33cdfac92e74eeb17a4052b55ab907a67322eb13ac98b8a8b795a7a919f067",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "quantum_mode_pair_solution.md",
+      "bytes": 12825,
+      "sha256": "d8bd1c0df4ddbb7df596503df445943f416519e9a6d12b3e1d34a4709740f2b2",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "recovery-checkpoint.md",
+      "bytes": 38870,
+      "sha256": "b03816c9a09e3053e1c853b914e59c8afc083acd728f9828c3d4d07e18ad410d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "research-and-geometry-findings.md",
+      "bytes": 10578,
+      "sha256": "7181ea61502ad3eb539c53b2eb0c07ac528d0a352a0f219210f90775ba39d72c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell-art-context-followup.json",
+      "bytes": 8738,
+      "sha256": "e357e883e0218fa40d2d16e1d87bfc9e5c62e5c29f00051998088246001aea5a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell-art-context-followup.md",
+      "bytes": 7226,
+      "sha256": "e4c676ca112267f7a3f26ad45004e84d21619ea6892d64fd94e2c655c87b436b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell-corpus-fit-map.md",
+      "bytes": 11648,
+      "sha256": "b7ca0a5dcd09a8ca2d9b2dc28b3f6e89886108db7634f0428c367d90a9655b2a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell-next-source-gate.json",
+      "bytes": 4131,
+      "sha256": "77517689c9820e2397933560d7cbb628f2bc87e0c5baa4696f12d8ecd508497d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell-next-source-gate.md",
+      "bytes": 6303,
+      "sha256": "391d865c3bf0504e3c320921de29254fdc35772d9644acceccc13f41b43d905b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell-original-octave-verification.json",
+      "bytes": 2180,
+      "sha256": "7f0b7d9c57690ac0924ca71a8beba8dccb723aee5b9464c5961957ca24081fc8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell-original-octave-verification.md",
+      "bytes": 4353,
+      "sha256": "fd3f5e323a483f2ed253946f5b8c4a1a59082e7551f41a56f38f3f4cb3d4c634",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell_bibliography.json",
+      "bytes": 15941,
+      "sha256": "881fbb89d04d32fd5efe646ab4ed906ea2a31d0feedcb3c52f541dd31096e872",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell_bibliography.md",
+      "bytes": 24683,
+      "sha256": "01e002362773badb0a3f0e92be6cef2e8029e53020f09cf3b3dee98bea8b4dd8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell_claim_catalog_v0.1.json",
+      "bytes": 44224,
+      "sha256": "11954bef140e91ff7e5819bce4bddc04e08ee9070724cfb539acf7d0a7a065f6",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell_claim_catalog_v0.1.md",
+      "bytes": 10090,
+      "sha256": "04fb12a04d49d2e0c29b93fa5e28ef9114b8e3db64e1be0693cc00472ab5d01b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell_geometry_wave_audit.md",
+      "bytes": 13059,
+      "sha256": "e29b32904a7772a2065b18996ad1a3336cdb31fc53914e25d9afaeef4d969df0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell_geometry_wave_leads.json",
+      "bytes": 3841,
+      "sha256": "e160920b035fe1cba87ccc2de2f15ee6021b6a7bb78209f94f62b6c4dae1db39",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell_physical_claims.md",
+      "bytes": 14974,
+      "sha256": "93284e6a54e4b75660d6d6d5a49a0958ea156dfcfad891be38025270f624b2b7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "russell_pipe_probe.json",
+      "bytes": 2537,
+      "sha256": "338e667dc3fe596eebdf1ebde34d58c2eea051a34ace44c588ee27a150e60372",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "sampling-reliability-checkpoint.md",
+      "bytes": 3249,
+      "sha256": "1dd7f46f449b94c6f868f675fe7687c3c1c93bc75658bffcc09e27725a44fcd6",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "second-transcription-russell-octave.json",
+      "bytes": 3273,
+      "sha256": "c5f3628b87f16da41fbedecd7cfe843a5039e6c7d7924d7d0cee0d49f678bb37",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "second-transcription-russell-octave.md",
+      "bytes": 5423,
+      "sha256": "220b2648044db582b8c9c379df3f1aad97c21dd33233b2af1130359883421b62",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "second_transcription_watts.md",
+      "bytes": 6285,
+      "sha256": "1c34c1ba80ab4d58903a7a314b2cb6b8fd3db14e783ab898542b339abf6b4165",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "second_transcription_watts_units.md",
+      "bytes": 3241,
+      "sha256": "23e90839e741f7e3f21dc9d6cd810938111ff68ce76e64ba53dae4f2184c4cad",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "shared-return-checkpoint.md",
+      "bytes": 3973,
+      "sha256": "a48b5b674a6001d6fc5804cb89b62bc312eb8b74dcf8e423cb6b1b9fdc253ddb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-upgrade-export-review.json",
+      "bytes": 1143,
+      "sha256": "ca9f2619d37c7499c674d0e7fd8c42b9ae8f89b054cb8a21a28ababf58fb09af",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench-0.2-status.md",
+      "bytes": 6505,
+      "sha256": "028b344e113b145429bbe9496b0dafd8ccb2ece4ead4c6e0bc761f2331de09f8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench-status.md",
+      "bytes": 5080,
+      "sha256": "cb107050d9a480e7882778cf8612c726e362c5cc62d9a25b492339d207a8b711",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "specialist-solutions.md",
+      "bytes": 8326,
+      "sha256": "5208f957aaeea3f2f6d1b08f12764c98bd3143163d08245a1e3fe64f9703b765",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spectra-and-theory-checkpoint.md",
+      "bytes": 2221,
+      "sha256": "3cc308d390ebfcbafb5e4350ef5581aadf037a44c6980dc4a5d3cfce5d507b00",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spectral_reference_catalog_v0.1.md",
+      "bytes": 8384,
+      "sha256": "e46fcf8a34a1e8ec19b23e24bac77511e588d6e9dfcf9713ddcee6d3257e77e2",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "surviving-branches.txt",
+      "bytes": 1864,
+      "sha256": "31a720c68114122939dd980972e2eae066aabfff8db551621716128d0622b4fb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "tesla-fit-findings.md",
+      "bytes": 4745,
+      "sha256": "10d5b45bb2d431e5a6b50a538df564c4984626ec1412c560784184fb968cd0cf",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "tesla_work_sources.md",
+      "bytes": 17526,
+      "sha256": "c223e4d536c39d0e61fe28eda8e8546bac5ad298057c955633e42e9aa903b263",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "text_ch1_5.md",
+      "bytes": 12212,
+      "sha256": "5fe0046d44bd9454fb7aefe85cc99fb2f5fca6ac1c6788ce51b7048b08ed356f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "text_ch6_11.md",
+      "bytes": 17992,
+      "sha256": "a8af01f13452629533e93c574ad08e3baac3c98a51121ec963a2ca863a571c10",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "toroidal-next-attachment-audit.json",
+      "bytes": 301092,
+      "sha256": "3904b627a5abc5906d314e78d515ca061a89d68355b8938a15ec74efc0a5bee7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "toroidal-next-attachment-audit.md",
+      "bytes": 9524,
+      "sha256": "4a5085490dea024bfdd20c741ebdd4d9fa1afdd9736eb9fbf6f8bc18293849ce",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "toroidal-next-attachment-source-check.json",
+      "bytes": 7243,
+      "sha256": "2be9d6722a038bb74bf259f045437ef0235acee29265ce729ee766afa3668e9a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "toroidal_bore_downstream_v0.1.md",
+      "bytes": 7583,
+      "sha256": "615ef1065c67ddee420cf8f8b4ca4004e474b40da90cf45113177ae131aba261",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "transverse_access.json",
+      "bytes": 57489,
+      "sha256": "3d715109c9ce1537530be3ab901705d40274cf4f0c99d34c538860470141448b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "transverse_access.md",
+      "bytes": 12136,
+      "sha256": "cc09f6f549961570dcd8862b7a1031222d1e43ebcd388fbb28feacf4039811b6",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "universal-playing-field-image-findings.md",
+      "bytes": 11978,
+      "sha256": "3d0742f9d252c5f81ea272878ed33ec13732c8da2717136c52bd7c25fe3796c9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "universal_one_numeric_leads.json",
+      "bytes": 3085,
+      "sha256": "6ba484dc64c15ab4bcc3f636a971661ffb18f5bd3a6a9ae0650153beb51108e5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "universal_one_source_audit_v0.1.md",
+      "bytes": 26582,
+      "sha256": "de5cd396e92394ffafee4aa06b0e8abe00954dbe5f9099e16d8a299f6a7ef6f2",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "upstream_access_audit.json",
+      "bytes": 255239,
+      "sha256": "0df96cf576ba0c51de2b514cb42b23a60203d6fced6ef408dc2b0840f40ca92b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "upstream_access_audit.md",
+      "bytes": 8765,
+      "sha256": "1359443f7983edd8780eeddce601243c41ebba335f9f12a5eddf49bfc686af31",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "viewer-geometry-coverage-audit.md",
+      "bytes": 16846,
+      "sha256": "af606b4ea66e8e74d3efc176b5b2c75429514385fe1e0e018730ac7f9cd79edb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "visual_ch1_5.json",
+      "bytes": 62863,
+      "sha256": "f611695f4a2f5e252505260cd9cde22d647c098334eb200bc37a7101cfa600a7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "visual_ch1_5.md",
+      "bytes": 6878,
+      "sha256": "e7e1d8bb32907098fab91512b9b7c7d0b1d34d256492ef8582261ddaa300cc3c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "visual_ch6_11.json",
+      "bytes": 67380,
+      "sha256": "eed3cf954fe455465e9e613de0330e501ddba383dd50d93814cd5e9022ad6293",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "visual_ch6_11.md",
+      "bytes": 27286,
+      "sha256": "a893ac7f02af144f25e73d731e1c3cb73fdb1128470408e049ec0d7b9d7abf5f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "watts-iron-crossmatch.json",
+      "bytes": 5599,
+      "sha256": "d563c3bfbcc4edf46a3af9d62d426319c51be84d6c5f228897593b54c5b006de",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "watts-iron-crossmatch.md",
+      "bytes": 4676,
+      "sha256": "77a467a571899a26ef63c550a1a48de205c0a1e7738e6b20cd0c505ccdfe41af",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/README.md",
+      "bytes": 8749,
+      "sha256": "2683d14f72d63f47e79303790f1052fe9502da9a2eb9115745d4bac6f430d4cf",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/SHA256SUMS.txt",
+      "bytes": 1738,
+      "sha256": "d06e79a8784806bef654d427c2a50da84b7dee9d0b9f8b8256f66c119f9a955c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/engine-scene-export.md",
+      "bytes": 4029,
+      "sha256": "5da8e025597b499efd9892b532587d4fd434f51a464ebd4dda22ce580b2c2788",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/engine-scene.json",
+      "bytes": 4095628,
+      "sha256": "c0f02913e088ffdb0cb5a7495d5b91afe853f3c5f85e8be6a430349996835053",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/export-engine-scene.py",
+      "bytes": 18500,
+      "sha256": "2f2d6b9735e75f84f59a3a044f3675bd0e742d60f92e25124f3d6a5d3eeb4349",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/export-micro-macro.py",
+      "bytes": 20688,
+      "sha256": "ae67b76afb98d3467feeaea71e1cafc473e813efd151bd3ce366711535ef28a3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/export-recursive-scene.py",
+      "bytes": 5649,
+      "sha256": "2c9e03008264be82ea4183641f1fdf647a50eb417cd13b19234fef4e29cab2d1",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/index.html",
+      "bytes": 7829,
+      "sha256": "c944f5428350e7921eecc6d348ac8aabb3dad831209075429990b73fb793f6a3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/micro-macro-existing-effect-audit.md",
+      "bytes": 6585,
+      "sha256": "977d15de8309c342663aa6e24b633e06f0146ffceda52cc7c77e0eb30fa688d5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/micro-macro-review.md",
+      "bytes": 8875,
+      "sha256": "f36fd9f735cf8e3d1aafd5368100887d78f48025b49bea034d362247a5562a66",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/micro-macro-states.json",
+      "bytes": 45413,
+      "sha256": "af7321e143f8473918b11557c084ad4bd9ec9311c665ebcc506e8f34769ef51e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/molecular-xr-prior-art.md",
+      "bytes": 20232,
+      "sha256": "7bc1741de9258695eaf37b6492b4fbc3210eaa28ad30639bd73837eb6d66da65",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/recursive-scene.json",
+      "bytes": 2693524,
+      "sha256": "9a734089f1f2cf723402b87802bd43551842cfbc8cacdd8669203cc9206dc9fb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/remote-source-hashes.json",
+      "bytes": 23376,
+      "sha256": "4b816e78596bb9de69aa2707344b55ee1a78dc4c7c4cf4ab4008227fe6d51589",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/scene-data.mjs",
+      "bytes": 16663,
+      "sha256": "87ddf5b147195bf8e6789c465d5975936e179da451ef73370803c1bac1a37f8c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/scene-data.test.mjs",
+      "bytes": 14617,
+      "sha256": "7402129c153f429b9db8fa3ac82dddd64b4e861d34a4bdced4d906e1ffe46dab",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/serve.py",
+      "bytes": 1096,
+      "sha256": "8cab7842006973efd5e3ebe07caad8f836eabf75031cc4a357c92069e6393b7b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/spatial-workbench-status.md",
+      "bytes": 4860,
+      "sha256": "e8779af425e115fac15ac16e68fbaa83ee1f1b198a461c9c1b4b9ab82729866d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/viewer.css",
+      "bytes": 8552,
+      "sha256": "350e9a01d9e2a70b6de36db9d00882884b2855c2226a24a6b8ea240107b32f30",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "earlier-reports",
+      "path": "spatial-workbench/viewer.mjs",
+      "bytes": 40979,
+      "sha256": "6dbd79790dfeff22e767848957d4446141fc4afa36521e625b95e7a96780d2d7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "inner-attachment-reproduction.json",
+      "bytes": 325153,
+      "sha256": "4a2239572ee5b0ed19cea6e07fe3d652792b648443cb931187dd792726b2b3e4",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "prepare_aperture_candidate.py",
+      "bytes": 1868,
+      "sha256": "d0f49bf5a01425ae854db3bff553d65a333334480f9910e4522e6e9c82776d84",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "reconcile_repository.py",
+      "bytes": 3052,
+      "sha256": "8dffcda88175bd754be055f7e0a266bb448dd2684ebd315b7375920eab1a8bd5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "recover_inner_attachment.py",
+      "bytes": 2060,
+      "sha256": "5b1ddeab3905ac4c545762cbec8cdab9b74833045c0861d837ad4b4eb1c6ea05",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/baseline-source-hashes.json",
+      "bytes": 32716,
+      "sha256": "8f13ab28cc55b27367c863c26e132e63ac0fd56813b9070b3628971e6a9e82f6",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/candidate-summary.json",
+      "bytes": 1451,
+      "sha256": "a04fd538c288a13ac7e1d0f4aa962bb356f83a148ebe207d512ecbbc80e0ec7b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/candidate-tests.txt",
+      "bytes": 183,
+      "sha256": "76598bd233131bb01e907ac1ff365f349af582207ad3351356a0fafa47c092ad",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/fanout-aperture-probe.json",
+      "bytes": 1121888,
+      "sha256": "40055d9fb604865a1a332e7894ef3627a8161390eebbecbd11709016fb1df024",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/fanout-aperture-probe.txt",
+      "bytes": 35179,
+      "sha256": "594c541fcf2ca06425c0a33edba279ccea6627ed7417d42c8b2ac0c152bdf777",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/fanout-tests.txt",
+      "bytes": 102,
+      "sha256": "4ba6e1835b6347ca792ceb51365a3767f9254da303893847faa2a64538d31201",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/fanout_aperture_probe.py",
+      "bytes": 8809,
+      "sha256": "71b83c238ff98b503712940a199e9e99c3b2fcb96ec7d07623fc88480051ad88",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/finalize_candidate.py",
+      "bytes": 2288,
+      "sha256": "34c0b16b447bc3c3049f46f78fb10877e0e4e1e3d2f4420ee6079a8a3b89c1f3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/outer-connection-probe.json",
+      "bytes": 736125,
+      "sha256": "c4825cc1ea2f80e84bc47040dbed747c17cfd30a02c5ed8c61ea3b8debc73876",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/outer-connection-probe.txt",
+      "bytes": 763,
+      "sha256": "bc936e28bf5e925c2c409ff7ec276bc2872ac2484a055ed2b93a7f5fcdaa6e6c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/outer-tests.txt",
+      "bytes": 101,
+      "sha256": "8791f1046b41d14bbbd873211437b8ba2c9c43684e4c9875f291096d6aeac16f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/outer_connection_probe.py",
+      "bytes": 9026,
+      "sha256": "aa966fbb80e6faa98299737822b5341dc7430298b80c9ee4c1881ce9285757af",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/retained-collision-probe.json",
+      "bytes": 1078398,
+      "sha256": "8e838c116cf62b467f740485486400855ff3304b41be11de30af624c613fc3ca",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/retained-collision-probe.txt",
+      "bytes": 9343,
+      "sha256": "e32cada1823848087b3bda956573e377041acc3226d991ccfafce0a5aec47df9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/retained_collision_probe.py",
+      "bytes": 3769,
+      "sha256": "0e43ea7cd2f61a081079ea9340046d6af6f0e5844c93f826981d9773fe116cf7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/acoustic_resonance_synthesizer.py",
+      "bytes": 1987,
+      "sha256": "68f64a29adf1317d64f730690e1de75c24ba22293069faeb837ecb3f398062a3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/api.py",
+      "bytes": 56151,
+      "sha256": "6d5468e30e4f73c8e7ab1aca067a0726d6bc0adf38303c227f280c4d355c094e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/api_server.py",
+      "bytes": 11714,
+      "sha256": "b1141ea9250ca1d1829c15484add130e0c5d8f95332c717d3cbc9b90d6f85af3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/audit_ledger.py",
+      "bytes": 5019,
+      "sha256": "0fc4ad88e0ac50e2847bce63c9b5a5f083e7a378b4419df53648935e6a6d4198",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/auth_gateway.py",
+      "bytes": 1722,
+      "sha256": "b6bc385b6e12e516fa21ae8d1dabeadb655b3a395865097bb5cf2d837edd6d98",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/autonomous_agent.py",
+      "bytes": 2164,
+      "sha256": "e3aec3b6cc0b5630f61ee4dc163a5a78cb99d95b1c259255bdeeca18293d9b03",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/biometric_ingestion.py",
+      "bytes": 1837,
+      "sha256": "fc76a721c629b478c02d6a68d192f1f9b45c25120f9c297eea6ffffdf38f03f5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/calculator.py",
+      "bytes": 6718,
+      "sha256": "728cfdc2019a1c9b9e61aeea8d2422dcd06c25165932c449e34dddb267d36449",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/can_bus_driver.py",
+      "bytes": 996,
+      "sha256": "4c80aad13666208e875b031bb00b3793ae90a04991d360a427de9793008b9e94",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/canonical_kernel.py",
+      "bytes": 5579,
+      "sha256": "3b661db605c1d4f18ba4370be961b15031478aafe0f99e1745bb7b45a06047c8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/canonical_mod9_interface_audit.py",
+      "bytes": 5946,
+      "sha256": "08e8443a99a50359aeece20868409912aa858e1b5dca564f2c8bc340de985970",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/canonical_polarity_clock.py",
+      "bytes": 2362,
+      "sha256": "1ad6e30821c4283bd0f18df06d3ce0ace9b7182b2a21d8ae5f4725aa309e545a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/canonical_scale_transfer.py",
+      "bytes": 5561,
+      "sha256": "8fcbe4e7db898a9ed8918a47efdc58e42690eb1889bceb9908e02ddb5a2f6412",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/causal_cone_bridge.py",
+      "bytes": 2248,
+      "sha256": "edc887e3185f3361eedcbad8c6e254debc3aa52c0de3444a8d64e79460ae095a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/charged_matter_persistence.py",
+      "bytes": 7021,
+      "sha256": "0da7e3c9d6ec70d73e1e30c05844f5a48fe41241a110f95312b058a3f5e5031c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/classical_matter_dynamics.py",
+      "bytes": 6702,
+      "sha256": "1ebc6734720bb3436c5d85bc3f38aad79d8b9d822d7aba64ad16e81e6c433030",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/clock_space_reciprocity.py",
+      "bytes": 3455,
+      "sha256": "d3dd1710dec291b7a22a4f201ff9511a3ebe4f773c4959ff28281ff3b41b565b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/closed_loop_bio_driver.py",
+      "bytes": 1484,
+      "sha256": "e49e661f77e4172434d59b7a1ed2b6b3958957fa1b196388d582e83a97c7bb33",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/cluster_sync.py",
+      "bytes": 2309,
+      "sha256": "2bf0de7a4a576ec181dd1bfee8feef0d434c065af0efac0aa7a470fbe295fedb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/cnc_hardware_controller.py",
+      "bytes": 4212,
+      "sha256": "7f8c76b303b25d32ea3e7bfe35d7a4df9020f7ce6c6aa948c25199137d73f502",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/coil_geometry_optimizer.py",
+      "bytes": 2416,
+      "sha256": "98de46c33332da88f568e07431843996a094a520cb28c1fec9c6ed3af9a5829f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/commercial_entitlements.py",
+      "bytes": 4624,
+      "sha256": "4cda87d682afdd0efde53e6aea0f251c9a825d1e85b0e95018db4e3550867016",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/config.py",
+      "bytes": 1022,
+      "sha256": "3a32efa9bbd7e80c771a01872998f8350785dbfadad062476880555eb8f536f2",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/conservative_toroidal_field.py",
+      "bytes": 3944,
+      "sha256": "1fc646e227c7b73ed929236637d17b8f7859a4fa56163dcb4d457799210b477a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/content_clock.py",
+      "bytes": 5315,
+      "sha256": "999941fbf2cef017a9728740d17e02bff4fe640c4c2db8749f97afba9f344b8c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/content_massive_motion_candidates.py",
+      "bytes": 3763,
+      "sha256": "7e5c6946b40a394a62387008d4d0294363b2af69d8274a39518c75db1c407b97",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/content_potential_field.py",
+      "bytes": 5367,
+      "sha256": "8712c634ee8074ab78e3392bc1b87ea67ddcdeccb323a7faef08947aca4478e7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/content_ray_propagation.py",
+      "bytes": 5975,
+      "sha256": "89970e90584d0ffd3bf6dcc2b3751b19ca9fe13452d929cdc25301731345811c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/content_wave_dynamics.py",
+      "bytes": 5970,
+      "sha256": "f89e8a28de279156a32f05cae927a6d360fb4069e844b60ca745ea09b06e0412",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/coupled_matter_content_dynamics.py",
+      "bytes": 8848,
+      "sha256": "b6ca577f6da5031066351879c02ca4d29ddff230ae75df6c7c5b76f544fb821c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/cuda_accelerator.py",
+      "bytes": 934,
+      "sha256": "da2407f07a9454b66b325603b9d288f2e61649996cd4dfc9a66910b287d30ecb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/dao_governance.py",
+      "bytes": 1287,
+      "sha256": "f0dcca8b5a953bc4752747e5f2eb13d110a5a9a96bcb7e7687f98fa85f83595f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/data_logger.py",
+      "bytes": 2844,
+      "sha256": "79ac9be48ccad81130066fffad8e8692272b5684950a4a9e78cf0eae3310c435",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/digital_twin_contract.py",
+      "bytes": 5965,
+      "sha256": "dcc026c44b024678c84ed963c5d42d6e0b75f683b529ba543bf2faa21a51a67e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/digital_twin_store.py",
+      "bytes": 2045,
+      "sha256": "129c32c5dd16e4478d317891567cb2b9728864624569a7c33b532b0845346e41",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/dna_bio_mapper.py",
+      "bytes": 3711,
+      "sha256": "64c80472e0fe7e83641a4cb2aa9b5839bd654d2c1b3206b59d1d96f392fcecc0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/drift_predictor.py",
+      "bytes": 1694,
+      "sha256": "321a108eb03fb5651addd03d1a9ebd3e9b3394b48b0f988b27a118fe61e5e7aa",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/e8_coupling_observable_audit.py",
+      "bytes": 4546,
+      "sha256": "e09922a8e6a50583699fd723040522cb134a56067cf587616f5725ac45d7c331",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/e8_equivalence_map.py",
+      "bytes": 9097,
+      "sha256": "eb895d30a8deb52246fdc6d0025741977bebb06e115f48efd40e647aa5b83c09",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/e8_invariant_coupling.py",
+      "bytes": 2195,
+      "sha256": "8622db3122f1115fa82c68bc04c730f56a79db4f39604555a1d379587144507d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/e8_radial_degree_audit.py",
+      "bytes": 3342,
+      "sha256": "125dd251dd5942db43cd96c05ad2bd3b4ac466234470239f97d7951f4fd7531c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/e8_state_audit.py",
+      "bytes": 6107,
+      "sha256": "3fc57ca1ec8de4e49ddd7f4769bc233c56f464db707c1e44d24fbc71e29df6b7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/effective_newton_coupling.py",
+      "bytes": 3863,
+      "sha256": "3aa8778e04a9ba74af8c0bb8b695162f3ba157151db83638d92ed52ff91d28cb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/electroweak_mass_bridge.py",
+      "bytes": 3389,
+      "sha256": "9af615a89629b136766fca9491c807ded9bc4e271e563aad1896aa773ba559d4",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/evm_contract_bridge.py",
+      "bytes": 1471,
+      "sha256": "e2c33e1f0c2cd376b0a7db927f2c3bcabed1590cde23e1c1bffd58d34ec06c0d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/exponential_metric_strong_field.py",
+      "bytes": 2922,
+      "sha256": "ea404c63393dc5c0dcc4274ffaa47c15932067518a8dfdc47d25c380ffced508",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/fea_stress_twin.py",
+      "bytes": 1624,
+      "sha256": "63d942c3550e8cad4d0f94c713385618daa1ebd39534b8cb1923e53201837028",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/field_synthesizer.py",
+      "bytes": 2519,
+      "sha256": "f8e7108c57d8ca6299def11eb89f20d09bd1aa3735a164a5cab4b05c77bb17a0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/four_dimensional_polytope_bridge.py",
+      "bytes": 12670,
+      "sha256": "1b7c70a88c4f6c55ca419d88e940ef447616d2023df934b28b7c2a2296d2280f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/fpga_bitstream_compiler.py",
+      "bytes": 1553,
+      "sha256": "526c8625162c5eabb7a6aea0fe6eeb5898dbf019ece69eae1a36af20b3ab3d54",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/frequency_source_catalog.py",
+      "bytes": 8490,
+      "sha256": "5974d604efd5173bd5af4ea75c37ecaa5586b1dfa391016adc7239efd6d2dbb8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/fully_coupled_classical_fields.py",
+      "bytes": 10812,
+      "sha256": "b892b4e7637f07b0a928b4d5c4eb2fdefd24106b4b6947ee3f9dfe7a0fba670c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/fully_coupled_compact_fields.py",
+      "bytes": 7975,
+      "sha256": "6ca128f6ae1a410d0a8b5f6607bd4f0e97ab5d151bd3d17a72564d06140ce622",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/gauge_3d.py",
+      "bytes": 11431,
+      "sha256": "ea1d05ca2adc2edd0aa8192246600910866ea565a3108c59b435a8fc6f8a23a7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/gauge_dispersion.py",
+      "bytes": 3206,
+      "sha256": "af14f31a6d4b5a99b398aa7ff7f642675fed37d92829494253de6ab5a01b618f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/gauge_dynamics.py",
+      "bytes": 10367,
+      "sha256": "4887692cf22aa2fe198332c396f814e672372de3992e802af326984c6e1136a1",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/gauge_hamiltonian.py",
+      "bytes": 7364,
+      "sha256": "71379a959b163797b8dfd6f0cacf4c5eb0934c2c45671084b6fbdce1f4a010e0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/gauge_matter.py",
+      "bytes": 7346,
+      "sha256": "e4e82cdd3df038b240ec4a414c966e81349d7174de025c174d89eb8d8c24a7d0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/gcode_compiler.py",
+      "bytes": 7520,
+      "sha256": "098b1e136da7ec29d9aa923d09662f26629ab825182ff9c051ee85d71153806a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/geodesic_simulator.py",
+      "bytes": 6811,
+      "sha256": "ecc1884e1efe5cc9925f843fd523b09ac59826339f6afee7ef13837081021103",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/ginsparg_wilson_chirality.py",
+      "bytes": 4889,
+      "sha256": "035ffb904c2ff988ed3dfa4b92e786ba900e7342d80e96470bebb01f29ec8079",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/gpu_batch_accelerator.py",
+      "bytes": 1682,
+      "sha256": "3c4acc8ea257e65122ac627a00bc9fd3e56e0f3c85fa5049af9dc6356df2a48a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/graph_toroidal_flux_bundle.py",
+      "bytes": 8920,
+      "sha256": "26fbdf26d9beb48ffacd8cdb2ed639d046d189a584e5705bf6602d959f6bd9ae",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/grid_power_manager.py",
+      "bytes": 1254,
+      "sha256": "edc350a54c8d1121c3cc25e858e07f1a1ad6f855aa6beedd79862b1459e27dfe",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/h3_600_cell_bridge.py",
+      "bytes": 8348,
+      "sha256": "09124954d78324a3848f589cf77f25901f28f9dae65837c39e6ee5fb28edaf4a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/h4_direct_e8_lift.py",
+      "bytes": 6810,
+      "sha256": "b7688b0231df3f3cf2a371591d4da24d3791c95eeafd5ef7e94ba0a8b46703c6",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hardware_kill_switch.py",
+      "bytes": 2499,
+      "sha256": "a20191c9f151ba621f07a61593532fa9f89ede90d81c3d7bb5ae3078887eae2f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hardware_mocks.py",
+      "bytes": 1734,
+      "sha256": "f6d57a92a79bdc93c03559f02a8c986b67f061148350830034341d673ff50c80",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hardware_tpm_enclave.py",
+      "bytes": 1917,
+      "sha256": "6e60b382add9e4f551f0f23ba3d2622144e7bd101741b9db6ab1612bc2bcbacc",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/higher_dimensional_geometry.py",
+      "bytes": 9774,
+      "sha256": "e9a8e78b4b53d11e4f2405dde8e6bdbb788961cea34db24b50092413c44ad3fb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/laser_interferometer.py",
+      "bytes": 1861,
+      "sha256": "cff33ef8644e30c5bb6b3b5b4552e1f0be58f7aa99c4ed0ecbda534b90bceeca",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/lattice_quantum_engine.py",
+      "bytes": 6255,
+      "sha256": "2990d2aa165201eefc454c1c9119aad653d5d6d6b39d05a2a5dcff5c4523e002",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/license_usage_metering.py",
+      "bytes": 2929,
+      "sha256": "31ee16a2aa576d73bf9d31e23f7a50f9b3645e030eec4990c51f810a8331e43b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/light_cone_simulator.py",
+      "bytes": 4955,
+      "sha256": "db8f748c618167c2491280ad0c7a1675b7e950adbfdfca7fbded4eed8ed85066",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/localized_matter_persistence.py",
+      "bytes": 5626,
+      "sha256": "2fb0b09dd19666c71ede0ae4db841fcc87341b1baa544a6a6760b5d6597a8d04",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/localized_matter_variational.py",
+      "bytes": 5176,
+      "sha256": "672ae2127f60ac6e38d34b3ae2cd21fcd1fa29f2f05781be80e860a4ac10cb0e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/lynchpin_geometry_audit.py",
+      "bytes": 26144,
+      "sha256": "d6f05cdd00e55f56dc0c2f0b60ef9d2a066c35d3493169a5bfc1fbd3b08b5c10",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/m_theory_router.py",
+      "bytes": 3997,
+      "sha256": "c09e7edf11f59f2440a20206fd942aacf19ed41e16854413f743498383ea3b82",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/macro_lattice_mapper.py",
+      "bytes": 4836,
+      "sha256": "0b5b1f015a12b82d65f4478c81117e026d4e06b35510f6d1ac1f0c25e781337c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/marx_gate_array.py",
+      "bytes": 1042,
+      "sha256": "617733d004433abc8a1d3ec8b963e84848049615484df4ca6fa57459109aec82",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/matrix_constants.py",
+      "bytes": 2204,
+      "sha256": "5858476498656f1d42e4c1b24359d33e38771d5b156db59517d6eb579ee6724b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/matrix_local_transition.py",
+      "bytes": 11739,
+      "sha256": "0ac7fb48b43e8fa9d4b11507460a7c23557a7f0bceaae8fb4daf3072a2665203",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/matrix_ontology.py",
+      "bytes": 9867,
+      "sha256": "7ced2d659eb6ded651be64b1ff39299fe8fc27ebb197a18ae0a69164b7df0a8d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/matrix_polarity_phase_bridge.py",
+      "bytes": 8019,
+      "sha256": "68bf983ecfeb8ad4d7c88ed8c01860ef1e6af823c55e64df39839c218137c673",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/matrix_polarity_rotor_dispersion.py",
+      "bytes": 8333,
+      "sha256": "c80564791a83e344c6e284d18fab92418955ad48583b34e4a2be8ccc9e050b4e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/matrix_polarity_rotor_transition.py",
+      "bytes": 7672,
+      "sha256": "6f90eb07189667cab2e8d695798d34e1373dd169ea735d23377daaf47dbeeed3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/matrix_visualizer.py",
+      "bytes": 4913,
+      "sha256": "ea65211223fa55ebd549d9ec796e096715d804aa4c17bbbce4fb83109d5e7774",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/matter_amplitude_modes.py",
+      "bytes": 6238,
+      "sha256": "2d00a919f7f90893feebb100035edd19607483bd2eede96d5f8f79ea5c4b9567",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/matter_branch_scan.py",
+      "bytes": 3009,
+      "sha256": "ef2bcbcd172d744cc317053d9ba8ebda0149c853f8fddddc2a63c6a6b9924b52",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/matter_content_source_bridge.py",
+      "bytes": 4061,
+      "sha256": "bd46776f634893f92d4cac035d64d4beeef09de61eab05722e89cc4c2c22c66c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/matter_defect_structure.py",
+      "bytes": 5533,
+      "sha256": "ebe0bd62544f77bfecbc2170f421810548e804ac960e8da45474a187b8b5e1e5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/metrics.py",
+      "bytes": 1085,
+      "sha256": "793a1ad7315e9fd8f0e1eb624caeddec210bed500f22561eb3bccab0e85fdc95",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/metrics_exporter.py",
+      "bytes": 1515,
+      "sha256": "f6895eb926924b68c1c3a78b7538edb68575859ae9c2e6568afe2ad053d67425",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/micro_to_whole_geometry.py",
+      "bytes": 5901,
+      "sha256": "015691eb29e34319e926ee74ac9d445e9a68e321021334425e0d6490430f504b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/microplane_projection_reference.py",
+      "bytes": 11047,
+      "sha256": "2e9c2684abe14b68a81d2393dc18fbb151b4f31c260dcffe8b1d024e51f3e895",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/natural_units_converter.py",
+      "bytes": 2085,
+      "sha256": "bfe5c9215b1038b850dd391e7466f440452d47afccd973450acdf316dc3b06bd",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/nested_oscillatory_hierarchy.py",
+      "bytes": 9810,
+      "sha256": "4eabed37e9b46b99c1d911e519ac1ab640cf6b38da146b35bee5e7c7a945f300",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/nested_polarity_dynamics.py",
+      "bytes": 13624,
+      "sha256": "beadc2a2361683e648a04a9407aaddc2ad99074e8370bc5adb2b46e49a8675b9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/nonabelian_overlap_dirac_lattice.py",
+      "bytes": 10254,
+      "sha256": "f284d8f3aa5ad750823a23e8c2387b25d955865b4fd9e63af3d60c740b97298f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/onnx_edge_drift_engine.py",
+      "bytes": 1521,
+      "sha256": "7936abff37c9f2518c343c9a7dbf06304d220342c5c54a70e650e68d2e7974bb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/open_boundary_solver.py",
+      "bytes": 10541,
+      "sha256": "f1e86bbaf27efb204b494a6c9d19743ab4230ee6d7d9ac20a96597c77e7ee1a4",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/open_gauge_dynamics.py",
+      "bytes": 7465,
+      "sha256": "8850446ac9c5049c9169787ce6842d595ba8cbf914d2172862d61cf55f95f7af",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/open_polarity_sources.py",
+      "bytes": 2407,
+      "sha256": "5a29d144aa328da6b7f7c50a53770899c558e68a4cdd917e297ba098129c9c74",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/overlap_dirac_reference.py",
+      "bytes": 4561,
+      "sha256": "5a58da5d88ddc74215b39ded614956dc07671eaa0db2c88b7ed7001558d2e07e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/pemf_driver_interface.py",
+      "bytes": 1665,
+      "sha256": "881cb0474b2cde9998dfb147bfc5efc3f0981191ad91658e81d94f8a8b14b625",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/phase_roles.py",
+      "bytes": 2330,
+      "sha256": "cb3a3de84cf8ec9d3fceb605316b478a5e1595dbbb777cecc7d67c477a07f6ec",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/photonic_tensor_coprocessor.py",
+      "bytes": 1291,
+      "sha256": "dfbc117b1d7379fc2bbde6eb74174eda31c790641376bd2469082f83de922a01",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/physical_theory_controls.py",
+      "bytes": 12962,
+      "sha256": "012cdb4d3456be6ac0fb2720821c090ca4f1444a12b2d647ea67dbb58d66c289",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/physics_verifier.py",
+      "bytes": 1651,
+      "sha256": "13c9e107eb992d4a505bd78f27c41ad31ba4e9d02e5b8014646e146ae229a4f2",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/piezoelectric_mode_reference.py",
+      "bytes": 12324,
+      "sha256": "ea7fa2d6d03258e8915d3155b30e2e685516e73d6cd033f6f4c1322c24fb6551",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/plasma_arc_twin.py",
+      "bytes": 1934,
+      "sha256": "e462b6aa49c613a4efef3f395acc92061eb8c47f67a637815a2f57f1830ba884",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/plasma_shader_pipeline.py",
+      "bytes": 2065,
+      "sha256": "cd272b6d97e444910383905286a4b53c76e9d84d44d06883e187870f0c3a3a41",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/platonic_solid_bridge.py",
+      "bytes": 9989,
+      "sha256": "ce47eb3cede97585a9e54e270c75771fa1aa89b97f0fac1c92befdf3dd9d90b7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/polarity_oscillator.py",
+      "bytes": 6338,
+      "sha256": "d21bc56198229cb921ec222acbc64334a02d595f0d8dba94ae2d27e23c69cc24",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/polarity_sources.py",
+      "bytes": 4226,
+      "sha256": "af24f4a3f83a8fc93620be7efe0f3c88298c51febebdf317fda2aa4a310486f6",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/product_group_anomaly_ledger.py",
+      "bytes": 9555,
+      "sha256": "f3cc7983572088c9c8b86a979966382adcb920f1ed353ec1486b03bcf04f66c4",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/product_group_overlap_dirac.py",
+      "bytes": 13813,
+      "sha256": "4c1d7a5ca9712b0d210fb4b985d085ae8c78599f1130ed00e77f7779da671a7c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/proposed_pipe_acoustics.py",
+      "bytes": 6441,
+      "sha256": "354569b28bef8c6dc9a96fe5b5b0f368e7b95d10d2fed4a7ed9f89592639e491",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/proposed_pressure_storage.py",
+      "bytes": 10339,
+      "sha256": "b06529f0c8ab91d35d7ed4b95b06047d2e06b0564c5508c5671318307790e980",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/proposed_scalar_wave_control.py",
+      "bytes": 8846,
+      "sha256": "8b9c8d423b521cdaba0825acec918855ac57ab42b20c0e53327f43631e82fbc9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_branch_diagnostics.py",
+      "bytes": 6175,
+      "sha256": "261edb1da2354493f6f532fe4fbbdd22d0b31898d8948da6e90658fec0baade8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_existence_window.py",
+      "bytes": 4088,
+      "sha256": "5beefe83e5c4c11e43179a7c8511957b0336f449e79fbcd9bba9c53f075a29e4",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_highres_persistence_stage1.py",
+      "bytes": 5920,
+      "sha256": "c892a09eb367d5e704ec11c866965e5bf5e63f8b35024bc725c926d6ab864248",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_highres_persistence_stage2.py",
+      "bytes": 2690,
+      "sha256": "05dbdb7a1e765c3147c2d42ace3676874764321be99052ef20ac74c1ecbf3d3f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_highres_persistence_stage3.py",
+      "bytes": 2963,
+      "sha256": "c59e881ed0705de98551134510a821e59b3e61edba310a53659c89ef4a33d691",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_highres_persistence_stage4.py",
+      "bytes": 4798,
+      "sha256": "4fbb668160b6620d977dc51ec3a4150e21e38980c6c2e9e8f82743fe78859f99",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_highres_time_scaling.py",
+      "bytes": 5846,
+      "sha256": "99abef0e0ced125ada8ebc11675ca70e5ead734939a3738866d2bbe5e4e93948",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_highres_timeseries.py",
+      "bytes": 8993,
+      "sha256": "22cc505c362a00cdf3612093fab125a70f7fbb8a376a9d11e156ff983e869714",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_highres_timeseries_t1.py",
+      "bytes": 3570,
+      "sha256": "ec461302e6e64982074976c6f21859dc97910b2bcea310f1ac029ea6eaab1c55",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_highres_timeseries_t1p5.py",
+      "bytes": 5943,
+      "sha256": "e97f8c548adaf79718e7731cec8f3739259eb3225a164a0dd3c921015e2e7a83",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_highres_timeseries_t2.py",
+      "bytes": 3613,
+      "sha256": "da19f1ec6f331e42f5c737bbe9c09bf550045a45f8930895206adf66c1436d93",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_highres_timeseries_t2p5.py",
+      "bytes": 7100,
+      "sha256": "ed53a79f087ec20afb2c05229d42c40ce7db73db3267a72090d3401ab1734931",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_joint_mapping_extrapolation.py",
+      "bytes": 6933,
+      "sha256": "ae05f82cb76f8ae2eba26a32c4258745e2cb64b2bc8c7e02c47d868e22b78e52",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_mapping_convergence.py",
+      "bytes": 6096,
+      "sha256": "d66317d942647fc28acac51a1290ca99d3237d5a737d082008180bbe321230ff",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_mapping_error_decomposition.py",
+      "bytes": 6941,
+      "sha256": "de7d077b60f31370350c4de498d178f5c191c43b436dcad7b01949a966c86d20",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_peak_period_classification.py",
+      "bytes": 3609,
+      "sha256": "ac5717978370180b2994f9371520a0d7b9be9b3ada3f6d5ae13e3fb75aeb2b0a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_stability_map.py",
+      "bytes": 7678,
+      "sha256": "b502895a7dc04e927a2322b175ee471624542a7bb61e02a086a08d5c6b9a2b86",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_threshold_persistence_scan.py",
+      "bytes": 7985,
+      "sha256": "ea9c5447efb3d29ac76cd7f397d2c0dacc7acf271869cd1bfbfbe6f2472d6106",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_threshold_preserving_grid.py",
+      "bytes": 4414,
+      "sha256": "5befabf70322590b66ef481f0a9ac1213fc147c218f0e3eaeb2a022d1a2ac1ff",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qball_threshold_refinement.py",
+      "bytes": 6079,
+      "sha256": "dabba250541e5cfdfb2eb74a12260edd76e4663cdaba657def073c4a2af03bd0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/qiskit_quantum_bridge.py",
+      "bytes": 1582,
+      "sha256": "699de4526e3559901f775bf422c04cf8f90b0ff14439728659951a7d952dba62",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/quantum_entanglement_emulator.py",
+      "bytes": 2066,
+      "sha256": "51f61cae40b6c718b27d7be34acd40535bd6c7768e714777b21165c1af5088d3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/radial_matter_continuation.py",
+      "bytes": 9642,
+      "sha256": "0e42d3e592c0054e3a41991d3481160534a9cb74a2210699b1152517e865e2f5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/radial_matter_solver.py",
+      "bytes": 7169,
+      "sha256": "56b9511a107383561d98062d442f82dd9b5f0e61a9e9cc9840aa64a4d01b8e78",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/raft_consensus_engine.py",
+      "bytes": 1463,
+      "sha256": "2364e5e76b51df4fad1b557281b5bd6ab4619388c098bf165698742ecbec4141",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_backreaction_audit.py",
+      "bytes": 2546,
+      "sha256": "bceb5fc7f7bd591971cfb01ce68146432f68defe862ed5baf7e9477136e42f0a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_circular_orbits.py",
+      "bytes": 4009,
+      "sha256": "8b0a29c17e0fe104cbb8bf5b1c2ba5a3ca3d26ba5a70871f999201abdd2f6549",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_dirac_backreaction.py",
+      "bytes": 7415,
+      "sha256": "4e40875716e1caf234b9f950c0075ee7ea9e8082e7a6580e456668b1952de08b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_dirac_constant_background.py",
+      "bytes": 4251,
+      "sha256": "a4f30212e9144b9a00eaebd9a882782784321c118bcc5a3be87edd8f74f58073",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_dirac_geometry_source.py",
+      "bytes": 7401,
+      "sha256": "82a40d506aac02e247e9b6a0e576c88edf6023275cd7d6978b423aa3be09141c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_dirac_spacetime_background.py",
+      "bytes": 5784,
+      "sha256": "9e5dff576f39413dcbf2f87131ff0e631e46ba9a9442f4a783c865e307c10198",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_dirac_static_background.py",
+      "bytes": 4259,
+      "sha256": "e49095a8077b45c3ef4a9f6a0620ca21f527baec056de62a979fcaef191bb00f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_dirac_time_background.py",
+      "bytes": 5964,
+      "sha256": "c7523e71fc994b58b0cccfc2f25f1dcff9403b583b77f2a8149a5c897694bc15",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_dynamic_su2_geometry.py",
+      "bytes": 9811,
+      "sha256": "5eacf087fd8d0933323bc893782054e5d5a5d67e9fb7a57304a0ec1a2ff00520",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_dynamic_su2_geometry_optimized.py",
+      "bytes": 6753,
+      "sha256": "6ab9282f692de6e656c192dd87f085714d083c9375347d76fc619d2f8b755e02",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_dynamic_su3_geometry.py",
+      "bytes": 10431,
+      "sha256": "2db588b2092771071c1e6d27750cdfcb9dd1701e4da8ea1cd5a7013c5a673947",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_exterior_curvature.py",
+      "bytes": 3512,
+      "sha256": "4200ce1e5b9b60f472789c18446e1a60573f00edfae079c37c5267eff277bc9d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_higher_order_weak_field.py",
+      "bytes": 2615,
+      "sha256": "3969c5eaeea33ee339c801cfce9324eadd7a61f4f1d7edb4c8945469e865cca7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_metric_uniqueness.py",
+      "bytes": 3603,
+      "sha256": "f267fb78681777be37e1bb109428f324072ca62e30899fba8274faf15c384182",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_newton_normalization.py",
+      "bytes": 3001,
+      "sha256": "0ee438f88de2a027cbadd761cde79d0ed83bd0db3ebe4730fe8aaf753d4a8ff0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_nonabelian_constant_geometry.py",
+      "bytes": 4661,
+      "sha256": "d4a77345144c6cec6fb6a9ce6aae95c62ad97edd6c604c6051a4b459b66d2f88",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_nonabelian_spatial_geometry.py",
+      "bytes": 7327,
+      "sha256": "d4016f28412d351309223d1c71313ad68460bed7c502ddab178c4ac99af8743c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_second_order_light_deflection.py",
+      "bytes": 3571,
+      "sha256": "ec4ddf535f9d4c885760d07751d7d8e084bdc8473753152acfd1fec1ff48a234",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_su3_matter_geometry.py",
+      "bytes": 12397,
+      "sha256": "1d43052e2d49de02095ee93e94ebcab7299f86e5c4201934e1ec8726f4bae282",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_u1_geometry_action.py",
+      "bytes": 3578,
+      "sha256": "e2ce02c1f7210bba1eb993774a024b88629d9cca57aaafa7c482aa79b998b32f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_unified_geometry_source.py",
+      "bytes": 8847,
+      "sha256": "25fdb42a077c384520a52db3150ab5d3d0e660e67a763ffc4579a675b0369cd5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reciprocity_yang_mills_geometry.py",
+      "bytes": 3776,
+      "sha256": "6872c1647e73837c2644477358a45d85e315dcb56cdc21f78ca2e1aa7dbe94c6",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/recursive_omniverse_contract.py",
+      "bytes": 3137,
+      "sha256": "3a1d1d656a5abbdf14440f1e88867b4734c509d84189cc10d85890e2cdce77e5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/rl_field_optimizer.py",
+      "bytes": 1481,
+      "sha256": "d17ae9ff7f637efc2d6234eac62495a720de80ac29740c38454c072df8abb458",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/robot_adapter.py",
+      "bytes": 5431,
+      "sha256": "2898112ff649d74d11dcc23b2c47d12b111f244c4fe6cd527b0b1a1d1f1100a3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/run_field_simulation.py",
+      "bytes": 7167,
+      "sha256": "e85faae2a82e6463b7e314cdbee3f83c5996e1cc020c06c6789a0e45113a4220",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/russell_periodic_mapper.py",
+      "bytes": 3365,
+      "sha256": "b39f708d3337be1413d0c6c99fbf95550b8c7917eb64e658470f3cd5fe0e89e5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/satellite_tracker.py",
+      "bytes": 5542,
+      "sha256": "c19ea1bf4441e2a7f0dee8c1ea459dd23648bc7c110469e6de327263415b1c58",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/scalar_harmonics.py",
+      "bytes": 1261,
+      "sha256": "df05ec629eaf86c2c0bdcd42ed646b9caaea8528d0c0cf843bd2184c0a79fa55",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/scalar_virial_source_universality.py",
+      "bytes": 4575,
+      "sha256": "f62e8f63bd108b1bbb9673e0dcd3ac966456dc4d631edd97517a30f63328c9ac",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/scale_transfer.py",
+      "bytes": 3726,
+      "sha256": "8e977449eb658829eae4a856a527766a4378e750f42ff65cd9cf6dff6a0d4dea",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sdr_rf_synthesizer.py",
+      "bytes": 2916,
+      "sha256": "cbb61df82606f08f2116e06b9fc7b451e67197b0d45b9e114005b13f47ff678d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/security_config.py",
+      "bytes": 813,
+      "sha256": "18257fbbac3d38b382598d217cf6637c9b2ec2dfbd0d562fd83323852ba50bc3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/seed_matrix_bridge.py",
+      "bytes": 3828,
+      "sha256": "f9ca7eed0338993ab9e33851d343ea41eb2ee409692110b8a6aee4a3e1c048f9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/self_consistent_reciprocity_action.py",
+      "bytes": 11124,
+      "sha256": "666b41137c1ba64770fe76e174a626b7b2ede6b734d763bbbd8f7df3ec8850d9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/self_healing_engine.py",
+      "bytes": 2147,
+      "sha256": "8a2968a729a4318182e84bde859d85200b2264a189715af3ce552c0d3e8bdd2c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sensor_network_gateway.py",
+      "bytes": 1929,
+      "sha256": "b5c9265e79b4c4fe326a38edd2bad9679331404537095908f96901bb45c897e2",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sevenfold_seed_contract.py",
+      "bytes": 4580,
+      "sha256": "665c5e1e3017aca959557917888bdc63a9c73f8c9621088ae4ee9e9a4ee6572a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/six_gate_spatial_response.py",
+      "bytes": 3420,
+      "sha256": "731c32a659dc60d5be13ebabe0bc5a02f08b8703e492c248dff12d6392e8df21",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/source_channels.py",
+      "bytes": 8326,
+      "sha256": "e88415c33dd439aaf4248521ef5a4d9ae017b40b37fbc2cba94d7f45d4b03472",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/source_interaction.py",
+      "bytes": 6184,
+      "sha256": "3d55aec6835dbec3f367a9498422170c9d88a088aa6733fea2c49dc7a6ad8dd5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/spatial_operations_control.py",
+      "bytes": 11641,
+      "sha256": "08fd58ceba9d9ce917b57f844bba068d1a6b21151f309959b189fd1a0af11a2a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/spatial_protocol.py",
+      "bytes": 8274,
+      "sha256": "37335d7ce323f952da6046a7c4aa8f13b8d18733194596cd926a80e5ccbb88eb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/spatial_teleoperation_gateway.py",
+      "bytes": 1489,
+      "sha256": "9b6a23613e9ab6c64ba7742a974eb08241070130e8773c84a667834de1bc7034",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/spatial_viewport.py",
+      "bytes": 1227,
+      "sha256": "f8f65572cc508d1707bf31ebfaedcb6faeccd4a96e3cea35a5a473956520871b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/spectral_reference_catalog.py",
+      "bytes": 9982,
+      "sha256": "c4865fede249609e5511de8fc761f047bdb4fac70bf72e8faa83bbb9db33a46a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sri_yantra_chambers.py",
+      "bytes": 12599,
+      "sha256": "752d87d28a6ca3b238a5465fb02f50ba532cb8f88b7277204fdf7f3766b105b5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sri_yantra_chiodo_concurrency.py",
+      "bytes": 6587,
+      "sha256": "da12886dbe5bd300fcfdd9a409eac9a73aad860359c06cfd66c76ddbebb00d7a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sri_yantra_huet_chambers.py",
+      "bytes": 28709,
+      "sha256": "4801564357ee9c184a891ebb47c690e198f2d7a98880a61f09582085f08a4320",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sri_yantra_huet_planar.py",
+      "bytes": 8371,
+      "sha256": "b9738a53c4e945d4f7791a2b564c4897aa4b18523287affa152c33dc59e7d1a8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sri_yantra_incidence_topology_audit.py",
+      "bytes": 7856,
+      "sha256": "a4b675d949608f3953f05aa6abb56c53f9d577d0987f45cd046561533e2b793b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sri_yantra_meru_candidate.py",
+      "bytes": 5475,
+      "sha256": "c7ed3e003e5eeebadf1518bf402137f7df74eac9f05ddaf2da06aa233af86565",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sri_yantra_multidimensional.py",
+      "bytes": 29628,
+      "sha256": "fecfd5202113fedecba8c4f9087492a79bb12000e420daf2a2f996954388e53c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sri_yantra_rao_great_circles.py",
+      "bytes": 9687,
+      "sha256": "82833c58e2a1cc0f15abe14cb95efc23263ff09fb1e5e40680e6adabaa3cce02",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sri_yantra_rao_spherical_reference.py",
+      "bytes": 10869,
+      "sha256": "ec980917a09dd43b8a810c489f826654dd29266866f9c2ffec1455b6c4de0669",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/sri_yantra_spherical_topology_control.py",
+      "bytes": 12872,
+      "sha256": "b56ed2383d633f240623b7089923bb91c3f85784f8efc2eb50fa9865a6a3b7cf",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/static_vacuum_reciprocity_exterior.py",
+      "bytes": 3532,
+      "sha256": "0b8f6d813705ed74d43a84c872e585b796e48edb2b4ad8c43a012426eabb517e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/stationary_source_universality.py",
+      "bytes": 4600,
+      "sha256": "6e178e87b68d74d25c39a7904fc5a690992bebc583e616c7d0e8d54d7ea95af3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/stella_octangula_register_bridge.py",
+      "bytes": 9068,
+      "sha256": "7db8b969892cd3f5b58f366e66c1eb7746d40130fe2cdad858c1db479b3f3cfb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/su2_hamiltonian.py",
+      "bytes": 5711,
+      "sha256": "a42325a3d342e25fc5f3e59d4a9290664f89025c0b84528d2ba8b656cc5ab08f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/su2_hamiltonian_reference.py",
+      "bytes": 9005,
+      "sha256": "a9fa76eecc7493b321ea54d41261654f04bc663648b8d4e32a16682b9e16bf15",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/su2_lattice_gauge.py",
+      "bytes": 4437,
+      "sha256": "59b016e769f31f43a2a3f1b1e6f98d2963374af8fcd3cf9f5692307aa10c330e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/su2_matter_doublet.py",
+      "bytes": 3258,
+      "sha256": "f595d80f15f2063112145218c59cb1aaadae3fd1f047daecb9a4f60d8ff99251",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/su2_matter_gauge_dynamics.py",
+      "bytes": 11393,
+      "sha256": "c5bedf05a883926a2671452bbf596d025992d3c75ba566c2a85eaabcd28d7c0c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/su3_hamiltonian.py",
+      "bytes": 9947,
+      "sha256": "422d152c865f1594ad93b33a896b6fc7ea2c2fb2ab06504c8af23fbb9e51fc46",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/su3_lattice_gauge.py",
+      "bytes": 4378,
+      "sha256": "c81b7358c6baacb16c757035f07ee30c1617c547ce284c2a250c07d2f959f6d5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/su3_matter_gauge_dynamics.py",
+      "bytes": 10918,
+      "sha256": "6a12e570cf47fbfb839c3d39bb3035cb617114183ecc7fcc8ebf0903487d3303",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/su3_matter_triplet.py",
+      "bytes": 2910,
+      "sha256": "c8032e9e968b574f71c6de7bcb85284e329707d7e6add61f8dc42d952b149dc7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/swarm_controller.py",
+      "bytes": 2406,
+      "sha256": "fc77db0c9e46605a93e158fe95bad2ba8cc0e4a21e69db032b6fa2afb62d444c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/swarm_robotics_controller.py",
+      "bytes": 1996,
+      "sha256": "27992faa0aec1da1a9e9152f92ac1d3b18ab1d4dc635a751aa258833f6cfdbee",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/telemetry.py",
+      "bytes": 687,
+      "sha256": "c3607c7fc43be87060f5a960d9bee773cdfb1bee08e097663ed32b36eee909d0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/terryen_negative_space.py",
+      "bytes": 20918,
+      "sha256": "b6a39975e5894b7246fa755954bb045e9ceb52b22bd8b8845ca7a08d0f50bfc8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/terryology_audit.py",
+      "bytes": 16483,
+      "sha256": "515367cf8578a740908c0f8afe25e6369b4ffb1dca95696739ca1b87a5e7c067",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/theory_bridge.py",
+      "bytes": 9340,
+      "sha256": "9f1430e8aa9876349ffec7f88b9ffe38af88cfc0c67b824d4310e0ed9c938208",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/topology_calibrator.py",
+      "bytes": 1155,
+      "sha256": "ed1d2b88c864ff78da4d8dac40cdf7b844047232eff6e401a8e28a0b445e812a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_annular_junction.py",
+      "bytes": 18904,
+      "sha256": "9d0c443cbe4a4d81ae42c8ab34f946eeadab6701eefeb2726b420130dcdccec5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_aperture_attachment.py",
+      "bytes": 8309,
+      "sha256": "a176f44d73697d18c35f2d0b89d3cad4472f9c27df87c667192ab52d6863e40c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_aperture_local.py",
+      "bytes": 4127,
+      "sha256": "37afc2fe0b9abaa795d241e62ba980163df265a14e6fe2fea71279cef331566d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_bend_clearance_boundary.py",
+      "bytes": 7497,
+      "sha256": "ca7a862b9121ca59fe1dcd5d6606c4ea3af81cea4627db18d9b03318bcfc1a3f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_bend_clearance_refinement.py",
+      "bytes": 11293,
+      "sha256": "e506c2aa7c06eb3d4e5dee6c764e1d81cf3daac69ccfc1b707e39bc893d2807c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_bend_spacing_scan.py",
+      "bytes": 5417,
+      "sha256": "31f4b1ab1b654d070efede8f6cbb3721768daa48c7059e379b80190fac2fce60",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_bore_downstream.py",
+      "bytes": 21251,
+      "sha256": "d6f4302ceae8d3f177788a2d0d37dccc86ee4802c4b8e2fe0f663ccf24ccf864",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_connector_topology.py",
+      "bytes": 11079,
+      "sha256": "c13cbd1661254a3ca907e28026faf9cab341e1229d47aeaf077ae01b94b0a62f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_fixed_interface_obstruction.py",
+      "bytes": 7165,
+      "sha256": "7e345400697461cc2bc51c198cbc33eedc8169bea8a17d067604abe6037d598b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_framed_edge_assembly.py",
+      "bytes": 18146,
+      "sha256": "44b90d4aada5e9326b40b4ba540dbd54292174c66685dcec7199d5644a0a066c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_global_routing.py",
+      "bytes": 17694,
+      "sha256": "52835c22ac520d3a8dfd885ded04a960769dd64186044501aeb0b33197081414",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_incident_bend_audit.py",
+      "bytes": 11064,
+      "sha256": "d2754416761db4c520498aa2f851791db4e864e6e2153cf0f1c079e822124a66",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_incident_overlap_audit.py",
+      "bytes": 7162,
+      "sha256": "ba56905f73deeeb84055322c3488a3871afb2af8601a9730de661ed63d67ee6d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_inversion_control.py",
+      "bytes": 9063,
+      "sha256": "813e1e79ccb2b444d7df39514f706c472a80f9f76003e675fd0263ae6dc79967",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_junction_bore_passage.py",
+      "bytes": 12113,
+      "sha256": "bc32e77414eb151d7f592968b28e9b0ca9a19a519fe61c434687b9e5e507b5e8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_junction_control_volume.py",
+      "bytes": 14711,
+      "sha256": "e8877815a278b5072870ef27486d1d0e9a57b2faf48fb53af529b9685f52630b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_latent_path_geometry_audit.py",
+      "bytes": 8945,
+      "sha256": "3588ed23e2b570bed9e1a18c6ea0d3d726fd23f881ea26ba0bbe800ce134530b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_resonance_engine.py",
+      "bytes": 2758,
+      "sha256": "1c11f64b684b08630e1d95666ab2b3a216a823f0587abfe658f2cc15b661cd5c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_sampling_reliability.py",
+      "bytes": 3583,
+      "sha256": "13347f0bdadb39503fdcacc5c4d9cde85d34076de1980ea45cec854b1dd19b90",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_separated_channels.py",
+      "bytes": 10612,
+      "sha256": "4149fc1db623dcd7c9937259827cf3f32349af200699f48324e73e0929337b80",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_shared_prefix_fanout.py",
+      "bytes": 5187,
+      "sha256": "083986d25661a23c36949df8a635cb3e60af136058617a5d38259bb87d835e9a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_shared_return_connectors.py",
+      "bytes": 15762,
+      "sha256": "1b929a8f5798d6f75bc27113d1fc9c9d598036ad0b6e4f5c0ccb7a1f297e877f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_shared_return_route.py",
+      "bytes": 15086,
+      "sha256": "9f2db5ead79812f87ca87ec3125b3e5e1a49deeb62da2ce39d8c3dc2a58ce46a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_smooth_bends.py",
+      "bytes": 15231,
+      "sha256": "42a25b27a37067a1b84c433c9c1db4fa6a7d276522f25fc61b73176dd5121db8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_uniform_scale_similarity.py",
+      "bytes": 9468,
+      "sha256": "fbfd628315eaf63fe6869f5682012d10dc308c31c543ad6c80f92333858477b9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/toroidal_winding_engine.py",
+      "bytes": 2458,
+      "sha256": "1b9ab0cb010aa483daa1b928119ee809eef1a55ef9a53ad3b63ad00aadc3cc3d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/transitive_plane_branching.py",
+      "bytes": 20849,
+      "sha256": "fa397b94af64e802e742215ba29cd690c8b542a66251c69d7ca1ef1e76e5cc37",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/twenty_four_cell_bridge.py",
+      "bytes": 7413,
+      "sha256": "93b9fad0c355fa9e8427c0c363a66403ed681a0b588b7904e98b41f028406173",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/u1_chiral_anomaly_ledger.py",
+      "bytes": 9110,
+      "sha256": "d3f5874d0f1feac242fe4fe583b0d513ef12454cc41cb69fd74a9a5e86832dd9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/u1_overlap_dirac_lattice.py",
+      "bytes": 6720,
+      "sha256": "ed6a10c6f4c1613f3b57ae7296ce896cc0c9d2c31fca1cd97bf3241fd737e8f7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/u1_weyl_gauge_orbit.py",
+      "bytes": 9127,
+      "sha256": "6e51165fa1c9b73d6f7598c3fe234453f0110ceecb39a5a3652fbb6204af2bf4",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/u1_wilson_dirac_lattice.py",
+      "bytes": 4271,
+      "sha256": "21d1dae69f0a706ba4caf4c6931a992a26f02f650df00b1c3c27100ffb4ad7cb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/unified_engine.py",
+      "bytes": 14468,
+      "sha256": "64b8a82581d88ce2e673aae7391cfecabb3a5763c7ac9f8c2b7f1b5991ee95cc",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/unified_variational_action.py",
+      "bytes": 7522,
+      "sha256": "c622d402636681d857c9a93697731682a12ddf381c3b45e0a227abf65c776479",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/universe_port_engine.py",
+      "bytes": 21276,
+      "sha256": "3f5a7f9e0fd8b3950a7a56ce91899be14ee565d6a0e6fb1784ab00f2552ea885",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/vesica_tree_circulation.py",
+      "bytes": 17148,
+      "sha256": "8ea9b438befbdf347732844153ced8d628f448eff21a7befa25b0a9efa5ec887",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/vr_13d_integration.py",
+      "bytes": 3202,
+      "sha256": "1d64530b37e06e7155c4570dd4c293e22cca1c4e047a1fa1c0c4477133ab5f9c",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/vr_13d_space.py",
+      "bytes": 13008,
+      "sha256": "27c55392e7f4035bf3d826e67fea432fcc3eea290c381cd1b7be8ff6b5e2b015",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/weak_field_ppn_bridge.py",
+      "bytes": 2684,
+      "sha256": "9e1d267faa7ab93ec10ad870f5dc6d70aa9418d853741101932be862485d272d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/webgpu_spatial_visualizer.py",
+      "bytes": 1720,
+      "sha256": "814867607bc25f0735bbd34677c869aaedb6abdb170c1eba1fe8feb637c932fe",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/webxr_haptic_controller.py",
+      "bytes": 2338,
+      "sha256": "fdce82c31071b34e18ed9398d9f03921fe7458ec83ba24d7c6ddc278741165f5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/weyl_determinant.py",
+      "bytes": 6802,
+      "sha256": "1c5e6b27b90f068628f3498876c4d013a828bfcc13ced36b6954747aec7a40eb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/weyl_measure_curvature.py",
+      "bytes": 10188,
+      "sha256": "8fccb1eaa5a7bd26bbac0a23a27e701255c42816fee96161e2b04417a27aaec9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/weyl_measure_holonomy.py",
+      "bytes": 6979,
+      "sha256": "b7b6f131e01574ac860d173999f0313feed37257f5cc18de0248615264777be9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/weyl_measure_stokes.py",
+      "bytes": 5184,
+      "sha256": "e997b60861f494b26f6228d5d5b32dbab27b1fa274f13889021778a88045d4a6",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/wilson_dirac_reference.py",
+      "bytes": 3824,
+      "sha256": "c7776f1f98fde72123402a3f14d3d4f5974b679928835b8fd995f45901bf3ab5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/xr_robot_bridge.py",
+      "bytes": 3417,
+      "sha256": "385fbb0f23c6f5566bc3a9a87d4685b965786fac2dc49a19462dc01b45237a00",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/zero_trust_attestation.py",
+      "bytes": 1382,
+      "sha256": "b4ce21c37a97719f0b54a386c0776efac9cfe7cca212a45e39ea69b72fac8467",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/core/__init__.py",
+      "bytes": 6,
+      "sha256": "35e05419d159e89f42c18d99b65ee23dbf51c92a6c8e295eba4beca7b128961a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/core/digital_twin.py",
+      "bytes": 1147,
+      "sha256": "9766792149689c671567aaf2d426b35f8e4cc2b411d5c73f034cc416609e0a6d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/core/multiphysics_rl_engine.py",
+      "bytes": 5993,
+      "sha256": "25a9bbdb9dfa046378eafbbf6ff6fac9dd28b1db12f1de7e595a75598057e2f3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/core/native_matrix.py",
+      "bytes": 336,
+      "sha256": "0876882667984b236b793e999b531668541449e05563088f127fae38513fe379",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/core/photonic_engine.py",
+      "bytes": 1176,
+      "sha256": "55385fd7b370524404c0d47ee2d764773ade41849f1e4866639d25dbcc96e410",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/core/pino_engine.py",
+      "bytes": 1176,
+      "sha256": "b93982ccce696b2a81a979f6c82161f41456d75000c445b46296ff553ce401c8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/core/quantum_hybrid.py",
+      "bytes": 1445,
+      "sha256": "2d4a7cd92e93419cb4063ac71e8b063ead7fe42c1cb3b5cefcae58bcb32e06d4",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/drivers/can_driver.py",
+      "bytes": 1599,
+      "sha256": "7f6b311198c132301bc67a0323f5e3bde632e768023165fa22c79e1e2c53e952",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/drivers/cnc_driver.py",
+      "bytes": 1578,
+      "sha256": "aa676a6f17ce17697f4fc82c286e07ec02671a806b688ff81552512910f109ce",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/drivers/cuda_driver.py",
+      "bytes": 1831,
+      "sha256": "53ee248bc58bea604eefcda04aff75f979f8622b820e8e9d7addb6ddadf1a51a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/drivers/evm_driver.py",
+      "bytes": 1746,
+      "sha256": "ddaffd3bf24d36aed44df0d9b6114b4e7f5d319da45d84021b99f37ffdea1d2a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/drivers/fpga_driver.py",
+      "bytes": 2738,
+      "sha256": "cf5c191cec3b6cfd5f7c3765808470a802af2e5628c83299c94eab60d52c37d4",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/drivers/k8s_driver.py",
+      "bytes": 1996,
+      "sha256": "0d74ecaad77fb7161e0a3e96ae20b38b3fd630395cca502660330c71a2debbea",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/drivers/marx_driver.py",
+      "bytes": 1685,
+      "sha256": "b6827329e5502601e1699dc8a182319cd476f05258972ea5c819705f92ace3e0",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/drivers/photonic_driver.py",
+      "bytes": 1435,
+      "sha256": "18e87eecdc5b722da8257165298eb7c64ee273f613b530a3fbeb4ab5a4facf63",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/drivers/qpu_driver.py",
+      "bytes": 2532,
+      "sha256": "9ad31634fdc4034a565185bddbbf6339ae313418e76f82fe2a803ada051942ce",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/drivers/spacex_driver.py",
+      "bytes": 5537,
+      "sha256": "659029353ab6e508315408fde660c2b48cb7841542aa978f24bf4b4f45078e76",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hal/anomaly_driver.py",
+      "bytes": 1005,
+      "sha256": "b9fbdb60deae06adb8e42e997ff98f5d0e64e9b00b9a5406a6de8dc18a79775a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hal/base_driver.py",
+      "bytes": 211,
+      "sha256": "c1a27bf5db40f972386e0376170fff19ae093b393d94645a044fb03ed9bfad66",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hal/factory.py",
+      "bytes": 202,
+      "sha256": "fec5f34457d3fdf2d9a051376937cf927bc7d742529da120d5ee25f50dc1ebda",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hal/interferometer_driver.py",
+      "bytes": 4657,
+      "sha256": "9e5ac609be0114a60a0cfb136aa8fbf0d608ddcbce59a8115bb0763a3c8dfedf",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hal/mesh_orchestrator.py",
+      "bytes": 1169,
+      "sha256": "32a596faf48f749c340af5b823de8a30e84be44c4016f69b7404b5093ae728f7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hal/orchestrator.py",
+      "bytes": 1756,
+      "sha256": "772e727ffee24e07fbe0a455fdd841a67b3af242bed4a8ab168acb0813cad2a3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hal/ros2_bridge.py",
+      "bytes": 859,
+      "sha256": "207f10d57d45c88af2b0abbfd34a6aece1b03f96188d757aff892582a1cfae84",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hal/safety_driver.py",
+      "bytes": 818,
+      "sha256": "015e6db3149a680744f86609b44320c6ddc0f4aabdcdc745ed8b70d02f324cde",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/hal/swarm_consensus.py",
+      "bytes": 1044,
+      "sha256": "c3e462c56669af62e27d69ae10851c06a87c0bdaf4dab7fd62c90f2f3e7d8708",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reference_data/cafl_explicit_catalog.json",
+      "bytes": 305148,
+      "sha256": "de6f091e843887c5d1c7f59886c6ed5cfcfa66d05367550dda259b08c0232454",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reference_data/nist_hydrogen_lines.json",
+      "bytes": 11646,
+      "sha256": "1bc0c049228a3a85cff9586477d923457660a7de905383f5769a8f05bb00d021",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reference_data/rife_scoon_catalog.json",
+      "bytes": 16124,
+      "sha256": "a7ca3956e2efaffdd1ddb47fb6ffaf31a256a6666511cafe4e74654b9696c65e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/reference_data/universal_one_numeric_leads.json",
+      "bytes": 3085,
+      "sha256": "6ba484dc64c15ab4bcc3f636a971661ffb18f5bd3a6a9ae0650153beb51108e5",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/static/dashboard.html",
+      "bytes": 4452,
+      "sha256": "8cbb831814b7e9b7e22f47be49ca777b50bdd5a66560635fff171938e6535f1a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/static/index.html",
+      "bytes": 2921,
+      "sha256": "a23caeba43bd7a5c4a99210430fc7e5294e93c047ea3a7599d63bd7e3d397e89",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/tests/test_biometrics.py",
+      "bytes": 1908,
+      "sha256": "4f1cd93c6b48ab2881691aaa3a6dc3c9fe53b2b9d8b7d19202f526a167361e25",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/vis/advanced_vr_lab.html",
+      "bytes": 12858,
+      "sha256": "b7f7c838bf7db5209025f738a5c92085992441f8c98ff0508645c7109a598b29",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/vis/advanced_vr_lab.py",
+      "bytes": 14322,
+      "sha256": "cda245fb836cd06500ed9af81f49a9107a4c7c15dddf322a115c4f063d2a90a7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/vis/gcode_viewport.html",
+      "bytes": 44505,
+      "sha256": "d4efd41d8f16d22ba58d3dfcb3e665825a07fa6d6c7aa55e1d09f6457584359a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/vis/gcode_visualizer.py",
+      "bytes": 10005,
+      "sha256": "16eefb371b7a543e72a79345c73fbb2ecf080524a0fd95ff33c7431767008e8a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/vis/micro_macro_vr.html",
+      "bytes": 9835,
+      "sha256": "cf6e0cfb744fddd3bad829556b59c010cbcd8ccaad0ab207d49842a0eb8af855",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/src/vis/micro_macro_vr.py",
+      "bytes": 11207,
+      "sha256": "59bff75072c8e66f822d025beb230b30039091f1909e10c28ef6dae682374cfb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/tests/test_fanout_aperture_probe.py",
+      "bytes": 3975,
+      "sha256": "93d922904f7d31f581f6e502bea454247db7d6a8e9da7937d72fb510c0e74fa7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/tests/test_outer_connection_probe.py",
+      "bytes": 1619,
+      "sha256": "4cbe169313c1b2bfe6de882c4dd46530e32133120cda082b8ad0af988c3a733d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/tests/test_toroidal_aperture_attachment.py",
+      "bytes": 5783,
+      "sha256": "c828c46f60337eaa50b8467fa87604e9c4c156cef8b2e92f96cc16e62b4a84aa",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/tests/test_toroidal_bore_downstream.py",
+      "bytes": 9230,
+      "sha256": "7282b35f9f86e402e9adc81f9ace127fe783a9405a67963dfea3b25cac4f098d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-scratch",
+      "path": "aperture-candidate/tests/test_toroidal_bore_downstream_adversarial.py",
+      "bytes": 8179,
+      "sha256": "e0b6f2b10c71ab8fc364b62436eddec31efb070c0b280e03b077e1009717fee1",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "advanced-xr-viewer-requirements.md",
+      "bytes": 10160,
+      "sha256": "1a5cae19152db0f019dc9a2cfbcfa59416a1a1f4ed6aae684249097b0ce18e6a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "aperture-and-outer-connection-result.md",
+      "bytes": 5781,
+      "sha256": "3d56e2de408dcbc671a3215f6f495998c3996b7a7ea9dc95e974175bce8ad534",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "breathing-fold-result.md",
+      "bytes": 2621,
+      "sha256": "af2460825e536b58c61f22c291997bdd827c549d8d6045fcf20619d6ac1210ff",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "breathing-fold.json",
+      "bytes": 1780683,
+      "sha256": "92004dd00346744cffd684d246155c782daf81fffb845e892a5411d4a83cc563",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "breathing-regression-tests.txt",
+      "bytes": 275,
+      "sha256": "69eb7b292c3047622ad7751434053b76f470ad411c2229cce19fdef4d67a16fb",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "connected-fold-3d.json",
+      "bytes": 261385,
+      "sha256": "764a284b989010c6b344dfb7b9fac5d7f8c3cce13cae4ab43b2c9e4c2b596428",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "connected-fold-4d.json",
+      "bytes": 258490,
+      "sha256": "62e21bd2943df3c03e5c75733098499170b086c724ae9f3f2bda9ad2945b4478",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "connected-fold-result.md",
+      "bytes": 4258,
+      "sha256": "2a51447071e72be6473aba3a33b5375dc0966cc47cde0b94d4c2f839e7af9801",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "connected-fold-scene.json",
+      "bytes": 2511407,
+      "sha256": "5007c909fcb1fe22f4c864dae5588df1cc253e3818b37e62c91e872fd1beb39b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "construction-4d-rotation.md",
+      "bytes": 1420,
+      "sha256": "d770a56c12901e1a6894f8cd1f4b0c62d45d5ae88a449844a44eef8b9b6d729f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "construction-edge-coverage.md",
+      "bytes": 1310,
+      "sha256": "acab7c3dd29e161ec61050318c68cf2666bfecf9ab778d8f7fb358018c5d0ede",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "construction-edge-inspection.md",
+      "bytes": 1482,
+      "sha256": "caff0539f189a74088e29023e855b5bb023665d04b9476429db1f7cd488a2ed8",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "continuous-mirror-result.md",
+      "bytes": 1729,
+      "sha256": "9e1c3ba404a0bdb1228f061aaf619de4bd6c31dfab1b4949aa72b5da99c04045",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "experiment-completion-audit.md",
+      "bytes": 31709,
+      "sha256": "de8c3fcd8b6aaee762c05f7e1a37c8c5f8ece7d9146f100802e6c112268ce2e7",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "experiment-restart.md",
+      "bytes": 10100,
+      "sha256": "fbc0e2c95d9b8cd8e6d5e138ac9c3a0d5aa7ab2a936c649d9d4a272fc472e87e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "fanout-and-morphing-status.md",
+      "bytes": 7549,
+      "sha256": "a3608a3b08d798e6a3ca9ec5384e2757ae39d39a166820b7045be26bcc7f6888",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "finite-panel-motion.json",
+      "bytes": 50568,
+      "sha256": "fb5337e02b367db3ba15e2d42b29b2a7c481187cc473af94490f7c311f98dd69",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "finite-panel-result.md",
+      "bytes": 2152,
+      "sha256": "2fdc03161c2ffb858346e642dd9981e847109a70ebb660e0d9459a564cc9480a",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "finite-panel-surfaces.json",
+      "bytes": 1946993,
+      "sha256": "3be77d3fdce05472c02dc8306bf8eaccb01fd343fd8c69af0c120cf89bb7ea92",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "lynchpin-relative-motion.json",
+      "bytes": 231462,
+      "sha256": "c019049468614b5016dd9a466b53112c06b6f8bec5a78a043b113ace5406ca4b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "mode-pair-robustness.json",
+      "bytes": 9980370,
+      "sha256": "e3188e4c7a4cd892209128563ffc819d3cae70d7a7a3f2fab6b8f0e9aea2670d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "multimode-wave-control.json",
+      "bytes": 1151376,
+      "sha256": "451fbc098a2fe66da94d844770a4511b185df24dde9bde4b809e79fbce409a5b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "multimode-wave-result.md",
+      "bytes": 2900,
+      "sha256": "3746ec5549de7e257d4448da3cfb55a51bd139359726e20ea4b7470923f79cd9",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "recursive-mirror-motion.json",
+      "bytes": 225975,
+      "sha256": "c97621a9c705f4a65d0f5ccba216e0a5caa42f0d04778a2055d89b4cb028553e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "relative-fold-result.md",
+      "bytes": 2392,
+      "sha256": "6cb2159930d18c8cc7c625750d09d1ccd5e378c6c63e99bdd89db2bfc2273c1b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "repository-reconciliation.md",
+      "bytes": 3410,
+      "sha256": "ea4e1ffedeae47dee225f046b1ebbdeb9d22f059a4ea9867799e5d99b4d19aaa",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "repository-refresh-log.txt",
+      "bytes": 8198,
+      "sha256": "115297a28cc0d9ed2fb48da99bcc02ffd9bbacc1b537ac658fe112b31815e39f",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "repository-refresh.json",
+      "bytes": 21139,
+      "sha256": "e6ccac704fa832dc0a8a8c9ffabbb5464a9dea5fe6a0f70a722639f1e994e578",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "science-engine-mapping-status.md",
+      "bytes": 3818,
+      "sha256": "96a51923c05f56593ca2686ebf7dc9032d3a2fe585e10ce643b92d09ad3bfad4",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "subsystem-and-parallel-progress.md",
+      "bytes": 3506,
+      "sha256": "72a51e8d89ee1e74a87c00241ece79903bde45078857017ac842f84e9b36f8bf",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "time-crystal-subsystem.json",
+      "bytes": 16274762,
+      "sha256": "3725b3d00d7638c2a7d4b4a2d922484ca914fb99bc721deee0b0ae5ee17e660b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "time-order-and-wave-progress.md",
+      "bytes": 4062,
+      "sha256": "0e04d325813292bfa296f6f623e2114e971a2ae8f562f318ee35488fdeab8a3d",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "time-order-controls.json",
+      "bytes": 679945,
+      "sha256": "f1b148c8453ad7f4b85b852d7c7c90390b4cb268c1d8fc269f117b05ded7856b",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "toroidal-context-progress.md",
+      "bytes": 2287,
+      "sha256": "ba587c3fb4ce5a4b849d9358c885ace9f912f8ea07c43364e0c40f7b26f503fc",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "viewer-0.3-recovery-status.md",
+      "bytes": 3491,
+      "sha256": "15d9493f7bda0e6869256bc2453b1804c26cea14cf2f46dc5b16cd5817d997e3",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "viewer-0.3-tests.txt",
+      "bytes": 9543,
+      "sha256": "471cfb24f342a54087d3466e0bb3b64595e9e433274c0efd95381fd124b67fcf",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "viewer-studio-redesign.md",
+      "bytes": 1301,
+      "sha256": "afa22d94fd66b335e5954abf027ae38de753ca50d3686214b50db7859101ba83",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "viewer-studio-tests.txt",
+      "bytes": 9554,
+      "sha256": "412e9b6db2be9a3204f8e7019188a48cbd2b5ed840f117c9e4c7bd732c7d37db",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "viewer-whole-tests.txt",
+      "bytes": 9813,
+      "sha256": "baa7a4dec7edf0deda89d77d324425c6405aa6d453b74b627fabea278b675584",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    },
+    {
+      "collection": "current-reports",
+      "path": "wave-investigation-manifest.json",
+      "bytes": 2187,
+      "sha256": "2758d2c541ae53a4dcd163b86e80b5a20823a43f000fb8589cf496468b407b9e",
+      "disposition": "retained locally; not promoted by this checkpoint"
+    }
+  ]
+}
