@@ -461,3 +461,51 @@ then declared mass/potential laws with geometric inertial terms and energy
 controls. Keep actual material calibration, whole-flow correspondence, recursive
 coupling, matched time-crystal usefulness and viewer integration visibly open.
 The register still contains 41 tasks; this batch does not close P04-P10.
+
+
+## 2026-09-30 - Recovered fold kinematics, lumped inertia and fresh geometry audit
+
+Extended actual pinned PR119 geometry rather than replacing it with a new shape.
+The adapter has independent coordinates s and theta, analytic positions and
+first/second derivatives, and exactly one synthetic point mass for each of the
+six panels, four hubs and twelve bridges. Panel points are arithmetic means of
+coefficient vertices, explicitly not volume centroids. Chosen masses total
+0.74 kg; length scale 0.1 m/reference unit is illustrative, not measured.
+
+Derived M=sum m J^T J and checked kinetic-energy equivalence. Positive inertia
+throughout the admitted rectangle follows a rank argument using fixed hub 0's
+scale motion and hub 3's independent fold motion, beyond sampled eigenvalues.
+The map is a reduced point model, not a through-thickness material map, solid
+inertia calculation, force law or autonomous breathing implementation.
+
+Independently executed the four original geometry/control modules plus original
+geometry definitions, with eight hashed local import dependencies. Nine phases
+and 22 bodies per phase reproduce source mean-vertex positions within 2.78e-17 m.
+All 13 executed source hashes are in fold-original-source-fixture.json. The
+fixture exporter executes supplied trusted code and records provenance; it does
+not authenticate that a directory is a Git checkout. The adapter is not used to
+generate the reference fixture.
+
+Also reran the original complete 3D clearance auditor (amplitude 0.1, maximum depth 10):
+accepted, 231 pairs, 1,208 intervals, minimum scaled bound 3.773014616157734e-05
+reference units. The source's theta path covers every theta in [0,pi/6]; common
+positive scaling of ALL occupied envelopes and attachment regions transports
+this result across s in [0.9,1.1]. This improves the earlier audit's open domain
+question. It does not validate nonuniform scaling, full solid material-point
+correspondence, changed thickness, negative folds, or the 69-component network.
+Floating-point support/analytic-speed limitations remain, not interval arithmetic.
+
+Independent review confirmed signed rotation basis, derivatives, inertia and
+scope. Input conversion now rejects oversized integers cleanly. Validation:
+32 new adapter/reference tests; combined existing experiment/document suite
+110 passed in 6.19 seconds. Ruff check/format and CI acceptance block passed.
+Report hashes, original-source fixture, export reproduction and source links
+are persisted. Prior PR122 head ced2c935 had experimental-control and container
+success; remaining workflows were not complete at initial check. Fresh
+publication requires new CI, and no branch was merged.
+
+Next bounded step: use these derivatives for an explicitly synthetic reduced
+potential/damping model, including coordinate-dependent inertia, prescribed
+external-work accounting, conservative and drive-off controls, and boundary
+rejection. Full solid calibration, active reservoirs, recursive exchange,
+whole-flow mapping and actual viewer integration remain open. Task count: 41.

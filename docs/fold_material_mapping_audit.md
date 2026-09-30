@@ -142,3 +142,12 @@ transport control is `rho=rho0/J`, `j_relative=F*j0/J`, and
 charts; it cannot fill missing geometric correspondence. The existing uniform
 similarity is its verified restricted case. No image, phase pattern or hinge
 incidence substitutes for this whole-assembly mapping.
+
+
+## Follow-up implementation
+
+The kinematic/derivative and synthetic point-ownership prerequisite is now
+implemented in [fold_kinematics.md](fold_kinematics.md). The independent-domain
+question is resolved conditionally by [fold_domain_inheritance.md](fold_domain_inheritance.md),
+with a fresh original-source clearance run saved in the fixture. These results
+do not supply a full solid material-point partition or calibrated force law.

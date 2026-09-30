@@ -39,8 +39,8 @@
       "dependencies": [
         "P03"
       ],
-      "next_action": "Implement a kinematic (s, theta) adapter for the pinned PR119 22-body compliant specimen with analytic derivatives, mass ownership and explicitly bounded admissibility. Then construct a distinct mapping to all 69 flow components. See docs/fold_material_mapping_audit.md.",
-      "latest_result": "PR124 head 3249637f96c748ba2a08b7ad2c963fa0c5a33d59 adds prescribed common 0.9-1.1 breathing of all 69 components and both host cuts. Continuous positive-similarity argument covers 2346 pairs; 24 new tests and six signed report cases pass, including 48 moving cuts per case. Relative inward folding is not yet assigned to the flow graph.",
+      "next_action": "Use tested first/second derivatives for a declared reduced force model. Preserve full-solid clearance conditions and map all 69 flow domains separately; point-mass adapter does not supply interior solid correspondence.",
+      "latest_result": "22-body (s,theta) kinematic reduction reproduces original-source markers at 9 phases. Original 3D clearance auditor rerun: 231 pairs,1208 intervals,accepted bound 3.773014616157734e-05 reference units. Rectangle inheritance conditional on scaling every occupied envelope/contact region. This is separate from 69-component flow folding.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "image_review": "docs/eight_image_research_review_2026-09-30.md"
     },
@@ -73,8 +73,8 @@
         "P06"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Synthetic connected two-mass SI specimen with spring/dashpot laws, supports and drive specified; 12 material tests pass. Preparatory isolated baseline only: mapping and calibrated material reduction of the 69-component assembly still depend on P04-P06.",
-      "next_action": "Use the recovered 22-body geometry for a declared reduced material specimen. Specify disjoint/lumped mass ownership, material-point correspondence and physical scale before deriving inertia/potential; synthetic coefficients must remain labelled. See docs/fold_material_mapping_audit.md."
+      "latest_result": "22 explicit synthetic point masses (0.74 kg total at illustrative 0.1m/unit) assigned once per original body ID; generalized mass derived from actual marker Jacobians. Positive inertia throughout domain follows independent hub scale/fold directions. Not calibrated density/solid inertia.",
+      "next_action": "Declare reduced potential, damping and supports; derive geometric inertial terms from the analytic Hessian and integrate energy/work controls within admissible domain. Calibration and full solid mass partition remain open."
     },
     {
       "id": "P08",
@@ -116,7 +116,8 @@
       "status": "queued",
       "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3\u201310. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
       "dependencies": [],
-      "image_review": "docs/eight_image_research_review_2026-09-30.md"
+      "image_review": "docs/eight_image_research_review_2026-09-30.md",
+      "latest_result": "Machine-readable source-backed fold positions, IDs, coordinate choices, masses and source hashes now exported in fold-kinematics-summary.json. No viewer wiring or visual/headset QA completed in this batch."
     },
     {
       "id": "P12",
