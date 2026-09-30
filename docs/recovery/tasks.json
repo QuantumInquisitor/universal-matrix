@@ -274,12 +274,14 @@
     {
       "id": "REC-NEUMANN",
       "title": "Recover patterned face-flux boundary solver candidate",
-      "status": "original_branch_tests_reproduced_independent_review_pending",
-      "evidence": "codex/patterned-neumann-face-flux at daa54376e72470e9ea6c01cbead817db9d9f0c36",
-      "next_action": "Add independent manufactured-solution and robustness review before proposing source integration.",
+      "status": "validated_published_draft_review_pending",
+      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/123",
+      "next_action": "Inspect full remote CI and review before authorized merge; physical and whole-network validation remain separate.",
       "validation": {
-        "candidate_tests_passed": 11,
-        "unchanged_main_tests_passed": 6
+        "solver_related_tests_passed": 29,
+        "documentation_tests_passed": 12,
+        "manufactured_cases_passed": 3,
+        "invalid_input_rejections_passed": 6
       }
     },
     {
@@ -294,7 +296,7 @@
       "title": "Resolve remaining historical branch content differences",
       "status": "in_progress",
       "evidence": "docs/recovery/exception-file-comparison.json",
-      "next_action": "Classify source/test differences and document whether historical doc changes were superseded; review the one merged-name branch whose tip differs from recorded PR head."
+      "next_action": "E8 tip discrepancy closed as duplicate documentation only. Continue other source/test and historical documentation comparisons."
     }
   ]
 }

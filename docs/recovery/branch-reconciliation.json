@@ -599,7 +599,8 @@
           "merged_at": "2026-09-23T17:51:33Z"
         }
       ],
-      "disposition": "merged_pr_record_found_check_later_edits"
+      "disposition": "merged_science_post_merge_difference_duplicate_documentation",
+      "evidence": "docs/recovery/e8-tip-comparison.json"
     },
     {
       "name": "codex/e8-invariant-coupling",
@@ -1156,7 +1157,8 @@
         }
       ],
       "related_prs": [],
-      "disposition": "no_matching_pr_review_patch"
+      "disposition": "recovered_corrected_validated_in_draft_pr_123",
+      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/123"
     },
     {
       "name": "codex/piezoelectric-mode-reference",

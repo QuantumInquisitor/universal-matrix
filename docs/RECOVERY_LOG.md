@@ -2,6 +2,10 @@
 
 This is the durable resume point for the catch-up program. Read the [plan](RECOVERY_PLAN.md), [task register](recovery/tasks.json), and the latest dated entry before starting work. Update this log at each substantive checkpoint, including failures and interruptions. A plan, passing unit tests, publication and empirical validation are different states.
 
+Latest checkpoint: the continuation entry below records independent solver validation,
+six corrected input defects, publication in draft PR 123, and closure of the E8
+tip discrepancy. Earlier next-action lists are historical snapshots.
+
 The objective is a connected, breathing, folding recursive engine. Experiments have priority; the viewer must inspect actual computed state. Time crystals are optional subsystem candidates. Source documents and historical claims do not override tested implementation or supply missing physical inputs.
 
 Each future entry must record: task IDs, baseline/branch, question and assumptions, changes, commands or reproducible procedure, result and limits, evidence locations, publication state, blockers and exact next action. Never mark work complete because a process started or a conversation promised it. Keep old entries; add corrections with a reference to the superseded statement.
@@ -50,3 +54,55 @@ Exact next actions:
 Execution scope: this log records completed recovery work and queued experiments. It does not mean all research questions are solved or that unattended workers are running. No existing source behavior or default engine clock was changed by this documentation checkpoint.
 
 Validation of this checkpoint: 12 documentation-governance tests passed. The isolated boundary test's first run printed a Windows WMI/Hypothesis diagnostic after reporting 11 passes; a clean rerun with unrelated plugin autoload disabled also passed all 11. Baseline and candidate reruns used `PYTHONDONTWRITEBYTECODE=1`, `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1`, and `python -m pytest tests/test_open_boundary_solver.py -q -p no:cacheprovider` from their respective package roots. No source modification was needed for that reproduction.
+
+## 30 September 2026 independent validation and recovered solver
+
+Tasks: REC-NEUMANN, REC-BRANCH-DIFFS. Main was rechecked at `a78576f83854a5b75c90815db121b1ca40a4f606`; PR 122 remained open and unmerged.
+
+The E8 branch tip is three commits ahead of the head recorded by merged PR 59.
+Its net diff contains only one duplicate row in DOCUMENTATION_STATUS.md. No
+scientific code or tests were lost in that discrepancy. The duplicate is not
+restored. Evidence: [tip comparison](recovery/e8-tip-comparison.json).
+
+Independent Neumann checks construct a dense graph matrix by enumerating links
+and boundary incidences, without using the candidate's stencil helpers. On
+three grids (2x3x4, 3x4x5, 4x4x4), manufactured potentials agree with a constrained
+dense solve; the largest potential error is about 3.37e-12 and independently
+computed Gauss residual about 1.77e-11. Energy identity error is below 2.85e-14.
+The declared acceptance bound is 1e-9 in dimensionless lattice units.
+
+All three numerical cases passed on the historical source, but all six invalid
+input controls failed the intended early-rejection contract. Complex source and
+face values could silently lose their imaginary part; infinite tolerance and
+fractional/boolean iteration limits could be accepted; NaN tolerance reached a
+solver breakdown instead of input rejection. The recovered implementation now
+checks real numeric arrays, finite positive tolerance and positive integer
+iteration limits before solving. Valid numerical results are unchanged.
+
+Published as [draft PR 123](https://github.com/QuantumInquisitor/universal-matrix/pull/123),
+head `b7add2892868d5e8150c3a4b148b3c3200642d57`. The source, original and corrected
+reports, portable audit script and reproduction note are in that PR. This log
+remains separately reviewable in PR 122; neither PR is merged. Remote CI for the
+new solver was pending at publication.
+
+Validation: 29 solver/related tests passed (11 original, 11 independent and
+robustness tests, seven existing manufactured/property tests). Twelve
+documentation-governance tests passed separately. Ruff check/format passed for
+the changed Python files. These selected tests are not a fresh full-suite run.
+
+Reproduction after checking out PR 123: `uv run python -m pytest
+tests/test_open_boundary_solver.py tests/test_patterned_neumann_independent.py
+tests/test_open_solver_manufactured.py tests/test_property_invariants.py`.
+The audit command is `uv run python scripts/audit_recovered_neumann.py --candidate
+src/open_boundary_solver.py --output artifacts/recovery/neumann.json`.
+
+Limits remain: finite dimensionless graph, no continuum convergence study, no
+physical material validation, and no completed whole-network moving geometry.
+REC-NEUMANN is now validated and published for review, not merged or empirically
+validated. Other branch/document differences and the discovery-line inventory
+still require reconciliation.
+
+Next executable batch: integrate the preserved aperture/inner/outer/fan-out
+candidate as an optional reference with independent interface, flux and complete
+declared-pair checks. Keep whole-assembly motion and material dynamics explicitly
+open. Check PR 123 CI before any merge decision, and record failures here.
