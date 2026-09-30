@@ -202,3 +202,48 @@ pairs or intervals rather than inferring motion from safe endpoints. Material
 forces, energy accounting, emergent motion, recursive coupling, the central
 stagnating streamline, W1/W2, timing-subsystem comparisons and remaining source
 reconciliation retain their open dispositions in the unchanged 40-task register.
+
+## 30 September 2026: complete assembly common breathing control
+
+Verified live PR119, PR122 and PR124 heads and recovered the existing PR119
+BreathingCycle at `60a7fd60f57d73b89ea5397db58a3ff5d291556c`. The published
+relative-fold specimen has six compliant panel cores, four hubs and twelve
+bridges; its hinge map is not assigned to the 66 conduits and three junctions
+of the aperture flow assembly. No such correspondence was found in the source
+reviewed for this batch. The common-size breathing law is reusable separately.
+
+Added an optional whole-assembly map x=sX, s=1+0.1 sin(2 pi phase), with both
+actual aperture cuts transported through inverse coordinates. All dimensions,
+thicknesses and junctions share the same map. Positive common scaling preserves
+the complete static pair classification continuously: all 2,346 pairs,
+62 route interfaces and eight ports remain valid for this restricted motion.
+Minimum scale is 0.9 and minimum deformation determinant is 0.729. The relative
+Piola current J0/s^2 preserves transported cut flux; the lab-current adapter
+adds an explicitly supplied advected reference density. Phase and rates are
+dimensionless, with no measured period or force/energy model.
+
+Validation: 24 new tests passed in 45.49 seconds. These cover valid-cycle limits,
+invalid inputs, both moving host holes, signed cases, nonuniform-density
+Eulerian continuity and moving-interface density jumps. All six report cases
+I = +/-1, +/-2e-8, +/-7 reproduced. Each includes 48 moving-cut diagnostics;
+maximum relative cut error is 2.11e-15. Ruff check/format, source hashes and both
+dedicated-workflow report acceptance blocks passed locally. Independent read-only
+review found no publication-blocking issue. This is not a fresh full-suite result.
+
+Published in draft PR124, head `3249637f96c748ba2a08b7ad2c963fa0c5a33d59`.
+Review entry: `docs/toroidal_assembly_breathing_v0.1.md`; snapshot:
+`docs/experiments/assembly-breathing-summary.json`. Reproduce with
+`uv run python scripts/report_assembly_breathing.py --output-dir
+artifacts/assembly-breathing`. Dedicated CI now repeats the new tests and reports;
+current-head remote checks were pending at publication. No merge was performed.
+
+P04 remains in progress. This control proves prescribed common expansion and
+contraction subject to the static floating-point assumptions, not inward relative
+folding or an emergent living fractal. A graph-to-hinge correspondence (or another
+explicitly justified nonuniform map) is the next missing input. Define its
+finite-thickness route, junction and host-cut charts before a whole-path audit;
+preserve PR119's rigidity result and compliant-panel assumptions. No viewer was
+changed. Material forces, energy closure, emergent motion, recursive coupling,
+wall-opening feasibility and the stagnating streamline remain open. W1/W2,
+timing-subsystem comparisons and remaining source recovery retain their separate
+dispositions. The register still contains 40 records; no tasks were silently closed.

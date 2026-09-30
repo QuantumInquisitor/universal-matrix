@@ -38,8 +38,8 @@
       "dependencies": [
         "P03"
       ],
-      "next_action": "Freeze permitted whole-assembly deformation and host-cut transport maps using the existing fold/breathing work; test ports, Jacobians and clearance continuously through an out-and-back cycle. Static endpoints do not certify the path. Ensure any viewer applies both actual host aperture domains.",
-      "latest_result": "Complete fixed 69-component assembly: 2346 pairs classified allowing declared contacts, 62 interfaces and 8 junction ports; six signed-current cases and 15 new tests pass. Draft PR124 e515134ddafd358616cb87cd37b2e90a3602cfae. Motion and physical validation remain open.",
+      "next_action": "Define an explicit correspondence from PR119 compliant hinge/panel specimen to the 66 conduits and three junctions, or justify a different nonuniform map. Specify transported route and host-cut charts, then test all Jacobians, interfaces and continuous clearance. Do not relabel common scaling as relative folding.",
+      "latest_result": "PR124 head 3249637f96c748ba2a08b7ad2c963fa0c5a33d59 adds prescribed common 0.9-1.1 breathing of all 69 components and both host cuts. Continuous positive-similarity argument covers 2346 pairs; 24 new tests and six signed report cases pass, including 48 moving cuts per case. Relative inward folding is not yet assigned to the flow graph.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {
@@ -315,17 +315,19 @@
         "combined_tests_passed": 15,
         "combined_unique_pairs_per_case": 2346,
         "combined_ports": 8,
-        "combined_interfaces": 62
+        "combined_interfaces": 62,
+        "common_breathing_tests_passed": 24,
+        "common_breathing_signed_cases": 6,
+        "moving_cut_diagnostics_per_case": 48
       },
       "limits": [
         "changed-component certificates overlap",
-        "motion unproved",
         "material and recursive dynamics open",
         "central stagnating streamline remains",
-        "complete static pair audit added in PR124; deformation and physical validation remain unproved"
+        "complete static audit and prescribed common breathing validated; relative folding, emergent motion and material energy remain unproved"
       ],
       "next_action": "Inspect remote CI and review; proceed to P04 combined inventory without claiming motion completion.",
-      "latest_head": "e515134ddafd358616cb87cd37b2e90a3602cfae"
+      "latest_head": "3249637f96c748ba2a08b7ad2c963fa0c5a33d59"
     }
   ]
 }
