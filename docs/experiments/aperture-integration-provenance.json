@@ -1,0 +1,187 @@
+{
+  "baseline": "a78576f83854a5b75c90815db121b1ca40a4f606",
+  "scratch_integration": [
+    {
+      "source": "src/toroidal_aperture_local.py",
+      "destination": "src/toroidal_aperture_local.py",
+      "source_sha256": "37afc2fe0b9abaa795d241e62ba980163df265a14e6fe2fea71279cef331566d"
+    },
+    {
+      "source": "src/toroidal_aperture_attachment.py",
+      "destination": "src/toroidal_aperture_attachment.py",
+      "source_sha256": "a176f44d73697d18c35f2d0b89d3cad4472f9c27df87c667192ab52d6863e40c"
+    },
+    {
+      "source": "outer_connection_probe.py",
+      "destination": "src/toroidal_outer_attachment.py",
+      "source_sha256": "aa966fbb80e6faa98299737822b5341dc7430298b80c9ee4c1881ce9285757af"
+    },
+    {
+      "source": "retained_collision_probe.py",
+      "destination": "src/toroidal_retained_collision.py",
+      "source_sha256": "0e43ea7cd2f61a081079ea9340046d6af6f0e5844c93f826981d9773fe116cf7"
+    },
+    {
+      "source": "fanout_aperture_probe.py",
+      "destination": "src/toroidal_aperture_fanout.py",
+      "source_sha256": "71b83c238ff98b503712940a199e9e99c3b2fcb96ec7d07623fc88480051ad88"
+    },
+    {
+      "source": "tests/test_toroidal_aperture_attachment.py",
+      "destination": "tests/test_toroidal_aperture_attachment.py",
+      "source_sha256": "c828c46f60337eaa50b8467fa87604e9c4c156cef8b2e92f96cc16e62b4a84aa"
+    },
+    {
+      "source": "tests/test_outer_connection_probe.py",
+      "destination": "tests/test_toroidal_outer_attachment.py",
+      "source_sha256": "4cbe169313c1b2bfe6de882c4dd46530e32133120cda082b8ad0af988c3a733d"
+    },
+    {
+      "source": "tests/test_fanout_aperture_probe.py",
+      "destination": "tests/test_toroidal_aperture_fanout.py",
+      "source_sha256": "93d922904f7d31f581f6e502bea454247db7d6a8e9da7937d72fb510c0e74fa7"
+    }
+  ],
+  "existing_dependencies": [
+    {
+      "path": "src/toroidal_smooth_bends.py",
+      "matches_main": true,
+      "sha256_normalized": "110fac102a4b78b2d133a19ce390004ac86106f3c51de8594c8c363bb321f964"
+    },
+    {
+      "path": "src/toroidal_global_routing.py",
+      "matches_main": true,
+      "sha256_normalized": "7a1e8ad59fecbda73ffcf8baa840563aa5414118d36b368f08fea5a9a01979b0"
+    },
+    {
+      "path": "src/toroidal_framed_edge_assembly.py",
+      "matches_main": true,
+      "sha256_normalized": "2a80a8ede2806e712f1cdaa7ebdac3ee330d263d5e72a85db061ef8a3bdcbe97"
+    },
+    {
+      "path": "src/vesica_tree_circulation.py",
+      "matches_main": true,
+      "sha256_normalized": "c2d23aa2d4d6817d44732de229b17c81cd0ff854cc50e7dcb3ad2b5fb2d5171e"
+    },
+    {
+      "path": "src/universe_port_engine.py",
+      "matches_main": true,
+      "sha256_normalized": "8c8e3039cc6ec2bc1a88f62f90638a0be7333d0ad6a66578b5fbdb2522a07a06"
+    },
+    {
+      "path": "src/terryen_negative_space.py",
+      "matches_main": true,
+      "sha256_normalized": "3ac69e72cd755bcbc40bbfd224b612cd6a8b1b2cfa5b7e73e45078c342ab285c"
+    },
+    {
+      "path": "src/terryology_audit.py",
+      "matches_main": true,
+      "sha256_normalized": "419a4c04985b1f22d1f54667bcea3e8264ba55a800433644c661b5bdbb7aa385"
+    },
+    {
+      "path": "src/twenty_four_cell_bridge.py",
+      "matches_main": true,
+      "sha256_normalized": "10dd0554c90fac8b483f64f1afbbcbd4c5cc4a2b64f17fa1bdf82a0d06ef0dc8"
+    },
+    {
+      "path": "src/stella_octangula_register_bridge.py",
+      "matches_main": true,
+      "sha256_normalized": "759690e5ea70bbe0675e63436db80af1a5f5e88348bdfda0016588ee6b35648b"
+    },
+    {
+      "path": "src/seed_matrix_bridge.py",
+      "matches_main": true,
+      "sha256_normalized": "49f647fcce79adea03e315f3ac6415e4824ed95ec8a9b99ad15251cf22b92fe3"
+    },
+    {
+      "path": "src/sevenfold_seed_contract.py",
+      "matches_main": true,
+      "sha256_normalized": "c6363c27a321ce52353272448761f303c39c41c250b0b11f3850f923b160b349"
+    },
+    {
+      "path": "src/canonical_kernel.py",
+      "matches_main": true,
+      "sha256_normalized": "5e53471a1ad075962c2d0b62b364430e128f60b144b8617c30ed4fae8a3a5fb4"
+    },
+    {
+      "path": "src/four_dimensional_polytope_bridge.py",
+      "matches_main": true,
+      "sha256_normalized": "bb2ce04531bed34113e0a2eedb3f48d08e5425b191232437e55bc46975529475"
+    },
+    {
+      "path": "src/platonic_solid_bridge.py",
+      "matches_main": true,
+      "sha256_normalized": "e50825a607a1445eba480b9021022c79d9570a43ba5502d486cb3e5ac985d3b4"
+    },
+    {
+      "path": "src/canonical_scale_transfer.py",
+      "matches_main": true,
+      "sha256_normalized": "92c0348958fc914ea9c92d75be81fca903de40beed901400056c510e2fa46933"
+    },
+    {
+      "path": "src/scale_transfer.py",
+      "matches_main": true,
+      "sha256_normalized": "6a74e538a03814e5d3bb6cc19dda7a3f2eb45b49078fc45dd122c546bfc2453c"
+    },
+    {
+      "path": "src/canonical_polarity_clock.py",
+      "matches_main": true,
+      "sha256_normalized": "e1a2f869cb62c2a9694a4bd941b217f18aaa511b5eedd49ba059a2894198c055"
+    },
+    {
+      "path": "src/toroidal_connector_topology.py",
+      "matches_main": true,
+      "sha256_normalized": "000a9562d77dcaca92b205efd6f438c2c15841cb9f5f0ec1de5a46349ecad86a"
+    },
+    {
+      "path": "src/conservative_toroidal_field.py",
+      "matches_main": true,
+      "sha256_normalized": "5d4f40321c28ecbc7dfb7f0deef1d1f927dda7a082cddab65ccbdd2cc0f705bb"
+    },
+    {
+      "path": "src/toroidal_annular_junction.py",
+      "matches_main": true,
+      "sha256_normalized": "67ff386d8da77fdb51c6d1e521882a4f49987fdc21fa4ae81692d6725f3594a0"
+    },
+    {
+      "path": "src/graph_toroidal_flux_bundle.py",
+      "matches_main": true,
+      "sha256_normalized": "a5d4a4f255c0c503c57b38c6196fdb56d68cb357bc542ffdf9f8626b0825ed7c"
+    },
+    {
+      "path": "src/toroidal_shared_return_route.py",
+      "matches_main": true,
+      "sha256_normalized": "9f2db5ead79812f87ca87ec3125b3e5e1a49deeb62da2ce39d8c3dc2a58ce46a"
+    },
+    {
+      "path": "src/toroidal_separated_channels.py",
+      "matches_main": true,
+      "sha256_normalized": "a309f03249f274c8000e5991688d0557e2076c0a26f96a295c51fa3f152aa904"
+    },
+    {
+      "path": "src/toroidal_incident_bend_audit.py",
+      "matches_main": true,
+      "sha256_normalized": "4bf2478c522242f8229fe3191080cdbe278d64ebb91787df58de967fb0e637a6"
+    },
+    {
+      "path": "src/toroidal_shared_return_connectors.py",
+      "matches_main": true,
+      "sha256_normalized": "1b929a8f5798d6f75bc27113d1fc9c9d598036ad0b6e4f5c0ccb7a1f297e877f"
+    },
+    {
+      "path": "src/toroidal_bore_downstream.py",
+      "matches_main": true,
+      "sha256_normalized": "d6f4302ceae8d3f177788a2d0d37dccc86ee4802c4b8e2fe0f663ccf24ccf864"
+    },
+    {
+      "path": "src/toroidal_shared_prefix_fanout.py",
+      "matches_main": true,
+      "sha256_normalized": "083986d25661a23c36949df8a635cb3e60af136058617a5d38259bb87d835e9a"
+    },
+    {
+      "path": "src/toroidal_junction_bore_passage.py",
+      "matches_main": true,
+      "sha256_normalized": "bc32e77414eb151d7f592968b28e9b0ca9a19a519fe61c434687b9e5e507b5e8"
+    }
+  ]
+}
