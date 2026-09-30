@@ -99,7 +99,9 @@
       "dependencies": [
         "P09"
       ],
-      "image_review": "docs/eight_image_research_review_2026-09-30.md"
+      "image_review": "docs/eight_image_research_review_2026-09-30.md",
+      "latest_result": "Declared-state recorder and exact winding history published in PR124 3efe05db6ac3d247ac1e7bdec83a8a906d700036; 32 linked tests pass. All 69 components distinguish half-cycle position return from state return, full-cycle periodic return from history, and exact saved-clock replay. This is not recursive dynamics or an autonomous material restart.",
+      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {
       "id": "P11",
@@ -327,7 +329,9 @@
         "combined_interfaces": 62,
         "common_breathing_tests_passed": 24,
         "common_breathing_signed_cases": 6,
-        "moving_cut_diagnostics_per_case": 48
+        "moving_cut_diagnostics_per_case": 48,
+        "recurrence_and_clock_tests_passed": 32,
+        "recurrence_signed_cases": 2
       },
       "limits": [
         "changed-component certificates overlap",
@@ -336,7 +340,7 @@
         "complete static audit and prescribed common breathing validated; relative folding, emergent motion and material energy remain unproved"
       ],
       "next_action": "Inspect remote CI and review; proceed to P04 combined inventory without claiming motion completion.",
-      "latest_head": "3249637f96c748ba2a08b7ad2c963fa0c5a33d59"
+      "latest_head": "3efe05db6ac3d247ac1e7bdec83a8a906d700036"
     },
     {
       "id": "REC-IMAGES-8",

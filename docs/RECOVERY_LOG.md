@@ -288,3 +288,53 @@ and arithmetic controls are complete; new oscillator/material/recurrence
 experiments remain explicitly proposed under existing task IDs. This does not
 close relative folding, emergent motion, energy closure, recursive coupling,
 the central stagnating streamline or any matter-synthesis claim.
+
+## 30 September 2026: declared-state recurrence and exploratory-model intent
+
+The user reaffirmed that the Matrix Engine should model the outside world and
+explore alternative possibilities rather than use popularity as an acceptance
+criterion. Preserved that intent in the new review document: candidates need
+explicit assumptions, state, units and discriminating predictions; unfamiliar
+models remain eligible for investigation. Validation distinguishes a result
+inside an assumed model from agreement with observed physical behavior.
+
+Added `src/declared_state_recurrence.py` and the assembly report adapter.
+Position return, declared-state return and winding-history return are separate.
+Winding affects the state verdict only under an explicit model policy; ordinary
+periodic return remains valid when turn count is only historical bookkeeping.
+Exact winding strings, stable identities, explicit units and per-channel
+tolerances survive serialization. Changed models/inventories/units and invalid
+rotation/state inputs are rejected. All comparisons are limited to the declared
+variables; no hidden-state completeness is inferred.
+
+The real 69-component breathing adapter was reproduced at currents +1 and -1.
+Tick 18 has the same scale/representative positions as tick 0 but opposite
+motion and different phase, so position returns while declared state does not.
+Tick 36 returns the declared periodic state while all 69 winding counts advance.
+An internal-state perturbation is detected despite equal positions. A tick-35
+snapshot restores exactly and its phase/history reproduces the prescribed next
+snapshot. The 36-tick-to-size-cycle alignment is an explicit dimensionless
+assumption; representative enclosing-body centers and common shape parameters
+are not a general mesh-state description. Rotation is relative to reference.
+
+Independent review caught a norm-underflow false-return case at 1e-200 and a
+missing adapter source hash. Both were fixed before publication, with tiny-change
+regressions and adapter-inclusive model identity. The linked recurrence/clock
+suite passes 32 tests (26 new and six existing) in 1.72 seconds. Both final
+reports, normalized source hashes, Ruff check/format and all three workflow
+acceptance blocks pass. This is not a fresh full-repository validation.
+
+Published in draft PR124 at `3efe05db6ac3d247ac1e7bdec83a8a906d700036`.
+Review: `docs/declared_state_recurrence_v0.1.md`; compact snapshot:
+`docs/experiments/assembly-recurrence-summary.json`. Reproduce full snapshots
+with `uv run python scripts/report_assembly_recurrence.py --output-dir
+artifacts/assembly-recurrence`. Current-head container CI passed; dedicated experiment, CodeQL and broad verification remain in progress. No merge
+was performed. The catch-up register retains 41 tasks; P10 is not closed by
+this recorder.
+
+Next bounded experiment: compare explicitly specified common-phase and
+traveling-phase targets under a declared graph and coupling law, measuring
+noise/delay sensitivity, recovery and resource costs. Use the recorder for
+state/history observations; no memory force is supplied by a policy flag.
+Relative inward folding, material forces, energy closure, emergent motion,
+recursive dynamics and observed-world calibration remain separate open work.
