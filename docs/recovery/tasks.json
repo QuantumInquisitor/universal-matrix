@@ -22,11 +22,13 @@
     {
       "id": "P03",
       "title": "Promote the remaining validated local candidates in small groups.",
-      "status": "queued",
+      "status": "in_progress",
       "scope_and_completion": "First integrate the modified-host aperture, inner attachment, B-to-outer attachment, and second-aperture edge-2 replacement as optional reference constructions. Existing passing local results mean these should be carried forward rather than rediscovered. Review Tesla phase/resonator and helix-clock candidates separately. Package relevant source records and viewer changes only with their reproduction and provenance. **Done when:** each selected candidate has independent checks, documented scope and a reviewable publication; every unpromoted family has a recorded reason. Preserve older scratch material.",
       "dependencies": [
         "P01"
-      ]
+      ],
+      "latest_result": "Aperture/inner/outer/fan-out reference validated and published in draft PR 124; other candidate families remain open.",
+      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {
       "id": "P04",
@@ -35,7 +37,8 @@
       "scope_and_completion": "Reuse the known hinge incidences and recursive maps; distinguish the critical inversion singularities from valid fold points. Assemble a complete component/contact/port inventory, including retained-retained pairs. Reconcile local rerouting with the entire network and generalized branching. Specify allowed deformation, dimensional assumptions, reconnection rules and dormant-path behavior. Extend the bounded connected breathing specimen to the declared assembly, checking finite thickness, ports, Jacobians, signed flux and continuous clearance throughout an out-and-back cycle. **Done when:** the complete declared assembly passes those checks with explicit tolerances, or remaining obstructing pairs/intervals are identified. A 4D mathematical path does not by itself establish a physically realizable 3D mechanism.",
       "dependencies": [
         "P03"
-      ]
+      ],
+      "next_action": "Build one combined component/port/contact inventory with both modified hosts and classify every retained-retained pair before whole-assembly motion."
     },
     {
       "id": "P05",
@@ -297,6 +300,25 @@
       "status": "in_progress",
       "evidence": "docs/recovery/exception-file-comparison.json",
       "next_action": "E8 tip discrepancy closed as duplicate documentation only. Continue other source/test and historical documentation comparisons."
+    },
+    {
+      "id": "REC-APERTURE",
+      "title": "Integrate preserved aperture, outer route and replacement fan-out",
+      "status": "validated_published_draft_review_pending",
+      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
+      "validation": {
+        "selected_tests_passed": 121,
+        "signed_report_cases_passed": 6,
+        "existing_dependencies_matching_main": 28
+      },
+      "limits": [
+        "changed-component certificates overlap",
+        "whole-network clearance unproved",
+        "motion unproved",
+        "material and recursive dynamics open",
+        "central stagnating streamline remains"
+      ],
+      "next_action": "Inspect remote CI and review; proceed to P04 combined inventory without claiming motion completion."
     }
   ]
 }

@@ -2,9 +2,9 @@
 
 This is the durable resume point for the catch-up program. Read the [plan](RECOVERY_PLAN.md), [task register](recovery/tasks.json), and the latest dated entry before starting work. Update this log at each substantive checkpoint, including failures and interruptions. A plan, passing unit tests, publication and empirical validation are different states.
 
-Latest checkpoint: the continuation entry below records independent solver validation,
-six corrected input defects, publication in draft PR 123, and closure of the E8
-tip discrepancy. Earlier next-action lists are historical snapshots.
+Latest checkpoint: the aperture integration entry below records 121 passing
+tests, six reproduced signed-current cases and publication in draft PR 124.
+Earlier next-action lists are historical snapshots.
 
 The objective is a connected, breathing, folding recursive engine. Experiments have priority; the viewer must inspect actual computed state. Time crystals are optional subsystem candidates. Source documents and historical claims do not override tested implementation or supply missing physical inputs.
 
@@ -106,3 +106,53 @@ Next executable batch: integrate the preserved aperture/inner/outer/fan-out
 candidate as an optional reference with independent interface, flux and complete
 declared-pair checks. Keep whole-assembly motion and material dynamics explicitly
 open. Check PR 123 CI before any merge decision, and record failures here.
+
+## 30 September 2026 aperture and fanout integration
+
+Tasks: P03 and REC-APERTURE. Main was freshly checked at
+`a78576f83854a5b75c90815db121b1ca40a4f606`. PRs 122/123 remained open and
+unmerged. PR 123 CodeQL/container checks had passed; broader verification was
+still running at this batch's initial inspection.
+
+The local aperture/inner attachment, B-to-outer detour, original retained
+collision control and second-aperture edge-2 replacement are now optional
+repository modules. The default builders and original scratch files are
+unchanged. Scratch-only imports and output paths were replaced with repository
+imports and a portable exporter; fixed coordinates and field equations were
+preserved. All 28 transitive existing source dependencies match main after
+newline normalization.
+
+Fresh checks: 121 selected attachment, fan-out and downstream tests passed in
+73.22 seconds. Nine new Python files pass Ruff check/format. All six cases
+I = +/-1, +/-2e-8, +/-7 reproduced successfully, and the dedicated workflow's
+acceptance assertions also passed locally. Per case, the separate inventories
+contain 117 inner pairs, 56 aperture/environment pairs, 508 outer pairs and 861
+replacement-route pairs. These overlap and are not a unique global pair count.
+The replacement has 13 internal interfaces. Maximum outer-cut relative flux
+error is 1.97e-14. Host-field, divergence-refinement, positive-Jacobian and
+adversarial port checks are part of the selected tests.
+
+Published as [draft PR 124](https://github.com/QuantumInquisitor/universal-matrix/pull/124),
+head `f5a317f9a0bfdfadb442d647decb629d0199d554`. Review entry:
+`docs/toroidal_aperture_integration_v0.1.md`; compact results and source/provenance
+hashes are in `docs/experiments/aperture-summary.json` and
+`docs/experiments/aperture-integration-provenance.json` in that PR. Full reports
+regenerate with `uv run python scripts/report_aperture_integration.py
+--output-dir artifacts/aperture`. The dedicated workflow repeats the tests,
+report generation and acceptance assertions. Remote CI was pending at
+publication. Neither this result nor its log has been merged.
+
+This closes the local-to-reviewable-repository integration for this candidate
+family. P03 remains in progress because Tesla, helix and other recovered
+candidates still need their own dispositions. P04 remains open: the separate
+certificates do not prove complete combined retained-retained clearance, safe
+motion, wall-opening feasibility, material dynamics, energy closure or recursive
+coupling. The central stagnating streamline remains. Full-network and motion
+completion flags remain false.
+
+Next executable batch: create one combined component/port/contact inventory for
+the first aperture, outer connection, replacement route and both modified hosts.
+Reconcile every retained pair against that single state and emit explicit
+unresolved contacts or collision witnesses. Only after that static audit should
+the whole-assembly deformation path be tested. Keep W1/W2, crystal, material and
+independent research queues visible in the task register.
