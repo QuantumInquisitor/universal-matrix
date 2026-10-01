@@ -47,9 +47,7 @@ def drive_metrics(parent_scale, parent_q, parent_v, child_q, child_v):
 
     parent_port, _ = port(parent_q, 0.1 * parent_scale)
     child_port, _ = port(child_q, 0.1 * child_scale)
-    potential, parent_force, child_force = connector(
-        parent_q, child_q, parent_scale, child_scale
-    )
+    potential, parent_force, child_force = connector(parent_q, child_q, parent_scale, child_scale)
     parent_power = float(parent_force @ parent_v)
     child_power = float(child_force @ child_v)
     return {
