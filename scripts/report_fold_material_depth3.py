@@ -79,9 +79,7 @@ def rhs(y, sizes, edges, *, broken_edge=None):
         masses.append(mechanical(block[:2], block[2:4], size)[0]["mass_matrix"])
 
     for edge_index, (a, b, weight) in enumerate(edges):
-        _, force_a, force_b = connector(
-            blocks[a, :2], blocks[b, :2], sizes[a], sizes[b], weight
-        )
+        _, force_a, force_b = connector(blocks[a, :2], blocks[b, :2], sizes[a], sizes[b], weight)
         if edge_index == broken_edge:
             force_b = -force_b
         forces[a] += force_a
@@ -92,9 +90,7 @@ def rhs(y, sizes, edges, *, broken_edge=None):
         ]
 
     for index in range(n):
-        result[5 * index + 2 : 5 * index + 4] += np.linalg.solve(
-            masses[index], forces[index]
-        )
+        result[5 * index + 2 : 5 * index + 4] += np.linalg.solve(masses[index], forces[index])
     return result
 
 
@@ -177,9 +173,7 @@ def simulate(
 
     def audit(state, time):
         nonlocal node_max, edge_max
-        energy, potential, incident, works, accounts = measure(
-            state, sizes, edges, groups
-        )
+        energy, potential, incident, works, accounts = measure(state, sizes, edges, groups)
         blocks = state[: 5 * len(sizes)].reshape(len(sizes), 5)
         node_residual = energy - e0 + blocks[:, 4] - incident
         edge_residual = potential - u0 + works.sum(axis=1)
@@ -267,12 +261,7 @@ def report():
         ),
         refinement=dict(
             maximum_absolute_state_difference=float(
-                np.max(
-                    abs(
-                        np.asarray(depth3["final_state"])
-                        - np.asarray(fine["final_state"])
-                    )
-                )
+                np.max(abs(np.asarray(depth3["final_state"]) - np.asarray(fine["final_state"])))
             )
         ),
         sources={
