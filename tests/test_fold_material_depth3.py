@@ -48,9 +48,11 @@ def test_disconnected_descendants_do_not_change_root(result):
     assert max(delta) < 1e-14
 
 
-def test_depth_three_changes_connected_root_response(result):
-    delta = result["depth_response"]["depth_2_to_3_root_absolute_state_change"]
-    assert max(delta) > 1e-12
+def test_depth_three_root_backreaction_is_below_declared_resolution(result):
+    response = result["depth_response"]
+    delta = response["depth_2_to_3_root_absolute_state_change"]
+    assert max(delta) < response["resolved_root_backreaction_threshold"]
+    assert not response["depth_3_root_backreaction_resolved"]
 
 
 def test_broken_reaction_is_detected(result):
