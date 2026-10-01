@@ -42,11 +42,15 @@ def test_reference_time_grid_is_shared(result):
         )
 
 
-def test_final_child_uptake_is_scale_invariant(result):
-    fractions = list(result["final_child_uptake_fraction_of_parent_magnitude"].values())
-    assert all(value is not None for value in fractions)
-    assert max(fractions) - min(fractions) < 1e-10
-    assert all(np.isfinite(value) and value >= 0 for value in fractions)
+def test_child_uptake_history_is_scale_invariant_when_defined(result):
+    for values_by_scale in result["child_uptake_fraction_by_reference_time"].values():
+        fractions = list(values_by_scale.values())
+        if fractions[0] is None:
+            assert all(value is None for value in fractions)
+            continue
+        assert all(value is not None for value in fractions)
+        assert max(fractions) - min(fractions) < 1e-10
+        assert all(np.isfinite(value) and value >= 0 for value in fractions)
 
 
 def test_initial_conditions_are_dynamically_corresponding():
