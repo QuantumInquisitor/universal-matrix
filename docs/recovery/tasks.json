@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Recursive local-interface similarity is now separated from cascade embedding. The tangent audit shows exact self-similarity for M~s^5, K~s^3, C~s^4, omega~1/s and modal impedance~s^4, with identical 1:2 connector tangent transfer across parent scales 1, 1/2 and 1/4. The isolated finite-time pair audit also collapses dynamically across 1→1/2, 1/2→1/4 and 1/4→1/8. Representative isolated child-work fractions are identical across scale at matching reference times: 0.6523 at 0.02, 0.7419 at 0.05, 0.7590 at 0.10, 0.7215 at 0.20, 0.6618 at 0.30 and 0.6057 at 0.40. In the embedded 15-module cascade at physical 0.1 s, the corresponding child-work fractions are level1=0.6892 (90.81% of isolated), level2=0.02004 (2.78% of isolated) and level3=0.02811 (4.64% of isolated). Deep attenuation therefore emerges from cascade drive history/loading/phase/storage rather than a scale-dependent defect in the local 1:2 law.",
+      "latest_result": "Recursive attenuation has now been causally decomposed under unchanged laws. Loaded-subtree replay driven by the exact embedded parent trajectory reproduces the true embedded child essentially exactly (~1e-15 coordinate and ~1e-14 rate errors; work-fraction ratio ~1). At physical 0.1 s, upstream-history factors relative to the scale-corresponding isolated pair are level1=0.9115649307527551, level2=0.027966486141335314 and level3=0.04641163954854683. Downstream-loading factors are level1=0.9961942865459624, level2=0.9931828095062976 and level3=1.0. Therefore the strong deep suppression is overwhelmingly caused by the actual trajectory delivered by the upstream parent, not by downstream child loading or a defective local 1:2 interface law.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Replay the actual embedded parent trajectory into an otherwise isolated parent-child interface and compare with the true embedded edge and the freely evolving isolated pair. Then repeat with downstream child loading removed/added to separate upstream drive-history effects from downstream loading and connector phase storage. Keep coefficients fixed; only if this causal decomposition fails should any new recursive interaction be considered."
+      "next_action": "Quantify the upstream parent drive itself at each recursive interface. Compare embedded parent displacement, scale-normalized velocity, parent-child relative port displacement, connector generalized force/power and phase against the dynamically corresponding isolated-pair parent trajectory at matched reference times. Determine whether the depth attenuation is the compounded parent-drive transfer from one level to the next. Keep all coefficients fixed and do not add new coupling unless this existing-law drive audit fails."
     },
     {
       "id": "P11",
