@@ -914,3 +914,26 @@ real attachments/collisions, full physical recursion and sustained breathing rem
 - Validation: 14 new overlay tests; 47 linked overlay/constitutive tests passed together in 3.12 s. Agent independently reran 28 local geometry/address tests in 3.18 s. Ruff/format and expanded material/harmonic/overlay workflow acceptance pass. Previously published clearance/test counts were inspected evidence, not rerun wholesale.
 - Found five initial local/published documentation differences caused by encoding drift, including mathematical symbols. Publication payload now explicitly reads UTF-8; local mathematical text preserved, fourteen corrupted range dashes repaired in the older plan. Source code and validated numerical reports were not rewritten for this documentation correction.
 - Evidence: docs/recovery/DRAFT_CAPABILITY_AUDIT.md, docs/recovery/draft-capability-audit.json and docs/experiments/lynchpin-material-overlay.json. Reuse/stage draft geometry interfaces, then connect material/inertia/energy and actual viewer state using these IDs and reference metadata. Stable breathing remains a milestone test, not a global gate.
+
+
+## 2026-09-30 - Explicit constitutive force-driven motion
+
+Connected the geometry-derived membrane/axial potential to the existing 22-body
+point-mass integrator through an explicit potential selector. The historical
+quadratic default remains; no spring energy is silently added to material energy.
+Owned inertia, geometric inertial bias, external work and damping loss are retained.
+
+Validation: 12 new tests and 16 historical dynamics tests passed together (28,
+22.13 s); 33 constitutive tests passed separately (1.55 s). Independent finite-
+difference energy gradients and Cartesian kinetic energy checks pass. A wrong
+quadratic-force law and a doubled spring are detectable negative controls.
+At dt=.01 s over .4 s the conservative balance error was 2.86e-15 J, passive
+1.19e-15 J and driven 1.14e-15 J. Directional energy-rate error was 1.23e-13 J/s;
+omitting geometric inertia gives 1.11e-5 J/s error. Report reproduction adds
+three step sizes and equilibrium/drive-shutoff controls with source hashes.
+
+See docs/fold_material_dynamics.md and
+scripts/report_fold_material_dynamics.py. This is synthetic reduced mechanics,
+not calibrated materials, stable breathing, distributed rotational inertia,
+contact, whole-flow coupling or completed XR. Existing network and finite-supply
+experiments have not silently inherited this new potential. P07/P08 remain open.

@@ -7,7 +7,7 @@
       "id": "P01",
       "title": "Recover surviving work from disk and Git before finalizing the task register.",
       "status": "in_progress",
-      "scope_and_completion": "Inspect both known local repositories, their worktrees, uncommitted files, branches, stashes, reflogs and unreachable objects without cleanup or resets. Inspect current and older scratch directories, source-review folders, raw numerical results, test logs, manifests, viewer exports and packaged versions. Enumerate all remote branches and all PRs, including closed-unmerged attempts; distinguish work already incorporated by later commits from genuinely missing changes. Check issues and unfinished workflow runs. Use targeted interruption/session logs only to resolve artifacts whose purpose or final command outcome is unclear. Check additional project-linked checkouts discovered through worktree metadata; do not assume the two familiar folders are the entire history. Follow docs/DOCUMENTATION_STATUS.md: executable implementation/tests take precedence over stale inventories. **Recovery gate:** every discovered project location and work family has a disposition; each branch with unique changes is either preserved for review, proven superseded, or explicitly unresolved. Do not turn a keyword hit or an unreachable Git object into a new task without examining it.\n   Start with the existing G1\u2013G8, W1\u2013W3, A1\u2013A2, P1, T1\u2013T3, S1\u2013S2, H1\u2013H2, C1\u2013C2, F1\u2013F2, R1\u2013R2 and V1 ledger. Link each record to its latest code, report, inputs, tests and publication status. Classify the 607 inventoried files by experiment family, deduplicate copies, and distinguish commitments from suggested follow-ons. Check older repository questions against current code before reopening them. Give every open task a next action, dependency, completion criterion and blocker. **Done when:** each recovered commitment has one current disposition and superseded status has an explicit replacement. This plan is the starting queue; detailed file-by-file reconciliation remains work.",
+      "scope_and_completion": "Inspect both known local repositories, their worktrees, uncommitted files, branches, stashes, reflogs and unreachable objects without cleanup or resets. Inspect current and older scratch directories, source-review folders, raw numerical results, test logs, manifests, viewer exports and packaged versions. Enumerate all remote branches and all PRs, including closed-unmerged attempts; distinguish work already incorporated by later commits from genuinely missing changes. Check issues and unfinished workflow runs. Use targeted interruption/session logs only to resolve artifacts whose purpose or final command outcome is unclear. Check additional project-linked checkouts discovered through worktree metadata; do not assume the two familiar folders are the entire history. Follow docs/DOCUMENTATION_STATUS.md: executable implementation/tests take precedence over stale inventories. **Recovery gate:** every discovered project location and work family has a disposition; each branch with unique changes is either preserved for review, proven superseded, or explicitly unresolved. Do not turn a keyword hit or an unreachable Git object into a new task without examining it.\n   Start with the existing G1–G8, W1–W3, A1–A2, P1, T1–T3, S1–S2, H1–H2, C1–C2, F1–F2, R1–R2 and V1 ledger. Link each record to its latest code, report, inputs, tests and publication status. Classify the 607 inventoried files by experiment family, deduplicate copies, and distinguish commitments from suggested follow-ons. Check older repository questions against current code before reopening them. Give every open task a next action, dependency, completion criterion and blocker. **Done when:** each recovered commitment has one current disposition and superseded status has an explicit replacement. This plan is the starting queue; detailed file-by-file reconciliation remains work.",
       "dependencies": [],
       "latest_result": "Open-draft owner search complete: six visible drafts, all universal-matrix. Two known clones share this origin. Full draft file inventory and exact-head CI recorded; 49 PR119-121 files absent current checkout are published, not lost. PR123/124 local contents match. See docs/recovery/DRAFT_CAPABILITY_AUDIT.md; historical branch/source inventory reconciliation remains broader work."
     },
@@ -73,8 +73,8 @@
         "P04"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Six source-backed panel membrane energies plus twelve optional axial bridge energies implemented with analytic generalized gradients and synthetic SI coefficients. 33 tests pass: original vertex replay, virtual work, objectivity, scale formula, stiffness and zero-law controls. Four hubs have no constitutive energy; bridges supply scale but no folding resistance in this axial model. No dynamics replacement or material calibration yet. See docs/fold_constitutive.md.",
-      "next_action": "Integrate negative potential gradient as an explicit alternative to the old quadratic law, retaining geometry-derived inertia and geometric bias. Run conservative/passive/driven energy controls before adding bending, hub/joint compliance, contact or calibrated coefficients.",
+      "latest_result": "Six source-backed panel membrane energies plus twelve optional axial bridge energies implemented with analytic generalized gradients and synthetic SI coefficients. 33 tests pass: original vertex replay, virtual work, objectivity, scale formula, stiffness and zero-law controls. Four hubs have no constitutive energy; bridges supply scale but no folding resistance in this axial model. No dynamics replacement or material calibration yet. See docs/fold_constitutive.md. Explicit constitutive dynamics now replace rather than add to the quadratic potential, preserving 22-body point inertia and geometric bias. Twelve new force/energy/refinement controls plus sixteen historical dynamics and thirty-three constitutive tests pass. See docs/fold_material_dynamics.md.",
+      "next_action": "Extend the explicit material model choice into coupled/reservoir accounts only after compatible ownership checks; then add independently specified joint/bending/contact laws and parameter sensitivity. Calibration and distributed rotational inertia remain open.",
       "related_parallel_tasks": [
         "P05",
         "P06"
@@ -89,7 +89,7 @@
         "P07"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Accounted ideal replenishment now adds four external-input ledgers with capacity-limited charging. All powered/source-off/finer runs reached 20 seconds; source delivered 78.3829 microjoules, powered final mechanical energy 3.16379 versus 0.694234 microjoules. Root error <=6.794e-14 J, 18 tests passed. Motion remains a growing transient, not a demonstrated stable cycle. Physical supply/material calibration and longer stability/perturbation tests remain open. See docs/fold_supply.md and docs/experiments/fold-supply-summary.json; earlier results preserved in docs/RECOVERY_LOG.md."
+      "latest_result": "Accounted ideal replenishment now adds four external-input ledgers with capacity-limited charging. All powered/source-off/finer runs reached 20 seconds; source delivered 78.3829 microjoules, powered final mechanical energy 3.16379 versus 0.694234 microjoules. Root error <=6.794e-14 J, 18 tests passed. Motion remains a growing transient, not a demonstrated stable cycle. Physical supply/material calibration and longer stability/perturbation tests remain open. See docs/fold_supply.md and docs/experiments/fold-supply-summary.json; earlier results preserved in docs/RECOVERY_LOG.md. Separate single-specimen constitutive-motion checkpoint closes conservative/passive/driven accounts with independent gradient and energy-rate controls; this does not switch the older supply/network experiments to the new material law."
     },
     {
       "id": "P09",
@@ -126,7 +126,7 @@
       "id": "P11",
       "title": "Use the viewer to inspect the same computed engine state.",
       "status": "queued",
-      "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3\u201310. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
+      "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3–10. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
       "latest_result": "PR119 has a 202-frame source geometry exporter, not yet integrated here. New reference-correct nine-frame material overlay joins all 22 source body IDs to six membrane/twelve axial energy owners, with four unmodeled hubs explicit. 14 tests pass, source vertices and rebased principal stretches verified. Actual viewer/headset integration remains open; see docs/recovery/DRAFT_CAPABILITY_AUDIT.md.",
@@ -156,7 +156,7 @@
     },
     {
       "id": "R03",
-      "title": "P1 and T1\u2013T2 electromechanics",
+      "title": "P1 and T1–T2 electromechanics",
       "status": "queued_for_scope_review",
       "context": "Integrate optional Tesla controls; map geometry to electrical parameters and couple reciprocally to the piezoelectric port. Obtain ring geometry, material tensors/poling, supports, electrodes and measured loss/response.",
       "completion": "One consistent energy budget and comparison against stated inputs. Rotation of an imposed field does not solve torque, heating, slip or the egg's rise."
@@ -177,7 +177,7 @@
     },
     {
       "id": "R06",
-      "title": "H1\u2013H2 helix geometry",
+      "title": "H1–H2 helix geometry",
       "status": "queued_for_scope_review",
       "context": "Specify thickness, junctions, pitch/depth assumptions, flow law and physical time calibration.",
       "completion": "A chosen, testable adapter and mechanics where claimed; drawings alone do not uniquely determine geometry or biology."
@@ -219,7 +219,7 @@
     },
     {
       "id": "R12",
-      "title": "S1\u2013S2 historical apparatus",
+      "title": "S1–S2 historical apparatus",
       "status": "queued_for_scope_review",
       "context": "Retain completed storage/acoustic modules. Investigate claimed apparatus only with its actual geometry, boundaries and measured inputs, including the octave-direction discrepancy.",
       "completion": "A faithful specified test or a documented source blocker; do not redo the generic modules as unfinished."
@@ -229,7 +229,7 @@
       "title": "Primitive state and local dynamics",
       "status": "queued_for_scope_review",
       "context": "Executable ontology, repeated-cell hypothesis, canonical phase reduction and minimal local Hamiltonian already exist.",
-      "completion": "Determine which richer matter/gauge terms follow from the canonical structure, locality and conservation and which are independent assumptions; establish physical locality and continuum limits. Do not restart ontology Questions 1\u20133 as unimplemented."
+      "completion": "Determine which richer matter/gauge terms follow from the canonical structure, locality and conservation and which are independent assumptions; establish physical locality and continuum limits. Do not restart ontology Questions 1–3 as unimplemented."
     },
     {
       "id": "R14",

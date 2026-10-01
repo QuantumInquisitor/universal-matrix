@@ -100,3 +100,7 @@ potential. Verify conservative/passive/driven energy accounts before expanding
 joint laws or recursive coupling. Do not add both restoring potentials silently.
 The static plot exposes actual midsurfaces, bridge centerlines and omitted hubs;
 it is not integration with the XR viewer or a new collision certificate.
+
+The next integration above is now implemented as an explicit single-specimen
+option; see [material dynamics](fold_material_dynamics.md). Coupled and reservoir
+experiments still retain their historical law pending explicit integration.

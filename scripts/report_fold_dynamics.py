@@ -9,8 +9,10 @@ from pathlib import Path
 import numpy as np
 
 try:
+    from .report_fold_constitutive import constitutive
     from .report_fold_kinematics import kinematics, scalar
 except ImportError:  # direct script invocation
+    from report_fold_constitutive import constitutive
     from report_fold_kinematics import kinematics, scalar
 
 Q0 = np.array((1.0, math.pi / 12))
@@ -45,29 +47,41 @@ def force(t, drive=0.0, drive_until=None):
     return drive * envelope * np.array((0.0001 * math.sin(2 * t), 0.00004 * math.cos(2 * t)))
 
 
-def mechanical(q, velocity):
+def potential_response(q, potential="quadratic"):
+    """Choose exactly one restoring potential; keep the original point inertia."""
+    if potential == "quadratic":
+        delta = np.asarray(q) - Q0
+        return float(delta @ STIFFNESS @ delta / 2), STIFFNESS @ delta
+    if potential == "constitutive":
+        response = constitutive(q)
+        return response["total_energy_j"], np.array(response["gradient"])
+    raise ValueError("potential must be quadratic or constitutive")
+
+
+def mechanical(q, velocity, *, potential="quadratic"):
     state = kinematics(q)
     v = vector(velocity, 2, "velocity")
     if np.max(np.abs(v)) > 1e6:
         raise ValueError("velocity outside numerical scope +/-1e6 per second")
     h_vv = np.einsum("nxab,a,b->nx", state["hessian"], v, v)
     bias = np.einsum("n,nxa,nx->a", state["mass"], state["jacobian"], h_vv)
-    delta = np.asarray(q) - Q0
-    energy = float(v @ state["mass_matrix"] @ v / 2 + delta @ STIFFNESS @ delta / 2)
+    stored, _ = potential_response(q, potential)
+    energy = float(v @ state["mass_matrix"] @ v / 2 + stored)
     return state, bias, energy
 
 
-def rhs(t, y, damping=1.0, drive=0.0, drive_until=None, *, omit_bias=False):
+def rhs(t, y, damping=1.0, drive=0.0, drive_until=None, *, omit_bias=False, potential="quadratic"):
     t = scalar(t, "time")
     y = vector(y, 6, "state")
     damping, drive, drive_until = parameters(damping, drive, drive_until)
-    state, bias, _ = mechanical(y[:2], y[2:4])
+    state, bias, _ = mechanical(y[:2], y[2:4], potential=potential)
+    _, gradient = potential_response(y[:2], potential)
     v = y[2:4]
     applied = force(t, drive, drive_until)
     resistance = damping * DAMPING @ v
     acceleration = np.linalg.solve(
         state["mass_matrix"],
-        applied - resistance - STIFFNESS @ (y[:2] - Q0) - (0 if omit_bias else bias),
+        applied - resistance - gradient - (0 if omit_bias else bias),
     )
     return np.r_[v, acceleration, applied @ v, v @ resistance]
 
@@ -81,6 +95,7 @@ def simulate(
     drive_until=None,
     initial=None,
     omit_bias=False,
+    potential="quadratic",
 ):
     duration, dt = scalar(duration, "duration"), scalar(dt, "dt")
     parameters(damping, drive, drive_until)
@@ -96,16 +111,16 @@ def simulate(
     )
     if np.any(y[4:] != 0):
         raise ValueError("initial work and loss must be zero")
-    _, _, initial_energy = mechanical(y[:2], y[2:4])
+    _, _, initial_energy = mechanical(y[:2], y[2:4], potential=potential)
     residuals, energies, samples, trace = [], [], [], []
     minimum, maximum = y[:2].copy(), y[:2].copy()
 
     def evaluate(t, value):
-        return rhs(t, value, damping, drive, drive_until, omit_bias=omit_bias)
+        return rhs(t, value, damping, drive, drive_until, omit_bias=omit_bias, potential=potential)
 
     for step in range(steps + 1):
         t = step * dt
-        state, _, energy = mechanical(y[:2], y[2:4])
+        state, _, energy = mechanical(y[:2], y[2:4], potential=potential)
         energies.append(energy)
         residuals.append(energy - initial_energy - y[4] + y[5])
         kinetic = float(y[2:4] @ state["mass_matrix"] @ y[2:4] / 2)
@@ -143,6 +158,7 @@ def simulate(
         d = evaluate(t + dt, y + dt * c)
         y = y + dt * (a + 2 * b + 2 * c + d) / 6
     return dict(
+        potential=potential,
         duration_s=duration,
         dt_s=dt,
         steps=steps,
@@ -163,19 +179,19 @@ def simulate(
     )
 
 
-def energy_identity_control():
+def energy_identity_control(*, potential="quadratic"):
     q, v = Q0 + (0.04, -0.06), np.array((0.12, -0.2))
     y = np.r_[q, v, 0.0, 0.0]
-    derivative = rhs(0.37, y, 0.8, 1.0)
+    derivative = rhs(0.37, y, 0.8, 1.0, potential=potential)
     eps = 1e-6
-    plus = mechanical(q + eps * v, v + eps * derivative[2:4])[2]
-    minus = mechanical(q - eps * v, v - eps * derivative[2:4])[2]
+    plus = mechanical(q + eps * v, v + eps * derivative[2:4], potential=potential)[2]
+    minus = mechanical(q - eps * v, v - eps * derivative[2:4], potential=potential)[2]
     measured = (plus - minus) / (2 * eps)
     predicted = derivative[4] - derivative[5]
-    wrong = rhs(0.37, y, 0.8, 1.0, omit_bias=True)
+    wrong = rhs(0.37, y, 0.8, 1.0, omit_bias=True, potential=potential)
     wrong_derivative = (
-        mechanical(q + eps * v, v + eps * wrong[2:4])[2]
-        - mechanical(q - eps * v, v - eps * wrong[2:4])[2]
+        mechanical(q + eps * v, v + eps * wrong[2:4], potential=potential)[2]
+        - mechanical(q - eps * v, v - eps * wrong[2:4], potential=potential)[2]
     ) / (2 * eps)
     return dict(
         finite_difference_step_s=eps,

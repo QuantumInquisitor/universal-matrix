@@ -21,6 +21,8 @@ on:
       - 'scripts/report_fold_scaled_pair.py'
       - 'scripts/export_lynchpin_material_scene.py'
       - 'tests/test_lynchpin_material_scene.py'
+      - 'scripts/report_fold_material_dynamics.py'
+      - 'tests/test_fold_constitutive_dynamics.py'
       - 'scripts/report_fold_constitutive.py'
       - 'scripts/plot_fold_constitutive.py'
       - 'tests/test_fold_constitutive.py'
@@ -800,4 +802,42 @@ jobs:
               assert len(set(b['id'] for b in frame['bodies'])) == 22
               assert all(b['material']['energy_j'] is None for b in frame['bodies'] if b['kind'] == 'hub')
 
+          PY
+
+  material-dynamics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify material forces and mechanical energy account
+        run: |
+          uv run ruff check scripts/report_fold_dynamics.py scripts/report_fold_material_dynamics.py tests/test_fold_constitutive_dynamics.py
+          uv run ruff format --check scripts/report_fold_dynamics.py scripts/report_fold_material_dynamics.py tests/test_fold_constitutive_dynamics.py
+          uv run python -m pytest tests/test_fold_dynamics.py tests/test_fold_constitutive.py tests/test_fold_constitutive_dynamics.py
+          uv run python scripts/report_fold_material_dynamics.py --output artifacts/fold-material-dynamics/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-material-dynamics/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_text(encoding='utf-8').encode()).hexdigest()
+          assert r['potential'] == 'constitutive'
+          assert set(r['cases']) == {'equilibrium', 'conservative', 'passive', 'driven', 'drive_off'}
+          for c in r['cases'].values():
+              assert c['duration_s'] == 0.4 and c['potential'] == 'constitutive'
+              assert c['maximum_balance_residual_j'] < 1e-10
+          assert r['cases']['passive']['final_energy_j'] < r['cases']['passive']['initial_energy_j']
+          assert r['cases']['driven']['final_state'][4] != 0
+          off = [s for s in r['cases']['drive_off']['trace'] if s['time_s'] >= 0.2]
+          assert len({s['work_j'] for s in off}) == 1
+          assert r['energy_identity']['absolute_error_j_s'] < 1e-10
+          assert r['energy_identity']['omitted_bias_absolute_error_j_s'] > 1e-8
+          assert not r['physical_calibration'] and not r['stable_breathing_established']
           PY
