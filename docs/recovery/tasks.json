@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Recursive attenuation has now been causally decomposed under unchanged laws. Loaded-subtree replay driven by the exact embedded parent trajectory reproduces the true embedded child essentially exactly (~1e-15 coordinate and ~1e-14 rate errors; work-fraction ratio ~1). At physical 0.1 s, upstream-history factors relative to the scale-corresponding isolated pair are level1=0.9115649307527551, level2=0.027966486141335314 and level3=0.04641163954854683. Downstream-loading factors are level1=0.9961942865459624, level2=0.9931828095062976 and level3=1.0. Therefore the strong deep suppression is overwhelmingly caused by the actual trajectory delivered by the upstream parent, not by downstream child loading or a defective local 1:2 interface law.",
+      "latest_result": "Depth-three recursive attenuation is now explained within the current synthetic model without introducing a new coupling. Local 1:2 tangent and finite-time pair laws are scale-self-similar. Downstream loading changes embedded child-work uptake by less than 1% over 0.1 s. The dominant effect is the upstream parent trajectory: at 0.1 s level2 parent displacement/port/force ratios versus isolated are ~0.0515/0.0559/0.0533 with scale-normalized rate 0.4384 and power factor -0.8625 versus +0.9520 isolated; level3 ratios are ~0.00219/0.00374/0.00393 with rate 0.00821 and power factor -0.8609 versus +0.99998 isolated. Deeper connector energy is predominantly stored elastically while the drive arrives late and phase-reversed.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Quantify the upstream parent drive itself at each recursive interface. Compare embedded parent displacement, scale-normalized velocity, parent-child relative port displacement, connector generalized force/power and phase against the dynamically corresponding isolated-pair parent trajectory at matched reference times. Determine whether the depth attenuation is the compounded parent-drive transfer from one level to the next. Keep all coefficients fixed and do not add new coupling unless this existing-law drive audit fails."
+      "next_action": "Move from abstract recursive topology to explicit spatial parent-child realization. Reuse existing 22-body geometry and collision/joint machinery where possible. Assign parent-child placement/orientation, verify connector endpoint coincidence or a declared joint transform, audit body-body clearance and collisions across at least depth 3, test mirror/self-similar recurrence under the declared 1/2 scale ratio, and only then attempt relative-fold correspondence with the separate 69-component toroidal flow assembly."
     },
     {
       "id": "P11",
