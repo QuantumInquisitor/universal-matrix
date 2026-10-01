@@ -96,8 +96,8 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Powered baseline, 1% velocity disturbance and finer continuation all reach physical 60s. Energy still grows 33.8093 to 49.2218 microjoules over 50-60s; stable breathing unproven. Kick energy explicitly accounted; largest group residual 3.424e-12 J, refinement energy difference 2.259e-12 J. 17 tests and workflow acceptance pass. Next: source sweep around conditional 0.6 microwatt near-rest damping threshold. See docs/fold_stability.md.",
-      "next_action": "Test longer duration, initial-condition/parameter ensembles and modal response; add an explicit finite active reservoir only if investigating sustained cycles, with its energy and saturation laws accounted."
+      "latest_result": "Equilibrium-reserve onset sweep: five powers plus a finer repeat complete 20 seconds; final/initial mechanical energy 0.221, 0.552, 0.999977, 1.522, 2.083 at 0, 0.3, 0.6, 0.9, 1.2 microwatts. Independent conditional nonincrease proof at/below 0.6 microwatts; amplification above. 19 tests and source/energy checks pass; maximum group error 3.416e-16 J. No stable cycle demonstrated. See docs/fold_threshold.md; prior 60-second disturbance audit retained.",
+      "next_action": "Continue above-threshold 0.9/1.2 microwatt cases with unchanged equations and explicit scope stops; assess amplitude saturation, reserve response and recovery across small initial disturbances/phases, with numerical refinement. Do not prescribe an output waveform or infer a stable cycle from a short nearly constant-energy trace."
     },
     {
       "id": "P10",

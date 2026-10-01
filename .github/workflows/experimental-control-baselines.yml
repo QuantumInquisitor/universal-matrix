@@ -19,6 +19,9 @@ on:
       - 'scripts/report_fold_mapped.py'
       - 'scripts/report_fold_scaling.py'
       - 'scripts/report_fold_scaled_pair.py'
+      - 'scripts/report_fold_threshold.py'
+      - 'scripts/plot_fold_threshold.py'
+      - 'tests/test_fold_threshold.py'
       - 'scripts/report_fold_stability.py'
       - 'scripts/plot_fold_stability.py'
       - 'tests/test_fold_stability.py'
@@ -628,4 +631,76 @@ jobs:
           assert np.max(r['refinement']['maximum_coordinate_difference']) < 1e-6
           assert np.max(r['refinement']['maximum_rate_difference']) < 1e-5
           assert not r['stable_breathing'] and not r['calibrated_material']
+          PY
+
+  threshold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Check source onset and equilibrium-reserve energy bound
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_threshold.py scripts/plot_fold_threshold.py tests/test_fold_threshold.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_threshold.py scripts/plot_fold_threshold.py tests/test_fold_threshold.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_threshold.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_threshold.py --output artifacts/fold-threshold/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-threshold/report.json').read_text())
+          json.dumps(r, allow_nan=False)
+          assert len(r['sources']) == 13
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          assert r['protocol']['powers_w'] == [0, 3e-7, 6e-7, 9e-7, 1.2e-6]
+          assert r['protocol']['damping_threshold_w'] == 6e-7
+          assert set(r['cases']) == {'power_0', 'power_1', 'power_2', 'power_3', 'power_4', 'fine_power_3'}
+          initial_energies = []
+          for name, c in r['cases'].items():
+              assert c['termination']['status'] == 'completed'
+              assert c['termination']['last_accepted_time_s'] == 20
+              initial_energies.append(c['onset']['initial_total_mechanical_j'])
+              initial = np.array(c['initial_state'][:36]).reshape(4, 9)
+              assert np.max(abs(initial[:, 2:4])) == 0
+              np.testing.assert_array_equal(initial[:, 4], c['onset']['equilibrium_reserve_j'])
+              for key in ('max_node_mechanical_residual_j', 'max_node_reservoir_residual_j', 'max_edge_residual_j'):
+                  assert max(c[key]) < 1e-14
+              assert max(c['max_group_residual_j'].values()) < 1e-14
+              assert min(c['minimum_reserve_j']) >= 0
+              assert max(c['maximum_reserve_upper_violation_j']) < 1e-14
+              assert min(c['minimum_input_step_j']) >= -1e-15
+              assert max(c['maximum_input_budget_violation_j']) < 1e-14
+              assert max(c['maximum_power_budget_violation_w']) < 1e-14
+              assert min(c['finite_supply_margin_j']) >= -1e-14
+              late = c['onset']['late_sampled_window']
+              assert late['sample_count'] >= 4
+              assert 15 <= late['covered_interval_s'][0] < 17
+              assert late['covered_interval_s'][1] == 20
+              for sample in c['samples']:
+                  assert np.max(np.array(sample['reserve_j']) - initial[:, 4]) < 1e-14
+          assert initial_energies[0] > 0 and len(set(initial_energies)) == 1
+          for name in ('power_0', 'power_1', 'power_2'):
+              c = r['cases'][name]
+              assert c['onset']['final_to_initial_energy_ratio'] <= 1 + 1e-4
+              assert np.max(np.diff([s['total_mechanical_j'] for s in c['samples']])) < 1e-14
+          assert r['cases']['power_0']['total_received_j'] == 0
+          assert r['cases']['power_3']['onset']['final_to_initial_energy_ratio'] > 1
+          assert r['cases']['power_4']['onset']['final_to_initial_energy_ratio'] > 1
+          assert r['refinement']['matched_final_time_s'] == 20
+          delta = np.array(r['refinement']['absolute_state_differences'])
+          blocks = delta[:36].reshape(4, 9)
+          assert np.max(blocks[:, :2]) < 1e-8
+          assert np.max(blocks[:, 2:4]) < 1e-7
+          assert np.max(blocks[:, 4:]) < 1e-14
+          assert np.max(delta[36:]) < 1e-14
+          assert r['refinement']['absolute_mechanical_difference_j'] < 1e-14
+          assert not r['stable_breathing'] and not r['calibrated_material']
+          assert r['ideal_external_source']
           PY
