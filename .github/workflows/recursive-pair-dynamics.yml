@@ -49,15 +49,20 @@ jobs:
               assert max(run['max_node_residual_j']) < 1e-10
               assert run['max_edge_residual_j'] < 1e-10
               assert run['max_total_residual_j'] < 1e-10
-          fractions = list(r['final_child_uptake_fraction_of_parent_magnitude'].values())
-          assert max(fractions) - min(fractions) < 1e-10
+          for values_by_scale in r['child_uptake_fraction_by_reference_time'].values():
+              fractions = list(values_by_scale.values())
+              if fractions[0] is None:
+                  assert all(value is None for value in fractions)
+              else:
+                  assert all(value is not None for value in fractions)
+                  assert max(fractions) - min(fractions) < 1e-10
           assert not r['connector_coefficients_changed']
           assert not r['material_scaling_law_changed']
           assert not r['damping_law_changed']
           assert not r['embedded_tree_loading_reproduced']
           print(json.dumps({
               'comparisons': r['comparisons'],
-              'final_child_uptake_fraction_of_parent_magnitude': r['final_child_uptake_fraction_of_parent_magnitude'],
+              'child_uptake_fraction_by_reference_time': r['child_uptake_fraction_by_reference_time'],
               'reference_final_snapshot': r['runs']['1.0']['snapshots'][-1],
           }, sort_keys=True))
           PY
