@@ -249,6 +249,10 @@ def report():
             disconnected_depth_3_to_single_root_absolute_state_change=abs(
                 root_state(disconnected) - root_state(single)
             ).tolist(),
+            resolved_root_backreaction_threshold=1e-12,
+            depth_3_root_backreaction_resolved=bool(
+                np.max(abs(root_state(depth3) - root_state(depth2))) > 1e-12
+            ),
         ),
         refinement=dict(
             maximum_absolute_state_difference=float(
