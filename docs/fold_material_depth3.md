@@ -31,14 +31,20 @@ Controls include:
 - a half-timestep depth-3 refinement run, and
 - a single-module reference.
 
-The disconnected 15-module case must reproduce the single root trajectory. Connected depth 3
-must measurably alter the root response relative to depth 2. The reversed reaction must create a
-localized connector and whole-subtree energy defect.
+The disconnected 15-module case must reproduce the single root trajectory. The connected
+depth-3 run is compared with depth 2 using a declared 1e-12 root-state resolution threshold.
+The observed depth-2-to-3 root change is only about 5.12e-17, so this experiment records that
+the added third level does not produce resolved root backreaction under the present scaling and
+connector law. That is a negative result, not evidence for arbitrary-depth influence. The
+reversed reaction must still create a localized connector and whole-subtree energy defect.
 
 ## Claim boundary
 
 Passing establishes bounded passive dynamics and explicit energy ownership for 15 material
-modules through physical depth 3 under the audited synthetic scale laws.
+modules through physical depth 3 under the audited synthetic scale laws. It also establishes
+a useful limitation: at the tested duration and parameters, the third level's effect on the root
+is below the declared numerical resolution threshold. Deeper descendants therefore cannot yet
+be claimed to exert a resolved macroscopic backreaction in this model.
 
 It does not validate spatial parent-child placement, collision-free recursive geometry, powered
 depth-3 operation, arbitrary depth, an infinite-depth limit or correspondence with the separate
