@@ -28,9 +28,7 @@ def test_static_scaling_identities(scale):
     v = np.array((0.11, -0.12))
     base, bias0, _, gradient0 = mechanical(q, v, 1)
     state, bias, _, gradient = mechanical(q, v, scale)
-    np.testing.assert_allclose(
-        state["position"], scale * base["position"], rtol=1e-13, atol=1e-16
-    )
+    np.testing.assert_allclose(state["position"], scale * base["position"], rtol=1e-13, atol=1e-16)
     np.testing.assert_allclose(
         state["mass_matrix"], scale**5 * base["mass_matrix"], rtol=2e-13, atol=1e-20
     )
