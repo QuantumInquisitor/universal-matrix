@@ -590,3 +590,32 @@ Task count remains 41. P07/P08/P09 remain in progress. Physical calibration,
 recursive coupling, energy reservoirs, autonomous motion and XR integration
 remain open. Next bounded step: an explicit finite reservoir with transfer and
 loss accounting, without assuming sustained motion or free energy.
+
+
+### 2026-09-30 — Finite internal reservoir and feedback
+
+Added optional nine-state reduced fold experiment with velocity-aligned feedback,
+finite reserve, delivered work and separate damping/conversion/leakage ledgers.
+Existing geometry and force model are reused unchanged. No external time waveform.
+Six ten-second cases plus refined fueled run: empty, disconnected, equilibrium,
+ideal transfer, fueled and intentionally missing reserve debit. Reserve falls
+from 2e-5 to 6.61439e-7 J, below the 3.33333e-6 J mechanical-growth threshold.
+This supports transient amplification, not indefinite autonomous breathing.
+
+Total balance residual 1.83306e-13 J, refined 8.49182e-15 J; ideal-control
+residual 8.00817e-13 J. Missing-debit control fails at 1.54121e-5 J. Independent
+review found no blocking issue and independently differentiated total energy
+(residual 4.07e-14 J/s). Exact equilibrium remains at rest, leakage matches its
+analytic exponential, disconnected motion matches the prior passive model.
+No clipping; invalid reserves/stages reject. Finite supply W<=eta R_initial.
+
+Validation: 17 reservoir tests plus 16 existing dynamics tests: 33 passed in
+5.83 seconds. Ruff passes; final reports regenerated, source hashes and workflow
+acceptance checked locally. Previous PR122 head 44cb8193 has passing experiment,
+container and CodeQL checks; broad verification was still running. New head
+requires fresh CI. No merge. Reports: docs/fold_reservoir.md and
+docs/experiments/fold-reservoir-summary.json. Task register retains 41 entries.
+
+Next: explicit equal-and-opposite exchange between two modules and global
+accounting before recursive whole-structure composition. Material calibration,
+continuous collision proof, XR integration and sustained motion remain open.

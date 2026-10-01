@@ -12,6 +12,8 @@ on:
       - 'scripts/export_fold_reference_fixture.py'
       - 'scripts/report_fold_dynamics.py'
       - 'scripts/report_fold_modes.py'
+      - 'scripts/report_fold_reservoir.py'
+      - 'tests/test_fold_reservoir.py'
       - 'scripts/report_fold_robustness.py'
       - 'tests/test_fold_modes.py'
       - 'tests/test_fold_robustness.py'
@@ -188,4 +190,29 @@ jobs:
           refinement = r['accepted_refinement']
           assert max(refinement['final_coordinate_absolute_difference']) < 1e-7
           assert refinement['residual_j_coarse_fine'][1] < refinement['residual_j_coarse_fine'][0]
+          PY
+      - name: Check finite fold reservoir
+        run: |
+          uv run ruff check scripts/report_fold_reservoir.py tests/test_fold_reservoir.py
+          uv run ruff format --check scripts/report_fold_reservoir.py tests/test_fold_reservoir.py
+          uv run python -m pytest tests/test_fold_reservoir.py
+          uv run python scripts/report_fold_reservoir.py --output artifacts/fold-reservoir/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-reservoir/report.json').read_text())
+          assert len(r['sources']) == 3 and len(r['cases']) == 6
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert c['minimum_reserve_j'] >= 0
+              if name != 'omitted_debit_control':
+                  assert c['max_total_residual_j'] < 1e-11
+                  assert c['final_state'][5] <= c['settings']['efficiency'] * c['settings']['initial_reserve_j'] + 1e-15
+          assert r['cases']['omitted_debit_control']['max_total_residual_j'] > 1e-6
+          assert r['cases']['fueled']['final_state'][4] < 1e-5 / 3
+          assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
+          assert max(r['refinement']['final_coordinate_absolute_differences']) < 1e-7
+          assert not r['claims']['sustained_autonomous_breathing']
           PY

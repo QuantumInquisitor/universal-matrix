@@ -85,7 +85,7 @@
         "P07"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Longer fold ledger validated: accepted 24-case ensemble subset has maximum residual 2.998e-12 J; refinement improves accounting. Independent linear-mode energy/Jacobian checks added. Whole-structure reservoir and exchange accounting remain open."
+      "latest_result": "Finite reservoir extension now balances mechanical energy, reserve, delivered work and separate damping/conversion/leakage losses. Correct model ledger residual 1.833e-13 J, refined 8.492e-15 J; missing-debit negative control 1.541e-5 J. Whole-structure exchange remains open. See docs/fold_reservoir.md."
     },
     {
       "id": "P09",
@@ -96,7 +96,7 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Bounded fold sensitivity: 21 accepted and 3 deliberate coordinate-domain rejections, no numerical errors. Independent synthetic modes 0.2741982850/0.3163579847 Hz; nonlinear discrepancies decrease with amplitude. This is finite driven/passive motion, not autonomous sustained breathing. Next: explicit finite energy reservoir before sustained-motion tests. See docs/fold_modes.md and docs/fold_robustness.md.",
+      "latest_result": "Finite internal-energy feedback implemented without an external time waveform. Fuel boosts motion transiently but falls below the damping threshold by 10 seconds. Exact equilibrium does not self-start; sustained autonomous breathing remains unproven. Next: conservative exchange between two coupled modules before recursive composition. See docs/fold_reservoir.md.",
       "next_action": "Test longer duration, initial-condition/parameter ensembles and modal response; add an explicit finite active reservoir only if investigating sustained cycles, with its energy and saturation laws accounted."
     },
     {
