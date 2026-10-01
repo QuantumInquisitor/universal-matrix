@@ -151,9 +151,7 @@ def report():
 
     increment_01 = np.abs(root_state(depth1) - root_state(depth0))
     increment_12 = np.abs(root_state(depth2) - root_state(depth1))
-    refinement = np.abs(
-        np.asarray(depth2["final_state"]) - np.asarray(fine["final_state"])
-    )
+    refinement = np.abs(np.asarray(depth2["final_state"]) - np.asarray(fine["final_state"]))
     disconnected_root = np.abs(root_state(disconnected) - root_state(depth0))
 
     sources = {}
