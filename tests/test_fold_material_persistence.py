@@ -65,8 +65,8 @@ def test_depth_limit_is_explicit_not_silent():
     [
         {"duration": 0},
         {"duration": 2},
-        {"max_step": 0.02},
-        {"rtol": 1e-5},
+        {"duration": 0.1, "max_step": 0.02},
+        {"duration": 0.1, "rtol": 1e-5},
     ],
 )
 def test_invalid_advance_inputs(kwargs):
