@@ -44,9 +44,7 @@ def measure(state, parent_scale):
             mechanical(blocks[1, :2], blocks[1, 2:4], child_scale)[2],
         ]
     )
-    potential = connector(
-        blocks[0, :2], blocks[1, :2], parent_scale, child_scale
-    )[0]
+    potential = connector(blocks[0, :2], blocks[1, :2], parent_scale, child_scale)[0]
     works = np.asarray(state[10:12], dtype=float)
     total = float(energies.sum() + blocks[:, 4].sum() + potential)
     return energies, float(potential), works, total
@@ -89,24 +87,13 @@ def simulate(parent_scale):
                     "reference_time_s": sample_steps[step],
                     "physical_time_s": step * dt,
                     "q": blocks[:, :2].tolist(),
-                    "scale_normalized_rates": (
-                        parent_scale * blocks[:, 2:4]
-                    ).tolist(),
-                    "mechanical_energy_over_parent_s3": (
-                        energy / parent_scale**3
-                    ).tolist(),
-                    "loss_over_parent_s3": (
-                        blocks[:, 4] / parent_scale**3
-                    ).tolist(),
-                    "connector_potential_over_parent_s3": potential
-                    / parent_scale**3,
-                    "endpoint_work_over_parent_s3": (
-                        (works - w0) / parent_scale**3
-                    ).tolist(),
+                    "scale_normalized_rates": (parent_scale * blocks[:, 2:4]).tolist(),
+                    "mechanical_energy_over_parent_s3": (energy / parent_scale**3).tolist(),
+                    "loss_over_parent_s3": (blocks[:, 4] / parent_scale**3).tolist(),
+                    "connector_potential_over_parent_s3": potential / parent_scale**3,
+                    "endpoint_work_over_parent_s3": ((works - w0) / parent_scale**3).tolist(),
                     "child_uptake_fraction_of_parent_magnitude": (
-                        None
-                        if parent_work == 0
-                        else abs(child_work) / abs(parent_work)
+                        None if parent_work == 0 else abs(child_work) / abs(parent_work)
                     ),
                 }
             )
@@ -192,9 +179,7 @@ def report():
         }
 
     final_uptake = {
-        str(scale): runs[str(scale)]["snapshots"][-1][
-            "child_uptake_fraction_of_parent_magnitude"
-        ]
+        str(scale): runs[str(scale)]["snapshots"][-1]["child_uptake_fraction_of_parent_magnitude"]
         for scale in PARENT_SCALES
     }
     return {
