@@ -1,6 +1,5 @@
 """Controls for the 15-module experimental depth-three material tree."""
 
-import numpy as np
 import pytest
 
 from scripts.report_fold_material_depth3 import (
