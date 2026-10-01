@@ -85,7 +85,7 @@
         "P07"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Finite reservoir extension now balances mechanical energy, reserve, delivered work and separate damping/conversion/leakage losses. Correct model ledger residual 1.833e-13 J, refined 8.492e-15 J; missing-debit negative control 1.541e-5 J. Whole-structure exchange remains open. See docs/fold_reservoir.md."
+      "latest_result": "Two fold modules now track their own reservoir work, damping and connection work, with separate connection potential and global energy. Global fueled residual 2.477e-13 J, refined 1.047e-14 J. Reversing B reaction breaks global/connection accounts while local work accounts remain balanced. See docs/fold_coupling.md."
     },
     {
       "id": "P09",
@@ -108,7 +108,7 @@
         "P09"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Same-environment material checkpoint replay is exact across drive cutoff at three timesteps, including source/model/schedule identity and accumulated energy channels. 18 new tests pass. This is a persistence prerequisite only; parent-child topology and recursive exchange remain unimplemented.",
+      "latest_result": "Two-module generalized-coordinate spring and energy exchange implemented and checked. Empty stationary B gains mechanical energy without reservoir input in conservative control; disconnected B stays at rest. Not yet a recursive graph or spatially validated joint. Next: small graph composition with one energy owner per edge and local/global ledger checks. See docs/fold_coupling.md.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {

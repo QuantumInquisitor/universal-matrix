@@ -13,6 +13,8 @@ on:
       - 'scripts/report_fold_dynamics.py'
       - 'scripts/report_fold_modes.py'
       - 'scripts/report_fold_reservoir.py'
+      - 'scripts/report_fold_coupling.py'
+      - 'tests/test_fold_coupling.py'
       - 'tests/test_fold_reservoir.py'
       - 'scripts/report_fold_robustness.py'
       - 'tests/test_fold_modes.py'
@@ -215,4 +217,32 @@ jobs:
           assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
           assert max(r['refinement']['final_coordinate_absolute_differences']) < 1e-7
           assert not r['claims']['sustained_autonomous_breathing']
+          PY
+      - name: Check two-module fold exchange
+        run: |
+          uv run ruff check scripts/report_fold_coupling.py tests/test_fold_coupling.py
+          uv run ruff format --check scripts/report_fold_coupling.py tests/test_fold_coupling.py
+          uv run python -m pytest tests/test_fold_coupling.py
+          uv run python scripts/report_fold_coupling.py --output artifacts/fold-coupling/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-coupling/report.json').read_text())
+          assert len(r['sources']) == 4 and len(r['cases']) == 4
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert len(c['initial_state']) == 20
+              assert c['max_module_residual_j'] < 1e-11
+              if name != 'wrong_reaction_control':
+                  assert c['max_total_residual_j'] < 1e-11
+                  assert c['max_connection_residual_j'] < 1e-11
+          assert r['cases']['wrong_reaction_control']['max_total_residual_j'] > 1e-6
+          assert r['cases']['wrong_reaction_control']['max_connection_residual_j'] > 1e-6
+          assert r['cases']['disconnected']['samples'][-1]['mechanical_j'][1] == 0
+          assert r['cases']['conservative']['samples'][-1]['mechanical_j'][1] > 1e-6
+          assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
+          assert max(max(row) for row in r['refinement']['final_coordinate_absolute_differences']) < 1e-7
+          assert not r['full_structure_recursive_validation'] and not r['sustained_breathing']
           PY

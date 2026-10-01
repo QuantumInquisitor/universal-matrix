@@ -619,3 +619,34 @@ docs/experiments/fold-reservoir-summary.json. Task register retains 41 entries.
 Next: explicit equal-and-opposite exchange between two modules and global
 accounting before recursive whole-structure composition. Material calibration,
 continuous collision proof, XR integration and sustained motion remain open.
+
+
+### 2026-09-30 — Two-module generalized fold exchange
+
+Coupled two existing reservoir modules through a positive generalized spring
+potential. Each module keeps separate connection work, while the connection
+owns its potential once. Global mechanics+reserves+connection+losses is constant.
+Module B begins at rest with an empty reserve. Conservative transfer gives B
+7.00014e-6 J mechanically at 10 s; disconnected B stays at zero. Initial spring
+energy contributes to transfer and is explicitly counted (1.05e-6 J).
+
+Four 10-second cases and a refined fueled run: coupled/fueled, disconnected,
+conservative and reversed-B-reaction negative control. Global fueled residual
+2.47678e-13 J improves to 1.04661e-14 J. Wrong reaction fails connection/global
+accounts at 3.243e-5 J while local work accounts remain nearly balanced. Independent
+review confirms equations, indexing and signs; directional global energy error
+3.39e-15 J/s and predicted wrong-reaction error 3.16e-6 J/s. Complete initial
+states added to reports for reproducibility. Source hashes cover all four scripts.
+
+Validation: 14 new coupling tests plus 33 linked reservoir/dynamics tests passed.
+Ruff and formatting pass. Workflow reproduces reports and checks hashes,
+connection/global/local ledgers, transferred energy and negative controls.
+Previous PR122 head 17b1af10 has successful experimental, container and CodeQL
+checks; broad verification still running at snapshot. New publication requires
+fresh CI. No merge. Reports: docs/fold_coupling.md and
+docs/experiments/fold-coupling-summary.json. Task count remains 41.
+
+This is a synthetic generalized-coordinate connection, not a spatial joint,
+Cartesian momentum claim or intermodule collision certificate. No full recursive
+structure or sustained breathing claim. Next: a small graph with one energy
+owner per connection, then recursive composition and separate spatial mapping.
