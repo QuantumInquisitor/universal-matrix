@@ -95,9 +95,7 @@ def simulate_transport(*, connected=True):
         }
 
     def audit(state, step):
-        energy, potential, incident, works, accounts = measure(
-            state, cfg["sizes"], edges, groups
-        )
+        energy, potential, incident, works, accounts = measure(state, cfg["sizes"], edges, groups)
         blocks = state[: 5 * len(sizes)].reshape(len(sizes), 5)
         node_residual = energy - e0 + blocks[:, 4] - incident
         edge_residual = potential - u0 + works.sum(axis=1)
@@ -124,8 +122,7 @@ def simulate_transport(*, connected=True):
                     "time_s": sample_steps[step],
                     "levels": current_levels,
                     "edges_by_child_level": {
-                        str(level): edge_metrics(potential, works, level)
-                        for level in (1, 2, 3)
+                        str(level): edge_metrics(potential, works, level) for level in (1, 2, 3)
                     },
                 }
             )
