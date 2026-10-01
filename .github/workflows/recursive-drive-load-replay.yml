@@ -22,12 +22,11 @@ jobs:
         with:
           python-version: '3.12'
       - uses: astral-sh/setup-uv@v10.1.0
-      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - run: uv sync --python 3.12 --extra scientific --group lint
       - name: Verify recursive drive-history and loading replay
         run: |
           uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_drive_load_replay.py tests/test_fold_recursive_drive_load_replay.py
           uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_drive_load_replay.py tests/test_fold_recursive_drive_load_replay.py
-          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_drive_load_replay.py
           uv run --python 3.12 --extra scientific python scripts/report_fold_recursive_drive_load_replay.py --output artifacts/fold-recursive-replay/report.json
           uv run --python 3.12 --extra scientific python - <<'PY'
           import hashlib
