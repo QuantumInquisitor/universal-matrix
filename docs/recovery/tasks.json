@@ -73,7 +73,7 @@
         "P06"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Synthetic force-law sensitivity now covers damping 0/.25/1 and drive 0/1/3 at 2/10 seconds plus two seeded initial perturbations. No stiffness calibration or measured material law. See docs/fold_robustness.md.",
+      "latest_result": "Conditional constant-density geometric scaling tested: mass lambda^3, generalized inertia lambda^5, assumed restoring energy lambda^3, chosen damping lambda^4. Reconstructed point mechanics and time-rescaled trajectories agree; not measured material calibration. See docs/fold_scaling.md.",
       "next_action": "Review reduced-law sensitivity and coupled-mode behavior; specify measured or justified distributed material coefficients before physical claims. Keep full-flow chart correspondence separate."
     },
     {
@@ -108,7 +108,7 @@
         "P09"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Nonlinear mapped connector derived from one potential, with parent/child Jacobian force pullbacks and port-length ratios 1/.5/.25. Correct energy accounts pass; wrong child mapping is detected. Leverage-only experiment retains original module masses/inertias. Next: explicit consistent body length/mass/inertia scaling before recursive deployment. See docs/fold_mapped.md.",
+      "latest_result": "Isolated body scaling now independently checked before recursive deployment. Mapped connector needs physical stiffness scaling lambda to match cubic module energy under uniform length scaling. Next: integrated scaled-body/mapped-connector experiment, then recursive composition. See docs/fold_scaling.md.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {

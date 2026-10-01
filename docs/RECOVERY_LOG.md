@@ -741,3 +741,32 @@ Next: state length/mass/inertia scaling assumptions explicitly and independently
 validate them before applying the connector across recursive levels. Spatial
 attachment, collision, calibration, full recursive assembly, sustained breathing
 and XR mapping remain open.
+
+
+### 2026-09-30 — Conditional body scaling laws
+
+Reconstructed the synthetic point geometry at length factors1/.5/.25 and masses
+factor cubed, without changing prior experiment sources. Generalized inertia,
+fixed-rate geometric bias and point angular inertia scale to the fifth power.
+Assumed equal strain-energy density gives cubic potential; chosen fourth-power
+damping preserves damping ratios. Corresponding durations are2/1/.5 seconds,
+not equal physical times. Initial rates scale inversely with length.
+
+All stored coordinates/rescaled rates/energies match the original passive solver
+for the binary factors tested. Residuals8.170e-15/1.021e-15/1.277e-16 J. Deliberately
+wrong cubic acceleration inertia creates3.210e-7 J energy defect. Independent
+review found no blockers:24 interior configurations including nonbinary.37 give
+energy-rate errors<=4.793e-14 W and acceleration similarity<=9.715e-17. These
+are consequences of explicit synthetic assumptions, not measured material laws.
+
+Validation:15 new scaling tests plus37 linked kinematics/dynamics tests passed
+(52 total,8.73s). Ruff/format and source-hash/workflow acceptance pass. Prior
+head f025063a: container passed; experimental, CodeQL and broad checks running
+at snapshot. Fresh publication requires CI; no merge. Results in docs/fold_scaling.md
+and docs/experiments/fold-scaling-summary.json. Task count remains41.
+
+Whole-system similarity also requires connector stiffness proportional to length:
+fixed stiffness produces quadratic connector energy rather than cubic. Next is
+a combined scaled-body and scaled-connector experiment. Calibration, actual
+attachments/collision, full recursive physical assembly, sustained breathing
+and XR mapping remain open.
