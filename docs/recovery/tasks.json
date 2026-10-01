@@ -108,7 +108,7 @@
         "P09"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Small graph composition implemented for chain/star/cycle/disconnected topologies with endpoint/node relabeling controls and conservative downstream transfer. No recursive hierarchy or spatial assembly validation yet. Next: parent/child grouping invariance of the same graph before new cross-scale coupling. See docs/fold_network.md.",
+      "latest_result": "Parent/child regrouping now assigns edges to lowest common ancestors and independently checks inclusive subgroup boundary-work accounts. Flat/balanced/deep/reordered two-second trajectories agree; no new cross-scale force law yet. Next: derive mapped cross-scale forces from a single potential before whole-structure application. See docs/fold_hierarchy.md.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {

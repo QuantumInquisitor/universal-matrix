@@ -15,6 +15,8 @@ on:
       - 'scripts/report_fold_reservoir.py'
       - 'scripts/report_fold_coupling.py'
       - 'scripts/report_fold_network.py'
+      - 'scripts/report_fold_hierarchy.py'
+      - 'tests/test_fold_hierarchy.py'
       - 'tests/test_fold_network.py'
       - 'tests/test_fold_coupling.py'
       - 'tests/test_fold_reservoir.py'
@@ -277,4 +279,29 @@ jobs:
           assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
           assert max(max(row) for row in r['refinement']['per_node_coordinate_absolute_differences']) < 1e-7
           assert not r['full_recursive_structure_validated'] and not r['sustained_breathing']
+          PY
+      - name: Check hierarchical fold regrouping
+        run: |
+          uv run ruff check scripts/report_fold_hierarchy.py tests/test_fold_hierarchy.py
+          uv run ruff format --check scripts/report_fold_hierarchy.py tests/test_fold_hierarchy.py
+          uv run python -m pytest tests/test_fold_hierarchy.py
+          uv run python scripts/report_fold_hierarchy.py --output artifacts/fold-hierarchy/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-hierarchy/report.json').read_text())
+          assert len(r['sources']) == 6 and len(r['cases']) == 4
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for c in r['cases'].values():
+              assert sorted(e for owned in c['owners'].values() for e in owned) == list(range(4))
+              assert max(c['group_max_residual_j'].values()) < 1e-11
+              assert max(max(row) for row in c['maximum_coordinate_differences_per_node']) < 1e-12
+              assert c['maximum_energy_state_difference_j'] < 1e-15
+              assert c['final_accounts']['root']['boundary_work_j'] == 0
+          control = r['duplicate_edge_accounting_control']
+          assert control['initial_total_overcount_j'] > 1e-7
+          assert abs(control['spurious_energy_change_j']) > 1e-7
+          assert not r['full_recursive_physical_validation'] and not r['sustained_breathing']
           PY

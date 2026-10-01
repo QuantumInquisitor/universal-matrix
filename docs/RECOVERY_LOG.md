@@ -682,3 +682,33 @@ Next: explicit parent/child grouping with accounting and trajectory invariance
 for the same graph, then separately justify cross-scale coupling laws. Spatial
 joints, intermodule collision, material calibration, full recursive structure,
 sustained breathing and XR integration remain open.
+
+
+### 2026-09-30 — Parent/child regrouping invariance
+
+Added validated hierarchy leaves and lowest-common-ancestor connection ownership.
+Independent recursive force traversal retains the same degrees of freedom and
+force laws. Flat, balanced, deep and reordered layouts are integrated against
+a flat graph reference for two seconds. All saved coordinate/rate and energy
+states match exactly in this run. Inclusive group accounts balance to 1.342e-13 J
+when crossing-boundary work is included. Parent accounts overlap children and
+must not be summed across levels. The root counts nodes and edges once.
+
+Double-counted edge accounting control overcounts initial energy by 1.05e-6 J
+and creates a spurious -7.36997e-7 J change. This is an accounting negative
+control; graph force-sign controls remain separate. Independent review found
+no blockers and subgroup directional energy-minus-boundary errors <1.15e-14 J/s.
+Input validation rejects incomplete/duplicate leaves, invalid depth and timesteps.
+
+Validation: 22 hierarchy tests and 20 linked network tests pass. Ruff and format
+checks pass. Report stores six source hashes, initial state, ownership tables
+and group accounts. Experimental workflow reproduces and checks invariance,
+source hashes and the accounting control. Prior head e31d252a container passed;
+CodeQL, experimental and broad verification were running at snapshot. New head
+requires fresh checks; no merge. Report: docs/fold_hierarchy.md and
+docs/experiments/fold-hierarchy-summary.json. Task count remains 41.
+
+This validates regrouping only, not new physical scales, calibrated materials,
+spatial collision/joint assembly, sustained breathing or XR mapping. Next: an
+explicit mapped cross-scale potential and its derivative forces, with energy
+checks before whole-structure application.
