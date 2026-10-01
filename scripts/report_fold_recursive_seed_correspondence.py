@@ -22,6 +22,8 @@ try:
     from .report_fold_material_depth3 import SCALE_RATIO
 except ImportError:
     from report_fold_material_depth3 import SCALE_RATIO
+
+
 RECIPROCAL_RING_PAIRS = ((1, 4), (2, 5), (3, 6))
 MAX_AUDIT_DEPTH = 3
 
