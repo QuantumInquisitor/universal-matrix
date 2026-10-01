@@ -8,6 +8,7 @@ import numpy as np
 from scipy.integrate import RK45
 
 try:
+    from .report_fold_dynamics import vector
     from .report_fold_hierarchy import compile_hierarchy
     from .report_fold_kinematics import scalar
     from .report_fold_material_supply import (
@@ -19,13 +20,12 @@ try:
         rhs,
     )
     from .report_fold_multiscale import configuration
-    from .report_fold_dynamics import vector
 except ImportError:
+    from report_fold_dynamics import vector
     from report_fold_hierarchy import compile_hierarchy
     from report_fold_kinematics import scalar
     from report_fold_material_supply import BASE_SIZES, EDGES, TREE, initial_state, measure, rhs
     from report_fold_multiscale import configuration
-    from report_fold_dynamics import vector
 
 
 STATE_SIZE = 48
