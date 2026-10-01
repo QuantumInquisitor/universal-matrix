@@ -8,17 +8,7 @@ from pathlib import Path
 
 import numpy as np
 
-try:
-    from .report_fold_material_depth3 import SCALE_RATIO, tree_configuration
-except ImportError:
-    from report_fold_material_depth3 import SCALE_RATIO, tree_configuration
-
-from src.sevenfold_seed_contract import (
-    RING_POSITIONS,
-    mirror_seed_position,
-    mirror_vesica_index,
-    seed_vesicas,
-)
+from src.sevenfold_seed_contract import mirror_vesica_index, seed_vesicas
 from src.universe_port_engine import (
     CONTAINED_RECURSION_SCALE,
     SEED_CIRCLE_SCALE,
@@ -28,7 +18,10 @@ from src.universe_port_engine import (
     seed_circles,
 )
 
-
+try:
+    from .report_fold_material_depth3 import SCALE_RATIO
+except ImportError:
+    from report_fold_material_depth3 import SCALE_RATIO
 RECIPROCAL_RING_PAIRS = ((1, 4), (2, 5), (3, 6))
 MAX_AUDIT_DEPTH = 3
 
@@ -108,7 +101,7 @@ def binary_axis_tree(pair, depth=MAX_AUDIT_DEPTH):
     mirror_errors = []
     radius_errors = []
 
-    for level in range(depth):
+    for _level in range(depth):
         children = []
         for parent in levels[-1]:
             vessel = parent["vessel"]
