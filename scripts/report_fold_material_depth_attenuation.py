@@ -52,10 +52,13 @@ def report():
 
     summary = {}
     baseline = max(
-        row["transitions"]["0_to_1"]["maximum_root_absolute_state_change"] for row in rows
+        row["transitions"]["0_to_1"]["maximum_root_absolute_state_change"]
+        for row in rows
     )
     for name in ("0_to_1", "1_to_2", "2_to_3"):
-        values = [row["transitions"][name]["maximum_root_absolute_state_change"] for row in rows]
+        values = [
+            row["transitions"][name]["maximum_root_absolute_state_change"] for row in rows
+        ]
         first = next(
             (
                 row["duration_s"]
@@ -118,4 +121,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = report()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    args.output.write_text(
+        json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8"
+    )
