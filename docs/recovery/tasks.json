@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Depth-three recursive attenuation is now explained within the current synthetic model without introducing a new coupling. Local 1:2 tangent and finite-time pair laws are scale-self-similar. Downstream loading changes embedded child-work uptake by less than 1% over 0.1 s. The dominant effect is the upstream parent trajectory: at 0.1 s level2 parent displacement/port/force ratios versus isolated are ~0.0515/0.0559/0.0533 with scale-normalized rate 0.4384 and power factor -0.8625 versus +0.9520 isolated; level3 ratios are ~0.00219/0.00374/0.00393 with rate 0.00821 and power factor -0.8609 versus +0.99998 isolated. Deeper connector energy is predominantly stored elastically while the drive arrives late and phase-reversed.",
+      "latest_result": "The recursive dynamics are characterized through depth 3, and the tested binary material tree is now geometrically related to the fuller Seed/Vesica recursion without conflating the graphs. The binary material cadence 1,1/2,1/4,1/8 exactly matches alternating contained-vessel/Seed-circle geometry through depth 3. The full Seed has 12 Vesica addresses arranged into six mirror pairs and 15 mirror-closed four-address subsets. Three symmetry-related opposite-Seed-axis candidates ((1,4),(2,5),(3,6)) each realize a contained mirror-closed binary slice with zero containment/radius error and mirror-center error <=5.55e-17. No axis is canonical, and the material tree is not identified with the full Vesica recursion.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Move from abstract recursive topology to explicit spatial parent-child realization. Reuse existing 22-body geometry and collision/joint machinery where possible. Assign parent-child placement/orientation, verify connector endpoint coincidence or a declared joint transform, audit body-body clearance and collisions across at least depth 3, test mirror/self-similar recurrence under the declared 1/2 scale ratio, and only then attempt relative-fold correspondence with the separate 69-component toroidal flow assembly."
+      "next_action": "Embed the actual 22-body material geometry into all three symmetry-related binary slice candidates at the declared scales. Audit body-vertex containment, parent-child connector reach/direction, sibling and cross-generation collision/clearance, mirror closure and rigid-rotation equivalence of the three axes, then test bounded relative-fold states. Do not choose a canonical axis unless a physical asymmetry or later 69-component flow correspondence breaks the threefold symmetry."
     },
     {
       "id": "P11",
