@@ -113,7 +113,7 @@ def transform_geometry(transform):
         )
         uniform_scale = math.sqrt(scale_squared)
         singular = np.linalg.svd(transform, compute_uv=False)
-        condition = math.inf if singular[-1] <= 1e-15 else float(singular[0] / singular[-1])
+        condition = None if singular[-1] <= 1e-15 else float(singular[0] / singular[-1])
     return {
         "row_gram": gram.tolist(),
         "uniform_projection_scale": uniform_scale,
