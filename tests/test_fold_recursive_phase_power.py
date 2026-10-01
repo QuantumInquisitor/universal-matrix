@@ -15,7 +15,7 @@ from scripts.report_fold_recursive_phase_power import (
     [
         (1.0, 0.0, 0.0, 1.0, 0.0, 0),
         (0.0, -2.0, math.pi / 2, 0.0, 1.0, 1),
-        (-1.0, 0.0, math.pi, -1.0, 0.0, 2),
+        (-1.0, 0.0, -math.pi, -1.0, 0.0, 2),
         (0.0, 2.0, -math.pi / 2, 0.0, -1.0, 3),
     ],
 )
