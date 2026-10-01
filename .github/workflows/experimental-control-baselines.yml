@@ -40,6 +40,8 @@ on:
       - 'tests/test_fold_material_depth_duration.py'
       - 'scripts/report_fold_material_depth_transport.py'
       - 'tests/test_fold_material_depth_transport.py'
+      - 'scripts/report_fold_material_depth_backreaction.py'
+      - 'tests/test_fold_material_depth_backreaction.py'
       - 'scripts/report_fold_scale_extension.py'
       - 'tests/test_fold_scale_extension.py'
       - 'scripts/report_fold_material_coupling.py'
@@ -1250,5 +1252,59 @@ jobs:
               'first_coordinate_resolution_s': r['connected']['first_coordinate_resolution_s'],
               'final_levels': r['connected']['snapshots'][-1]['levels'],
               'final_edges_by_child_level': r['connected']['snapshots'][-1]['edges_by_child_level'],
+          }, sort_keys=True))
+          PY
+
+
+  material-depth-backreaction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group lint
+      - name: Reproduce fixed-dimension recursive backreaction once
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_depth_backreaction.py tests/test_fold_material_depth_backreaction.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_depth_backreaction.py tests/test_fold_material_depth_backreaction.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_material_depth_backreaction.py --output artifacts/fold-material-depth/backreaction.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-material-depth/backreaction.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert r['module_count_held_fixed']
+          assert r['response_floor'] == 1e-12
+          assert r['sample_times_s'] == [0.02, 0.05, 0.075, 0.1]
+          expected_edges = {'0': 0, '1': 2, '2': 6, '3': 14}
+          for level, run in r['runs'].items():
+              assert len(run['settings']['sizes']) == 15
+              assert len(run['settings']['edges']) == expected_edges[level]
+              assert max(run['max_node_residual_j']) < 1e-10
+              assert max(run['max_edge_residual_j'], default=0) < 1e-10
+              assert max(run['max_group_residual_j'].values()) < 1e-10
+          for row in r['incremental_root_backreaction'].values():
+              for level in ('1', '2', '3'):
+                  maximum = max(row[level]['absolute_root_state_change'])
+                  assert row[level]['resolved'] == (maximum > r['response_floor'])
+          for level in ('1', '2', '3'):
+              e = r['full_tree_final_edge_energy_transfer'][level]
+              assert abs(e['energy_identity_residual_j']) < 1e-10
+              assert e['child_uptake_fraction_of_parent_magnitude'] is not None
+          assert not r['connector_coefficients_changed']
+          assert not r['material_scaling_law_changed']
+          assert not r['new_recursive_coupling_introduced']
+          assert not r['spatial_parent_child_geometry_validated']
+          assert not r['arbitrary_depth_validated']
+          print(json.dumps({
+              'incremental_root_backreaction': r['incremental_root_backreaction'],
+              'full_tree_final_edge_energy_transfer': r['full_tree_final_edge_energy_transfer'],
           }, sort_keys=True))
           PY
