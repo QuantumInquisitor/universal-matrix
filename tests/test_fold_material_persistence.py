@@ -3,9 +3,9 @@
 import numpy as np
 import pytest
 
-from scripts.report_fold_material_persistence import advance, hierarchy_audit, report, wrapped_tree
-from scripts.report_fold_material_supply import initial_state
 from scripts.report_fold_hierarchy import compile_hierarchy
+from scripts.report_fold_material_persistence import advance, report, wrapped_tree
+from scripts.report_fold_material_supply import initial_state
 from scripts.report_fold_multiscale import EDGES
 
 
