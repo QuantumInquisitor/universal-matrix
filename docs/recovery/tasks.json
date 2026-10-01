@@ -96,7 +96,7 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Accounted ideal replenishment now adds four external-input ledgers with capacity-limited charging. All powered/source-off/finer runs reached 20 seconds; source delivered 78.3829 microjoules, powered final mechanical energy 3.16379 versus 0.694234 microjoules. Root error <=6.794e-14 J, 18 tests passed. Motion remains a growing transient, not a demonstrated stable cycle. Physical supply/material calibration and longer stability/perturbation tests remain open. See docs/fold_supply.md and docs/experiments/fold-supply-summary.json; earlier results preserved in docs/RECOVERY_LOG.md.",
+      "latest_result": "Powered baseline, 1% velocity disturbance and finer continuation all reach physical 60s. Energy still grows 33.8093 to 49.2218 microjoules over 50-60s; stable breathing unproven. Kick energy explicitly accounted; largest group residual 3.424e-12 J, refinement energy difference 2.259e-12 J. 17 tests and workflow acceptance pass. Next: source sweep around conditional 0.6 microwatt near-rest damping threshold. See docs/fold_stability.md.",
       "next_action": "Test longer duration, initial-condition/parameter ensembles and modal response; add an explicit finite active reservoir only if investigating sustained cycles, with its energy and saturation laws accounted."
     },
     {

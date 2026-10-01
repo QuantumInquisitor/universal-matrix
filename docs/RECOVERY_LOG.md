@@ -559,7 +559,7 @@ whole-structure exchange or autonomous sustained breathing. Task count remains
 before introducing an explicit finite reservoir for sustained-motion tests.
 
 
-### 2026-09-30 — Finite fold sensitivity and independent modes
+### 2026-09-30 â€” Finite fold sensitivity and independent modes
 
 Preserved force-driven model and original geometry. In parallel, added a
 24-case sensitivity ensemble and an independent small-amplitude eigenmode
@@ -592,7 +592,7 @@ remain open. Next bounded step: an explicit finite reservoir with transfer and
 loss accounting, without assuming sustained motion or free energy.
 
 
-### 2026-09-30 — Finite internal reservoir and feedback
+### 2026-09-30 â€” Finite internal reservoir and feedback
 
 Added optional nine-state reduced fold experiment with velocity-aligned feedback,
 finite reserve, delivered work and separate damping/conversion/leakage ledgers.
@@ -621,7 +621,7 @@ accounting before recursive whole-structure composition. Material calibration,
 continuous collision proof, XR integration and sustained motion remain open.
 
 
-### 2026-09-30 — Two-module generalized fold exchange
+### 2026-09-30 â€” Two-module generalized fold exchange
 
 Coupled two existing reservoir modules through a positive generalized spring
 potential. Each module keeps separate connection work, while the connection
@@ -652,7 +652,7 @@ structure or sustained breathing claim. Next: a small graph with one energy
 owner per connection, then recursive composition and separate spatial mapping.
 
 
-### 2026-09-30 — Small fold graph and single-owner edge energy
+### 2026-09-30 â€” Small fold graph and single-owner edge energy
 
 Extended the existing module/pair law to validated graphs of up to eight nodes;
 reported six four-node, four-second cases plus chain refinement. Each connection
@@ -684,7 +684,7 @@ joints, intermodule collision, material calibration, full recursive structure,
 sustained breathing and XR integration remain open.
 
 
-### 2026-09-30 — Parent/child regrouping invariance
+### 2026-09-30 â€” Parent/child regrouping invariance
 
 Added validated hierarchy leaves and lowest-common-ancestor connection ownership.
 Independent recursive force traversal retains the same degrees of freedom and
@@ -714,7 +714,7 @@ explicit mapped cross-scale potential and its derivative forces, with energy
 checks before whole-structure application.
 
 
-### 2026-09-30 — Mapped connector and interruption recovery
+### 2026-09-30 â€” Mapped connector and interruption recovery
 
 Recovered saved mapped-connection implementation after a usage-limit interruption.
 Verified live PR122 remained at af94ba28; all four workflows on that prior head
@@ -743,7 +743,7 @@ attachment, collision, calibration, full recursive assembly, sustained breathing
 and XR mapping remain open.
 
 
-### 2026-09-30 — Conditional body scaling laws
+### 2026-09-30 â€” Conditional body scaling laws
 
 Reconstructed the synthetic point geometry at length factors1/.5/.25 and masses
 factor cubed, without changing prior experiment sources. Generalized inertia,
@@ -858,3 +858,15 @@ real attachments/collisions, full physical recursion and sustained breathing rem
 - Recovered prior-head CI failure: duration job 110208866158 in run 36811997803 failed collection with ModuleNotFoundError: No module named scipy. Controls job passed. Corrected duration and supply jobs to explicitly install/use the scientific extra and select Python 3.12; previous setup silently followed .python-version 3.14. No physics thresholds weakened. Fresh-head remote verification still required.
 - Reproduction: docs/fold_supply.md, scripts/report_fold_supply.py, docs/experiments/fold-supply-summary.json and scripts/plot_fold_supply.py. Duration documentation now states the required scientific extra.
 - All 41 tasks preserved. P08/P09 remain open for calibrated supply/materials and longer stability/perturbation tests. The source law makes exact rest an invariant solution with negative linear damping for small motion (feedback16/7); this is not spontaneous startup or a physical time-crystal advantage.
+
+
+### 2026-09-30 - Powered continuation and accounted disturbance
+
+- Continued the pinned 20-second powered seed to physical 60 seconds without changing mechanical/source equations. Baseline, 1% velocity intervention and finer baseline all completed; 161 common samples each and complete 50-60 second windows. Restart ledgers are rebased without altering physical derivatives.
+- Independent quadratic kinetic calculation verifies the intervention adds 1.2086158011e-8 J. Charging law/cap are shared, but actual received energy differs and is separately accounted; this is not an equal-received-energy comparison.
+- Baseline mechanical+connector energy rises from 33.8093 to 49.2218 microjoules over seconds 50-60 (45.6%); disturbed final energy is 49.2986 microjoules. No settled breathing demonstrated. Maximum scale/angle separation 0.000308773/0.000648664 rad does not by itself establish attraction or instability.
+- Finer-reference maximum coordinate differences 1.339e-8/2.484e-8 rad, rate differences 5.600e-8/s and 1.184e-7 rad/s, energy difference 2.259e-12 J. Largest group residual 3.424e-12 J. Reserve, input and capacity bounds pass.
+- 17 focused tests passed; strengthened four tamper cases rechecked. Ruff/format, 13 source hashes, seed hash, finite JSON and complete workflow acceptance passed. Saved-sample plot generated and visually inspected. Per-case checkpoints preserve expensive runs.
+- Prior PR122 head 851920dfc0f452564b0851be2e3202d1585881a8 now has all four listed workflows successful, including broad verification. This new checkpoint requires fresh CI; no merge.
+- Methods: docs/fold_stability.md; report: docs/experiments/fold-stability-summary.json. Added separate stability CI job. All 41 task entries/statuses preserved.
+- Next discriminating test: source sweep around the derived 0.6 microwatt unit-size linear damping threshold (current source 6 microwatts). Threshold is conditional on synthetic laws, not a material constant or stable-cycle proof. Material calibration, assembly constraints, full recursion, XR and time-crystal component benefit remain open.

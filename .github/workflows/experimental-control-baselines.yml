@@ -19,6 +19,10 @@ on:
       - 'scripts/report_fold_mapped.py'
       - 'scripts/report_fold_scaling.py'
       - 'scripts/report_fold_scaled_pair.py'
+      - 'scripts/report_fold_stability.py'
+      - 'scripts/plot_fold_stability.py'
+      - 'tests/test_fold_stability.py'
+      - 'docs/experiments/fold-supply-summary.json'
       - 'scripts/report_fold_supply.py'
       - 'scripts/plot_fold_supply.py'
       - 'tests/test_fold_supply.py'
@@ -571,4 +575,57 @@ jobs:
           assert np.max(r['refinement']['absolute_state_differences']) < 1e-7
           assert r['ideal_external_source'] and not r['calibrated_material']
           assert not r['sustained_breathing']
+          PY
+  stability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Check powered continuation and perturbation
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_stability.py scripts/plot_fold_stability.py tests/test_fold_stability.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_stability.py scripts/plot_fold_stability.py tests/test_fold_stability.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_stability.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_stability.py --output artifacts/fold-stability/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-stability/report.json').read_text())
+          json.dumps(r, allow_nan=False)
+          assert len(r['sources']) == 13
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          assert r['seed']['normalized_utf8_sha256'] == hashlib.sha256(Path(r['seed']['path']).read_text().encode()).hexdigest()
+          assert set(r['cases']) == {'baseline', 'kicked', 'fine_baseline'}
+          for c in r['cases'].values():
+              assert c['termination']['status'] == 'completed'
+              assert c['termination']['last_accepted_time_s'] == 40
+              assert c['late_window']['complete']
+              assert c['late_window']['sample_count'] == 41
+              for key in ('max_node_mechanical_residual_j', 'max_node_reservoir_residual_j', 'max_edge_residual_j'):
+                  assert max(c[key]) < 1e-11
+              assert max(c['max_group_residual_j'].values()) < 1e-11
+              assert min(c['minimum_reserve_j']) >= 0
+              assert max(c['maximum_reserve_upper_violation_j']) < 1e-14
+              assert min(c['minimum_input_step_j']) >= -1e-15
+              assert max(c['maximum_input_budget_violation_j']) < 1e-14
+              assert max(c['maximum_power_budget_violation_w']) < 1e-14
+              assert min(c['finite_supply_margin_j']) >= -1e-14
+          assert abs(r['cases']['kicked']['preparation_energy_j'] - 1.2086158010672134e-8) < 1e-18
+          assert r['cases']['baseline']['preparation_energy_j'] == 0
+          assert r['cases']['baseline']['termination']['status'] == 'completed'
+          assert r['cases']['baseline']['termination']['last_accepted_time_s'] == 40
+          assert r['cases']['baseline']['late_window']['complete']
+          assert len(r['refinement']['common_times_s']) == 161
+          assert len(r['perturbation']['common_times_s']) == 161
+          assert np.max(r['refinement']['maximum_coordinate_difference']) < 1e-6
+          assert np.max(r['refinement']['maximum_rate_difference']) < 1e-5
+          assert not r['stable_breathing'] and not r['calibrated_material']
           PY
