@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Mixed-size passive graph integrates scaled bodies, symmetric homogeneous mapped connectors and hierarchy boundary accounts. Fifteen new tests plus 39 linked pass; faulty crossing edge localized while child accounts remain valid. Uniform global scaling and separate timestep comparison pass. Next: explicit size laws for active reservoir capacity and power before active-network deployment. See docs/fold_multiscale.md. Finite reservoirs now integrated with four unequal-size modules using explicit volume capacity and length-timescale laws; 19 tests pass, complete accounts close within 4.64e-16 J, omitted debit localized at 2.44e-9 J. See docs/fold_active_multiscale.md. Physical calibration, long-duration breathing and whole-structure spatial validation remain open. PR124 already provides model-tagged component identities, exact winding serialization, prescribed-state recurrence and replay on the 69-component assembly. Reuse that interface; it is not independent force-driven recursive state integration. Equal-size material-law pair and finite reserves now validated as an integration step; unequal-size recursive material propagation is still open. Historical stability seed preserved with pinned compatibility and 26 passing restart tests. Material-law four-node unequal-size graph now validated under declared full geometric scaling, with group boundary-work ownership, half-size similarity, refinement and broken-edge localization. It does not establish arbitrary-depth convergence or whole-structure geometry.",
+      "latest_result": "Powered unequal-size material extension reconstructed on PR122: scripts/report_fold_material_supply.py now combines geometry-derived constitutive forces with size-scaled finite reserves, bounded external replenishment, separate delivered-work/loss/input ledgers, source-off control, omitted-reserve-debit fault control and refinement comparison. CI integration added; current-head remote validation pending.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Extend this explicit material graph to sized finite reserves and replenishing supply, then test depth/state persistence and spatial correspondence. Preserve the earlier quadratic-model results as separate evidence."
+      "next_action": "Inspect powered-material CI, fix only demonstrated failures, publish the compact report, then extend to longer persistence/arbitrary depth and map the material state to the 69-domain flow assembly without assuming relative-fold correspondence."
     },
     {
       "id": "P11",
@@ -129,8 +129,8 @@
       "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3–10. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "PR119 has a 202-frame source geometry exporter, not yet integrated here. New reference-correct nine-frame material overlay joins all 22 source body IDs to six membrane/twelve axial energy owners, with four unmodeled hubs explicit. 14 tests pass, source vertices and rebased principal stretches verified. Actual viewer/headset integration remains open; see docs/recovery/DRAFT_CAPABILITY_AUDIT.md.",
-      "next_action": "Review and stage PR119 geometry/export interfaces, then map the verified material overlay into the actual viewer using existing body IDs and explicit model/reference/source metadata. Do not replace the 202-frame exporter or treat fixture phases as physical time."
+      "latest_result": "Computed-state adapter reconstructed on PR122: scripts/export_fold_material_viewer_frames.py converts the powered material time series to an explicit metre-preserving viewer contract with normalized display coordinates and no invented global module placement. Existing repository visualizers are not yet direct consumers. CI integration added; current-head remote validation pending.",
+      "next_action": "After adapter CI passes, connect one existing science viewer to the adapter frame contract, expose source revision/input hash/units and ledger values, then add replay controls. Do not replace computed states with decorative animation."
     },
     {
       "id": "P12",
