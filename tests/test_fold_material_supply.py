@@ -32,9 +32,10 @@ def test_equilibrium_replenishment_has_identified_source_without_motion():
     derivative = rhs(y, power_density=6e-6)
     db = derivative[:36].reshape(4, 9)
     np.testing.assert_allclose(db[:, :4], 0, atol=1e-20)
-    np.testing.assert_allclose(db[:, 5:9], 0, atol=1e-20)
+    np.testing.assert_allclose(db[:, 5:8], 0, atol=1e-20)
+    assert np.all(db[:, 8] > 0)
     assert np.all(db[:, 4] > 0)
-    np.testing.assert_allclose(db[:, 4], derivative[-4:])
+    np.testing.assert_allclose(db[:, 4] + db[:, 8], derivative[-4:])
 
 
 @pytest.fixture(scope="module")
@@ -71,9 +72,7 @@ def test_powered_and_source_off_accounts_close(runs):
 def test_bad_reserve_debit_is_detected_and_localized(runs):
     _, _, broken, _ = runs
     assert broken["max_node_reservoir_residual_j"][0] > 1e-10
-    assert max(
-        broken["max_node_reservoir_residual_j"][i] for i in (1, 2, 3)
-    ) < 1e-11
+    assert max(broken["max_node_reservoir_residual_j"][i] for i in (1, 2, 3)) < 1e-11
     assert broken["max_group_residual_j"]["root"] > 1e-10
     assert broken["max_group_residual_j"]["root/0"] > 1e-10
     assert broken["max_group_residual_j"]["root/1"] < 1e-11
