@@ -30,15 +30,7 @@ def spring(qa, qb, coupling=1.0):
 
 
 def rhs(
-    y,
-    *,
-    coupling=1.0,
-    gain=4.0,
-    damping=1.0,
-    leakage=0.15,
-    efficiency=0.8,
-    wrong_reaction=False,
-    potential="quadratic",
+    y, *, coupling=1.0, gain=4.0, damping=1.0, leakage=0.15, efficiency=0.8, wrong_reaction=False
 ):
     # Two 9-state modules followed by work delivered by the connection to each.
     y = vector(y, 20, "coupled state")
@@ -50,14 +42,9 @@ def rhs(
     for i, force in enumerate((force_a, force_b)):
         block = modules[i]
         derivative = reservoir_rhs(
-            block,
-            gain=gain,
-            damping=damping,
-            leakage=leakage,
-            efficiency=efficiency,
-            potential=potential,
+            block, gain=gain, damping=damping, leakage=leakage, efficiency=efficiency
         )
-        mass = mechanical(block[:2], block[2:4], potential=potential)[0]["mass_matrix"]
+        mass = mechanical(block[:2], block[2:4])[0]["mass_matrix"]
         derivative[2:4] += np.linalg.solve(mass, force)
         result[9 * i : 9 * i + 9] = derivative
         result[18 + i] = force @ block[2:4]
@@ -70,12 +57,12 @@ def initial_state(fueled=True):
     return np.r_[a, b, 0.0, 0.0]
 
 
-def measure(y, coupling=1.0, *, potential="quadratic"):
+def measure(y, coupling=1.0):
     modules = np.asarray(y[:18]).reshape(2, 9)
-    energies = [mechanical(m[:2], m[2:4], potential=potential)[2] for m in modules]
-    spring_energy = spring(modules[0, :2], modules[1, :2], coupling)[0]
-    total = sum(energies) + float(np.sum(modules[:, 4]) + np.sum(modules[:, 6:])) + spring_energy
-    return np.array(energies), spring_energy, total
+    energies = [mechanical(m[:2], m[2:4])[2] for m in modules]
+    potential = spring(modules[0, :2], modules[1, :2], coupling)[0]
+    total = sum(energies) + float(np.sum(modules[:, 4]) + np.sum(modules[:, 6:])) + potential
+    return np.array(energies), potential, total
 
 
 def simulate(
@@ -90,7 +77,6 @@ def simulate(
     fueled=True,
     wrong_reaction=False,
     initial=None,
-    potential="quadratic",
 ):
     duration, dt = scalar(duration, "duration"), scalar(dt, "dt")
     if not 0 < duration <= 10 or not 0 < dt <= 0.1:
@@ -112,14 +98,13 @@ def simulate(
         leakage=leakage,
         efficiency=efficiency,
         wrong_reaction=wrong_reaction,
-        potential=potential,
     )
     rhs(y, **settings)
-    e0, u0, total0 = measure(y, coupling, potential=potential)
+    e0, u0, total0 = measure(y, coupling)
     trace = []
     for step in range(steps + 1):
         derivative = rhs(y, **settings)
-        energies, spring_energy, total = measure(y, coupling, potential=potential)
+        energies, potential, total = measure(y, coupling)
         blocks = y[:18].reshape(2, 9)
         local = energies - e0 - blocks[:, 5] + blocks[:, 6] - y[18:]
         trace.append(
@@ -128,13 +113,13 @@ def simulate(
                 q=blocks[:, :2].tolist(),
                 mechanical_j=energies.tolist(),
                 reserve_j=blocks[:, 4].tolist(),
-                spring_j=spring_energy,
+                spring_j=potential,
                 coupling_work_j=y[18:].tolist(),
                 reservoir_work_j=blocks[:, 5].tolist(),
                 losses_j=blocks[:, 6:].tolist(),
                 module_residual_j=local.tolist(),
                 total_residual_j=total - total0,
-                connection_residual_j=float(spring_energy - u0 + sum(y[18:])),
+                connection_residual_j=float(potential - u0 + sum(y[18:])),
             )
         )
         if step == steps:

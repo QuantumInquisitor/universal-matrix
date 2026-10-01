@@ -102,5 +102,6 @@ The static plot exposes actual midsurfaces, bridge centerlines and omitted hubs;
 it is not integration with the XR viewer or a new collision certificate.
 
 The next integration above is now implemented as an explicit single-specimen
-option; see [material dynamics](fold_material_dynamics.md). Coupled and reservoir
-experiments still retain their historical law pending explicit integration.
+option; see [material dynamics](fold_material_dynamics.md). The finite-reserve module and equal-size pair now also offer explicit material
+selection; see [material coupling](fold_material_coupling.md). Larger/scaled
+networks still retain their historical law pending explicit integration.

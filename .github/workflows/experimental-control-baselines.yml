@@ -21,6 +21,8 @@ on:
       - 'scripts/report_fold_scaled_pair.py'
       - 'scripts/export_lynchpin_material_scene.py'
       - 'tests/test_lynchpin_material_scene.py'
+      - 'scripts/report_fold_material_coupling.py'
+      - 'tests/test_fold_material_coupling.py'
       - 'scripts/report_fold_material_dynamics.py'
       - 'tests/test_fold_constitutive_dynamics.py'
       - 'scripts/report_fold_constitutive.py'
@@ -32,6 +34,8 @@ on:
       - 'scripts/report_fold_threshold.py'
       - 'scripts/plot_fold_threshold.py'
       - 'tests/test_fold_threshold.py'
+      - 'docs/experiments/fold-seed-compatibility.json'
+      - 'tests/fixtures/fold_supply_seed/**'
       - 'scripts/report_fold_stability.py'
       - 'scripts/plot_fold_stability.py'
       - 'tests/test_fold_stability.py'
@@ -840,4 +844,43 @@ jobs:
           assert r['energy_identity']['absolute_error_j_s'] < 1e-10
           assert r['energy_identity']['omitted_bias_absolute_error_j_s'] > 1e-8
           assert not r['physical_calibration'] and not r['stable_breathing_established']
+          PY
+
+  material-coupling:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify material reservoir and pair ownership
+        run: |
+          uv run ruff check scripts/report_fold_reservoir.py scripts/report_fold_coupling.py scripts/report_fold_material_coupling.py tests/test_fold_material_coupling.py
+          uv run ruff format --check scripts/report_fold_reservoir.py scripts/report_fold_coupling.py scripts/report_fold_material_coupling.py tests/test_fold_material_coupling.py
+          uv run python -m pytest tests/test_fold_reservoir.py tests/test_fold_coupling.py tests/test_fold_material_coupling.py
+          uv run python scripts/report_fold_material_coupling.py --output artifacts/fold-material-coupling/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-material-coupling/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_text(encoding='utf-8').encode()).hexdigest()
+          assert r['potential'] == 'constitutive'
+          for name in ('fueled_pair', 'conservative_pair', 'disconnected_pair'):
+              c = r['cases'][name]
+              assert c['settings']['potential'] == 'constitutive'
+              for key in ('max_total_residual_j', 'max_module_residual_j', 'max_connection_residual_j'):
+                  assert c[key] < 1e-10
+          assert r['cases']['wrong_reaction']['max_total_residual_j'] > 1e-9
+          assert r['cases']['wrong_reaction']['max_connection_residual_j'] > 1e-9
+          assert r['reservoir']['omitted_debit']['max_total_residual_j'] > 1e-9
+          assert r['reservoir']['fueled']['minimum_reserve_j'] >= 0
+          assert r['reservoir']['empty']['final_state'][5] == 0
+          assert r['disconnected_single_maximum_state_difference'] < 1e-15
+          assert not r['physical_calibration'] and not r['sustained_breathing']
           PY

@@ -145,3 +145,117 @@ def test_invalid(kwargs):
     y, _ = m.prepare(state())
     with pytest.raises(ValueError):
         m.simulate(y, **kwargs)
+
+
+def historical_modules():
+    """Execute exact seed-era sources; override links with their old counterparts."""
+    manifest = json.loads(m.COMPATIBILITY.read_text(encoding="utf-8"))
+    modules = {}
+    for short in ("dynamics", "reservoir", "coupling"):
+        name = f"report_fold_{short}.py"
+        entry = manifest["source_transitions"][name]
+        path = m.ROOT / entry["historical_snapshot"]
+        assert m.text_hash(path) == entry["historical_sha256"]
+        namespace = {"__name__": f"scripts._historical_{short}", "__package__": "scripts"}
+        exec(compile(path.read_text(encoding="utf-8"), str(path), "exec"), namespace)
+        if short in ("reservoir", "coupling"):
+            namespace["mechanical"] = modules["dynamics"]["mechanical"]
+        if short == "coupling":
+            namespace["reservoir_rhs"] = modules["reservoir"]["rhs"]
+        modules[short] = namespace
+    return modules
+
+
+def test_reviewed_defaults_match_exact_historical_sources():
+    from scripts import report_fold_coupling as coupling
+    from scripts import report_fold_dynamics as dynamics
+    from scripts import report_fold_reservoir as reservoir
+
+    old = historical_modules()
+    # Bounded regression probes, not a claim of global formal equivalence.
+    for index in range(9):
+        q = dynamics.Q0 + np.array((0.003 * (index - 4), -0.004 * (index - 4)))
+        v = np.array((0.002 * index, -0.003 * (index - 3)))
+        y = np.r_[q, v, 0.0, 0.0]
+        np.testing.assert_allclose(
+            dynamics.mechanical(q, v)[2],
+            old["dynamics"]["mechanical"](q, v)[2],
+            atol=2e-18,
+            rtol=2e-14,
+        )
+        np.testing.assert_allclose(
+            dynamics.rhs(0.3, y), old["dynamics"]["rhs"](0.3, y), atol=1e-15, rtol=2e-14
+        )
+        block = np.r_[q, v, index * 1e-6, 0.0, 0.0, 0.0, 0.0]
+        np.testing.assert_allclose(
+            reservoir.rhs(block), old["reservoir"]["rhs"](block), atol=1e-15, rtol=2e-14
+        )
+        pair = np.r_[block, np.r_[dynamics.Q0, 0.0, 0.0, 1e-5, 0.0, 0.0, 0.0, 0.0], 0, 0]
+        np.testing.assert_allclose(
+            coupling.rhs(pair), old["coupling"]["rhs"](pair), atol=1e-15, rtol=2e-14
+        )
+        np.testing.assert_allclose(
+            coupling.measure(pair)[0],
+            old["coupling"]["measure"](pair)[0],
+            atol=2e-18,
+            rtol=2e-14,
+        )
+    np.testing.assert_allclose(
+        coupling.simulate(duration=0.04, dt=0.01)["final_state"],
+        old["coupling"]["simulate"](duration=0.04, dt=0.01)["final_state"],
+        atol=1e-15,
+        rtol=2e-14,
+    )
+
+
+def test_seed_keeps_historical_and_current_provenance_separate():
+    _, provenance, current = m.load_seed()
+    historical = json.loads(m.SEED.read_text(encoding="utf-8"))["sources"]
+    assert provenance["normalized_utf8_sha256"] == m.SEED_SHA256
+    assert provenance["historical_sources"] == historical
+    assert provenance["current_sources"] == current
+    assert current != historical
+    assert provenance["compatibility"]["normalized_utf8_sha256"] == m.COMPATIBILITY_SHA256
+    assert current == {name: m.text_hash(m.ROOT / "scripts" / name) for name in historical}
+
+
+@pytest.mark.parametrize(
+    "target",
+    [
+        "report_fold_dynamics.py",
+        "report_fold_reservoir.py",
+        "report_fold_coupling.py",
+        "report_fold_supply.py",
+        "report_fold_kinematics.py",
+    ],
+)
+def test_unreviewed_source_changes_still_rejected(monkeypatch, target):
+    original = m.text_hash
+
+    def altered(path):
+        return "0" * 64 if path == m.ROOT / "scripts" / target else original(path)
+
+    monkeypatch.setattr(m, "text_hash", altered)
+    with pytest.raises(ValueError, match="source hash mismatch"):
+        m.load_seed()
+
+
+def test_compatibility_manifest_cannot_authorize_itself(tmp_path, monkeypatch):
+    data = json.loads(m.COMPATIBILITY.read_text(encoding="utf-8"))
+    data["scope"] = "tampered"
+    path = tmp_path / "compatibility.json"
+    path.write_text(json.dumps(data), encoding="utf-8")
+    monkeypatch.setattr(m, "COMPATIBILITY", path)
+    with pytest.raises(ValueError, match="manifest hash mismatch"):
+        m.load_seed()
+
+
+def test_historical_snapshot_tamper_rejected(monkeypatch):
+    original = m.text_hash
+
+    def altered(path):
+        return "0" * 64 if path.name == "report_fold_dynamics.py.txt" else original(path)
+
+    monkeypatch.setattr(m, "text_hash", altered)
+    with pytest.raises(ValueError, match="historical source snapshot mismatch"):
+        m.load_seed()

@@ -38,8 +38,9 @@ This checkpoint does not provide distributed panel rotational inertia, bending,
 hub/joint stiffness, contact forces, a continuous collision certificate, measured
 material coefficients, a finite power supply or a stable autonomous cycle.
 The separate 69-domain flow assembly and the XR viewer are not integrated here.
-Existing coupled/reservoir experiments retain their historical potential until
-an explicit model choice and compatible energy account are added there.
+The finite-reserve module and equal-size pair now have that explicit model choice;
+see [material coupling](fold_material_coupling.md). Larger/scaled networks still
+retain their historical potential pending a compatible material scaling law.
 
 ## Validation checkpoint
 

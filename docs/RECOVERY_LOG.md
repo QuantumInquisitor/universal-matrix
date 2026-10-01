@@ -937,3 +937,30 @@ scripts/report_fold_material_dynamics.py. This is synthetic reduced mechanics,
 not calibrated materials, stable breathing, distributed rotational inertia,
 contact, whole-flow coupling or completed XR. Existing network and finite-supply
 experiments have not silently inherited this new potential. P07/P08 remain open.
+
+
+## 2026-09-30 - Material-law finite reserve and coupled pair
+
+Extended the explicit potential selector into reservoir forces and pair mechanical
+energy measurements. Historical defaults remain quadratic. Each module owns one
+material/kinetic/reserve account; the connector owns one spring energy. Transfer
+work is not stored again. Three regular pair cases at two timesteps, empty-source
+and disconnected controls, and deliberate reaction/debit errors are reproducible
+in docs/experiments/fold-material-coupling-summary.json. Fine-step total residuals
+are <=8.01e-15 J; disconnected single/pair difference is zero. Wrong reaction and
+omitted debit produce 1.32e-7 and 5.38e-7 J errors respectively.
+
+126 tests passed in separate focused runs: 43 reservoir/pair (12 new), 57 linked
+network/mapped/active-multiscale, and 26 stability/restart. Ruff and generated-report
+source/acceptance checks pass. A dedicated material-coupling workflow reproduces
+this report. Larger graphs, unequal-size material scaling, spatial joints/contact,
+replenishing source integration, whole-flow mapping and XR remain open.
+
+CI follow-up: previous c69a860 experimental workflow failed only stability's exact
+historical source check; material-dynamics and material-and-harmonics passed.
+The immutable seed is preserved. A hash-pinned compatibility manifest records the
+reviewed dynamics/reservoir/coupling transitions and exact old-source snapshots.
+Nine default-state probes and a short historical paired trajectory agree; unknown
+source mutations and snapshot/manifest tampering still fail. Current and historical
+provenance are distinct. This repairs restart provenance without fabricating a new
+seed or claiming global formal equivalence. Fresh CI is required after publication.

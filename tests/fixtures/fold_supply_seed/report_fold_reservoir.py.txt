@@ -9,10 +9,10 @@ from pathlib import Path
 import numpy as np
 
 try:
-    from .report_fold_dynamics import DAMPING, Q0, mechanical, potential_response, vector
+    from .report_fold_dynamics import DAMPING, Q0, STIFFNESS, mechanical, vector
     from .report_fold_kinematics import scalar
 except ImportError:
-    from report_fold_dynamics import DAMPING, Q0, mechanical, potential_response, vector
+    from report_fold_dynamics import DAMPING, Q0, STIFFNESS, mechanical, vector
     from report_fold_kinematics import scalar
 
 RESERVE_SCALE = 1e-5  # joules; synthetic activation scale, not calibration
@@ -33,24 +33,14 @@ def parameters(gain, efficiency, leakage, damping):
     return values
 
 
-def rhs(
-    y,
-    *,
-    gain=4.0,
-    efficiency=0.8,
-    leakage=0.15,
-    damping=1.0,
-    omit_debit=False,
-    potential="quadratic",
-):
+def rhs(y, *, gain=4.0, efficiency=0.8, leakage=0.15, damping=1.0, omit_debit=False):
     # State: q(2), velocity(2), reserve, delivered work, damping loss,
     # conversion loss, leakage loss. All ledger entries are joules.
     y = vector(y, 9, "state")
     g, eta, leak, d = parameters(gain, efficiency, leakage, damping)
     if y[4] < 0:
         raise ValueError("negative reservoir: reduce timestep; no clipping allowed")
-    state, bias, _ = mechanical(y[:2], y[2:4], potential=potential)
-    _, gradient = potential_response(y[:2], potential)
+    state, bias, _ = mechanical(y[:2], y[2:4])
     velocity = y[2:4]
     applied = g * y[4] / (y[4] + RESERVE_SCALE) * (DAMPING @ velocity)
     power = float(applied @ velocity)
@@ -58,7 +48,7 @@ def rhs(
     conversion = (1 / eta - 1) * power
     leaked = leak * y[4]
     acceleration = np.linalg.solve(
-        state["mass_matrix"], applied - d * DAMPING @ velocity - gradient - bias
+        state["mass_matrix"], applied - d * DAMPING @ velocity - STIFFNESS @ (y[:2] - Q0) - bias
     )
     derivative = np.r_[
         velocity,
@@ -85,7 +75,6 @@ def simulate(
     damping=1.0,
     equilibrium=False,
     omit_debit=False,
-    potential="quadratic",
 ):
     duration, dt, reserve = [
         scalar(x, n)
@@ -106,19 +95,14 @@ def simulate(
         0.0,
         0.0,
     ]
-    initial_energy = mechanical(y[:2], y[2:4], potential=potential)[2]
+    initial_energy = mechanical(y[:2], y[2:4])[2]
     trace = []
     settings = dict(
-        gain=gain,
-        efficiency=efficiency,
-        leakage=leakage,
-        damping=damping,
-        omit_debit=omit_debit,
-        potential=potential,
+        gain=gain, efficiency=efficiency, leakage=leakage, damping=damping, omit_debit=omit_debit
     )
     for step in range(steps + 1):
         derivative = rhs(y, **settings)  # also validates every endpoint
-        energy = mechanical(y[:2], y[2:4], potential=potential)[2]
+        energy = mechanical(y[:2], y[2:4])[2]
         trace.append(
             dict(
                 time_s=step * dt,

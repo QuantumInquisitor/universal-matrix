@@ -44,6 +44,40 @@ def text_hash(path):
 SEED_SHA256 = "db0b76cccb2e7c98f92ef0b467e740347a06c7e7baa1af52886465148f60a27a"
 
 
+COMPATIBILITY = ROOT / "docs/experiments/fold-seed-compatibility.json"
+COMPATIBILITY_SHA256 = "3a5c5cd522ab13bb2ebd7988a5a95f931ed485f5c68a8287527c231fdbfe6c0a"
+
+
+def compatible_sources(historical):
+    """Accept only reviewed source pairs; never relabel historical provenance."""
+    current = {name: text_hash(ROOT / "scripts" / name) for name in historical}
+    if current == historical:
+        return current, None
+    if text_hash(COMPATIBILITY) != COMPATIBILITY_SHA256:
+        raise ValueError("checkpoint compatibility manifest hash mismatch")
+    manifest = json.loads(COMPATIBILITY.read_text(encoding="utf-8"))
+    if manifest["seed_sha256"] != SEED_SHA256:
+        raise ValueError("checkpoint compatibility seed mismatch")
+    transitions = manifest["source_transitions"]
+    for name, expected in historical.items():
+        if current[name] == expected:
+            continue
+        accepted = transitions.get(name)
+        if accepted is None or (expected, current[name]) != (
+            accepted["historical_sha256"],
+            accepted["current_sha256"],
+        ):
+            raise ValueError("checkpoint source hash mismatch: " + name)
+        snapshot = ROOT / accepted["historical_snapshot"]
+        if text_hash(snapshot) != expected:
+            raise ValueError("checkpoint historical source snapshot mismatch: " + name)
+    return current, dict(
+        path=COMPATIBILITY.relative_to(ROOT).as_posix(),
+        normalized_utf8_sha256=COMPATIBILITY_SHA256,
+        scope=manifest["scope"],
+    )
+
+
 def load_seed(path=SEED):
     if text_hash(path) != SEED_SHA256:
         raise ValueError("checkpoint content hash mismatch")
@@ -67,9 +101,7 @@ def load_seed(path=SEED):
     }
     if set(data["sources"]) != required:
         raise ValueError("checkpoint source inventory mismatch")
-    for name, expected in data["sources"].items():
-        if text_hash(ROOT / "scripts" / name) != expected:
-            raise ValueError("checkpoint source hash mismatch: " + name)
+    current_sources, compatibility = compatible_sources(data["sources"])
     case = data["cases"]["powered"]
     if (
         case["termination"]["status"] != "completed"
@@ -89,8 +121,11 @@ def load_seed(path=SEED):
             path="docs/experiments/fold-supply-summary.json",
             normalized_utf8_sha256=text_hash(path),
             physical_time_s=20.0,
+            historical_sources=data["sources"],
+            current_sources=current_sources,
+            compatibility=compatibility,
         ),
-        data["sources"],
+        current_sources,
     )
 
 
