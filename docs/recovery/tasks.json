@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Powered unequal-size material supply and metre-preserving viewer adapter passed their dedicated experimental gate on head bb6b4aac. A separate restart-persistence checkpoint now tests JSON save/restore against continuous powered and source-off trajectories over 0.8 s, plus hierarchy-depth invariance as bookkeeping only. Physical recursive replication is explicitly not yet claimed.",
+      "latest_result": "Powered unequal-size material supply and metre-preserving viewer adapter are green. Full 48-component powered state restart persistence is validated through 0.8 s for powered and source-off trajectories with closed ledgers. A separate physical recursion experiment now passes with 1, 3 and 7 independently evolving material modules through binary depth 2, including disconnected, broken-reaction and timestep-refinement controls. The current half-scale tree stops at leaf scale 0.25 because the production scale contract rejects smaller values.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Inspect persistence CI and quantify segmented-versus-continuous error. If it passes, introduce actual recursively replicated material modules at declared scale ratios with parent-child energy ownership, then test convergence by physical depth before mapping to the 69-domain flow assembly."
+      "next_action": "Audit scale 0.125 independently without changing the production scale guard. If kinematics, constitutive energy/gradient, damping/time similarity and mapped connector controls pass, review expansion of the scale contract and then attempt a 15-module depth-3 tree. Keep spatial placement and 69-domain correspondence separate."
     },
     {
       "id": "P11",
