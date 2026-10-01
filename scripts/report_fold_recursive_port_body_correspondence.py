@@ -174,12 +174,10 @@ def evaluate(candidate):
     )
     exact_scaled_orthogonal = (
         exact_linear
-        and transform_shape["scaled_orthogonal_relative_error"]
-        < SCALED_ORTHOGONAL_TOLERANCE
+        and transform_shape["scaled_orthogonal_relative_error"] < SCALED_ORTHOGONAL_TOLERANCE
     )
     exact_unit_projection = (
-        exact_scaled_orthogonal
-        and abs(transform_shape["uniform_projection_scale"] - 1) < 1e-8
+        exact_scaled_orthogonal and abs(transform_shape["uniform_projection_scale"] - 1) < 1e-8
     )
     score = max(
         errors["maximum_normalized_displacement_error"],
@@ -202,18 +200,12 @@ def evaluate(candidate):
 def report():
     candidates = [evaluate(candidate) for candidate in catalog()]
     candidates.sort(key=lambda row: (row["score"], row["candidate_id"]))
-    exact_linear = [
-        row["candidate_id"] for row in candidates if row["exact_fixed_linear_match"]
-    ]
+    exact_linear = [row["candidate_id"] for row in candidates if row["exact_fixed_linear_match"]]
     exact_scaled_orthogonal = [
-        row["candidate_id"]
-        for row in candidates
-        if row["exact_scaled_orthogonal_match"]
+        row["candidate_id"] for row in candidates if row["exact_scaled_orthogonal_match"]
     ]
     exact_unit_projection = [
-        row["candidate_id"]
-        for row in candidates
-        if row["exact_unit_orthogonal_projection_match"]
+        row["candidate_id"] for row in candidates if row["exact_unit_orthogonal_projection_match"]
     ]
 
     body_counts = {}
@@ -264,6 +256,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = report()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8"
-    )
+    args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
