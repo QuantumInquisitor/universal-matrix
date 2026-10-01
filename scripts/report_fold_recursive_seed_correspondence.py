@@ -57,9 +57,7 @@ def alternating_seed_stage(material_depth):
         geometric_scale = CONTAINED_RECURSION_SCALE**universe_depth
     else:
         stage = "seed_circle"
-        geometric_scale = (
-            CONTAINED_RECURSION_SCALE**universe_depth * SEED_CIRCLE_SCALE
-        )
+        geometric_scale = CONTAINED_RECURSION_SCALE**universe_depth * SEED_CIRCLE_SCALE
     return {
         **row,
         "universe_depth": universe_depth,
@@ -84,10 +82,7 @@ def vesica_mirror_pairs():
 def mirror_closed_four_address_subsets():
     """All four-address subsets closed under the central Vesica mirror."""
     mirror_pairs = vesica_mirror_pairs()
-    return tuple(
-        tuple(sorted(left + right))
-        for left, right in combinations(mirror_pairs, 2)
-    )
+    return tuple(tuple(sorted(left + right)) for left, right in combinations(mirror_pairs, 2))
 
 
 def binary_axis_tree(pair, depth=MAX_AUDIT_DEPTH):
@@ -203,8 +198,7 @@ def report():
                 depth_two_material["linear_scale"] - depth_one_vesica["vessel_scale"]
             )
             < 1e-15,
-            "count_match": depth_two_material["module_count"]
-            == depth_one_vesica["address_count"],
+            "count_match": depth_two_material["module_count"] == depth_one_vesica["address_count"],
         },
         "vesica_mirror_pairs": [list(pair) for pair in mirror_pairs],
         "vesica_mirror_pair_count": len(mirror_pairs),
@@ -234,6 +228,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = report()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8"
-    )
+    args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
