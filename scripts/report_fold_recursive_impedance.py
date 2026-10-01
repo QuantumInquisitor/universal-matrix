@@ -111,8 +111,8 @@ def connector_stiffness(parent_scale):
 
 
 def interface_linearization(parent_scale):
-    child_scale = parent_scale / 2
     connector_k = connector_stiffness(parent_scale)
+    child_scale = parent_scale / 2
     parent_k = material_stiffness(parent_scale)
     child_k = material_stiffness(child_scale)
     kpp = connector_k[:2, :2]
