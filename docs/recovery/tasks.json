@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Powered unequal-size material extension reconstructed on PR122: scripts/report_fold_material_supply.py now combines geometry-derived constitutive forces with size-scaled finite reserves, bounded external replenishment, separate delivered-work/loss/input ledgers, source-off control, omitted-reserve-debit fault control and refinement comparison. CI integration added; current-head remote validation pending.",
+      "latest_result": "Powered unequal-size material supply and metre-preserving viewer adapter passed their dedicated experimental gate on head bb6b4aac. A separate restart-persistence checkpoint now tests JSON save/restore against continuous powered and source-off trajectories over 0.8 s, plus hierarchy-depth invariance as bookkeeping only. Physical recursive replication is explicitly not yet claimed.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Inspect powered-material CI, fix only demonstrated failures, publish the compact report, then extend to longer persistence/arbitrary depth and map the material state to the 69-domain flow assembly without assuming relative-fold correspondence."
+      "next_action": "Inspect persistence CI and quantify segmented-versus-continuous error. If it passes, introduce actual recursively replicated material modules at declared scale ratios with parent-child energy ownership, then test convergence by physical depth before mapping to the 69-domain flow assembly."
     },
     {
       "id": "P11",
@@ -129,8 +129,8 @@
       "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3–10. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Computed-state adapter reconstructed on PR122: scripts/export_fold_material_viewer_frames.py converts the powered material time series to an explicit metre-preserving viewer contract with normalized display coordinates and no invented global module placement. Existing repository visualizers are not yet direct consumers. CI integration added; current-head remote validation pending.",
-      "next_action": "After adapter CI passes, connect one existing science viewer to the adapter frame contract, expose source revision/input hash/units and ledger values, then add replay controls. Do not replace computed states with decorative animation."
+      "latest_result": "The computed-state adapter is implemented and included in the green powered-material experimental gate at bb6b4aac. It preserves metre geometry, adds explicit display normalization, and does not invent global module placement.",
+      "next_action": "Keep the adapter stable while physical persistence/recursive replication is validated. Then connect an existing science viewer as a direct consumer with replay, provenance, units and energy-ledger display."
     },
     {
       "id": "P12",
