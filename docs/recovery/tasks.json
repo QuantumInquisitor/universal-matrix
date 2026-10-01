@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Recursive material propagation has now been measured through physical depth 3 under unchanged laws. Depth 2→3 root backreaction remains below the fixed 1e-12 reporting threshold through 0.1 s, but grows from 3.8337388819087437e-16 at 0.05 s to 1.9160454473032829e-13 at 0.1 s. Per-level transport shows forward propagation is not blocked: coordinate response first resolves at level 1 by 0.0005 s, level 2 by 0.002 s and level 3 by 0.011 s. At 0.1 s level 3 has coordinate response 5.552291930666087e-7, scale-normalized rate 4.096596510231525e-6, mechanical energy 4.287629028065685e-16 J and child-endpoint connector work 4.3273305204170956e-16 J. This supports forward propagation with strong energetic/work attenuation and weak return backreaction, not a hard depth-3 cutoff.",
+      "latest_result": "Recursive physical-depth transport and causal backreaction are now separated under the unchanged 15-module model. Forward coordinate response reaches level 1 by 0.0005 s, level 2 by 0.002 s and level 3 by 0.011 s. With module count held fixed at 15, the incremental 0.1 s root contributions are level1=9.003331895041829e-4, level2=1.6731858636445662e-8 and level3=1.9160454473032829e-13. The fixed-dimension level3 result exactly reproduces the earlier depth2→3 comparison. At the unloaded deeper interfaces, only 2.0041% (level2) and 2.8110% (level3) of parent-work magnitude reaches the children; about 97–98% remains stored as connector potential, with energy identities closing near machine precision. This supports delayed propagation plus strong scale-dependent elastic storage/transmission, not a hard depth cutoff or missing coupling.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Quantify the return path under the unchanged model: measure parent-endpoint versus child-endpoint work, connector potential release, and ancestor state change attributable to each descendant level. Test whether the root attenuation follows from the existing scale/inertia/connector laws before introducing any new recursive coupling. Preserve the disconnected zero-response control and do not tune coefficients to force stronger backreaction."
+      "next_action": "Before adding any new recursive interaction, audit scale impedance under the existing laws. Linearize module mass, material stiffness, damping and mapped connector tangent operators at corresponding parent-child states; compare their scale exponents, modal frequencies/impedances and predicted transmission mismatch with the measured 2–3% child-work uptake. Keep coefficients fixed and treat disagreement as a model diagnostic rather than tuning."
     },
     {
       "id": "P11",
