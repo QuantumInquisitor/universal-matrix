@@ -19,7 +19,7 @@ except ImportError:
 
 PARENT_SCALES = (1.0, 0.5, 0.25)
 REFERENCE_DURATION_S = 0.1
-REFERENCE_DT_S = 0.0005
+REFERENCE_DT_S = 0.000125
 REFERENCE_SAMPLE_TIMES_S = (0.0, 0.02, 0.05, 0.075, 0.1)
 ROOT_DISPLACEMENT = np.array((0.005, -0.008))
 ROOT_RATE = np.array((0.002, 0.004))
@@ -178,10 +178,14 @@ def report():
             ),
         }
 
-    final_uptake = {
-        str(scale): runs[str(scale)]["snapshots"][-1]["child_uptake_fraction_of_parent_magnitude"]
-        for scale in PARENT_SCALES
-    }
+    uptake_history = {}
+    for index, reference_time in enumerate(REFERENCE_SAMPLE_TIMES_S):
+        uptake_history[str(reference_time)] = {
+            str(scale): runs[str(scale)]["snapshots"][index][
+                "child_uptake_fraction_of_parent_magnitude"
+            ]
+            for scale in PARENT_SCALES
+        }
     return {
         "schema": 1,
         "scope": (
@@ -194,7 +198,7 @@ def report():
         "reference_sample_times_s": REFERENCE_SAMPLE_TIMES_S,
         "runs": runs,
         "comparisons": comparisons,
-        "final_child_uptake_fraction_of_parent_magnitude": final_uptake,
+        "child_uptake_fraction_by_reference_time": uptake_history,
         "sources": {
             name: hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest()
             for name in (
