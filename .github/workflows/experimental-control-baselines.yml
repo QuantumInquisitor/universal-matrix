@@ -10,6 +10,8 @@ on:
       - 'scripts/report_material_restart.py'
       - 'scripts/report_fold_kinematics.py'
       - 'scripts/export_fold_reference_fixture.py'
+      - 'scripts/report_fold_dynamics.py'
+      - 'scripts/plot_fold_dynamics.py'
       - 'tests/test_phase_pattern_controls.py'
       - 'tests/test_chiral_phase_controls.py'
       - 'tests/test_phase_delay_controls.py'
@@ -17,6 +19,7 @@ on:
       - 'tests/test_material_restart.py'
       - 'tests/test_fold_kinematics.py'
       - 'tests/test_fold_source_fixture.py'
+      - 'tests/test_fold_dynamics.py'
       - 'docs/experiments/fold-original-source-fixture.json'
       - '.github/workflows/experimental-control-baselines.yml'
   workflow_dispatch:
@@ -119,4 +122,32 @@ jobs:
           assert all(s['minimum_eigenvalue'] > 0 for s in r['samples'])
           assert max(s['kinetic_identity_absolute_error_j'] for s in r['samples']) < 1e-18
           assert not r['physical_material_validation'] and not r['dynamics_implemented']
+          PY
+      - name: Check force-driven fold energy and negative control
+        run: |
+          uv run ruff check scripts/report_fold_dynamics.py scripts/plot_fold_dynamics.py tests/test_fold_dynamics.py
+          uv run ruff format --check scripts/report_fold_dynamics.py scripts/plot_fold_dynamics.py tests/test_fold_dynamics.py
+          uv run python -m pytest tests/test_fold_dynamics.py
+          uv run python scripts/report_fold_dynamics.py --output artifacts/fold-dynamics/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-dynamics/report.json').read_text())
+          assert set(r['source_sha256_normalized_text']) == {'report_fold_dynamics.py', 'report_fold_kinematics.py'}
+          for name, value in r['source_sha256_normalized_text'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          cases = r['cases']
+          assert set(cases) == {'equilibrium', 'conservative', 'damped', 'driven', 'drive_off', 'omitted_bias_control'}
+          assert len(r['refinements']) == 6 and len(r['body_ids']) == 22
+          for name, case in cases.items():
+              if name != 'omitted_bias_control':
+                  assert case['maximum_balance_residual_j'] < 1e-13
+          assert cases['omitted_bias_control']['maximum_balance_residual_j'] > 1e-10
+          assert r['energy_identity']['absolute_error_j_s'] < 1e-11
+          assert r['energy_identity']['omitted_bias_absolute_error_j_s'] > 1e-8
+          assert cases['damped']['final_energy_j'] < cases['damped']['initial_energy_j']
+          after = [s['work_j'] for s in cases['drive_off']['trace'] if s['time_s'] >= 1]
+          assert after and max(after) == min(after)
+          assert not r['physical_calibration'] and not r['autonomous_breathing']
           PY

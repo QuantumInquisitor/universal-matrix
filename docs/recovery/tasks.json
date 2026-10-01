@@ -73,8 +73,8 @@
         "P06"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "22 explicit synthetic point masses (0.74 kg total at illustrative 0.1m/unit) assigned once per original body ID; generalized mass derived from actual marker Jacobians. Positive inertia throughout domain follows independent hub scale/fold directions. Not calibrated density/solid inertia.",
-      "next_action": "Declare reduced potential, damping and supports; derive geometric inertial terms from the analytic Hessian and integrate energy/work controls within admissible domain. Calibration and full solid mass partition remain open."
+      "latest_result": "Recovered 22-point fold map now has an explicit synthetic positive quadratic potential, damping and generalized drive; forces evolve s/theta with geometry-derived inertia. Physical solid calibration/rotational inertia and interior material map still absent.",
+      "next_action": "Review reduced-law sensitivity and coupled-mode behavior; specify measured or justified distributed material coefficients before physical claims. Keep full-flow chart correspondence separate."
     },
     {
       "id": "P08",
@@ -85,7 +85,7 @@
         "P07"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Connected two-mass energy ownership and switched-drive control added. Each body owns kinetic/anchor energy; link spring storage counted once. Three timestep cases refine total and per-owner residuals; finest total 3.25e-10 J. Not whole-assembly energy closure."
+      "latest_result": "Force-driven folded geometry has an explicit T+V/work/loss ledger including geometric inertia. 18 runs; correct-case fine-step residual <=6.37e-17 J, omitted-inertia control 1.33e-7 J. Independent Christoffel and energy-directional controls pass. No whole-structure/material energy closure."
     },
     {
       "id": "P09",
@@ -96,7 +96,8 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Passive two-mass input-off continuation matches an independent damped modal solution. No nonzero sustained unforced periodic orbit exists for the declared positive anchor damping/stiffness; documented model-specific negative result, not a universal prohibition. Active reservoir/geometry model remains missing."
+      "latest_result": "Size/fold trajectories now evolve from reduced force equations rather than prescribed displacement. Equilibrium, conservative, damped, driven and tapered-force-off cases tested; passive decay is supported, autonomous sustained breathing is not. Exact unforced energy barrier bounds the declared domain for default initial data.",
+      "next_action": "Test longer duration, initial-condition/parameter ensembles and modal response; add an explicit finite active reservoir only if investigating sustained cycles, with its energy and saturation laws accounted."
     },
     {
       "id": "P10",
@@ -117,7 +118,7 @@
       "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3\u201310. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Machine-readable source-backed fold positions, IDs, coordinate choices, masses and source hashes now exported in fold-kinematics-summary.json. No viewer wiring or visual/headset QA completed in this batch."
+      "latest_result": "Actual force-driven traces and stable 22-body positions exported; scientific plot of s/theta and energy produced and visually inspected. This is an inspectable simulation artifact, not integration with the XR viewer or headset validation."
     },
     {
       "id": "P12",
