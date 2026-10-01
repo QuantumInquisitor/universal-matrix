@@ -3,7 +3,6 @@
 import argparse
 import hashlib
 import json
-import math
 from pathlib import Path
 
 import numpy as np
@@ -21,7 +20,11 @@ try:
 except ImportError:
     from report_fold_dynamics import Q0
     from report_fold_mapped import port
-    from report_fold_recursive_drive_load_replay import REPRESENTATIVE, SAMPLE_TIMES_S, capture_full_tree
+    from report_fold_recursive_drive_load_replay import (
+        REPRESENTATIVE,
+        SAMPLE_TIMES_S,
+        capture_full_tree,
+    )
     from report_fold_recursive_pair_dynamics import sample_reference_time, simulate_pair
     from report_fold_scale_extension import connector
 
