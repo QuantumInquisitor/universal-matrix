@@ -1,0 +1,69 @@
+name: Recursive material spatial placement
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_recursive_material_placement.py'
+      - 'tests/test_fold_recursive_material_placement.py'
+      - 'docs/fold_recursive_material_placement.md'
+      - '.github/workflows/recursive-material-placement.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recursive-material-placement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify recursive material placement envelope
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_material_placement.py tests/test_fold_recursive_material_placement.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_material_placement.py tests/test_fold_recursive_material_placement.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_material_placement.py
+          uv run --python 3.12 --extra scientific python -m scripts.report_fold_recursive_material_placement --output artifacts/fold-recursive-placement/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-recursive-placement/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert len(r['axes']) == 3
+          for axis in r['axes']:
+              assert axis['module_count'] == 15
+              assert axis['maximum_recursive_mirror_xy_error_m'] < 1e-12
+              assert axis['maximum_recursive_mirror_z_error_m'] < 1e-12
+              assert axis['maximum_rigid_axis_equivalence_error_m'] < 1e-12
+              c = axis['connector_spatial_compatibility']
+              assert abs(c['rest_offset_coefficient_min'] - 0.5) < 1e-12
+              assert abs(c['rest_offset_coefficient_max'] - 0.5) < 1e-12
+              assert c['maximum_frame_mismatch_by_child_bit']['0'] < 1e-12
+              assert c['maximum_frame_mismatch_by_child_bit']['1'] > 1e-3
+          assert not r['common_vessel_to_module_ratio_selected']
+          assert not r['canonical_seed_axis_selected']
+          assert not r['direct_existing_connector_spatially_compatible']
+          assert r['spatial_rest_offset_adapter_required']
+          assert r['branch_orientation_adapter_required_for_mirror_placement']
+          print(json.dumps({
+              'common_scale_envelope': r['common_scale_envelope'],
+              'axis_metrics': [
+                  {
+                      'axis_pair': a['axis_pair'],
+                      'sibling_nonoverlap': a['minimum_conservative_sibling_nonoverlap_ratio'],
+                      'all_nonoverlap': a['minimum_conservative_all_module_nonoverlap_ratio'],
+                      'connector_mismatch': a['connector_spatial_compatibility']['maximum_frame_mismatch_by_child_bit'],
+                  }
+                  for a in r['axes']
+              ],
+          }, sort_keys=True))
+          PY
