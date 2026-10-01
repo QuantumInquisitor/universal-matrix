@@ -16,6 +16,8 @@ on:
       - 'scripts/report_fold_coupling.py'
       - 'scripts/report_fold_network.py'
       - 'scripts/report_fold_hierarchy.py'
+      - 'scripts/report_fold_mapped.py'
+      - 'tests/test_fold_mapped.py'
       - 'tests/test_fold_hierarchy.py'
       - 'tests/test_fold_network.py'
       - 'tests/test_fold_coupling.py'
@@ -304,4 +306,31 @@ jobs:
           assert control['initial_total_overcount_j'] > 1e-7
           assert abs(control['spurious_energy_change_j']) > 1e-7
           assert not r['full_recursive_physical_validation'] and not r['sustained_breathing']
+          PY
+      - name: Check mapped fold connector
+        run: |
+          uv run ruff check scripts/report_fold_mapped.py tests/test_fold_mapped.py
+          uv run ruff format --check scripts/report_fold_mapped.py tests/test_fold_mapped.py
+          uv run python -m pytest tests/test_fold_mapped.py
+          uv run python scripts/report_fold_mapped.py --output artifacts/fold-mapped/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-mapped/report.json').read_text())
+          assert len(r['sources']) == 5 and len(r['cases']) == 5
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert c['max_node_residual_j'] < 1e-11
+              if name != 'wrong_jacobian_control':
+                  assert c['max_total_residual_j'] < 1e-11
+                  assert c['max_connector_residual_j'] < 1e-11
+          bad = r['cases']['wrong_jacobian_control']
+          assert bad['max_total_residual_j'] > 1e-7 and bad['max_connector_residual_j'] > 1e-7
+          assert r['cases']['conservative']['samples'][-1]['mechanical_j'][1] > 1e-8
+          assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
+          assert max(max(row) for row in r['refinement']['coordinate_differences_by_module']) < 1e-7
+          assert not r['geometric_mass_scaling_validated'] and not r['physical_recursive_assembly_validated']
+          assert not r['sustained_breathing']
           PY

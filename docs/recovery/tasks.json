@@ -108,7 +108,7 @@
         "P09"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Parent/child regrouping now assigns edges to lowest common ancestors and independently checks inclusive subgroup boundary-work accounts. Flat/balanced/deep/reordered two-second trajectories agree; no new cross-scale force law yet. Next: derive mapped cross-scale forces from a single potential before whole-structure application. See docs/fold_hierarchy.md.",
+      "latest_result": "Nonlinear mapped connector derived from one potential, with parent/child Jacobian force pullbacks and port-length ratios 1/.5/.25. Correct energy accounts pass; wrong child mapping is detected. Leverage-only experiment retains original module masses/inertias. Next: explicit consistent body length/mass/inertia scaling before recursive deployment. See docs/fold_mapped.md.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {

@@ -712,3 +712,32 @@ This validates regrouping only, not new physical scales, calibrated materials,
 spatial collision/joint assembly, sustained breathing or XR mapping. Next: an
 explicit mapped cross-scale potential and its derivative forces, with energy
 checks before whole-structure application.
+
+
+### 2026-09-30 — Mapped connector and interruption recovery
+
+Recovered saved mapped-connection implementation after a usage-limit interruption.
+Verified live PR122 remained at af94ba28; all four workflows on that prior head
+completed successfully. Preserved existing green work. New optional connector
+uses f(q,l)=l[s-1,s sin(theta-theta0)] and derives both generalized forces from
+one quadratic port mismatch potential through their respective Jacobians.
+Module mass, inertia and material parameters remain unchanged: leverage-only
+scaling, not validated geometrically scaled solids.
+
+Five four-second cases and half-port refinement cover length ratios 1/.5/.25,
+conservative transfer and deliberately incorrect child Jacobian. Correct global
+residual <=2.068e-13 J; half-port refinement 2.036e-13 to 1.018e-14 J. Wrong child
+mapping violates connector/global accounts at 1.416e-6 J while node accounts
+remain balanced. Independent review found no blockers: 24 interior configurations
+energy-rate checks within 4.41e-14 W and local Hessian agreement within 8.03e-14.
+
+Validation: 18 mapped tests plus 31 linked pair/reservoir tests: 49 passed in
+14.17 s. Ruff and formatting pass. After interruption, source hashes and full
+workflow numerical acceptance were verified against saved reports. Results:
+docs/fold_mapped.md and docs/experiments/fold-mapped-summary.json. New head
+requires fresh CI. No merge; register remains 41 tasks.
+
+Next: state length/mass/inertia scaling assumptions explicitly and independently
+validate them before applying the connector across recursive levels. Spatial
+attachment, collision, calibration, full recursive assembly, sustained breathing
+and XR mapping remain open.
