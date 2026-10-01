@@ -70,9 +70,29 @@ def test_adapter_does_not_claim_existing_viewer_direct_compatibility(payload):
         ({}, {}),
         ({"schema": 1, "cases": {}}, {}),
         ({"schema": 1, "cases": {"powered": {}}}, {}),
-        ({"schema": 1, "cases": {"powered": {"settings": {"sizes": [1], "edges": []}, "samples": []}}}, {}),
-        ({"schema": 1, "cases": {"powered": {"settings": {"sizes": [1], "edges": []}, "samples": [{"time_s": 0}]}}}, {}),
-        ({"schema": 1, "cases": {"powered": {"settings": {"sizes": [1], "edges": []}, "samples": []}}}, {"display_m_per_unit": 0}),
+        (
+            {
+                "schema": 1,
+                "cases": {"powered": {"settings": {"sizes": [1], "edges": []}, "samples": []}},
+            },
+            {},
+        ),
+        (
+            {
+                "schema": 1,
+                "cases": {
+                    "powered": {"settings": {"sizes": [1], "edges": []}, "samples": [{"time_s": 0}]}
+                },
+            },
+            {},
+        ),
+        (
+            {
+                "schema": 1,
+                "cases": {"powered": {"settings": {"sizes": [1], "edges": []}, "samples": []}},
+            },
+            {"display_m_per_unit": 0},
+        ),
     ],
 )
 def test_invalid_payloads_rejected(report, kwargs):
