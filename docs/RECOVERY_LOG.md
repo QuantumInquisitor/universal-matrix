@@ -829,3 +829,12 @@ docs/fold_multiscale.md and docs/experiments/fold-multiscale-summary.json.
 Task register retains 41 entries. Next: explicit size laws for reservoir capacity,
 transfer power and leakage timescales before active graph composition. Materials,
 real attachments/collisions, full physical recursion and sustained breathing remain open.
+
+### 2026-09-30 - Finite reservoirs across unequal-size modules
+
+- Added explicit capacity/activation s^3, feedback damping s^4 and leakage-rate .15/s laws to the four-node mixed-size network. These are synthetic similarity assumptions, not measured material laws.
+- Separate node mechanical/reservoir accounts, edge potential ownership and subgroup boundary work preserve complete energy accounting. No external replenishment; negative reserves rejected without clipping.
+- 19 focused and 32 linked passive-network/reservoir tests passed (51 total); Ruff and workflow acceptance passed. Computed plot visually inspected. Maximum valid root residual 4.632e-16 J; missing node-1 debit detected at 2.438e-9 J and localized to its subgroup/root. Empty-reservoir and zero-gain reductions, independent group energy derivatives, finite supply and fixed-leakage alternative checked.
+- Half-timestep comparison: root residual 5.789e-17 to 3.131e-18 J, coordinate/rate differences 2.033e-10/1.192e-9. No convergence-order or sustained-breathing claim.
+- Source-hashed report: docs/experiments/fold-active-multiscale-summary.json. Methods: docs/fold_active_multiscale.md. Computed plot source: scripts/plot_fold_active_multiscale.py. Automated acceptance added to experimental-control workflow and executed locally.
+- P08/P09/P10 remain open; next work must address longer-duration behavior, physical supply/material laws and actual assembly constraints rather than treating short transients as a completed science engine. Existing 41-task register preserved.

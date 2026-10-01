@@ -19,6 +19,9 @@ on:
       - 'scripts/report_fold_mapped.py'
       - 'scripts/report_fold_scaling.py'
       - 'scripts/report_fold_scaled_pair.py'
+      - 'scripts/report_fold_active_multiscale.py'
+      - 'scripts/plot_fold_active_multiscale.py'
+      - 'tests/test_fold_active_multiscale.py'
       - 'scripts/report_fold_multiscale.py'
       - 'scripts/plot_fold_multiscale.py'
       - 'tests/test_fold_multiscale.py'
@@ -429,6 +432,43 @@ jobs:
           assert bad['max_group_residual_j']['root'] > 1e-12
           assert max(bad['max_group_residual_j'][p] for p in ('root/0', 'root/1')) < 1e-12
           assert max(map(max, r['refinement']['state_component_differences_by_module'])) < 1e-7
+          assert not r['calibrated_material'] and not r['recursive_assembly_validated']
+          assert not r['sustained_breathing']
+          PY
+      - name: Check finite reservoirs in mixed-size network
+        run: |
+          uv run ruff check scripts/report_fold_active_multiscale.py scripts/plot_fold_active_multiscale.py tests/test_fold_active_multiscale.py
+          uv run ruff format --check scripts/report_fold_active_multiscale.py scripts/plot_fold_active_multiscale.py tests/test_fold_active_multiscale.py
+          uv run python -m pytest tests/test_fold_active_multiscale.py
+          uv run python scripts/report_fold_active_multiscale.py --output artifacts/fold-active-multiscale/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-active-multiscale/report.json').read_text())
+          assert len(r['sources']) == 11 and len(r['cases']) == 4
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert max(c['max_node_mechanical_residual_j']) < 1e-13
+              assert max(c['max_edge_residual_j']) < 1e-13
+              if name == 'omitted_debit':
+                  continue
+              assert max(c['max_node_reservoir_residual_j']) < 1e-13
+              assert max(c['max_group_residual_j'].values()) < 1e-13
+              assert min(c['finite_supply']['minimum_reserve_j']) >= 0
+              assert max(c['finite_supply']['maximum_reserve_step_increase_j']) <= 0
+              assert np.all(np.array(c['samples'][-1]['work_j']) <= .8*np.array(c['finite_supply']['initial_reserve_j']) + 1e-15)
+              for key, error in c['similarity'].items():
+                  assert np.max(error) < (1e-12 if key in ('q', 'rates') else 1e-16)
+          bad = r['cases']['omitted_debit']
+          assert bad['max_node_reservoir_residual_j'][1] > 1e-12
+          assert max(bad['max_node_reservoir_residual_j'][i] for i in (0, 2, 3)) < 1e-13
+          assert bad['max_group_residual_j']['root'] > 1e-12
+          assert bad['max_group_residual_j']['root/0'] > 1e-12
+          assert bad['max_group_residual_j']['root/1'] < 1e-13
+          assert np.max(r['refinement']['state_component_differences_by_module']) < 1e-7
           assert not r['calibrated_material'] and not r['recursive_assembly_validated']
           assert not r['sustained_breathing']
           PY

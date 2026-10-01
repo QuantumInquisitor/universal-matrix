@@ -85,7 +85,7 @@
         "P07"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Four-node graph energy accounts now validate node-local transfers, one potential owner per edge and global total. Correct cases residual <=4.605e-13 J; broken edge localized at 3.955e-7 J. See docs/fold_network.md."
+      "latest_result": "Four-node graph energy accounts now validate node-local transfers, one potential owner per edge and global total. Correct cases residual <=4.605e-13 J; broken edge localized at 3.955e-7 J. See docs/fold_network.md. Finite reservoirs now integrated with four unequal-size modules using explicit volume capacity and length-timescale laws; 19 tests pass, complete accounts close within 4.64e-16 J, omitted debit localized at 2.44e-9 J. See docs/fold_active_multiscale.md. Physical calibration, long-duration breathing and whole-structure spatial validation remain open."
     },
     {
       "id": "P09",
@@ -96,7 +96,7 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Finite internal-energy feedback implemented without an external time waveform. Fuel boosts motion transiently but falls below the damping threshold by 10 seconds. Exact equilibrium does not self-start; sustained autonomous breathing remains unproven. Next: conservative exchange between two coupled modules before recursive composition. See docs/fold_reservoir.md.",
+      "latest_result": "Finite internal-energy feedback implemented without an external time waveform. Fuel boosts motion transiently but falls below the damping threshold by 10 seconds. Exact equilibrium does not self-start; sustained autonomous breathing remains unproven. Next: conservative exchange between two coupled modules before recursive composition. See docs/fold_reservoir.md. Finite reservoirs now integrated with four unequal-size modules using explicit volume capacity and length-timescale laws; 19 tests pass, complete accounts close within 4.64e-16 J, omitted debit localized at 2.44e-9 J. See docs/fold_active_multiscale.md. Physical calibration, long-duration breathing and whole-structure spatial validation remain open.",
       "next_action": "Test longer duration, initial-condition/parameter ensembles and modal response; add an explicit finite active reservoir only if investigating sustained cycles, with its energy and saturation laws accounted."
     },
     {
@@ -108,7 +108,7 @@
         "P09"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Mixed-size passive graph integrates scaled bodies, symmetric homogeneous mapped connectors and hierarchy boundary accounts. Fifteen new tests plus 39 linked pass; faulty crossing edge localized while child accounts remain valid. Uniform global scaling and separate timestep comparison pass. Next: explicit size laws for active reservoir capacity and power before active-network deployment. See docs/fold_multiscale.md.",
+      "latest_result": "Mixed-size passive graph integrates scaled bodies, symmetric homogeneous mapped connectors and hierarchy boundary accounts. Fifteen new tests plus 39 linked pass; faulty crossing edge localized while child accounts remain valid. Uniform global scaling and separate timestep comparison pass. Next: explicit size laws for active reservoir capacity and power before active-network deployment. See docs/fold_multiscale.md. Finite reservoirs now integrated with four unequal-size modules using explicit volume capacity and length-timescale laws; 19 tests pass, complete accounts close within 4.64e-16 J, omitted debit localized at 2.44e-9 J. See docs/fold_active_multiscale.md. Physical calibration, long-duration breathing and whole-structure spatial validation remain open.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {
