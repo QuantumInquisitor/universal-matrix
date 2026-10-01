@@ -9,28 +9,19 @@ import numpy as np
 
 try:
     from .report_fold_dynamics import Q0, vector
-    from .report_fold_material_depth3 import (
-        initial_state as full_initial_state,
-        measure as full_measure,
-        rhs as full_rhs,
-        subtree_members,
-        tree_configuration,
-    )
-    from .report_fold_recursive_pair_dynamics import (
-        sample_reference_time,
-        simulate_pair,
-    )
+    from .report_fold_material_depth3 import initial_state as full_initial_state
+    from .report_fold_material_depth3 import measure as full_measure
+    from .report_fold_material_depth3 import rhs as full_rhs
+    from .report_fold_material_depth3 import subtree_members, tree_configuration
+    from .report_fold_recursive_pair_dynamics import sample_reference_time, simulate_pair
     from .report_fold_scale_extension import connector, mechanical
     from .report_fold_scale_extension import rhs as body_rhs
 except ImportError:
     from report_fold_dynamics import Q0, vector
-    from report_fold_material_depth3 import (
-        initial_state as full_initial_state,
-        measure as full_measure,
-        rhs as full_rhs,
-        subtree_members,
-        tree_configuration,
-    )
+    from report_fold_material_depth3 import initial_state as full_initial_state
+    from report_fold_material_depth3 import measure as full_measure
+    from report_fold_material_depth3 import rhs as full_rhs
+    from report_fold_material_depth3 import subtree_members, tree_configuration
     from report_fold_recursive_pair_dynamics import sample_reference_time, simulate_pair
     from report_fold_scale_extension import connector, mechanical
     from report_fold_scale_extension import rhs as body_rhs
