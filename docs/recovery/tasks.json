@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Recursive physical-depth transport and causal backreaction are now separated under the unchanged 15-module model. Forward coordinate response reaches level 1 by 0.0005 s, level 2 by 0.002 s and level 3 by 0.011 s. With module count held fixed at 15, the incremental 0.1 s root contributions are level1=9.003331895041829e-4, level2=1.6731858636445662e-8 and level3=1.9160454473032829e-13. The fixed-dimension level3 result exactly reproduces the earlier depth2→3 comparison. At the unloaded deeper interfaces, only 2.0041% (level2) and 2.8110% (level3) of parent-work magnitude reaches the children; about 97–98% remains stored as connector potential, with energy identities closing near machine precision. This supports delayed propagation plus strong scale-dependent elastic storage/transmission, not a hard depth cutoff or missing coupling.",
+      "latest_result": "Recursive depth propagation, causal backreaction and local scale impedance are now separately audited. With 15 modules held fixed, 0.1 s root contributions are level1=9.003331895041829e-4, level2=1.6731858636445662e-8 and level3=1.9160454473032829e-13. At unloaded deeper interfaces, only 2.0041% and 2.8110% of parent-work magnitude reaches levels 2 and 3 during the finite-time run, while about 97–98% remains as connector potential. A new tangent audit shows the implemented local laws are exactly self-similar to numerical precision: M~s^5, material/connector stiffness~s^3, damping~s^4, omega~1/s, modal impedance~s^4 and damping ratio invariant. The 1:2 parent-child tangent transfer is depth invariant, with spectral norm 1.336624238828898 and quasistatic relaxed-child energy fraction 0.24194175140704385 at all tested interfaces. Therefore the observed 2–3% finite-time uptake is a dynamic cascade effect, not a depth-varying static tangent law.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Before adding any new recursive interaction, audit scale impedance under the existing laws. Linearize module mass, material stiffness, damping and mapped connector tangent operators at corresponding parent-child states; compare their scale exponents, modal frequencies/impedances and predicted transmission mismatch with the measured 2–3% child-work uptake. Keep coefficients fixed and treat disagreement as a model diagnostic rather than tuning."
+      "next_action": "Isolate one parent-child material pair at parent scales 1, 1/2 and 1/4 using dynamically corresponding initial conditions and physical time proportional to parent scale. Compare coordinate trajectories, scale-normalized rates, energies, connector work and child-work uptake at matched reference times. Then compare isolated-interface uptake with the same interfaces embedded in the full recursive tree to distinguish local transient transmission from multi-level loading/phase effects. Do not introduce new coupling coefficients unless this existing-law comparison fails."
     },
     {
       "id": "P11",
