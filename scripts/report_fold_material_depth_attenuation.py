@@ -56,33 +56,23 @@ def report():
 
     summary = {}
     baseline = max(
-        row["transitions"]["0_to_1"]["maximum_root_absolute_state_change"]
-        for row in rows
+        row["transitions"]["0_to_1"]["maximum_root_absolute_state_change"] for row in rows
     )
     for name in ("0_to_1", "1_to_2", "2_to_3"):
-        values = [
-            row["transitions"][name]["maximum_root_absolute_state_change"] for row in rows
-        ]
+        values = [row["transitions"][name]["maximum_root_absolute_state_change"] for row in rows]
         first = next(
-            (
-                row["duration_s"]
-                for row in rows
-                if row["transitions"][name]["resolved"]
-            ),
+            (row["duration_s"] for row in rows if row["transitions"][name]["resolved"]),
             None,
         )
         summary[name] = {
             "maximum_over_duration_grid": max(values),
             "first_resolved_duration_s": first,
-            "relative_to_depth_0_to_1_maximum": None
-            if baseline == 0
-            else max(values) / baseline,
+            "relative_to_depth_0_to_1_maximum": None if baseline == 0 else max(values) / baseline,
         }
 
     disconnected = simulate(3, connected=False, duration=maximum_duration)
     disconnected_delta = np.abs(
-        sampled_root(disconnected, maximum_duration)
-        - sampled_root(depth_runs[0], maximum_duration)
+        sampled_root(disconnected, maximum_duration) - sampled_root(depth_runs[0], maximum_duration)
     )
 
     return {
@@ -134,6 +124,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = report()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8"
-    )
+    args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
