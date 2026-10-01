@@ -49,9 +49,7 @@ def mechanical(q, velocity, scale):
     hvv = np.einsum("nxab,a,b->nx", state["hessian"], velocity, velocity)
     bias = np.einsum("n,nxa,nx->a", state["mass"], state["jacobian"], hvv)
     response = material_response(q, scale)
-    energy = float(
-        velocity @ state["mass_matrix"] @ velocity / 2 + response["total_energy_j"]
-    )
+    energy = float(velocity @ state["mass_matrix"] @ velocity / 2 + response["total_energy_j"])
     return state, bias, energy, np.asarray(response["gradient"])
 
 
@@ -60,9 +58,7 @@ def rhs(y, scale):
     y = vector(y, 5, "extended-scale material state")
     state, bias, _, gradient = mechanical(y[:2], y[2:4], scale)
     resistance = scale**4 * DAMPING @ y[2:4]
-    acceleration = np.linalg.solve(
-        state["mass_matrix"], -gradient - resistance - bias
-    )
+    acceleration = np.linalg.solve(state["mass_matrix"], -gradient - resistance - bias)
     return np.r_[y[2:4], acceleration, y[2:4] @ resistance]
 
 
@@ -151,12 +147,8 @@ def comparison(run, reference):
     return {
         "coordinate_max_difference": float(np.max(abs(q - q0))),
         "rescaled_rate_max_difference": float(np.max(abs(scale * rates - rates0))),
-        "rescaled_energy_max_difference_j": float(
-            np.max(abs(energy / scale**3 - energy0))
-        ),
-        "rescaled_loss_max_difference_j": float(
-            np.max(abs(loss / scale**3 - loss0))
-        ),
+        "rescaled_energy_max_difference_j": float(np.max(abs(energy / scale**3 - energy0))),
+        "rescaled_loss_max_difference_j": float(np.max(abs(loss / scale**3 - loss0))),
     }
 
 
@@ -228,9 +220,7 @@ def connector_checks():
     eighth = connector(qa, qb, 0.125, 0.125)[0]
     return {
         "cases": cases,
-        "uniform_eighth_energy_scaling_error_j": abs(
-            eighth - 0.125**3 * base
-        ),
+        "uniform_eighth_energy_scaling_error_j": abs(eighth - 0.125**3 * base),
     }
 
 
