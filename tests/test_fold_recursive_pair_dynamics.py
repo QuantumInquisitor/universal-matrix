@@ -10,7 +10,6 @@ from scripts.report_fold_recursive_pair_dynamics import (
     initial_state,
     pair_sizes,
     report,
-    simulate_pair,
 )
 
 
