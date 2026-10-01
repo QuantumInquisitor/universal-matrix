@@ -26,6 +26,8 @@ on:
       - 'tests/test_fold_material_multiscale.py'
       - 'scripts/report_fold_material_supply.py'
       - 'tests/test_fold_material_supply.py'
+      - 'scripts/export_fold_material_viewer_frames.py'
+      - 'tests/test_fold_material_viewer_frames.py'
       - 'scripts/report_fold_material_coupling.py'
       - 'tests/test_fold_material_coupling.py'
       - 'scripts/report_fold_material_dynamics.py'
@@ -944,16 +946,18 @@ jobs:
       - run: uv sync --python 3.12 --extra scientific --group test --group lint
       - name: Verify powered unequal-size material energy accounts
         run: |
-          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_supply.py tests/test_fold_material_supply.py
-          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_supply.py tests/test_fold_material_supply.py
-          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_material_supply.py
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_supply.py tests/test_fold_material_supply.py scripts/export_fold_material_viewer_frames.py tests/test_fold_material_viewer_frames.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_supply.py tests/test_fold_material_supply.py scripts/export_fold_material_viewer_frames.py tests/test_fold_material_viewer_frames.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_material_supply.py tests/test_fold_material_viewer_frames.py
           uv run --python 3.12 --extra scientific python scripts/report_fold_material_supply.py --output artifacts/fold-material-supply/report.json
+          uv run --python 3.12 --extra scientific python scripts/export_fold_material_viewer_frames.py --input artifacts/fold-material-supply/report.json --output artifacts/fold-material-supply/viewer.json
           uv run --python 3.12 --extra scientific python - <<'PY'
           import hashlib
           import json
           from pathlib import Path
 
           r = json.loads(Path('artifacts/fold-material-supply/report.json').read_text(encoding='utf-8'))
+          v = json.loads(Path('artifacts/fold-material-supply/viewer.json').read_text(encoding='utf-8'))
           json.dumps(r, allow_nan=False)
           for name, digest in r['sources'].items():
               assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
@@ -981,4 +985,11 @@ jobs:
           assert not r['physical_supply_hardware']
           assert not r['sustained_breathing']
           assert not r['autonomous_energy_source']
+          assert v['schema'] == 'matrix-science-viewer-timeseries-v1'
+          assert v['frame_count'] == len(r['cases']['powered']['samples'])
+          assert v['module_count'] == 4
+          assert v['units']['source_length'] == 'metre'
+          assert v['units']['display_m_per_unit'] == 0.1
+          assert not v['compatibility']['current_repository_visualizers_are_direct_consumers']
+          assert v['compatibility']['metre_geometry_preserved']
           PY
