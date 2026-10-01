@@ -799,3 +799,33 @@ Task count remains 41. Next: multiple absolute body sizes in a small graph,
 explicit per-edge stiffness law, and hierarchy boundary accounts. Material
 calibration, real joints/collisions, full recursion, sustained breathing and XR
 mapping remain unvalidated.
+
+
+### 2026-09-30 - Mixed-size passive graph and boundary accounts
+
+Four modules with relative sizes 1/.75/.5/.5 use scaled body mechanics. Edge
+stiffness is weight*max(endpoint sizes)*K0, an explicit symmetric homogeneous
+synthetic choice. Each edge owns potential once; each node and subgroup records
+its boundary work. Global scales 1/.75/.5 preserve relative geometry and the
+conditional similarity law. No active reservoir is present in this experiment.
+
+Root energy residuals 7.940e-17/3.350e-17/9.925e-18 J. Wrong edge 1 reaction
+creates 1.701e-10 J defect while other edges remain within 3.81e-16 J. Both
+child-group ledgers still balance because they record actual crossing work;
+the edge and root identify the defect. Half-step agreement is within 1.944e-10
+for coordinates and 7.749e-10 for rates, with units kept separate.
+
+Validation: 15 new tests passed in 34.42 s; 39 linked pair/hierarchy tests passed
+in 21.72 s, 54 total across those runs. Ruff/format and report-source hashes/CI
+acceptance pass. Parent independent edge-power check 6.54e-15 W, endpoint reversal
+exact; tests additionally cover subgroup power, node permutation and pair reduction.
+Saved-sample plot generated and visually inspected at
+artifacts/fold-multiscale/computed-network.png; plotting code checks source hashes.
+The graph and plot are not spatial placement or XR validation.
+
+Prior head 4d7f271f experimental/container/CodeQL checks passed; broad verification
+still running at snapshot. New head requires CI. No merge. Reports in
+docs/fold_multiscale.md and docs/experiments/fold-multiscale-summary.json.
+Task register retains 41 entries. Next: explicit size laws for reservoir capacity,
+transfer power and leakage timescales before active graph composition. Materials,
+real attachments/collisions, full physical recursion and sustained breathing remain open.

@@ -19,6 +19,9 @@ on:
       - 'scripts/report_fold_mapped.py'
       - 'scripts/report_fold_scaling.py'
       - 'scripts/report_fold_scaled_pair.py'
+      - 'scripts/report_fold_multiscale.py'
+      - 'scripts/plot_fold_multiscale.py'
+      - 'tests/test_fold_multiscale.py'
       - 'tests/test_fold_scaled_pair.py'
       - 'tests/test_fold_scaling.py'
       - 'tests/test_fold_mapped.py'
@@ -391,6 +394,40 @@ jobs:
           control = r['cases']['fixed_stiffness_comparison']['similarity']
           assert max(map(max, control['coordinate_max_differences'])) > 1e-4
           assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
+          assert max(map(max, r['refinement']['state_component_differences_by_module'])) < 1e-7
+          assert not r['calibrated_material'] and not r['recursive_assembly_validated']
+          assert not r['sustained_breathing']
+          PY
+      - name: Check mixed-size fold network
+        run: |
+          uv run ruff check scripts/report_fold_multiscale.py scripts/plot_fold_multiscale.py tests/test_fold_multiscale.py
+          uv run ruff format --check scripts/report_fold_multiscale.py scripts/plot_fold_multiscale.py tests/test_fold_multiscale.py
+          uv run python -m pytest tests/test_fold_multiscale.py
+          uv run python scripts/report_fold_multiscale.py --output artifacts/fold-multiscale/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-multiscale/report.json').read_text())
+          assert len(r['sources']) == 10 and len(r['cases']) == 4
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert max(c['max_node_residual_j']) < 1e-12
+              assert sorted(e for owned in c['owners'].values() for e in owned) == list(range(4))
+              if name != 'wrong_reaction':
+                  assert max(c['max_edge_residual_j']) < 1e-12
+                  assert max(c['max_group_residual_j'].values()) < 1e-12
+                  s = c['similarity']
+                  assert max(map(max, s['coordinate_max_differences'])) < 1e-12
+                  assert max(map(max, s['rescaled_rate_max_differences'])) < 1e-12
+                  assert max(s['rescaled_node_energy_differences_j']) < 1e-15
+                  assert max(s['rescaled_edge_energy_differences_j']) < 1e-15
+          bad = r['cases']['wrong_reaction']
+          assert bad['max_edge_residual_j'][1] > 1e-12
+          assert max(bad['max_edge_residual_j'][i] for i in (0, 2, 3)) < 1e-12
+          assert bad['max_group_residual_j']['root'] > 1e-12
+          assert max(bad['max_group_residual_j'][p] for p in ('root/0', 'root/1')) < 1e-12
           assert max(map(max, r['refinement']['state_component_differences_by_module'])) < 1e-7
           assert not r['calibrated_material'] and not r['recursive_assembly_validated']
           assert not r['sustained_breathing']
