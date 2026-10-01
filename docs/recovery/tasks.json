@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "The recursive 22-body spatial placement envelope is now quantified across all three symmetry-related Seed-axis candidates and the full declared fold grid. Planar vertex containment requires a common vessel-radius/module-length ratio 2.1838578868311203; the 3D vertex bound and conservative sibling non-overlap require 2.193830551297614. Conservative simultaneous non-overlap of all 15 recursive modules requires 19.744474961678524 because of cross-generation nesting; this is a bounding-sphere sufficient condition, not an exact mesh collision certificate. The three Seed axes remain rigidly equivalent to roundoff. Physical placement requires a rest offset k/2 times the parent module length, and mirrored child branches introduce a 0.30175259851476777-parent-length connector-frame mismatch while co-oriented branches remain effectively zero.",
+      "latest_result": "The recursive spatial connector attachment-frame audit is now green and merged. Adding the exact geometric center separation as a rest offset leaves the connector independent of the vessel/module ratio. The parent-aligned attachment frame reproduces the existing local recursive connector to numerical roundoff across scales 1, 1/2 and 1/4, with zero scale-similarity error and ~1e-19 J / ~1e-18 force differences. The body-following mirrored attachment remains energy-derived and conservative but changes the dynamics substantially (at parent scale 1, max energy difference 9.631742512670289e-05 J; parent-force difference 3.602885682970027e-04; child-force difference 2.475e-04). Therefore the unresolved physical issue is the abstract connector port's attachment site/frame, not a missing recursive force law.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Build an energy-derived spatial connector attachment adapter without changing stiffness/material coefficients. Compare body-following mirrored attachment frames with parent-aligned attachment frames that preserve the validated local connector. Verify potential-gradient forces, energy ownership, mirror symmetry and exact local-connector recovery where claimed. Do not select an attachment convention until the body/port geometry independently supports it."
+      "next_action": "Search for a fixed port-to-body correspondence using the existing 22-body geometry. Compare displacement-from-reference and Jacobian for every panel vertex, bridge endpoint and hub marker against the abstract two-component mapped port over the full q-grid, allowing one fixed linear projection/rotation per candidate but no state-dependent fit. If no exact candidate exists, preserve the connector as an independent reduced coordinate until a separately justified physical attachment geometry is supplied."
     },
     {
       "id": "P11",
