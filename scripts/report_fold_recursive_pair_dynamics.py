@@ -108,13 +108,9 @@ def simulate_pair(parent_scale, *, refinement=1):
                 "connector_j": float(potential),
                 "endpoint_work_j": works.tolist(),
                 "child_work_fraction_of_parent_magnitude": fraction,
-                "module_residual_j": (
-                    energies - e0 + blocks[:, 4] - works
-                ).tolist(),
+                "module_residual_j": (energies - e0 + blocks[:, 4] - works).tolist(),
                 "connector_residual_j": float(potential - u0 + works.sum()),
-                "total_residual_j": float(
-                    energies.sum() + blocks[:, 4].sum() + potential - total0
-                ),
+                "total_residual_j": float(energies.sum() + blocks[:, 4].sum() + potential - total0),
             }
         )
         if step == steps:
@@ -163,29 +159,15 @@ def similarity(run, reference):
     q0 = np.asarray([row["q"] for row in reference["trace"]])
     rate = np.asarray([row["rates"] for row in run["trace"]])
     rate0 = np.asarray([row["rates"] for row in reference["trace"]])
-    energy = np.asarray(
-        [
-            row["mechanical_j"] + [row["connector_j"]]
-            for row in run["trace"]
-        ]
-    )
-    energy0 = np.asarray(
-        [
-            row["mechanical_j"] + [row["connector_j"]]
-            for row in reference["trace"]
-        ]
-    )
+    energy = np.asarray([row["mechanical_j"] + [row["connector_j"]] for row in run["trace"]])
+    energy0 = np.asarray([row["mechanical_j"] + [row["connector_j"]] for row in reference["trace"]])
     works = np.asarray([row["endpoint_work_j"] for row in run["trace"]])
     works0 = np.asarray([row["endpoint_work_j"] for row in reference["trace"]])
     return {
         "coordinate_max_difference": float(np.max(np.abs(q - q0))),
         "rescaled_rate_max_difference": float(np.max(np.abs(parent * rate - rate0))),
-        "rescaled_energy_max_difference_j": float(
-            np.max(np.abs(energy / parent**3 - energy0))
-        ),
-        "rescaled_work_max_difference_j": float(
-            np.max(np.abs(works / parent**3 - works0))
-        ),
+        "rescaled_energy_max_difference_j": float(np.max(np.abs(energy / parent**3 - energy0))),
+        "rescaled_work_max_difference_j": float(np.max(np.abs(works / parent**3 - works0))),
     }
 
 
@@ -193,8 +175,7 @@ def report():
     pairs = {str(scale): simulate_pair(scale) for scale in PARENT_SCALES}
     reference = pairs["1.0"]
     pair_similarity = {
-        str(scale): similarity(pairs[str(scale)], reference)
-        for scale in PARENT_SCALES
+        str(scale): similarity(pairs[str(scale)], reference) for scale in PARENT_SCALES
     }
 
     isolated_samples = {}
@@ -299,6 +280,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = report()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8"
-    )
+    args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
