@@ -37,7 +37,9 @@ def test_resolution_flags_are_derived_not_forced(result):
         assert set(row["transitions"]) == {"0_to_1", "1_to_2", "2_to_3"}
         for transition in row["transitions"].values():
             maximum = max(transition["root_absolute_state_change"])
-            assert transition["maximum_root_absolute_state_change"] == pytest.approx(maximum)
+            assert transition["maximum_root_absolute_state_change"] == pytest.approx(
+                maximum
+            )
             assert transition["resolved"] is (maximum > RESOLUTION)
 
     for name, summary in result["summary"].items():
