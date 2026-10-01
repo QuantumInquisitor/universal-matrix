@@ -71,9 +71,7 @@ def spatial_connector(
     parent_port, parent_jacobian = port(qa, parent_length)
     child_port, child_jacobian = port(qb, child_length)
 
-    actual_relative_vector = (
-        -child_center + parent_port - attachment_rotation @ child_port
-    )
+    actual_relative_vector = -child_center + parent_port - attachment_rotation @ child_port
     delta = actual_relative_vector - rest_vector
     stiffness = weight * parent_scale * PORT_STIFFNESS
     stress = stiffness @ delta
@@ -88,9 +86,7 @@ def spatial_connector(
         "delta_parent_frame_m": delta,
         "actual_relative_vector_m": actual_relative_vector,
         "rest_vector_parent_frame_m": rest_vector,
-        "rest_offset_parent_lengths": float(
-            np.linalg.norm(rest_vector) / parent_length
-        ),
+        "rest_offset_parent_lengths": float(np.linalg.norm(rest_vector) / parent_length),
         "translation_cancellation_error_m": float(
             np.linalg.norm(delta - (parent_port - attachment_rotation @ child_port))
         ),
@@ -103,28 +99,26 @@ def spatial_connector(
 def gradient_errors(parent_scale, child_bit, vessel_ratio, mode):
     qa = np.asarray(GRADIENT_PAIR[0], dtype=float)
     qb = np.asarray(GRADIENT_PAIR[1], dtype=float)
-    base = spatial_connector(
-        qa, qb, parent_scale, child_bit, vessel_ratio, mode=mode
-    )
+    base = spatial_connector(qa, qb, parent_scale, child_bit, vessel_ratio, mode=mode)
     numerical_parent = np.zeros(2)
     numerical_child = np.zeros(2)
     for axis in range(2):
         step = np.zeros(2)
         step[axis] = FD_STEP
-        plus = spatial_connector(
-            qa + step, qb, parent_scale, child_bit, vessel_ratio, mode=mode
-        )["energy_j"]
-        minus = spatial_connector(
-            qa - step, qb, parent_scale, child_bit, vessel_ratio, mode=mode
-        )["energy_j"]
+        plus = spatial_connector(qa + step, qb, parent_scale, child_bit, vessel_ratio, mode=mode)[
+            "energy_j"
+        ]
+        minus = spatial_connector(qa - step, qb, parent_scale, child_bit, vessel_ratio, mode=mode)[
+            "energy_j"
+        ]
         numerical_parent[axis] = -(plus - minus) / (2 * FD_STEP)
 
-        plus = spatial_connector(
-            qa, qb + step, parent_scale, child_bit, vessel_ratio, mode=mode
-        )["energy_j"]
-        minus = spatial_connector(
-            qa, qb - step, parent_scale, child_bit, vessel_ratio, mode=mode
-        )["energy_j"]
+        plus = spatial_connector(qa, qb + step, parent_scale, child_bit, vessel_ratio, mode=mode)[
+            "energy_j"
+        ]
+        minus = spatial_connector(qa, qb - step, parent_scale, child_bit, vessel_ratio, mode=mode)[
+            "energy_j"
+        ]
         numerical_child[axis] = -(plus - minus) / (2 * FD_STEP)
 
     return {
@@ -168,15 +162,10 @@ def comparison_metrics(parent_scale, child_bit, mode):
                         - np.asarray(reference_parent)
                     ).tolist(),
                     "child_force_difference": (
-                        np.asarray(spatial["child_generalized_force"])
-                        - np.asarray(reference_child)
+                        np.asarray(spatial["child_generalized_force"]) - np.asarray(reference_child)
                     ).tolist(),
-                    "translation_cancellation_error_m": spatial[
-                        "translation_cancellation_error_m"
-                    ],
-                    "rest_offset_parent_lengths": spatial[
-                        "rest_offset_parent_lengths"
-                    ],
+                    "translation_cancellation_error_m": spatial["translation_cancellation_error_m"],
+                    "rest_offset_parent_lengths": spatial["rest_offset_parent_lengths"],
                     "relative_attachment_orientation_rad": spatial[
                         "relative_attachment_orientation_rad"
                     ],
@@ -184,30 +173,22 @@ def comparison_metrics(parent_scale, child_bit, mode):
             )
 
     gradient = {
-        str(vessel_ratio): gradient_errors(
-            parent_scale, child_bit, vessel_ratio, mode
-        )
+        str(vessel_ratio): gradient_errors(parent_scale, child_bit, vessel_ratio, mode)
         for vessel_ratio in VESSEL_RATIOS
     }
     return {
         "rows": rows,
-        "max_abs_energy_difference_j": max(
-            abs(row["energy_difference_j"]) for row in rows
-        ),
+        "max_abs_energy_difference_j": max(abs(row["energy_difference_j"]) for row in rows),
         "max_abs_parent_force_difference": max(
-            max(abs(value) for value in row["parent_force_difference"])
-            for row in rows
+            max(abs(value) for value in row["parent_force_difference"]) for row in rows
         ),
         "max_abs_child_force_difference": max(
-            max(abs(value) for value in row["child_force_difference"])
-            for row in rows
+            max(abs(value) for value in row["child_force_difference"]) for row in rows
         ),
         "max_translation_cancellation_error_m": max(
             row["translation_cancellation_error_m"] for row in rows
         ),
-        "rest_offset_parent_lengths": sorted(
-            {row["rest_offset_parent_lengths"] for row in rows}
-        ),
+        "rest_offset_parent_lengths": sorted({row["rest_offset_parent_lengths"] for row in rows}),
         "gradient_errors": gradient,
     }
 
@@ -228,14 +209,8 @@ def scale_similarity(mode, child_bit):
             values.append(
                 {
                     "energy": row["energy_j"] / parent_scale**3,
-                    "parent_force": (
-                        np.asarray(row["parent_generalized_force"])
-                        / parent_scale**3
-                    ),
-                    "child_force": (
-                        np.asarray(row["child_generalized_force"])
-                        / parent_scale**3
-                    ),
+                    "parent_force": (np.asarray(row["parent_generalized_force"]) / parent_scale**3),
+                    "child_force": (np.asarray(row["child_generalized_force"]) / parent_scale**3),
                 }
             )
         normalized[str(parent_scale)] = values
@@ -248,20 +223,8 @@ def scale_similarity(mode, child_bit):
             maximum = max(
                 maximum,
                 abs(current["energy"] - baseline["energy"]),
-                float(
-                    np.max(
-                        np.abs(
-                            current["parent_force"] - baseline["parent_force"]
-                        )
-                    )
-                ),
-                float(
-                    np.max(
-                        np.abs(
-                            current["child_force"] - baseline["child_force"]
-                        )
-                    )
-                ),
+                float(np.max(np.abs(current["parent_force"] - baseline["parent_force"]))),
+                float(np.max(np.abs(current["child_force"] - baseline["child_force"]))),
             )
     return maximum
 
@@ -311,17 +274,13 @@ def report():
         mode_cases = {}
         for child_bit in (0, 1):
             per_scale = {
-                str(scale): comparison_metrics(scale, child_bit, mode)
-                for scale in PARENT_SCALES
+                str(scale): comparison_metrics(scale, child_bit, mode) for scale in PARENT_SCALES
             }
             mode_cases[str(child_bit)] = {
                 "per_scale": per_scale,
-                "maximum_scale_similarity_error": scale_similarity(
-                    mode, child_bit
-                ),
+                "maximum_scale_similarity_error": scale_similarity(mode, child_bit),
                 "maximum_vessel_ratio_invariance_error": max(
-                    vessel_ratio_invariance(mode, child_bit, scale)
-                    for scale in PARENT_SCALES
+                    vessel_ratio_invariance(mode, child_bit, scale) for scale in PARENT_SCALES
                 ),
             }
         cases[mode] = mode_cases
@@ -336,8 +295,7 @@ def report():
         "parent_scales": PARENT_SCALES,
         "vessel_ratios": VESSEL_RATIOS,
         "state_pairs": [
-            {"parent": list(parent), "child": list(child)}
-            for parent, child in STATE_PAIRS
+            {"parent": list(parent), "child": list(child)} for parent, child in STATE_PAIRS
         ],
         "cases": cases,
         "sources": {
@@ -364,6 +322,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = report()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8"
-    )
+    args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
