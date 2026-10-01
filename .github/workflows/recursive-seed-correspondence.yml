@@ -1,0 +1,59 @@
+name: Recursive Seed correspondence
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_recursive_seed_correspondence.py'
+      - 'tests/test_fold_recursive_seed_correspondence.py'
+      - 'docs/fold_recursive_seed_correspondence.md'
+      - '.github/workflows/recursive-seed-correspondence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recursive-seed-correspondence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify recursive Seed/material correspondence
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_seed_correspondence.py tests/test_fold_recursive_seed_correspondence.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_seed_correspondence.py tests/test_fold_recursive_seed_correspondence.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_seed_correspondence.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_recursive_seed_correspondence.py --output artifacts/fold-recursive-seed/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-recursive-seed/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          assert not r['direct_topology_comparison']['same_recursive_graph']
+          assert not r['direct_topology_comparison']['direct_edge_scale_match']
+          assert r['two_material_levels_vs_one_vesica_step']['scale_match']
+          assert not r['two_material_levels_vs_one_vesica_step']['count_match']
+          assert r['vesica_mirror_pair_count'] == 6
+          assert r['mirror_closed_four_address_subset_count'] == 15
+          assert r['binary_seed_axis_candidate_count'] == 3
+          for candidate in r['binary_seed_axis_candidates']:
+              assert candidate['maximum_containment_failure'] == 0
+              assert candidate['maximum_mirror_center_error'] < 1e-14
+              assert candidate['maximum_radius_error'] < 1e-14
+          assert not r['binary_axis_candidate_is_canonical']
+          assert not r['material_tree_identified_with_full_vesica_recursion']
+          assert not r['spatial_material_body_placement_validated']
+          print(json.dumps({
+              'cadence': r['alternating_scale_cadence'],
+              'axis_candidates': r['binary_seed_axis_candidates'],
+              'vesica_mirror_pairs': r['vesica_mirror_pairs'],
+              'mirror_closed_four_subset_count': r['mirror_closed_four_address_subset_count'],
+          }, sort_keys=True))
+          PY
