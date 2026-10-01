@@ -35,13 +35,9 @@ def test_common_scale_envelope_is_positive_and_ordered():
 
 def test_all_axes_have_identical_clearance_requirements():
     result = report()
-    sibling = {
-        axis["minimum_conservative_sibling_nonoverlap_ratio"]
-        for axis in result["axes"]
-    }
+    sibling = {axis["minimum_conservative_sibling_nonoverlap_ratio"] for axis in result["axes"]}
     all_pairs = {
-        axis["minimum_conservative_all_module_nonoverlap_ratio"]
-        for axis in result["axes"]
+        axis["minimum_conservative_all_module_nonoverlap_ratio"] for axis in result["axes"]
     }
     assert len(sibling) == 1
     assert len(all_pairs) == 1
