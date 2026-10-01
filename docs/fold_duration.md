@@ -76,13 +76,14 @@ Windows host; CI has a separate duration job to keep this work isolated.
 
 ## Reproduction
 
-The source-hashed numerical report is
+The adaptive solver requires the project's `scientific` extra (SciPy); plotting
+requires its `visualization` extra. The source-hashed numerical report is
 `experiments/fold-duration-summary.json`. Its accepted-step accounting covers
 all accepted solver endpoints; compact plotted samples are less frequent.
 
 ```sh
-python scripts/report_fold_duration.py --output artifacts/fold-duration/report.json
-python scripts/plot_fold_duration.py --input docs/experiments/fold-duration-summary.json --output artifacts/fold-duration/computed-duration.png
+uv run --extra scientific python scripts/report_fold_duration.py --output artifacts/fold-duration/report.json
+uv run --extra visualization python scripts/plot_fold_duration.py --input docs/experiments/fold-duration-summary.json --output artifacts/fold-duration/computed-duration.png
 ```
 
 The report records solver settings, initial/final states, termination reasons,
