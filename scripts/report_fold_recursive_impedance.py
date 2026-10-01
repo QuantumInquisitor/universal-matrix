@@ -98,9 +98,7 @@ def connector_stiffness(parent_scale):
     z0 = np.r_[Q0, Q0].astype(float)
 
     def force(z):
-        _, parent_force, child_force = connector(
-            z[:2], z[2:], parent_scale, child_scale
-        )
+        _, parent_force, child_force = connector(z[:2], z[2:], parent_scale, child_scale)
         return np.r_[parent_force, child_force]
 
     columns = []
@@ -156,9 +154,7 @@ def interface_linearization(parent_scale):
 def report():
     _, modes = _base_modes()
     modules = {str(scale): module_linearization(scale, modes) for scale in MODULE_SCALES}
-    interfaces = {
-        str(scale): interface_linearization(scale) for scale in INTERFACE_PARENT_SCALES
-    }
+    interfaces = {str(scale): interface_linearization(scale) for scale in INTERFACE_PARENT_SCALES}
 
     base = modules["1.0"]
     base_mass = np.asarray(base["mass_matrix"])
@@ -179,18 +175,10 @@ def report():
         zeta = np.asarray([mode["damping_ratio"] for mode in row["modes"]])
         module_scaling[str(scale)] = {
             "mass_s5_max_error": float(np.max(np.abs(mass / scale**5 - base_mass))),
-            "stiffness_s3_max_error": float(
-                np.max(np.abs(stiffness / scale**3 - base_stiffness))
-            ),
-            "damping_s4_max_error": float(
-                np.max(np.abs(damping / scale**4 - base_damping))
-            ),
-            "frequency_inverse_scale_max_error": float(
-                np.max(np.abs(scale * omega - base_omega))
-            ),
-            "impedance_s4_max_error": float(
-                np.max(np.abs(impedance / scale**4 - base_impedance))
-            ),
+            "stiffness_s3_max_error": float(np.max(np.abs(stiffness / scale**3 - base_stiffness))),
+            "damping_s4_max_error": float(np.max(np.abs(damping / scale**4 - base_damping))),
+            "frequency_inverse_scale_max_error": float(np.max(np.abs(scale * omega - base_omega))),
+            "impedance_s4_max_error": float(np.max(np.abs(impedance / scale**4 - base_impedance))),
             "damping_ratio_max_error": float(np.max(np.abs(zeta - base_zeta))),
         }
 
@@ -206,9 +194,7 @@ def report():
             "connector_parent_s3_max_error": float(
                 np.max(np.abs(connector_k / parent_scale**3 - base_connector))
             ),
-            "transfer_matrix_max_difference": float(
-                np.max(np.abs(transfer - base_transfer))
-            ),
+            "transfer_matrix_max_difference": float(np.max(np.abs(transfer - base_transfer))),
             "child_energy_fraction_difference": abs(
                 row["linearized_child_energy_fraction"] - base_fraction
             ),
