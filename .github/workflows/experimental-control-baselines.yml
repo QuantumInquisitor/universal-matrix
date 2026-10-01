@@ -21,6 +21,9 @@ on:
       - 'scripts/report_fold_scaled_pair.py'
       - 'scripts/export_lynchpin_material_scene.py'
       - 'tests/test_lynchpin_material_scene.py'
+      - 'scripts/fold_material_multiscale.py'
+      - 'scripts/report_fold_material_multiscale.py'
+      - 'tests/test_fold_material_multiscale.py'
       - 'scripts/report_fold_material_coupling.py'
       - 'tests/test_fold_material_coupling.py'
       - 'scripts/report_fold_material_dynamics.py'
@@ -883,4 +886,45 @@ jobs:
           assert r['reservoir']['empty']['final_state'][5] == 0
           assert r['disconnected_single_maximum_state_difference'] < 1e-15
           assert not r['physical_calibration'] and not r['sustained_breathing']
+          PY
+
+  material-multiscale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify conditional material scaling and grouped graph accounts
+        run: |
+          uv run ruff check scripts/fold_material_multiscale.py scripts/report_fold_material_multiscale.py tests/test_fold_material_multiscale.py
+          uv run ruff format --check scripts/fold_material_multiscale.py scripts/report_fold_material_multiscale.py tests/test_fold_material_multiscale.py
+          uv run python -m pytest tests/test_fold_material_multiscale.py
+          uv run python scripts/report_fold_material_multiscale.py --output artifacts/fold-material-multiscale/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-material-multiscale/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_text(encoding='utf-8').encode()).hexdigest()
+          for name in ('reference', 'half', 'fine_half'):
+              c = r['cases'][name]
+              assert max(c['max_node_residual_j']) < 1e-10
+              assert max(c['max_edge_residual_j']) < 1e-10
+              assert max(c['max_group_residual_j'].values()) < 1e-10
+          assert r['cases']['broken_edge']['max_edge_residual_j'][1] > 1e-13
+          assert r['cases']['broken_edge']['max_edge_residual_j'][1] > 100 * max(r['cases']['reference']['max_edge_residual_j'])
+          assert r['scaling_control']['energy_a3_absolute_error_j'] < 1e-15
+          assert max(r['scaling_control']['gradient_a3_absolute_error']) < 1e-14
+          assert r['scaling_control']['fixed_thickness_and_EA_energy_discrepancy_j'] > 1e-8
+          assert np.max(r['similarity']['coordinate_max_differences']) < 1e-10
+          assert np.max(r['similarity']['rescaled_rate_max_differences']) < 1e-10
+          assert np.max(r['similarity']['rescaled_node_energy_differences_j']) < 1e-14
+          assert not r['physical_calibration'] and not r['active_supply'] and not r['stable_breathing']
           PY

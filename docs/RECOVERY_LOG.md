@@ -964,3 +964,34 @@ Nine default-state probes and a short historical paired trajectory agree; unknow
 source mutations and snapshot/manifest tampering still fail. Current and historical
 provenance are distinct. This repairs restart provenance without fabricating a new
 seed or claiming global formal equivalence. Fresh CI is required after publication.
+
+
+## 2026-09-30 - Conditional material scaling and passive unequal-size graph
+
+Added a separate material-law graph module without changing pinned historical
+source files. Full geometric scaling explicitly includes thickness proportional
+to length and bridge EA proportional to length squared. Energy/gradient scale with
+volume; point inertia scales with length to the fifth power; existing synthetic
+damping scales with length to the fourth power. Fixed-thickness/EA controls show
+why similarity is conditional rather than universal.
+
+Four unequal-size nodes, four mapped connectors and two child groups now have
+material-law force dynamics with node, edge and boundary-work accounts. Reference
+(.2 s), half-size (.1 s), finer half-size and broken-edge runs are saved in
+docs/experiments/fold-material-multiscale-summary.json. Maximum reference node/group
+errors are 3.74e-16/2.17e-16 J; fine half-size node/group errors are below
+2.46e-18/1.28e-18 J. Rescaled coordinate trajectories coincide at reported precision.
+Wrong edge 1 reaction produces 3.01e-13 J, over 1100 times the healthy edge residual,
+while both child-group boundary accounts remain balanced. The fixed-thickness/EA
+alternative differs by 2.26e-6 J at the declared comparison state.
+
+29 new tests passed in 29.99 s: independent gradient, direct element scaling,
+unit-node dynamics, permutation, boundary power, refinement and failure localization.
+Ruff/format, finite JSON, source hashes and workflow acceptance pass. Previous
+b949af39 experimental/container/CodeQL workflows pass; broad verification was still
+running at snapshot. New checkpoint requires its own CI. No merge.
+
+Scope remains four passive reduced modules under conditional homothety. Active
+reserves/replenishing supply for the material graph, arbitrary-depth convergence,
+state persistence, spatial joints/contact, whole-flow mapping and XR remain open.
+See docs/fold_material_multiscale.md. P07/P08/P10 stay in progress.
