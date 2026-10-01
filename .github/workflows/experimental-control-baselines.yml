@@ -24,6 +24,8 @@ on:
       - 'scripts/fold_material_multiscale.py'
       - 'scripts/report_fold_material_multiscale.py'
       - 'tests/test_fold_material_multiscale.py'
+      - 'scripts/report_fold_material_supply.py'
+      - 'tests/test_fold_material_supply.py'
       - 'scripts/report_fold_material_coupling.py'
       - 'tests/test_fold_material_coupling.py'
       - 'scripts/report_fold_material_dynamics.py'
@@ -927,4 +929,56 @@ jobs:
           assert np.max(r['similarity']['rescaled_rate_max_differences']) < 1e-10
           assert np.max(r['similarity']['rescaled_node_energy_differences_j']) < 1e-14
           assert not r['physical_calibration'] and not r['active_supply'] and not r['stable_breathing']
+          PY
+
+
+  material-supply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify powered unequal-size material energy accounts
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_supply.py tests/test_fold_material_supply.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_supply.py tests/test_fold_material_supply.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_material_supply.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_material_supply.py --output artifacts/fold-material-supply/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-material-supply/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert r['ledgers'] == [
+              'stored reserve energy',
+              'delivered mechanical work',
+              'damping/conversion/leakage losses',
+              'external input energy',
+          ]
+          for name in ('powered', 'source_off', 'fine_powered'):
+              c = r['cases'][name]
+              for key in ('max_node_mechanical_residual_j', 'max_node_reservoir_residual_j', 'max_edge_residual_j'):
+                  assert max(c[key]) < 1e-10
+              assert max(c['max_group_residual_j'].values()) < 1e-10
+              assert min(c['minimum_reserve_j']) >= 0
+              assert min(c['finite_supply_margin_j']) >= -1e-12
+          assert r['cases']['powered']['total_received_j'] > 0
+          assert r['cases']['source_off']['total_received_j'] == 0
+          assert r['cases']['powered']['missing_input_control_max_group_residual_j']['root'] > 1e-10
+          bad = r['cases']['omitted_reserve_debit']
+          assert bad['max_node_reservoir_residual_j'][0] > 1e-10
+          assert max(bad['max_node_reservoir_residual_j'][1:]) < 1e-10
+          assert bad['max_group_residual_j']['root'] > 1e-10
+          assert not r['calibrated_material']
+          assert not r['physical_supply_hardware']
+          assert not r['sustained_breathing']
+          assert not r['autonomous_energy_source']
           PY
