@@ -36,23 +36,16 @@ def test_resolution_flags_are_derived_not_forced(result):
         assert set(row["transitions"]) == {"0_to_1", "1_to_2", "2_to_3"}
         for transition in row["transitions"].values():
             maximum = max(transition["root_absolute_state_change"])
-            assert transition["maximum_root_absolute_state_change"] == pytest.approx(
-                maximum
-            )
+            assert transition["maximum_root_absolute_state_change"] == pytest.approx(maximum)
             assert transition["resolved"] is (maximum > RESOLUTION)
 
     for name, summary in result["summary"].items():
         values = [
-            row["transitions"][name]["maximum_root_absolute_state_change"]
-            for row in result["rows"]
+            row["transitions"][name]["maximum_root_absolute_state_change"] for row in result["rows"]
         ]
         assert summary["maximum_over_duration_grid"] == max(values)
         expected = next(
-            (
-                row["duration_s"]
-                for row in result["rows"]
-                if row["transitions"][name]["resolved"]
-            ),
+            (row["duration_s"] for row in result["rows"] if row["transitions"][name]["resolved"]),
             None,
         )
         assert summary["first_resolved_duration_s"] == expected
