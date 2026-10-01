@@ -53,9 +53,7 @@ def test_embedded_comparison_uses_corresponding_scaled_time(result):
         for physical_time in EMBEDDED_PHYSICAL_TIMES_S:
             row = rows[str(physical_time)]
             assert row["parent_scale"] == parent_scale
-            assert row["reference_time_s"] == pytest.approx(
-                physical_time / parent_scale
-            )
+            assert row["reference_time_s"] == pytest.approx(physical_time / parent_scale)
             assert row["isolated_child_work_fraction"] is not None
             assert row["embedded_child_work_fraction"] is not None
             assert np.isfinite(row["embedded_to_isolated_fraction_ratio"])
