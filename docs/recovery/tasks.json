@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "The recursive dynamics are characterized through depth 3, and the tested binary material tree is now geometrically related to the fuller Seed/Vesica recursion without conflating the graphs. The binary material cadence 1,1/2,1/4,1/8 exactly matches alternating contained-vessel/Seed-circle geometry through depth 3. The full Seed has 12 Vesica addresses arranged into six mirror pairs and 15 mirror-closed four-address subsets. Three symmetry-related opposite-Seed-axis candidates ((1,4),(2,5),(3,6)) each realize a contained mirror-closed binary slice with zero containment/radius error and mirror-center error <=5.55e-17. No axis is canonical, and the material tree is not identified with the full Vesica recursion.",
+      "latest_result": "The recursive 22-body spatial placement envelope is now quantified across all three symmetry-related Seed-axis candidates and the full declared fold grid. Planar vertex containment requires a common vessel-radius/module-length ratio 2.1838578868311203; the 3D vertex bound and conservative sibling non-overlap require 2.193830551297614. Conservative simultaneous non-overlap of all 15 recursive modules requires 19.744474961678524 because of cross-generation nesting; this is a bounding-sphere sufficient condition, not an exact mesh collision certificate. The three Seed axes remain rigidly equivalent to roundoff. Physical placement requires a rest offset k/2 times the parent module length, and mirrored child branches introduce a 0.30175259851476777-parent-length connector-frame mismatch while co-oriented branches remain effectively zero.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Embed the actual 22-body material geometry into all three symmetry-related binary slice candidates at the declared scales. Audit body-vertex containment, parent-child connector reach/direction, sibling and cross-generation collision/clearance, mirror closure and rigid-rotation equivalence of the three axes, then test bounded relative-fold states. Do not choose a canonical axis unless a physical asymmetry or later 69-component flow correspondence breaks the threefold symmetry."
+      "next_action": "Build an energy-derived spatial connector attachment adapter without changing stiffness/material coefficients. Compare body-following mirrored attachment frames with parent-aligned attachment frames that preserve the validated local connector. Verify potential-gradient forces, energy ownership, mirror symmetry and exact local-connector recovery where claimed. Do not select an attachment convention until the body/port geometry independently supports it."
     },
     {
       "id": "P11",
