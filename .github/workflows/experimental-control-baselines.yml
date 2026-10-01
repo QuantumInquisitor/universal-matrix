@@ -38,6 +38,8 @@ on:
       - 'tests/test_fold_material_depth_attenuation.py'
       - 'scripts/report_fold_material_depth_duration.py'
       - 'tests/test_fold_material_depth_duration.py'
+      - 'scripts/report_fold_material_depth_transport.py'
+      - 'tests/test_fold_material_depth_transport.py'
       - 'scripts/report_fold_scale_extension.py'
       - 'tests/test_fold_scale_extension.py'
       - 'scripts/report_fold_material_coupling.py'
@@ -1198,3 +1200,55 @@ jobs:
           print(json.dumps(r['depth_2_to_3'], sort_keys=True))
           PY
 
+
+
+  material-depth-transport:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group lint
+      - name: Reproduce per-level recursive transport once
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_depth_transport.py tests/test_fold_material_depth_transport.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_depth_transport.py tests/test_fold_material_depth_transport.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_material_depth_transport.py --output artifacts/fold-material-depth/transport.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-material-depth/transport.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          for run_name in ('connected', 'disconnected'):
+              run = r[run_name]
+              assert max(run['max_node_residual_j']) < 1e-10
+              assert max(run['max_edge_residual_j'], default=0) < 1e-10
+              assert max(run['max_group_residual_j'].values()) < 1e-10
+          assert r['disconnected_descendant_maximum_coordinate_response'] == 0
+          first = r['connected']['snapshots'][0]
+          assert first['levels']['0']['maximum_coordinate_response'] > 0
+          for level in ('1', '2', '3'):
+              assert first['levels'][level]['maximum_coordinate_response'] == 0
+              assert first['levels'][level]['maximum_scale_normalized_rate'] == 0
+          assert first['edges_by_child_level']['1']['connector_potential_j'] > 0
+          assert first['edges_by_child_level']['2']['connector_potential_j'] == 0
+          assert first['edges_by_child_level']['3']['connector_potential_j'] == 0
+          assert not r['connector_law_changed']
+          assert not r['material_scaling_law_changed']
+          assert not r['response_floor_tuned_to_result']
+          assert not r['spatial_parent_child_geometry_validated']
+          assert not r['arbitrary_depth_validated']
+          assert not r['infinite_depth_limit_validated']
+          print(json.dumps({
+              'first_coordinate_resolution_s': r['connected']['first_coordinate_resolution_s'],
+              'final_levels': r['connected']['snapshots'][-1]['levels'],
+              'final_edges_by_child_level': r['connected']['snapshots'][-1]['edges_by_child_level'],
+          }, sort_keys=True))
+          PY
