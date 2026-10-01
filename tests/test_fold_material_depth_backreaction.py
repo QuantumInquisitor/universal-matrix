@@ -38,9 +38,7 @@ def test_incremental_backreaction_is_derived_from_fixed_module_count(result):
         row = result["incremental_root_backreaction"][str(time_s)]
         for level in ("1", "2", "3"):
             maximum = max(row[level]["absolute_root_state_change"])
-            assert row[level]["maximum_absolute_root_state_change"] == pytest.approx(
-                maximum
-            )
+            assert row[level]["maximum_absolute_root_state_change"] == pytest.approx(maximum)
             assert row[level]["resolved"] is (maximum > RESPONSE_FLOOR)
 
 
