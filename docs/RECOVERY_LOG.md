@@ -559,7 +559,7 @@ whole-structure exchange or autonomous sustained breathing. Task count remains
 before introducing an explicit finite reservoir for sustained-motion tests.
 
 
-### 2026-09-30 â€” Finite fold sensitivity and independent modes
+### 2026-09-30 — Finite fold sensitivity and independent modes
 
 Preserved force-driven model and original geometry. In parallel, added a
 24-case sensitivity ensemble and an independent small-amplitude eigenmode
@@ -592,7 +592,7 @@ remain open. Next bounded step: an explicit finite reservoir with transfer and
 loss accounting, without assuming sustained motion or free energy.
 
 
-### 2026-09-30 â€” Finite internal reservoir and feedback
+### 2026-09-30 — Finite internal reservoir and feedback
 
 Added optional nine-state reduced fold experiment with velocity-aligned feedback,
 finite reserve, delivered work and separate damping/conversion/leakage ledgers.
@@ -621,7 +621,7 @@ accounting before recursive whole-structure composition. Material calibration,
 continuous collision proof, XR integration and sustained motion remain open.
 
 
-### 2026-09-30 â€” Two-module generalized fold exchange
+### 2026-09-30 — Two-module generalized fold exchange
 
 Coupled two existing reservoir modules through a positive generalized spring
 potential. Each module keeps separate connection work, while the connection
@@ -652,7 +652,7 @@ structure or sustained breathing claim. Next: a small graph with one energy
 owner per connection, then recursive composition and separate spatial mapping.
 
 
-### 2026-09-30 â€” Small fold graph and single-owner edge energy
+### 2026-09-30 — Small fold graph and single-owner edge energy
 
 Extended the existing module/pair law to validated graphs of up to eight nodes;
 reported six four-node, four-second cases plus chain refinement. Each connection
@@ -684,7 +684,7 @@ joints, intermodule collision, material calibration, full recursive structure,
 sustained breathing and XR integration remain open.
 
 
-### 2026-09-30 â€” Parent/child regrouping invariance
+### 2026-09-30 — Parent/child regrouping invariance
 
 Added validated hierarchy leaves and lowest-common-ancestor connection ownership.
 Independent recursive force traversal retains the same degrees of freedom and
@@ -714,12 +714,12 @@ explicit mapped cross-scale potential and its derivative forces, with energy
 checks before whole-structure application.
 
 
-### 2026-09-30 â€” Mapped connector and interruption recovery
+### 2026-09-30 — Mapped connector and interruption recovery
 
 Recovered saved mapped-connection implementation after a usage-limit interruption.
 Verified live PR122 remained at af94ba28; all four workflows on that prior head
 completed successfully. Preserved existing green work. New optional connector
-uses f(q,l)=l[s-1,s sin(theta-theta0)] and derives both generalized forces from
+uses f(q,l)=l[s-1,s sin(theta-theta=0)] and derives both generalized forces from
 one quadratic port mismatch potential through their respective Jacobians.
 Module mass, inertia and material parameters remain unchanged: leverage-only
 scaling, not validated geometrically scaled solids.
@@ -743,7 +743,7 @@ attachment, collision, calibration, full recursive assembly, sustained breathing
 and XR mapping remain open.
 
 
-### 2026-09-30 â€” Conditional body scaling laws
+### 2026-09-30 — Conditional body scaling laws
 
 Reconstructed the synthetic point geometry at length factors1/.5/.25 and masses
 factor cubed, without changing prior experiment sources. Generalized inertia,
@@ -902,3 +902,15 @@ real attachments/collisions, full physical recursion and sustained breathing rem
 - Evidence: docs/fold_constitutive.md, docs/wave_harmonics.md and their source-hashed reports under docs/experiments. All 41 task entries retained. Next material step is conservative/passive/driven integration of this potential; recursive coupling and independent wave tests advance without requiring settled breathing. Full assembly/contact, calibration and XR remain open.
 
 - Publication gate snapshot: prior PR122 head e14b677c6682c93b91fcbba18926290d884bfde5 has experimental controls, CodeQL and container workflows successful; broad verification remains running. This new checkpoint requires fresh CI; nothing merged.
+
+
+### 2026-09-30 - Six-draft capability audit and lynchpin/material reconciliation
+
+- User requested reviewing the drafts and lynchpin work for forgotten completed capabilities. Owner-scoped GitHub search returned six visible open drafts, all in QuantumInquisitor/universal-matrix; the two known local clones share that origin. Full changed-file inventories captured for PR119-124. This is not a rescan of every closed historical PR.
+- PR119/120/121 contribute 24/17/8 published files absent from this checkout (49 total), not missing implementation. PR123 seven files and PR124 twenty-eight files match their published contents locally. All listed workflows pass for 119/120/121/123/124; PR122 at 7dd38fb has experimental/container/CodeQL success with broad verification running at snapshot. No merges.
+- Lynchpin work already includes rigidity/compliance controls, finite panel stretches, 22 connected bodies, localized attachments, continuous clearance and a 202-frame exporter. PR124 already includes the fixed 69-component full pair inventory, common scaling/current transport and declared-state/winding replay. These fill prior geometry/interface gaps but do not equate the 22-body material specimen with the 69-domain flow assembly.
+- P05 corrected to reuse 14 nonlinear, 8 two-mode and 11 controller robustness runs; stochastic ensembles and broader comparisons remain. P06 corrected to reuse 168 six/eight-spin runs, selected error/size/long-duration comparisons and resource counts. The ordinary divider also passes; no practical timing advantage was established. All 41 task IDs/statuses preserved, scopes and historical plan reconciled.
+- Implemented a reference-correct overlay joining the original nine fixture frames to synthetic constitutive data by all 22 stable IDs. Old geometry strains reference theta=0; new material law references theta=pi/12. Rebasing phase 0.25 and removing its 1.1 scale gives agreement on 54 independent original-vertex SVD stretch comparisons within 8.89e-16. Wrong old-reference control differs by 0.17537. Source replay 198 vertex sets <=2.78e-17m; sum of 18 energies exact; four hubs explicitly unmodeled. No new dynamics or viewer integration.
+- Validation: 14 new overlay tests; 47 linked overlay/constitutive tests passed together in 3.12 s. Agent independently reran 28 local geometry/address tests in 3.18 s. Ruff/format and expanded material/harmonic/overlay workflow acceptance pass. Previously published clearance/test counts were inspected evidence, not rerun wholesale.
+- Found five initial local/published documentation differences caused by encoding drift, including mathematical symbols. Publication payload now explicitly reads UTF-8; local mathematical text preserved, fourteen corrupted range dashes repaired in the older plan. Source code and validated numerical reports were not rewritten for this documentation correction.
+- Evidence: docs/recovery/DRAFT_CAPABILITY_AUDIT.md, docs/recovery/draft-capability-audit.json and docs/experiments/lynchpin-material-overlay.json. Reuse/stage draft geometry interfaces, then connect material/inertia/energy and actual viewer state using these IDs and reference metadata. Stable breathing remains a milestone test, not a global gate.

@@ -19,9 +19,9 @@ L = kl(x1-x0) + cl(v1-v0). Then
 m a0 = F(t) + L - ka x0 - ca v0
 m a1 =      - L - ka x1 - ca v1
 F(t) = A sin(omega t)
-E = m(v0Â²+v1Â²)/2 + ka(x0Â²+x1Â²)/2 + kl(x1-x0)Â²/2
+E = m(v0²+v1²)/2 + ka(x0²+x1²)/2 + kl(x1-x0)²/2
 dW/dt = F(t) v0
-dD/dt = ca(v0Â²+v1Â²) + cl(v1-v0)Â²
+dD/dt = ca(v0²+v1²) + cl(v1-v0)²
 E(t)-E(0) = W(t)-D(t)
 ```
 

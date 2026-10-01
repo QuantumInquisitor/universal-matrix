@@ -19,6 +19,8 @@ on:
       - 'scripts/report_fold_mapped.py'
       - 'scripts/report_fold_scaling.py'
       - 'scripts/report_fold_scaled_pair.py'
+      - 'scripts/export_lynchpin_material_scene.py'
+      - 'tests/test_lynchpin_material_scene.py'
       - 'scripts/report_fold_constitutive.py'
       - 'scripts/plot_fold_constitutive.py'
       - 'tests/test_fold_constitutive.py'
@@ -723,9 +725,10 @@ jobs:
       - run: uv sync --python 3.12 --extra scientific --group test --group lint
       - name: Verify geometry-based elasticity and generated harmonics
         run: |
-          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_constitutive.py scripts/plot_fold_constitutive.py tests/test_fold_constitutive.py scripts/report_wave_harmonics.py tests/test_wave_harmonics.py
-          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_constitutive.py scripts/plot_fold_constitutive.py tests/test_fold_constitutive.py scripts/report_wave_harmonics.py tests/test_wave_harmonics.py
-          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_constitutive.py tests/test_wave_harmonics.py
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_constitutive.py scripts/plot_fold_constitutive.py tests/test_fold_constitutive.py scripts/report_wave_harmonics.py tests/test_wave_harmonics.py scripts/export_lynchpin_material_scene.py tests/test_lynchpin_material_scene.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_constitutive.py scripts/plot_fold_constitutive.py tests/test_fold_constitutive.py scripts/report_wave_harmonics.py tests/test_wave_harmonics.py scripts/export_lynchpin_material_scene.py tests/test_lynchpin_material_scene.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_constitutive.py tests/test_wave_harmonics.py tests/test_lynchpin_material_scene.py
+          uv run --python 3.12 --extra scientific python scripts/export_lynchpin_material_scene.py --output artifacts/lynchpin-material/scene.json
           uv run --python 3.12 --extra scientific python scripts/report_fold_constitutive.py --output artifacts/fold-constitutive/report.json
           uv run --python 3.12 --extra scientific python scripts/report_wave_harmonics.py --output artifacts/wave-harmonics/report.json
           uv run --python 3.12 --extra scientific python - <<'PY'
@@ -778,4 +781,23 @@ jobs:
               assert result['max_abs_q'] < 1e-8 and result['max_abs_rate'] < 1e-8
           assert not w['pattern_selection_established'] and not w['traveling_wave'] and not w['quantum_model']
           assert not w['provenance']['exact_legacy_model_continuation']
+          o = json.loads(Path('artifacts/lynchpin-material/scene.json').read_text())
+          json.dumps(o, allow_nan=False)
+          for name, value in o['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          assert o['source_fixture']['sha256_normalized_text'] == c['fixture']['sha256_normalized_text']
+          assert len(o['frames']) == 9 and all(len(f['bodies']) == 22 for f in o['frames'])
+          assert o['controls']['source_vertex_checks'] == 198
+          assert o['controls']['maximum_source_vertex_error_m'] < 1e-14
+          assert o['controls']['panel_stretch_comparisons'] == 54
+          assert o['controls']['maximum_principal_stretch_error'] < 2e-14
+          assert o['controls']['maximum_affine_fit_residual_m'] < 1e-14
+          assert o['controls']['maximum_energy_ownership_error_j'] < 1e-15
+          assert o['controls']['mismatched_theta_zero_reference_maximum_discrepancy'] > 0.1
+          assert o['reference']['source_fixture_phase'] == 0.25
+          assert o['reference']['divided_out_source_scale'] == 1.1
+          for frame in o['frames']:
+              assert len(set(b['id'] for b in frame['bodies'])) == 22
+              assert all(b['material']['energy_j'] is None for b in frame['bodies'] if b['kind'] == 'hub')
+
           PY

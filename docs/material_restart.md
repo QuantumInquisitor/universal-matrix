@@ -16,11 +16,11 @@ The split run serializes and reloads before, at and after cutoff and at the fina
 
 RK4 uses the driven model throughout each interval strictly before the cutoff, including its endpoint quadrature. The next interval uses zero input throughout. This one-sided treatment respects the discontinuity without mixing the two forcing laws inside an interval. Accumulated external work is exactly unchanged after cutoff.
 
-Body 0 owns its kinetic and anchor-spring energy; body 1 owns its own corresponding terms. The connecting spring has a single separate storage account. With link force on body 0 denoted F, the independently integrated transfers into the bodies are F v0 and -F v1. Anchor losses are ca viÂ², and link loss is cl(v1-v0)Â². Thus:
+Body 0 owns its kinetic and anchor-spring energy; body 1 owns its own corresponding terms. The connecting spring has a single separate storage account. With link force on body 0 denoted F, the independently integrated transfers into the bodies are F v0 and -F v1. Anchor losses are ca vi², and link loss is cl(v1-v0)². Thus:
 
-- Î”E0 = external work âˆ’ anchor-0 loss + link-to-body-0 transfer.
-- Î”E1 = âˆ’anchor-1 loss + link-to-body-1 transfer.
-- Î”Elink = âˆ’both link transfers âˆ’link loss.
+- ΔE0 = external work − anchor-0 loss + link-to-body-0 transfer.
+- ΔE1 = −anchor-1 loss + link-to-body-1 transfer.
+- ΔElink = −both link transfers −link loss.
 
 Adding these accounts recovers the original global energy equation without counting spring storage twice. Loss is integrated at RK stages independently of endpoint energy.
 
