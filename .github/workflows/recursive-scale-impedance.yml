@@ -1,0 +1,68 @@
+name: Recursive scale impedance
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_recursive_impedance.py'
+      - 'tests/test_fold_recursive_impedance.py'
+      - 'docs/fold_recursive_impedance.md'
+      - '.github/workflows/recursive-scale-impedance.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recursive-impedance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify recursive scale impedance
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_impedance.py tests/test_fold_recursive_impedance.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_impedance.py tests/test_fold_recursive_impedance.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_impedance.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_recursive_impedance.py --output artifacts/fold-recursive-impedance/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-recursive-impedance/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          for row in r['module_scaling'].values():
+              assert row['mass_s5_max_error'] < 1e-12
+              assert row['stiffness_s3_max_error'] < 1e-9
+              assert row['damping_s4_max_error'] < 1e-12
+              assert row['frequency_inverse_scale_max_error'] < 1e-7
+              assert row['impedance_s4_max_error'] < 1e-9
+              assert row['damping_ratio_max_error'] < 1e-10
+          for row in r['interface_scaling'].values():
+              assert row['connector_parent_s3_max_error'] < 1e-8
+              assert row['transfer_matrix_max_difference'] < 1e-8
+              assert row['child_energy_fraction_difference'] < 1e-10
+          assert not r['connector_coefficients_changed']
+          assert not r['material_coefficients_changed']
+          assert not r['damping_coefficients_changed']
+          assert not r['dynamic_child_work_fraction_predicted']
+          print(json.dumps({
+              'module_scaling': r['module_scaling'],
+              'interfaces': {
+                  scale: {
+                      'transfer_norm': row['quasistatic_transfer_spectral_norm'],
+                      'child_energy_fraction': row['linearized_child_energy_fraction'],
+                      'parent_block_ratio': row['connector_parent_block_to_parent_material_norm_ratio'],
+                      'child_block_ratio': row['connector_child_block_to_child_material_norm_ratio'],
+                  }
+                  for scale, row in r['interfaces'].items()
+              },
+          }, sort_keys=True))
+          PY
