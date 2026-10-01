@@ -36,9 +36,7 @@ def configuration_through_level(max_child_level):
         raise ValueError("max_child_level must be an integer in [0,3]")
     full = tree_configuration(3)
     levels = full["levels"]
-    edges = tuple(
-        edge for edge in full["edges"] if levels[edge[1]] <= max_child_level
-    )
+    edges = tuple(edge for edge in full["edges"] if levels[edge[1]] <= max_child_level)
     return {
         "depth": 3,
         "levels": levels,
@@ -51,11 +49,7 @@ def configuration_through_level(max_child_level):
 def _edge_level_metrics(potential, works, edges, levels, initial_potential):
     rows = {}
     for child_level in (1, 2, 3):
-        indexes = [
-            i
-            for i, (_, child, _) in enumerate(edges)
-            if levels[child] == child_level
-        ]
+        indexes = [i for i, (_, child, _) in enumerate(edges) if levels[child] == child_level]
         if not indexes:
             rows[str(child_level)] = {
                 "edge_count": 0,
@@ -68,9 +62,7 @@ def _edge_level_metrics(potential, works, edges, levels, initial_potential):
             continue
         parent_work = float(works[indexes, 0].sum())
         child_work = float(works[indexes, 1].sum())
-        delta_potential = float(
-            potential[indexes].sum() - initial_potential[child_level]
-        )
+        delta_potential = float(potential[indexes].sum() - initial_potential[child_level])
         parent_magnitude = abs(parent_work)
         rows[str(child_level)] = {
             "edge_count": len(indexes),
@@ -99,17 +91,11 @@ def simulate(max_child_level):
 
     initial_potential = {}
     for level in (1, 2, 3):
-        indexes = [
-            i for i, (_, child, _) in enumerate(edges) if levels[child] == level
-        ]
-        initial_potential[level] = (
-            0.0 if not indexes else float(u0[indexes].sum())
-        )
+        indexes = [i for i, (_, child, _) in enumerate(edges) if levels[child] == level]
+        initial_potential[level] = 0.0 if not indexes else float(u0[indexes].sum())
 
     def audit(state, step):
-        energy, potential, incident, works, accounts = measure(
-            state, sizes, edges, groups
-        )
+        energy, potential, incident, works, accounts = measure(state, sizes, edges, groups)
         blocks = state[: 5 * len(sizes)].reshape(len(sizes), 5)
         node_residual = energy - e0 + blocks[:, 4] - incident
         edge_residual = potential - u0 + works.sum(axis=1)
@@ -224,6 +210,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = report()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8"
-    )
+    args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
