@@ -41,9 +41,7 @@ def test_healthy_depth_three_cases_close_all_energy_accounts(result):
 
 
 def test_disconnected_descendants_do_not_change_root(result):
-    delta = result["depth_response"][
-        "disconnected_depth_3_to_single_root_absolute_state_change"
-    ]
+    delta = result["depth_response"]["disconnected_depth_3_to_single_root_absolute_state_change"]
     assert max(delta) < 1e-14
 
 
