@@ -28,7 +28,7 @@ jobs:
           uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_seed_correspondence.py tests/test_fold_recursive_seed_correspondence.py
           uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_seed_correspondence.py tests/test_fold_recursive_seed_correspondence.py
           uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_seed_correspondence.py
-          uv run --python 3.12 --extra scientific python scripts/report_fold_recursive_seed_correspondence.py --output artifacts/fold-recursive-seed/report.json
+          uv run --python 3.12 --extra scientific python -m scripts.report_fold_recursive_seed_correspondence --output artifacts/fold-recursive-seed/report.json
           uv run --python 3.12 --extra scientific python - <<'PY'
           import hashlib
           import json
