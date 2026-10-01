@@ -141,11 +141,38 @@ def simulate_pair(parent_scale, *, refinement=1):
 
 
 def sample_reference_time(run, reference_time):
-    index = round(reference_time / run["settings"]["reference_dt_s"])
-    row = run["trace"][index]
-    if not np.isclose(row["reference_time_s"], reference_time, rtol=0, atol=1e-14):
-        raise ValueError("requested reference time is off-grid")
-    return row
+    dt = run["settings"]["reference_dt_s"]
+    position = reference_time / dt
+    lower = int(np.floor(position))
+    upper = int(np.ceil(position))
+    if lower < 0 or upper >= len(run["trace"]):
+        raise ValueError("requested reference time is outside the trace")
+    if lower == upper or np.isclose(position, lower, rtol=0, atol=1e-14):
+        return run["trace"][lower]
+    alpha = position - lower
+    left, right = run["trace"][lower], run["trace"][upper]
+
+    def blend(key):
+        a = np.asarray(left[key], dtype=float)
+        b = np.asarray(right[key], dtype=float)
+        value = (1 - alpha) * a + alpha * b
+        return float(value) if value.ndim == 0 else value.tolist()
+
+    works = blend("endpoint_work_j")
+    parent_work, child_work = works
+    fraction = None if abs(parent_work) == 0 else abs(child_work) / abs(parent_work)
+    return {
+        "time_s": reference_time * run["settings"]["parent_scale"],
+        "reference_time_s": reference_time,
+        "q": blend("q"),
+        "rates": blend("rates"),
+        "mechanical_j": blend("mechanical_j"),
+        "damping_loss_j": blend("damping_loss_j"),
+        "connector_j": blend("connector_j"),
+        "endpoint_work_j": works,
+        "child_work_fraction_of_parent_magnitude": fraction,
+        "interpolated": True,
+    }
 
 
 def similarity(run, reference):
