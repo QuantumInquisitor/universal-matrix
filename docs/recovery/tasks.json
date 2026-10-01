@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Recursive depth propagation, causal backreaction and local scale impedance are now separately audited. With 15 modules held fixed, 0.1 s root contributions are level1=9.003331895041829e-4, level2=1.6731858636445662e-8 and level3=1.9160454473032829e-13. At unloaded deeper interfaces, only 2.0041% and 2.8110% of parent-work magnitude reaches levels 2 and 3 during the finite-time run, while about 97–98% remains as connector potential. A new tangent audit shows the implemented local laws are exactly self-similar to numerical precision: M~s^5, material/connector stiffness~s^3, damping~s^4, omega~1/s, modal impedance~s^4 and damping ratio invariant. The 1:2 parent-child tangent transfer is depth invariant, with spectral norm 1.336624238828898 and quasistatic relaxed-child energy fraction 0.24194175140704385 at all tested interfaces. Therefore the observed 2–3% finite-time uptake is a dynamic cascade effect, not a depth-varying static tangent law.",
+      "latest_result": "Recursive local-interface similarity is now separated from cascade embedding. The tangent audit shows exact self-similarity for M~s^5, K~s^3, C~s^4, omega~1/s and modal impedance~s^4, with identical 1:2 connector tangent transfer across parent scales 1, 1/2 and 1/4. The isolated finite-time pair audit also collapses dynamically across 1→1/2, 1/2→1/4 and 1/4→1/8. Representative isolated child-work fractions are identical across scale at matching reference times: 0.6523 at 0.02, 0.7419 at 0.05, 0.7590 at 0.10, 0.7215 at 0.20, 0.6618 at 0.30 and 0.6057 at 0.40. In the embedded 15-module cascade at physical 0.1 s, the corresponding child-work fractions are level1=0.6892 (90.81% of isolated), level2=0.02004 (2.78% of isolated) and level3=0.02811 (4.64% of isolated). Deep attenuation therefore emerges from cascade drive history/loading/phase/storage rather than a scale-dependent defect in the local 1:2 law.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Isolate one parent-child material pair at parent scales 1, 1/2 and 1/4 using dynamically corresponding initial conditions and physical time proportional to parent scale. Compare coordinate trajectories, scale-normalized rates, energies, connector work and child-work uptake at matched reference times. Then compare isolated-interface uptake with the same interfaces embedded in the full recursive tree to distinguish local transient transmission from multi-level loading/phase effects. Do not introduce new coupling coefficients unless this existing-law comparison fails."
+      "next_action": "Replay the actual embedded parent trajectory into an otherwise isolated parent-child interface and compare with the true embedded edge and the freely evolving isolated pair. Then repeat with downstream child loading removed/added to separate upstream drive-history effects from downstream loading and connector phase storage. Keep coefficients fixed; only if this causal decomposition fails should any new recursive interaction be considered."
     },
     {
       "id": "P11",
