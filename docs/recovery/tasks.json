@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Powered unequal-size material supply and viewer adapter are implemented and experimentally green. Persistence, seven-module recursion, one-eighth scale audit and a 15-module depth-three passive material tree have now been exercised. The depth-three run closes energy accounts, but its added third level changes the root state by only about 5.12e-17, below the declared 1e-12 resolution threshold. This is recorded as a negative result: resolved macroscopic backreaction from deeper descendants is not established under the current coupling law.",
+      "latest_result": "The depth-three negative result is preserved, and a new bounded attenuation sweep now measures root backreaction for depth transitions 0→1, 1→2 and 2→3 at 0.005, 0.01, 0.02, 0.04 and 0.05 s under the unchanged connector/material scaling laws. A dedicated material-depth-attenuation CI job now runs both depth-three accounting and the duration sweep. Current head cbc3d6c7 is pending fresh CI.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Finish fresh-head CI for the corrected depth-three acceptance criterion. Then determine whether deeper-level influence vanishes by the present scaling law or merely over the tested duration. Quantify coupling attenuation versus depth before adding a new recursive coupling. Do not tune thresholds or connector strength solely to force a visible root effect."
+      "next_action": "Read the attenuation summary from fresh CI. If depth 2→3 stays below the predeclared 1e-12 threshold across the duration grid, quantify the attenuation implied by the present coupling before proposing any alternative. If it becomes resolved later, characterize transmission delay. Do not change connector strength or thresholds to force recursive backreaction."
     },
     {
       "id": "P11",
