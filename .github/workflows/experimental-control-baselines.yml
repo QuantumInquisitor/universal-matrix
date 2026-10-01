@@ -19,6 +19,12 @@ on:
       - 'scripts/report_fold_mapped.py'
       - 'scripts/report_fold_scaling.py'
       - 'scripts/report_fold_scaled_pair.py'
+      - 'scripts/report_fold_constitutive.py'
+      - 'scripts/plot_fold_constitutive.py'
+      - 'tests/test_fold_constitutive.py'
+      - 'scripts/report_wave_harmonics.py'
+      - 'tests/test_wave_harmonics.py'
+      - 'docs/recovery/wave-source-provenance.json'
       - 'scripts/report_fold_threshold.py'
       - 'scripts/plot_fold_threshold.py'
       - 'tests/test_fold_threshold.py'
@@ -703,4 +709,73 @@ jobs:
           assert r['refinement']['absolute_mechanical_difference_j'] < 1e-14
           assert not r['stable_breathing'] and not r['calibrated_material']
           assert r['ideal_external_source']
+          PY
+
+  material-and-harmonics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify geometry-based elasticity and generated harmonics
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_constitutive.py scripts/plot_fold_constitutive.py tests/test_fold_constitutive.py scripts/report_wave_harmonics.py tests/test_wave_harmonics.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_constitutive.py scripts/plot_fold_constitutive.py tests/test_fold_constitutive.py scripts/report_wave_harmonics.py tests/test_wave_harmonics.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_constitutive.py tests/test_wave_harmonics.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_constitutive.py --output artifacts/fold-constitutive/report.json
+          uv run --python 3.12 --extra scientific python scripts/report_wave_harmonics.py --output artifacts/wave-harmonics/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          c = json.loads(Path('artifacts/fold-constitutive/report.json').read_text())
+          w = json.loads(Path('artifacts/wave-harmonics/report.json').read_text())
+          for report in (c, w):
+              json.dumps(report, allow_nan=False)
+          for name, value in c['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, value in w['sources'].items():
+              assert value == hashlib.sha256(Path(name).read_text().encode()).hexdigest()
+          assert c['fixture']['sha256_normalized_text'] == hashlib.sha256(Path(c['fixture']['path']).read_text().encode()).hexdigest()
+          assert c['fixture']['reference_commit'] == '60a7fd60f57d73b89ea5397db58a3ff5d291556c'
+          assert c['fixture']['body_vertex_checks'] == 198
+          assert c['fixture']['max_vertex_error_m'] < 1e-14
+          ref = c['cases']['reference']
+          assert ref['total_energy_j'] == 0 and ref['gradient'] == [0, 0]
+          assert len(ref['panels']) == 6 and len(ref['bridges']) == 12 and len(ref['omitted_hubs']) == 4
+          assert c['scale_control']['absolute_error_j'] < 1e-15
+          for result in c['gradient_controls']:
+              assert max(result['absolute_error']) < 1e-10
+          assert c['reference_tangent']['skew_error'] < 1e-10
+          assert min(c['reference_tangent']['numerical_eigenvalues']) > 0
+          controls = c['coefficient_controls']
+          assert controls['zero_law']['result']['total_energy_j'] == 0
+          assert controls['axial_only']['result']['gradient'][1] == 0
+          assert set(w['cases']) == {'one', 'three', 'five', 'fine_five', 'drive_off'}
+          for name, case in w['cases'].items():
+              assert case['completed'] and len(case['times']) == 201
+              assert case['max_abs_balance_residual'] < 1e-11
+              assert min(np.diff(case['damping_loss'])) >= -1e-14
+              n = len(case['parameters']['modes'])
+              assert case['parameters']['initial_state'][0] == 0.1
+              assert max(abs(v) for v in case['parameters']['initial_state'][1:]) == 0
+              assert case['parameters']['quadrature_points'] == 64
+          assert w['cases']['five']['max_abs_q_per_mode'][1] > 1e-3
+          assert w['cases']['five']['max_abs_q_per_mode'][2] > 1e-5
+          off = w['cases']['drive_off']
+          assert max(abs(v) for v in off['drive_work']) == 0
+          assert max(np.diff(off['total_energy'])) < 0
+          assert off['max_abs_q_per_mode'][1] > 1e-6
+          comparison = w['comparisons']['five_to_fine']
+          assert comparison['matched_sample_count'] == 201
+          assert comparison['kind'] == 'numerical_refinement'
+          for result in comparison['per_mode'].values():
+              assert result['max_abs_q'] < 1e-8 and result['max_abs_rate'] < 1e-8
+          assert not w['pattern_selection_established'] and not w['traveling_wave'] and not w['quantum_model']
+          assert not w['provenance']['exact_legacy_model_continuation']
           PY

@@ -39,8 +39,8 @@
       "dependencies": [
         "P03"
       ],
-      "next_action": "Use tested first/second derivatives for a declared reduced force model. Preserve full-solid clearance conditions and map all 69 flow domains separately; point-mass adapter does not supply interior solid correspondence.",
-      "latest_result": "22-body (s,theta) kinematic reduction reproduces original-source markers at 9 phases. Original 3D clearance auditor rerun: 231 pairs,1208 intervals,accepted bound 3.773014616157734e-05 reference units. Rectangle inheritance conditional on scaling every occupied envelope/contact region. This is separate from 69-component flow folding.",
+      "next_action": "Retain full-solid clearance conditions while integrating the new geometry-derived reduced potential with owned inertia. Keep separate full-flow chart and material-point correspondence gaps explicit.",
+      "latest_result": "22-body (s,theta) kinematic reduction reproduces original-source markers at 9 phases. Original 3D clearance auditor rerun: 231 pairs,1208 intervals,accepted bound 3.773014616157734e-05 reference units. Rectangle inheritance conditional on scaling every occupied envelope/contact region. This is separate from 69-component flow folding. Constitutive adapter now replays all panel vertices, bridge endpoints and hub markers in 198 body vertex-set comparisons across nine original fixture phases, maximum error 2.776e-17 m. This remains the 22-body specimen, not the separate 69-domain flow assembly.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "image_review": "docs/eight_image_research_review_2026-09-30.md"
     },
@@ -51,7 +51,8 @@
       "scope_and_completion": "W1 now has nonlinear saturation and two coupled modes; add generated harmonics, multiple wavelengths, boundary effects, mode-count/time convergence and noise/seed ensembles. Test whether any pattern is selected rather than inherited from its seed. W2 now has an optional implementation and measured failure cases; add actuator saturation, noise, delay and mismatch envelopes, then evaluate any redesign against those same cases. Resolve the saved Q-ball period question with an explicit observable and convergence protocol; leave it unresolved if the data do not identify a period. **Done when:** each question has a reproducible result and operating/failure range. Keep W3 quantum bath/noise completion separate from these classical controls.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "36 directed-phase cases and 54 delayed tracker cases completed; 26 tests pass. Signed transport follows imposed asymmetry; delayed responses obey programmed arrival with a noise/response tradeoff. Existing wave harmonics, detuning, saturation and quantum bath queues remain open."
+      "latest_result": "Recovered W1 published sources in PR120; recorded source hashes reconcile with newline conventions. Existing W2 artifact already has saturation/delay/disturbance/mismatch cases, but lacks source hash; do not repeat as never-run work. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json.",
+      "next_action": "Extend justified mode-count/wavelength and phase/boundary/noise comparisons without claiming full-field convergence or seed-independent pattern selection. Reconcile existing controller artifacts with published source provenance before expanding or repeating their controls."
     },
     {
       "id": "P06",
@@ -68,13 +69,15 @@
       "status": "in_progress",
       "scope_and_completion": "Choose physical units, geometry, masses/inertia, stiffness, damping, contact law, joint compliance, supports and drive. Label synthetic parameters; measured material behavior requires actual material data. Define geometry-to-mode reduction where used. **Done when:** the equations and parameters are complete, static and small-perturbation controls pass, and sensitivity/convergence are documented. Then expand scope; do not infer a material law from geometry alone.",
       "dependencies": [
-        "P04",
-        "P05",
-        "P06"
+        "P04"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Conditional constant-density geometric scaling tested: mass lambda^3, generalized inertia lambda^5, assumed restoring energy lambda^3, chosen damping lambda^4. Reconstructed point mechanics and time-rescaled trajectories agree; not measured material calibration. See docs/fold_scaling.md.",
-      "next_action": "Review reduced-law sensitivity and coupled-mode behavior; specify measured or justified distributed material coefficients before physical claims. Keep full-flow chart correspondence separate."
+      "latest_result": "Six source-backed panel membrane energies plus twelve optional axial bridge energies implemented with analytic generalized gradients and synthetic SI coefficients. 33 tests pass: original vertex replay, virtual work, objectivity, scale formula, stiffness and zero-law controls. Four hubs have no constitutive energy; bridges supply scale but no folding resistance in this axial model. No dynamics replacement or material calibration yet. See docs/fold_constitutive.md.",
+      "next_action": "Integrate negative potential gradient as an explicit alternative to the old quadratic law, retaining geometry-derived inertia and geometric bias. Run conservative/passive/driven energy controls before adding bending, hub/joint compliance, contact or calibrated coefficients.",
+      "related_parallel_tasks": [
+        "P05",
+        "P06"
+      ]
     },
     {
       "id": "P08",
@@ -97,7 +100,7 @@
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
       "latest_result": "Equilibrium-reserve onset sweep: five powers plus a finer repeat complete 20 seconds; final/initial mechanical energy 0.221, 0.552, 0.999977, 1.522, 2.083 at 0, 0.3, 0.6, 0.9, 1.2 microwatts. Independent conditional nonincrease proof at/below 0.6 microwatts; amplification above. 19 tests and source/energy checks pass; maximum group error 3.416e-16 J. No stable cycle demonstrated. See docs/fold_threshold.md; prior 60-second disturbance audit retained.",
-      "next_action": "Continue above-threshold 0.9/1.2 microwatt cases with unchanged equations and explicit scope stops; assess amplitude saturation, reserve response and recovery across small initial disturbances/phases, with numerical refinement. Do not prescribe an output waveform or infer a stable cycle from a short nearly constant-energy trace."
+      "next_action": "Preserve completed power/continuation controls. Revisit emergent breathing after material, joint, coupling or supply changes; it is not a gate for independent assembly or experiment work. Longer runs remain available when they answer a specific model question."
     },
     {
       "id": "P10",
@@ -105,11 +108,18 @@
       "status": "in_progress",
       "scope_and_completion": "Implement shared component identities, parent-child and peer ports, independent child states, ownership/no-double-counting rules, positivity bounds and conservative exchange. Make dormant pathways explicit: persistent, inactive-only, contracting or another declared rule. Add multiple levels, feedback, finite propagation/delay and depth convergence. Integrate the helix-clock interpretation only as a declared adapter. **Done when:** a disturbance and exchange can be traced across levels with preserved identities and conservation, and independent state survives replay/save/resume. An aggregate color overlay is not completion of this step.",
       "dependencies": [
-        "P09"
+        "P04",
+        "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
       "latest_result": "Mixed-size passive graph integrates scaled bodies, symmetric homogeneous mapped connectors and hierarchy boundary accounts. Fifteen new tests plus 39 linked pass; faulty crossing edge localized while child accounts remain valid. Uniform global scaling and separate timestep comparison pass. Next: explicit size laws for active reservoir capacity and power before active-network deployment. See docs/fold_multiscale.md. Finite reservoirs now integrated with four unequal-size modules using explicit volume capacity and length-timescale laws; 19 tests pass, complete accounts close within 4.64e-16 J, omitted debit localized at 2.44e-9 J. See docs/fold_active_multiscale.md. Physical calibration, long-duration breathing and whole-structure spatial validation remain open.",
-      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
+      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
+      "related_parallel_tasks": [
+        "P07",
+        "P09",
+        "P11"
+      ],
+      "next_action": "Advance persistent identities, explicit ports and conservative exchange from existing validated subassemblies without requiring a stable breathing result. Expand declared graph scope with boundary and ownership checks."
     },
     {
       "id": "P11",
@@ -118,7 +128,8 @@
       "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3\u201310. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Actual force-driven traces and stable 22-body positions exported; scientific plot of s/theta and energy produced and visually inspected. This is an inspectable simulation artifact, not integration with the XR viewer or headset validation."
+      "latest_result": "Actual force-driven traces and stable 22-body positions exported; scientific plot of s/theta and energy produced and visually inspected. This is an inspectable simulation artifact, not integration with the XR viewer or headset validation.",
+      "next_action": "Map geometry/material/energy results and missing components to the same computed-state identifiers incrementally; keep viewer coverage and headset validation distinct."
     },
     {
       "id": "P12",
@@ -374,5 +385,18 @@
       ],
       "publication": "https://github.com/QuantumInquisitor/universal-matrix/pull/122"
     }
-  ]
+  ],
+  "execution_policy": {
+    "updated": "2026-09-30",
+    "reason": "User authorized prioritizing missing geometry/materials, recursive coupling and independent experiments instead of treating settled breathing as a prerequisite.",
+    "priority_order": [
+      "P04/P07: connected geometry and explicit material law",
+      "P08/P10: owned energy and recursive coupling",
+      "P11: computed-state viewer mapping alongside implementation",
+      "P05/P06/P12: independent bounded experiments in parallel",
+      "P09: retest emergent breathing after relevant integration milestones"
+    ],
+    "breathing_is_global_gate": false,
+    "dependency_interpretation": "Dependencies describe required interfaces/evidence for integration, not a requirement to close every upstream task before incremental work."
+  }
 }

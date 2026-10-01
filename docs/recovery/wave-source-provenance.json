@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "published_pr": "https://github.com/QuantumInquisitor/universal-matrix/pull/120",
+  "published_head": "615cee59c51df77406555ac56d40e8a1f1e73ec8",
+  "scope": "Read-only recovery; sources are published separately and absent from current tracked checkout. No legacy simulations rerun.",
+  "w1": {
+    "artifact": "artifacts/waves/multimode-wave-control.json",
+    "normalized_artifact_sha256": "6bd193e98f7c3967314538c7bad2608c5519b9ee4b0c9d1993fe3726d0e6ec62",
+    "sources": [
+      {
+        "path": "src/proposed_multimode_wave_control.py",
+        "published_url": "https://github.com/QuantumInquisitor/universal-matrix/blob/615cee59c51df77406555ac56d40e8a1f1e73ec8/src/proposed_multimode_wave_control.py",
+        "artifact_source_sha256": "e31dbeed696f2fc68fe9fe900dc5cd7cb92ca641dd62972af3d6342b604fbfb9",
+        "reconstructed_sha256": "e31dbeed696f2fc68fe9fe900dc5cd7cb92ca641dd62972af3d6342b604fbfb9",
+        "newline_reconstruction": "LF; exactly one terminal newline",
+        "normalized_utf8_sha256": "e31dbeed696f2fc68fe9fe900dc5cd7cb92ca641dd62972af3d6342b604fbfb9",
+        "match": true
+      },
+      {
+        "path": "scripts/report_multimode_wave_control.py",
+        "published_url": "https://github.com/QuantumInquisitor/universal-matrix/blob/615cee59c51df77406555ac56d40e8a1f1e73ec8/scripts/report_multimode_wave_control.py",
+        "artifact_source_sha256": "fb4805190d8429f687cb000d420494bfdcd98358c0fc318d08f933229acbf4ab",
+        "reconstructed_sha256": "fb4805190d8429f687cb000d420494bfdcd98358c0fc318d08f933229acbf4ab",
+        "newline_reconstruction": "CRLF; exactly one terminal newline",
+        "normalized_utf8_sha256": "6246d85a7b9138bd4f477338502cf387a3ebd12a526bb6028581e081a8bd1132",
+        "match": true
+      }
+    ],
+    "recorded_limitation": "Finite two-mode truncation; omitted third harmonics, no calibrated material coupling or time-crystal evidence.",
+    "interpretation": "Source contents reconcile with recorded hashes under explicit newline reconstruction; this is provenance recovery, not new numerical validation."
+  },
+  "w2": {
+    "artifact": "artifacts/waves/mode-pair-robustness.json",
+    "normalized_artifact_sha256": "e24a17cfc0550c95071eda141dcd81e88413f2cada4f23bc8a111f746217ded5",
+    "published_reporter_url": "https://github.com/QuantumInquisitor/universal-matrix/blob/615cee59c51df77406555ac56d40e8a1f1e73ec8/scripts/report_mode_pair_robustness.py",
+    "published_reporter_normalized_sha256": "63b606ad5018a12ccac38c6b1443bfcd207793c0c9f9470f4a9ec273fdd5fa43",
+    "case_names": [
+      "ideal",
+      "force_0.05",
+      "delay_0.1",
+      "delay_1",
+      "delay_2",
+      "delay_2_refined",
+      "measurement_0.02",
+      "stiffness_1.2",
+      "stiffness_1.02",
+      "stiffness_1.05",
+      "combined"
+    ],
+    "limitation": "Case labels and settings match the published reporter, but the saved artifact has no source hash; exact generation provenance is not established."
+  }
+}
