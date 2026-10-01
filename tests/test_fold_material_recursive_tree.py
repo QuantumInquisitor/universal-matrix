@@ -1,6 +1,5 @@
 """Controls for replicated passive material modules in a binary tree."""
 
-import numpy as np
 import pytest
 
 from scripts.report_fold_material_recursive_tree import (
