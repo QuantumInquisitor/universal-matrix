@@ -54,18 +54,12 @@ def adapt(report, *, case="powered", display_m_per_unit=0.1):
         q = _vector_list(sample.get("q"), module_count, "q")
         rates = _vector_list(sample.get("rates"), module_count, "rates")
         reserve = _vector_list(sample.get("reserve_j"), module_count, "reserve_j")
-        delivered = _vector_list(
-            sample.get("delivered_work_j"), module_count, "delivered_work_j"
-        )
-        damping = _vector_list(
-            sample.get("damping_loss_j"), module_count, "damping_loss_j"
-        )
+        delivered = _vector_list(sample.get("delivered_work_j"), module_count, "delivered_work_j")
+        damping = _vector_list(sample.get("damping_loss_j"), module_count, "damping_loss_j")
         conversion = _vector_list(
             sample.get("conversion_loss_j"), module_count, "conversion_loss_j"
         )
-        leakage = _vector_list(
-            sample.get("leakage_loss_j"), module_count, "leakage_loss_j"
-        )
+        leakage = _vector_list(sample.get("leakage_loss_j"), module_count, "leakage_loss_j")
         supplied = _vector_list(sample.get("input_j"), module_count, "input_j")
 
         modules = []
@@ -92,14 +86,10 @@ def adapt(report, *, case="powered", display_m_per_unit=0.1):
                     q=[scalar(v, "q") for v in q[module_index]],
                     rates=[scalar(v, "rates") for v in rates[module_index]],
                     reserve_j=scalar(reserve[module_index], "reserve_j"),
-                    delivered_work_j=scalar(
-                        delivered[module_index], "delivered_work_j"
-                    ),
+                    delivered_work_j=scalar(delivered[module_index], "delivered_work_j"),
                     losses_j=dict(
                         damping=scalar(damping[module_index], "damping_loss_j"),
-                        conversion=scalar(
-                            conversion[module_index], "conversion_loss_j"
-                        ),
+                        conversion=scalar(conversion[module_index], "conversion_loss_j"),
                         leakage=scalar(leakage[module_index], "leakage_loss_j"),
                     ),
                     input_j=scalar(supplied[module_index], "input_j"),
@@ -147,9 +137,7 @@ def adapt(report, *, case="powered", display_m_per_unit=0.1):
 def export(report_path, *, case="powered", display_m_per_unit=0.1):
     path = Path(report_path)
     raw = path.read_text(encoding="utf-8")
-    result = adapt(
-        json.loads(raw), case=case, display_m_per_unit=display_m_per_unit
-    )
+    result = adapt(json.loads(raw), case=case, display_m_per_unit=display_m_per_unit)
     result["source_report"] = dict(
         path=str(path),
         sha256_normalized_text=hashlib.sha256(raw.encode()).hexdigest(),
@@ -170,6 +158,4 @@ if __name__ == "__main__":
         display_m_per_unit=args.display_m_per_unit,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8"
-    )
+    args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
