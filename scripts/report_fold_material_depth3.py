@@ -9,10 +9,12 @@ import numpy as np
 
 try:
     from .report_fold_dynamics import Q0, vector
-    from .report_fold_scale_extension import audit_scale, connector, mechanical, rhs as body_rhs
+    from .report_fold_scale_extension import audit_scale, connector, mechanical
+    from .report_fold_scale_extension import rhs as body_rhs
 except ImportError:
     from report_fold_dynamics import Q0, vector
-    from report_fold_scale_extension import audit_scale, connector, mechanical, rhs as body_rhs
+    from report_fold_scale_extension import audit_scale, connector, mechanical
+    from report_fold_scale_extension import rhs as body_rhs
 
 
 MAX_DEPTH = 3
