@@ -30,6 +30,8 @@ on:
       - 'tests/test_fold_material_viewer_frames.py'
       - 'scripts/report_fold_material_persistence.py'
       - 'tests/test_fold_material_persistence.py'
+      - 'scripts/report_fold_material_recursive_tree.py'
+      - 'tests/test_fold_material_recursive_tree.py'
       - 'scripts/report_fold_material_coupling.py'
       - 'tests/test_fold_material_coupling.py'
       - 'scripts/report_fold_material_dynamics.py'
@@ -1001,4 +1003,49 @@ jobs:
           assert p['restart']['source_off_maximum_absolute_state_difference'] < 1e-8
           assert not p['hierarchy']['physical_recursive_replication_tested']
           assert not p['arbitrary_physical_depth_demonstrated']
+          PY
+
+
+  material-recursion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify replicated material-module tree
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_recursive_tree.py tests/test_fold_material_recursive_tree.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_recursive_tree.py tests/test_fold_material_recursive_tree.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_material_recursive_tree.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_material_recursive_tree.py --output artifacts/fold-material-recursion/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-material-recursion/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          for name in ('depth_0', 'depth_1', 'depth_2', 'disconnected_depth_2', 'fine_depth_2'):
+              c = r['cases'][name]
+              assert max(c['max_node_residual_j']) < 1e-12
+              assert max(c['max_edge_residual_j'], default=0) < 1e-12
+              assert max(c['max_group_residual_j'].values()) < 1e-12
+          assert max(r['depth_response']['disconnected_depth_2_to_depth_0_root_absolute_state_change']) < 1e-14
+          assert max(r['depth_response']['depth_0_to_1_root_absolute_state_change']) > 1e-12
+          assert max(r['depth_response']['depth_1_to_2_root_absolute_state_change']) > 1e-12
+          bad = r['cases']['broken_depth_2']
+          assert bad['max_edge_residual_j'][0] > 1e-13
+          assert r['refinement']['maximum_absolute_state_difference'] < 1e-7
+          assert r['maximum_physical_modules_tested'] == 7
+          assert r['physical_depths_tested'] == [0, 1, 2]
+          assert not r['arbitrary_depth_validated']
+          assert not r['spatial_parent_child_geometry_validated']
+          assert not r['powered_recursive_tree_validated']
           PY
