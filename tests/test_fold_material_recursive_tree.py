@@ -37,9 +37,7 @@ def test_healthy_recursive_cases_close_energy_accounts(result):
 
 
 def test_disconnected_extra_modules_do_not_change_root_dynamics(result):
-    delta = result["depth_response"][
-        "disconnected_depth_2_to_depth_0_root_absolute_state_change"
-    ]
+    delta = result["depth_response"]["disconnected_depth_2_to_depth_0_root_absolute_state_change"]
     assert max(delta) < 1e-14
 
 
