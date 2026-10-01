@@ -32,6 +32,8 @@ on:
       - 'tests/test_fold_material_persistence.py'
       - 'scripts/report_fold_material_recursive_tree.py'
       - 'tests/test_fold_material_recursive_tree.py'
+      - 'scripts/report_fold_scale_extension.py'
+      - 'tests/test_fold_scale_extension.py'
       - 'scripts/report_fold_material_coupling.py'
       - 'tests/test_fold_material_coupling.py'
       - 'scripts/report_fold_material_dynamics.py'
@@ -1048,4 +1050,48 @@ jobs:
           assert not r['arbitrary_depth_validated']
           assert not r['spatial_parent_child_geometry_validated']
           assert not r['powered_recursive_tree_validated']
+          PY
+
+
+  material-scale-extension:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Audit one-eighth material scale without changing production guard
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_scale_extension.py tests/test_fold_scale_extension.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_scale_extension.py tests/test_fold_scale_extension.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_scale_extension.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_scale_extension.py --output artifacts/fold-scale-extension/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-scale-extension/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert r['declared_repository_scale_floor'] == 0.25
+          assert r['audit_scale_floor'] == 0.125
+          assert not r['global_scale_guard_changed']
+          assert not r['depth_three_recursive_tree_executed']
+          assert not r['physical_scale_extension_validated']
+          assert r['numerical_scale_extension_audited']
+          eighth = r['similarity']['eighth']
+          assert eighth['coordinate_max_difference'] < 1e-11
+          assert eighth['rescaled_rate_max_difference'] < 1e-10
+          assert eighth['rescaled_energy_max_difference_j'] < 1e-14
+          assert eighth['rescaled_loss_max_difference_j'] < 1e-14
+          assert r['trajectories']['eighth']['max_balance_residual_j'] < 1e-14
+          assert r['eighth_refinement_max_state_difference'] < 1e-8
+          assert r['connector']['uniform_eighth_energy_scaling_error_j'] < 1e-18
+          for c in r['connector']['cases'].values():
+              assert c['force_power_gradient_error'] < 1e-12
           PY
