@@ -557,3 +557,36 @@ distributed strain, body rotational inertia, active reservoir, recursive
 whole-structure exchange or autonomous sustained breathing. Task count remains
 41. Next bounded checks are longer/perturbed modal response and law sensitivity,
 before introducing an explicit finite reservoir for sustained-motion tests.
+
+
+### 2026-09-30 — Finite fold sensitivity and independent modes
+
+Preserved force-driven model and original geometry. In parallel, added a
+24-case sensitivity ensemble and an independent small-amplitude eigenmode
+reference. Ensemble: 21 accepted, 3 deliberately high-rate domain rejections,
+zero numerical errors. Domain rejection is not collision evidence. Accepted
+maximum ledger residual 2.998e-12 J (relative 1.4245e-8); a 10-second refinement
+reduces residual 1.541e-13 to 4.298e-15 J. Damping removes energy; external
+forcing can add it. Two seeded perturbations are not statistical assurance.
+
+Two synthetic modes: 0.2741982850 and 0.3163579847 Hz. Six nonlinear/linear
+comparisons at 10 seconds plus a refined seventh run; halving amplitude gives
+approximately fourfold smaller position discrepancies. Independent dynamics
+Jacobian, generalized eigenvalue invariants and linear energy checks support
+the local equations. Frequencies are model predictions, not measured material
+resonances; the finite window spans roughly three cycles. Refinement is not
+a measured convergence order. Independent review found no blocking math issue;
+scalar validation and numerical-error classification were hardened.
+
+Validation: 75 linked fold tests passed in 11.72 s; Ruff and format pass for
+four new code/test files. Source-hashed compact reports and reproduction steps
+are in docs/fold_modes.md and docs/fold_robustness.md. Workflow gains report
+reproduction, hash and numerical acceptance checks. Existing unrelated suites
+were not rerun. Previous PR122 head 2084560f has passing experiment, container
+and CodeQL runs; broad verification still running at this snapshot. A new head
+needs fresh CI. No merge performed.
+
+Task count remains 41. P07/P08/P09 remain in progress. Physical calibration,
+recursive coupling, energy reservoirs, autonomous motion and XR integration
+remain open. Next bounded step: an explicit finite reservoir with transfer and
+loss accounting, without assuming sustained motion or free energy.

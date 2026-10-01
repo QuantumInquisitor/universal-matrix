@@ -11,6 +11,10 @@ on:
       - 'scripts/report_fold_kinematics.py'
       - 'scripts/export_fold_reference_fixture.py'
       - 'scripts/report_fold_dynamics.py'
+      - 'scripts/report_fold_modes.py'
+      - 'scripts/report_fold_robustness.py'
+      - 'tests/test_fold_modes.py'
+      - 'tests/test_fold_robustness.py'
       - 'scripts/plot_fold_dynamics.py'
       - 'tests/test_phase_pattern_controls.py'
       - 'tests/test_chiral_phase_controls.py'
@@ -150,4 +154,38 @@ jobs:
           after = [s['work_j'] for s in cases['drive_off']['trace'] if s['time_s'] >= 1]
           assert after and max(after) == min(after)
           assert not r['physical_calibration'] and not r['autonomous_breathing']
+          PY
+      - name: Check fold modes and finite sensitivity
+        run: |
+          uv run ruff check scripts/report_fold_modes.py scripts/report_fold_robustness.py tests/test_fold_modes.py tests/test_fold_robustness.py
+          uv run ruff format --check scripts/report_fold_modes.py scripts/report_fold_robustness.py tests/test_fold_modes.py tests/test_fold_robustness.py
+          uv run python -m pytest tests/test_fold_modes.py tests/test_fold_robustness.py
+          uv run python scripts/report_fold_modes.py --output artifacts/fold-modes/report.json
+          uv run python scripts/report_fold_robustness.py --output artifacts/fold-robustness/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          m = json.loads(Path('artifacts/fold-modes/report.json').read_text())
+          r = json.loads(Path('artifacts/fold-robustness/report.json').read_text())
+          for hashes in (m['sources'], r['source_sha256_normalized_text']):
+              assert len(hashes) == 3
+              for name, value in hashes.items():
+                  assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          assert len(m['cases']) == 6
+          assert all(c['maximum_balance_residual_j'] < 1e-12 for c in m['cases'])
+          assert max(m['step_refinement']['final_coordinate_absolute_differences']) < 1e-8
+          for mode in (0, 1):
+              cases = [c for c in m['cases'] if c['mode'] == mode]
+              for field in ('max_scale_error', 'max_angle_error_rad'):
+                  assert all(3 < a[field] / b[field] < 5 for a, b in zip(cases, cases[1:]))
+          assert len(r['cases']) == 24
+          assert r['counts'] == {'success': 21, 'domain-rejected': 3, 'numerical-error': 0}
+          assert r['rejected_refinement'] == ['domain-rejected'] * 3
+          for c in r['cases']:
+              if c['classification'] == 'success':
+                  assert c['metrics']['max_balance_residual_j'] < 1e-10
+          refinement = r['accepted_refinement']
+          assert max(refinement['final_coordinate_absolute_difference']) < 1e-7
+          assert refinement['residual_j_coarse_fine'][1] < refinement['residual_j_coarse_fine'][0]
           PY

@@ -73,7 +73,7 @@
         "P06"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Recovered 22-point fold map now has an explicit synthetic positive quadratic potential, damping and generalized drive; forces evolve s/theta with geometry-derived inertia. Physical solid calibration/rotational inertia and interior material map still absent.",
+      "latest_result": "Synthetic force-law sensitivity now covers damping 0/.25/1 and drive 0/1/3 at 2/10 seconds plus two seeded initial perturbations. No stiffness calibration or measured material law. See docs/fold_robustness.md.",
       "next_action": "Review reduced-law sensitivity and coupled-mode behavior; specify measured or justified distributed material coefficients before physical claims. Keep full-flow chart correspondence separate."
     },
     {
@@ -85,7 +85,7 @@
         "P07"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Force-driven folded geometry has an explicit T+V/work/loss ledger including geometric inertia. 18 runs; correct-case fine-step residual <=6.37e-17 J, omitted-inertia control 1.33e-7 J. Independent Christoffel and energy-directional controls pass. No whole-structure/material energy closure."
+      "latest_result": "Longer fold ledger validated: accepted 24-case ensemble subset has maximum residual 2.998e-12 J; refinement improves accounting. Independent linear-mode energy/Jacobian checks added. Whole-structure reservoir and exchange accounting remain open."
     },
     {
       "id": "P09",
@@ -96,7 +96,7 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Size/fold trajectories now evolve from reduced force equations rather than prescribed displacement. Equilibrium, conservative, damped, driven and tapered-force-off cases tested; passive decay is supported, autonomous sustained breathing is not. Exact unforced energy barrier bounds the declared domain for default initial data.",
+      "latest_result": "Bounded fold sensitivity: 21 accepted and 3 deliberate coordinate-domain rejections, no numerical errors. Independent synthetic modes 0.2741982850/0.3163579847 Hz; nonlinear discrepancies decrease with amplitude. This is finite driven/passive motion, not autonomous sustained breathing. Next: explicit finite energy reservoir before sustained-motion tests. See docs/fold_modes.md and docs/fold_robustness.md.",
       "next_action": "Test longer duration, initial-condition/parameter ensembles and modal response; add an explicit finite active reservoir only if investigating sustained cycles, with its energy and saturation laws accounted."
     },
     {
