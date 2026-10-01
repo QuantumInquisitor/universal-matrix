@@ -49,9 +49,7 @@ def capture_full_tree():
     trace = []
 
     def audit(state, time_s):
-        energy, potential, incident, works, accounts = full_measure(
-            state, sizes, edges, groups
-        )
+        energy, potential, incident, works, accounts = full_measure(state, sizes, edges, groups)
         blocks = state[: 5 * len(sizes)].reshape(len(sizes), 5)
         node_residual = energy - e0 + blocks[:, 4] - incident
         edge_residual = potential - u0 + works.sum(axis=1)
@@ -187,9 +185,7 @@ def replay_rhs(time_s, y, cfg, full_run):
     forces[0] += child_force
 
     for index in range(n):
-        result[5 * index + 2 : 5 * index + 4] += np.linalg.solve(
-            masses[index], forces[index]
-        )
+        result[5 * index + 2 : 5 * index + 4] += np.linalg.solve(masses[index], forces[index])
 
     result[-2:] = [
         parent_force @ parent_v,
@@ -205,10 +201,7 @@ def replay_measure(time_s, y, cfg, full_run):
     internal_works = y[5 * n : 5 * n + 2 * len(edges)].reshape(len(edges), 2)
     external_work = y[-2:]
     energies = np.asarray(
-        [
-            mechanical(block[:2], block[2:4], sizes[index])[2]
-            for index, block in enumerate(blocks)
-        ]
+        [mechanical(block[:2], block[2:4], sizes[index])[2] for index, block in enumerate(blocks)]
     )
     internal_potential = np.asarray(
         [
@@ -356,10 +349,7 @@ def report():
                 ),
                 "loaded_root_coordinate_error": float(
                     np.max(
-                        np.abs(
-                            np.asarray(loaded_row["root_q"])
-                            - np.asarray(embedded["child_q"])
-                        )
+                        np.abs(np.asarray(loaded_row["root_q"]) - np.asarray(embedded["child_q"]))
                     )
                 ),
                 "loaded_root_rate_error": float(
