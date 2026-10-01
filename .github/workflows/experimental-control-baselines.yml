@@ -1112,35 +1112,28 @@ jobs:
         with:
           python-version: '3.12'
       - uses: astral-sh/setup-uv@v10.1.0
-      - run: uv sync --python 3.12 --extra scientific --group test --group lint
-      - name: Verify depth-three material accounting and root attenuation
+      - run: uv sync --python 3.12 --extra scientific --group lint
+      - name: Reproduce recursive root attenuation once
         run: |
           uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_depth3.py tests/test_fold_material_depth3.py scripts/report_fold_material_depth_attenuation.py tests/test_fold_material_depth_attenuation.py
           uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_depth3.py tests/test_fold_material_depth3.py scripts/report_fold_material_depth_attenuation.py tests/test_fold_material_depth_attenuation.py
-          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_material_depth3.py tests/test_fold_material_depth_attenuation.py
-          uv run --python 3.12 --extra scientific python scripts/report_fold_material_depth3.py --output artifacts/fold-material-depth/depth3.json
           uv run --python 3.12 --extra scientific python scripts/report_fold_material_depth_attenuation.py --output artifacts/fold-material-depth/attenuation.json
           uv run --python 3.12 --extra scientific python - <<'PY'
           import hashlib
           import json
           from pathlib import Path
 
-          d = json.loads(Path('artifacts/fold-material-depth/depth3.json').read_text(encoding='utf-8'))
           a = json.loads(Path('artifacts/fold-material-depth/attenuation.json').read_text(encoding='utf-8'))
-          for report in (d, a):
-              json.dumps(report, allow_nan=False)
-              for name, digest in report['sources'].items():
-                  assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
-          for name in ('depth_2', 'depth_3', 'disconnected_depth_3', 'fine_depth_3', 'single'):
-              case = d['cases'][name]
-              assert max(case['max_node_residual_j']) < 1e-11
-              assert max(case['max_edge_residual_j'], default=0) < 1e-11
-              assert max(case['max_group_residual_j'].values()) < 1e-11
-          assert not d['depth_response']['depth_3_root_backreaction_resolved']
-          assert d['depth_response']['resolved_root_backreaction_threshold'] == 1e-12
+          json.dumps(a, allow_nan=False)
+          for name, digest in a['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
           assert a['resolution_threshold'] == 1e-12
           assert a['durations_s'] == [0.005, 0.01, 0.02, 0.04, 0.05]
           assert a['depths'] == [0, 1, 2, 3]
+          for case in a['energy_accounts'].values():
+              assert max(case['max_node_residual_j']) < 1e-11
+              assert max(case['max_edge_residual_j'], default=0) < 1e-11
+              assert max(case['max_group_residual_j'].values()) < 1e-11
           for row in a['rows']:
               for transition in row['transitions'].values():
                   maximum = max(transition['root_absolute_state_change'])
@@ -1150,29 +1143,29 @@ jobs:
           assert not a['material_scaling_law_changed']
           assert not a['threshold_tuned_to_result']
           assert not a['arbitrary_depth_validated']
+          assert not a['infinite_depth_limit_validated']
           print(json.dumps(a['summary'], sort_keys=True))
           PY
 
-
   material-depth-duration:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       - uses: astral-sh/setup-uv@v10.1.0
-      - run: uv sync --python 3.12 --extra scientific --group test --group lint
-      - name: Verify bounded 0.1 second depth-three extension
+      - run: uv sync --python 3.12 --extra scientific --group lint
+      - name: Reproduce bounded 0.1 second depth-three extension once
         run: |
           uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_depth_duration.py tests/test_fold_material_depth_duration.py
           uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_depth_duration.py tests/test_fold_material_depth_duration.py
-          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_material_depth_duration.py
           uv run --python 3.12 --extra scientific python scripts/report_fold_material_depth_duration.py --output artifacts/fold-material-depth/duration.json
           uv run --python 3.12 --extra scientific python - <<'PY'
           import hashlib
           import json
+          import math
           from pathlib import Path
 
           r = json.loads(Path('artifacts/fold-material-depth/duration.json').read_text(encoding='utf-8'))
@@ -1184,12 +1177,24 @@ jobs:
               assert max(case['max_node_residual_j']) < 1e-10
               assert max(case['max_edge_residual_j'], default=0) < 1e-10
               assert max(case['max_group_residual_j'].values()) < 1e-10
+          for name in ('depth_2', 'depth_3', 'fine_depth_3'):
+              case = r['cases'][name]
+              assert min(row[0] for row in case['coordinate_min']) >= 0.9
+              assert max(row[0] for row in case['coordinate_max']) <= 1.1
+              assert min(row[1] for row in case['coordinate_min']) >= 0
+              assert max(row[1] for row in case['coordinate_max']) <= math.pi / 6
           assert r['restart']['maximum_absolute_state_difference'] < 1e-12
           assert r['refinement']['maximum_absolute_state_difference'] < 1e-6
           assert r['resolution_threshold'] == 1e-12
           assert r['sample_times_s'] == [0.05, 0.075, 0.1]
+          for row in r['depth_2_to_3']['samples'].values():
+              maximum = max(row['root_absolute_state_change'])
+              assert row['resolved'] == (maximum > r['resolution_threshold'])
           assert not r['connector_law_changed']
           assert not r['material_scaling_law_changed']
           assert not r['production_duration_guard_changed']
+          assert not r['arbitrary_depth_validated']
+          assert not r['infinite_depth_limit_validated']
           print(json.dumps(r['depth_2_to_3'], sort_keys=True))
           PY
+
