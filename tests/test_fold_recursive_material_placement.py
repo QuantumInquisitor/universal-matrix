@@ -1,6 +1,7 @@
 """Controls for recursive 22-body material placement envelope."""
 
 import numpy as np
+import pytest
 
 from scripts.report_fold_recursive_material_placement import report
 
@@ -51,16 +52,8 @@ def test_spatial_connector_requires_rest_and_branch_frame_adapters():
     result = report()
     for axis in result["axes"]:
         connector = axis["connector_spatial_compatibility"]
-        assert connector["rest_offset_coefficient_min"] == np.testing.assert_approx_equal(
-            connector["rest_offset_coefficient_min"],
-            0.5,
-            significant=12,
-        )
-        assert connector["rest_offset_coefficient_max"] == np.testing.assert_approx_equal(
-            connector["rest_offset_coefficient_max"],
-            0.5,
-            significant=12,
-        )
+        assert connector["rest_offset_coefficient_min"] == pytest.approx(0.5, abs=1e-12)
+        assert connector["rest_offset_coefficient_max"] == pytest.approx(0.5, abs=1e-12)
         mismatch = connector["maximum_frame_mismatch_by_child_bit"]
         assert mismatch[0] < 1e-12
         assert mismatch[1] > 1e-3
