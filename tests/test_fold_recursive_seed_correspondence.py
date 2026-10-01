@@ -72,18 +72,13 @@ def test_binary_seed_axis_candidates_match_material_counts_scale_containment_and
         assert candidate["maximum_radius_error"] < 1e-14
         for row in candidate["levels"]:
             assert row["count"] == row["expected_count"] == 2 ** row["depth"]
-            assert all(
-                abs(node["radius"] - row["expected_scale"]) < 1e-14
-                for node in row["nodes"]
-            )
+            assert all(abs(node["radius"] - row["expected_scale"]) < 1e-14 for node in row["nodes"])
 
 
 def test_three_axis_candidates_are_symmetry_related_but_not_selected_canonical(result):
     finals = []
     for candidate in result["binary_seed_axis_candidates"]:
-        centers = np.asarray(
-            [node["center"] for node in candidate["levels"][1]["nodes"]]
-        )
+        centers = np.asarray([node["center"] for node in candidate["levels"][1]["nodes"]])
         finals.append(np.sort(np.linalg.norm(centers, axis=1)))
     for row in finals[1:]:
         np.testing.assert_allclose(row, finals[0], rtol=0, atol=1e-14)
