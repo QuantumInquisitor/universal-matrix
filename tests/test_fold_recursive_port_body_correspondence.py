@@ -9,10 +9,7 @@ from scripts.report_fold_recursive_port_body_correspondence import report
 
 def test_candidate_catalog_covers_every_source_geometry_vertex():
     result = report()
-    expected = sum(
-        len(np.asarray(row["vertices_m"]))
-        for row in geometry(Q0, length_m=1.0)
-    )
+    expected = sum(len(np.asarray(row["vertices_m"])) for row in geometry(Q0, length_m=1.0))
     assert result["candidate_count"] == expected
     assert sum(result["candidate_counts_by_body_kind"].values()) == expected
 
@@ -38,17 +35,11 @@ def test_exact_candidate_flags_follow_predeclared_thresholds():
     threshold = result["thresholds"]
     for row in result["candidates"]:
         exact = (
-            row["maximum_normalized_displacement_error"]
-            < threshold["exact_displacement"]
-            and row["maximum_normalized_jacobian_error"]
-            < threshold["exact_jacobian"]
+            row["maximum_normalized_displacement_error"] < threshold["exact_displacement"]
+            and row["maximum_normalized_jacobian_error"] < threshold["exact_jacobian"]
         )
         assert row["exact_fixed_linear_match"] is exact
-        scaled = (
-            exact
-            and row["scaled_orthogonal_relative_error"]
-            < threshold["scaled_orthogonal"]
-        )
+        scaled = exact and row["scaled_orthogonal_relative_error"] < threshold["scaled_orthogonal"]
         assert row["exact_scaled_orthogonal_match"] is scaled
 
 
