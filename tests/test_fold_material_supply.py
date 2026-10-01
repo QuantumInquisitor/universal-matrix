@@ -42,7 +42,7 @@ def runs():
     return (
         simulate(),
         simulate(power_density=0),
-        simulate(omitted_debit=1),
+        simulate(omitted_debit=0),
         simulate(max_step=0.001, rtol=1e-10),
     )
 
@@ -70,9 +70,9 @@ def test_powered_and_source_off_accounts_close(runs):
 
 def test_bad_reserve_debit_is_detected_and_localized(runs):
     _, _, broken, _ = runs
-    assert broken["max_node_reservoir_residual_j"][1] > 1e-10
+    assert broken["max_node_reservoir_residual_j"][0] > 1e-10
     assert max(
-        broken["max_node_reservoir_residual_j"][i] for i in (0, 2, 3)
+        broken["max_node_reservoir_residual_j"][i] for i in (1, 2, 3)
     ) < 1e-11
     assert broken["max_group_residual_j"]["root"] > 1e-10
     assert broken["max_group_residual_j"]["root/0"] > 1e-10
