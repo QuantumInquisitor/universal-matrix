@@ -410,7 +410,7 @@ def report():
 
     powered = simulate()
     source_off = simulate(power_density=0)
-    broken = simulate(omitted_debit=1)
+    broken = simulate(omitted_debit=0)
     fine = simulate(max_step=0.001, rtol=1e-10)
     return dict(
         schema=1,
