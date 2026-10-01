@@ -1,6 +1,5 @@
 """Controls for recursive 22-body material placement envelope."""
 
-import numpy as np
 import pytest
 
 from scripts.report_fold_recursive_material_placement import report
