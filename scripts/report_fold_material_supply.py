@@ -52,9 +52,7 @@ def active_rhs(y, sizes=BASE_SIZES, edges=EDGES, *, gain=GAIN, omitted_debit=Non
     sizes, edges = configuration(sizes, edges)
     gain = parameters(gain, EFFICIENCY, LEAKAGE, 1)[0]
     n = len(sizes)
-    if omitted_debit is not None and (
-        type(omitted_debit) is not int or not 0 <= omitted_debit < n
-    ):
+    if omitted_debit is not None and (type(omitted_debit) is not int or not 0 <= omitted_debit < n):
         raise ValueError("omitted debit must identify a node")
     y = vector(y, 9 * n + 2 * len(edges), "active material graph state")
     blocks = y[: 9 * n].reshape(n, 9)
@@ -68,23 +66,14 @@ def active_rhs(y, sizes=BASE_SIZES, edges=EDGES, *, gain=GAIN, omitted_debit=Non
         state, bias, _ = scaled_mechanical(block[:2], block[2:4], size)
         masses.append(state["mass_matrix"])
         resistance = size**4 * DAMPING @ block[2:4]
-        applied = (
-            gain
-            * block[4]
-            / (block[4] + ACTIVATION_DENSITY_J * size**3)
-            * resistance
-        )
+        applied = gain * block[4] / (block[4] + ACTIVATION_DENSITY_J * size**3) * resistance
         delivered_power = float(applied @ block[2:4])
         leak = LEAKAGE / size * block[4]
         restoring = np.asarray(scaled_material(block[:2], size)["gradient"])
         out[i] = np.r_[
             block[2:4],
-            np.linalg.solve(
-                masses[i], applied - resistance - restoring - bias
-            ),
-            -leak
-            if omitted_debit == i
-            else -delivered_power / EFFICIENCY - leak,
+            np.linalg.solve(masses[i], applied - resistance - restoring - bias),
+            -leak if omitted_debit == i else -delivered_power / EFFICIENCY - leak,
             delivered_power,
             resistance @ block[2:4],
             (1 / EFFICIENCY - 1) * delivered_power,
@@ -92,14 +81,10 @@ def active_rhs(y, sizes=BASE_SIZES, edges=EDGES, *, gain=GAIN, omitted_debit=Non
         ]
 
     for edge_index, (a, b, weight) in enumerate(edges):
-        _, force_a, force_b = connector(
-            blocks[a, :2], blocks[b, :2], sizes[a], sizes[b], weight
-        )
+        _, force_a, force_b = connector(blocks[a, :2], blocks[b, :2], sizes[a], sizes[b], weight)
         out[a, 2:4] += np.linalg.solve(masses[a], force_a)
         out[b, 2:4] += np.linalg.solve(masses[b], force_b)
-        result[
-            9 * n + 2 * edge_index : 9 * n + 2 * edge_index + 2
-        ] = [
+        result[9 * n + 2 * edge_index : 9 * n + 2 * edge_index + 2] = [
             force_a @ blocks[a, 2:4],
             force_b @ blocks[b, 2:4],
         ]
@@ -136,11 +121,7 @@ def rhs(
     blocks = y[: 9 * n].reshape(n, 9)
     size = np.asarray(sizes)
     capacity = CAPACITY_DENSITY_J * size**3
-    supplied_power = (
-        power_density
-        * size**2
-        * np.maximum(0.0, 1.0 - blocks[:, 4] / capacity)
-    )
+    supplied_power = power_density * size**2 * np.maximum(0.0, 1.0 - blocks[:, 4] / capacity)
     result[: 9 * n].reshape(n, 9)[:, 4] += supplied_power
     result[-n:] = supplied_power
     return result
@@ -153,16 +134,11 @@ def measure(y, sizes, edges, layout):
     y = vector(y, 9 * n + 2 * len(edges) + n, "powered material graph state")
     blocks = y[: 9 * n].reshape(n, 9)
     energies = np.asarray(
-        [
-            material_mechanical(block[:2], block[2:4], sizes[i])[2]
-            for i, block in enumerate(blocks)
-        ]
+        [material_mechanical(block[:2], block[2:4], sizes[i])[2] for i, block in enumerate(blocks)]
     )
     potentials = np.asarray(
         [
-            connector(
-                blocks[a, :2], blocks[b, :2], sizes[a], sizes[b], weight
-            )[0]
+            connector(blocks[a, :2], blocks[b, :2], sizes[a], sizes[b], weight)[0]
             for a, b, weight in edges
         ]
     )
@@ -246,17 +222,11 @@ def simulate(
 
     def record(time, state, save):
         nonlocal minimum_reserve, maximum_reserve_upper_violation
-        energies, potential, incident, supplied, groups = measure(
-            state, sizes, edges, layout
-        )
+        energies, potential, incident, supplied, groups = measure(state, sizes, edges, layout)
         blocks = state[: 9 * n].reshape(n, 9)
-        edge_work = state[9 * n : 9 * n + 2 * len(edges)].reshape(
-            len(edges), 2
-        )
+        edge_work = state[9 * n : 9 * n + 2 * len(edges)].reshape(len(edges), 2)
         residuals = dict(
-            node_mechanical_residual_j=(
-                energies - e0 - blocks[:, 5] + blocks[:, 6] - incident
-            ),
+            node_mechanical_residual_j=(energies - e0 - blocks[:, 5] + blocks[:, 6] - incident),
             node_reservoir_residual_j=(
                 blocks[:, 4]
                 - reserve0
@@ -286,9 +256,7 @@ def simulate(
             maximum_reserve_upper_violation, blocks[:, 4] - capacity
         )
         supplied_power = (
-            power_density
-            * np.asarray(sizes) ** 2
-            * np.maximum(0.0, 1.0 - blocks[:, 4] / capacity)
+            power_density * np.asarray(sizes) ** 2 * np.maximum(0.0, 1.0 - blocks[:, 4] / capacity)
         )
         maximum_power_budget_violation[:] = np.maximum(
             maximum_power_budget_violation,
@@ -371,18 +339,12 @@ def simulate(
         minimum_reserve_j=minimum_reserve.tolist(),
         maximum_reserve_upper_violation_j=maximum_reserve_upper_violation.tolist(),
         maximum_power_budget_violation_w=maximum_power_budget_violation.tolist(),
-        finite_supply_margin_j=(
-            EFFICIENCY * (reserve0 + supplied) - blocks[:, 5]
-        ).tolist(),
+        finite_supply_margin_j=(EFFICIENCY * (reserve0 + supplied) - blocks[:, 5]).tolist(),
         total_received_j=float(supplied.sum()),
         final_total_mechanical_j=float(
-            np.sum(samples[-1]["mechanical_j"])
-            + np.sum(samples[-1]["edge_potential_j"])
+            np.sum(samples[-1]["mechanical_j"]) + np.sum(samples[-1]["edge_potential_j"])
         ),
-        **{
-            "max_" + key: value.tolist()
-            for key, value in maxima.items()
-        },
+        **{"max_" + key: value.tolist() for key, value in maxima.items()},
     )
 
 
@@ -449,6 +411,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = report()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8"
-    )
+    args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
