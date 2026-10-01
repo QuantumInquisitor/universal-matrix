@@ -171,8 +171,9 @@ def simulate(
     node_max = np.zeros(len(sizes))
     edge_max = np.zeros(len(edges))
     group_max = {key: 0.0 for key in groups0}
+    root_trace = []
 
-    def audit(state):
+    def audit(state, time):
         nonlocal node_max, edge_max
         energy, potential, incident, works, accounts = measure(
             state, sizes, edges, groups
@@ -189,15 +190,22 @@ def simulate(
                 - account["boundary_work_j"]
             )
             group_max[key] = max(group_max[key], abs(residual))
+        root_trace.append(
+            dict(
+                time_s=float(time),
+                q=blocks[0, :2].tolist(),
+                rates=blocks[0, 2:4].tolist(),
+            )
+        )
 
-    audit(y)
-    for _ in range(steps):
+    audit(y, 0.0)
+    for step in range(steps):
         a = rhs(y, sizes, edges, broken_edge=broken_edge)
         b = rhs(y + dt * a / 2, sizes, edges, broken_edge=broken_edge)
         c = rhs(y + dt * b / 2, sizes, edges, broken_edge=broken_edge)
         d = rhs(y + dt * c, sizes, edges, broken_edge=broken_edge)
         y += dt * (a + 2 * b + 2 * c + d) / 6
-        audit(y)
+        audit(y, (step + 1) * dt)
 
     return dict(
         settings=dict(
@@ -213,6 +221,7 @@ def simulate(
         max_node_residual_j=node_max.tolist(),
         max_edge_residual_j=edge_max.tolist(),
         max_group_residual_j=group_max,
+        root_trace=root_trace,
     )
 
 
