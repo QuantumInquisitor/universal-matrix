@@ -108,7 +108,7 @@
         "P09"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Isolated body scaling now independently checked before recursive deployment. Mapped connector needs physical stiffness scaling lambda to match cubic module energy under uniform length scaling. Next: integrated scaled-body/mapped-connector experiment, then recursive composition. See docs/fold_scaling.md.",
+      "latest_result": "Passive scaled-body pair and mapped connector now integrated at fixed relative child size .5. Connector stiffness proportional to overall length preserves conditional time/energy similarity; fixed stiffness conserves energy but changes trajectories. Next: multi-size network with explicit per-edge stiffness law and hierarchy boundary accounts. See docs/fold_scaled_pair.md.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {

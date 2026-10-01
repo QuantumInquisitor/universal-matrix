@@ -18,6 +18,8 @@ on:
       - 'scripts/report_fold_hierarchy.py'
       - 'scripts/report_fold_mapped.py'
       - 'scripts/report_fold_scaling.py'
+      - 'scripts/report_fold_scaled_pair.py'
+      - 'tests/test_fold_scaled_pair.py'
       - 'tests/test_fold_scaling.py'
       - 'tests/test_fold_mapped.py'
       - 'tests/test_fold_hierarchy.py'
@@ -363,4 +365,33 @@ jobs:
           assert r['wrong_inertia_control']['max_balance_residual_j'] > 1e-8
           assert not r['calibrated_material'] and not r['scaled_connector_integrated']
           assert not r['recursive_assembly_validated']
+          PY
+      - name: Check scaled fold pair and stiffness comparison
+        run: |
+          uv run ruff check scripts/report_fold_scaled_pair.py tests/test_fold_scaled_pair.py
+          uv run ruff format --check scripts/report_fold_scaled_pair.py tests/test_fold_scaled_pair.py
+          uv run python -m pytest tests/test_fold_scaled_pair.py
+          uv run python scripts/report_fold_scaled_pair.py --output artifacts/fold-scaled-pair/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-scaled-pair/report.json').read_text())
+          assert len(r['sources']) == 7 and len(r['cases']) == 4
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              for key in ('max_total_residual_j', 'max_module_residual_j', 'max_connector_residual_j'):
+                  assert c[key] < 1e-12
+              if name != 'fixed_stiffness_comparison':
+                  s = c['similarity']
+                  assert max(map(max, s['coordinate_max_differences'])) < 1e-12
+                  assert max(map(max, s['rescaled_rate_max_differences'])) < 1e-12
+                  assert s['rescaled_energy_max_difference_j'] < 1e-15
+          control = r['cases']['fixed_stiffness_comparison']['similarity']
+          assert max(map(max, control['coordinate_max_differences'])) > 1e-4
+          assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
+          assert max(map(max, r['refinement']['state_component_differences_by_module'])) < 1e-7
+          assert not r['calibrated_material'] and not r['recursive_assembly_validated']
+          assert not r['sustained_breathing']
           PY

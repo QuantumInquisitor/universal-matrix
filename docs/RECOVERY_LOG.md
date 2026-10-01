@@ -770,3 +770,32 @@ fixed stiffness produces quadratic connector energy rather than cubic. Next is
 a combined scaled-body and scaled-connector experiment. Calibration, actual
 attachments/collision, full recursive physical assembly, sustained breathing
 and XR mapping remain open.
+
+
+### 2026-09-30 - Consistently scaled passive pair
+
+Combined reconstructed body geometry/mass/inertia with mapped connector forces.
+Parent scales 1/.75/.5, child fixed at half parent size. Physical connector
+stiffness scales with overall length, giving cubic potential/force scaling.
+No active reservoirs included. Corresponding physical durations 1/.75/.5 s.
+Correct trajectories match under scaled time (rate difference <=2.776e-17);
+maximum energy residual <=5.775e-17 J. Independent half-step agreement gives
+component differences <1.821e-9 with each unit kept separate. Same-grid similarity
+is a scaling consistency check, not an independent accuracy estimate.
+
+Fixed-stiffness comparison still conserves energy (2.376e-17 J residual) but
+child angle differs by .004220 rad from the resized reference. This is a valid
+alternative law that breaks similarity, not broken energy physics. Independent
+review found no blockers: force-gradient error 2.45e-15 and energy-rate errors
+3.71e-16/4.50e-16 J/s for scaled/fixed stiffness. Comparison now rejects mismatched
+reference scales, grids and relative sizes; refinement labels distinguish rates.
+
+Validation: 17 scaled-pair tests plus 33 scaling/mapped tests pass (50 total).
+Ruff/format and regenerated source hashes/workflow numerical acceptance pass.
+Prior head 05513696: CodeQL and container passed; broad and experimental checks
+were running at snapshot. New head requires fresh CI; no merge. Results:
+docs/fold_scaled_pair.md and docs/experiments/fold-scaled-pair-summary.json.
+Task count remains 41. Next: multiple absolute body sizes in a small graph,
+explicit per-edge stiffness law, and hierarchy boundary accounts. Material
+calibration, real joints/collisions, full recursion, sustained breathing and XR
+mapping remain unvalidated.
