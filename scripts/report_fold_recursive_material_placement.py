@@ -103,21 +103,15 @@ def pair_clearance_requirement(nodes, radius_coefficient, *, siblings_only=False
     rows = []
     for path_a, path_b in combinations(nodes, 2):
         if siblings_only and (
-            len(path_a) != len(path_b)
-            or not path_a
-            or path_a[:-1] != path_b[:-1]
+            len(path_a) != len(path_b) or not path_a or path_a[:-1] != path_b[:-1]
         ):
             continue
         a, b = nodes[path_a], nodes[path_b]
-        center_distance = float(
-            np.linalg.norm(a["center_normalized"] - b["center_normalized"])
-        )
+        center_distance = float(np.linalg.norm(a["center_normalized"] - b["center_normalized"]))
         if center_distance == 0:
             required = math.inf
         else:
-            required = (
-                radius_coefficient * (a["scale"] + b["scale"]) / center_distance
-            )
+            required = radius_coefficient * (a["scale"] + b["scale"]) / center_distance
         rows.append(
             {
                 "path_a": list(path_a),
@@ -143,18 +137,12 @@ def mirror_placement_error(nodes, vessel_ratio, q):
             continue
         left = transformed_bodies(nodes[left_path], q, vessel_ratio)
         right = transformed_bodies(nodes[right_path], q, vessel_ratio)
-        parent_center = (
-            vessel_ratio
-            * BASE_MODULE_LENGTH_M
-            * parent["center_normalized"]
-        )
+        parent_center = vessel_ratio * BASE_MODULE_LENGTH_M * parent["center_normalized"]
         for body_id in left:
             a, b = left[body_id], right[body_id]
             if a.shape != b.shape:
                 raise ValueError("mirror body vertex count mismatch")
-            xy_error = np.max(
-                np.linalg.norm(a[:, :2] + b[:, :2] - 2 * parent_center, axis=1)
-            )
+            xy_error = np.max(np.linalg.norm(a[:, :2] + b[:, :2] - 2 * parent_center, axis=1))
             z_error = np.max(np.abs(a[:, 2] - b[:, 2]))
             maximum_xy_error = max(maximum_xy_error, float(xy_error))
             maximum_z_error = max(maximum_z_error, float(z_error))
@@ -194,13 +182,9 @@ def connector_spatial_compatibility(nodes):
         child_rotation = rotation(child["orientation_rad"])
         relative_rotation = parent_rotation.T @ child_rotation
         center_distance = float(
-            np.linalg.norm(
-                child["center_normalized"] - parent["center_normalized"]
-            )
+            np.linalg.norm(child["center_normalized"] - parent["center_normalized"])
         )
-        rest_per_parent_length_per_vessel_ratio = (
-            center_distance / parent["scale"]
-        )
+        rest_per_parent_length_per_vessel_ratio = center_distance / parent["scale"]
         rest_coefficients.append(rest_per_parent_length_per_vessel_ratio)
 
         maximum_mismatch = 0.0
@@ -209,17 +193,12 @@ def connector_spatial_compatibility(nodes):
             parent_port = port(q, BASE_MODULE_LENGTH_M * parent["scale"])[0]
             child_port = port(q, BASE_MODULE_LENGTH_M * child["scale"])[0]
             existing_delta = parent_port - child_port
-            spatial_rest_corrected_delta = (
-                parent_port - relative_rotation @ child_port
-            )
+            spatial_rest_corrected_delta = parent_port - relative_rotation @ child_port
             parent_length = BASE_MODULE_LENGTH_M * parent["scale"]
             maximum_mismatch = max(
                 maximum_mismatch,
                 float(
-                    np.linalg.norm(
-                        spatial_rest_corrected_delta - existing_delta
-                    )
-                    / parent_length
+                    np.linalg.norm(spatial_rest_corrected_delta - existing_delta) / parent_length
                 ),
             )
             maximum_local_delta = max(
@@ -228,25 +207,20 @@ def connector_spatial_compatibility(nodes):
             )
 
         child_bit = child_path[-1]
-        mismatch_by_child_bit[child_bit] = max(
-            mismatch_by_child_bit[child_bit], maximum_mismatch
-        )
+        mismatch_by_child_bit[child_bit] = max(mismatch_by_child_bit[child_bit], maximum_mismatch)
         rows.append(
             {
                 "parent_path": list(parent_path),
                 "child_path": list(child_path),
                 "child_bit": child_bit,
                 "relative_orientation_rad": float(
-                    (child["orientation_rad"] - parent["orientation_rad"])
-                    % (2 * math.pi)
+                    (child["orientation_rad"] - parent["orientation_rad"]) % (2 * math.pi)
                 ),
                 "rest_offset_per_parent_length_per_vessel_ratio": (
                     rest_per_parent_length_per_vessel_ratio
                 ),
                 "maximum_frame_mismatch_per_parent_length": maximum_mismatch,
-                "maximum_existing_local_delta_per_parent_length": (
-                    maximum_local_delta
-                ),
+                "maximum_existing_local_delta_per_parent_length": (maximum_local_delta),
             }
         )
     return {
@@ -303,29 +277,19 @@ def report():
             {
                 "axis_pair": list(pair),
                 "module_count": len(nodes),
-                "minimum_conservative_sibling_nonoverlap_ratio": (
-                    sibling_requirement
-                ),
+                "minimum_conservative_sibling_nonoverlap_ratio": (sibling_requirement),
                 "sibling_governing_pair": sibling_governing,
-                "minimum_conservative_all_module_nonoverlap_ratio": (
-                    all_requirement
-                ),
+                "minimum_conservative_all_module_nonoverlap_ratio": (all_requirement),
                 "all_module_governing_pair": all_governing,
                 "maximum_recursive_mirror_xy_error_m": mirror_xy,
                 "maximum_recursive_mirror_z_error_m": mirror_z,
                 "maximum_rigid_axis_equivalence_error_m": axis_error,
-                "connector_spatial_compatibility": (
-                    connector_spatial_compatibility(nodes)
-                ),
+                "connector_spatial_compatibility": (connector_spatial_compatibility(nodes)),
             }
         )
 
-    minimum_planar = footprint[
-        "minimum_vessel_radius_per_module_length_planar"
-    ]
-    minimum_spherical = footprint[
-        "minimum_spherical_bound_per_module_length"
-    ]
+    minimum_planar = footprint["minimum_vessel_radius_per_module_length_planar"]
+    minimum_spherical = footprint["minimum_spherical_bound_per_module_length"]
     conservative_all = max(all_pair_requirements)
     conservative_sibling = max(all_sibling_requirements)
 
@@ -342,12 +306,8 @@ def report():
         "common_scale_envelope": {
             "minimum_ratio_for_planar_vertex_containment": minimum_planar,
             "minimum_ratio_for_spherical_vertex_containment": minimum_spherical,
-            "minimum_ratio_for_conservative_sibling_sphere_nonoverlap": (
-                conservative_sibling
-            ),
-            "minimum_ratio_for_conservative_all_module_sphere_nonoverlap": (
-                conservative_all
-            ),
+            "minimum_ratio_for_conservative_sibling_sphere_nonoverlap": (conservative_sibling),
+            "minimum_ratio_for_conservative_all_module_sphere_nonoverlap": (conservative_all),
             "minimum_root_vessel_radius_m_if_planar_containment_only": (
                 minimum_planar * BASE_MODULE_LENGTH_M
             ),
@@ -382,6 +342,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = report()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8"
-    )
+    args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
