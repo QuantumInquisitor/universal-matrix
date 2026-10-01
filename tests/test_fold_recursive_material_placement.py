@@ -35,12 +35,12 @@ def test_common_scale_envelope_is_positive_and_ordered():
 
 def test_all_axes_have_identical_clearance_requirements():
     result = report()
-    sibling = {axis["minimum_conservative_sibling_nonoverlap_ratio"] for axis in result["axes"]}
-    all_pairs = {
+    sibling = [axis["minimum_conservative_sibling_nonoverlap_ratio"] for axis in result["axes"]]
+    all_pairs = [
         axis["minimum_conservative_all_module_nonoverlap_ratio"] for axis in result["axes"]
-    }
-    assert len(sibling) == 1
-    assert len(all_pairs) == 1
+    ]
+    assert max(sibling) - min(sibling) < 1e-12
+    assert max(all_pairs) - min(all_pairs) < 1e-12
 
 
 def test_spatial_connector_requires_rest_and_branch_frame_adapters():
