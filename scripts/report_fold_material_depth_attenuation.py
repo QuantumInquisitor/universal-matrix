@@ -22,22 +22,26 @@ def root_difference(deeper, shallower):
     return np.abs(root_state(deeper) - root_state(shallower))
 
 
+def sampled_root(run, duration):
+    dt = run["settings"]["dt_s"]
+    index = round(duration / dt)
+    row = run["root_trace"][index]
+    if not np.isclose(row["time_s"], duration, rtol=0, atol=1e-14):
+        raise ValueError("requested duration is not on the stored root trace")
+    return np.asarray(row["q"] + row["rates"])
+
+
 def report():
-    runs = {}
+    maximum_duration = max(DURATIONS_S)
+    depth_runs = {depth: simulate(depth, duration=maximum_duration) for depth in DEPTHS}
     rows = []
     for duration in DURATIONS_S:
-        depth_runs = {depth: simulate(depth, duration=duration) for depth in DEPTHS}
-        runs[str(duration)] = {
-            f"depth_{depth}": {
-                key: value
-                for key, value in run.items()
-                if key not in ("initial_state", "final_state")
-            }
-            for depth, run in depth_runs.items()
-        }
         transitions = {}
         for depth in (1, 2, 3):
-            delta = root_difference(depth_runs[depth], depth_runs[depth - 1])
+            delta = np.abs(
+                sampled_root(depth_runs[depth], duration)
+                - sampled_root(depth_runs[depth - 1], duration)
+            )
             transitions[f"{depth - 1}_to_{depth}"] = {
                 "root_absolute_state_change": delta.tolist(),
                 "maximum_root_absolute_state_change": float(np.max(delta)),
@@ -75,9 +79,11 @@ def report():
             else max(values) / baseline,
         }
 
-    disconnected = simulate(3, connected=False, duration=max(DURATIONS_S))
-    single = simulate(0, duration=max(DURATIONS_S))
-    disconnected_delta = root_difference(disconnected, single)
+    disconnected = simulate(3, connected=False, duration=maximum_duration)
+    disconnected_delta = np.abs(
+        sampled_root(disconnected, maximum_duration)
+        - sampled_root(depth_runs[0], maximum_duration)
+    )
 
     return {
         "schema": 1,
@@ -91,11 +97,18 @@ def report():
         "rows": rows,
         "summary": summary,
         "disconnected_control": {
-            "duration_s": max(DURATIONS_S),
+            "duration_s": maximum_duration,
             "root_absolute_state_change": disconnected_delta.tolist(),
             "maximum_root_absolute_state_change": float(np.max(disconnected_delta)),
         },
-        "energy_accounts": runs,
+        "energy_accounts": {
+            f"depth_{depth}": {
+                key: value
+                for key, value in run.items()
+                if key not in ("initial_state", "final_state", "root_trace")
+            }
+            for depth, run in depth_runs.items()
+        },
         "sources": {
             name: hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest()
             for name in (
