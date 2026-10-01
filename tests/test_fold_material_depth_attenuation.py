@@ -25,11 +25,10 @@ def test_sweep_is_declared_before_classification(result):
 
 
 def test_all_sweep_runs_close_energy_accounts(result):
-    for duration_cases in result["energy_accounts"].values():
-        for case in duration_cases.values():
-            assert max(case["max_node_residual_j"]) < 1e-11
-            assert max(case["max_edge_residual_j"], default=0) < 1e-11
-            assert max(case["max_group_residual_j"].values()) < 1e-11
+    for case in result["energy_accounts"].values():
+        assert max(case["max_node_residual_j"]) < 1e-11
+        assert max(case["max_edge_residual_j"], default=0) < 1e-11
+        assert max(case["max_group_residual_j"].values()) < 1e-11
 
 
 def test_resolution_flags_are_derived_not_forced(result):
