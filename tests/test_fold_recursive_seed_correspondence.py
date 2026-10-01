@@ -6,7 +6,6 @@ import pytest
 from scripts.report_fold_recursive_seed_correspondence import (
     MAX_AUDIT_DEPTH,
     RECIPROCAL_RING_PAIRS,
-    alternating_seed_stage,
     binary_axis_tree,
     contained_vesica_exact_depth,
     material_exact_level,
