@@ -186,9 +186,7 @@ def edge_trace(full, child_level, modes):
                 else maximum["modes"][mode_index]["child_minus_parent_phase_lag_rad"]
             ),
             "time_at_max_abs_child_power_s": None if maximum is None else maximum["time_s"],
-            "max_abs_child_power_w": (
-                0.0 if maximum is None else abs(maximum["child_power_w"])
-            ),
+            "max_abs_child_power_w": (0.0 if maximum is None else abs(maximum["child_power_w"])),
         }
 
     return {
