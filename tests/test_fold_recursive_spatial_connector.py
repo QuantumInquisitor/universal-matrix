@@ -65,14 +65,17 @@ def test_body_following_mirrored_branch_changes_current_dynamics(result):
     case = result["cases"]["body_following"]["1"]
     assert case["maximum_scale_similarity_error"] < 1e-12
     assert case["maximum_vessel_ratio_invariance_error"] < 1e-14
-    assert max(
-        case["per_scale"][str(scale)]["max_abs_energy_difference_j"]
-        for scale in PARENT_SCALES
-    ) > 1e-8
-    assert max(
-        case["per_scale"][str(scale)]["max_abs_parent_force_difference"]
-        for scale in PARENT_SCALES
-    ) > 1e-6
+    assert (
+        max(case["per_scale"][str(scale)]["max_abs_energy_difference_j"] for scale in PARENT_SCALES)
+        > 1e-8
+    )
+    assert (
+        max(
+            case["per_scale"][str(scale)]["max_abs_parent_force_difference"]
+            for scale in PARENT_SCALES
+        )
+        > 1e-6
+    )
 
 
 def test_claim_boundaries_remain_explicit(result):
