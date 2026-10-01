@@ -10,12 +10,8 @@ import numpy as np
 try:
     from .report_fold_dynamics import Q0, vector
     from .report_fold_material_depth_backreaction import simulate as simulate_embedded_tree
-    from .report_fold_scale_extension import (
-        audit_scale,
-        connector,
-        mechanical,
-        rhs as body_rhs,
-    )
+    from .report_fold_scale_extension import audit_scale, connector, mechanical
+    from .report_fold_scale_extension import rhs as body_rhs
 except ImportError:
     from report_fold_dynamics import Q0, vector
     from report_fold_material_depth_backreaction import simulate as simulate_embedded_tree
