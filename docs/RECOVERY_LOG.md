@@ -838,3 +838,13 @@ real attachments/collisions, full physical recursion and sustained breathing rem
 - Half-timestep comparison: root residual 5.789e-17 to 3.131e-18 J, coordinate/rate differences 2.033e-10/1.192e-9. No convergence-order or sustained-breathing claim.
 - Source-hashed report: docs/experiments/fold-active-multiscale-summary.json. Methods: docs/fold_active_multiscale.md. Computed plot source: scripts/plot_fold_active_multiscale.py. Automated acceptance added to experimental-control workflow and executed locally.
 - P08/P09/P10 remain open; next work must address longer-duration behavior, physical supply/material laws and actual assembly constraints rather than treating short transients as a completed science engine. Existing 41-task register preserved.
+
+### 2026-09-30 - Longer finite-source duration and depletion audit
+
+- Added scripts/report_fold_duration.py, tests/test_fold_duration.py and source-hashed docs/experiments/fold-duration-summary.json. Existing mechanical equations and geometry limits unchanged.
+- Active, passive and exact-rest cases completed 60s. All reserves stayed positive/decreased. Active one-percent brackets: node 0: 27.91895-27.95163 s; node 1: 22.04491-22.07788 s; nodes 2/3: 15.16578-15.19336 s.
+- Derived R<=R0 exp(-.15t/s) and gain 4 damping dominance by s*log(6)/.15, at most 11.945 s. Active mechanical energy showed no increase across 1,443 accepted intervals beyond that threshold. Exact rest retained zero motion; passive mechanics decreased.
+- Active root accounting error 5.3307e-14 J, refined 5.0714e-15 J; final coordinate/rate differences 7.1395e-10/1.1895e-9. Active final mechanical+connector energy 5.0280e-8 J versus initial 4.9344e-7 J. No sustained-breathing claim or finite-time zero-motion claim.
+- 18 focused tests passed (17+1), Ruff/format, all 12 source hashes and complete workflow acceptance passed. Scope and negative-reserve stage controls retain the last accepted state without clipping; unknown errors propagate. Computed plot visually inspected; separate duration CI job added.
+- Prior draft head b38ecdd: experimental, container and CodeQL checks passed; legacy compatibility and Python 3.14 subjobs passed, broader verification still running at snapshot. No merge. Draft publication of this new checkpoint requires fresh CI.
+- Methods/results and next power-source boundary: docs/fold_duration.md. All 41 tasks preserved; P09 remains open. A replenished model must account for injected energy and compare timing/control choices at equal power budget; time-crystal component usefulness is not inferred from this finite-source test.
