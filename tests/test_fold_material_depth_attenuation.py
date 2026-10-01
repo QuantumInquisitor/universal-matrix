@@ -3,13 +3,13 @@
 import numpy as np
 import pytest
 
+from scripts.report_fold_material_depth3 import simulate
 from scripts.report_fold_material_depth_attenuation import (
     DEPTHS,
     DURATIONS_S,
     RESOLUTION,
     report,
 )
-from scripts.report_fold_material_depth3 import simulate
 
 
 @pytest.fixture(scope="module")
