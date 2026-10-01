@@ -650,3 +650,35 @@ This is a synthetic generalized-coordinate connection, not a spatial joint,
 Cartesian momentum claim or intermodule collision certificate. No full recursive
 structure or sustained breathing claim. Next: a small graph with one energy
 owner per connection, then recursive composition and separate spatial mapping.
+
+
+### 2026-09-30 — Small fold graph and single-owner edge energy
+
+Extended the existing module/pair law to validated graphs of up to eight nodes;
+reported six four-node, four-second cases plus chain refinement. Each connection
+owns its potential once and tracks both endpoint works. Node, edge and global
+accounts remain separate. Duplicate/reversed duplicate edges, self-links and
+invalid indices or stiffness weights reject. Initial state and five source
+hashes are recorded. No prior model or default engine behavior was changed.
+
+Chain/star/cycle/disconnected/conservative cases have global residual <=4.605e-13 J.
+Chain .02/.01 s refinement gives 1.883e-13/9.027e-15 J, per-coordinate differences
+<4.194e-9. Broken edge1 creates 3.955e-7 J defect while other edge residuals remain
+<5.31e-14 J. Conservative downstream transfer occurs without reservoir work;
+initial mechanical and edge potential energy are accounted for. Graph cycles
+are not spatial fractal closure or sustained breathing evidence.
+
+Independent review found no blockers. Directional total-energy derivative
+-3.73e-14 W; deliberate active-edge sign reversal -4.20e-6 W. Endpoint orientation
+and node relabeling controls preserve dynamics; two-node reduction matches the
+verified pair. Twenty new network tests plus 31 pair/reservoir tests: 51 pass
+in 16.56 s. Ruff/format pass; workflow report/source-hash/numerical acceptance
+passed locally. Prior head afa3ae79: container and CodeQL passed; experimental
+and broad verification were still running at snapshot. Fresh head needs CI.
+No merge performed. Results: docs/fold_network.md and
+docs/experiments/fold-network-summary.json. Register retains 41 tasks.
+
+Next: explicit parent/child grouping with accounting and trajectory invariance
+for the same graph, then separately justify cross-scale coupling laws. Spatial
+joints, intermodule collision, material calibration, full recursive structure,
+sustained breathing and XR integration remain open.

@@ -14,6 +14,8 @@ on:
       - 'scripts/report_fold_modes.py'
       - 'scripts/report_fold_reservoir.py'
       - 'scripts/report_fold_coupling.py'
+      - 'scripts/report_fold_network.py'
+      - 'tests/test_fold_network.py'
       - 'tests/test_fold_coupling.py'
       - 'tests/test_fold_reservoir.py'
       - 'scripts/report_fold_robustness.py'
@@ -245,4 +247,34 @@ jobs:
           assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
           assert max(max(row) for row in r['refinement']['final_coordinate_absolute_differences']) < 1e-7
           assert not r['full_structure_recursive_validation'] and not r['sustained_breathing']
+          PY
+      - name: Check fold network energy ownership
+        run: |
+          uv run ruff check scripts/report_fold_network.py tests/test_fold_network.py
+          uv run ruff format --check scripts/report_fold_network.py tests/test_fold_network.py
+          uv run python -m pytest tests/test_fold_network.py
+          uv run python scripts/report_fold_network.py --output artifacts/fold-network/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-network/report.json').read_text())
+          assert len(r['sources']) == 5 and len(r['cases']) == 6
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert c['nodes'] == 4 and len(c['initial_state']) == 36 + 2 * len(c['edges'])
+              assert c['max_node_residual_j'] < 1e-10
+              if name != 'broken_chain':
+                  assert c['max_total_residual_j'] < 1e-10
+                  assert max(c['max_edge_residuals_j'], default=0) < 1e-10
+          bad = r['cases']['broken_chain']
+          assert bad['max_total_residual_j'] > 1e-9
+          assert bad['max_edge_residuals_j'][1] > 1e-9
+          assert max(bad['max_edge_residuals_j'][::2]) < 1e-10
+          assert r['cases']['disconnected']['samples'][-1]['mechanical_j'][1:] == [0, 0, 0]
+          assert all(e > 0 for e in r['cases']['conservative_chain']['samples'][-1]['mechanical_j'][1:])
+          assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
+          assert max(max(row) for row in r['refinement']['per_node_coordinate_absolute_differences']) < 1e-7
+          assert not r['full_recursive_structure_validated'] and not r['sustained_breathing']
           PY

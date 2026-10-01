@@ -85,7 +85,7 @@
         "P07"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Two fold modules now track their own reservoir work, damping and connection work, with separate connection potential and global energy. Global fueled residual 2.477e-13 J, refined 1.047e-14 J. Reversing B reaction breaks global/connection accounts while local work accounts remain balanced. See docs/fold_coupling.md."
+      "latest_result": "Four-node graph energy accounts now validate node-local transfers, one potential owner per edge and global total. Correct cases residual <=4.605e-13 J; broken edge localized at 3.955e-7 J. See docs/fold_network.md."
     },
     {
       "id": "P09",
@@ -108,7 +108,7 @@
         "P09"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Two-module generalized-coordinate spring and energy exchange implemented and checked. Empty stationary B gains mechanical energy without reservoir input in conservative control; disconnected B stays at rest. Not yet a recursive graph or spatially validated joint. Next: small graph composition with one energy owner per edge and local/global ledger checks. See docs/fold_coupling.md.",
+      "latest_result": "Small graph composition implemented for chain/star/cycle/disconnected topologies with endpoint/node relabeling controls and conservative downstream transfer. No recursive hierarchy or spatial assembly validation yet. Next: parent/child grouping invariance of the same graph before new cross-scale coupling. See docs/fold_network.md.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
     },
     {
