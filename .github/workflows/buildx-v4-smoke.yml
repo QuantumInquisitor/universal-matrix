@@ -1,0 +1,62 @@
+name: Non-publishing Buildx v4 smoke
+
+on:
+  pull_request:
+    branches: [main, codex/recovery-plan-log]
+    paths:
+      - '.github/workflows/buildx-v4-smoke.yml'
+      - '.github/workflows/pipeline_test.yml'
+      - 'Dockerfile'
+      - '.dockerignore'
+      - 'pyproject.toml'
+      - 'src/**'
+      - 'sdk/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  buildx-v4-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      DOCKER_BUILD_RECORD_UPLOAD: 'false'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Create Buildx v4 builder
+        id: buildx
+        uses: docker/setup-buildx-action@v4
+      - name: Build and load the existing API image locally
+        uses: docker/build-push-action@v7
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64
+          pull: true
+          push: false
+          load: true
+          tags: universal-matrix:buildx-v4-smoke
+          provenance: false
+          sbom: false
+      - name: Confirm image identity and non-root runtime
+        run: |
+          docker image inspect universal-matrix:buildx-v4-smoke --format '{{.Id}}'
+          docker run --rm -e UNIVERSAL_MATRIX_API_KEYS='ci-only-key:CI' --entrypoint /app/.venv/bin/python universal-matrix:buildx-v4-smoke -c 'import os; assert os.getuid() != 0; from src.api_server import app; assert app.title'
+      - name: Check the API over the local interface
+        run: |
+          docker run -d --rm --name buildx-v4-smoke \
+            -e UNIVERSAL_MATRIX_API_KEYS='ci-only-key:CI' \
+            -p 127.0.0.1:18000:8000 universal-matrix:buildx-v4-smoke
+          trap 'docker stop buildx-v4-smoke >/dev/null 2>&1 || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:18000/health >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          docker logs buildx-v4-smoke
+          exit 1
