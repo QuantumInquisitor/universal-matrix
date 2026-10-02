@@ -1,0 +1,104 @@
+{
+  "scope": "Fixed changed-component inventories, not a combined whole-network certificate",
+  "cases": [
+    {
+      "current": 1.0,
+      "inner_pairs": 117,
+      "aperture_pairs": 56,
+      "outer_pairs": 508,
+      "replacement_pairs": 861,
+      "outer_cut_flux_relative_error": 1.942890293094024e-14,
+      "replacement_interfaces": 13,
+      "outer_pass": true,
+      "replacement_pass": true,
+      "full_network_certified": false,
+      "motion_certified": false,
+      "report": "current-1.json"
+    },
+    {
+      "current": -1.0,
+      "inner_pairs": 117,
+      "aperture_pairs": 56,
+      "outer_pairs": 508,
+      "replacement_pairs": 861,
+      "outer_cut_flux_relative_error": 1.942890293094024e-14,
+      "replacement_interfaces": 13,
+      "outer_pass": true,
+      "replacement_pass": true,
+      "full_network_certified": false,
+      "motion_certified": false,
+      "report": "current--1.json"
+    },
+    {
+      "current": 2e-08,
+      "inner_pairs": 117,
+      "aperture_pairs": 56,
+      "outer_pairs": 508,
+      "replacement_pairs": 861,
+      "outer_cut_flux_relative_error": 1.9645539548134407e-14,
+      "replacement_interfaces": 13,
+      "outer_pass": true,
+      "replacement_pass": true,
+      "full_network_certified": false,
+      "motion_certified": false,
+      "report": "current-2e-08.json"
+    },
+    {
+      "current": -2e-08,
+      "inner_pairs": 117,
+      "aperture_pairs": 56,
+      "outer_pairs": 508,
+      "replacement_pairs": 861,
+      "outer_cut_flux_relative_error": 1.9645539548134407e-14,
+      "replacement_interfaces": 13,
+      "outer_pass": true,
+      "replacement_pass": true,
+      "full_network_certified": false,
+      "motion_certified": false,
+      "report": "current--2e-08.json"
+    },
+    {
+      "current": 7.0,
+      "inner_pairs": 117,
+      "aperture_pairs": 56,
+      "outer_pairs": 508,
+      "replacement_pairs": 861,
+      "outer_cut_flux_relative_error": 1.9666807864788487e-14,
+      "replacement_interfaces": 13,
+      "outer_pass": true,
+      "replacement_pass": true,
+      "full_network_certified": false,
+      "motion_certified": false,
+      "report": "current-7.json"
+    },
+    {
+      "current": -7.0,
+      "inner_pairs": 117,
+      "aperture_pairs": 56,
+      "outer_pairs": 508,
+      "replacement_pairs": 861,
+      "outer_cut_flux_relative_error": 1.9666807864788487e-14,
+      "replacement_interfaces": 13,
+      "outer_pass": true,
+      "replacement_pass": true,
+      "full_network_certified": false,
+      "motion_certified": false,
+      "report": "current--7.json"
+    }
+  ],
+  "source_sha256": {
+    "src/toroidal_aperture_local.py": "5343928fe19d6b2deae67bb78be5c384068df16c97a0ca66e539aef06a1d28cb",
+    "src/toroidal_aperture_attachment.py": "4e03ea4b2da7741f64be264c3994b552cdc57593d48216133e01c825329004d3",
+    "src/toroidal_outer_attachment.py": "2d9248341087206c3adde28997cadbdfab48e643056149e568b29eaca50cd106",
+    "src/toroidal_aperture_fanout.py": "4642681b6fa5d76b083c89121c7a344e0e607f415f2d482902320b4eb673e146",
+    "src/toroidal_retained_collision.py": "379f307768c6a7aa3ca18a9e8cabbf1be457c225318e6899fe3e2e2467014cf2"
+  },
+  "validation": {
+    "selected_tests_passed": 121,
+    "seconds": 73.22,
+    "source_dependency_files_matching_main": 28,
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "scope": "Selected attachment/downstream tests and six reproduced cases; not a new full repository test run"
+  }
+}
