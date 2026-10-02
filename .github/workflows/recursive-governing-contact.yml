@@ -1,0 +1,78 @@
+name: Recursive governing contact solve
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_recursive_governing_contact.py'
+      - 'tests/test_fold_recursive_governing_contact.py'
+      - 'docs/fold_recursive_governing_contact.md'
+      - '.github/workflows/recursive-governing-contact.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recursive-governing-contact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify governing-contact helper controls
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_governing_contact.py tests/test_fold_recursive_governing_contact.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_governing_contact.py tests/test_fold_recursive_governing_contact.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_governing_contact.py
+      - name: Solve governing recursive contact once
+        run: |
+          uv run --python 3.12 --extra scientific python -m scripts.report_fold_recursive_governing_contact --output artifacts/fold-recursive-clearance/contact.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-recursive-clearance/contact.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert not r['final_lower_optimized']['collision_free']
+          assert r['final_upper_optimized']['collision_free']
+          assert r['final_lower_colliding_ratio'] < r['final_upper_collision_free_ratio']
+          assert r['root_theta_invariance']['maximum_distance_difference_m'] < 1e-12
+          assert r['broad_grid_control_at_final_upper']['collision_free']
+          assert r['local_state_box_optimized']
+          assert not r['continuous_collision_theorem']
+          assert not r['global_q_domain_optimized']
+          assert not r['body_geometry_changed']
+          assert not r['collision_tolerance_changed']
+          assert not r['physical_body_thickness_modeled']
+          assert not r['manufacturing_margin_modeled']
+          print(json.dumps({
+              'final_bracket': [
+                  r['final_lower_colliding_ratio'],
+                  r['final_upper_collision_free_ratio'],
+              ],
+              'final_width': r['final_width'],
+              'lower_state': r['final_lower_optimized']['state'],
+              'upper_state': r['final_upper_optimized']['state'],
+              'upper_min_clearance_m': r['final_upper_optimized']['minimum_clearance_m'],
+              'fixed_corner_clearance_m': r['fixed_corner_clearance_at_final_upper_m'],
+              'root_theta_invariance_m': r['root_theta_invariance']['maximum_distance_difference_m'],
+              'axis_monotonicity': {
+                  key: {
+                      'nondecreasing': row['nondecreasing'],
+                      'nonincreasing': row['nonincreasing'],
+                      'min_diff': row['minimum_difference_m'],
+                      'max_diff': row['maximum_difference_m'],
+                  }
+                  for key, row in r['axis_audits_at_final_upper'].items()
+              },
+              'broad_control_min_clearance_m': r['broad_grid_control_at_final_upper']['minimum_clearance_m'],
+              'optimizer_ratio_count': r['unique_optimized_ratio_count'],
+          }, sort_keys=True))
+          PY

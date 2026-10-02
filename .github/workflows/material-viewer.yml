@@ -1,0 +1,22 @@
+name: Computed material viewer
+on:
+  pull_request:
+    paths:
+      - 'docs/docs/material-viewer*'
+      - 'docs/docs/visualizer.html'
+      - 'tests/test_material_viewer.mjs'
+      - 'scripts/export_material_viewer_example.py'
+      - 'docs/experiments/material-viewer-source.json'
+      - '.github/workflows/material-viewer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  viewer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - run: node --test --test-concurrency=1 tests/test_material_viewer.mjs
