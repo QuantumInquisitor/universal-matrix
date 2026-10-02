@@ -68,14 +68,16 @@ def _grid_key(q, length_m):
 def precompute():
     markers = catalog()
     reference_q = tuple(map(float, Q0))
-    all_q = sorted(set(FIT_Q + VALIDATION_Q + JACOBIAN_Q + (reference_q,)))
+    point_q = sorted(set(FIT_Q + VALIDATION_Q + JACOBIAN_Q + (reference_q,)))
+    jacobian_q = sorted(set(FIT_Q + JACOBIAN_Q))
     lengths = sorted(set((1.0,) + VALIDATION_LENGTHS_M))
     points = {}
     jacobians = {}
-    for q in all_q:
+    for q in point_q:
         for length_m in lengths:
             key = _grid_key(q, length_m)
             points[key] = {row["candidate_id"]: point(row, q, length_m) for row in markers}
+    for q in jacobian_q:
         for length_m in VALIDATION_LENGTHS_M + (1.0,):
             key = _grid_key(q, length_m)
             jacobians[key] = {
