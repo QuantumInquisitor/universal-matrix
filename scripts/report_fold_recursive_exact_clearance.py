@@ -326,10 +326,15 @@ def module_pair_clearance(module_a, state_a, module_b, state_b, ratio, best_limi
         - state_a["radius"]
         - state_b["radius"],
     )
-    if module_lower >= best_limit:
+    search_limit = (
+        best_limit
+        if best_limit > COLLISION_TOLERANCE_M
+        else COLLISION_TOLERANCE_M + EPS
+    )
+    if module_lower >= search_limit:
         return None
 
-    best = best_limit
+    best = search_limit
     detail = None
     for body_a in state_a["bodies"]:
         minimum_a = body_a["aabb_min"] + center_a
@@ -445,10 +450,11 @@ def report():
         nodes,
         local_ratio,
     )
+    outer_ratio = conservative_all * (1.0 + 1e-6)
     ratios = sorted(
         set(
             [local_ratio * multiplier for multiplier in COARSE_MULTIPLIERS]
-            + [conservative_all]
+            + [conservative_all, outer_ratio]
         )
     )
     rows = [scan_ratio(cache, ratio) for ratio in ratios]
@@ -481,6 +487,7 @@ def report():
         "zero_thickness_source_geometry": True,
         "local_containment_ratio": local_ratio,
         "conservative_all_module_sphere_ratio": conservative_all,
+        "outer_sphere_guard_ratio": outer_ratio,
         "conservative_sphere_governing_pair": conservative_governing,
         "sampled_ratios": ratios,
         "rows": rows,
