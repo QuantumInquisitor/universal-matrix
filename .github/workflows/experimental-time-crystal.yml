@@ -1,7 +1,7 @@
 name: Experimental time-crystal checkpoint
 on:
   pull_request:
-    branches: [main]
+    branches: [main, codex/recovery-plan-log]
     paths:
       - 'src/time_crystal_clock_subsystem.py'
       - 'tests/test_time_crystal_clock_subsystem.py'
@@ -25,16 +25,16 @@ jobs:
         with:
           version: latest-known
       - name: Install verification environment
-        run: uv sync --group test --group lint --extra scientific --extra visualization
+        run: uv sync --python 3.12 --group test --group lint --extra scientific --extra visualization
       - name: Check reference code
         run: |
-          uv run ruff check src/time_crystal_clock_subsystem.py tests/test_time_crystal_clock_subsystem.py scripts/report_time_crystal_subsystem.py
-          uv run ruff format --check src/time_crystal_clock_subsystem.py tests/test_time_crystal_clock_subsystem.py scripts/report_time_crystal_subsystem.py
-          uv run python -m pytest -q tests/test_time_crystal_clock_subsystem.py tests/test_canonical_polarity_clock.py
+          .venv/bin/ruff check src/time_crystal_clock_subsystem.py tests/test_time_crystal_clock_subsystem.py scripts/report_time_crystal_subsystem.py
+          .venv/bin/ruff format --check src/time_crystal_clock_subsystem.py tests/test_time_crystal_clock_subsystem.py scripts/report_time_crystal_subsystem.py
+          .venv/bin/python -m pytest -q tests/test_time_crystal_clock_subsystem.py tests/test_canonical_polarity_clock.py
       - name: Reproduce experiment reports
         env:
           MPLBACKEND: Agg
         run: |
-          uv run python scripts/report_time_crystal_subsystem.py --output artifacts/time-crystal
+          .venv/bin/python scripts/report_time_crystal_subsystem.py --output artifacts/time-crystal
       - name: Check bounded experiment acceptance
-        run: uv run python -c "import json; from pathlib import Path; r=json.loads(Path('artifacts/time-crystal/time-crystal-subsystem.json').read_text()); assert len(r['cases'])==168; rows=[s for s in r['summary'] if s['g']==.97 and s['interactions']]; assert len(rows)==5 and all(s['finite_shot_perfect_fraction']==1 for s in rows); assert r['baselines'][-1]['receiver']['perfect_tick_delivery']"
+        run: .venv/bin/python -c "import json; from pathlib import Path; r=json.loads(Path('artifacts/time-crystal/time-crystal-subsystem.json').read_text()); assert len(r['cases'])==168; rows=[s for s in r['summary'] if s['g']==.97 and s['interactions']]; assert len(rows)==5 and all(s['finite_shot_perfect_fraction']==1 for s in rows); assert r['baselines'][-1]['receiver']['perfect_tick_delivery']"
