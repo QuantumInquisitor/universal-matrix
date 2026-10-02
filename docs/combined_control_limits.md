@@ -16,7 +16,7 @@ The focused tests require exact trajectory recovery of the existing actuator mod
 
 Run `python -m pytest tests/test_combined_control_limits.py tests/test_proposed_actuator_bandwidth.py -q -p no:cacheprovider` and `python scripts/report_combined_control_limits.py --output docs/experiments/combined-control-limits-summary.json`.
 
-The [summary](experiments/combined-control-limits-summary.json) records seven bounded cases at 256, 512 and 1024 steps per period, with normalized-text source hashes, actual RMS values and energy residuals. It includes zero-limit controls, combined delay/lag cases and a low-force negative control. These discrete cases do not locate a continuous failure boundary, establish indefinite stability, or cover broader delay/noise/saturation distributions. Measured actuator calibration and assembly-port coupling remain open.
+The [summary](experiments/combined-control-limits-summary.json) records seven bounded cases at 256, 512 and 1024 steps per period, with normalized-text source hashes, actual RMS values and energy residuals. It includes zero-delay and zero-lag controls, combined delay/lag cases and a low-force negative control. These discrete cases do not locate a continuous failure boundary, establish indefinite stability, or cover broader delay/noise/saturation distributions. Measured actuator calibration and assembly-port coupling remain open.
 
 ## Bounded observations
 
