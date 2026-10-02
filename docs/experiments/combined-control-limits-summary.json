@@ -1,0 +1,383 @@
+{
+  "cases": [
+    {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 9.552800126929593e-09,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 6.00571051556642e-07,
+          "maximum_sampled_force_per_mass": 0.26127679323689634,
+          "sampled_command_clipping_fraction": 0.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 5.961773358485941e-10,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 3.7913408412748595e-08,
+          "maximum_sampled_force_per_mass": 0.2612839676579388,
+          "sampled_command_clipping_fraction": 0.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 1024
+          },
+          "late_position_rms_m": 3.723650970643489e-11,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 2.382177122228768e-09,
+          "maximum_sampled_force_per_mass": 0.26130284201518805,
+          "sampled_command_clipping_fraction": 0.0
+        }
+      ],
+      "maximum_state_refinement_differences": [
+        9.066422390624496e-09,
+        5.650934165046806e-10
+      ]
+    },
+    {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.017262164546670806,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 1.0543808404150923e-07,
+          "maximum_sampled_force_per_mass": 0.2507579428600194,
+          "sampled_command_clipping_fraction": 0.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.017262160606786366,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 7.817642533325397e-09,
+          "maximum_sampled_force_per_mass": 0.25079783977649833,
+          "sampled_command_clipping_fraction": 0.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 1024
+          },
+          "late_position_rms_m": 0.017262160367395262,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 5.27602850297626e-10,
+          "maximum_sampled_force_per_mass": 0.25082167354417634,
+          "sampled_command_clipping_fraction": 0.0
+        }
+      ],
+      "maximum_state_refinement_differences": [
+        2.706690780951426e-07,
+        1.543349950616779e-08
+      ]
+    },
+    {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 5.560145466052173e-05,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 2.2515651565413464e-08,
+          "maximum_sampled_force_per_mass": 0.2531797780234432,
+          "sampled_command_clipping_fraction": 0.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 1.2698045502104947e-05,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 1.903355695276332e-09,
+          "maximum_sampled_force_per_mass": 0.2531797780234432,
+          "sampled_command_clipping_fraction": 0.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 1024
+          },
+          "late_position_rms_m": 2.463352616663111e-06,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 1.346860400985861e-10,
+          "maximum_sampled_force_per_mass": 0.2531797780234432,
+          "sampled_command_clipping_fraction": 0.0
+        }
+      ],
+      "maximum_state_refinement_differences": [
+        4.594770398003156e-05,
+        1.0958990870335583e-05
+      ]
+    },
+    {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.017570375748387768,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 1.729356071678012e-07,
+          "maximum_sampled_force_per_mass": 0.22376760386140454,
+          "sampled_command_clipping_fraction": 0.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.01756665011674409,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 9.686863755575814e-09,
+          "maximum_sampled_force_per_mass": 0.22389039026069715,
+          "sampled_command_clipping_fraction": 0.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 1024
+          },
+          "late_position_rms_m": 0.017565779618716332,
+          "meets_declared_tracking_target": true,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 6.002025543239142e-10,
+          "maximum_sampled_force_per_mass": 0.22389607797747782,
+          "sampled_command_clipping_fraction": 0.0
+        }
+      ],
+      "maximum_state_refinement_differences": [
+        4.858750974356951e-05,
+        1.1589215814122866e-05
+      ]
+    },
+    {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.5,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.08648255944776281,
+          "meets_declared_tracking_target": false,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 1.975536410014911e-07,
+          "maximum_sampled_force_per_mass": 0.19827991460625552,
+          "sampled_command_clipping_fraction": 0.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.5,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.0864718277487287,
+          "meets_declared_tracking_target": false,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 1.269745908416553e-08,
+          "maximum_sampled_force_per_mass": 0.19830663998667286,
+          "sampled_command_clipping_fraction": 0.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.5,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 1024
+          },
+          "late_position_rms_m": 0.08646927431081282,
+          "meets_declared_tracking_target": false,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 8.104157345201202e-10,
+          "maximum_sampled_force_per_mass": 0.19830543609035572,
+          "sampled_command_clipping_fraction": 0.0
+        }
+      ],
+      "maximum_state_refinement_differences": [
+        5.741003331749539e-05,
+        1.3693447202811626e-05
+      ]
+    },
+    {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.5,
+            "delay_s": 1.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 17.780060474546804,
+          "meets_declared_tracking_target": false,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 5.760134513366211e-06,
+          "maximum_sampled_force_per_mass": 9.484946199814056,
+          "sampled_command_clipping_fraction": 0.1833626244874048
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.5,
+            "delay_s": 1.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 17.786941899997874,
+          "meets_declared_tracking_target": false,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 2.665618126229674e-07,
+          "maximum_sampled_force_per_mass": 9.485423621778402,
+          "sampled_command_clipping_fraction": 0.1836734693877551
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.5,
+            "delay_s": 1.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 1024
+          },
+          "late_position_rms_m": 17.78721569178429,
+          "meets_declared_tracking_target": false,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 1.4502660405923962e-08,
+          "maximum_sampled_force_per_mass": 9.485449346934933,
+          "sampled_command_clipping_fraction": 0.18363361164005665
+        }
+      ],
+      "maximum_state_refinement_differences": [
+        0.035876005777105036,
+        0.00265570400727988
+      ]
+    },
+    {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.5,
+            "delay_s": 0.2,
+            "force_limit": 0.05,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 9.3069863887212,
+          "meets_declared_tracking_target": false,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 1.142100643392041e-06,
+          "maximum_sampled_force_per_mass": 0.049676736612863856,
+          "sampled_command_clipping_fraction": 1.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.5,
+            "delay_s": 0.2,
+            "force_limit": 0.05,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 9.304951170373187,
+          "meets_declared_tracking_target": false,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 5.231342470324307e-08,
+          "maximum_sampled_force_per_mass": 0.04967673643347569,
+          "sampled_command_clipping_fraction": 1.0
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.5,
+            "delay_s": 0.2,
+            "force_limit": 0.05,
+            "periods": 20,
+            "steps_per_period": 1024
+          },
+          "late_position_rms_m": 9.304031436399827,
+          "meets_declared_tracking_target": false,
+          "diagnostic_limit_m": 0.05,
+          "max_energy_balance_residual_per_mass": 2.6732607238955097e-09,
+          "maximum_sampled_force_per_mass": 0.04967681211542737,
+          "sampled_command_clipping_fraction": 1.0
+        }
+      ],
+      "maximum_state_refinement_differences": [
+        0.0007288125729623118,
+        0.0001740923621582624
+      ]
+    }
+  ],
+  "source_sha256": {
+    "scripts/report_combined_control_limits.py": "d7b4ec3c902391014b04c8c00041b8955a6b223c52e280dd811489356b90f8d2",
+    "src/proposed_combined_control_limits.py": "b49db1757abf92e5e6196f59aab40554246e6cfccace85955909405cb2835c3f",
+    "src/proposed_mode_pair_control.py": "e6c55142097168eb4ad2ca31c70772eed840ef79213b78aab9544c69ead5a5e9",
+    "src/proposed_scalar_wave_control.py": "8b9c8d423b521cdaba0825acec918855ac57ab42b20c0e53327f43631e82fbc9"
+  },
+  "source_hash_convention": "UTF-8 normalized LF text",
+  "scope": "Synthetic prescribed active tracking; 20 periods, final 5 periods RMS <=0.05 m; no stability-boundary or calibrated hardware claim. Mechanical energy per unit modal mass only."
+}
