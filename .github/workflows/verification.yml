@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    branches: [main, codex/recovery-plan-log]
   workflow_dispatch:
 
 permissions:
@@ -216,10 +216,14 @@ jobs:
         if: ${{ matrix.python == '3.12' && needs.changes.outputs.numeric == 'true' }}
         run: uv run python -m src.qball_highres_persistence_stage4
 
-  full-suite:
-    name: Full legacy compatibility suite
+  full-suite-shard:
+    name: Full legacy shard ${{ matrix.shard }} / 8
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
     env:
       UV_PYTHON: "3.12"
 
@@ -239,7 +243,42 @@ jobs:
         run: uv sync --python 3.12 --group test --all-extras
 
       - name: Full pytest suite
-        run: uv run pytest -q
+        run: >-
+          .venv/bin/python -m pytest -q -p scripts.pytest_shard
+          --suite-shard-index ${{ matrix.shard }} --suite-shard-count 8
+          --suite-shard-manifest artifacts/shard-${{ matrix.shard }}.json
+          --durations=25
+
+      - name: Preserve collection and execution manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: legacy-shard-${{ matrix.shard }}
+          path: artifacts/shard-${{ matrix.shard }}.json
+          if-no-files-found: error
+
+  full-suite:
+    name: Full legacy compatibility suite
+    needs: full-suite-shard
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Require every shard to succeed
+        env:
+          SHARD_RESULT: ${{ needs.full-suite-shard.result }}
+        run: test "$SHARD_RESULT" = success
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: legacy-shard-*
+          path: artifacts/legacy-shards
+      - run: python -m pip install 'pytest>=9'
+      - name: Prove complete, disjoint test execution
+        run: python -m scripts.verify_pytest_shards artifacts/legacy-shards --count 8
 
   qball-long-timeseries:
     name: Q-ball long time series / Python 3.12
