@@ -9,8 +9,8 @@
       "status": "in_progress",
       "scope_and_completion": "Inspect both known local repositories, their worktrees, uncommitted files, branches, stashes, reflogs and unreachable objects without cleanup or resets. Inspect current and older scratch directories, source-review folders, raw numerical results, test logs, manifests, viewer exports and packaged versions. Enumerate all remote branches and all PRs, including closed-unmerged attempts; distinguish work already incorporated by later commits from genuinely missing changes. Check issues and unfinished workflow runs. Use targeted interruption/session logs only to resolve artifacts whose purpose or final command outcome is unclear. Check additional project-linked checkouts discovered through worktree metadata; do not assume the two familiar folders are the entire history. Follow docs/DOCUMENTATION_STATUS.md: executable implementation/tests take precedence over stale inventories. **Recovery gate:** every discovered project location and work family has a disposition; each branch with unique changes is either preserved for review, proven superseded, or explicitly unresolved. Do not turn a keyword hit or an unreachable Git object into a new task without examining it.\n   Start with the existing G1–G8, W1–W3, A1–A2, P1, T1–T3, S1–S2, H1–H2, C1–C2, F1–F2, R1–R2 and V1 ledger. Link each record to its latest code, report, inputs, tests and publication status. Classify the 607 inventoried files by experiment family, deduplicate copies, and distinguish commitments from suggested follow-ons. Check older repository questions against current code before reopening them. Give every open task a next action, dependency, completion criterion and blocker. **Done when:** each recovered commitment has one current disposition and superseded status has an explicit replacement. This plan is the starting queue; detailed file-by-file reconciliation remains work.",
       "dependencies": [],
-      "latest_result": "Nine further documentation records reviewed: six preserve the complete original question section, two retain status-index content except the documented superseded-kernel entry, and one clarifies the unchanged experimental content-clock law. Three architecture/local-law records remain in the 84-record inventory. Later progress claims are not independently revalidated by this retention audit. Broader census remains open.",
-      "next_action": "Review the two ARCHITECTURE.md records and the local-transition-kernel design-question checkpoint; retain broader census, published-draft integration and candidate work as open.",
+      "latest_result": "All 84 records in the existing 14-branch exception inventory now have explicit dispositions. Final reviews identify architecture reorganization and intentionally superseded local-law documentation; different laws are not claimed equivalent. Broader repository/location census and unpublished candidate provenance remain open. See historical-file-reconciliation-2026-10-02.json.",
+      "next_action": "Continue the broader location/work-family census and published-draft integration; use the completed 84-record inventory as evidence rather than repeating its reviewed comparisons.",
       "blockers_or_limits": [
         "No new global census performed; remaining historical differences need file-level evidence."
       ],
@@ -39,6 +39,10 @@
         {
           "label": "Before question-retention and content-clock review",
           "text": "84-record historical audit now leaves 12 architecture/research-documentation records. Six workflow revisions reviewed with explicit target comparison; five backslash/delimiter regressions repaired from archived evidence without changing scientific wording. Earlier 15 unavailable blobs all recovered. Documentation governance: 12 tests pass. See HISTORICAL_FILE_RECONCILIATION_2026-10-02.md."
+        },
+        {
+          "label": "Before bounded 84-record inventory completion",
+          "text": "Nine further documentation records reviewed: six preserve the complete original question section, two retain status-index content except the documented superseded-kernel entry, and one clarifies the unchanged experimental content-clock law. Three architecture/local-law records remain in the 84-record inventory. Later progress claims are not independently revalidated by this retention audit. Broader census remains open."
         }
       ]
     },
@@ -590,12 +594,18 @@
       "title": "Resolve remaining historical branch content differences",
       "status": "in_progress",
       "evidence": "docs/recovery/exception-file-comparison.json",
-      "next_action": "Finish unresolved source/test and historical documentation comparisons after the recorded E8 and bend-spacing dispositions.",
-      "latest_result": "Bend-spacing source/document exception reviewed: current baseline preserves scan and adds sampling provenance and finite-grid qualifications. Historical version superseded; other exceptions remain open. See docs/recovery/bend-spacing-disposition.json.",
+      "next_action": "Continue the broader location/work-family census and published-draft integration; use the completed 84-record inventory as evidence rather than repeating its reviewed comparisons.",
+      "latest_result": "All 84 records in the existing 14-branch exception inventory now have explicit dispositions. Final reviews identify architecture reorganization and intentionally superseded local-law documentation; different laws are not claimed equivalent. Broader repository/location census and unpublished candidate provenance remain open. See historical-file-reconciliation-2026-10-02.json.",
       "blockers_or_limits": [
         "Remaining file-level equivalence/disposition evidence is incomplete."
       ],
-      "review_phase": "bounded_progress_with_remaining_scope"
+      "review_phase": "bounded_progress_with_remaining_scope",
+      "previous_result_snapshots": [
+        {
+          "label": "Before bounded 84-record inventory completion",
+          "text": "Bend-spacing source/document exception reviewed: current baseline preserves scan and adds sampling provenance and finite-grid qualifications. Historical version superseded; other exceptions remain open. See docs/recovery/bend-spacing-disposition.json."
+        }
+      ]
     },
     {
       "id": "REC-APERTURE",

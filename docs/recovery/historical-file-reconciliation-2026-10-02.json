@@ -8,9 +8,10 @@
     "reviewed_question_retention": 6,
     "identical_preserved": 38,
     "reviewed_extended": 1,
-    "different_requires_semantic_review": 3,
+    "reviewed_architecture_reorganization": 1,
     "reviewed_test_revision": 3,
     "reviewed_workflow_evolution": 6,
+    "reviewed_superseded_local_law_documentation": 2,
     "reviewed_status_index_evolution": 2,
     "documented_superseded_not_restored": 3,
     "reviewed_markup_regression_repaired": 5,
@@ -243,9 +244,10 @@
       "path": "ARCHITECTURE.md",
       "archived_blob": "4795bbbd974e27fe95bc95423137a7a7f79bf404",
       "current_blob": "5bfb27c3d4f8894bf9853ce35d8199c3f018cb79",
-      "disposition": "different_requires_semantic_review",
+      "disposition": "reviewed_architecture_reorganization",
       "archived_object_available_locally": true,
-      "previous_archived_object_available_locally": false
+      "previous_archived_object_available_locally": false,
+      "evidence": "Compared full architecture diff: section hierarchy and references renumbered, duplicate Huet test/note references removed but retained in their own section, toroidal introduction/frontier wording clarified, and sampled bracket-refinement section added. Prior finite-grid and physical-scale limitations remain. No source restoration required; later numerical claims are not independently revalidated by this documentation comparison."
     },
     {
       "branch": "codex/reorganize-architecture",
@@ -356,9 +358,10 @@
       "path": "ARCHITECTURE.md",
       "archived_blob": "72f1e91e9fc40edb371b440a4099929f36bde2fb",
       "current_blob": "5bfb27c3d4f8894bf9853ce35d8199c3f018cb79",
-      "disposition": "different_requires_semantic_review",
+      "disposition": "reviewed_superseded_local_law_documentation",
       "archived_object_available_locally": true,
-      "previous_archived_object_available_locally": false
+      "previous_archived_object_available_locally": false,
+      "evidence": "Old local_transition_kernel two-channel pair-rotation proposal is intentionally absent, consistent with REC-OLD-KERNEL and the recorded PR7 closure. Current matrix_local_transition instead uses phase and conjugate momentum with a nearest-neighbor rotor Hamiltonian; its current source agrees with the documented law. These are different models, not a formatting-only change or an equivalence proof. Original design questions remain preserved; retain archived blobs for provenance and do not restore the old polarity-gradient channel without new justification."
     },
     {
       "branch": "local-transition-kernel-v0.1",
@@ -383,9 +386,10 @@
       "path": "docs/omniverse_design_questions_v0.1.md",
       "archived_blob": "fdc666fcdff2faa95081af446add011f2b9b8e48",
       "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
-      "disposition": "different_requires_semantic_review",
+      "disposition": "reviewed_superseded_local_law_documentation",
       "archived_object_available_locally": true,
-      "previous_archived_object_available_locally": false
+      "previous_archived_object_available_locally": false,
+      "evidence": "Old local_transition_kernel two-channel pair-rotation proposal is intentionally absent, consistent with REC-OLD-KERNEL and the recorded PR7 closure. Current matrix_local_transition instead uses phase and conjugate momentum with a nearest-neighbor rotor Hamiltonian; its current source agrees with the documented law. These are different models, not a formatting-only change or an equivalence proof. Original design questions remain preserved; retain archived blobs for provenance and do not restore the old polarity-gradient channel without new justification."
     },
     {
       "branch": "local-transition-kernel-v0.1",
@@ -1231,6 +1235,24 @@
         "reviewed_workflow_evolution": 6,
         "documented_superseded_not_restored": 3,
         "reviewed_markup_regression_repaired": 5
+      }
+    },
+    {
+      "label": "Before final three documentation dispositions",
+      "counts": {
+        "preserved_in_published_pr_123": 2,
+        "reviewed_later_documentation": 3,
+        "reviewed_math_delimiters_only": 11,
+        "reviewed_question_retention": 6,
+        "identical_preserved": 38,
+        "reviewed_extended": 1,
+        "different_requires_semantic_review": 3,
+        "reviewed_test_revision": 3,
+        "reviewed_workflow_evolution": 6,
+        "reviewed_status_index_evolution": 2,
+        "documented_superseded_not_restored": 3,
+        "reviewed_markup_regression_repaired": 5,
+        "reviewed_content_clock_clarification": 1
       }
     }
   ]

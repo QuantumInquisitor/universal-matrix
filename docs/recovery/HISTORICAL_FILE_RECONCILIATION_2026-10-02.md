@@ -22,7 +22,9 @@ preserves each archived blob, current blob and disposition:
 | Original design-question content retained | 6 |
 | Status-index evolution reviewed | 2 |
 | Content-clock clarification reviewed | 1 |
-| Still requires semantic review | 3 |
+| Architecture reorganization reviewed | 1 |
+| Superseded local-law documentation reviewed | 2 |
+| Still requires semantic review in this inventory | 0 |
 
 These are branch/file records, not unique files or experiments. The first
 snapshot left 42 unresolved records and 15 unavailable archived blobs. The
@@ -65,8 +67,13 @@ The content-clock revision preserves the exponential lapse, inverse rate and
 speed, fixed phase increment and explicit link-per-tick hypothesis. Its added
 first-order lapse expansion agrees with the current source. The evidence
 boundary makes unresolved physical parameters and gravity claims explicit.
-The two architecture comparisons and the old-kernel design checkpoint remain
-open; this documentation audit does not establish replacement equivalence.
+The final architecture review identifies section renumbering, corrected
+cross-references, removal of duplicate Huet references retained elsewhere, and
+later sampled-clearance documentation. The other architecture version and
+design checkpoint omit the intentionally superseded two-channel pair-rotation
+law, consistent with REC-OLD-KERNEL and the recorded PR #7 closure. The current
+phase/momentum rotor Hamiltonian is a different model; this audit does not
+establish replacement equivalence. Archived blobs remain the provenance record.
 
 The reviewed bend-spacing source retains the original scan and adds sampling
 metadata and phase offsets. Its updated wording correctly limits
@@ -91,13 +98,13 @@ recovery or main, and not physical boundary calibration.
 
 The original recovery full-suite run exhausted its 40-minute budget at 28%.
 PR #151 now tests eight file partitions with a complete-execution aggregate.
-Run 37056625500 has six partitions passed and two still running at this review;
+Run 37056625500 has seven partitions passed and one still running at this review;
 full compatibility is pending. No server-side branch was merged during this audit.
 
 ## Next actions
 
-1. Resolve the remaining three architecture and local-law documentation
-   records using the now available archived objects.
+1. Continue the broader location and work-family census. All 84 records in
+   this bounded inventory now have dispositions; that does not close P01.
 2. Complete review and integration disposition of #123 using its preserved
    implementation and the fresh compatibility evidence.
 3. Integrate reviewed #148/#149 after the ongoing recovery verification has
