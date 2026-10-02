@@ -3,13 +3,14 @@
 import argparse
 import hashlib
 import json
-import math
 from itertools import combinations
 from pathlib import Path
 
 import numpy as np
 
 try:
+    from .report_fold_dynamics import Q0
+    from .report_fold_mapped import port
     from .report_fold_recursive_port_body_correspondence import (
         EXACT_DISPLACEMENT_TOLERANCE,
         EXACT_JACOBIAN_TOLERANCE,
@@ -23,9 +24,9 @@ try:
         point_jacobian,
         transform_geometry,
     )
-    from .report_fold_dynamics import Q0
-    from .report_fold_mapped import port
 except ImportError:
+    from report_fold_dynamics import Q0
+    from report_fold_mapped import port
     from report_fold_recursive_port_body_correspondence import (
         EXACT_DISPLACEMENT_TOLERANCE,
         EXACT_JACOBIAN_TOLERANCE,
@@ -39,8 +40,6 @@ except ImportError:
         point_jacobian,
         transform_geometry,
     )
-    from report_fold_dynamics import Q0
-    from report_fold_mapped import port
 
 
 PAIR_EXACT_DISPLACEMENT_TOLERANCE = EXACT_DISPLACEMENT_TOLERANCE
