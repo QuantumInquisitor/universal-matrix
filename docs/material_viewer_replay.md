@@ -18,11 +18,13 @@ relative sizes. Replay selects original frames using their physical timestamps;
 it does not interpolate geometry or invent dynamics. Panels are midsurfaces,
 bridges lines and hubs points, not finite-thickness solids or physical joints.
 
-Reserve, delivered work, external input and the three loss owners are shown
+Mechanical energy, reserve, delivered work, external input and the three loss owners are shown
 separately in joules. Network edge potentials and endpoint work are explicitly
-network-wide. Delivered work is transfer, not additional storage. The existing
-export does not contain mechanical-energy totals, so this viewer cannot
-display a complete energy balance. The adapter's historical compatibility flag
+network-wide. Delivered work is transfer, not additional storage. Module mechanical energy is copied unchanged from the source sample: kinetic
+energy under the existing point-inertia model plus constitutive material potential.
+It excludes connector potential and reserve. Older v1 exports without this field
+remain readable and show unavailable; partial or nonfinite values are rejected.
+Displaying the ledgers is not a complete energy-balance certificate. The adapter's historical compatibility flag
 is left unchanged to preserve its source checkpoint; this page is now a direct
 consumer of that contract.
 

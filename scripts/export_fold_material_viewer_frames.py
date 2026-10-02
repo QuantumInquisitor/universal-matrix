@@ -53,6 +53,7 @@ def adapt(report, *, case="powered", display_m_per_unit=0.1):
         previous_time = time_s
         q = _vector_list(sample.get("q"), module_count, "q")
         rates = _vector_list(sample.get("rates"), module_count, "rates")
+        mechanical = _vector_list(sample.get("mechanical_j"), module_count, "mechanical_j")
         reserve = _vector_list(sample.get("reserve_j"), module_count, "reserve_j")
         delivered = _vector_list(sample.get("delivered_work_j"), module_count, "delivered_work_j")
         damping = _vector_list(sample.get("damping_loss_j"), module_count, "damping_loss_j")
@@ -85,6 +86,7 @@ def adapt(report, *, case="powered", display_m_per_unit=0.1):
                     size=float(size),
                     q=[scalar(v, "q") for v in q[module_index]],
                     rates=[scalar(v, "rates") for v in rates[module_index]],
+                    mechanical_j=scalar(mechanical[module_index], "mechanical_j"),
                     reserve_j=scalar(reserve[module_index], "reserve_j"),
                     delivered_work_j=scalar(delivered[module_index], "delivered_work_j"),
                     losses_j=dict(
