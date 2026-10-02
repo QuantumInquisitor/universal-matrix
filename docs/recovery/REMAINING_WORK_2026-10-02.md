@@ -2,6 +2,10 @@
 
 The master register retains **41 IDs**: 12 main workstreams, 24 research/source scope-review entries and five recovery records. These are not 41 active or wholly unimplemented experiments. Original scopes, dependencies and statuses are preserved; completed bounded milestones and current next actions are added separately.
 
+## Distributed trajectory continuation
+
+The isolated 0.4 s trajectory/energy experiment passes 47 combined local tests. See [the report and limits](../fold_distributed_trajectories.md). Existing production dynamics and all workstream completion criteria remain unchanged. Remote CI is a separate gate.
+
 ## Current continuation — integration and inertia
 
 PRs #143, #144, #145 and #146 are merged into recovery, not main. Recovery head after these merges is `585593e0f69d6ad07d0e7bce1ad08c532b2809bd`. PR #129 is closed as superseded after review; its archived head and replacement energy/loss comparisons are preserved in [the disposition evidence](pr129-disposition.json). No geometry, collision tolerance or governing-contact solver criteria changed.
@@ -10,7 +14,7 @@ Distributed panel/bridge inertia advances P07: 22 owners, 82 quadrature points a
 
 At the latest check, 17 of 19 listed workflows for the earlier combined head `e39dcc9` passed; broad verification and experimental controls were still running. This is a dated snapshot, not a claim that all checks passed at the newer head.
 
-Immediate order: finish remaining draft dispositions; advance the distributed-inertia trajectory/energy experiment and direct computed-state viewer replay. Keep physical-input gaps and the independent research queue explicit. The original 41 IDs, completion criteria, dependencies and workstream statuses remain intact.
+Immediate order: finish remaining draft dispositions; advance direct computed-state viewer replay and scope recursive use of the validated single-specimen distributed inertia. Keep physical-input gaps and the independent research queue explicit. The original 41 IDs, completion criteria, dependencies and workstream statuses remain intact.
 
 ## Earlier reconciliation snapshot (superseded where noted below)
 
@@ -41,7 +45,7 @@ The timestamped [PR/CI evidence](register-reconciliation-2026-10-02.json) covers
 | P04 | Close the whole-assembly geometry and motion questions. | Specify the missing material-point/deformation correspondence between the 22-body specimen and 69-domain flow assembly; separate that from physical joint and finite-thickness work. | No validated relative-fold map between these assemblies; source-midsurface clearance does not supply thickness or joint geometry. |
 | P05 | Finish the wave and control experiments already started. | Reconcile W2 artifact provenance, then define one bounded stochastic-noise/actuator-bandwidth or wavelength/mode comparison with controls and acceptance criteria. | W2 legacy artifact lacks source hashes; broader convergence and Q-ball period protocol remain unresolved. |
 | P06 | Decide whether crystal components provide a useful engine capability. | Define a timing-component use case and matched ordinary-divider comparison including load, latency, readout and energy; retain the existing 168-run evidence. | No established practical advantage or matched hardware cost/calibration. Spatial crystal tests require explicit coordinates. |
-| P07 | Define material forces for one explicit connected specimen. | Integrate distributed inertia into a separately validated trajectory experiment with independent energy controls; physical joints, thickness, hub rotation and calibration remain separate. | Physical joint/attachment geometry and measured calibration are absent; four hubs lack constitutive energy. |
+| P07 | Define material forces for one explicit connected specimen. | Scope distributed inertia in the recursive network after this bounded single-specimen result; physical joints, thickness, hub rotation and calibration remain separate. | Physical joint/attachment geometry and measured calibration are absent; four hubs lack constitutive energy. |
 | P08 | Close the energy budget across the coupled specimen. | Retain validated powered-material/reserve/restart ledgers; extend independent work/energy/loss controls whenever a new joint, contact, electrical or flow coupling is introduced. | New physical interfaces and supply calibration are unspecified; no electromechanical or whole-flow energy closure claimed. |
 | P09 | Test whether breathing and folding emerge from the equations. | Rerun the existing emergent-motion controls after a relevant material/joint/supply change; define stability and perturbation criteria before longer runs. | No sustained stable cycle established; do not tune a prescribed outcome or make breathing a global gate. |
 | P10 | Extend to recursive coupling and persistent state. | Scope broader state/depth coverage and physical connector realization; retain the merged local-contact and phase/current limits. | Global continuous clearance, arbitrary-depth convergence, dormant-path rules and a physical attachment/phase-current adapter remain unvalidated. |
