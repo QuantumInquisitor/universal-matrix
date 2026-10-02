@@ -19,7 +19,10 @@ preserves each archived blob, current blob and disposition:
 | Preserved in published PR #123, not integrated | 2 |
 | Workflow evolution reviewed | 6 |
 | Markup regressions repaired from archived evidence | 5 |
-| Still requires semantic review | 12 |
+| Original design-question content retained | 6 |
+| Status-index evolution reviewed | 2 |
+| Content-clock clarification reviewed | 1 |
+| Still requires semantic review | 3 |
 
 These are branch/file records, not unique files or experiments. The first
 snapshot left 42 unresolved records and 15 unavailable archived blobs. The
@@ -49,6 +52,22 @@ backslashes are removed. The repair restores only the archived backslashes
 and converts math delimiters to dollar syntax. Other pre-existing malformed
 notation is not reconstructed. Twelve documentation-governance tests pass.
 
+Nine further records now have documentation dispositions. Six design-question
+versions preserve the complete original question section exactly after math
+delimiter conversion. Later replacements change the progress date, nested-scale
+status and two code references; the scale row distinguishes a chosen planar
+ratio from unresolved physical scale and boundary coupling. Two status-index
+versions retain prior nonempty lines, except the already superseded old-kernel
+entry. Later progress additions are historical reports retained here, not
+independently revalidated scientific conclusions.
+
+The content-clock revision preserves the exponential lapse, inverse rate and
+speed, fixed phase increment and explicit link-per-tick hypothesis. Its added
+first-order lapse expansion agrees with the current source. The evidence
+boundary makes unresolved physical parameters and gravity claims explicit.
+The two architecture comparisons and the old-kernel design checkpoint remain
+open; this documentation audit does not establish replacement equivalence.
+
 The reviewed bend-spacing source retains the original scan and adds sampling
 metadata and phase offsets. Its updated wording correctly limits
 `collision_free` to no detected collision on a finite grid. The three absent
@@ -70,13 +89,14 @@ independent manufactured checks, property invariants and documentation controls
 passed 41 tests. This is local combined compatibility evidence, not merge into
 recovery or main, and not physical boundary calibration.
 
-At this checkpoint recovery CI has passed both core Python jobs, the Q-ball
-long-time-series job and the experimental controls. Its full legacy suite is
-still running. No server-side branch was merged during this audit.
+The original recovery full-suite run exhausted its 40-minute budget at 28%.
+PR #151 now tests eight file partitions with a complete-execution aggregate.
+Run 37056625500 has six partitions passed and two still running at this review;
+full compatibility is pending. No server-side branch was merged during this audit.
 
 ## Next actions
 
-1. Resolve the remaining 12 architecture and research-documentation
+1. Resolve the remaining three architecture and local-law documentation
    records using the now available archived objects.
 2. Complete review and integration disposition of #123 using its preserved
    implementation and the fresh compatibility evidence.
