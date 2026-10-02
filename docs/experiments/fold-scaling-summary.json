@@ -1,0 +1,500 @@
+{
+  "schema": 1,
+  "scope": "Synthetic homothetic point-mass hypothesis; fixed density and strain-energy-density assumptions, chosen damping similarity",
+  "assumptions": {
+    "length_exponent": 1,
+    "mass_exponent": 3,
+    "generalized_inertia_exponent": 5,
+    "potential_exponent": 3,
+    "damping_exponent": 4,
+    "time_exponent": 1
+  },
+  "sources": {
+    "report_fold_scaling.py": "be318438221d4f9ad570a11b2e25102bb064f8d1604ee828bba6f04787cf2a30",
+    "report_fold_dynamics.py": "7f814a9fb30be9dfb8da503042d5b97631b1c34cf4a12a2d66ab059223ed86ab",
+    "report_fold_kinematics.py": "710febbd4b891f1bf963bb876b39912811d80a2a5b968fa3c3baf653edefd62b"
+  },
+  "cases": [
+    {
+      "length_scale": 1.0,
+      "duration_s": 2.0,
+      "dt_s": 0.02,
+      "initial_state": [
+        1.02,
+        0.2317993877991494,
+        0.01,
+        0.02,
+        0.0
+      ],
+      "wrong_inertia": false,
+      "max_balance_residual_j": 8.169974342303707e-15,
+      "samples": [
+        {
+          "time_s": 0.0,
+          "reference_time_s": 0.0,
+          "q": [
+            1.02,
+            0.2317993877991494
+          ],
+          "rates": [
+            0.01,
+            0.02
+          ],
+          "mechanical_j": 6.176181286493741e-06,
+          "loss_j": 0.0,
+          "residual_j": 0.0
+        },
+        {
+          "time_s": 0.4,
+          "reference_time_s": 0.4,
+          "q": [
+            1.0187111109850437,
+            0.24508775688508846
+          ],
+          "rates": [
+            -0.01623394012138816,
+            0.04371293166380382
+          ],
+          "mechanical_j": 6.119123214367208e-06,
+          "loss_j": 5.705806879286202e-08,
+          "residual_j": -3.3336705152717305e-15
+        },
+        {
+          "time_s": 0.8,
+          "reference_time_s": 0.8,
+          "q": [
+            1.0080810001353195,
+            0.26422530483941586
+          ],
+          "rates": [
+            -0.03459950465477513,
+            0.04852930356826072
+          ],
+          "mechanical_j": 5.9098380461247695e-06,
+          "loss_j": 2.6634324166324114e-07,
+          "residual_j": 1.29426973153636e-15
+        },
+        {
+          "time_s": 1.2,
+          "reference_time_s": 1.2,
+          "q": [
+            0.9933792915934497,
+            0.2812005915782581
+          ],
+          "rates": [
+            -0.03566996962192414,
+            0.033274670549488315
+          ],
+          "mechanical_j": 5.6207521069753976e-06,
+          "loss_j": 5.554291874335992e-07,
+          "residual_j": 7.915255864954815e-15
+        },
+        {
+          "time_s": 1.6,
+          "reference_time_s": 1.6,
+          "q": [
+            0.9819768078737022,
+            0.2889850224153528
+          ],
+          "rates": [
+            -0.01882289975707131,
+            0.004343213365660353
+          ],
+          "mechanical_j": 5.4688433149830176e-06,
+          "loss_j": 7.073379775873738e-07,
+          "residual_j": 6.076650468381727e-15
+        },
+        {
+          "time_s": 2.0,
+          "reference_time_s": 2.0,
+          "q": [
+            0.9796078501695168,
+            0.2846550368941353
+          ],
+          "rates": [
+            0.007503405957730187,
+            -0.024728912628942723
+          ],
+          "mechanical_j": 5.446267199431565e-06,
+          "loss_j": 7.299140910804362e-07,
+          "residual_j": 4.018260244907765e-15
+        }
+      ],
+      "scaling_checks": {
+        "total_mass_kg": 0.7400000000000001,
+        "position_error_m": 0.0,
+        "mass_matrix_relative_error": 0.0,
+        "bias_relative_error": 0.0,
+        "point_inertia_relative_error": 0.0
+      },
+      "similarity_checks": {
+        "coordinate_max_differences": [
+          0.0,
+          0.0
+        ],
+        "reference_rate_max_differences": [
+          0.0,
+          0.0
+        ],
+        "energy_max_difference_j": 0.0
+      }
+    },
+    {
+      "length_scale": 0.5,
+      "duration_s": 1.0,
+      "dt_s": 0.01,
+      "initial_state": [
+        1.02,
+        0.2317993877991494,
+        0.02,
+        0.04,
+        0.0
+      ],
+      "wrong_inertia": false,
+      "max_balance_residual_j": 1.0212467927879634e-15,
+      "samples": [
+        {
+          "time_s": 0.0,
+          "reference_time_s": 0.0,
+          "q": [
+            1.02,
+            0.2317993877991494
+          ],
+          "rates": [
+            0.02,
+            0.04
+          ],
+          "mechanical_j": 7.720226608117176e-07,
+          "loss_j": 0.0,
+          "residual_j": 0.0
+        },
+        {
+          "time_s": 0.2,
+          "reference_time_s": 0.4,
+          "q": [
+            1.0187111109850437,
+            0.24508775688508846
+          ],
+          "rates": [
+            -0.03246788024277632,
+            0.08742586332760764
+          ],
+          "mechanical_j": 7.64890401795901e-07,
+          "loss_j": 7.132258599107753e-09,
+          "residual_j": -4.167088144089663e-16
+        },
+        {
+          "time_s": 0.4,
+          "reference_time_s": 0.8,
+          "q": [
+            1.0080810001353195,
+            0.26422530483941586
+          ],
+          "rates": [
+            -0.06919900930955027,
+            0.09705860713652144
+          ],
+          "mechanical_j": 7.387297557655962e-07,
+          "loss_j": 3.329290520790514e-08,
+          "residual_j": 1.61783716442045e-16
+        },
+        {
+          "time_s": 0.6,
+          "reference_time_s": 1.2,
+          "q": [
+            0.9933792915934497,
+            0.2812005915782581
+          ],
+          "rates": [
+            -0.07133993924384828,
+            0.06654934109897663
+          ],
+          "mechanical_j": 7.025940133719247e-07,
+          "loss_j": 6.94286484291999e-08,
+          "residual_j": 9.894069831193518e-16
+        },
+        {
+          "time_s": 0.8,
+          "reference_time_s": 1.6,
+          "q": [
+            0.9819768078737022,
+            0.2889850224153528
+          ],
+          "rates": [
+            -0.03764579951414262,
+            0.008686426731320706
+          ],
+          "mechanical_j": 6.836054143728772e-07,
+          "loss_j": 8.841724719842173e-08,
+          "residual_j": 7.595813085477159e-16
+        },
+        {
+          "time_s": 1.0,
+          "reference_time_s": 2.0,
+          "q": [
+            0.9796078501695168,
+            0.2846550368941353
+          ],
+          "rates": [
+            0.015006811915460374,
+            -0.049457825257885446
+          ],
+          "mechanical_j": 6.807833999289456e-07,
+          "loss_j": 9.123926138505453e-08,
+          "residual_j": 5.022825306134706e-16
+        }
+      ],
+      "scaling_checks": {
+        "total_mass_kg": 0.09250000000000001,
+        "position_error_m": 0.0,
+        "mass_matrix_relative_error": 0.0,
+        "bias_relative_error": 0.0,
+        "point_inertia_relative_error": 0.0
+      },
+      "similarity_checks": {
+        "coordinate_max_differences": [
+          0.0,
+          0.0
+        ],
+        "reference_rate_max_differences": [
+          0.0,
+          0.0
+        ],
+        "energy_max_difference_j": 0.0
+      }
+    },
+    {
+      "length_scale": 0.25,
+      "duration_s": 0.5,
+      "dt_s": 0.005,
+      "initial_state": [
+        1.02,
+        0.2317993877991494,
+        0.04,
+        0.08,
+        0.0
+      ],
+      "wrong_inertia": false,
+      "max_balance_residual_j": 1.2765584909849542e-16,
+      "samples": [
+        {
+          "time_s": 0.0,
+          "reference_time_s": 0.0,
+          "q": [
+            1.02,
+            0.2317993877991494
+          ],
+          "rates": [
+            0.04,
+            0.08
+          ],
+          "mechanical_j": 9.65028326014647e-08,
+          "loss_j": 0.0,
+          "residual_j": 0.0
+        },
+        {
+          "time_s": 0.1,
+          "reference_time_s": 0.4,
+          "q": [
+            1.0187111109850437,
+            0.24508775688508846
+          ],
+          "rates": [
+            -0.06493576048555263,
+            0.17485172665521528
+          ],
+          "mechanical_j": 9.561130022448763e-08,
+          "loss_j": 8.915323248884691e-10,
+          "residual_j": -5.208860180112079e-17
+        },
+        {
+          "time_s": 0.2,
+          "reference_time_s": 0.8,
+          "q": [
+            1.0080810001353195,
+            0.26422530483941586
+          ],
+          "rates": [
+            -0.13839801861910053,
+            0.19411721427304288
+          ],
+          "mechanical_j": 9.234121947069952e-08,
+          "loss_j": 4.161613150988143e-09,
+          "residual_j": 2.0222964555255624e-17
+        },
+        {
+          "time_s": 0.3,
+          "reference_time_s": 1.2,
+          "q": [
+            0.9933792915934497,
+            0.2812005915782581
+          ],
+          "rates": [
+            -0.14267987848769656,
+            0.13309868219795326
+          ],
+          "mechanical_j": 8.782425167149059e-08,
+          "loss_j": 8.678581053649988e-09,
+          "residual_j": 1.2367587288991898e-16
+        },
+        {
+          "time_s": 0.4,
+          "reference_time_s": 1.6,
+          "q": [
+            0.9819768078737022,
+            0.2889850224153528
+          ],
+          "rates": [
+            -0.07529159902828524,
+            0.017372853462641412
+          ],
+          "mechanical_j": 8.545067679660965e-08,
+          "loss_j": 1.1052155899802716e-08,
+          "residual_j": 9.494766356846449e-17
+        },
+        {
+          "time_s": 0.5,
+          "reference_time_s": 2.0,
+          "q": [
+            0.9796078501695168,
+            0.2846550368941353
+          ],
+          "rates": [
+            0.03001362383092075,
+            -0.09891565051577089
+          ],
+          "mechanical_j": 8.50979249911182e-08,
+          "loss_j": 1.1404907673131816e-08,
+          "residual_j": 6.278531632668382e-17
+        }
+      ],
+      "scaling_checks": {
+        "total_mass_kg": 0.011562500000000002,
+        "position_error_m": 0.0,
+        "mass_matrix_relative_error": 0.0,
+        "bias_relative_error": 0.0,
+        "point_inertia_relative_error": 0.0
+      },
+      "similarity_checks": {
+        "coordinate_max_differences": [
+          0.0,
+          0.0
+        ],
+        "reference_rate_max_differences": [
+          0.0,
+          0.0
+        ],
+        "energy_max_difference_j": 0.0
+      }
+    }
+  ],
+  "wrong_inertia_control": {
+    "length_scale": 0.5,
+    "duration_s": 1.0,
+    "dt_s": 0.01,
+    "initial_state": [
+      1.02,
+      0.2317993877991494,
+      0.02,
+      0.04,
+      0.0
+    ],
+    "wrong_inertia": true,
+    "max_balance_residual_j": 3.209919882464512e-07,
+    "samples": [
+      {
+        "time_s": 0.0,
+        "reference_time_s": 0.0,
+        "q": [
+          1.02,
+          0.2317993877991494
+        ],
+        "rates": [
+          0.02,
+          0.04
+        ],
+        "mechanical_j": 7.720226608117176e-07,
+        "loss_j": 0.0,
+        "residual_j": 0.0
+      },
+      {
+        "time_s": 0.2,
+        "reference_time_s": 0.4,
+        "q": [
+          1.0226231162718007,
+          0.2411559364869442
+        ],
+        "rates": [
+          0.005845215418940299,
+          0.052491926292896646
+        ],
+        "mechanical_j": 7.679009633620588e-07,
+        "loss_j": 3.6961395154735874e-09,
+        "residual_j": -4.2555793418520965e-10
+      },
+      {
+        "time_s": 0.4,
+        "reference_time_s": 0.8,
+        "q": [
+          1.0222512908455623,
+          0.25234451070310154
+        ],
+        "rates": [
+          -0.009603187593479152,
+          0.05823362228999808
+        ],
+        "mechanical_j": 7.045832359769491e-07,
+        "loss_j": 7.728856277363435e-09,
+        "residual_j": -5.971056855740506e-08
+      },
+      {
+        "time_s": 0.6,
+        "reference_time_s": 1.2,
+        "q": [
+          1.0188387481800538,
+          0.2639868087236257
+        ],
+        "rates": [
+          -0.02420014386055561,
+          0.057058751376018804
+        ],
+        "mechanical_j": 5.944336032464956e-07,
+        "loss_j": 1.3509720003743776e-08,
+        "residual_j": -1.6407933756147824e-07
+      },
+      {
+        "time_s": 0.8,
+        "reference_time_s": 1.6,
+        "q": [
+          1.01276756086263,
+          0.27473880121504984
+        ],
+        "rates": [
+          -0.03586462325396154,
+          0.049466093834308576
+        ],
+        "mechanical_j": 4.805579401459246e-07,
+        "loss_j": 2.179297711501321e-08,
+        "residual_j": -2.696717435507798e-07
+      },
+      {
+        "time_s": 1.0,
+        "reference_time_s": 2.0,
+        "q": [
+          1.0048040700561063,
+          0.2834181241383773
+        ],
+        "rates": [
+          -0.04288253944250253,
+          0.03656516264527535
+        ],
+        "mechanical_j": 4.189181889354325e-07,
+        "loss_j": 3.2112483629833915e-08,
+        "residual_j": -3.209919882464512e-07
+      }
+    ]
+  },
+  "calibrated_material": false,
+  "scaled_connector_integrated": false,
+  "recursive_assembly_validated": false
+}

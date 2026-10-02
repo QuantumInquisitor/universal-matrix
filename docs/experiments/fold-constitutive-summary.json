@@ -1,0 +1,2206 @@
+{
+  "schema": 1,
+  "scope": "Static synthetic membrane plus optional axial reduced-element energy; no dynamics or solid-union material claim",
+  "sources": {
+    "report_fold_constitutive.py": "33f1f6e584ac854c8c27f32987be4211f17573b1599fb45368404f0b1e4fb0d6",
+    "report_fold_kinematics.py": "710febbd4b891f1bf963bb876b39912811d80a2a5b968fa3c3baf653edefd62b"
+  },
+  "fixture": {
+    "path": "docs/experiments/fold-original-source-fixture.json",
+    "sha256_normalized_text": "8adcf04e74e1a00a568ba1fb0815b901d65b5a28e37c396a8e3f7ba136d02c16",
+    "reference_commit": "60a7fd60f57d73b89ea5397db58a3ff5d291556c",
+    "executed_sources": {
+      "canonical_kernel.py": {
+        "origin": "local-dependency",
+        "sha256_normalized_text": "5e53471a1ad075962c2d0b62b364430e128f60b144b8617c30ed4fae8a3a5fb4"
+      },
+      "sevenfold_seed_contract.py": {
+        "origin": "local-dependency",
+        "sha256_normalized_text": "c6363c27a321ce52353272448761f303c39c41c250b0b11f3850f923b160b349"
+      },
+      "seed_matrix_bridge.py": {
+        "origin": "local-dependency",
+        "sha256_normalized_text": "49f647fcce79adea03e315f3ac6415e4824ed95ec8a9b99ad15251cf22b92fe3"
+      },
+      "stella_octangula_register_bridge.py": {
+        "origin": "local-dependency",
+        "sha256_normalized_text": "759690e5ea70bbe0675e63436db80af1a5f5e88348bdfda0016588ee6b35648b"
+      },
+      "platonic_solid_bridge.py": {
+        "origin": "local-dependency",
+        "sha256_normalized_text": "e50825a607a1445eba480b9021022c79d9570a43ba5502d486cb3e5ac985d3b4"
+      },
+      "four_dimensional_polytope_bridge.py": {
+        "origin": "local-dependency",
+        "sha256_normalized_text": "bb2ce04531bed34113e0a2eedb3f48d08e5425b191232437e55bc46975529475"
+      },
+      "twenty_four_cell_bridge.py": {
+        "origin": "local-dependency",
+        "sha256_normalized_text": "10dd0554c90fac8b483f64f1afbbcbd4c5cc4a2b64f17fa1bdf82a0d06ef0dc8"
+      },
+      "h3_600_cell_bridge.py": {
+        "origin": "local-dependency",
+        "sha256_normalized_text": "599e040813f93854eb896a7207f07c567cd2d166fa42dc48c4c33d4c258fe69b"
+      },
+      "lynchpin_geometry_audit.py": {
+        "origin": "pinned-source",
+        "sha256_normalized_text": "0eba217443bafdba6f4eea81f02efc19b70e2d3a92abf1554c64f4bdf0ea9c31"
+      },
+      "lynchpin_relative_motion_control.py": {
+        "origin": "pinned-source",
+        "sha256_normalized_text": "b8c86c3a0dd82761e7a9705ecbc22b2816791d21f0e0ad0bd8ef7535ece59daa"
+      },
+      "lynchpin_finite_panel_control.py": {
+        "origin": "pinned-source",
+        "sha256_normalized_text": "b26757839fef5620df6bb573109165f72b3d1e830a3036b277d19da7e4093588"
+      },
+      "lynchpin_breathing_control.py": {
+        "origin": "pinned-source",
+        "sha256_normalized_text": "6bfbb16a3d858f2557c101ccf968bd777498093274582ab7e21466fc7b886398"
+      },
+      "lynchpin_connected_control.py": {
+        "origin": "pinned-source",
+        "sha256_normalized_text": "a10c53cb1d9e184b0080ed24e2433cb382ee57d807c40af43a53ada73220f940"
+      }
+    },
+    "cases": 9,
+    "body_vertex_checks": 198,
+    "max_vertex_error_m": 2.7755575615628914e-17
+  },
+  "parameters": {
+    "young_pa": 1000,
+    "poisson": 0.3,
+    "effective_reference_thickness_m": 0.0001,
+    "bridge_ea_n": 0.1,
+    "length_m_per_reference_unit": 0.1,
+    "reference_q": [
+      1.0,
+      0.2617993877991494
+    ]
+  },
+  "cases": {
+    "reference": {
+      "q": [
+        1.0,
+        0.2617993877991494
+      ],
+      "reference_q": [
+        1.0,
+        0.2617993877991494
+      ],
+      "total_energy_j": 0.0,
+      "gradient": [
+        0.0,
+        0.0
+      ],
+      "gradient_units": [
+        "J per unit scale",
+        "J/rad"
+      ],
+      "panels": [
+        {
+          "id": "panel-0",
+          "ray_pair": [
+            0,
+            1
+          ],
+          "energy_j": 0.0,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-1",
+          "ray_pair": [
+            0,
+            2
+          ],
+          "energy_j": 0.0,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-2",
+          "ray_pair": [
+            0,
+            3
+          ],
+          "energy_j": 0.0,
+          "reference_area_m2": 0.014308175888998222,
+          "green_strain": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-3",
+          "ray_pair": [
+            1,
+            2
+          ],
+          "energy_j": 0.0,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-4",
+          "ray_pair": [
+            1,
+            3
+          ],
+          "energy_j": 0.0,
+          "reference_area_m2": 0.015068365147691857,
+          "green_strain": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-5",
+          "ray_pair": [
+            2,
+            3
+          ],
+          "energy_j": 0.0,
+          "reference_area_m2": 0.012986602907461946,
+          "green_strain": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "bridges": [
+        {
+          "id": "bridge-0-0",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-0-1",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-1-0",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-1-2",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-2-0",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-2-3",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-3-1",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-3-2",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-4-1",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-4-3",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-5-2",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-5-3",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "omitted_hubs": [
+        "hub-0",
+        "hub-1",
+        "hub-2",
+        "hub-3"
+      ]
+    },
+    "scale_only": {
+      "q": [
+        1.03,
+        0.2617993877991494
+      ],
+      "reference_q": [
+        1.0,
+        0.2617993877991494
+      ],
+      "total_energy_j": 2.0476991762433437e-05,
+      "gradient": [
+        0.0013762628253074845,
+        -1.9413753190020602e-05
+      ],
+      "gradient_units": [
+        "J per unit scale",
+        "J/rad"
+      ],
+      "panels": [
+        {
+          "id": "panel-0",
+          "ray_pair": [
+            0,
+            1
+          ],
+          "energy_j": 1.8952252078169696e-06,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.030449999999999887,
+              -4.423544863740858e-17
+            ],
+            [
+              -4.423544863740858e-17,
+              0.030449999999999887
+            ]
+          ],
+          "gradient": [
+            0.00012821556414131265,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-1",
+          "ray_pair": [
+            0,
+            2
+          ],
+          "energy_j": 1.8952252078169696e-06,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.030449999999999887,
+              -4.423544863740858e-17
+            ],
+            [
+              -4.423544863740858e-17,
+              0.030449999999999887
+            ]
+          ],
+          "gradient": [
+            0.00012821556414131265,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-2",
+          "ray_pair": [
+            0,
+            3
+          ],
+          "energy_j": 1.8952252078169804e-06,
+          "reference_area_m2": 0.014308175888998222,
+          "green_strain": [
+            [
+              0.03044999999999989,
+              2.688821387764051e-17
+            ],
+            [
+              2.168404344971009e-17,
+              0.030450000000000085
+            ]
+          ],
+          "gradient": [
+            0.00012821556414131295,
+            -1.1640533895636134e-20
+          ]
+        },
+        {
+          "id": "panel-3",
+          "ray_pair": [
+            1,
+            2
+          ],
+          "energy_j": 1.8952252078169696e-06,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.030449999999999887,
+              -4.423544863740858e-17
+            ],
+            [
+              -4.423544863740858e-17,
+              0.030449999999999887
+            ]
+          ],
+          "gradient": [
+            0.00012821556414131265,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-4",
+          "ray_pair": [
+            1,
+            3
+          ],
+          "energy_j": 1.9959179765503925e-06,
+          "reference_area_m2": 0.015068365147691857,
+          "green_strain": [
+            [
+              0.030449999999999894,
+              -1.734723475976807e-17
+            ],
+            [
+              -2.2551405187698492e-17,
+              0.030450000000000085
+            ]
+          ],
+          "gradient": [
+            0.00013502762008846665,
+            7.204026359968541e-06
+          ]
+        },
+        {
+          "id": "panel-5",
+          "ray_pair": [
+            2,
+            3
+          ],
+          "energy_j": 1.7201729546151395e-06,
+          "reference_area_m2": 0.012986602907461946,
+          "green_strain": [
+            [
+              0.030449999999999876,
+              -5.204170427930421e-18
+            ],
+            [
+              -3.469446951953614e-18,
+              0.030450000000000102
+            ]
+          ],
+          "gradient": [
+            0.00011637294865376644,
+            -2.6617779549989132e-05
+          ]
+        }
+      ],
+      "bridges": [
+        {
+          "id": "bridge-0-0",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-0-1",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-1-0",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-1-2",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-2-0",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-2-3",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-3-1",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-3-2",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-4-1",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-4-3",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-5-2",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-5-3",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        }
+      ],
+      "omitted_hubs": [
+        "hub-0",
+        "hub-1",
+        "hub-2",
+        "hub-3"
+      ]
+    },
+    "fold_only": {
+      "q": [
+        1.0,
+        0.3417993877991494
+      ],
+      "reference_q": [
+        1.0,
+        0.2617993877991494
+      ],
+      "total_energy_j": 3.093008804989407e-06,
+      "gradient": [
+        -3.282734116086256e-05,
+        7.585930457999144e-05
+      ],
+      "gradient_units": [
+        "J per unit scale",
+        "J/rad"
+      ],
+      "panels": [
+        {
+          "id": "panel-0",
+          "ray_pair": [
+            0,
+            1
+          ],
+          "energy_j": 0.0,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-1",
+          "ray_pair": [
+            0,
+            2
+          ],
+          "energy_j": 0.0,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-2",
+          "ray_pair": [
+            0,
+            3
+          ],
+          "energy_j": 0.0,
+          "reference_area_m2": 0.014308175888998222,
+          "green_strain": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-3",
+          "ray_pair": [
+            1,
+            2
+          ],
+          "energy_j": 0.0,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-4",
+          "ray_pair": [
+            1,
+            3
+          ],
+          "energy_j": 1.4716538141226338e-06,
+          "reference_area_m2": 0.015068365147691857,
+          "green_strain": [
+            [
+              0.004183834917817764,
+              0.03517297765007229
+            ],
+            [
+              0.03517297765007229,
+              0.0041838349178177645
+            ]
+          ],
+          "gradient": [
+            2.389905875915951e-05,
+            3.710359320039044e-05
+          ]
+        },
+        {
+          "id": "panel-5",
+          "ray_pair": [
+            2,
+            3
+          ],
+          "energy_j": 1.621354990866773e-06,
+          "reference_area_m2": 0.012986602907461946,
+          "green_strain": [
+            [
+              -0.017036123393369445,
+              -0.03292461011787908
+            ],
+            [
+              -0.03292461011787908,
+              -0.01703612339336945
+            ]
+          ],
+          "gradient": [
+            -5.6726399920022064e-05,
+            3.8755711379600996e-05
+          ]
+        }
+      ],
+      "bridges": [
+        {
+          "id": "bridge-0-0",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-0-1",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-1-0",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-1-2",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-2-0",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-2-3",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-3-1",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-3-2",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-4-1",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-4-3",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-5-2",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-5-3",
+          "length_m": 0.017,
+          "reference_length_m": 0.017,
+          "energy_j": 0.0,
+          "gradient": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "omitted_hubs": [
+        "hub-0",
+        "hub-1",
+        "hub-2",
+        "hub-3"
+      ]
+    },
+    "mixed": {
+      "q": [
+        1.03,
+        0.3417993877991494
+      ],
+      "reference_q": [
+        1.0,
+        0.2617993877991494
+      ],
+      "total_energy_j": 2.2498061461503127e-05,
+      "gradient": [
+        0.0013375562820005583,
+        6.831006540286809e-05
+      ],
+      "gradient_units": [
+        "J per unit scale",
+        "J/rad"
+      ],
+      "panels": [
+        {
+          "id": "panel-0",
+          "ray_pair": [
+            0,
+            1
+          ],
+          "energy_j": 1.8952252078169696e-06,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.030449999999999887,
+              -4.423544863740858e-17
+            ],
+            [
+              -4.423544863740858e-17,
+              0.030449999999999887
+            ]
+          ],
+          "gradient": [
+            0.00012821556414131265,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-1",
+          "ray_pair": [
+            0,
+            2
+          ],
+          "energy_j": 1.8952252078169696e-06,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.030449999999999887,
+              -4.423544863740858e-17
+            ],
+            [
+              -4.423544863740858e-17,
+              0.030449999999999887
+            ]
+          ],
+          "gradient": [
+            0.00012821556414131265,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-2",
+          "ray_pair": [
+            0,
+            3
+          ],
+          "energy_j": 1.8952252078169708e-06,
+          "reference_area_m2": 0.014308175888998222,
+          "green_strain": [
+            [
+              0.030449999999999863,
+              -6.331740687315346e-17
+            ],
+            [
+              -7.025630077706069e-17,
+              0.030449999999999963
+            ]
+          ],
+          "gradient": [
+            0.00012821556414131262,
+            -4.554991524379366e-21
+          ]
+        },
+        {
+          "id": "panel-3",
+          "ray_pair": [
+            1,
+            2
+          ],
+          "energy_j": 1.8952252078169696e-06,
+          "reference_area_m2": 0.014308175888998236,
+          "green_strain": [
+            [
+              0.030449999999999887,
+              -4.423544863740858e-17
+            ],
+            [
+              -4.423544863740858e-17,
+              0.030449999999999887
+            ]
+          ],
+          "gradient": [
+            0.00012821556414131265,
+            0.0
+          ]
+        },
+        {
+          "id": "panel-4",
+          "ray_pair": [
+            1,
+            3
+          ],
+          "energy_j": 4.234158579565352e-06,
+          "reference_area_m2": 0.015068365147691857,
+          "green_strain": [
+            [
+              0.034888630464312766,
+              0.037315011988961706
+            ],
+            [
+              0.0373150119889617,
+              0.03488863046431287
+            ]
+          ],
+          "gradient": [
+            0.00016227263341277848,
+            4.909566717384959e-05
+          ]
+        },
+        {
+          "id": "panel-5",
+          "ray_pair": [
+            2,
+            3
+          ],
+          "energy_j": 1.5030020506698782e-06,
+          "reference_area_m2": 0.012986602907461946,
+          "green_strain": [
+            [
+              0.01237637669197419,
+              -0.034929718874058026
+            ],
+            [
+              -0.03492971887405801,
+              0.012376376691974304
+            ]
+          ],
+          "gradient": [
+            5.0421392022528484e-05,
+            1.92143982290185e-05
+          ]
+        }
+      ],
+      "bridges": [
+        {
+          "id": "bridge-0-0",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-0-1",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-1-0",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-1-2",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-2-0",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-2-3",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-3-1",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-3-2",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-4-1",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-4-3",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-5-2",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        },
+        {
+          "id": "bridge-5-3",
+          "length_m": 0.01751,
+          "reference_length_m": 0.017,
+          "energy_j": 7.650000000000014e-07,
+          "gradient": [
+            5.100000000000005e-05,
+            0.0
+          ]
+        }
+      ],
+      "omitted_hubs": [
+        "hub-0",
+        "hub-1",
+        "hub-2",
+        "hub-3"
+      ]
+    }
+  },
+  "gradient_convention": "Reported gradient is dV/dq; restoring generalized force is its negative",
+  "coefficient_controls": {
+    "membrane_only": {
+      "options": {
+        "bridge_ea_n": 0
+      },
+      "result": {
+        "q": [
+          1.03,
+          0.3417993877991494
+        ],
+        "reference_q": [
+          1.0,
+          0.2617993877991494
+        ],
+        "total_energy_j": 1.331806146150311e-05,
+        "gradient": [
+          0.0007255562820005576,
+          6.831006540286809e-05
+        ],
+        "gradient_units": [
+          "J per unit scale",
+          "J/rad"
+        ],
+        "panels": [
+          {
+            "id": "panel-0",
+            "ray_pair": [
+              0,
+              1
+            ],
+            "energy_j": 1.8952252078169696e-06,
+            "reference_area_m2": 0.014308175888998236,
+            "green_strain": [
+              [
+                0.030449999999999887,
+                -4.423544863740858e-17
+              ],
+              [
+                -4.423544863740858e-17,
+                0.030449999999999887
+              ]
+            ],
+            "gradient": [
+              0.00012821556414131265,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-1",
+            "ray_pair": [
+              0,
+              2
+            ],
+            "energy_j": 1.8952252078169696e-06,
+            "reference_area_m2": 0.014308175888998236,
+            "green_strain": [
+              [
+                0.030449999999999887,
+                -4.423544863740858e-17
+              ],
+              [
+                -4.423544863740858e-17,
+                0.030449999999999887
+              ]
+            ],
+            "gradient": [
+              0.00012821556414131265,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-2",
+            "ray_pair": [
+              0,
+              3
+            ],
+            "energy_j": 1.8952252078169708e-06,
+            "reference_area_m2": 0.014308175888998222,
+            "green_strain": [
+              [
+                0.030449999999999863,
+                -6.331740687315346e-17
+              ],
+              [
+                -7.025630077706069e-17,
+                0.030449999999999963
+              ]
+            ],
+            "gradient": [
+              0.00012821556414131262,
+              -4.554991524379366e-21
+            ]
+          },
+          {
+            "id": "panel-3",
+            "ray_pair": [
+              1,
+              2
+            ],
+            "energy_j": 1.8952252078169696e-06,
+            "reference_area_m2": 0.014308175888998236,
+            "green_strain": [
+              [
+                0.030449999999999887,
+                -4.423544863740858e-17
+              ],
+              [
+                -4.423544863740858e-17,
+                0.030449999999999887
+              ]
+            ],
+            "gradient": [
+              0.00012821556414131265,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-4",
+            "ray_pair": [
+              1,
+              3
+            ],
+            "energy_j": 4.234158579565352e-06,
+            "reference_area_m2": 0.015068365147691857,
+            "green_strain": [
+              [
+                0.034888630464312766,
+                0.037315011988961706
+              ],
+              [
+                0.0373150119889617,
+                0.03488863046431287
+              ]
+            ],
+            "gradient": [
+              0.00016227263341277848,
+              4.909566717384959e-05
+            ]
+          },
+          {
+            "id": "panel-5",
+            "ray_pair": [
+              2,
+              3
+            ],
+            "energy_j": 1.5030020506698782e-06,
+            "reference_area_m2": 0.012986602907461946,
+            "green_strain": [
+              [
+                0.01237637669197419,
+                -0.034929718874058026
+              ],
+              [
+                -0.03492971887405801,
+                0.012376376691974304
+              ]
+            ],
+            "gradient": [
+              5.0421392022528484e-05,
+              1.92143982290185e-05
+            ]
+          }
+        ],
+        "bridges": [
+          {
+            "id": "bridge-0-0",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-0-1",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-1-0",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-1-2",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-2-0",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-2-3",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-3-1",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-3-2",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-4-1",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-4-3",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-5-2",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-5-3",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "omitted_hubs": [
+          "hub-0",
+          "hub-1",
+          "hub-2",
+          "hub-3"
+        ]
+      }
+    },
+    "axial_only": {
+      "options": {
+        "young_pa": 0
+      },
+      "result": {
+        "q": [
+          1.03,
+          0.3417993877991494
+        ],
+        "reference_q": [
+          1.0,
+          0.2617993877991494
+        ],
+        "total_energy_j": 9.180000000000017e-06,
+        "gradient": [
+          0.0006120000000000006,
+          0.0
+        ],
+        "gradient_units": [
+          "J per unit scale",
+          "J/rad"
+        ],
+        "panels": [
+          {
+            "id": "panel-0",
+            "ray_pair": [
+              0,
+              1
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.014308175888998236,
+            "green_strain": [
+              [
+                0.030449999999999887,
+                -4.423544863740858e-17
+              ],
+              [
+                -4.423544863740858e-17,
+                0.030449999999999887
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-1",
+            "ray_pair": [
+              0,
+              2
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.014308175888998236,
+            "green_strain": [
+              [
+                0.030449999999999887,
+                -4.423544863740858e-17
+              ],
+              [
+                -4.423544863740858e-17,
+                0.030449999999999887
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-2",
+            "ray_pair": [
+              0,
+              3
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.014308175888998222,
+            "green_strain": [
+              [
+                0.030449999999999863,
+                -6.331740687315346e-17
+              ],
+              [
+                -7.025630077706069e-17,
+                0.030449999999999963
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-3",
+            "ray_pair": [
+              1,
+              2
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.014308175888998236,
+            "green_strain": [
+              [
+                0.030449999999999887,
+                -4.423544863740858e-17
+              ],
+              [
+                -4.423544863740858e-17,
+                0.030449999999999887
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-4",
+            "ray_pair": [
+              1,
+              3
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.015068365147691857,
+            "green_strain": [
+              [
+                0.034888630464312766,
+                0.037315011988961706
+              ],
+              [
+                0.0373150119889617,
+                0.03488863046431287
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-5",
+            "ray_pair": [
+              2,
+              3
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.012986602907461946,
+            "green_strain": [
+              [
+                0.01237637669197419,
+                -0.034929718874058026
+              ],
+              [
+                -0.03492971887405801,
+                0.012376376691974304
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "bridges": [
+          {
+            "id": "bridge-0-0",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-0-1",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-1-0",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-1-2",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-2-0",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-2-3",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-3-1",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-3-2",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-4-1",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-4-3",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-5-2",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-5-3",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 7.650000000000014e-07,
+            "gradient": [
+              5.100000000000005e-05,
+              0.0
+            ]
+          }
+        ],
+        "omitted_hubs": [
+          "hub-0",
+          "hub-1",
+          "hub-2",
+          "hub-3"
+        ]
+      }
+    },
+    "zero_law": {
+      "options": {
+        "young_pa": 0,
+        "bridge_ea_n": 0
+      },
+      "result": {
+        "q": [
+          1.03,
+          0.3417993877991494
+        ],
+        "reference_q": [
+          1.0,
+          0.2617993877991494
+        ],
+        "total_energy_j": 0.0,
+        "gradient": [
+          0.0,
+          0.0
+        ],
+        "gradient_units": [
+          "J per unit scale",
+          "J/rad"
+        ],
+        "panels": [
+          {
+            "id": "panel-0",
+            "ray_pair": [
+              0,
+              1
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.014308175888998236,
+            "green_strain": [
+              [
+                0.030449999999999887,
+                -4.423544863740858e-17
+              ],
+              [
+                -4.423544863740858e-17,
+                0.030449999999999887
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-1",
+            "ray_pair": [
+              0,
+              2
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.014308175888998236,
+            "green_strain": [
+              [
+                0.030449999999999887,
+                -4.423544863740858e-17
+              ],
+              [
+                -4.423544863740858e-17,
+                0.030449999999999887
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-2",
+            "ray_pair": [
+              0,
+              3
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.014308175888998222,
+            "green_strain": [
+              [
+                0.030449999999999863,
+                -6.331740687315346e-17
+              ],
+              [
+                -7.025630077706069e-17,
+                0.030449999999999963
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-3",
+            "ray_pair": [
+              1,
+              2
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.014308175888998236,
+            "green_strain": [
+              [
+                0.030449999999999887,
+                -4.423544863740858e-17
+              ],
+              [
+                -4.423544863740858e-17,
+                0.030449999999999887
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-4",
+            "ray_pair": [
+              1,
+              3
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.015068365147691857,
+            "green_strain": [
+              [
+                0.034888630464312766,
+                0.037315011988961706
+              ],
+              [
+                0.0373150119889617,
+                0.03488863046431287
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "panel-5",
+            "ray_pair": [
+              2,
+              3
+            ],
+            "energy_j": 0.0,
+            "reference_area_m2": 0.012986602907461946,
+            "green_strain": [
+              [
+                0.01237637669197419,
+                -0.034929718874058026
+              ],
+              [
+                -0.03492971887405801,
+                0.012376376691974304
+              ]
+            ],
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "bridges": [
+          {
+            "id": "bridge-0-0",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-0-1",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-1-0",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-1-2",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-2-0",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-2-3",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-3-1",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-3-2",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-4-1",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-4-3",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-5-2",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "id": "bridge-5-3",
+            "length_m": 0.01751,
+            "reference_length_m": 0.017,
+            "energy_j": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "omitted_hubs": [
+          "hub-0",
+          "hub-1",
+          "hub-2",
+          "hub-3"
+        ]
+      }
+    }
+  },
+  "gradient_controls": [
+    {
+      "q": [
+        0.97,
+        0.12
+      ],
+      "step": 1e-06,
+      "analytic": [
+        -0.0011913688179494147,
+        -0.00011622747236317269
+      ],
+      "finite_difference": [
+        -0.001191368817978988,
+        -0.00011622747237407724
+      ],
+      "absolute_error": [
+        2.957334897801811e-14,
+        1.0904553085153146e-14
+      ]
+    },
+    {
+      "q": [
+        1.03,
+        0.34
+      ],
+      "step": 1e-06,
+      "analytic": [
+        0.0013380663487980182,
+        6.644647920069932e-05
+      ],
+      "finite_difference": [
+        0.0013380663486634405,
+        6.644647919178907e-05
+      ],
+      "absolute_error": [
+        1.3457767886193572e-13,
+        8.910258056556153e-15
+      ]
+    },
+    {
+      "q": [
+        1.01,
+        0.43
+      ],
+      "step": 1e-06,
+      "analytic": [
+        0.00041267569475279933,
+        0.00015021877135801748
+      ],
+      "finite_difference": [
+        0.00041267569472578654,
+        0.00015021877135146136
+      ],
+      "absolute_error": [
+        2.7012788707259094e-14,
+        6.556116326911221e-15
+      ]
+    }
+  ],
+  "scale_control": {
+    "expected_membrane_j": 1.129699176243345e-05,
+    "expected_axial_j": 9.180000000000019e-06,
+    "computed_j": 2.0476991762433437e-05,
+    "absolute_error_j": 3.049318610115481e-20
+  },
+  "reference_tangent": {
+    "matrix": [
+      [
+        0.04476790617225114,
+        -0.0006009630326607015
+      ],
+      [
+        -0.0006009630323536827,
+        0.0010021211132992223
+      ]
+    ],
+    "skew_error": 3.0701884177336547e-13,
+    "numerical_eigenvalues": [
+      0.0009938706387419068,
+      0.04477615664680846
+    ],
+    "scope": "Mixed-coordinate positive-definiteness diagnostic, not physical modal frequencies",
+    "step": 1e-06
+  },
+  "limitations": [
+    "synthetic uncalibrated elastic parameters",
+    "effective thickness is not collision-envelope thickness",
+    "surface stretching only; no bending, plasticity, buckling or failure law",
+    "bridge axial law is independent of fold angle; no bridge bending model",
+    "four hub constitutive energies omitted",
+    "old point inertia remains unchanged; no added density or overlapping solid-volume mass",
+    "membrane and bridge energies are declared reduced elements, not a solid material partition",
+    "old quadratic modal potential not added",
+    "static checkpoint only; no motion or collision result"
+  ]
+}

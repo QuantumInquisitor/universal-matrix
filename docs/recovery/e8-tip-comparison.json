@@ -1,0 +1,15 @@
+{
+  "merged_pr": 59,
+  "merged_head": "323412a98612a62f78e28511b0b47bc1363580ac",
+  "branch_tip": "0614ac24142a60252965159ffca54882a991e745",
+  "comparison": "ahead",
+  "ahead_by": 3,
+  "behind_by": 0,
+  "files": [
+    {
+      "path": "docs/DOCUMENTATION_STATUS.md",
+      "patch": "@@ -42,6 +42,7 @@ A historical file never overrides the current canonical specification or tested\n | `docs/sri_yantra_multidimensional_v0.1.md` | Current embedding-independent Sri Yantra inventory, realization family, simplex lift, spiral-cone chart, and enclosure-flow contract. |\n | `docs/higher_dimensional_e8_bridge_v0.1.md` | Current exact arbitrary-dimensional regular-family audit and exploratory E8/D4 construction bridge. |\n | `docs/h4_direct_e8_lift_v0.1.md` | Current direct H4/600-cell to E8 lift using the reduced Q(phi) inner product and eight rational coefficient coordinates. |\n+| `docs/e8_equivalence_map_v0.1.md` | Current exact change-of-basis equivalence between the H4-derived and standard E8 root systems. |\n | `docs/e8_equivalence_map_v0.1.md` | Current exact scale-orthogonal equivalence between the H4-derived and standard E8 root systems. |\n | `docs/qball_stability_map_v0.1.md` | Current charged-matter evidence-map design separating energetic, branch-slope, and finite-time persistence diagnostics. |\n | `docs/qball_threshold_refinement_v0.1.md` | Current adaptive refinement of the charged-matter energetic threshold. |"
+    }
+  ],
+  "disposition": "post-PR net difference is a duplicate documentation index row; no scientific source/test changes to recover"
+}

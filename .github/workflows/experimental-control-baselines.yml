@@ -1,0 +1,1310 @@
+name: Experimental control baselines
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_phase_pattern_controls.py'
+      - 'scripts/report_chiral_phase_controls.py'
+      - 'scripts/report_phase_delay_controls.py'
+      - 'scripts/report_material_specimen.py'
+      - 'scripts/report_material_restart.py'
+      - 'scripts/report_fold_kinematics.py'
+      - 'scripts/export_fold_reference_fixture.py'
+      - 'scripts/report_fold_dynamics.py'
+      - 'scripts/report_fold_modes.py'
+      - 'scripts/report_fold_reservoir.py'
+      - 'scripts/report_fold_coupling.py'
+      - 'scripts/report_fold_network.py'
+      - 'scripts/report_fold_hierarchy.py'
+      - 'scripts/report_fold_mapped.py'
+      - 'scripts/report_fold_scaling.py'
+      - 'scripts/report_fold_scaled_pair.py'
+      - 'scripts/export_lynchpin_material_scene.py'
+      - 'tests/test_lynchpin_material_scene.py'
+      - 'scripts/fold_material_multiscale.py'
+      - 'scripts/report_fold_material_multiscale.py'
+      - 'tests/test_fold_material_multiscale.py'
+      - 'scripts/report_fold_material_supply.py'
+      - 'tests/test_fold_material_supply.py'
+      - 'scripts/export_fold_material_viewer_frames.py'
+      - 'tests/test_fold_material_viewer_frames.py'
+      - 'scripts/report_fold_material_persistence.py'
+      - 'tests/test_fold_material_persistence.py'
+      - 'scripts/report_fold_material_recursive_tree.py'
+      - 'tests/test_fold_material_recursive_tree.py'
+      - 'scripts/report_fold_material_depth3.py'
+      - 'tests/test_fold_material_depth3.py'
+      - 'scripts/report_fold_material_depth_attenuation.py'
+      - 'tests/test_fold_material_depth_attenuation.py'
+      - 'scripts/report_fold_material_depth_duration.py'
+      - 'tests/test_fold_material_depth_duration.py'
+      - 'scripts/report_fold_material_depth_transport.py'
+      - 'tests/test_fold_material_depth_transport.py'
+      - 'scripts/report_fold_material_depth_backreaction.py'
+      - 'tests/test_fold_material_depth_backreaction.py'
+      - 'scripts/report_fold_scale_extension.py'
+      - 'tests/test_fold_scale_extension.py'
+      - 'scripts/report_fold_material_coupling.py'
+      - 'tests/test_fold_material_coupling.py'
+      - 'scripts/report_fold_material_dynamics.py'
+      - 'tests/test_fold_constitutive_dynamics.py'
+      - 'scripts/report_fold_constitutive.py'
+      - 'scripts/plot_fold_constitutive.py'
+      - 'tests/test_fold_constitutive.py'
+      - 'scripts/report_wave_harmonics.py'
+      - 'tests/test_wave_harmonics.py'
+      - 'docs/recovery/wave-source-provenance.json'
+      - 'scripts/report_fold_threshold.py'
+      - 'scripts/plot_fold_threshold.py'
+      - 'tests/test_fold_threshold.py'
+      - 'docs/experiments/fold-seed-compatibility.json'
+      - 'tests/fixtures/fold_supply_seed/**'
+      - 'scripts/report_fold_stability.py'
+      - 'scripts/plot_fold_stability.py'
+      - 'tests/test_fold_stability.py'
+      - 'docs/experiments/fold-supply-summary.json'
+      - 'scripts/report_fold_supply.py'
+      - 'scripts/plot_fold_supply.py'
+      - 'tests/test_fold_supply.py'
+      - 'scripts/report_fold_duration.py'
+      - 'scripts/plot_fold_duration.py'
+      - 'tests/test_fold_duration.py'
+      - 'scripts/report_fold_active_multiscale.py'
+      - 'scripts/plot_fold_active_multiscale.py'
+      - 'tests/test_fold_active_multiscale.py'
+      - 'scripts/report_fold_multiscale.py'
+      - 'scripts/plot_fold_multiscale.py'
+      - 'tests/test_fold_multiscale.py'
+      - 'tests/test_fold_scaled_pair.py'
+      - 'tests/test_fold_scaling.py'
+      - 'tests/test_fold_mapped.py'
+      - 'tests/test_fold_hierarchy.py'
+      - 'tests/test_fold_network.py'
+      - 'tests/test_fold_coupling.py'
+      - 'tests/test_fold_reservoir.py'
+      - 'scripts/report_fold_robustness.py'
+      - 'tests/test_fold_modes.py'
+      - 'tests/test_fold_robustness.py'
+      - 'scripts/plot_fold_dynamics.py'
+      - 'tests/test_phase_pattern_controls.py'
+      - 'tests/test_chiral_phase_controls.py'
+      - 'tests/test_phase_delay_controls.py'
+      - 'tests/test_material_specimen.py'
+      - 'tests/test_material_restart.py'
+      - 'tests/test_fold_kinematics.py'
+      - 'tests/test_fold_source_fixture.py'
+      - 'tests/test_fold_dynamics.py'
+      - 'docs/experiments/fold-original-source-fixture.json'
+      - '.github/workflows/experimental-control-baselines.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --group test --group lint
+      - name: Check bounded experiment implementations
+        run: |
+          uv run ruff check scripts/report_phase_pattern_controls.py scripts/report_chiral_phase_controls.py scripts/report_phase_delay_controls.py scripts/report_material_specimen.py tests/test_phase_pattern_controls.py tests/test_chiral_phase_controls.py tests/test_phase_delay_controls.py tests/test_material_specimen.py
+          uv run ruff format --check scripts/report_phase_pattern_controls.py scripts/report_chiral_phase_controls.py scripts/report_phase_delay_controls.py scripts/report_material_specimen.py tests/test_phase_pattern_controls.py tests/test_chiral_phase_controls.py tests/test_phase_delay_controls.py tests/test_material_specimen.py
+          uv run python -m pytest tests/test_phase_pattern_controls.py tests/test_chiral_phase_controls.py tests/test_phase_delay_controls.py tests/test_material_specimen.py
+      - name: Reproduce baseline reports
+        run: |
+          uv run python scripts/report_phase_pattern_controls.py --output artifacts/control-baselines/phase-pattern.json
+          uv run python scripts/report_chiral_phase_controls.py --output artifacts/control-baselines/chiral.json
+          uv run python scripts/report_phase_delay_controls.py --output artifacts/control-baselines/delay.json
+          uv run python scripts/report_material_specimen.py --output artifacts/control-baselines/material.json
+      - name: Verify reported controls and provenance
+        run: |
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          reports = {}
+          for name, script in [('phase-pattern', 'phase_pattern_controls'), ('chiral', 'chiral_phase_controls'), ('delay', 'phase_delay_controls'), ('material', 'material_specimen')]:
+              report = json.loads(Path(f'artifacts/control-baselines/{name}.json').read_text())
+              expected = hashlib.sha256(Path(f'scripts/report_{script}.py').read_text().encode()).hexdigest()
+              assert report['source_sha256'] == expected
+              reports[name] = report
+          phase = reports['phase-pattern']
+          assert phase['case_count'] == len(phase['cases']) == 108
+          assert max(abs(r['balance_residual']) for r in phase['cases']) < 2e-6
+          chiral = reports['chiral']
+          assert chiral['case_count'] == len(chiral['cases']) == 36
+          assert max(abs(r['balance_residual']) for r in chiral['cases']) < 1e-7
+          delay = reports['delay']
+          assert delay['case_count'] == len(delay['cases']) == 54
+          for r in delay['cases']:
+              assert r['maximum_prearrival_paired_difference'] == 0
+              if r['parameters']['coupling'] == 0:
+                  assert r['first_detected_paired_difference'] is None
+              else:
+                  assert r['first_detected_paired_difference'] > r['earliest_allowed_arrival']
+          material = reports['material']['cases']
+          assert len(material) == 4 and sum(map(len, material.values())) == 12
+          assert abs(material['driven_damped'][-1]['balance_residual_j']) < 1e-8
+          PY
+      - name: Check switched mechanical restart and energy ownership
+        run: |
+          uv run ruff check scripts/report_material_restart.py tests/test_material_restart.py
+          uv run ruff format --check scripts/report_material_restart.py tests/test_material_restart.py
+          uv run python -m pytest tests/test_material_restart.py tests/test_material_specimen.py
+          uv run python scripts/report_material_restart.py --output artifacts/control-baselines/material-restart.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/control-baselines/material-restart.json').read_text())
+          assert len(r['cases']) == 3
+          assert set(r['sources']) == {'report_material_restart.py', 'report_material_specimen.py'}
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for case in r['cases']:
+              assert case['exact_replay']
+              assert case['off_interval_work_j'] == 0
+              assert sum(case['final']['owned_energy_j']) < sum(case['cutoff']['owned_energy_j'])
+          fine = r['cases'][-1]['final']
+          assert abs(fine['total_balance_residual_j']) < 1e-8
+          assert max(map(abs, fine['ownership_residuals_j'])) < 1e-8
+          PY
+      - name: Check recovered folding kinematics and inertia
+        run: |
+          uv run ruff check scripts/report_fold_kinematics.py scripts/export_fold_reference_fixture.py tests/test_fold_kinematics.py tests/test_fold_source_fixture.py
+          uv run ruff format --check scripts/report_fold_kinematics.py scripts/export_fold_reference_fixture.py tests/test_fold_kinematics.py tests/test_fold_source_fixture.py
+          uv run python -m pytest tests/test_fold_kinematics.py tests/test_fold_source_fixture.py
+          uv run python scripts/report_fold_kinematics.py --output artifacts/fold-kinematics/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-kinematics/report.json').read_text())
+          assert r['adapter_sha256'] == hashlib.sha256(Path('scripts/report_fold_kinematics.py').read_text().encode()).hexdigest()
+          replay = r['independent_original_source_replay']
+          assert replay['fixture_sha256_normalized_text'] == hashlib.sha256(Path(replay['fixture_path']).read_text().encode()).hexdigest()
+          assert len(r['body_ids']) == len(set(r['body_ids'])) == 22
+          assert len(r['samples']) == 17 and replay['cases'] == 9
+          assert replay['maximum_position_absolute_error_m'] < 1e-14
+          assert all(s['minimum_eigenvalue'] > 0 for s in r['samples'])
+          assert max(s['kinetic_identity_absolute_error_j'] for s in r['samples']) < 1e-18
+          assert not r['physical_material_validation'] and not r['dynamics_implemented']
+          PY
+      - name: Check force-driven fold energy and negative control
+        run: |
+          uv run ruff check scripts/report_fold_dynamics.py scripts/plot_fold_dynamics.py tests/test_fold_dynamics.py
+          uv run ruff format --check scripts/report_fold_dynamics.py scripts/plot_fold_dynamics.py tests/test_fold_dynamics.py
+          uv run python -m pytest tests/test_fold_dynamics.py
+          uv run python scripts/report_fold_dynamics.py --output artifacts/fold-dynamics/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-dynamics/report.json').read_text())
+          assert set(r['source_sha256_normalized_text']) == {'report_fold_dynamics.py', 'report_fold_kinematics.py'}
+          for name, value in r['source_sha256_normalized_text'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          cases = r['cases']
+          assert set(cases) == {'equilibrium', 'conservative', 'damped', 'driven', 'drive_off', 'omitted_bias_control'}
+          assert len(r['refinements']) == 6 and len(r['body_ids']) == 22
+          for name, case in cases.items():
+              if name != 'omitted_bias_control':
+                  assert case['maximum_balance_residual_j'] < 1e-13
+          assert cases['omitted_bias_control']['maximum_balance_residual_j'] > 1e-10
+          assert r['energy_identity']['absolute_error_j_s'] < 1e-11
+          assert r['energy_identity']['omitted_bias_absolute_error_j_s'] > 1e-8
+          assert cases['damped']['final_energy_j'] < cases['damped']['initial_energy_j']
+          after = [s['work_j'] for s in cases['drive_off']['trace'] if s['time_s'] >= 1]
+          assert after and max(after) == min(after)
+          assert not r['physical_calibration'] and not r['autonomous_breathing']
+          PY
+      - name: Check fold modes and finite sensitivity
+        run: |
+          uv run ruff check scripts/report_fold_modes.py scripts/report_fold_robustness.py tests/test_fold_modes.py tests/test_fold_robustness.py
+          uv run ruff format --check scripts/report_fold_modes.py scripts/report_fold_robustness.py tests/test_fold_modes.py tests/test_fold_robustness.py
+          uv run python -m pytest tests/test_fold_modes.py tests/test_fold_robustness.py
+          uv run python scripts/report_fold_modes.py --output artifacts/fold-modes/report.json
+          uv run python scripts/report_fold_robustness.py --output artifacts/fold-robustness/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          m = json.loads(Path('artifacts/fold-modes/report.json').read_text())
+          r = json.loads(Path('artifacts/fold-robustness/report.json').read_text())
+          for hashes in (m['sources'], r['source_sha256_normalized_text']):
+              assert len(hashes) == 3
+              for name, value in hashes.items():
+                  assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          assert len(m['cases']) == 6
+          assert all(c['maximum_balance_residual_j'] < 1e-12 for c in m['cases'])
+          assert max(m['step_refinement']['final_coordinate_absolute_differences']) < 1e-8
+          for mode in (0, 1):
+              cases = [c for c in m['cases'] if c['mode'] == mode]
+              for field in ('max_scale_error', 'max_angle_error_rad'):
+                  assert all(3 < a[field] / b[field] < 5 for a, b in zip(cases, cases[1:]))
+          assert len(r['cases']) == 24
+          assert r['counts'] == {'success': 21, 'domain-rejected': 3, 'numerical-error': 0}
+          assert r['rejected_refinement'] == ['domain-rejected'] * 3
+          for c in r['cases']:
+              if c['classification'] == 'success':
+                  assert c['metrics']['max_balance_residual_j'] < 1e-10
+          refinement = r['accepted_refinement']
+          assert max(refinement['final_coordinate_absolute_difference']) < 1e-7
+          assert refinement['residual_j_coarse_fine'][1] < refinement['residual_j_coarse_fine'][0]
+          PY
+      - name: Check finite fold reservoir
+        run: |
+          uv run ruff check scripts/report_fold_reservoir.py tests/test_fold_reservoir.py
+          uv run ruff format --check scripts/report_fold_reservoir.py tests/test_fold_reservoir.py
+          uv run python -m pytest tests/test_fold_reservoir.py
+          uv run python scripts/report_fold_reservoir.py --output artifacts/fold-reservoir/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-reservoir/report.json').read_text())
+          assert len(r['sources']) == 3 and len(r['cases']) == 6
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert c['minimum_reserve_j'] >= 0
+              if name != 'omitted_debit_control':
+                  assert c['max_total_residual_j'] < 1e-11
+                  assert c['final_state'][5] <= c['settings']['efficiency'] * c['settings']['initial_reserve_j'] + 1e-15
+          assert r['cases']['omitted_debit_control']['max_total_residual_j'] > 1e-6
+          assert r['cases']['fueled']['final_state'][4] < 1e-5 / 3
+          assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
+          assert max(r['refinement']['final_coordinate_absolute_differences']) < 1e-7
+          assert not r['claims']['sustained_autonomous_breathing']
+          PY
+      - name: Check two-module fold exchange
+        run: |
+          uv run ruff check scripts/report_fold_coupling.py tests/test_fold_coupling.py
+          uv run ruff format --check scripts/report_fold_coupling.py tests/test_fold_coupling.py
+          uv run python -m pytest tests/test_fold_coupling.py
+          uv run python scripts/report_fold_coupling.py --output artifacts/fold-coupling/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-coupling/report.json').read_text())
+          assert len(r['sources']) == 4 and len(r['cases']) == 4
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert len(c['initial_state']) == 20
+              assert c['max_module_residual_j'] < 1e-11
+              if name != 'wrong_reaction_control':
+                  assert c['max_total_residual_j'] < 1e-11
+                  assert c['max_connection_residual_j'] < 1e-11
+          assert r['cases']['wrong_reaction_control']['max_total_residual_j'] > 1e-6
+          assert r['cases']['wrong_reaction_control']['max_connection_residual_j'] > 1e-6
+          assert r['cases']['disconnected']['samples'][-1]['mechanical_j'][1] == 0
+          assert r['cases']['conservative']['samples'][-1]['mechanical_j'][1] > 1e-6
+          assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
+          assert max(max(row) for row in r['refinement']['final_coordinate_absolute_differences']) < 1e-7
+          assert not r['full_structure_recursive_validation'] and not r['sustained_breathing']
+          PY
+      - name: Check fold network energy ownership
+        run: |
+          uv run ruff check scripts/report_fold_network.py tests/test_fold_network.py
+          uv run ruff format --check scripts/report_fold_network.py tests/test_fold_network.py
+          uv run python -m pytest tests/test_fold_network.py
+          uv run python scripts/report_fold_network.py --output artifacts/fold-network/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-network/report.json').read_text())
+          assert len(r['sources']) == 5 and len(r['cases']) == 6
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert c['nodes'] == 4 and len(c['initial_state']) == 36 + 2 * len(c['edges'])
+              assert c['max_node_residual_j'] < 1e-10
+              if name != 'broken_chain':
+                  assert c['max_total_residual_j'] < 1e-10
+                  assert max(c['max_edge_residuals_j'], default=0) < 1e-10
+          bad = r['cases']['broken_chain']
+          assert bad['max_total_residual_j'] > 1e-9
+          assert bad['max_edge_residuals_j'][1] > 1e-9
+          assert max(bad['max_edge_residuals_j'][::2]) < 1e-10
+          assert r['cases']['disconnected']['samples'][-1]['mechanical_j'][1:] == [0, 0, 0]
+          assert all(e > 0 for e in r['cases']['conservative_chain']['samples'][-1]['mechanical_j'][1:])
+          assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
+          assert max(max(row) for row in r['refinement']['per_node_coordinate_absolute_differences']) < 1e-7
+          assert not r['full_recursive_structure_validated'] and not r['sustained_breathing']
+          PY
+      - name: Check hierarchical fold regrouping
+        run: |
+          uv run ruff check scripts/report_fold_hierarchy.py tests/test_fold_hierarchy.py
+          uv run ruff format --check scripts/report_fold_hierarchy.py tests/test_fold_hierarchy.py
+          uv run python -m pytest tests/test_fold_hierarchy.py
+          uv run python scripts/report_fold_hierarchy.py --output artifacts/fold-hierarchy/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-hierarchy/report.json').read_text())
+          assert len(r['sources']) == 6 and len(r['cases']) == 4
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for c in r['cases'].values():
+              assert sorted(e for owned in c['owners'].values() for e in owned) == list(range(4))
+              assert max(c['group_max_residual_j'].values()) < 1e-11
+              assert max(max(row) for row in c['maximum_coordinate_differences_per_node']) < 1e-12
+              assert c['maximum_energy_state_difference_j'] < 1e-15
+              assert c['final_accounts']['root']['boundary_work_j'] == 0
+          control = r['duplicate_edge_accounting_control']
+          assert control['initial_total_overcount_j'] > 1e-7
+          assert abs(control['spurious_energy_change_j']) > 1e-7
+          assert not r['full_recursive_physical_validation'] and not r['sustained_breathing']
+          PY
+      - name: Check mapped fold connector
+        run: |
+          uv run ruff check scripts/report_fold_mapped.py tests/test_fold_mapped.py
+          uv run ruff format --check scripts/report_fold_mapped.py tests/test_fold_mapped.py
+          uv run python -m pytest tests/test_fold_mapped.py
+          uv run python scripts/report_fold_mapped.py --output artifacts/fold-mapped/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-mapped/report.json').read_text())
+          assert len(r['sources']) == 5 and len(r['cases']) == 5
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert c['max_node_residual_j'] < 1e-11
+              if name != 'wrong_jacobian_control':
+                  assert c['max_total_residual_j'] < 1e-11
+                  assert c['max_connector_residual_j'] < 1e-11
+          bad = r['cases']['wrong_jacobian_control']
+          assert bad['max_total_residual_j'] > 1e-7 and bad['max_connector_residual_j'] > 1e-7
+          assert r['cases']['conservative']['samples'][-1]['mechanical_j'][1] > 1e-8
+          assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
+          assert max(max(row) for row in r['refinement']['coordinate_differences_by_module']) < 1e-7
+          assert not r['geometric_mass_scaling_validated'] and not r['physical_recursive_assembly_validated']
+          assert not r['sustained_breathing']
+          PY
+      - name: Check conditional fold body scaling
+        run: |
+          uv run ruff check scripts/report_fold_scaling.py tests/test_fold_scaling.py
+          uv run ruff format --check scripts/report_fold_scaling.py tests/test_fold_scaling.py
+          uv run python -m pytest tests/test_fold_scaling.py
+          uv run python scripts/report_fold_scaling.py --output artifacts/fold-scaling/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-scaling/report.json').read_text())
+          assert len(r['sources']) == 3 and len(r['cases']) == 3
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for c in r['cases']:
+              assert c['max_balance_residual_j'] < 1e-12
+              checks = c['scaling_checks']
+              for key in ('mass_matrix_relative_error', 'bias_relative_error', 'point_inertia_relative_error'):
+                  assert checks[key] < 1e-12
+              assert checks['position_error_m'] < 1e-14
+              similarity = c['similarity_checks']
+              assert max(similarity['coordinate_max_differences']) < 1e-12
+              assert max(similarity['reference_rate_max_differences']) < 1e-12
+              assert similarity['energy_max_difference_j'] < 1e-15
+          assert r['wrong_inertia_control']['max_balance_residual_j'] > 1e-8
+          assert not r['calibrated_material'] and not r['scaled_connector_integrated']
+          assert not r['recursive_assembly_validated']
+          PY
+      - name: Check scaled fold pair and stiffness comparison
+        run: |
+          uv run ruff check scripts/report_fold_scaled_pair.py tests/test_fold_scaled_pair.py
+          uv run ruff format --check scripts/report_fold_scaled_pair.py tests/test_fold_scaled_pair.py
+          uv run python -m pytest tests/test_fold_scaled_pair.py
+          uv run python scripts/report_fold_scaled_pair.py --output artifacts/fold-scaled-pair/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-scaled-pair/report.json').read_text())
+          assert len(r['sources']) == 7 and len(r['cases']) == 4
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              for key in ('max_total_residual_j', 'max_module_residual_j', 'max_connector_residual_j'):
+                  assert c[key] < 1e-12
+              if name != 'fixed_stiffness_comparison':
+                  s = c['similarity']
+                  assert max(map(max, s['coordinate_max_differences'])) < 1e-12
+                  assert max(map(max, s['rescaled_rate_max_differences'])) < 1e-12
+                  assert s['rescaled_energy_max_difference_j'] < 1e-15
+          control = r['cases']['fixed_stiffness_comparison']['similarity']
+          assert max(map(max, control['coordinate_max_differences'])) > 1e-4
+          assert r['refinement']['residuals_j'][1] < r['refinement']['residuals_j'][0]
+          assert max(map(max, r['refinement']['state_component_differences_by_module'])) < 1e-7
+          assert not r['calibrated_material'] and not r['recursive_assembly_validated']
+          assert not r['sustained_breathing']
+          PY
+      - name: Check mixed-size fold network
+        run: |
+          uv run ruff check scripts/report_fold_multiscale.py scripts/plot_fold_multiscale.py tests/test_fold_multiscale.py
+          uv run ruff format --check scripts/report_fold_multiscale.py scripts/plot_fold_multiscale.py tests/test_fold_multiscale.py
+          uv run python -m pytest tests/test_fold_multiscale.py
+          uv run python scripts/report_fold_multiscale.py --output artifacts/fold-multiscale/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-multiscale/report.json').read_text())
+          assert len(r['sources']) == 10 and len(r['cases']) == 4
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert max(c['max_node_residual_j']) < 1e-12
+              assert sorted(e for owned in c['owners'].values() for e in owned) == list(range(4))
+              if name != 'wrong_reaction':
+                  assert max(c['max_edge_residual_j']) < 1e-12
+                  assert max(c['max_group_residual_j'].values()) < 1e-12
+                  s = c['similarity']
+                  assert max(map(max, s['coordinate_max_differences'])) < 1e-12
+                  assert max(map(max, s['rescaled_rate_max_differences'])) < 1e-12
+                  assert max(s['rescaled_node_energy_differences_j']) < 1e-15
+                  assert max(s['rescaled_edge_energy_differences_j']) < 1e-15
+          bad = r['cases']['wrong_reaction']
+          assert bad['max_edge_residual_j'][1] > 1e-12
+          assert max(bad['max_edge_residual_j'][i] for i in (0, 2, 3)) < 1e-12
+          assert bad['max_group_residual_j']['root'] > 1e-12
+          assert max(bad['max_group_residual_j'][p] for p in ('root/0', 'root/1')) < 1e-12
+          assert max(map(max, r['refinement']['state_component_differences_by_module'])) < 1e-7
+          assert not r['calibrated_material'] and not r['recursive_assembly_validated']
+          assert not r['sustained_breathing']
+          PY
+      - name: Check finite reservoirs in mixed-size network
+        run: |
+          uv run ruff check scripts/report_fold_active_multiscale.py scripts/plot_fold_active_multiscale.py tests/test_fold_active_multiscale.py
+          uv run ruff format --check scripts/report_fold_active_multiscale.py scripts/plot_fold_active_multiscale.py tests/test_fold_active_multiscale.py
+          uv run python -m pytest tests/test_fold_active_multiscale.py
+          uv run python scripts/report_fold_active_multiscale.py --output artifacts/fold-active-multiscale/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-active-multiscale/report.json').read_text())
+          assert len(r['sources']) == 11 and len(r['cases']) == 4
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, c in r['cases'].items():
+              assert max(c['max_node_mechanical_residual_j']) < 1e-13
+              assert max(c['max_edge_residual_j']) < 1e-13
+              if name == 'omitted_debit':
+                  continue
+              assert max(c['max_node_reservoir_residual_j']) < 1e-13
+              assert max(c['max_group_residual_j'].values()) < 1e-13
+              assert min(c['finite_supply']['minimum_reserve_j']) >= 0
+              assert max(c['finite_supply']['maximum_reserve_step_increase_j']) <= 0
+              assert np.all(np.array(c['samples'][-1]['work_j']) <= .8*np.array(c['finite_supply']['initial_reserve_j']) + 1e-15)
+              for key, error in c['similarity'].items():
+                  assert np.max(error) < (1e-12 if key in ('q', 'rates') else 1e-16)
+          bad = r['cases']['omitted_debit']
+          assert bad['max_node_reservoir_residual_j'][1] > 1e-12
+          assert max(bad['max_node_reservoir_residual_j'][i] for i in (0, 2, 3)) < 1e-13
+          assert bad['max_group_residual_j']['root'] > 1e-12
+          assert bad['max_group_residual_j']['root/0'] > 1e-12
+          assert bad['max_group_residual_j']['root/1'] < 1e-13
+          assert np.max(r['refinement']['state_component_differences_by_module']) < 1e-7
+          assert not r['calibrated_material'] and not r['recursive_assembly_validated']
+          assert not r['sustained_breathing']
+          PY
+  duration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Check finite-source duration and depletion
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_duration.py scripts/plot_fold_duration.py tests/test_fold_duration.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_duration.py scripts/plot_fold_duration.py tests/test_fold_duration.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_duration.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_duration.py --output artifacts/fold-duration/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-duration/report.json').read_text())
+          assert len(r['sources']) == 12 and set(r['cases']) == {'active', 'passive', 'rest'}
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for c in r['cases'].values():
+              assert c['termination']['status'] == 'completed'
+              assert c['termination']['last_accepted_time_s'] == 60
+              for key in ('max_node_mechanical_residual_j', 'max_node_reservoir_residual_j', 'max_edge_residual_j'):
+                  assert max(c[key]) < 1e-11
+              assert max(c['max_group_residual_j'].values()) < 1e-11
+              assert c['max_reserve_step_increase_j'] <= 0
+              assert c['post_crossover_intervals'] > 0
+              assert c['max_post_crossover_mechanical_step_increase_j'] < 1e-14
+              assert min(c['finite_supply_margin_j']) >= -1e-14
+              assert min(c['final_reserve_fraction']) >= 0
+              assert np.all(np.array(c['final_reserve_fraction']) <= np.array(c['analytical_bounds']['reserve_fraction_upper']) + 1e-9)
+              assert all(b is not None and 0 <= b[0] <= b[1] <= 60 for b in c['depletion_1_percent_brackets_s'])
+          assert r['cases']['passive']['max_mechanical_step_increase_j'] < 1e-14
+          rest = r['cases']['rest']
+          assert rest['final_total_mechanical_j'] < 1e-20
+          assert np.max(abs(np.array(rest['final_reserve_fraction']) - rest['analytical_bounds']['reserve_fraction_upper'])) < 1e-9
+          assert r['refinement']['matched_final_time_s'] == 60
+          assert np.max(r['refinement']['state_component_differences_by_module']) < 1e-7
+          assert not r['calibrated_material'] and not r['sustained_breathing']
+          PY
+  supply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Check accounted replenishment
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_supply.py scripts/plot_fold_supply.py tests/test_fold_supply.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_supply.py scripts/plot_fold_supply.py tests/test_fold_supply.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_supply.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_supply.py --output artifacts/fold-supply/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-supply/report.json').read_text())
+          json.dumps(r, allow_nan=False)
+          assert len(r['sources']) == 12 and set(r['cases']) == {'powered', 'source_off', 'fine_powered'}
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for c in r['cases'].values():
+              assert c['termination']['status'] == 'completed'
+              assert c['termination']['last_accepted_time_s'] == 20
+              for key in ('max_node_mechanical_residual_j', 'max_node_reservoir_residual_j', 'max_edge_residual_j'):
+                  assert max(c[key]) < 1e-11
+              assert max(c['max_group_residual_j'].values()) < 1e-11
+              assert min(c['minimum_reserve_j']) >= 0
+              assert max(c['maximum_reserve_upper_violation_j']) < 1e-14
+              assert min(c['minimum_input_step_j']) >= -1e-15
+              assert max(c['maximum_input_budget_violation_j']) < 1e-14
+              assert max(c['maximum_power_budget_violation_w']) < 1e-14
+              assert min(c['finite_supply_margin_j']) >= -1e-14
+          a = r['cases']['powered']
+          omitted = a['missing_input_diagnostic']['max_group_residual_j']['root']
+          assert omitted > 1e-8
+          assert abs(omitted - a['total_received_j']) < 1e-11
+          assert r['cases']['source_off']['total_received_j'] == 0
+          assert r['refinement']['matched_final_time_s'] == 20
+          assert np.max(r['refinement']['absolute_state_differences']) < 1e-7
+          assert r['ideal_external_source'] and not r['calibrated_material']
+          assert not r['sustained_breathing']
+          PY
+  stability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Check powered continuation and perturbation
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_stability.py scripts/plot_fold_stability.py tests/test_fold_stability.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_stability.py scripts/plot_fold_stability.py tests/test_fold_stability.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_stability.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_stability.py --output artifacts/fold-stability/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-stability/report.json').read_text())
+          json.dumps(r, allow_nan=False)
+          assert len(r['sources']) == 13
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          assert r['seed']['normalized_utf8_sha256'] == hashlib.sha256(Path(r['seed']['path']).read_text().encode()).hexdigest()
+          assert set(r['cases']) == {'baseline', 'kicked', 'fine_baseline'}
+          for c in r['cases'].values():
+              assert c['termination']['status'] == 'completed'
+              assert c['termination']['last_accepted_time_s'] == 40
+              assert c['late_window']['complete']
+              assert c['late_window']['sample_count'] == 41
+              for key in ('max_node_mechanical_residual_j', 'max_node_reservoir_residual_j', 'max_edge_residual_j'):
+                  assert max(c[key]) < 1e-11
+              assert max(c['max_group_residual_j'].values()) < 1e-11
+              assert min(c['minimum_reserve_j']) >= 0
+              assert max(c['maximum_reserve_upper_violation_j']) < 1e-14
+              assert min(c['minimum_input_step_j']) >= -1e-15
+              assert max(c['maximum_input_budget_violation_j']) < 1e-14
+              assert max(c['maximum_power_budget_violation_w']) < 1e-14
+              assert min(c['finite_supply_margin_j']) >= -1e-14
+          assert abs(r['cases']['kicked']['preparation_energy_j'] - 1.2086158010672134e-8) < 1e-18
+          assert r['cases']['baseline']['preparation_energy_j'] == 0
+          assert r['cases']['baseline']['termination']['status'] == 'completed'
+          assert r['cases']['baseline']['termination']['last_accepted_time_s'] == 40
+          assert r['cases']['baseline']['late_window']['complete']
+          assert len(r['refinement']['common_times_s']) == 161
+          assert len(r['perturbation']['common_times_s']) == 161
+          assert np.max(r['refinement']['maximum_coordinate_difference']) < 1e-6
+          assert np.max(r['refinement']['maximum_rate_difference']) < 1e-5
+          assert not r['stable_breathing'] and not r['calibrated_material']
+          PY
+
+  threshold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Check source onset and equilibrium-reserve energy bound
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_threshold.py scripts/plot_fold_threshold.py tests/test_fold_threshold.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_threshold.py scripts/plot_fold_threshold.py tests/test_fold_threshold.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_threshold.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_threshold.py --output artifacts/fold-threshold/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-threshold/report.json').read_text())
+          json.dumps(r, allow_nan=False)
+          assert len(r['sources']) == 13
+          for name, value in r['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          assert r['protocol']['powers_w'] == [0, 3e-7, 6e-7, 9e-7, 1.2e-6]
+          assert r['protocol']['damping_threshold_w'] == 6e-7
+          assert set(r['cases']) == {'power_0', 'power_1', 'power_2', 'power_3', 'power_4', 'fine_power_3'}
+          initial_energies = []
+          for name, c in r['cases'].items():
+              assert c['termination']['status'] == 'completed'
+              assert c['termination']['last_accepted_time_s'] == 20
+              initial_energies.append(c['onset']['initial_total_mechanical_j'])
+              initial = np.array(c['initial_state'][:36]).reshape(4, 9)
+              assert np.max(abs(initial[:, 2:4])) == 0
+              np.testing.assert_array_equal(initial[:, 4], c['onset']['equilibrium_reserve_j'])
+              for key in ('max_node_mechanical_residual_j', 'max_node_reservoir_residual_j', 'max_edge_residual_j'):
+                  assert max(c[key]) < 1e-14
+              assert max(c['max_group_residual_j'].values()) < 1e-14
+              assert min(c['minimum_reserve_j']) >= 0
+              assert max(c['maximum_reserve_upper_violation_j']) < 1e-14
+              assert min(c['minimum_input_step_j']) >= -1e-15
+              assert max(c['maximum_input_budget_violation_j']) < 1e-14
+              assert max(c['maximum_power_budget_violation_w']) < 1e-14
+              assert min(c['finite_supply_margin_j']) >= -1e-14
+              late = c['onset']['late_sampled_window']
+              assert late['sample_count'] >= 4
+              assert 15 <= late['covered_interval_s'][0] < 17
+              assert late['covered_interval_s'][1] == 20
+              for sample in c['samples']:
+                  assert np.max(np.array(sample['reserve_j']) - initial[:, 4]) < 1e-14
+          assert initial_energies[0] > 0 and len(set(initial_energies)) == 1
+          for name in ('power_0', 'power_1', 'power_2'):
+              c = r['cases'][name]
+              assert c['onset']['final_to_initial_energy_ratio'] <= 1 + 1e-4
+              assert np.max(np.diff([s['total_mechanical_j'] for s in c['samples']])) < 1e-14
+          assert r['cases']['power_0']['total_received_j'] == 0
+          assert r['cases']['power_3']['onset']['final_to_initial_energy_ratio'] > 1
+          assert r['cases']['power_4']['onset']['final_to_initial_energy_ratio'] > 1
+          assert r['refinement']['matched_final_time_s'] == 20
+          delta = np.array(r['refinement']['absolute_state_differences'])
+          blocks = delta[:36].reshape(4, 9)
+          assert np.max(blocks[:, :2]) < 1e-8
+          assert np.max(blocks[:, 2:4]) < 1e-7
+          assert np.max(blocks[:, 4:]) < 1e-14
+          assert np.max(delta[36:]) < 1e-14
+          assert r['refinement']['absolute_mechanical_difference_j'] < 1e-14
+          assert not r['stable_breathing'] and not r['calibrated_material']
+          assert r['ideal_external_source']
+          PY
+
+  material-and-harmonics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify geometry-based elasticity and generated harmonics
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_constitutive.py scripts/plot_fold_constitutive.py tests/test_fold_constitutive.py scripts/report_wave_harmonics.py tests/test_wave_harmonics.py scripts/export_lynchpin_material_scene.py tests/test_lynchpin_material_scene.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_constitutive.py scripts/plot_fold_constitutive.py tests/test_fold_constitutive.py scripts/report_wave_harmonics.py tests/test_wave_harmonics.py scripts/export_lynchpin_material_scene.py tests/test_lynchpin_material_scene.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_constitutive.py tests/test_wave_harmonics.py tests/test_lynchpin_material_scene.py
+          uv run --python 3.12 --extra scientific python scripts/export_lynchpin_material_scene.py --output artifacts/lynchpin-material/scene.json
+          uv run --python 3.12 --extra scientific python scripts/report_fold_constitutive.py --output artifacts/fold-constitutive/report.json
+          uv run --python 3.12 --extra scientific python scripts/report_wave_harmonics.py --output artifacts/wave-harmonics/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          c = json.loads(Path('artifacts/fold-constitutive/report.json').read_text())
+          w = json.loads(Path('artifacts/wave-harmonics/report.json').read_text())
+          for report in (c, w):
+              json.dumps(report, allow_nan=False)
+          for name, value in c['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          for name, value in w['sources'].items():
+              assert value == hashlib.sha256(Path(name).read_text().encode()).hexdigest()
+          assert c['fixture']['sha256_normalized_text'] == hashlib.sha256(Path(c['fixture']['path']).read_text().encode()).hexdigest()
+          assert c['fixture']['reference_commit'] == '60a7fd60f57d73b89ea5397db58a3ff5d291556c'
+          assert c['fixture']['body_vertex_checks'] == 198
+          assert c['fixture']['max_vertex_error_m'] < 1e-14
+          ref = c['cases']['reference']
+          assert ref['total_energy_j'] == 0 and ref['gradient'] == [0, 0]
+          assert len(ref['panels']) == 6 and len(ref['bridges']) == 12 and len(ref['omitted_hubs']) == 4
+          assert c['scale_control']['absolute_error_j'] < 1e-15
+          for result in c['gradient_controls']:
+              assert max(result['absolute_error']) < 1e-10
+          assert c['reference_tangent']['skew_error'] < 1e-10
+          assert min(c['reference_tangent']['numerical_eigenvalues']) > 0
+          controls = c['coefficient_controls']
+          assert controls['zero_law']['result']['total_energy_j'] == 0
+          assert controls['axial_only']['result']['gradient'][1] == 0
+          assert set(w['cases']) == {'one', 'three', 'five', 'fine_five', 'drive_off'}
+          for name, case in w['cases'].items():
+              assert case['completed'] and len(case['times']) == 201
+              assert case['max_abs_balance_residual'] < 1e-11
+              assert min(np.diff(case['damping_loss'])) >= -1e-14
+              n = len(case['parameters']['modes'])
+              assert case['parameters']['initial_state'][0] == 0.1
+              assert max(abs(v) for v in case['parameters']['initial_state'][1:]) == 0
+              assert case['parameters']['quadrature_points'] == 64
+          assert w['cases']['five']['max_abs_q_per_mode'][1] > 1e-3
+          assert w['cases']['five']['max_abs_q_per_mode'][2] > 1e-5
+          off = w['cases']['drive_off']
+          assert max(abs(v) for v in off['drive_work']) == 0
+          assert max(np.diff(off['total_energy'])) < 0
+          assert off['max_abs_q_per_mode'][1] > 1e-6
+          comparison = w['comparisons']['five_to_fine']
+          assert comparison['matched_sample_count'] == 201
+          assert comparison['kind'] == 'numerical_refinement'
+          for result in comparison['per_mode'].values():
+              assert result['max_abs_q'] < 1e-8 and result['max_abs_rate'] < 1e-8
+          assert not w['pattern_selection_established'] and not w['traveling_wave'] and not w['quantum_model']
+          assert not w['provenance']['exact_legacy_model_continuation']
+          o = json.loads(Path('artifacts/lynchpin-material/scene.json').read_text())
+          json.dumps(o, allow_nan=False)
+          for name, value in o['sources'].items():
+              assert value == hashlib.sha256(Path('scripts', name).read_text().encode()).hexdigest()
+          assert o['source_fixture']['sha256_normalized_text'] == c['fixture']['sha256_normalized_text']
+          assert len(o['frames']) == 9 and all(len(f['bodies']) == 22 for f in o['frames'])
+          assert o['controls']['source_vertex_checks'] == 198
+          assert o['controls']['maximum_source_vertex_error_m'] < 1e-14
+          assert o['controls']['panel_stretch_comparisons'] == 54
+          assert o['controls']['maximum_principal_stretch_error'] < 2e-14
+          assert o['controls']['maximum_affine_fit_residual_m'] < 1e-14
+          assert o['controls']['maximum_energy_ownership_error_j'] < 1e-15
+          assert o['controls']['mismatched_theta_zero_reference_maximum_discrepancy'] > 0.1
+          assert o['reference']['source_fixture_phase'] == 0.25
+          assert o['reference']['divided_out_source_scale'] == 1.1
+          for frame in o['frames']:
+              assert len(set(b['id'] for b in frame['bodies'])) == 22
+              assert all(b['material']['energy_j'] is None for b in frame['bodies'] if b['kind'] == 'hub')
+
+          PY
+
+  material-dynamics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify material forces and mechanical energy account
+        run: |
+          uv run ruff check scripts/report_fold_dynamics.py scripts/report_fold_material_dynamics.py tests/test_fold_constitutive_dynamics.py
+          uv run ruff format --check scripts/report_fold_dynamics.py scripts/report_fold_material_dynamics.py tests/test_fold_constitutive_dynamics.py
+          uv run python -m pytest tests/test_fold_dynamics.py tests/test_fold_constitutive.py tests/test_fold_constitutive_dynamics.py
+          uv run python scripts/report_fold_material_dynamics.py --output artifacts/fold-material-dynamics/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-material-dynamics/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_text(encoding='utf-8').encode()).hexdigest()
+          assert r['potential'] == 'constitutive'
+          assert set(r['cases']) == {'equilibrium', 'conservative', 'passive', 'driven', 'drive_off'}
+          for c in r['cases'].values():
+              assert c['duration_s'] == 0.4 and c['potential'] == 'constitutive'
+              assert c['maximum_balance_residual_j'] < 1e-10
+          assert r['cases']['passive']['final_energy_j'] < r['cases']['passive']['initial_energy_j']
+          assert r['cases']['driven']['final_state'][4] != 0
+          off = [s for s in r['cases']['drive_off']['trace'] if s['time_s'] >= 0.2]
+          assert len({s['work_j'] for s in off}) == 1
+          assert r['energy_identity']['absolute_error_j_s'] < 1e-10
+          assert r['energy_identity']['omitted_bias_absolute_error_j_s'] > 1e-8
+          assert not r['physical_calibration'] and not r['stable_breathing_established']
+          PY
+
+  material-coupling:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify material reservoir and pair ownership
+        run: |
+          uv run ruff check scripts/report_fold_reservoir.py scripts/report_fold_coupling.py scripts/report_fold_material_coupling.py tests/test_fold_material_coupling.py
+          uv run ruff format --check scripts/report_fold_reservoir.py scripts/report_fold_coupling.py scripts/report_fold_material_coupling.py tests/test_fold_material_coupling.py
+          uv run python -m pytest tests/test_fold_reservoir.py tests/test_fold_coupling.py tests/test_fold_material_coupling.py
+          uv run python scripts/report_fold_material_coupling.py --output artifacts/fold-material-coupling/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-material-coupling/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_text(encoding='utf-8').encode()).hexdigest()
+          assert r['potential'] == 'constitutive'
+          for name in ('fueled_pair', 'conservative_pair', 'disconnected_pair'):
+              c = r['cases'][name]
+              assert c['settings']['potential'] == 'constitutive'
+              for key in ('max_total_residual_j', 'max_module_residual_j', 'max_connection_residual_j'):
+                  assert c[key] < 1e-10
+          assert r['cases']['wrong_reaction']['max_total_residual_j'] > 1e-9
+          assert r['cases']['wrong_reaction']['max_connection_residual_j'] > 1e-9
+          assert r['reservoir']['omitted_debit']['max_total_residual_j'] > 1e-9
+          assert r['reservoir']['fueled']['minimum_reserve_j'] >= 0
+          assert r['reservoir']['empty']['final_state'][5] == 0
+          assert r['disconnected_single_maximum_state_difference'] < 1e-15
+          assert not r['physical_calibration'] and not r['sustained_breathing']
+          PY
+
+  material-multiscale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify conditional material scaling and grouped graph accounts
+        run: |
+          uv run ruff check scripts/fold_material_multiscale.py scripts/report_fold_material_multiscale.py tests/test_fold_material_multiscale.py
+          uv run ruff format --check scripts/fold_material_multiscale.py scripts/report_fold_material_multiscale.py tests/test_fold_material_multiscale.py
+          uv run python -m pytest tests/test_fold_material_multiscale.py
+          uv run python scripts/report_fold_material_multiscale.py --output artifacts/fold-material-multiscale/report.json
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+          r = json.loads(Path('artifacts/fold-material-multiscale/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_text(encoding='utf-8').encode()).hexdigest()
+          for name in ('reference', 'half', 'fine_half'):
+              c = r['cases'][name]
+              assert max(c['max_node_residual_j']) < 1e-10
+              assert max(c['max_edge_residual_j']) < 1e-10
+              assert max(c['max_group_residual_j'].values()) < 1e-10
+          assert r['cases']['broken_edge']['max_edge_residual_j'][1] > 1e-13
+          assert r['cases']['broken_edge']['max_edge_residual_j'][1] > 100 * max(r['cases']['reference']['max_edge_residual_j'])
+          assert r['scaling_control']['energy_a3_absolute_error_j'] < 1e-15
+          assert max(r['scaling_control']['gradient_a3_absolute_error']) < 1e-14
+          assert r['scaling_control']['fixed_thickness_and_EA_energy_discrepancy_j'] > 1e-8
+          assert np.max(r['similarity']['coordinate_max_differences']) < 1e-10
+          assert np.max(r['similarity']['rescaled_rate_max_differences']) < 1e-10
+          assert np.max(r['similarity']['rescaled_node_energy_differences_j']) < 1e-14
+          assert not r['physical_calibration'] and not r['active_supply'] and not r['stable_breathing']
+          PY
+
+
+  material-supply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify powered unequal-size material energy accounts
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_supply.py tests/test_fold_material_supply.py scripts/export_fold_material_viewer_frames.py tests/test_fold_material_viewer_frames.py scripts/report_fold_material_persistence.py tests/test_fold_material_persistence.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_supply.py tests/test_fold_material_supply.py scripts/export_fold_material_viewer_frames.py tests/test_fold_material_viewer_frames.py scripts/report_fold_material_persistence.py tests/test_fold_material_persistence.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_material_supply.py tests/test_fold_material_viewer_frames.py tests/test_fold_material_persistence.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_material_supply.py --output artifacts/fold-material-supply/report.json
+          uv run --python 3.12 --extra scientific python scripts/export_fold_material_viewer_frames.py --input artifacts/fold-material-supply/report.json --output artifacts/fold-material-supply/viewer.json
+          uv run --python 3.12 --extra scientific python scripts/report_fold_material_persistence.py --output artifacts/fold-material-supply/persistence.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-material-supply/report.json').read_text(encoding='utf-8'))
+          v = json.loads(Path('artifacts/fold-material-supply/viewer.json').read_text(encoding='utf-8'))
+          p = json.loads(Path('artifacts/fold-material-supply/persistence.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert r['ledgers'] == [
+              'stored reserve energy',
+              'delivered mechanical work',
+              'damping/conversion/leakage losses',
+              'external input energy',
+          ]
+          for name in ('powered', 'source_off', 'fine_powered'):
+              c = r['cases'][name]
+              for key in ('max_node_mechanical_residual_j', 'max_node_reservoir_residual_j', 'max_edge_residual_j'):
+                  assert max(c[key]) < 1e-10
+              assert max(c['max_group_residual_j'].values()) < 1e-10
+              assert min(c['minimum_reserve_j']) >= 0
+              assert min(c['finite_supply_margin_j']) >= -1e-12
+          assert r['cases']['powered']['total_received_j'] > 0
+          assert r['cases']['source_off']['total_received_j'] == 0
+          assert r['cases']['powered']['missing_input_control_max_group_residual_j']['root'] > 1e-10
+          bad = r['cases']['omitted_reserve_debit']
+          assert bad['max_node_reservoir_residual_j'][0] > 1e-10
+          assert max(bad['max_node_reservoir_residual_j'][1:]) < 1e-10
+          assert bad['max_group_residual_j']['root'] > 1e-10
+          assert not r['calibrated_material']
+          assert not r['physical_supply_hardware']
+          assert not r['sustained_breathing']
+          assert not r['autonomous_energy_source']
+          assert v['schema'] == 'matrix-science-viewer-timeseries-v1'
+          assert v['frame_count'] == len(r['cases']['powered']['samples'])
+          assert v['module_count'] == 4
+          assert v['units']['source_length'] == 'metre'
+          assert v['units']['display_m_per_unit'] == 0.1
+          assert not v['compatibility']['current_repository_visualizers_are_direct_consumers']
+          assert v['compatibility']['metre_geometry_preserved']
+          assert p['persistent_state_demonstrated_over_s'] == 0.8
+          assert p['restart']['powered_maximum_absolute_state_difference'] < 1e-8
+          assert p['restart']['source_off_maximum_absolute_state_difference'] < 1e-8
+          assert not p['hierarchy']['physical_recursive_replication_tested']
+          assert not p['arbitrary_physical_depth_demonstrated']
+          PY
+
+
+  material-recursion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify replicated material-module tree
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_recursive_tree.py tests/test_fold_material_recursive_tree.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_recursive_tree.py tests/test_fold_material_recursive_tree.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_material_recursive_tree.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_material_recursive_tree.py --output artifacts/fold-material-recursion/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          import numpy as np
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-material-recursion/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          for name in ('depth_0', 'depth_1', 'depth_2', 'disconnected_depth_2', 'fine_depth_2'):
+              c = r['cases'][name]
+              assert max(c['max_node_residual_j']) < 1e-12
+              assert max(c['max_edge_residual_j'], default=0) < 1e-12
+              assert max(c['max_group_residual_j'].values()) < 1e-12
+          assert max(r['depth_response']['disconnected_depth_2_to_depth_0_root_absolute_state_change']) < 1e-14
+          assert max(r['depth_response']['depth_0_to_1_root_absolute_state_change']) > 1e-12
+          assert max(r['depth_response']['depth_1_to_2_root_absolute_state_change']) > 1e-12
+          bad = r['cases']['broken_depth_2']
+          assert bad['max_edge_residual_j'][0] > 1e-13
+          assert r['refinement']['maximum_absolute_state_difference'] < 1e-7
+          assert r['maximum_physical_modules_tested'] == 7
+          assert r['physical_depths_tested'] == [0, 1, 2]
+          assert not r['arbitrary_depth_validated']
+          assert not r['spatial_parent_child_geometry_validated']
+          assert not r['powered_recursive_tree_validated']
+          PY
+
+
+  material-scale-extension:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Audit one-eighth material scale without changing production guard
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_scale_extension.py tests/test_fold_scale_extension.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_scale_extension.py tests/test_fold_scale_extension.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_scale_extension.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_scale_extension.py --output artifacts/fold-scale-extension/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-scale-extension/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert r['declared_repository_scale_floor'] == 0.25
+          assert r['audit_scale_floor'] == 0.125
+          assert not r['global_scale_guard_changed']
+          assert not r['depth_three_recursive_tree_executed']
+          assert not r['physical_scale_extension_validated']
+          assert r['numerical_scale_extension_audited']
+          eighth = r['similarity']['eighth']
+          assert eighth['coordinate_max_difference'] < 1e-11
+          assert eighth['rescaled_rate_max_difference'] < 1e-10
+          assert eighth['rescaled_energy_max_difference_j'] < 1e-14
+          assert eighth['rescaled_loss_max_difference_j'] < 1e-14
+          assert r['trajectories']['eighth']['max_balance_residual_j'] < 1e-14
+          assert r['eighth_refinement_max_state_difference'] < 1e-8
+          assert r['connector']['uniform_eighth_energy_scaling_error_j'] < 1e-18
+          for c in r['connector']['cases'].values():
+              assert c['force_power_gradient_error'] < 1e-12
+          PY
+
+
+  material-depth-attenuation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group lint
+      - name: Reproduce recursive root attenuation once
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_depth3.py tests/test_fold_material_depth3.py scripts/report_fold_material_depth_attenuation.py tests/test_fold_material_depth_attenuation.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_depth3.py tests/test_fold_material_depth3.py scripts/report_fold_material_depth_attenuation.py tests/test_fold_material_depth_attenuation.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_material_depth_attenuation.py --output artifacts/fold-material-depth/attenuation.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          a = json.loads(Path('artifacts/fold-material-depth/attenuation.json').read_text(encoding='utf-8'))
+          json.dumps(a, allow_nan=False)
+          for name, digest in a['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert a['resolution_threshold'] == 1e-12
+          assert a['durations_s'] == [0.005, 0.01, 0.02, 0.04, 0.05]
+          assert a['depths'] == [0, 1, 2, 3]
+          for case in a['energy_accounts'].values():
+              assert max(case['max_node_residual_j']) < 1e-11
+              assert max(case['max_edge_residual_j'], default=0) < 1e-11
+              assert max(case['max_group_residual_j'].values()) < 1e-11
+          for row in a['rows']:
+              for transition in row['transitions'].values():
+                  maximum = max(transition['root_absolute_state_change'])
+                  assert transition['resolved'] == (maximum > a['resolution_threshold'])
+          assert a['disconnected_control']['maximum_root_absolute_state_change'] < 1e-14
+          assert not a['connector_law_changed']
+          assert not a['material_scaling_law_changed']
+          assert not a['threshold_tuned_to_result']
+          assert not a['arbitrary_depth_validated']
+          assert not a['infinite_depth_limit_validated']
+          print(json.dumps(a['summary'], sort_keys=True))
+          PY
+
+  material-depth-duration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group lint
+      - name: Reproduce bounded 0.1 second depth-three extension once
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_depth_duration.py tests/test_fold_material_depth_duration.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_depth_duration.py tests/test_fold_material_depth_duration.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_material_depth_duration.py --output artifacts/fold-material-depth/duration.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          import math
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-material-depth/duration.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          for name in ('depth_2', 'depth_3', 'fine_depth_3', 'depth_3_first_half', 'depth_3_second_half'):
+              case = r['cases'][name]
+              assert max(case['max_node_residual_j']) < 1e-10
+              assert max(case['max_edge_residual_j'], default=0) < 1e-10
+              assert max(case['max_group_residual_j'].values()) < 1e-10
+          for name in ('depth_2', 'depth_3', 'fine_depth_3'):
+              case = r['cases'][name]
+              assert min(row[0] for row in case['coordinate_min']) >= 0.9
+              assert max(row[0] for row in case['coordinate_max']) <= 1.1
+              assert min(row[1] for row in case['coordinate_min']) >= 0
+              assert max(row[1] for row in case['coordinate_max']) <= math.pi / 6
+          assert r['restart']['maximum_absolute_state_difference'] < 1e-12
+          assert r['refinement']['maximum_absolute_state_difference'] < 1e-6
+          assert r['resolution_threshold'] == 1e-12
+          assert r['sample_times_s'] == [0.05, 0.075, 0.1]
+          for row in r['depth_2_to_3']['samples'].values():
+              maximum = max(row['root_absolute_state_change'])
+              assert row['resolved'] == (maximum > r['resolution_threshold'])
+          assert not r['connector_law_changed']
+          assert not r['material_scaling_law_changed']
+          assert not r['production_duration_guard_changed']
+          assert not r['arbitrary_depth_validated']
+          assert not r['infinite_depth_limit_validated']
+          print(json.dumps(r['depth_2_to_3'], sort_keys=True))
+          PY
+
+
+
+  material-depth-transport:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group lint
+      - name: Reproduce per-level recursive transport once
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_depth_transport.py tests/test_fold_material_depth_transport.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_depth_transport.py tests/test_fold_material_depth_transport.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_material_depth_transport.py --output artifacts/fold-material-depth/transport.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-material-depth/transport.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          for run_name in ('connected', 'disconnected'):
+              run = r[run_name]
+              assert max(run['max_node_residual_j']) < 1e-10
+              assert max(run['max_edge_residual_j'], default=0) < 1e-10
+              assert max(run['max_group_residual_j'].values()) < 1e-10
+          assert r['disconnected_descendant_maximum_coordinate_response'] == 0
+          first = r['connected']['snapshots'][0]
+          assert first['levels']['0']['maximum_coordinate_response'] > 0
+          for level in ('1', '2', '3'):
+              assert first['levels'][level]['maximum_coordinate_response'] == 0
+              assert first['levels'][level]['maximum_scale_normalized_rate'] == 0
+          assert first['edges_by_child_level']['1']['connector_potential_j'] > 0
+          assert first['edges_by_child_level']['2']['connector_potential_j'] == 0
+          assert first['edges_by_child_level']['3']['connector_potential_j'] == 0
+          assert not r['connector_law_changed']
+          assert not r['material_scaling_law_changed']
+          assert not r['response_floor_tuned_to_result']
+          assert not r['spatial_parent_child_geometry_validated']
+          assert not r['arbitrary_depth_validated']
+          assert not r['infinite_depth_limit_validated']
+          print(json.dumps({
+              'first_coordinate_resolution_s': r['connected']['first_coordinate_resolution_s'],
+              'final_levels': r['connected']['snapshots'][-1]['levels'],
+              'final_edges_by_child_level': r['connected']['snapshots'][-1]['edges_by_child_level'],
+          }, sort_keys=True))
+          PY
+
+
+  material-depth-backreaction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group lint
+      - name: Reproduce fixed-dimension recursive backreaction once
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_depth_backreaction.py tests/test_fold_material_depth_backreaction.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_depth_backreaction.py tests/test_fold_material_depth_backreaction.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_material_depth_backreaction.py --output artifacts/fold-material-depth/backreaction.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-material-depth/backreaction.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert r['module_count_held_fixed']
+          assert r['response_floor'] == 1e-12
+          assert r['sample_times_s'] == [0.02, 0.05, 0.075, 0.1]
+          expected_edges = {'0': 0, '1': 2, '2': 6, '3': 14}
+          for level, run in r['runs'].items():
+              assert len(run['settings']['sizes']) == 15
+              assert len(run['settings']['edges']) == expected_edges[level]
+              assert max(run['max_node_residual_j']) < 1e-10
+              assert max(run['max_edge_residual_j'], default=0) < 1e-10
+              assert max(run['max_group_residual_j'].values()) < 1e-10
+          for row in r['incremental_root_backreaction'].values():
+              for level in ('1', '2', '3'):
+                  maximum = max(row[level]['absolute_root_state_change'])
+                  assert row[level]['resolved'] == (maximum > r['response_floor'])
+          for level in ('1', '2', '3'):
+              e = r['full_tree_final_edge_energy_transfer'][level]
+              assert abs(e['energy_identity_residual_j']) < 1e-10
+              assert e['child_uptake_fraction_of_parent_magnitude'] is not None
+          assert not r['connector_coefficients_changed']
+          assert not r['material_scaling_law_changed']
+          assert not r['new_recursive_coupling_introduced']
+          assert not r['spatial_parent_child_geometry_validated']
+          assert not r['arbitrary_depth_validated']
+          print(json.dumps({
+              'incremental_root_backreaction': r['incremental_root_backreaction'],
+              'full_tree_final_edge_energy_transfer': r['full_tree_final_edge_energy_transfer'],
+          }, sort_keys=True))
+          PY
