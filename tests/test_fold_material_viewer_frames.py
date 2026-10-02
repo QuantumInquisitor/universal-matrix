@@ -98,3 +98,24 @@ def test_adapter_does_not_claim_existing_viewer_direct_compatibility(payload):
 def test_invalid_payloads_rejected(report, kwargs):
     with pytest.raises(ValueError):
         adapt(report, **kwargs)
+
+
+def test_mechanical_energy_matches_source_and_independent_evaluation(payload):
+    from scripts.fold_material_multiscale import mechanical
+
+    report, viewer = payload
+    for frame, sample in zip(viewer["frames"], report["cases"]["powered"]["samples"], strict=True):
+        assert [m["mechanical_j"] for m in frame["modules"]] == sample["mechanical_j"]
+    for m in viewer["frames"][-1]["modules"]:
+        _, _, energy = mechanical(np.array(m["q"]), np.array(m["rates"]), m["size"])
+        assert m["mechanical_j"] == pytest.approx(energy, rel=1e-12, abs=1e-18)
+
+
+@pytest.mark.parametrize("value", [None, [], [0, 0, 0], [0, 0, 0, float("nan")]])
+def test_invalid_mechanical_energy_rejected(payload, value):
+    from copy import deepcopy
+
+    report = deepcopy(payload[0])
+    report["cases"]["powered"]["samples"][0]["mechanical_j"] = value
+    with pytest.raises(ValueError):
+        adapt(report)
