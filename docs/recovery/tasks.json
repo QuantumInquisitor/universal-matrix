@@ -200,10 +200,10 @@
       "scope_and_completion": "Reuse PR121 optional timing adapter and its 168 six/eight-spin runs, seed/pulse/interaction/readout controls, 1024-period extension and resource counts. The candidate delivers in selected cases, but the ordinary divider also passes; no practical advantage has been established. Before expanding it, define a justified role and matched comparison with loading, latency, readout/backaction, continuous-operation and energy costs. Retain/redesign/defer based on evidence. For spatial crystals/quasicrystals, measure structure factors and correlations on actual coordinates with periodic, quasiperiodic and randomized controls; distinguish lab/co-moving observations and vary recursion depth/size. Combined space-time claims require justified dynamics. **Done when:** each proposed role has a supported benefit, limitation or no-advantage finding. The engine need not itself be a time crystal. The Instagram reel remains unverified.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Draft audit confirms PR #121 covers six and eight spins and 168 runs, not merely one six-spin result. At g=.97: interacting delivery 16/16 vs interaction-off 0/16; ideal divider 128/128. Endpoint-readout example counts 65,792 preparations and 8,421,376 Floquet periods; no joule/hardware advantage. Review evidence in docs/recovery/DRAFT_CAPABILITY_AUDIT.md. PR #121 is now merged into recovery after 20 focused tests, 168 reproduced cases and green full CI; no practical advantage claim was added.",
-      "next_action": "Define a timing-component use case and matched ordinary-divider comparison including load, latency, readout and energy; retain the existing 168-run evidence.",
+      "latest_result": "Draft audit confirms PR #121 covers six and eight spins and 168 runs, not merely one six-spin result. At g=.97: interacting delivery 16/16 vs interaction-off 0/16; ideal divider 128/128. Endpoint-readout example counts 65,792 preparations and 8,421,376 Floquet periods; no joule/hardware advantage. Review evidence in docs/recovery/DRAFT_CAPABILITY_AUDIT.md. PR #121 is now merged into recovery after 20 focused tests, 168 reproduced cases and green full CI; no practical advantage claim was added. A separate scheduling contract reuses 16 saved interacting g=.97 N=6/8 traces across four declared service configurations without rerunning the 168-case study. Ideal replay preserves all128ticks; the cold-start endpoint backend misses the selected deadlines, and finite-queue stress loses all on-time edges for both sources. Only downstream service/load/deadlines are matched; divider availability is idealized. Operation counts are reported and energy remains unknown. See docs/timing_delivery_contract.md.",
+      "next_action": "Review the conditional acquisition/delivery contract; supply an independently justified physical acquisition/readout backend, loading and energy costs before claiming timing usefulness. Preserve existing signal and scheduling evidence; spatial claims still require coordinates.",
       "blockers_or_limits": [
-        "No established practical advantage or matched hardware cost/calibration. Spatial crystal tests require explicit coordinates."
+        "No practical advantage established. Acquisition assumptions are asymmetric and explicitly conditional; hardware readout/backaction, energy, loading and absolute time remain uncalibrated."
       ],
       "review_phase": "bounded_progress_with_remaining_scope",
       "previous_result_snapshots": [
@@ -211,6 +211,16 @@
           "label": "Before final experiment-draft integration and LC publication",
           "fields": {
             "latest_result": "Draft audit confirms PR121 covers six and eight spins and 168 runs, not merely one six-spin result. At g=.97: interacting delivery 16/16 vs interaction-off 0/16; ideal divider 128/128. Endpoint-readout example counts 65,792 preparations and 8,421,376 Floquet periods; no joule/hardware advantage. Review evidence in docs/recovery/DRAFT_CAPABILITY_AUDIT.md."
+          }
+        },
+        {
+          "label": "Before conditional timing-delivery contract",
+          "fields": {
+            "latest_result": "Draft audit confirms PR #121 covers six and eight spins and 168 runs, not merely one six-spin result. At g=.97: interacting delivery 16/16 vs interaction-off 0/16; ideal divider 128/128. Endpoint-readout example counts 65,792 preparations and 8,421,376 Floquet periods; no joule/hardware advantage. Review evidence in docs/recovery/DRAFT_CAPABILITY_AUDIT.md. PR #121 is now merged into recovery after 20 focused tests, 168 reproduced cases and green full CI; no practical advantage claim was added.",
+            "next_action": "Define a timing-component use case and matched ordinary-divider comparison including load, latency, readout and energy; retain the existing 168-run evidence.",
+            "blockers_or_limits": [
+              "No established practical advantage or matched hardware cost/calibration. Spatial crystal tests require explicit coordinates."
+            ]
           }
         }
       ]
@@ -673,11 +683,27 @@
       "status": "queued_for_scope_review",
       "context": "Repository has spatial/robotic/digital-twin contracts and broad verification infrastructure.",
       "completion": "Audit actual coverage versus product claims, optional external/hardware adapters, packaging and documentation freshness. Review dependency PRs 117/118 separately from scientific conclusions. Module names alone do not establish functioning hardware integration.",
-      "next_action": "Audit software/hardware claims against executable coverage and review dependency PRs #117/#118 separately.",
+      "next_action": "Review software/hardware coverage separately. Rebase PR117 onto accepted recovery, align the stale workflow assertion and rerun verification. Before PR118 integration, run a non-publishing Buildx v4 builder/build smoke check with push disabled; do not treat skipped publication CI as execution evidence.",
       "blockers_or_limits": [
-        "Hardware adapters and coverage require evidence; #117/#118 were not checked in this reconciliation."
+        "PR117 has an actual workflow-version assertion failure; PR118 lacks execution of its changed action. Hardware coverage and adapters still require independent evidence."
       ],
-      "review_phase": "scope_review_only"
+      "review_phase": "scope_review_only",
+      "previous_result_snapshots": [
+        {
+          "label": "Before exact-head dependency review on 2026-10-02",
+          "fields": {
+            "next_action": "Audit software/hardware claims against executable coverage and review dependency PRs #117/#118 separately.",
+            "blockers_or_limits": [
+              "Hardware adapters and coverage require evidence; #117/#118 were not checked in this reconciliation."
+            ]
+          }
+        }
+      ],
+      "latest_result": "Read-only review: PR117 at 63fdacfb changes four setup-uv references and fails tests/test_phase_64.py because the test requires the old version; action setup itself passed. PR118 at d73f453 changes Buildx to v4 and listed CI passes, but the changed publish-container-image job is skipped on PR events. Both patches merge cleanly with recovery925100b; neither is integrated or fully validated for current recovery.",
+      "evidence": [
+        "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36463969192",
+        "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36463982730"
+      ]
     },
     {
       "id": "REC-NEUMANN",
