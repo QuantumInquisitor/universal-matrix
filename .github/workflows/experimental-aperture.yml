@@ -38,25 +38,25 @@ jobs:
         with:
           python-version: '3.12'
       - uses: astral-sh/setup-uv@v10.1.0
-      - run: uv sync --group test --group lint
+      - run: uv sync --python 3.12 --group test --group lint
       - name: Check optional source and tests
         run: |
-          uv run ruff check src/toroidal_aperture_local.py src/toroidal_aperture_attachment.py src/toroidal_outer_attachment.py src/toroidal_retained_collision.py src/toroidal_aperture_fanout.py tests/test_toroidal_aperture_attachment.py tests/test_toroidal_outer_attachment.py tests/test_toroidal_aperture_fanout.py scripts/report_aperture_integration.py
-          uv run ruff format --check src/toroidal_aperture_local.py src/toroidal_aperture_attachment.py src/toroidal_outer_attachment.py src/toroidal_retained_collision.py src/toroidal_aperture_fanout.py tests/test_toroidal_aperture_attachment.py tests/test_toroidal_outer_attachment.py tests/test_toroidal_aperture_fanout.py scripts/report_aperture_integration.py
+          .venv/bin/ruff check src/toroidal_aperture_local.py src/toroidal_aperture_attachment.py src/toroidal_outer_attachment.py src/toroidal_retained_collision.py src/toroidal_aperture_fanout.py tests/test_toroidal_aperture_attachment.py tests/test_toroidal_outer_attachment.py tests/test_toroidal_aperture_fanout.py scripts/report_aperture_integration.py
+          .venv/bin/ruff format --check src/toroidal_aperture_local.py src/toroidal_aperture_attachment.py src/toroidal_outer_attachment.py src/toroidal_retained_collision.py src/toroidal_aperture_fanout.py tests/test_toroidal_aperture_attachment.py tests/test_toroidal_outer_attachment.py tests/test_toroidal_aperture_fanout.py scripts/report_aperture_integration.py
       - name: Verify geometry fields and rejection controls
-        run: uv run python -m pytest tests/test_toroidal_aperture_attachment.py tests/test_toroidal_outer_attachment.py tests/test_toroidal_aperture_fanout.py tests/test_toroidal_bore_downstream.py tests/test_toroidal_bore_downstream_adversarial.py
+        run: .venv/bin/python -m pytest tests/test_toroidal_aperture_attachment.py tests/test_toroidal_outer_attachment.py tests/test_toroidal_aperture_fanout.py tests/test_toroidal_bore_downstream.py tests/test_toroidal_bore_downstream_adversarial.py
       - name: Reproduce all six signed cases
-        run: uv run python scripts/report_aperture_integration.py --output-dir artifacts/aperture
+        run: .venv/bin/python scripts/report_aperture_integration.py --output-dir artifacts/aperture
       - name: Check combined inventory and rejection controls
         run: |
-          uv run ruff check src/toroidal_combined_aperture.py tests/test_toroidal_combined_aperture.py scripts/report_combined_aperture.py
-          uv run ruff format --check src/toroidal_combined_aperture.py tests/test_toroidal_combined_aperture.py scripts/report_combined_aperture.py
-          uv run python -m pytest tests/test_toroidal_combined_aperture.py
-          uv run python scripts/report_combined_aperture.py --output-dir artifacts/combined-aperture
+          .venv/bin/ruff check src/toroidal_combined_aperture.py tests/test_toroidal_combined_aperture.py scripts/report_combined_aperture.py
+          .venv/bin/ruff format --check src/toroidal_combined_aperture.py tests/test_toroidal_combined_aperture.py scripts/report_combined_aperture.py
+          .venv/bin/python -m pytest tests/test_toroidal_combined_aperture.py
+          .venv/bin/python scripts/report_combined_aperture.py --output-dir artifacts/combined-aperture
       - name: Check report acceptance and scope
         # All three scopes remain separately inspectable.
         run: |
-          uv run python - <<'PY'
+          .venv/bin/python - <<'PY'
           import json
           from pathlib import Path
           rows = json.loads(Path('artifacts/aperture/summary.json').read_text())['cases']
@@ -79,11 +79,11 @@ jobs:
           PY
       - name: Check prescribed common assembly breathing
         run: |
-          uv run ruff check src/toroidal_assembly_breathing.py tests/test_toroidal_assembly_breathing.py scripts/report_assembly_breathing.py
-          uv run ruff format --check src/toroidal_assembly_breathing.py tests/test_toroidal_assembly_breathing.py scripts/report_assembly_breathing.py
-          uv run python -m pytest tests/test_toroidal_assembly_breathing.py
-          uv run python scripts/report_assembly_breathing.py --output-dir artifacts/assembly-breathing
-          uv run python - <<'PY'
+          .venv/bin/ruff check src/toroidal_assembly_breathing.py tests/test_toroidal_assembly_breathing.py scripts/report_assembly_breathing.py
+          .venv/bin/ruff format --check src/toroidal_assembly_breathing.py tests/test_toroidal_assembly_breathing.py scripts/report_assembly_breathing.py
+          .venv/bin/python -m pytest tests/test_toroidal_assembly_breathing.py
+          .venv/bin/python scripts/report_assembly_breathing.py --output-dir artifacts/assembly-breathing
+          .venv/bin/python - <<'PY'
           import json
           from pathlib import Path
           rows = json.loads(Path('artifacts/assembly-breathing/summary.json').read_text())['cases']
@@ -99,11 +99,11 @@ jobs:
           PY
       - name: Check declared state recurrence and persistent history
         run: |
-          uv run ruff check src/declared_state_recurrence.py tests/test_declared_state_recurrence.py scripts/report_assembly_recurrence.py
-          uv run ruff format --check src/declared_state_recurrence.py tests/test_declared_state_recurrence.py scripts/report_assembly_recurrence.py
-          uv run python -m pytest tests/test_declared_state_recurrence.py tests/test_canonical_polarity_clock.py
-          uv run python scripts/report_assembly_recurrence.py --output-dir artifacts/assembly-recurrence
-          uv run python - <<'PY'
+          .venv/bin/ruff check src/declared_state_recurrence.py tests/test_declared_state_recurrence.py scripts/report_assembly_recurrence.py
+          .venv/bin/ruff format --check src/declared_state_recurrence.py tests/test_declared_state_recurrence.py scripts/report_assembly_recurrence.py
+          .venv/bin/python -m pytest tests/test_declared_state_recurrence.py tests/test_canonical_polarity_clock.py
+          .venv/bin/python scripts/report_assembly_recurrence.py --output-dir artifacts/assembly-recurrence
+          .venv/bin/python - <<'PY'
           import json
           from pathlib import Path
           rows = json.loads(Path('artifacts/assembly-recurrence/summary.json').read_text())['cases']
