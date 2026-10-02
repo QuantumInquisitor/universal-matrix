@@ -1,0 +1,185 @@
+{
+  "scope": "Exact-head workflow status snapshot; successful CI does not establish scientific validity or merge readiness.",
+  "pull_requests": [
+    {
+      "pr": 119,
+      "head": "60a7fd60f57d73b89ea5397db58a3ff5d291556c",
+      "draft": true,
+      "state": "open",
+      "runs": [
+        {
+          "name": "Universal Matrix Verification",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779423445"
+        },
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779423476"
+        },
+        {
+          "name": "Experimental geometry checkpoint",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779423675"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779423413"
+        }
+      ]
+    },
+    {
+      "pr": 120,
+      "head": "615cee59c51df77406555ac56d40e8a1f1e73ec8",
+      "draft": true,
+      "state": "open",
+      "runs": [
+        {
+          "name": "Universal Matrix Verification",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779529688"
+        },
+        {
+          "name": "Experimental waves checkpoint",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779529934"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779529849"
+        },
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779529791"
+        }
+      ]
+    },
+    {
+      "pr": 121,
+      "head": "ec6489c56953ea0f2de1c78a7ed2adc8a298a710",
+      "draft": true,
+      "state": "open",
+      "runs": [
+        {
+          "name": "Universal Matrix Verification",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779581931"
+        },
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779582084"
+        },
+        {
+          "name": "Experimental time-crystal checkpoint",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779582105"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779581997"
+        }
+      ]
+    },
+    {
+      "pr": 122,
+      "head": "e2fa1f0e176e717741c3b2753b75a8236bbba2b9",
+      "draft": true,
+      "state": "open",
+      "runs": [
+        {
+          "name": "Universal Matrix Verification",
+          "status": "in_progress",
+          "conclusion": null,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36791775428"
+        },
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36791775441"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36791775455"
+        }
+      ]
+    },
+    {
+      "pr": 123,
+      "head": "b7add2892868d5e8150c3a4b148b3c3200642d57",
+      "draft": true,
+      "state": "open",
+      "runs": [
+        {
+          "name": "Universal Matrix Verification",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36785862936"
+        },
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36785862956"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36785862999"
+        }
+      ]
+    },
+    {
+      "pr": 124,
+      "head": "3efe05db6ac3d247ac1e7bdec83a8a906d700036",
+      "draft": true,
+      "state": "open",
+      "runs": [
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36790733426"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36790733491"
+        },
+        {
+          "name": "Experimental aperture and fanout",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36790733433"
+        },
+        {
+          "name": "Universal Matrix Verification",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36790733483"
+        }
+      ]
+    }
+  ]
+}

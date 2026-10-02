@@ -1,0 +1,954 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic 22-lump two-coordinate model; prescribed external drive; no collision or calibrated-material claim",
+  "source_sha256_normalized_text": {
+    "report_fold_kinematics.py": "710febbd4b891f1bf963bb876b39912811d80a2a5b968fa3c3baf653edefd62b",
+    "report_fold_dynamics.py": "7f814a9fb30be9dfb8da503042d5b97631b1c34cf4a12a2d66ab059223ed86ab",
+    "report_fold_robustness.py": "d92ad4a9994a6bec5c914c686f128ccf3ceb20e2cc36beafff26a9df7ae2cf91"
+  },
+  "perturbation": {
+    "seed": 20260930,
+    "generator": "numpy default_rng PCG64",
+    "distribution": "independent uniform [-amplitude,+amplitude]",
+    "amplitudes": [
+      0.01,
+      0.015,
+      0.01,
+      0.015
+    ]
+  },
+  "coordinate_columns": [
+    "scale",
+    "angle_rad",
+    "scale_rate_per_s",
+    "angle_rate_rad_per_s"
+  ],
+  "relative_residual_definition": "max abs(E-E0-W+loss) / max(E0, max abs(E), max abs(W), max abs(loss)); zero if all zero",
+  "classification_definition": "success means integration stayed in declared numerical rectangle; domain-rejected includes RK stages and does not establish physical escape or collision; other ValueErrors propagate",
+  "counts": {
+    "success": 21,
+    "domain-rejected": 3,
+    "numerical-error": 0
+  },
+  "accepted_refinement": {
+    "classifications": [
+      "success",
+      "success"
+    ],
+    "final_coordinate_absolute_difference": [
+      6.597585811007889e-09,
+      6.105568550740514e-09,
+      3.0069218504014117e-09,
+      4.6377732626501356e-09
+    ],
+    "residual_j_coarse_fine": [
+      1.541244269457286e-13,
+      4.298032156891426e-15
+    ]
+  },
+  "rejected_refinement": [
+    "domain-rejected",
+    "domain-rejected",
+    "domain-rejected"
+  ],
+  "cases": [
+    {
+      "name": "t2-d0-f0",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.02,
+        "damping": 0.0,
+        "drive": 0.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9782578184450218,
+          0.28602228051147793,
+          0.008026053034584172,
+          -0.026378478590206936,
+          0.0,
+          0.0
+        ],
+        "state_min": [
+          0.9778164094279973,
+          0.2317993877991494,
+          -0.038865714521756044,
+          -0.026378478590206936
+        ],
+        "state_max": [
+          1.0207649753406474,
+          0.29072562552884523,
+          0.01,
+          0.05055065753554809
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 6.1761812650373105e-06,
+        "max_balance_residual_j": 2.1456430450189808e-14,
+        "balance_reference_j": 6.176181286493741e-06,
+        "relative_balance_residual": 3.4740609860515873e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t2-d0-f1",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.02,
+        "damping": 0.0,
+        "drive": 1.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9834448515821386,
+          0.27592774304127343,
+          -0.0031911158847963937,
+          -0.04827216585889753,
+          -1.2302891121520716e-06,
+          0.0
+        ],
+        "state_min": [
+          0.9834448515821386,
+          0.2317993877991494,
+          -0.030634851084445042,
+          -0.04827216585889753
+        ],
+        "state_max": [
+          1.0207828974118796,
+          0.2904085443237463,
+          0.01,
+          0.057334894085486504
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 4.945892149626267e-06,
+        "max_balance_residual_j": 2.47154022084867e-14,
+        "balance_reference_j": 6.6161924905725756e-06,
+        "relative_balance_residual": 3.735592977940669e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t2-d0-f3",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.02,
+        "damping": 0.0,
+        "drive": 3.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9939123295831946,
+          0.25662332298205665,
+          -0.02548053527698735,
+          -0.09186742257246344,
+          3.951462518478905e-06,
+          0.0
+        ],
+        "state_min": [
+          0.9939123295831946,
+          0.2317993877991494,
+          -0.02548053527698735,
+          -0.09186742257246344
+        ],
+        "state_max": [
+          1.0208202059473057,
+          0.29570707998838586,
+          0.01,
+          0.07158131723840974
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 1.0127643747085723e-05,
+        "max_balance_residual_j": 5.788692279424384e-14,
+        "balance_reference_j": 1.0127643747085723e-05,
+        "relative_balance_residual": 5.715734502499762e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t2-d0.25-f0",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.02,
+        "damping": 0.25,
+        "drive": 0.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9786040590147949,
+          0.2856717467593763,
+          0.00789675015536726,
+          -0.025959571305555196,
+          0.0,
+          1.91184942334453e-07
+        ],
+        "state_min": [
+          0.9781690381316229,
+          0.2317993877991494,
+          -0.0385389010645486,
+          -0.025959571305555196
+        ],
+        "state_max": [
+          1.0207635712410563,
+          0.2903114926066496,
+          0.01,
+          0.05022749263129843
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 5.98499632938393e-06,
+        "max_balance_residual_j": 1.4775357546498586e-14,
+        "balance_reference_j": 6.176181286493741e-06,
+        "relative_balance_residual": 2.3923127999512874e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t2-d0.25-f1",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.02,
+        "damping": 0.25,
+        "drive": 1.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9837418523371451,
+          0.2756487482635567,
+          -0.0032535263355966777,
+          -0.047636285171550566,
+          -1.2160113921145226e-06,
+          1.681816852156499e-07
+        ],
+        "state_min": [
+          0.9837418523371451,
+          0.2317993877991494,
+          -0.0303701501819629,
+          -0.047636285171550566
+        ],
+        "state_max": [
+          1.0207814864785858,
+          0.2900085086582806,
+          0.01,
+          0.057004151477719193
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 4.791988190995272e-06,
+        "max_balance_residual_j": 1.816829653865903e-14,
+        "balance_reference_j": 6.593732489927354e-06,
+        "relative_balance_residual": 2.755388782667948e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t2-d0.25-f3",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.02,
+        "damping": 0.25,
+        "drive": 3.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9941095313907705,
+          0.256470084448814,
+          -0.02541165381061649,
+          -0.09081896950445197,
+          3.952564109784302e-06,
+          2.0161953667182676e-07
+        ],
+        "state_min": [
+          0.9941095313907705,
+          0.2317993877991494,
+          -0.02541165381061649,
+          -0.09081896950445197
+        ],
+        "state_max": [
+          1.0208185265158396,
+          0.29530104749017244,
+          0.01,
+          0.07120651928220696
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 9.927125816094778e-06,
+        "max_balance_residual_j": 4.351143833189702e-14,
+        "balance_reference_j": 9.927125816094778e-06,
+        "relative_balance_residual": 4.38308520894862e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t2-d1-f0",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.02,
+        "damping": 1.0,
+        "drive": 0.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9796078501695168,
+          0.2846550368941353,
+          0.007503405957730187,
+          -0.024728912628942723,
+          0.0,
+          7.299140910804362e-07
+        ],
+        "state_min": [
+          0.9791936210392782,
+          0.2317993877991494,
+          -0.03759967699948949,
+          -0.024728912628942723
+        ],
+        "state_max": [
+          1.0207593767989416,
+          0.2891035023588205,
+          0.01,
+          0.049273840258949965
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 5.446267199431565e-06,
+        "max_balance_residual_j": 8.169974342303707e-15,
+        "balance_reference_j": 6.176181286493741e-06,
+        "relative_balance_residual": 1.3228197106471037e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t2-d1-f1",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.02,
+        "damping": 1.0,
+        "drive": 1.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9846031311608203,
+          0.2748418924681416,
+          -0.0034469130283986565,
+          -0.045772398166126944,
+          -1.174540692572943e-06,
+          6.427156816437476e-07
+        ],
+        "state_min": [
+          0.9846031311608203,
+          0.2317993877991494,
+          -0.029593976760036368,
+          -0.045772398166126944
+        ],
+        "state_max": [
+          1.0207772715350578,
+          0.2888374057815748,
+          0.01,
+          0.05602632403086984
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 4.358924913012439e-06,
+        "max_balance_residual_j": 7.865941024430518e-15,
+        "balance_reference_j": 6.533456635666755e-06,
+        "relative_balance_residual": 1.2039478430896144e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t2-d1-f3",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.02,
+        "damping": 1.0,
+        "drive": 3.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9946819553097282,
+          0.2560332935091093,
+          -0.025212350441889176,
+          -0.08774779875327762,
+          3.953683967824205e-06,
+          7.743740363267344e-07
+        ],
+        "state_min": [
+          0.9946819553097282,
+          0.2317993877991494,
+          -0.025212350441889176,
+          -0.08774779875327762
+        ],
+        "state_max": [
+          1.0208135123421418,
+          0.2941200567800985,
+          0.01,
+          0.07009685518464913
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 9.355491216847915e-06,
+        "max_balance_residual_j": 1.836596853815043e-14,
+        "balance_reference_j": 9.355491216847915e-06,
+        "relative_balance_residual": 1.9631217765536374e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t10-d0-f0",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.02,
+        "damping": 0.0,
+        "drive": 0.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          1.0079804689990925,
+          0.26988765189492736,
+          0.025749258245706647,
+          -0.06312977635946444,
+          0.0,
+          0.0
+        ],
+        "state_min": [
+          0.9774818834300413,
+          0.2308422255467776,
+          -0.041520443307684486,
+          -0.06312977635946444
+        ],
+        "state_max": [
+          1.02310987609879,
+          0.2979105525800947,
+          0.041224850124709805,
+          0.05885847530681275
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 6.176181199887256e-06,
+        "max_balance_residual_j": 8.79773548933746e-14,
+        "balance_reference_j": 6.176181286493741e-06,
+        "relative_balance_residual": 1.4244619905469117e-08,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t10-d0-f1",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.02,
+        "damping": 0.0,
+        "drive": 1.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9982683921071551,
+          0.29882083918981506,
+          0.062359983244096945,
+          0.08240341849705635,
+          1.5542516646477852e-05,
+          0.0
+        ],
+        "state_min": [
+          0.9691984735309179,
+          0.21890167734402474,
+          -0.05542359839649433,
+          -0.07310780065433081
+        ],
+        "state_max": [
+          1.0275579189710577,
+          0.29882083918981506,
+          0.062359983244096945,
+          0.10255880927045626
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 2.1718697707314708e-05,
+        "max_balance_residual_j": 2.2565688534881452e-13,
+        "balance_reference_j": 2.1718697707314708e-05,
+        "relative_balance_residual": 1.0389982327200716e-08,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t10-d0-f3",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.02,
+        "damping": 0.0,
+        "drive": 3.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9871639259679539,
+          0.3572942131229136,
+          0.14132682511806036,
+          0.3731367877681537,
+          0.00020810549149626203,
+          0.0
+        ],
+        "state_min": [
+          0.9378003797515608,
+          0.0670223534326303,
+          -0.1286353938061334,
+          -0.31549352585234
+        ],
+        "state_max": [
+          1.0665411832405813,
+          0.4075414465022228,
+          0.14132682511806036,
+          0.4235334729963005
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 0.00021428167002709368,
+        "max_balance_residual_j": 2.997711101701203e-12,
+        "balance_reference_j": 0.00021428167002709368,
+        "relative_balance_residual": 1.3989582502890582e-08,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t10-d0.25-f0",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.02,
+        "damping": 0.25,
+        "drive": 0.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          1.0071542325430267,
+          0.26937377395980955,
+          0.023568697483987724,
+          -0.05816098408039153,
+          0.0,
+          9.816236335589796e-07
+        ],
+        "state_min": [
+          0.9781690381316229,
+          0.2317993877991494,
+          -0.03989853579807566,
+          -0.05816098408039153
+        ],
+        "state_max": [
+          1.0223806955669335,
+          0.2952277029633319,
+          0.040234272367552795,
+          0.05478340777540985
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 5.194557605372628e-06,
+        "max_balance_residual_j": 5.0886986719838906e-14,
+        "balance_reference_j": 6.176181286493741e-06,
+        "relative_balance_residual": 8.239231389000853e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t10-d0.25-f1",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.02,
+        "damping": 0.25,
+        "drive": 1.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9977962418511512,
+          0.2977344987146003,
+          0.05913967946190409,
+          0.0814059443814644,
+          1.5304335230215756e-05,
+          1.304668369837107e-06
+        ],
+        "state_min": [
+          0.9706621422189665,
+          0.2192575853751453,
+          -0.05304391424557994,
+          -0.0725630431208599
+        ],
+        "state_max": [
+          1.0264692926217656,
+          0.2977344987146003,
+          0.05913967946190409,
+          0.10080669375390193
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 2.0175847992747964e-05,
+        "max_balance_residual_j": 1.541244269457286e-13,
+        "balance_reference_j": 2.0175847992747964e-05,
+        "relative_balance_residual": 7.639055716573961e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t10-d0.25-f3",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.02,
+        "damping": 0.25,
+        "drive": 3.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9867285943948239,
+          0.35518644794705373,
+          0.13552621534845524,
+          0.3601078165753173,
+          0.00020397249059665642,
+          1.0738971197005993e-05
+        ],
+        "state_min": [
+          0.9397401670613789,
+          0.07300321035881743,
+          -0.1247294410063832,
+          -0.3070138250303306
+        ],
+        "state_max": [
+          1.0646156151988426,
+          0.4042075178670636,
+          0.13552621534845524,
+          0.40959182410835004
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 0.00019940969867675792,
+        "max_balance_residual_j": 2.3613194427942515e-12,
+        "balance_reference_j": 0.00020397249059665642,
+        "relative_balance_residual": 1.1576656420122955e-08,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t10-d1-f0",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.02,
+        "damping": 1.0,
+        "drive": 0.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          1.0051146594161053,
+          0.26804975931672365,
+          0.018112478580653506,
+          -0.04545001168956939,
+          0.0,
+          3.0806317142005887e-06
+        ],
+        "state_min": [
+          0.9791936210392782,
+          0.2317993877991494,
+          -0.03759967699948949,
+          -0.04545001168956939
+        ],
+        "state_max": [
+          1.0207593767989416,
+          0.2891035023588205,
+          0.037410095566376846,
+          0.049273840258949965
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 3.0955496102964056e-06,
+        "max_balance_residual_j": 3.800325337963693e-14,
+        "balance_reference_j": 6.176181286493741e-06,
+        "relative_balance_residual": 6.153195901607291e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t10-d1-f1",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.02,
+        "damping": 1.0,
+        "drive": 1.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9966747341658885,
+          0.29478235833808364,
+          0.050802165418458445,
+          0.07785331269800241,
+          1.4642475518689638e-05,
+          4.460022703943006e-06
+        ],
+        "state_min": [
+          0.9744694595627115,
+          0.2205623981876932,
+          -0.04680591618398583,
+          -0.07056437145373595
+        ],
+        "state_max": [
+          1.0235910171762397,
+          0.29478235833808364,
+          0.050802165418458445,
+          0.09541746086190046
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 1.635863412335868e-05,
+        "max_balance_residual_j": 3.3242283200478426e-14,
+        "balance_reference_j": 1.635863412335868e-05,
+        "relative_balance_residual": 2.0320940580859004e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "t10-d1-f3",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.02,
+        "damping": 1.0,
+        "drive": 3.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9857805560131617,
+          0.34922835775662797,
+          0.12019010226236172,
+          0.3237731459042821,
+          0.00019234111844802966,
+          3.696872894065787e-05
+        ],
+        "state_min": [
+          0.9449575271090207,
+          0.08963990218244762,
+          -0.1141349245784799,
+          -0.28325163190776814
+        ],
+        "state_max": [
+          1.0593160750975124,
+          0.39475532535181307,
+          0.12019010226236172,
+          0.3709457897992088
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 0.00016154857062398181,
+        "max_balance_residual_j": 7.788089868376955e-13,
+        "balance_reference_j": 0.00019234111844802966,
+        "relative_balance_residual": 4.0491029329650525e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "perturb-0",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.02,
+        "damping": 0.25,
+        "drive": 1.0,
+        "initial": [
+          1.0183473671673966,
+          0.22779721168665057,
+          0.00606015893052019,
+          0.014889599428000316,
+          0.0,
+          0.0
+        ]
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9950859305561321,
+          0.29452669879307186,
+          0.06148424711219914,
+          0.08201528583004601,
+          1.5808576952401417e-05,
+          1.3059729493958302e-06
+        ],
+        "state_min": [
+          0.9691276801440785,
+          0.2213771610735744,
+          -0.055833206931942235,
+          -0.06950575414549594
+        ],
+        "state_max": [
+          1.027547131900243,
+          0.29452669879307186,
+          0.06148424711219914,
+          0.09770434946334687
+        ],
+        "initial_energy_j": 5.9065090144897095e-06,
+        "final_energy_j": 2.0409112857467482e-05,
+        "max_balance_residual_j": 1.6002781460128799e-13,
+        "balance_reference_j": 2.0409112857467482e-05,
+        "relative_balance_residual": 7.840998073698019e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "perturb-1",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.02,
+        "damping": 0.25,
+        "drive": 1.0,
+        "initial": [
+          1.0131451933987956,
+          0.22842289794570889,
+          0.013840958408763626,
+          0.02742599336685613,
+          0.0,
+          0.0
+        ]
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.9976063724171318,
+          0.29612729173238367,
+          0.06727380984686666,
+          0.10056280875258401,
+          2.2424568814858046e-05,
+          1.7702917835809625e-06
+        ],
+        "state_min": [
+          0.9669381095799994,
+          0.2107678798963177,
+          -0.06117504898845879,
+          -0.08981481175858463
+        ],
+        "state_max": [
+          1.0304745241445414,
+          0.2997961306531265,
+          0.06727380984686666,
+          0.11673563253569273
+        ],
+        "initial_energy_j": 5.4636180017412056e-06,
+        "final_energy_j": 2.6117894802259565e-05,
+        "max_balance_residual_j": 2.3075872297353007e-13,
+        "balance_reference_j": 2.6117894802259565e-05,
+        "relative_balance_residual": 8.835272701748007e-09,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "accepted-refined",
+      "settings": {
+        "duration": 10.0,
+        "dt": 0.01,
+        "damping": 0.25,
+        "drive": 1.0
+      },
+      "classification": "success",
+      "collision_status": "not assessed",
+      "metrics": {
+        "final_state": [
+          0.997796248448737,
+          0.29773450482016883,
+          0.05913967645498224,
+          0.08140593974369113,
+          1.5304334946084223e-05,
+          1.3046684063162621e-06
+        ],
+        "state_min": [
+          0.9706621443197797,
+          0.21925332337887377,
+          -0.05304391031114742,
+          -0.072564130596448
+        ],
+        "state_max": [
+          1.0264692910628843,
+          0.29773450482016883,
+          0.05913967645498224,
+          0.10081592201331231
+        ],
+        "initial_energy_j": 6.176181286493741e-06,
+        "final_energy_j": 2.0175847822654146e-05,
+        "max_balance_residual_j": 4.298032156891426e-15,
+        "balance_reference_j": 2.0175847822654146e-05,
+        "relative_balance_residual": 2.1302857727076262e-10,
+        "extrema_scope": "accepted endpoint extrema; RK derivative stages also domain-checked"
+      }
+    },
+    {
+      "name": "high-rate-dt0.02",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.02,
+        "damping": 0.0,
+        "drive": 0.0,
+        "initial": [
+          1.0,
+          0.2617993877991494,
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "classification": "domain-rejected",
+      "reason": "outside declared scope [.9,1.1] x [0,pi/6]",
+      "collision_status": "not assessed",
+      "metrics": null
+    },
+    {
+      "name": "high-rate-dt0.01",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.01,
+        "damping": 0.0,
+        "drive": 0.0,
+        "initial": [
+          1.0,
+          0.2617993877991494,
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "classification": "domain-rejected",
+      "reason": "outside declared scope [.9,1.1] x [0,pi/6]",
+      "collision_status": "not assessed",
+      "metrics": null
+    },
+    {
+      "name": "high-rate-dt0.005",
+      "settings": {
+        "duration": 2.0,
+        "dt": 0.005,
+        "damping": 0.0,
+        "drive": 0.0,
+        "initial": [
+          1.0,
+          0.2617993877991494,
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "classification": "domain-rejected",
+      "reason": "outside declared scope [.9,1.1] x [0,pi/6]",
+      "collision_status": "not assessed",
+      "metrics": null
+    }
+  ]
+}
