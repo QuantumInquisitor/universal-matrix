@@ -1,4 +1,4 @@
-import {validate, frameAt, project} from './material-viewer-model.mjs';
+import {validate, frameAt, project, mechanicalLabel} from './material-viewer-model.mjs';
 const $ = id => document.getElementById(id);
 const canvas = $('scene'), ctx = canvas.getContext('2d');
 let data, extent = 1, index = 0, selected = 0, yaw = .65, pitch = -.45, zoom = 1, playing = false, start = 0, origin = 0;
@@ -41,7 +41,8 @@ function render(){
   ctx.fillStyle='#bdd0e4';ctx.font='13px system-ui';ctx.fillText(`${m.id} · 22 bodies · local frame`,16,25);
   $('frame').value=String(index);$('time').textContent=`t = ${frame.time_s.toFixed(4)} s · sample ${index+1}/${data.frame_count} · scale ${m.q[0].toFixed(5)} · angle ${m.q[1].toFixed(5)} rad`;
   const rows=[['Reserve',m.reserve_j],['Delivered work (transfer)',m.delivered_work_j],['External input',m.input_j],['Damping loss',m.losses_j.damping],['Conversion loss',m.losses_j.conversion],['Leakage loss',m.losses_j.leakage]];
-  $('ledger').replaceChildren(...rows.map(([name,value])=>{const tr=document.createElement('tr');for(const t of [name,value.toExponential(6)+' J']){const td=document.createElement('td');td.textContent=t;tr.append(td);}return tr;}));
+  rows.unshift(['Mechanical stored energy', m.mechanical_j]);
+  $('ledger').replaceChildren(...rows.map(([name,value])=>{const tr=document.createElement('tr');for(const t of [name,name === 'Mechanical stored energy' ? mechanicalLabel(m) : value.toExponential(6)+' J']){const td=document.createElement('td');td.textContent=t;tr.append(td);}return tr;}));
   $('edges').textContent=`All network edges (not selected-module totals)\nStored potential (J): ${JSON.stringify(frame.edge_potential_j)}\nEndpoint work (J): ${JSON.stringify(frame.edge_work_j)}`;
 }
 new ResizeObserver(render).observe(canvas);
