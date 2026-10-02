@@ -62,7 +62,7 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "PRs #119/#120/#121/#123/#124 and #152 are merged into recovery. Their exact-head full and focused checks passed; combined local geometry/boundary and wave/timing controls passed 109 and 105 tests. Recovery 851693c final integration CI 37067766522 is pending; PR #122 remains open against main. Accepted PR153-156,158,117 and118 are integrated in recovery48432f71. Earlier recovery664e5fc passed all28 reported workflows; current-head verification remains separate. PR157,159,160 and161 are reviewed proposals awaiting their exact-head verification and serial disposition.",
+      "latest_result": "PR119/120/121/123/124,152,153-156,158,117 and118 are integrated in recovery48432f71 after their recorded reviews and checks. Previous recovery664e5fc passed all28 reported workflows. Exact current recovery verification remains separate; PR122 is draft against main. PR157,159,160 and161 remain reviewed proposals pending exact-head verification and serial disposition.",
       "next_action": "Assess exact current recovery CI and reviewed pending proposals, then perform the bounded recovery-to-main integration review. Preserve open scientific limitations and continue the wider census without reopening merged experiments.",
       "blockers_or_limits": [
         "Green listed CI is not completed scientific review, combined compatibility, or merge authorization."
@@ -107,7 +107,7 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "The optional coupled-LC repository package now passes 105 tests, lint and report reproduction. Every original numerical report field is preserved; scalar/state invalid inputs and unrepresentable derived quantities reject explicitly. The source, independent tests, reproducible report and CI workflow are prepared for publication. Physical calibration and reciprocal piezoelectric attachment remain open. The optional LC reference is already integrated. The preserved paired-helix clock adapter is published in PR160 with28 reproduced grouped controls and independent review; its full remote verification remains pending.",
+      "latest_result": "The optional coupled-LC reference is integrated through PR153 after full CI and review. Its original numerical report fields and independent controls remain preserved. The paired-helix clock adapter is published in PR160 with28 reproduced grouped controls and independent review; full remote verification is pending. Physical calibration and coupling remain separate.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "next_action": "Finish review and integration disposition of the published paired-helix adapter; then select the next preserved candidate by source, inputs and independent controls. Do not repeat the completed LC promotion.",
       "blockers_or_limits": [
