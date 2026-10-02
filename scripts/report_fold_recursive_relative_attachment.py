@@ -67,7 +67,8 @@ def _grid_key(q, length_m):
 
 def precompute():
     markers = catalog()
-    all_q = sorted(set(FIT_Q + VALIDATION_Q + JACOBIAN_Q + (Q0,)))
+    reference_q = tuple(map(float, Q0))
+    all_q = sorted(set(FIT_Q + VALIDATION_Q + JACOBIAN_Q + (reference_q,)))
     lengths = sorted(set((1.0,) + VALIDATION_LENGTHS_M))
     points = {}
     jacobians = {}
