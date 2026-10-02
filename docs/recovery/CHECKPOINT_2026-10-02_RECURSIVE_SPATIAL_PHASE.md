@@ -134,3 +134,35 @@ This closes the searched single-marker and relative-marker rigid attachment-fram
 Proceed to exact recursive body proximity/collision auditing on the explicit Seed-axis placement using actual panel polygons, bridge segments and hub points over the bounded fold-state grid. Use exact point/segment/polygon proximity rather than cross-generation bounding spheres. Keep body thickness at zero/source-midsurface unless a physical thickness is explicitly declared.
 
 The abstract connector port remains a reduced generalized coordinate during this collision audit.
+
+
+## Checkpoint addendum — exact recursive body clearance
+
+PR #140 merged successfully.
+
+- Merge commit: `20db2800cca4b49ef7767cef41ff687fe572e4ec`
+- Geometry: actual zero-thickness panel polygons, bridge segments and hub points
+- Modules: 15
+- Module pairs: 105
+- Independent q-state pairs per module pair: 81
+- Seed axes: one canonical axis, reusing the prior rigid-equivalence proof
+
+Coarse vessel-radius/module-length scan:
+
+- 2.1938305513: colliding, 32 module pairs / 2,347 state pairs
+- 3.2907458269: colliding, 24 / 1,759
+- 4.3876611026: colliding, 24 / 1,046
+- 6.5814916539: colliding, 8 / 459
+- 10.9691527565: colliding, 2 / 114
+- 19.7444749617: collision-free; minimum exact clearance 0.0597550118 m
+- 19.7444947062: collision-free; minimum exact clearance 0.0597552586 m
+
+At the last colliding coarse sample, the surviving collision is governed by root-versus-depth-3 ancestor/descendant panel contact. The first free sample is also governed by root/depth-3 panel proximity.
+
+Current finite-grid bracket:
+
+`10.9691527565 < collision/free boundary <= 19.7444749617`
+
+This does not make 19.7444749617 a physical threshold. It is only the first free point on the coarse exact scan. The next gate is refinement inside this bracket with the same exact primitive-distance kernel and state coverage.
+
+The previous cross-generation bounding-sphere result is no longer used as the physical collision answer. It remains only an outer sufficient bound/pruning device.
