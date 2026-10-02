@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic two-mass SI baseline; no recursive assembly or autonomous breathing",
+  "sources": {
+    "report_material_restart.py": "588a6e87de082faecab7c4fa7bc1f84e4ec94269dbea578d7dc3b86d48dbf101",
+    "report_material_specimen.py": "c8af4e822f82e32cecf6dfad948428c803a82f375b103a17b89e92f28379a790"
+  },
+  "cases": [
+    {
+      "dt_s": 0.04,
+      "checkpoint_steps": [
+        50,
+        100,
+        150,
+        300
+      ],
+      "exact_replay": true,
+      "cutoff": {
+        "owned_energy_j": [
+          0.010143257055326427,
+          0.009724092606634883,
+          7.894316623437134e-08
+        ],
+        "ownership_residuals_j": [
+          3.228030807239657e-08,
+          -1.9198265437461726e-08,
+          2.7467067183206684e-08
+        ],
+        "total_balance_residual_j": 4.054910980599846e-08,
+        "work_j": 0.009670813881713444,
+        "loss_j": 0.019803425825695713
+      },
+      "final": {
+        "owned_energy_j": [
+          0.0032681743680970017,
+          0.003438490645238512,
+          1.303837919335692e-05
+        ],
+        "ownership_residuals_j": [
+          3.9415716773794074e-08,
+          -1.5146964058021517e-08,
+          2.5659354238594112e-08
+        ],
+        "total_balance_residual_j": 4.992810689885552e-08,
+        "work_j": 0.009670813881713444,
+        "loss_j": 0.03295116041729148
+      },
+      "off_interval_work_j": 0.0,
+      "checkpoint": {
+        "payload": {
+          "contract": {
+            "channels": [
+              "x0_m",
+              "x1_m",
+              "v0_mps",
+              "v1_mps",
+              "work_j",
+              "loss_j",
+              "anchor0_loss_j",
+              "anchor1_loss_j",
+              "link_loss_j",
+              "link_to_body0_j",
+              "link_to_body1_j"
+            ],
+            "cutoff_step": 100,
+            "cutoff_time_s": 4.0,
+            "dt_s": 0.04,
+            "model": "two-mass-switched-rk4-v1",
+            "parameters": {
+              "anchor_damping_n_s_per_m": 0.1,
+              "anchor_stiffness_n_per_m": 4.0,
+              "drive_amplitude_n": 0.2,
+              "drive_omega_rad_per_s": 1.5,
+              "link_damping_n_s_per_m": 0.2,
+              "link_stiffness_n_per_m": 2.0,
+              "mass_kg": 1.0
+            },
+            "schema": 1,
+            "sources": {
+              "report_material_restart.py": "588a6e87de082faecab7c4fa7bc1f84e4ec94269dbea578d7dc3b86d48dbf101",
+              "report_material_specimen.py": "c8af4e822f82e32cecf6dfad948428c803a82f375b103a17b89e92f28379a790"
+            }
+          },
+          "initial": [
+            0.1,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "state": [
+            0.03702922633638975,
+            0.04064009592602559,
+            -0.03242983693927064,
+            -0.016447239980336426,
+            0.009670813881713444,
+            0.03295116041729148,
+            0.007545079668333405,
+            0.006908781272164049,
+            0.018497299476794078,
+            -0.018857599260999815,
+            0.01034728706436662
+          ],
+          "step": 300,
+          "time_s": 12.0
+        },
+        "sha256": "8886c9bcc5111728854c5561f65cc5e9ff9a2795ffb738d2aa8b7c7429eb5e1c"
+      }
+    },
+    {
+      "dt_s": 0.02,
+      "checkpoint_steps": [
+        100,
+        200,
+        300,
+        600
+      ],
+      "exact_replay": true,
+      "cutoff": {
+        "owned_energy_j": [
+          0.010143183893689397,
+          0.009724103909761146,
+          7.870002390721795e-08
+        ],
+        "ownership_residuals_j": [
+          2.482309142959327e-09,
+          -9.202447675410452e-10,
+          1.89914260879942e-09
+        ],
+        "total_balance_residual_j": 3.4612069946260426e-09,
+        "work_j": 0.0096707994293214,
+        "loss_j": 0.019803436387053952
+      },
+      "final": {
+        "owned_energy_j": [
+          0.0032681605932029984,
+          0.0034385086498198627,
+          1.3039478119795698e-05
+        ],
+        "ownership_residuals_j": [
+          3.0618043586616572e-09,
+          -4.0423919073218073e-10,
+          1.8486321362587432e-09
+        ],
+        "total_balance_residual_j": 4.5061973180660075e-09,
+        "work_j": 0.0096707994293214,
+        "loss_j": 0.032951095214376065
+      },
+      "off_interval_work_j": 0.0,
+      "checkpoint": {
+        "payload": {
+          "contract": {
+            "channels": [
+              "x0_m",
+              "x1_m",
+              "v0_mps",
+              "v1_mps",
+              "work_j",
+              "loss_j",
+              "anchor0_loss_j",
+              "anchor1_loss_j",
+              "link_loss_j",
+              "link_to_body0_j",
+              "link_to_body1_j"
+            ],
+            "cutoff_step": 200,
+            "cutoff_time_s": 4.0,
+            "dt_s": 0.02,
+            "model": "two-mass-switched-rk4-v1",
+            "parameters": {
+              "anchor_damping_n_s_per_m": 0.1,
+              "anchor_stiffness_n_per_m": 4.0,
+              "drive_amplitude_n": 0.2,
+              "drive_omega_rad_per_s": 1.5,
+              "link_damping_n_s_per_m": 0.2,
+              "link_stiffness_n_per_m": 2.0,
+              "mass_kg": 1.0
+            },
+            "schema": 1,
+            "sources": {
+              "report_material_restart.py": "588a6e87de082faecab7c4fa7bc1f84e4ec94269dbea578d7dc3b86d48dbf101",
+              "report_material_specimen.py": "c8af4e822f82e32cecf6dfad948428c803a82f375b103a17b89e92f28379a790"
+            }
+          },
+          "initial": [
+            0.1,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "state": [
+            0.03702909855331955,
+            0.04064012030897206,
+            -0.03242999580203778,
+            -0.01644809365029371,
+            0.0096707994293214,
+            0.032951095214376065,
+            0.007545076740512576,
+            0.006908786951234206,
+            0.01849723152262927,
+            -0.018857565157410185,
+            0.01034729600529326
+          ],
+          "step": 600,
+          "time_s": 12.0
+        },
+        "sha256": "5bcf0897a7cb69250fc5c3e644b7a262648735c92f44c14dbf0e9c4d1f2036b2"
+      }
+    },
+    {
+      "dt_s": 0.01,
+      "checkpoint_steps": [
+        200,
+        400,
+        600,
+        1200
+      ],
+      "exact_replay": true,
+      "cutoff": {
+        "owned_energy_j": [
+          0.010143179337780486,
+          0.009724104298689487,
+          7.868556476208303e-08
+        ],
+        "ownership_residuals_j": [
+          1.6963286331161953e-10,
+          -4.8750987621803965e-11,
+          1.2436221497047484e-10
+        ],
+        "total_balance_residual_j": 2.452440993339078e-10,
+        "work_j": 0.009670798455719715,
+        "loss_j": 0.019803436378929087
+      },
+      "final": {
+        "owned_energy_j": [
+          0.0032681596833953053,
+          0.0034385096272604833,
+          1.303954135295715e-05
+        ],
+        "ownership_residuals_j": [
+          2.1001760400207736e-10,
+          -8.293008640913868e-12,
+          1.2316118090660577e-10
+        ],
+        "total_balance_residual_j": 3.2488577106359884e-10,
+        "work_j": 0.009670798455719715,
+        "loss_j": 0.032951089928596744
+      },
+      "off_interval_work_j": 0.0,
+      "checkpoint": {
+        "payload": {
+          "contract": {
+            "channels": [
+              "x0_m",
+              "x1_m",
+              "v0_mps",
+              "v1_mps",
+              "work_j",
+              "loss_j",
+              "anchor0_loss_j",
+              "anchor1_loss_j",
+              "link_loss_j",
+              "link_to_body0_j",
+              "link_to_body1_j"
+            ],
+            "cutoff_step": 400,
+            "cutoff_time_s": 4.0,
+            "dt_s": 0.01,
+            "model": "two-mass-switched-rk4-v1",
+            "parameters": {
+              "anchor_damping_n_s_per_m": 0.1,
+              "anchor_stiffness_n_per_m": 4.0,
+              "drive_amplitude_n": 0.2,
+              "drive_omega_rad_per_s": 1.5,
+              "link_damping_n_s_per_m": 0.2,
+              "link_stiffness_n_per_m": 2.0,
+              "mass_kg": 1.0
+            },
+            "schema": 1,
+            "sources": {
+              "report_material_restart.py": "588a6e87de082faecab7c4fa7bc1f84e4ec94269dbea578d7dc3b86d48dbf101",
+              "report_material_specimen.py": "c8af4e822f82e32cecf6dfad948428c803a82f375b103a17b89e92f28379a790"
+            }
+          },
+          "initial": [
+            0.1,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "state": [
+            0.03702909039643228,
+            0.04064012090765164,
+            -0.03243000500218888,
+            -0.016448147159081165,
+            0.009670798455719715,
+            0.032951089928596744,
+            0.00754507640343321,
+            0.006908787113109719,
+            0.018497226412053824,
+            -0.018857562578908808,
+            0.01034729674866321
+          ],
+          "step": 1200,
+          "time_s": 12.0
+        },
+        "sha256": "f31db291163dbc03bd1e5c3250e0847dec3edf68656e03c7cc03d33bc6e4c2d4"
+      }
+    }
+  ],
+  "checksum_scope": "Detects payload alteration without checksum update; not authentication or proof of physical validity",
+  "energy_ownership": "Each body owns its kinetic and anchor energy; spring energy belongs once to the link. Link damping has separate loss.",
+  "remaining": [
+    "material-to-geometry mapping",
+    "recursive coupling",
+    "autonomous motion",
+    "cross-platform floating-point replay"
+  ]
+}

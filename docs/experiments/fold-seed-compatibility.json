@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "seed_sha256": "db0b76cccb2e7c98f92ef0b467e740347a06c7e7baa1af52886465148f60a27a",
+  "scope": "Reviewed optional constitutive potential extension; seed and continuation remain quadratic. Nine deterministic state probes and a short paired trajectory agree with exact historical source snapshots. This is bounded regression evidence, not a formal proof for every state. Unknown source changes remain rejected.",
+  "historical_commit": "da7bf75",
+  "source_transitions": {
+    "report_fold_dynamics.py": {
+      "historical_sha256": "7f814a9fb30be9dfb8da503042d5b97631b1c34cf4a12a2d66ab059223ed86ab",
+      "current_sha256": "1959b1c054b92b5034ff22e2708482d2e271dcc971528aa3793078be9f2368ce",
+      "historical_snapshot": "tests/fixtures/fold_supply_seed/report_fold_dynamics.py.txt"
+    },
+    "report_fold_reservoir.py": {
+      "historical_sha256": "b946f19a0845145a1e2e7cdc9b713f21001a884e4c9f203219321630244c0478",
+      "current_sha256": "5099e68a2638f338e0bccb8ebdcd4b3840eac1ee1cff8d4ddd8c41fb298a606d",
+      "historical_snapshot": "tests/fixtures/fold_supply_seed/report_fold_reservoir.py.txt"
+    },
+    "report_fold_coupling.py": {
+      "historical_sha256": "2c7a4d3ca5216036d264505a41746857112b925b61ee7ab1ac1cad3bd2e251e8",
+      "current_sha256": "9e0d22cd32234f7a8c3c1607009f3b732439f1b4ddeae84050a6ea689f8503fc",
+      "historical_snapshot": "tests/fixtures/fold_supply_seed/report_fold_coupling.py.txt"
+    }
+  }
+}

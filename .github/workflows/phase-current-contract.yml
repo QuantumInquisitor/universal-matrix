@@ -1,0 +1,38 @@
+name: Phase current contract
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_phase_current_contract.py'
+      - 'tests/test_phase_current_contract.py'
+      - 'docs/phase_current_contract.md'
+      - '.github/workflows/phase-current-contract.yml'
+      - 'scripts/report_fold_scale_extension.py'
+      - 'scripts/report_fold_mapped.py'
+      - 'scripts/report_fold_dynamics.py'
+      - 'scripts/report_fold_recursive_phase_power.py'
+      - 'src/gauge_matter.py'
+      - 'src/gauge_dynamics.py'
+      - 'src/gauge_3d.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  phase-current-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify source contracts and fault controls
+        run: |
+          uv run ruff check scripts/report_phase_current_contract.py tests/test_phase_current_contract.py
+          uv run ruff format --check scripts/report_phase_current_contract.py tests/test_phase_current_contract.py
+          uv run python -m pytest tests/test_phase_current_contract.py tests/test_gauge_matter.py tests/test_fold_recursive_phase_power.py
+          uv run python -m scripts.report_phase_current_contract --output artifacts/phase-current/report.json

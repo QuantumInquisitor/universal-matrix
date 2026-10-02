@@ -1,0 +1,1605 @@
+{
+  "schema": 1,
+  "scope": "Synthetic finite-fuel feedback; no external time forcing; not material calibration",
+  "sources": {
+    "report_fold_reservoir.py": "b946f19a0845145a1e2e7cdc9b713f21001a884e4c9f203219321630244c0478",
+    "report_fold_dynamics.py": "7f814a9fb30be9dfb8da503042d5b97631b1c34cf4a12a2d66ab059223ed86ab",
+    "report_fold_kinematics.py": "710febbd4b891f1bf963bb876b39912811d80a2a5b968fa3c3baf653edefd62b"
+  },
+  "reserve_activation_scale_j": 1e-05,
+  "cases": {
+    "fueled": {
+      "settings": {
+        "duration_s": 10.0,
+        "dt_s": 0.02,
+        "initial_reserve_j": 2e-05,
+        "equilibrium": false,
+        "gain": 4.0,
+        "efficiency": 0.8,
+        "leakage": 0.15,
+        "damping": 1.0,
+        "omit_debit": false
+      },
+      "initial_mechanical_j": 6.176181286493741e-06,
+      "final_state": [
+        1.0092508849496775,
+        0.27072871345525573,
+        0.028262356552752593,
+        -0.07219751172488983,
+        6.61438827139254e-07,
+        7.408573434727493e-06,
+        5.670283454198894e-06,
+        1.8521433586818733e-06,
+        1.0077844379451364e-05
+      ],
+      "max_total_residual_j": 1.8330599353948845e-13,
+      "max_mechanical_residual_j": 1.8330597913992835e-13,
+      "max_reservoir_residual_j": 2.0328790734103208e-20,
+      "minimum_reserve_j": 6.61438827139254e-07,
+      "samples": [
+        {
+          "time_s": 0.0,
+          "q": [
+            1.02,
+            0.2317993877991494
+          ],
+          "rates": [
+            0.01,
+            0.02
+          ],
+          "mechanical_j": 6.176181286493741e-06,
+          "reserve_j": 2e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 0.0,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 2.1333333333333334e-07
+        },
+        {
+          "time_s": 1.0,
+          "q": [
+            0.9997606357536435,
+            0.2757683876678388
+          ],
+          "rates": [
+            -0.04076867954272624,
+            0.04747144653917513
+          ],
+          "mechanical_j": 6.891392833943526e-06,
+          "reserve_j": 1.580652990828546e-05,
+          "work_j": 1.1811064577421142e-06,
+          "damping_loss_j": 4.6589488101545366e-07,
+          "conversion_loss_j": 2.9527661443552855e-07,
+          "leakage_loss_j": 2.7170870195368984e-06,
+          "total_residual_j": -2.927687728208374e-14,
+          "mechanical_residual_j": -2.927687585271564e-14,
+          "reservoir_residual_j": -2.117582368135751e-21,
+          "delivered_power_w": 2.1809645811717763e-06
+        },
+        {
+          "time_s": 2.0,
+          "q": [
+            0.9761461979152278,
+            0.2882028375181412
+          ],
+          "rates": [
+            0.00892574565381562,
+            -0.029137852188799312
+          ],
+          "mechanical_j": 7.426557954730922e-06,
+          "reserve_j": 1.2567467456765193e-05,
+          "work_j": 2.1061576348939515e-06,
+          "damping_loss_j": 8.557809017646344e-07,
+          "conversion_loss_j": 5.265394087234879e-07,
+          "leakage_loss_j": 4.799835499617365e-06,
+          "total_residual_j": -6.489213937792108e-14,
+          "mechanical_residual_j": -6.489213641330577e-14,
+          "reservoir_residual_j": -4.235164736271502e-21,
+          "delivered_power_w": 2.601073118257286e-07
+        },
+        {
+          "time_s": 3.0,
+          "q": [
+            1.0122054494807213,
+            0.24341519292130728
+          ],
+          "rates": [
+            0.04280206131425597,
+            -0.03844942685197397
+          ],
+          "mechanical_j": 8.238115736042648e-06,
+          "reserve_j": 8.946907710465363e-06,
+          "work_j": 3.694377558166866e-06,
+          "damping_loss_j": 1.632443005018271e-06,
+          "conversion_loss_j": 9.235943895417165e-07,
+          "leakage_loss_j": 6.435120341826049e-06,
+          "total_residual_j": -1.0359969514748581e-13,
+          "mechanical_residual_j": -1.0359968773594752e-13,
+          "reservoir_residual_j": -7.623296525288703e-21,
+          "delivered_power_w": 1.663390482603091e-06
+        },
+        {
+          "time_s": 4.0,
+          "q": [
+            1.0206333088135748,
+            0.23789711879847883
+          ],
+          "rates": [
+            -0.031899902232100034,
+            0.02928477944694444
+          ],
+          "mechanical_j": 8.464372043607992e-06,
+          "reserve_j": 7.124420358615888e-06,
+          "work_j": 4.203464914308858e-06,
+          "damping_loss_j": 1.915274036331008e-06,
+          "conversion_loss_j": 1.0508662285772145e-06,
+          "leakage_loss_j": 7.62124849849803e-06,
+          "total_residual_j": -1.2086360897029837e-13,
+          "mechanical_residual_j": -1.20863598805903e-13,
+          "reservoir_residual_j": -1.1858461261560205e-20,
+          "delivered_power_w": 8.200975671553727e-07
+        },
+        {
+          "time_s": 5.0,
+          "q": [
+            0.9778499457405795,
+            0.2835298749145725
+          ],
+          "rates": [
+            -0.028352595150725676,
+            0.04185211067168477
+          ],
+          "mechanical_j": 8.899225340053038e-06,
+          "reserve_j": 4.520224515424587e-06,
+          "work_j": 5.59651389042472e-06,
+          "damping_loss_j": 2.8734696914797162e-06,
+          "conversion_loss_j": 1.39912847260618e-06,
+          "leakage_loss_j": 8.484133121544504e-06,
+          "total_residual_j": -1.4538571762494693e-13,
+          "mechanical_residual_j": -1.453857066135186e-13,
+          "reservoir_residual_j": -1.1858461261560205e-20,
+          "delivered_power_w": 6.185112827646782e-07
+        },
+        {
+          "time_s": 6.0,
+          "q": [
+            0.9900432679855661,
+            0.28476908267565515
+          ],
+          "rates": [
+            0.0450098723703484,
+            -0.04152513014188211
+          ],
+          "mechanical_j": 8.936898159549439e-06,
+          "reserve_j": 3.457040359065433e-06,
+          "work_j": 5.9618078715013e-06,
+          "damping_loss_j": 3.2010908419432994e-06,
+          "conversion_loss_j": 1.490451967875325e-06,
+          "leakage_loss_j": 9.090699801557933e-06,
+          "total_residual_j": -1.5650231016185213e-13,
+          "mechanical_residual_j": -1.5650230296207208e-13,
+          "reservoir_residual_j": -1.1858461261560205e-20,
+          "delivered_power_w": 1.0098926509229378e-06
+        },
+        {
+          "time_s": 7.0,
+          "q": [
+            1.0254491006290707,
+            0.23349369619536836
+          ],
+          "rates": [
+            0.005698584429817105,
+            -0.03755572722792194
+          ],
+          "mechanical_j": 8.830630150457478e-06,
+          "reserve_j": 2.1472698137827697e-06,
+          "work_j": 6.69002561882371e-06,
+          "damping_loss_j": 4.035576589975999e-06,
+          "conversion_loss_j": 1.6725064047059274e-06,
+          "leakage_loss_j": 9.490198162687579e-06,
+          "total_residual_j": -1.648839891661355e-13,
+          "mechanical_residual_j": -1.648839730725095e-13,
+          "reservoir_residual_j": -1.6940658945086007e-20,
+          "delivered_power_w": 1.0891336391636971e-07
+        },
+        {
+          "time_s": 8.0,
+          "q": [
+            0.998435460999114,
+            0.2413029322125971
+          ],
+          "rates": [
+            -0.04245922609978368,
+            0.05428830617891259
+          ],
+          "mechanical_j": 8.642633195377561e-06,
+          "reserve_j": 1.5149984704911724e-06,
+          "work_j": 6.969450367774718e-06,
+          "damping_loss_j": 4.50299827653414e-06,
+          "conversion_loss_j": 1.7423625919436796e-06,
+          "leakage_loss_j": 9.773188569790423e-06,
+          "total_residual_j": -1.823567711493456e-13,
+          "mechanical_residual_j": -1.823567584438514e-13,
+          "reservoir_residual_j": -1.0164395367051604e-20,
+          "delivered_power_w": 5.346038221516534e-07
+        },
+        {
+          "time_s": 9.0,
+          "q": [
+            0.9796775708408079,
+            0.3002107542028381
+          ],
+          "rates": [
+            0.013445289902825073,
+            0.029298194088373166
+          ],
+          "mechanical_j": 8.30044424211573e-06,
+          "reserve_j": 9.904313766736324e-07,
+          "work_j": 7.246609439406529e-06,
+          "damping_loss_j": 5.122346300825491e-06,
+          "conversion_loss_j": 1.8116523598516322e-06,
+          "leakage_loss_j": 9.951306824068192e-06,
+          "total_residual_j": -1.8295906578495204e-13,
+          "mechanical_residual_j": -1.829590488442931e-13,
+          "reservoir_residual_j": -1.6940658945086007e-20,
+          "delivered_power_w": 5.700794619060222e-08
+        },
+        {
+          "time_s": 10.0,
+          "q": [
+            1.0092508849496775,
+            0.27072871345525573
+          ],
+          "rates": [
+            0.028262356552752593,
+            -0.07219751172488983
+          ],
+          "mechanical_j": 7.914471099337585e-06,
+          "reserve_j": 6.61438827139254e-07,
+          "work_j": 7.408573434727493e-06,
+          "damping_loss_j": 5.670283454198894e-06,
+          "conversion_loss_j": 1.8521433586818733e-06,
+          "leakage_loss_j": 1.0077844379451364e-05,
+          "total_residual_j": -1.6768477136886763e-13,
+          "mechanical_residual_j": -1.6768475442820868e-13,
+          "reservoir_residual_j": -1.6940658945086007e-20,
+          "delivered_power_w": 2.0864211038393401e-07
+        }
+      ]
+    },
+    "empty": {
+      "settings": {
+        "duration_s": 10.0,
+        "dt_s": 0.02,
+        "initial_reserve_j": 0.0,
+        "equilibrium": false,
+        "gain": 4.0,
+        "efficiency": 0.8,
+        "leakage": 0.15,
+        "damping": 1.0,
+        "omit_debit": false
+      },
+      "initial_mechanical_j": 6.176181286493741e-06,
+      "final_state": [
+        1.0051146594161053,
+        0.26804975931672365,
+        0.018112478580653506,
+        -0.04545001168956939,
+        0.0,
+        0.0,
+        3.0806317142005887e-06,
+        0.0,
+        0.0
+      ],
+      "max_total_residual_j": 3.8003252956120455e-14,
+      "max_mechanical_residual_j": 3.800325337963693e-14,
+      "max_reservoir_residual_j": 0.0,
+      "minimum_reserve_j": 0.0,
+      "samples": [
+        {
+          "time_s": 0.0,
+          "q": [
+            1.02,
+            0.2317993877991494
+          ],
+          "rates": [
+            0.01,
+            0.02
+          ],
+          "mechanical_j": 6.176181286493741e-06,
+          "reserve_j": 0.0,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 0.0,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 1.0,
+          "q": [
+            1.0007843419179168,
+            0.273482261835785
+          ],
+          "rates": [
+            -0.03756943448645169,
+            0.04321100380346484
+          ],
+          "mechanical_j": 5.760400378290121e-06,
+          "reserve_j": 0.0,
+          "work_j": 0.0,
+          "damping_loss_j": 4.157809136312478e-07,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 5.427627883811473e-15,
+          "mechanical_residual_j": 5.427627777932354e-15,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 2.0,
+          "q": [
+            0.9796078501695168,
+            0.2846550368941353
+          ],
+          "rates": [
+            0.007503405957730187,
+            -0.024728912628942723
+          ],
+          "mechanical_j": 5.446267199431565e-06,
+          "reserve_j": 0.0,
+          "work_j": 0.0,
+          "damping_loss_j": 7.299140910804362e-07,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 4.0182599272704095e-15,
+          "mechanical_residual_j": 4.018260244907765e-15,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 3.0,
+          "q": [
+            1.0087184434071927,
+            0.24789482094144616
+          ],
+          "rates": [
+            0.033632257561247866,
+            -0.0308069449684811
+          ],
+          "mechanical_j": 4.938487995429946e-06,
+          "reserve_j": 0.0,
+          "work_j": 0.0,
+          "damping_loss_j": 1.2376933040489145e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 1.2985120113493884e-14,
+          "mechanical_residual_j": 1.2985119901735647e-14,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 4.0,
+          "q": [
+            1.0157137063411763,
+            0.2435256696517511
+          ],
+          "rates": [
+            -0.023122582395685393,
+            0.02257351201607048
+          ],
+          "mechanical_j": 4.770142061730161e-06,
+          "reserve_j": 0.0,
+          "work_j": 0.0,
+          "damping_loss_j": 1.4060392377023662e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 1.2938786564246126e-14,
+          "mechanical_residual_j": 1.2938786564246126e-14,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 5.0,
+          "q": [
+            0.9850272065714596,
+            0.27688743482698813
+          ],
+          "rates": [
+            -0.020354883075620025,
+            0.02930474723816784
+          ],
+          "mechanical_j": 4.27349762747235e-06,
+          "reserve_j": 0.0,
+          "work_j": 0.0,
+          "damping_loss_j": 1.9026836825726924e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 2.3551302170943776e-14,
+          "mechanical_residual_j": 2.3551301747427303e-14,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 6.0,
+          "q": [
+            0.992574289930343,
+            0.27793051361152554
+          ],
+          "rates": [
+            0.029871242053094837,
+            -0.028087771719695346
+          ],
+          "mechanical_j": 4.125116022038227e-06,
+          "reserve_j": 0.0,
+          "work_j": 0.0,
+          "damping_loss_j": 2.0510652885009726e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 2.4045458651273093e-14,
+          "mechanical_residual_j": 2.4045458651273093e-14,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 7.0,
+          "q": [
+            1.0163693930248372,
+            0.24315836045591804
+          ],
+          "rates": [
+            0.0046168648597445395,
+            -0.02532091059197999
+          ],
+          "mechanical_j": 3.748382655006157e-06,
+          "reserve_j": 0.0,
+          "work_j": 0.0,
+          "damping_loss_j": 2.4277986614636302e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 2.99760462288347e-14,
+          "mechanical_residual_j": 2.99760462288347e-14,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 8.0,
+          "q": [
+            0.9997032038951924,
+            0.24832876042773663
+          ],
+          "rates": [
+            -0.027075766424757165,
+            0.03533990933998933
+          ],
+          "mechanical_j": 3.561278586187572e-06,
+          "reserve_j": 0.0,
+          "work_j": 0.0,
+          "damping_loss_j": 2.6149027292902513e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 2.8984082556173397e-14,
+          "mechanical_residual_j": 2.8984082556173397e-14,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 9.0,
+          "q": [
+            0.9869995636183816,
+            0.2859951660880078
+          ],
+          "rates": [
+            0.007353316381696507,
+            0.018993945487821427
+          ],
+          "mechanical_j": 3.3046041656424273e-06,
+          "reserve_j": 0.0,
+          "work_j": 0.0,
+          "damping_loss_j": 2.8715771527589804e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 3.19076667485655e-14,
+          "mechanical_residual_j": 3.19076667485655e-14,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 10.0,
+          "q": [
+            1.0051146594161053,
+            0.26804975931672365
+          ],
+          "rates": [
+            0.018112478580653506,
+            -0.04545001168956939
+          ],
+          "mechanical_j": 3.0955496102964056e-06,
+          "reserve_j": 0.0,
+          "work_j": 0.0,
+          "damping_loss_j": 3.0806317142005887e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 3.8003252956120455e-14,
+          "mechanical_residual_j": 3.800325337963693e-14,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        }
+      ]
+    },
+    "disconnected": {
+      "settings": {
+        "duration_s": 10.0,
+        "dt_s": 0.02,
+        "initial_reserve_j": 2e-05,
+        "equilibrium": false,
+        "gain": 0,
+        "efficiency": 0.8,
+        "leakage": 0.15,
+        "damping": 1.0,
+        "omit_debit": false
+      },
+      "initial_mechanical_j": 6.176181286493741e-06,
+      "final_state": [
+        1.0051146594161053,
+        0.26804975931672365,
+        0.018112478580653506,
+        -0.04545001168956939,
+        4.462603202973129e-06,
+        0.0,
+        3.0806317142005887e-06,
+        0.0,
+        1.553739679702688e-05
+      ],
+      "max_total_residual_j": 3.800326142644993e-14,
+      "max_mechanical_residual_j": 3.800325337963693e-14,
+      "max_reservoir_residual_j": 1.6940658945086007e-20,
+      "minimum_reserve_j": 4.462603202973129e-06,
+      "samples": [
+        {
+          "time_s": 0.0,
+          "q": [
+            1.02,
+            0.2317993877991494
+          ],
+          "rates": [
+            0.01,
+            0.02
+          ],
+          "mechanical_j": 6.176181286493741e-06,
+          "reserve_j": 2e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 0.0,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 1.0,
+          "q": [
+            1.0007843419179168,
+            0.273482261835785
+          ],
+          "rates": [
+            -0.03756943448645169,
+            0.04321100380346484
+          ],
+          "mechanical_j": 5.760400378290121e-06,
+          "reserve_j": 1.72141595285029e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 4.157809136312478e-07,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 2.7858404714970966e-06,
+          "total_residual_j": 5.427624495679684e-15,
+          "mechanical_residual_j": 5.427627777932354e-15,
+          "reservoir_residual_j": -4.658681209898652e-21,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 2.0,
+          "q": [
+            0.9796078501695168,
+            0.2846550368941353
+          ],
+          "rates": [
+            0.007503405957730187,
+            -0.024728912628942723
+          ],
+          "mechanical_j": 5.446267199431565e-06,
+          "reserve_j": 1.4816364413637377e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 7.299140910804362e-07,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 5.183635586362636e-06,
+          "total_residual_j": 4.0182700916657765e-15,
+          "mechanical_residual_j": 4.018260244907765e-15,
+          "reservoir_residual_j": 1.1011428314305904e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 3.0,
+          "q": [
+            1.0087184434071927,
+            0.24789482094144616
+          ],
+          "rates": [
+            0.033632257561247866,
+            -0.0308069449684811
+          ],
+          "mechanical_j": 4.938487995429946e-06,
+          "reserve_j": 1.2752563032439359e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 1.2376933040489145e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 7.247436967560655e-06,
+          "total_residual_j": 1.298513366602104e-14,
+          "mechanical_residual_j": 1.2985119901735647e-14,
+          "reservoir_residual_j": 1.1858461261560205e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 4.0,
+          "q": [
+            1.0157137063411763,
+            0.2435256696517511
+          ],
+          "rates": [
+            -0.023122582395685393,
+            0.02257351201607048
+          ],
+          "mechanical_j": 4.770142061730161e-06,
+          "reserve_j": 1.0976232721884996e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 1.4060392377023662e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 9.02376727811502e-06,
+          "total_residual_j": 1.293880096380623e-14,
+          "mechanical_residual_j": 1.2938786564246126e-14,
+          "reservoir_residual_j": 1.3552527156068805e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 5.0,
+          "q": [
+            0.9850272065714596,
+            0.27688743482698813
+          ],
+          "rates": [
+            -0.020354883075620025,
+            0.02930474723816784
+          ],
+          "mechanical_j": 4.27349762747235e-06,
+          "reserve_j": 9.447331054825099e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 1.9026836825726924e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.0552668945174917e-05,
+          "total_residual_j": 2.3551314029405038e-14,
+          "mechanical_residual_j": 2.3551301747427303e-14,
+          "reservoir_residual_j": 1.3552527156068805e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 6.0,
+          "q": [
+            0.992574289930343,
+            0.27793051361152554
+          ],
+          "rates": [
+            0.029871242053094837,
+            -0.028087771719695346
+          ],
+          "mechanical_j": 4.125116022038227e-06,
+          "reserve_j": 8.131393194816945e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 2.0510652885009726e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.186860680518307e-05,
+          "total_residual_j": 2.4045473050833197e-14,
+          "mechanical_residual_j": 2.4045458651273093e-14,
+          "reservoir_residual_j": 1.3552527156068805e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 7.0,
+          "q": [
+            1.0163693930248372,
+            0.24315836045591804
+          ],
+          "rates": [
+            0.0046168648597445395,
+            -0.02532091059197999
+          ],
+          "mechanical_j": 3.748382655006157e-06,
+          "reserve_j": 6.9987549822280824e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 2.4277986614636302e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.3001245017771932e-05,
+          "total_residual_j": 2.9976058934328906e-14,
+          "mechanical_residual_j": 2.99760462288347e-14,
+          "reservoir_residual_j": 1.1858461261560205e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 8.0,
+          "q": [
+            0.9997032038951924,
+            0.24832876042773663
+          ],
+          "rates": [
+            -0.027075766424757165,
+            0.03533990933998933
+          ],
+          "mechanical_j": 3.561278586187572e-06,
+          "reserve_j": 6.023884238248935e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 2.6149027292902513e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.397611576175108e-05,
+          "total_residual_j": 2.8984095261667606e-14,
+          "mechanical_residual_j": 2.8984082556173397e-14,
+          "reservoir_residual_j": 1.3552527156068805e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 9.0,
+          "q": [
+            0.9869995636183816,
+            0.2859951660880078
+          ],
+          "rates": [
+            0.007353316381696507,
+            0.018993945487821427
+          ],
+          "mechanical_j": 3.3046041656424273e-06,
+          "reserve_j": 5.184805212922569e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 2.8715771527589804e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.4815194787077442e-05,
+          "total_residual_j": 3.190767352482908e-14,
+          "mechanical_residual_j": 3.19076667485655e-14,
+          "reservoir_residual_j": 1.0164395367051604e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 10.0,
+          "q": [
+            1.0051146594161053,
+            0.26804975931672365
+          ],
+          "rates": [
+            0.018112478580653506,
+            -0.04545001168956939
+          ],
+          "mechanical_j": 3.0955496102964056e-06,
+          "reserve_j": 4.462603202973129e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 3.0806317142005887e-06,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.553739679702688e-05,
+          "total_residual_j": 3.800326142644993e-14,
+          "mechanical_residual_j": 3.800325337963693e-14,
+          "reservoir_residual_j": 6.776263578034403e-21,
+          "delivered_power_w": 0.0
+        }
+      ]
+    },
+    "equilibrium": {
+      "settings": {
+        "duration_s": 10.0,
+        "dt_s": 0.02,
+        "initial_reserve_j": 2e-05,
+        "equilibrium": true,
+        "gain": 4.0,
+        "efficiency": 0.8,
+        "leakage": 0.15,
+        "damping": 1.0,
+        "omit_debit": false
+      },
+      "initial_mechanical_j": 0.0,
+      "final_state": [
+        1.0,
+        0.2617993877991494,
+        0.0,
+        0.0,
+        4.462603202973129e-06,
+        0.0,
+        0.0,
+        0.0,
+        1.553739679702688e-05
+      ],
+      "max_total_residual_j": 1.6940658945086007e-20,
+      "max_mechanical_residual_j": 0.0,
+      "max_reservoir_residual_j": 1.6940658945086007e-20,
+      "minimum_reserve_j": 4.462603202973129e-06,
+      "samples": [
+        {
+          "time_s": 0.0,
+          "q": [
+            1.0,
+            0.2617993877991494
+          ],
+          "rates": [
+            0.0,
+            0.0
+          ],
+          "mechanical_j": 0.0,
+          "reserve_j": 2e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 0.0,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 1.0,
+          "q": [
+            1.0,
+            0.2617993877991494
+          ],
+          "rates": [
+            0.0,
+            0.0
+          ],
+          "mechanical_j": 0.0,
+          "reserve_j": 1.72141595285029e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 2.7858404714970966e-06,
+          "total_residual_j": -3.3881317890172014e-21,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": -4.658681209898652e-21,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 2.0,
+          "q": [
+            1.0,
+            0.2617993877991494
+          ],
+          "rates": [
+            0.0,
+            0.0
+          ],
+          "mechanical_j": 0.0,
+          "reserve_j": 1.4816364413637377e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 5.183635586362636e-06,
+          "total_residual_j": 1.0164395367051604e-20,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 1.1011428314305904e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 3.0,
+          "q": [
+            1.0,
+            0.2617993877991494
+          ],
+          "rates": [
+            0.0,
+            0.0
+          ],
+          "mechanical_j": 0.0,
+          "reserve_j": 1.2752563032439359e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 7.247436967560655e-06,
+          "total_residual_j": 1.0164395367051604e-20,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 1.1858461261560205e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 4.0,
+          "q": [
+            1.0,
+            0.2617993877991494
+          ],
+          "rates": [
+            0.0,
+            0.0
+          ],
+          "mechanical_j": 0.0,
+          "reserve_j": 1.0976232721884996e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 9.02376727811502e-06,
+          "total_residual_j": 1.3552527156068805e-20,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 1.3552527156068805e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 5.0,
+          "q": [
+            1.0,
+            0.2617993877991494
+          ],
+          "rates": [
+            0.0,
+            0.0
+          ],
+          "mechanical_j": 0.0,
+          "reserve_j": 9.447331054825099e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.0552668945174917e-05,
+          "total_residual_j": 1.3552527156068805e-20,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 1.3552527156068805e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 6.0,
+          "q": [
+            1.0,
+            0.2617993877991494
+          ],
+          "rates": [
+            0.0,
+            0.0
+          ],
+          "mechanical_j": 0.0,
+          "reserve_j": 8.131393194816945e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.186860680518307e-05,
+          "total_residual_j": 1.3552527156068805e-20,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 1.3552527156068805e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 7.0,
+          "q": [
+            1.0,
+            0.2617993877991494
+          ],
+          "rates": [
+            0.0,
+            0.0
+          ],
+          "mechanical_j": 0.0,
+          "reserve_j": 6.9987549822280824e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.3001245017771932e-05,
+          "total_residual_j": 1.3552527156068805e-20,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 1.1858461261560205e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 8.0,
+          "q": [
+            1.0,
+            0.2617993877991494
+          ],
+          "rates": [
+            0.0,
+            0.0
+          ],
+          "mechanical_j": 0.0,
+          "reserve_j": 6.023884238248935e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.397611576175108e-05,
+          "total_residual_j": 1.3552527156068805e-20,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 1.3552527156068805e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 9.0,
+          "q": [
+            1.0,
+            0.2617993877991494
+          ],
+          "rates": [
+            0.0,
+            0.0
+          ],
+          "mechanical_j": 0.0,
+          "reserve_j": 5.184805212922569e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.4815194787077442e-05,
+          "total_residual_j": 1.0164395367051604e-20,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 1.0164395367051604e-20,
+          "delivered_power_w": 0.0
+        },
+        {
+          "time_s": 10.0,
+          "q": [
+            1.0,
+            0.2617993877991494
+          ],
+          "rates": [
+            0.0,
+            0.0
+          ],
+          "mechanical_j": 0.0,
+          "reserve_j": 4.462603202973129e-06,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 1.553739679702688e-05,
+          "total_residual_j": 6.776263578034403e-21,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 6.776263578034403e-21,
+          "delivered_power_w": 0.0
+        }
+      ]
+    },
+    "ideal_transfer": {
+      "settings": {
+        "duration_s": 10.0,
+        "dt_s": 0.02,
+        "initial_reserve_j": 2e-05,
+        "equilibrium": false,
+        "gain": 4.0,
+        "efficiency": 1,
+        "leakage": 0,
+        "damping": 0,
+        "omit_debit": false
+      },
+      "initial_mechanical_j": 6.176181286493741e-06,
+      "final_state": [
+        1.0182278331000076,
+        0.27612189337674065,
+        0.05078812951704296,
+        -0.121156209636124,
+        1.913604490337598e-06,
+        1.808639550966241e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_total_residual_j": 8.008166205901793e-13,
+      "max_mechanical_residual_j": 8.008166273664429e-13,
+      "max_reservoir_residual_j": 2.0328790734103208e-20,
+      "minimum_reserve_j": 1.913604490337598e-06,
+      "samples": [
+        {
+          "time_s": 0.0,
+          "q": [
+            1.02,
+            0.2317993877991494
+          ],
+          "rates": [
+            0.01,
+            0.02
+          ],
+          "mechanical_j": 6.176181286493741e-06,
+          "reserve_j": 2e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 0.0,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 2.1333333333333334e-07
+        },
+        {
+          "time_s": 1.0,
+          "q": [
+            0.9993008242691829,
+            0.27676428071128806
+          ],
+          "rates": [
+            -0.042289010749886335,
+            0.04950508742030996
+          ],
+          "mechanical_j": 7.466303496552313e-06,
+          "reserve_j": 1.8709877745596634e-05,
+          "work_j": 1.2901222544033734e-06,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": -4.434479381463553e-14,
+          "mechanical_residual_j": -4.434480143793206e-14,
+          "reservoir_residual_j": 5.929230630780102e-21,
+          "delivered_power_w": 2.5035748796368808e-06
+        },
+        {
+          "time_s": 2.0,
+          "q": [
+            0.9742680757817667,
+            0.29007650741009045
+          ],
+          "rates": [
+            0.009348491988757436,
+            -0.031095577670133084
+          ],
+          "mechanical_j": 8.583539732573063e-06,
+          "reserve_j": 1.7592641446692004e-05,
+          "work_j": 2.407358553308005e-06,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": -1.0722867567285709e-13,
+          "mechanical_residual_j": -1.0722868244912066e-13,
+          "reservoir_residual_j": 6.776263578034403e-21,
+          "delivered_power_w": 3.357551170958337e-07
+        },
+        {
+          "time_s": 3.0,
+          "q": [
+            1.0144902882410856,
+            0.24065973560001822
+          ],
+          "rates": [
+            0.0492590317044181,
+            -0.04368522697845868
+          ],
+          "mechanical_j": 1.0985154214408605e-05,
+          "reserve_j": 1.5191026873985324e-05,
+          "work_j": 4.808973126014688e-06,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": -1.9809981359844055e-13,
+          "mechanical_residual_j": -1.9809982376283591e-13,
+          "reservoir_residual_j": 1.0164395367051604e-20,
+          "delivered_power_w": 2.8015014205869903e-06
+        },
+        {
+          "time_s": 4.0,
+          "q": [
+            1.024547899479902,
+            0.23359070256900713
+          ],
+          "rates": [
+            -0.03813554278111183,
+            0.03318724588569051
+          ],
+          "mechanical_j": 1.1903953047898859e-05,
+          "reserve_j": 1.4272227992348221e-05,
+          "work_j": 5.7277720076517895e-06,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": -2.462466638746257e-13,
+          "mechanical_residual_j": -2.4624667149792225e-13,
+          "reservoir_residual_j": 9.317362419797304e-21,
+          "delivered_power_w": 1.6272896103742635e-06
+        },
+        {
+          "time_s": 5.0,
+          "q": [
+            0.9709493307315183,
+            0.28946717904700736
+          ],
+          "rates": [
+            -0.03737309215307529,
+            0.05497348346790901
+          ],
+          "mechanical_j": 1.522094290710708e-05,
+          "reserve_j": 1.0955238004605176e-05,
+          "work_j": 9.04476199539484e-06,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": -3.7478148771810486e-13,
+          "mechanical_residual_j": -3.74781501270632e-13,
+          "reservoir_residual_j": 1.5246593050577406e-20,
+          "delivered_power_w": 1.8003036003369684e-06
+        },
+        {
+          "time_s": 6.0,
+          "q": [
+            0.987103695254608,
+            0.29236265604553363
+          ],
+          "rates": [
+            0.062045358913174656,
+            -0.05511432822743925
+          ],
+          "mechanical_j": 1.6424220728885857e-05,
+          "reserve_j": 9.751960127184299e-06,
+          "work_j": 1.0248039872815718e-05,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": -4.304235868548764e-13,
+          "mechanical_residual_j": -4.3042360210146947e-13,
+          "reservoir_residual_j": 1.5246593050577406e-20,
+          "delivered_power_w": 3.640915966692927e-06
+        },
+        {
+          "time_s": 7.0,
+          "q": [
+            1.038099960124933,
+            0.22144985716526136
+          ],
+          "rates": [
+            0.009429313628885681,
+            -0.0549985207890043
+          ],
+          "mechanical_j": 1.942762098086851e-05,
+          "reserve_j": 6.748559749243108e-06,
+          "work_j": 1.3251440250756909e-05,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": -5.563821227198319e-13,
+          "mechanical_residual_j": -5.56382137966425e-13,
+          "reservoir_residual_j": 1.5246593050577406e-20,
+          "delivered_power_w": 5.448445978578499e-07
+        },
+        {
+          "time_s": 8.0,
+          "q": [
+            0.996425865470173,
+            0.230094215702848
+          ],
+          "rates": [
+            -0.06792301938090989,
+            0.07987094026327331
+          ],
+          "mechanical_j": 2.1065863759296302e-05,
+          "reserve_j": 5.110316835189842e-06,
+          "work_j": 1.4889683164810176e-05,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": -6.920075982781802e-13,
+          "mechanical_residual_j": -6.920076152188391e-13,
+          "reservoir_residual_j": 1.6940658945086007e-20,
+          "delivered_power_w": 3.3594827351996265e-06
+        },
+        {
+          "time_s": 9.0,
+          "q": [
+            0.9660710103336363,
+            0.3245699601692647
+          ],
+          "rates": [
+            0.023242567358685025,
+            0.05073914625451381
+          ],
+          "mechanical_j": 2.2935582336755927e-05,
+          "reserve_j": 3.2405981628159234e-06,
+          "work_j": 1.6759401837184092e-05,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": -7.869218921234197e-13,
+          "mechanical_residual_j": -7.869219056759469e-13,
+          "reservoir_residual_j": 1.3552527156068805e-20,
+          "delivered_power_w": 4.635832108732847e-07
+        },
+        {
+          "time_s": 10.0,
+          "q": [
+            1.0182278331000076,
+            0.27612189337674065
+          ],
+          "rates": [
+            0.05078812951704296,
+            -0.121156209636124
+          ],
+          "mechanical_j": 2.4262575995339525e-05,
+          "reserve_j": 1.913604490337598e-06,
+          "work_j": 1.808639550966241e-05,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": -8.008166205901793e-13,
+          "mechanical_residual_j": -8.008166273664429e-13,
+          "reservoir_residual_j": 6.776263578034403e-21,
+          "delivered_power_w": 1.6060139064740126e-06
+        }
+      ]
+    },
+    "omitted_debit_control": {
+      "settings": {
+        "duration_s": 10.0,
+        "dt_s": 0.02,
+        "initial_reserve_j": 2e-05,
+        "equilibrium": false,
+        "gain": 4.0,
+        "efficiency": 0.8,
+        "leakage": 0.15,
+        "damping": 1.0,
+        "omit_debit": true
+      },
+      "initial_mechanical_j": 6.176181286493741e-06,
+      "final_state": [
+        1.011845885994821,
+        0.2724384144511244,
+        0.03547543685734128,
+        -0.0867939592321672,
+        4.462603202973129e-06,
+        1.2329691257838318e-05,
+        6.594987806010623e-06,
+        3.0824228144595796e-06,
+        1.553739679702688e-05
+      ],
+      "max_total_residual_j": 1.5412113752449223e-05,
+      "max_mechanical_residual_j": 3.217327027691297e-13,
+      "max_reservoir_residual_j": 1.5412114072297904e-05,
+      "minimum_reserve_j": 4.462603202973129e-06,
+      "samples": [
+        {
+          "time_s": 0.0,
+          "q": [
+            1.02,
+            0.2317993877991494
+          ],
+          "rates": [
+            0.01,
+            0.02
+          ],
+          "mechanical_j": 6.176181286493741e-06,
+          "reserve_j": 2e-05,
+          "work_j": 0.0,
+          "damping_loss_j": 0.0,
+          "conversion_loss_j": 0.0,
+          "leakage_loss_j": 0.0,
+          "total_residual_j": 0.0,
+          "mechanical_residual_j": 0.0,
+          "reservoir_residual_j": 0.0,
+          "delivered_power_w": 2.1333333333333334e-07
+        },
+        {
+          "time_s": 1.0,
+          "q": [
+            0.9997494476952387,
+            0.27578393520672634
+          ],
+          "rates": [
+            -0.040825996997395565,
+            0.04753942599413689
+          ],
+          "mechanical_j": 6.9102352806324e-06,
+          "reserve_j": 1.72141595285029e-05,
+          "work_j": 1.2004386946644473e-06,
+          "damping_loss_j": 4.663846713482658e-07,
+          "conversion_loss_j": 3.0010967366611183e-07,
+          "leakage_loss_j": 2.7858404714970966e-06,
+          "total_residual_j": 1.5005483391530305e-06,
+          "mechanical_residual_j": -2.917752217025538e-14,
+          "reservoir_residual_j": 1.5005483683305546e-06,
+          "delivered_power_w": 2.25870035222967e-06
+        },
+        {
+          "time_s": 2.0,
+          "q": [
+            0.9760112446716989,
+            0.28831676550997976
+          ],
+          "rates": [
+            0.008878764423538636,
+            -0.029164798372060735
+          ],
+          "mechanical_j": 7.495618138837493e-06,
+          "reserve_j": 1.4816364413637377e-05,
+          "work_j": 2.1784082146351283e-06,
+          "damping_loss_j": 8.589712944227828e-07,
+          "conversion_loss_j": 5.446020536587821e-07,
+          "leakage_loss_j": 5.183635586362636e-06,
+          "total_residual_j": 2.7230102004253306e-06,
+          "mechanical_residual_j": -6.786859335517755e-14,
+          "reservoir_residual_j": 2.7230102682939213e-06,
+          "delivered_power_w": 2.784392684732892e-07
+        },
+        {
+          "time_s": 3.0,
+          "q": [
+            1.0124292988939683,
+            0.24318118028037075
+          ],
+          "rates": [
+            0.04357348535361378,
+            -0.039058336533889376
+          ],
+          "mechanical_j": 8.525281458595956e-06,
+          "reserve_j": 1.2752563032439359e-05,
+          "work_j": 4.000509812619584e-06,
+          "damping_loss_j": 1.6514095273408623e-06,
+          "conversion_loss_j": 1.000127453154896e-06,
+          "leakage_loss_j": 7.247436967560655e-06,
+          "total_residual_j": 5.000637152597985e-06,
+          "mechanical_residual_j": -1.1317650651188418e-13,
+          "reservoir_residual_j": 5.000637265774492e-06,
+          "delivered_power_w": 2.044697365511331e-06
+        },
+        {
+          "time_s": 4.0,
+          "q": [
+            1.0212010484547112,
+            0.2373159808197171
+          ],
+          "rates": [
+            -0.032619329108124775,
+            0.02960398928111528
+          ],
+          "mechanical_j": 8.87678951980023e-06,
+          "reserve_j": 1.0976232721884996e-05,
+          "work_j": 4.647117691944869e-06,
+          "damping_loss_j": 1.9465093221640483e-06,
+          "conversion_loss_j": 1.1617794229862173e-06,
+          "leakage_loss_j": 9.02376727811502e-06,
+          "total_residual_j": 5.808896978456767e-06,
+          "mechanical_residual_j": -1.3647433259105445e-13,
+          "reservoir_residual_j": 5.8088971149311e-06,
+          "delivered_power_w": 1.0742687970221374e-06
+        },
+        {
+          "time_s": 5.0,
+          "q": [
+            0.9766591240923483,
+            0.2844916238846545
+          ],
+          "rates": [
+            -0.030235553019177918,
+            0.04430007302456209
+          ],
+          "mechanical_j": 9.930022789369477e-06,
+          "reserve_j": 9.447331054825099e-06,
+          "work_j": 6.735655950976535e-06,
+          "damping_loss_j": 2.9818142644432477e-06,
+          "conversion_loss_j": 1.6839139877441338e-06,
+          "leakage_loss_j": 1.0552668945174917e-05,
+          "total_residual_j": 8.419569755063128e-06,
+          "mechanical_residual_j": -1.8365755159963104e-13,
+          "reservoir_residual_j": 8.419569938720683e-06,
+          "delivered_power_w": 1.0919118023435726e-06
+        },
+        {
+          "time_s": 6.0,
+          "q": [
+            0.9893841265914132,
+            0.28632926043302176
+          ],
+          "rates": [
+            0.048395276933550994,
+            -0.04394249653188191
+          ],
+          "mechanical_j": 1.0243159682870471e-05,
+          "reserve_j": 8.131393194816945e-06,
+          "work_j": 7.419835515016024e-06,
+          "damping_loss_j": 3.352856914542339e-06,
+          "conversion_loss_j": 1.854958878754006e-06,
+          "leakage_loss_j": 1.186860680518307e-05,
+          "total_residual_j": 9.274794189673088e-06,
+          "mechanical_residual_j": -2.0409695509576676e-13,
+          "reservoir_residual_j": 9.274794393770044e-06,
+          "delivered_power_w": 2.026970389555989e-06
+        },
+        {
+          "time_s": 7.0,
+          "q": [
+            1.0284161077836722,
+            0.23073058911619457
+          ],
+          "rates": [
+            0.007055118587522366,
+            -0.04200138946780189
+          ],
+          "mechanical_j": 1.0976161072794996e-05,
+          "reserve_j": 6.9987549822280824e-06,
+          "work_j": 9.14970603375832e-06,
+          "damping_loss_j": 4.349726002787274e-06,
+          "conversion_loss_j": 2.28742650843958e-06,
+          "leakage_loss_j": 1.3001245017771932e-05,
+          "total_residual_j": 1.1437132297528119e-05,
+          "mechanical_residual_j": -2.446697909176004e-13,
+          "reservoir_residual_j": 1.1437132542197912e-05,
+          "delivered_power_w": 3.2331931011885185e-07
+        },
+        {
+          "time_s": 8.0,
+          "q": [
+            0.9980015495384407,
+            0.23847016065958065
+          ],
+          "rates": [
+            -0.04913019440333138,
+            0.060593379631059444
+          ],
+          "mechanical_j": 1.1302144264138319e-05,
+          "reserve_j": 6.023884238248935e-06,
+          "work_j": 1.0072782283538674e-05,
+          "damping_loss_j": 4.946819017360915e-06,
+          "conversion_loss_j": 2.5181955708846684e-06,
+          "leakage_loss_j": 1.397611576175108e-05,
+          "total_residual_j": 1.2590977565890172e-05,
+          "mechanical_residual_j": -2.885331803329275e-13,
+          "reservoir_residual_j": 1.2590977854423356e-05,
+          "delivered_power_w": 2.003965229651689e-06
+        },
+        {
+          "time_s": 9.0,
+          "q": [
+            0.9757367823525692,
+            0.3069446482532743
+          ],
+          "rates": [
+            0.01567972833245768,
+            0.03583949227542496
+          ],
+          "mechanical_j": 1.1684111426577934e-05,
+          "reserve_j": 5.184805212922569e-06,
+          "work_j": 1.1297168570561507e-05,
+          "damping_loss_j": 5.789238110647021e-06,
+          "conversion_loss_j": 2.8242921426403767e-06,
+          "leakage_loss_j": 1.4815194787077442e-05,
+          "total_residual_j": 1.4121460393371598e-05,
+          "mechanical_residual_j": -3.1983029218058496e-13,
+          "reservoir_residual_j": 1.4121460713201893e-05,
+          "delivered_power_w": 3.097449167037669e-07
+        },
+        {
+          "time_s": 10.0,
+          "q": [
+            1.011845885994821,
+            0.2724384144511244
+          ],
+          "rates": [
+            0.03547543685734128,
+            -0.0867939592321672
+          ],
+          "mechanical_j": 1.1910884418472753e-05,
+          "reserve_j": 4.462603202973129e-06,
+          "work_j": 1.2329691257838318e-05,
+          "damping_loss_j": 6.594987806010623e-06,
+          "conversion_loss_j": 3.0824228144595796e-06,
+          "leakage_loss_j": 1.553739679702688e-05,
+          "total_residual_j": 1.5412113752449223e-05,
+          "mechanical_residual_j": -3.198486838069687e-13,
+          "reservoir_residual_j": 1.5412114072297904e-05,
+          "delivered_power_w": 1.5511040660795281e-06
+        }
+      ]
+    }
+  },
+  "refinement": {
+    "dt_s": [
+      0.02,
+      0.01
+    ],
+    "residuals_j": [
+      1.8330599353948845e-13,
+      8.49182039248074e-15
+    ],
+    "final_coordinate_absolute_differences": [
+      3.1768916386454293e-09,
+      7.9980544409608e-09,
+      6.613679454786636e-09,
+      7.3608000528135875e-09
+    ]
+  },
+  "claims": {
+    "finite_internal_energy_source": true,
+    "sustained_autonomous_breathing": false,
+    "physical_material_validation": false
+  }
+}

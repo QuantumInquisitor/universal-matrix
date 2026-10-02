@@ -1,0 +1,135 @@
+{
+  "reviewed": "2026-09-30",
+  "review": "docs/eight_image_research_review_2026-09-30.md",
+  "items": [
+    {
+      "image": 1,
+      "filename": "1000006708.jpg",
+      "sha256": "9ff1c310ba5b90c42422e77f8491a50ff1b23a3d3ab1fc62c66e7ea2139e39d7",
+      "width": 399,
+      "height": 501,
+      "bytes": 34233,
+      "subject": "Tubulin and anesthetic oscillation hypothesis",
+      "queue_links": [
+        "P05",
+        "P06"
+      ],
+      "evidence_status": "user-supplied illustration; claims audited separately",
+      "original_uploaded_to_repository": false
+    },
+    {
+      "image": 2,
+      "filename": "1000006712.png",
+      "sha256": "87f8923b794ba03ba0f495f526dbc5ee85ec51893557a0947abb5636da271a5a",
+      "width": 1080,
+      "height": 2400,
+      "bytes": 437240,
+      "subject": "Unspecified decimal and toroidal sketch",
+      "queue_links": [
+        "P04",
+        "P11"
+      ],
+      "evidence_status": "user-supplied illustration; claims audited separately",
+      "original_uploaded_to_repository": false
+    },
+    {
+      "image": 3,
+      "filename": "1000006711.jpg",
+      "sha256": "d0d004d05db5ab5ab7ec8aba911ba33654fde051c395d768c6de61c46e5fe8e6",
+      "width": 2048,
+      "height": 1143,
+      "bytes": 249719,
+      "subject": "UFT4 dynamic inversion and singularity claims",
+      "queue_links": [
+        "P04",
+        "P08",
+        "P11"
+      ],
+      "evidence_status": "user-supplied illustration; claims audited separately",
+      "original_uploaded_to_repository": false
+    },
+    {
+      "image": 4,
+      "filename": "1000006710.jpg",
+      "sha256": "4d121bd8586c2863e875dbdf5b1d1cac9c217a762aab1db138c6e67baf82a677",
+      "width": 896,
+      "height": 1188,
+      "bytes": 158331,
+      "subject": "Gravity-beam spacecraft concept",
+      "queue_links": [
+        "P07",
+        "P08",
+        "P11"
+      ],
+      "evidence_status": "user-supplied illustration; claims audited separately",
+      "original_uploaded_to_repository": false
+    },
+    {
+      "image": 5,
+      "filename": "1000006713.jpg",
+      "sha256": "b97d0c7fb1b405754081a7ea986df56da79100057438e1cf00f78dc019d5e99d",
+      "width": 1122,
+      "height": 1402,
+      "bytes": 308539,
+      "subject": "Counting topology winding and full state",
+      "queue_links": [
+        "P04",
+        "P09",
+        "P10",
+        "P11"
+      ],
+      "evidence_status": "user-supplied illustration; claims audited separately",
+      "original_uploaded_to_repository": false
+    },
+    {
+      "image": 6,
+      "filename": "1000006718.jpg",
+      "sha256": "c6c394a9a6212d46980ff97910e771c1989bdd4765f50beb8eab6f3973bb431a",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 306781,
+      "subject": "Sixteen-node lattice equations",
+      "queue_links": [
+        "P05",
+        "P06",
+        "P08",
+        "P10"
+      ],
+      "evidence_status": "user-supplied illustration; claims audited separately",
+      "original_uploaded_to_repository": false
+    },
+    {
+      "image": 7,
+      "filename": "1000006720.jpg",
+      "sha256": "92851b737d185c9fd593c6d219ad60cdd43bb92e7d8ce0c90b15c16650935f6d",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 294908,
+      "subject": "Household synthesis concept with feedstock",
+      "queue_links": [
+        "P07",
+        "P08",
+        "P11"
+      ],
+      "evidence_status": "user-supplied illustration; claims audited separately",
+      "original_uploaded_to_repository": false
+    },
+    {
+      "image": 8,
+      "filename": "1000006719.jpg",
+      "sha256": "10d87c0c87ccfec3705fb5e47118252d928673676de01703378eaea44b78c4c8",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 360077,
+      "subject": "Probability-collapse and abundance concept",
+      "queue_links": [
+        "P08",
+        "P11",
+        "P12"
+      ],
+      "evidence_status": "user-supplied illustration; claims audited separately",
+      "original_uploaded_to_repository": false
+    }
+  ],
+  "scope": "Every image individually examined; uncertain small text not silently reconstructed; external scientific claims checked against linked sources"
+}

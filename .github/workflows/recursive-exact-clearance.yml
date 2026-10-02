@@ -1,0 +1,70 @@
+name: Recursive exact clearance
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_recursive_exact_clearance.py'
+      - 'tests/test_fold_recursive_exact_clearance.py'
+      - 'docs/fold_recursive_exact_clearance.md'
+      - '.github/workflows/recursive-exact-clearance.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recursive-exact-clearance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify exact recursive clearance primitives
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_exact_clearance.py tests/test_fold_recursive_exact_clearance.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_exact_clearance.py tests/test_fold_recursive_exact_clearance.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_exact_clearance.py
+      - name: Run exact recursive clearance scan once
+        run: |
+          uv run --python 3.12 --extra scientific python -m scripts.report_fold_recursive_exact_clearance --output artifacts/fold-recursive-clearance/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-recursive-clearance/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert r['module_count'] == 15
+          assert r['module_pair_count'] == 105
+          assert r['state_count_per_module'] == 9
+          assert r['independent_state_pairs_per_module_pair'] == 81
+          assert r['zero_thickness_source_geometry']
+          assert not r['continuous_clearance_theorem']
+          assert not r['physical_body_thickness_modeled']
+          assert not r['common_vessel_to_module_ratio_selected']
+          assert not r['connector_attachment_geometry_used']
+          assert r['rows']
+          assert r['rows'][-1]['collision_free']
+          print(json.dumps({
+              'sampled_ratios': r['sampled_ratios'],
+              'first_free': r['sampled_first_collision_free_ratio'],
+              'lower_colliding': r['sampled_lower_colliding_ratio'],
+              'rows': [
+                  {
+                      'ratio': row['vessel_radius_per_module_length'],
+                      'free': row['collision_free'],
+                      'min_clearance': row['minimum_clearance_per_root_module_length'],
+                      'collision_state_pairs': row['collision_state_pair_count'],
+                      'colliding_module_pairs': row['colliding_module_pair_count'],
+                      'governing_case': row['governing_case'],
+                  }
+                  for row in r['rows']
+              ],
+          }, sort_keys=True))
+          PY
