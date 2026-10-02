@@ -1,0 +1,30 @@
+name: Instantaneous distributed graph contract
+on:
+  pull_request:
+    branches: [main, codex/recovery-plan-log]
+    paths:
+      - 'scripts/fold_distributed_graph.py'
+      - 'scripts/fold_material_multiscale.py'
+      - 'scripts/report_fold_*.py'
+      - 'tests/test_fold_distributed_graph.py'
+      - 'docs/fold_distributed_graph.md'
+      - '.github/workflows/recursive-distributed-contract.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.2.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Check instantaneous mechanics and existing inertia controls
+        run: |
+          .venv/bin/ruff check scripts/fold_distributed_graph.py tests/test_fold_distributed_graph.py
+          .venv/bin/ruff format --check scripts/fold_distributed_graph.py tests/test_fold_distributed_graph.py
+          .venv/bin/python -m pytest -q tests/test_fold_distributed_graph.py tests/test_fold_distributed_inertia.py
