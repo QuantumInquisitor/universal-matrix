@@ -9,12 +9,12 @@ class TestPhase64GitHubActions(unittest.TestCase):
         self.assertTrue(os.path.exists(self.WORKFLOW))
 
     def test_workflow_contents(self):
-        with open(self.WORKFLOW, "r", encoding="utf-8") as handle:
+        with open(self.WORKFLOW, encoding="utf-8") as handle:
             content = handle.read()
 
         self.assertIn("Universal Matrix Verification", content)
         self.assertIn("actions/checkout@v7", content)
-        self.assertIn("astral-sh/setup-uv@v10.1.0", content)
+        self.assertIn("astral-sh/setup-uv@v10.2.0", content)
         self.assertIn("uv run pytest", content)
         self.assertIn("tests/test_canonical_kernel.py", content)
 
