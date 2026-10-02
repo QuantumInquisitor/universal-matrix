@@ -2,7 +2,20 @@
 
 The master register retains **41 IDs**: 12 main workstreams, 24 research/source scope-review entries and five recovery records. These are not 41 active or wholly unimplemented experiments. Original scopes and dependencies are preserved; current statuses reflect bounded progress without closing whole workstreams.
 
-## Current integrated checkpoint and parallel work
+## Current checkpoint after published-draft integration
+
+PRs #119, #120, #121, #123, #124 and #152 are merged into recovery at
+`851693c40bb59a67c03bce4bad5411df6ca980ca`. Each candidate passed its full CI;
+combined local controls passed 109 geometry/boundary and 105 wave/timing tests.
+Final integrated verification run 37067766522 remains a separate gate. PR #122
+is still open against main. The original 41 IDs and 24 research items remain.
+
+The LC input fixes reproduced the preserved valid report and passed 97 local
+regression checks. The optional repository reference is now being prepared;
+physical calibration, piezoelectric coupling and whole-system energy closure
+remain open. The next actions below supersede the older dated snapshots.
+
+## Earlier integrated checkpoint and parallel work (superseded)
 
 Recovery head `78e413f84debd1eadd78b6409bd73932aa5a65bc` has all 22 reported
 workflows passed. The full-suite aggregate verified 3,044 collected tests.
@@ -61,8 +74,8 @@ The timestamped [PR/CI evidence](register-reconciliation-2026-10-02.json) covers
 | ID | Workstream | Next action | Remaining limit |
 |---|---|---|---|
 | P01 | Recover surviving work from disk and Git before finalizing the task register. | Continue the broader location/work-family census and published-draft integration; use the completed 84-record inventory as evidence rather than repeating its reviewed comparisons. | The bounded 84-record inventory is dispositioned; broader location/work-family census and candidate provenance remain incomplete. |
-| P02 | Finish review and integration disposition of the published drafts. | Review remaining drafts #119-124, retaining fresh combined CI and source-level compatibility evidence. | Green listed CI is not completed scientific review, combined compatibility, or merge authorization. |
-| P03 | Promote the remaining validated local candidates in small groups. | Harden and independently test the preserved coupled-LC public API before publication, retaining the valid passive-model controls and original hashes; physical calibration and piezoelectric coupling remain separate. | Candidate-specific geometry, parameters and source evidence must be identified before promotion. |
+| P02 | Finish review and integration disposition of the published drafts. | Assess final recovery851693c verification and review recovery-to-main integration; continue broader candidate/census work without reopening merged experiment drafts. | Green listed CI is not completed scientific review, combined compatibility, or merge authorization. |
+| P03 | Promote the remaining validated local candidates in small groups. | Validate and review the optional coupled-LC repository package, retaining original report/source provenance and numerical-range limits; then select the next preserved candidate. | Candidate-specific geometry, parameters and source evidence must be identified before promotion. |
 | P04 | Close the whole-assembly geometry and motion questions. | Specify the missing material-point/deformation correspondence between the 22-body specimen and 69-domain flow assembly; separate that from physical joint and finite-thickness work. | No validated relative-fold map between these assemblies; source-midsurface clearance does not supply thickness or joint geometry. |
 | P05 | Finish the wave and control experiments already started. | Reconcile W2 artifact provenance, then define one bounded stochastic-noise/actuator-bandwidth or wavelength/mode comparison with controls and acceptance criteria. | W2 legacy artifact lacks source hashes; broader convergence and Q-ball period protocol remain unresolved. |
 | P06 | Decide whether crystal components provide a useful engine capability. | Define a timing-component use case and matched ordinary-divider comparison including load, latency, readout and energy; retain the existing 168-run evidence. | No established practical advantage or matched hardware cost/calibration. Spatial crystal tests require explicit coordinates. |
@@ -104,11 +117,11 @@ The timestamped [PR/CI evidence](register-reconciliation-2026-10-02.json) covers
 
 ## Recovery records
 
-- **REC-NEUMANN — validated_published_draft_review_pending:** Inspect exact-head full verification 37061360258, then finish integration disposition without modifying the validated solver criteria.
+- **REC-NEUMANN — validated_merged_into_recovery:** Retain optional patterned-face capability and its finite-grid limits; address physical boundary coupling through P04/P08/R15 rather than recreating the solver.
 - **REC-OLD-KERNEL — closed_superseded:** Keep the closed/superseded disposition; do not restore the old polarity-gradient channel without new justification.
 - **REC-BRANCH-DIFFS — in_progress:** Continue the broader location/work-family census and published-draft integration; use the completed 84-record inventory as evidence rather than repeating its reviewed comparisons.
-- **REC-APERTURE — validated_published_draft_review_pending:** Review #124 integration; advance only the missing relative-fold/material correspondence rather than repeat its static/common-scaling inventory.
-- **REC-IMAGES-8 — reviewed_controls_passed_published_draft:** Retain the reviewed image controls; pursue only source-backed material/flow correspondence or timing follow-ons.
+- **REC-APERTURE — validated_merged_into_recovery:** Develop the missing22-body/69-domain material correspondence and physical interface specification underP04; preserve the integrated aperture controls.
+- **REC-IMAGES-8 — reviewed_controls_passed_merged_into_recovery:** Retain the reviewed image controls; pursue only source-backed material/flow correspondence or timing follow-ons.
 
 ## Completed bounded milestones to reuse
 

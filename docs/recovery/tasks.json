@@ -62,8 +62,8 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "PRs #143-151 are merged into recovery, not main; #129 is closed as superseded. Integrated head 78e413f passed all 22 reported workflows and complete 3044-ID verification. PR123 is undergoing separate exact-head validation. PR119/120/121/124 remain open drafts; their 77 published added files are absent from this tracked recovery baseline, despite historical local-checkout presence notes.",
-      "next_action": "Review remaining drafts #119-124, retaining fresh combined CI and source-level compatibility evidence.",
+      "latest_result": "PRs #119/#120/#121/#123/#124 and #152 are merged into recovery. Their exact-head full and focused checks passed; combined local geometry/boundary and wave/timing controls passed 109 and 105 tests. Recovery 851693c final integration CI 37067766522 is pending; PR #122 remains open against main.",
+      "next_action": "Assess final recovery 851693c verification and review recovery-to-main integration; continue broader candidate/census work without reopening merged experiment drafts.",
       "blockers_or_limits": [
         "Green listed CI is not completed scientific review, combined compatibility, or merge authorization."
       ],
@@ -82,6 +82,13 @@
           "fields": {
             "latest_result": "PRs #143, #144, #145 and #146 merged into recovery, not main. PR #129 closed as superseded after confirming its mutable initial-work baseline defect and validating replacement energy/loss similarity."
           }
+        },
+        {
+          "label": "Before final experiment-draft integration and LC publication",
+          "fields": {
+            "latest_result": "PRs #143-151 are merged into recovery, not main; #129 is closed as superseded. Integrated head 78e413f passed all 22 reported workflows and complete 3044-ID verification. PR123 is undergoing separate exact-head validation. PR119/120/121/124 remain open drafts; their 77 published added files are absent from this tracked recovery baseline, despite historical local-checkout presence notes.",
+            "next_action": "Review remaining drafts #119-124, retaining fresh combined CI and source-level compatibility evidence."
+          }
         }
       ]
     },
@@ -93,9 +100,9 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "Preserved coupled-LC source and report hashes match the filesystem inventory. Fresh four-case and 13 recorded invalid-input controls passed in a copied workspace, but additional public-API probes found complex/nonfinite/bool state and complex scalar validation gaps. Original scratch is preserved; this reference is not yet promoted.",
+      "latest_result": "The optional coupled-LC repository package now passes 105 tests, lint and report reproduction. Every original numerical report field is preserved; scalar/state invalid inputs and unrepresentable derived quantities reject explicitly. The source, independent tests, reproducible report and CI workflow are prepared for publication. Physical calibration and reciprocal piezoelectric attachment remain open.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
-      "next_action": "Harden and independently test the preserved coupled-LC public API before publication, retaining the valid passive-model controls and original hashes; physical calibration and piezoelectric coupling remain separate.",
+      "next_action": "Review the published coupled-LC package and exact-head CI; then select the next preserved candidate. Keep physical calibration and coupling work separate.",
       "blockers_or_limits": [
         "Candidate-specific geometry, parameters and source evidence must be identified before promotion."
       ],
@@ -106,6 +113,13 @@
           "fields": {
             "latest_result": "Aperture/inner/outer/fan-out reference validated and published in draft PR 124; other candidate families remain open.",
             "next_action": "Select the next preserved Tesla/resonator or helix-clock candidate for source/provenance review; retain the published aperture work without repeating it."
+          }
+        },
+        {
+          "label": "Before final experiment-draft integration and LC publication",
+          "fields": {
+            "latest_result": "Preserved coupled-LC source and report hashes match the filesystem inventory. Fresh four-case and 13 recorded invalid-input controls passed in a copied workspace, but additional public-API probes found complex/nonfinite/bool state and complex scalar validation gaps. Original scratch is preserved; this reference is not yet promoted.",
+            "next_action": "Harden and independently test the preserved coupled-LC public API before publication, retaining the valid passive-model controls and original hashes; physical calibration and piezoelectric coupling remain separate."
           }
         }
       ]
@@ -146,12 +160,20 @@
       "scope_and_completion": "Reuse PR120 nonlinear and two-mode wave controls, including seed, detuning, refinement, long duration and pump-off results. Third/fifth harmonic generation is now separately tested; broader wavelengths, phase/sine degrees, boundary conditions and mode-count/time/noise ensembles remain. Seed-independent orientation selection was not established. Reuse the eleven published W2 robustness cases: saturation, delays, refined delayed failure, deterministic measurement disturbance and stiffness mismatch. Expand stochastic noise, actuator bandwidth and operating/failure envelopes, then compare redesigns against those same cases. Resolve the saved Q-ball period question with an explicit observable and convergence protocol; leave unresolved if data do not identify a period. **Done when:** each question has a reproducible result and operating/failure range. W3 quantum bath/noise remains separate.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Recovered W1 published sources in PR120; recorded source hashes reconcile with newline conventions. Existing W2 artifact already has saturation/delay/disturbance/mismatch cases, but lacks source hash; do not repeat as never-run work. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json.",
+      "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. Existing W2 artifact already has saturation/delay/disturbance/mismatch cases, but lacks source hash; do not repeat as never-run work. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI.",
       "next_action": "Reconcile W2 artifact provenance, then define one bounded stochastic-noise/actuator-bandwidth or wavelength/mode comparison with controls and acceptance criteria.",
       "blockers_or_limits": [
         "W2 legacy artifact lacks source hashes; broader convergence and Q-ball period protocol remain unresolved."
       ],
-      "review_phase": "bounded_progress_with_remaining_scope"
+      "review_phase": "bounded_progress_with_remaining_scope",
+      "previous_result_snapshots": [
+        {
+          "label": "Before final experiment-draft integration and LC publication",
+          "fields": {
+            "latest_result": "Recovered W1 published sources in PR120; recorded source hashes reconcile with newline conventions. Existing W2 artifact already has saturation/delay/disturbance/mismatch cases, but lacks source hash; do not repeat as never-run work. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json."
+          }
+        }
+      ]
     },
     {
       "id": "P06",
@@ -160,12 +182,20 @@
       "scope_and_completion": "Reuse PR121 optional timing adapter and its 168 six/eight-spin runs, seed/pulse/interaction/readout controls, 1024-period extension and resource counts. The candidate delivers in selected cases, but the ordinary divider also passes; no practical advantage has been established. Before expanding it, define a justified role and matched comparison with loading, latency, readout/backaction, continuous-operation and energy costs. Retain/redesign/defer based on evidence. For spatial crystals/quasicrystals, measure structure factors and correlations on actual coordinates with periodic, quasiperiodic and randomized controls; distinguish lab/co-moving observations and vary recursion depth/size. Combined space-time claims require justified dynamics. **Done when:** each proposed role has a supported benefit, limitation or no-advantage finding. The engine need not itself be a time crystal. The Instagram reel remains unverified.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Draft audit confirms PR121 covers six and eight spins and 168 runs, not merely one six-spin result. At g=.97: interacting delivery 16/16 vs interaction-off 0/16; ideal divider 128/128. Endpoint-readout example counts 65,792 preparations and 8,421,376 Floquet periods; no joule/hardware advantage. Review evidence in docs/recovery/DRAFT_CAPABILITY_AUDIT.md.",
+      "latest_result": "Draft audit confirms PR #121 covers six and eight spins and 168 runs, not merely one six-spin result. At g=.97: interacting delivery 16/16 vs interaction-off 0/16; ideal divider 128/128. Endpoint-readout example counts 65,792 preparations and 8,421,376 Floquet periods; no joule/hardware advantage. Review evidence in docs/recovery/DRAFT_CAPABILITY_AUDIT.md. PR #121 is now merged into recovery after 20 focused tests, 168 reproduced cases and green full CI; no practical advantage claim was added.",
       "next_action": "Define a timing-component use case and matched ordinary-divider comparison including load, latency, readout and energy; retain the existing 168-run evidence.",
       "blockers_or_limits": [
         "No established practical advantage or matched hardware cost/calibration. Spatial crystal tests require explicit coordinates."
       ],
-      "review_phase": "bounded_progress_with_remaining_scope"
+      "review_phase": "bounded_progress_with_remaining_scope",
+      "previous_result_snapshots": [
+        {
+          "label": "Before final experiment-draft integration and LC publication",
+          "fields": {
+            "latest_result": "Draft audit confirms PR121 covers six and eight spins and 168 runs, not merely one six-spin result. At g=.97: interacting delivery 16/16 vs interaction-off 0/16; ideal divider 128/128. Endpoint-readout example counts 65,792 preparations and 8,421,376 Floquet periods; no joule/hardware advantage. Review evidence in docs/recovery/DRAFT_CAPABILITY_AUDIT.md."
+          }
+        }
+      ]
     },
     {
       "id": "P07",
@@ -624,9 +654,9 @@
     {
       "id": "REC-NEUMANN",
       "title": "Recover patterned face-flux boundary solver candidate",
-      "status": "validated_published_draft_review_pending",
+      "status": "validated_merged_into_recovery",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/123",
-      "next_action": "Inspect exact-head full verification 37061360258, then finish integration disposition without modifying the validated solver criteria.",
+      "next_action": "Retain optional patterned-face capability and its finite-grid limits; address physical boundary coupling through P04/P08/R15 rather than recreating the solver.",
       "validation": {
         "solver_related_tests_passed": 29,
         "documentation_tests_passed": 12,
@@ -634,16 +664,27 @@
         "invalid_input_rejections_passed": 6
       },
       "blockers_or_limits": [
-        "PR remains open; physical/whole-network validation separate."
+        "Recovery-to-main integration remains pending; physical and whole-network calibration remain separate."
       ],
       "review_phase": "bounded_progress_with_remaining_scope",
-      "latest_result": "PR #123 now targets recovery at 9f98b02cb6c54d1e71181b54c1879bb2c7ff4a6a. Its tree exactly matches the tested combined checkout; 41 fresh solver/manufactured/property/governance checks pass. Full run 37061360258 is in progress; the PR remains draft and unmerged.",
+      "latest_result": "PR #123 merged at 631967c after exact-head full run 37061360258 verified 3060 test IDs. Independent manufactured/input controls preserved. Final recovery-to-main verification remains separate.",
       "previous_result_snapshots": [
         {
           "label": "Before integrated recovery CI and parallel review refresh",
           "fields": {
             "latest_result": "PR #123 remains open at b7add289; all returned exact-head verification/container/CodeQL runs pass. Previously recorded solver and invalid-input controls remain preserved.",
             "next_action": "Review #123's supported numerical scope and compatibility for integration; retain passing controls."
+          }
+        },
+        {
+          "label": "Before final experiment-draft integration and LC publication",
+          "fields": {
+            "status": "validated_published_draft_review_pending",
+            "latest_result": "PR #123 now targets recovery at 9f98b02cb6c54d1e71181b54c1879bb2c7ff4a6a. Its tree exactly matches the tested combined checkout; 41 fresh solver/manufactured/property/governance checks pass. Full run 37061360258 is in progress; the PR remains draft and unmerged.",
+            "next_action": "Inspect exact-head full verification 37061360258, then finish integration disposition without modifying the validated solver criteria.",
+            "blockers_or_limits": [
+              "PR remains open; physical/whole-network validation separate."
+            ]
           }
         }
       ]
@@ -688,7 +729,7 @@
     {
       "id": "REC-APERTURE",
       "title": "Integrate preserved aperture, outer route and replacement fan-out",
-      "status": "validated_published_draft_review_pending",
+      "status": "validated_merged_into_recovery",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "validation": {
         "selected_tests_passed": 121,
@@ -710,18 +751,28 @@
         "central stagnating streamline remains",
         "complete static audit and prescribed common breathing validated; relative folding, emergent motion and material energy remain unproved"
       ],
-      "next_action": "Review #124 integration; advance only the missing relative-fold/material correspondence rather than repeat its static/common-scaling inventory.",
+      "next_action": "Develop the missing 22-body/69-domain material correspondence and physical interface specification under P04; preserve the integrated aperture controls.",
       "latest_head": "3efe05db6ac3d247ac1e7bdec83a8a906d700036",
       "blockers_or_limits": [
-        "PR remains open; relative folding, emergent motion and material energy are not established by static assembly."
+        "Integrated numerical controls do not establish relative folding, physical material correspondence or recovery-to-main completion."
       ],
       "review_phase": "bounded_progress_with_remaining_scope",
-      "latest_result": "PR #124 remains open at 3efe05db; all returned exact-head workflows pass. Static/common-scaling, inventory and recurrence results are retained; relative-fold/material correspondence remains open."
+      "latest_result": "PR #124 merged at 851693c after 192 focused tests, all 19 acceptance commands and green full CI. Static/common-scaling 69-component inventory and recurrence are preserved; relative-fold/material correspondence remains open.",
+      "previous_result_snapshots": [
+        {
+          "label": "Before final experiment-draft integration and LC publication",
+          "fields": {
+            "status": "validated_published_draft_review_pending",
+            "latest_result": "PR #124 remains open at 3efe05db; all returned exact-head workflows pass. Static/common-scaling, inventory and recurrence results are retained; relative-fold/material correspondence remains open.",
+            "next_action": "Review #124 integration; advance only the missing relative-fold/material correspondence rather than repeat its static/common-scaling inventory."
+          }
+        }
+      ]
     },
     {
       "id": "REC-IMAGES-8",
       "title": "Audit eight supplied scientific/concept images and map useful ideas to existing experiments",
-      "status": "reviewed_controls_passed_published_draft",
+      "status": "reviewed_controls_passed_merged_into_recovery",
       "evidence": [
         "docs/eight_image_research_review_2026-09-30.md",
         "docs/experiments/eight-image-manifest.json",
@@ -742,7 +793,15 @@
       "blockers_or_limits": [
         "Original UFT4/Delta derivation remains unavailable; images do not supply a physical mechanism."
       ],
-      "review_phase": "bounded_progress_with_remaining_scope"
+      "review_phase": "bounded_progress_with_remaining_scope",
+      "previous_result_snapshots": [
+        {
+          "label": "Before final experiment-draft integration and LC publication",
+          "fields": {
+            "status": "reviewed_controls_passed_published_draft"
+          }
+        }
+      ]
     }
   ],
   "execution_policy": {
@@ -758,7 +817,7 @@
     "breathing_is_global_gate": false,
     "dependency_interpretation": "Dependencies describe required interfaces/evidence for integration, not a requirement to close every upstream task before incremental work.",
     "immediate_actions": [
-      "Finish PR #123 verification and disposition remaining published drafts #119-124; retain merged #143-151 milestones and closed #129.",
+      "Assess final recovery851693c CI and recovery-to-main review; PR119/120/121/123/124 integration into recovery is completed.",
       "P04/P07: specify missing physical interfaces and the 22-body/69-domain mapping.",
       "P08/P10: maintain owned-energy controls and scope unresolved state/depth/attachment requirements.",
       "P11: extend the merged desktop replay with explicit missing energy/frame adapters, image correspondence and physical-headset validation.",
@@ -882,5 +941,20 @@
     "main_integration": "PR122 remains open; not merged into main",
     "pending_neumann_head": "9f98b02cb6c54d1e71181b54c1879bb2c7ff4a6a",
     "pending_neumann_run": 37061360258
+  },
+  "integration_checkpoint_after_draft_batch": {
+    "head": "851693c40bb59a67c03bce4bad5411df6ca980ca",
+    "merged_prs": [
+      119,
+      120,
+      121,
+      123,
+      124,
+      152
+    ],
+    "full_verification_run": 37067766522,
+    "status_at_refresh": "queued_or_running",
+    "main_pr": 122,
+    "scope": "Individual full runs and combined focused controls passed; final integrated CI remains a separate gate."
   }
 }

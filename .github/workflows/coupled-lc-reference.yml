@@ -1,0 +1,52 @@
+name: Coupled LC reference
+
+on:
+  pull_request:
+    branches: [main, codex/recovery-plan-log]
+    paths:
+      - 'src/coupled_lc_reference.py'
+      - 'scripts/report_coupled_lc_reference.py'
+      - 'tests/test_coupled_lc_reference.py'
+      - 'docs/coupled_lc_reference.md'
+      - 'docs/experiments/coupled-lc-reference-summary.json'
+      - '.github/workflows/coupled-lc-reference.yml'
+      - 'pyproject.toml'
+      - 'uv.lock'
+  push:
+    branches: [main, codex/recovery-plan-log]
+    paths:
+      - 'src/coupled_lc_reference.py'
+      - 'scripts/report_coupled_lc_reference.py'
+      - 'tests/test_coupled_lc_reference.py'
+      - 'docs/coupled_lc_reference.md'
+      - 'docs/experiments/coupled-lc-reference-summary.json'
+      - '.github/workflows/coupled-lc-reference.yml'
+      - 'pyproject.toml'
+      - 'uv.lock'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  coupled-lc-reference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Check independent circuit identities and invalid inputs
+        run: |
+          .venv/bin/ruff check src/coupled_lc_reference.py scripts/report_coupled_lc_reference.py tests/test_coupled_lc_reference.py
+          .venv/bin/ruff format --check src/coupled_lc_reference.py scripts/report_coupled_lc_reference.py tests/test_coupled_lc_reference.py
+          .venv/bin/python -m pytest -q tests/test_coupled_lc_reference.py
+          .venv/bin/python -m scripts.report_coupled_lc_reference --output artifacts/coupled-lc-reference.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coupled-lc-reference
+          path: artifacts/coupled-lc-reference.json
+          if-no-files-found: error
