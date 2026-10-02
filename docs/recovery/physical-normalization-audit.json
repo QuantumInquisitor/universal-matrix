@@ -100,5 +100,6 @@
     "conversion_gate": "Missing or unrelated subsystem scales prevent physical cross-system conversion; no constants are selected by this audit."
   },
   "remaining": "Implement an inspectable normalization interface only after selecting an explicitly scoped subsystem pair and its independent inputs. Dimension consistency alone does not establish measured calibration.",
-  "publication_note": "Audit references combined local review commit88cc7c including unmerged PR159 Q-ball export. Its source hashes describe that reviewed snapshot, not a claim all modules are merged at the publication base."
+  "publication_note": "Audit references combined local review commit88cc7c including unmerged PR159 Q-ball export. Its source hashes describe that reviewed snapshot, not a claim all modules are merged at the publication base.",
+  "source_hash_convention": "SHA256 of raw local file bytes, with line endings preserved; not normalized Git blob hashes."
 }
