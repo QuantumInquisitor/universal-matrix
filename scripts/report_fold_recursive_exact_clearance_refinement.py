@@ -29,7 +29,7 @@ def classify_mask(mask):
     mask = tuple(bool(value) for value in mask)
     if len(mask) < 2:
         raise ValueError("clearance mask must contain at least two samples")
-    transitions = sum(a != b for a, b in zip(mask, mask[1:]))
+    transitions = sum(a != b for a, b in zip(mask, mask[1:], strict=False))
     first_free = next((index for index, free in enumerate(mask) if free), None)
     reentrant = False
     if first_free is not None:
