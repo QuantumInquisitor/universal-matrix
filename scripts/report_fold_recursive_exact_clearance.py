@@ -53,9 +53,7 @@ def point_segment_distance(point, a, b):
 
 
 def segment_segment_distance(p1, q1, p2, q2):
-    p1, q1, p2, q2 = (
-        np.asarray(value, dtype=float) for value in (p1, q1, p2, q2)
-    )
+    p1, q1, p2, q2 = (np.asarray(value, dtype=float) for value in (p1, q1, p2, q2))
     d1, d2, r = q1 - p1, q2 - p2, p1 - p2
     a = float(d1 @ d1)
     e = float(d2 @ d2)
@@ -85,9 +83,7 @@ def segment_segment_distance(p1, q1, p2, q2):
 
 
 def point_triangle_distance(point, a, b, c):
-    point, a, b, c = (
-        np.asarray(value, dtype=float) for value in (point, a, b, c)
-    )
+    point, a, b, c = (np.asarray(value, dtype=float) for value in (point, a, b, c))
     ab, ac, ap = b - a, c - a, point - a
     normal = np.cross(ab, ac)
     if float(normal @ normal) <= EPS:
@@ -134,9 +130,7 @@ def point_triangle_distance(point, a, b, c):
 
 
 def segment_intersects_triangle(p, q, a, b, c):
-    p, q, a, b, c = (
-        np.asarray(value, dtype=float) for value in (p, q, a, b, c)
-    )
+    p, q, a, b, c = (np.asarray(value, dtype=float) for value in (p, q, a, b, c))
     direction = q - p
     edge1, edge2 = b - a, c - a
     h = np.cross(direction, edge2)
@@ -171,12 +165,8 @@ def segment_triangle_distance(p, q, a, b, c):
 def triangle_triangle_distance(a0, a1, a2, b0, b1, b2):
     edges_a = ((a0, a1), (a1, a2), (a2, a0))
     edges_b = ((b0, b1), (b1, b2), (b2, b0))
-    values = [
-        segment_triangle_distance(p, q, b0, b1, b2) for p, q in edges_a
-    ]
-    values.extend(
-        segment_triangle_distance(p, q, a0, a1, a2) for p, q in edges_b
-    )
+    values = [segment_triangle_distance(p, q, b0, b1, b2) for p, q in edges_a]
+    values.extend(segment_triangle_distance(p, q, a0, a1, a2) for p, q in edges_b)
     return min(values)
 
 
@@ -185,8 +175,7 @@ def triangulate(vertices):
     if vertices.ndim != 2 or vertices.shape[1] != 3 or len(vertices) < 3:
         raise ValueError("panel vertices must be an Nx3 array with N >= 3")
     return tuple(
-        (vertices[0], vertices[index], vertices[index + 1])
-        for index in range(1, len(vertices) - 1)
+        (vertices[0], vertices[index], vertices[index + 1]) for index in range(1, len(vertices) - 1)
     )
 
 
@@ -265,11 +254,7 @@ def path_category(path_a, path_b):
         return "parent_child" if len(path_b) == len(path_a) + 1 else "ancestor_descendant"
     if len(path_b) < len(path_a) and path_a[: len(path_b)] == path_b:
         return "parent_child" if len(path_a) == len(path_b) + 1 else "ancestor_descendant"
-    if (
-        len(path_a) == len(path_b)
-        and path_a
-        and path_a[:-1] == path_b[:-1]
-    ):
+    if len(path_a) == len(path_b) and path_a and path_a[:-1] == path_b[:-1]:
         return "siblings"
     return "cross_branch"
 
@@ -322,15 +307,9 @@ def module_pair_clearance(module_a, state_a, module_b, state_b, ratio, best_limi
     center_b = ratio * module_b["center_coefficient"]
     module_lower = max(
         0.0,
-        float(np.linalg.norm(center_a - center_b))
-        - state_a["radius"]
-        - state_b["radius"],
+        float(np.linalg.norm(center_a - center_b)) - state_a["radius"] - state_b["radius"],
     )
-    search_limit = (
-        best_limit
-        if best_limit > COLLISION_TOLERANCE_M
-        else COLLISION_TOLERANCE_M + EPS
-    )
+    search_limit = best_limit if best_limit > COLLISION_TOLERANCE_M else COLLISION_TOLERANCE_M + EPS
     if module_lower >= search_limit:
         return None
 
@@ -382,9 +361,7 @@ def scan_ratio(cache, ratio):
             center_b = ratio * module_b["center_coefficient"]
             sphere_lower = max(
                 0.0,
-                float(np.linalg.norm(center_a - center_b))
-                - state_a["radius"]
-                - state_b["radius"],
+                float(np.linalg.norm(center_a - center_b)) - state_a["radius"] - state_b["radius"],
             )
             if sphere_lower > COLLISION_TOLERANCE_M and sphere_lower >= best:
                 continue
@@ -419,9 +396,7 @@ def scan_ratio(cache, ratio):
         if pair_collides:
             key = (path_a, path_b)
             colliding_module_pairs.add(key)
-            category_collision_pairs[category] = (
-                category_collision_pairs.get(category, 0) + 1
-            )
+            category_collision_pairs[category] = category_collision_pairs.get(category, 0) + 1
 
     if not math.isfinite(best):
         raise RuntimeError("clearance scan produced no finite body distance")
@@ -492,14 +467,10 @@ def report():
         "sampled_ratios": ratios,
         "rows": rows,
         "sampled_first_collision_free_ratio": (
-            None
-            if first_free is None
-            else first_free["vessel_radius_per_module_length"]
+            None if first_free is None else first_free["vessel_radius_per_module_length"]
         ),
         "sampled_lower_colliding_ratio": (
-            None
-            if lower_colliding is None
-            else lower_colliding["vessel_radius_per_module_length"]
+            None if lower_colliding is None else lower_colliding["vessel_radius_per_module_length"]
         ),
         "sources": {
             name: hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest()
