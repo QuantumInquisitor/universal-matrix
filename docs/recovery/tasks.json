@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "The recursive spatial connector attachment-frame audit is now green and merged. Adding the exact geometric center separation as a rest offset leaves the connector independent of the vessel/module ratio. The parent-aligned attachment frame reproduces the existing local recursive connector to numerical roundoff across scales 1, 1/2 and 1/4, with zero scale-similarity error and ~1e-19 J / ~1e-18 force differences. The body-following mirrored attachment remains energy-derived and conservative but changes the dynamics substantially (at parent scale 1, max energy difference 9.631742512670289e-05 J; parent-force difference 3.602885682970027e-04; child-force difference 2.475e-04). Therefore the unresolved physical issue is the abstract connector port's attachment site/frame, not a missing recursive force law.",
+      "latest_result": "Recursive spatial placement, connector-frame translation and fixed port-to-body correspondence are now audited. The 22-body module fits a local Seed-axis vessel at a common radius/module-length ratio of about 2.19 for planar/3D containment and conservative sibling separation, with three Seed axes rigidly equivalent. A spatial rest-offset and mirrored-branch frame adapter are required. The abstract two-component connector port was then searched against all 58 panel vertices, bridge endpoints and hub markers. Twenty-four points reproduce the port under a fixed state-independent anisotropic 2x3 linear map, best panel-2:vertex-1 with ~1.01e-11 displacement and ~1.23e-10 Jacobian error, but zero candidates are scaled-orthogonal or unit-orthogonal matches. Thus no searched marker is justified as a literal rigid physical attachment point.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Search for a fixed port-to-body correspondence using the existing 22-body geometry. Compare displacement-from-reference and Jacobian for every panel vertex, bridge endpoint and hub marker against the abstract two-component mapped port over the full q-grid, allowing one fixed linear projection/rotation per candidate but no state-dependent fit. If no exact candidate exists, preserve the connector as an independent reduced coordinate until a separately justified physical attachment geometry is supplied."
+      "next_action": "Search geometry-derived relative attachment frames rather than arbitrary single-point linear readouts. Evaluate directed pairs of existing panel vertices, bridge endpoints and hub markers as physical segment candidates; derive fixed orthonormal/scaled-orthogonal frames from their reference geometry and test port displacement/Jacobian across the full q and scale grids. If no relative geometric frame matches, keep the port explicitly reduced and proceed to exact body proximity/collision auditing without inventing an attachment."
     },
     {
       "id": "P11",
