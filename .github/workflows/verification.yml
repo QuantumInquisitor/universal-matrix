@@ -305,7 +305,14 @@ jobs:
         run: uv sync --python 3.12 --group test --extra scientific
 
       - name: Focused long-timeseries diagnostic tests
-        run: uv run pytest -q tests/test_qball_highres_timeseries_t1p5.py tests/test_qball_highres_timeseries_t2.py tests/test_qball_highres_timeseries_t2p5.py tests/test_qball_peak_period_classification.py
+        run: uv run pytest -q tests/test_qball_highres_timeseries_t1p5.py tests/test_qball_highres_timeseries_t2.py tests/test_qball_highres_timeseries_t2p5.py tests/test_qball_peak_period_classification.py tests/test_qball_timeseries_export.py
 
       - name: Q-ball high-resolution in-run time series t2p5
-        run: uv run python -m src.qball_highres_timeseries_t2p5
+        run: uv run python -m src.qball_highres_timeseries_t2p5 --samples-json artifacts/qball-t2p5-samples.json
+
+      - name: Preserve Q-ball scalar samples from the existing evolution
+        uses: actions/upload-artifact@v4
+        with:
+          name: qball-t2p5-samples
+          path: artifacts/qball-t2p5-samples.json
+          if-no-files-found: error
