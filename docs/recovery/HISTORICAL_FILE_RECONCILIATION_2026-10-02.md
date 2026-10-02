@@ -1,0 +1,57 @@
+# Historical file reconciliation — bounded continuation
+
+This refresh compares the 84 branch/file records in the existing 14-branch
+exception inventory with tracked recovery commit
+`05d12c31ebe41a4749318058e6faa4f710cc9c8c`. It is not a new census of all
+repositories, branches, scratch files or unpublished candidates.
+
+The [machine-readable evidence](historical-file-reconciliation-2026-10-02.json)
+preserves each archived blob, current blob and disposition:
+
+| Disposition | Records |
+|---|---:|
+| Exact blob match, preserved | 38 |
+| Reviewed later extension | 1 |
+| Absent in agreement with documented superseded kernel | 3 |
+| Still requires semantic review | 42 |
+
+These are branch/file records, not unique files or experiments. Of the 42
+unresolved records, 15 archived objects are unavailable in this checkout even
+after refreshing the recovery and published boundary-solver heads. A missing
+local object is not proof that the historical content is lost or superseded.
+
+The reviewed bend-spacing source retains the original scan and adds sampling
+metadata and phase offsets. Its updated wording correctly limits
+`collision_free` to no detected collision on a finite grid. The three absent
+old-kernel paths agree with REC-OLD-KERNEL's existing closed/superseded
+disposition; this audit does not re-prove replacement equivalence.
+
+## Published capability versus tracked integration
+
+PR #123 remains open at `b7add2892868d5e8150c3a4b148b3c3200642d57`.
+The tracked recovery head does not contain its optional six-face-array solver
+or its additional patterned-flux tests. Earlier statements that all seven
+files matched a local checkout describe local presence, not incorporation into
+this branch. Preserve the published implementation; do not recreate it.
+
+A separate local compatibility checkout merged #148 and #149 without
+conflicts and passed 47 mechanics tests plus 11 viewer tests. Adding the
+unchanged #123 head to that checkout also merged cleanly; the boundary solver,
+independent manufactured checks, property invariants and documentation controls
+passed 41 tests. This is local combined compatibility evidence, not merge into
+recovery or main, and not physical boundary calibration.
+
+At this checkpoint recovery CI has passed both core Python jobs, the Q-ball
+long-time-series job and the experimental controls. Its full legacy suite is
+still running. No server-side branch was merged during this audit.
+
+## Next actions
+
+1. Resolve the 42 semantic-review records, starting with recoverable archived
+   source/test objects; keep unavailable objects explicitly unresolved.
+2. Complete review and integration disposition of #123 using its preserved
+   implementation and the fresh compatibility evidence.
+3. Integrate reviewed #148/#149 after the ongoing recovery verification has
+   finished, without repeatedly cancelling the long legacy suite.
+4. Continue the wider P01 census and P03 candidate provenance work. This audit
+   does not close either workstream or remove any of the 24 research entries.

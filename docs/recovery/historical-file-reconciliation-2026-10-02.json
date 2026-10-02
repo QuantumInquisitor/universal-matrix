@@ -1,0 +1,647 @@
+{
+  "baseline": "05d12c31ebe41a4749318058e6faa4f710cc9c8c",
+  "scope": "84 branch-file records from the existing 14-branch exception inventory; not a new repository-wide census",
+  "counts": {
+    "different_requires_semantic_review": 42,
+    "identical_preserved": 38,
+    "reviewed_extended": 1,
+    "documented_superseded_not_restored": 3
+  },
+  "rows": [
+    {
+      "branch": "codex/patterned-neumann-face-flux",
+      "path": "src/open_boundary_solver.py",
+      "archived_blob": "f78d5bdc35c05d5024fe2b99a7905937566b809b",
+      "current_blob": "a56e6a90bdf4c562131031fc7172ee13dc5fe17d",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "codex/patterned-neumann-face-flux",
+      "path": "tests/test_open_boundary_solver.py",
+      "archived_blob": "a73281ba22640b14d166465b309bb872af1d8d13",
+      "current_blob": "f488761faf107cb33ce15088a91d07ec463dc507",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "codex/readme-deployment-map-fix",
+      "path": "README.md",
+      "archived_blob": "de63e7edae64d9c35bf7aa6547f4e408a5d746d2",
+      "current_blob": "1d236da1686886dcfdb08696ff8f82246cf9c89e",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "charged-matter-persistence-v0.1",
+      "path": "docs/charged_matter_persistence_v0.1.md",
+      "archived_blob": "b9009d256d211bf9fbbd0bf3b50dd78608345f2e",
+      "current_blob": "a81e2f8ca88140d1e505ac3c26c698c49d32f1eb",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "charged-matter-persistence-v0.1",
+      "path": "docs/matter_lattice_spacing_v0.1.md",
+      "archived_blob": "dcceda817fe9865e5c14761171bef32078bf684e",
+      "current_blob": "0c8fd7ac2d698118f67c6c34aa82d1173ccc70a0",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "charged-matter-persistence-v0.1",
+      "path": "docs/omniverse_design_questions_v0.1.md",
+      "archived_blob": "1440aef389ba7def02d58b882c36d4f98893a7b7",
+      "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "charged-matter-persistence-v0.1",
+      "path": "src/charged_matter_persistence.py",
+      "archived_blob": "aa8e158c7f7482bd8bf3f0ac94f4be2782a7e96f",
+      "current_blob": "aa8e158c7f7482bd8bf3f0ac94f4be2782a7e96f",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "charged-matter-persistence-v0.1",
+      "path": "src/classical_matter_dynamics.py",
+      "archived_blob": "39ad9c64ad3bf5e0b1053010e4e3e8c9136d2936",
+      "current_blob": "39ad9c64ad3bf5e0b1053010e4e3e8c9136d2936",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "charged-matter-persistence-v0.1",
+      "path": "src/localized_matter_persistence.py",
+      "archived_blob": "7358bed580d35c98388bd5e229ba77369f16e7b4",
+      "current_blob": "7358bed580d35c98388bd5e229ba77369f16e7b4",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "charged-matter-persistence-v0.1",
+      "path": "tests/test_charged_matter_persistence.py",
+      "archived_blob": "8dd544a7a36fa25777a259f2c77aec51b67c6197",
+      "current_blob": "8dd544a7a36fa25777a259f2c77aec51b67c6197",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "charged-matter-persistence-v0.1",
+      "path": "tests/test_classical_matter_dynamics.py",
+      "archived_blob": "ccbf6a5dffc0eccf1d6b7647beec10a8d2529e22",
+      "current_blob": "ccbf6a5dffc0eccf1d6b7647beec10a8d2529e22",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "charged-matter-persistence-v0.1",
+      "path": "tests/test_localized_matter_persistence.py",
+      "archived_blob": "32d6aa35c5bf1c47a4e32ae25e61f5a608e53387",
+      "current_blob": "32d6aa35c5bf1c47a4e32ae25e61f5a608e53387",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/markdown-math-modernization-safe",
+      "path": "README.md",
+      "archived_blob": "de63e7edae64d9c35bf7aa6547f4e408a5d746d2",
+      "current_blob": "1d236da1686886dcfdb08696ff8f82246cf9c89e",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "codex/markdown-math-modernization-safe",
+      "path": "docs/conservative_toroidal_field_v0.1.md",
+      "archived_blob": "81022e60b38107998e7687be0e93eb01c5fc1c0e",
+      "current_blob": "81022e60b38107998e7687be0e93eb01c5fc1c0e",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/markdown-math-modernization-safe",
+      "path": "docs/graph_toroidal_flux_bundle_v0.1.md",
+      "archived_blob": "23049b5fc96a9b7cd84deb1f6bf39f04ca9f8114",
+      "current_blob": "23049b5fc96a9b7cd84deb1f6bf39f04ca9f8114",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/markdown-math-modernization-safe",
+      "path": "docs/matrix_local_transition_v0.1.md",
+      "archived_blob": "897e098c2f85adfaa2071b0d74f9bb6697f0f2ca",
+      "current_blob": "897e098c2f85adfaa2071b0d74f9bb6697f0f2ca",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/markdown-math-modernization-safe",
+      "path": "docs/matrix_polarity_phase_reduction_v0.1.md",
+      "archived_blob": "3dd8d4b2d7ae55df9ec9226cddcea01a2e6197b6",
+      "current_blob": "3dd8d4b2d7ae55df9ec9226cddcea01a2e6197b6",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/markdown-math-modernization-safe",
+      "path": "docs/primitive_matrix_ontology_v0.1.md",
+      "archived_blob": "d7c72c64ef741dc58c808a12ac7bae1437e19073",
+      "current_blob": "d7c72c64ef741dc58c808a12ac7bae1437e19073",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/markdown-math-modernization-safe",
+      "path": "docs/sri_yantra_multidimensional_v0.1.md",
+      "archived_blob": "399283a26258f50fbaf9df06be674cf9eb790a4e",
+      "current_blob": "399283a26258f50fbaf9df06be674cf9eb790a4e",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/markdown-math-modernization-safe",
+      "path": "docs/transitive_plane_branching_v0.1.md",
+      "archived_blob": "6f54a0faa2b83b5bececfec621a49b92124fddfe",
+      "current_blob": "6f54a0faa2b83b5bececfec621a49b92124fddfe",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/markdown-math-modernization-safe",
+      "path": "docs/unified_engine_v0.1.md",
+      "archived_blob": "4031dcf0386f5df25958f0526d55d61571da64e3",
+      "current_blob": "4031dcf0386f5df25958f0526d55d61571da64e3",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/markdown-math-modernization-safe",
+      "path": "docs/universe_port_engine_v0.1.md",
+      "archived_blob": "4214a8dd8a1ce7b80cc47e348a564fa5c2272d1b",
+      "current_blob": "4214a8dd8a1ce7b80cc47e348a564fa5c2272d1b",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/markdown-math-modernization-safe",
+      "path": "docs/vesica_tree_circulation_v0.1.md",
+      "archived_blob": "49cbf6455d6feaaf7c01b0e41ba4907738565d94",
+      "current_blob": "49cbf6455d6feaaf7c01b0e41ba4907738565d94",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/white-paper-checkpoint-hierarchy",
+      "path": "tests/test_documentation_governance.py",
+      "archived_blob": "f4cea840195cc13d7a5dd3cfa838a4f70425de07",
+      "current_blob": "f4cea840195cc13d7a5dd3cfa838a4f70425de07",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/white-paper-checkpoint-hierarchy",
+      "path": "white_paper.md",
+      "archived_blob": "c03c9da044a1f5e07c91315bb56a1543ac292892",
+      "current_blob": "c03c9da044a1f5e07c91315bb56a1543ac292892",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/toroidal-bend-spacing-scan",
+      "path": "docs/toroidal_bend_spacing_scan_v0.1.md",
+      "archived_blob": "7e09d0f0af14c8678bb37b3b7a62a1cc32980854",
+      "current_blob": "a563dcbc8d4c162faa382329838ca04235507b20",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "codex/toroidal-bend-spacing-scan",
+      "path": "src/toroidal_bend_spacing_scan.py",
+      "archived_blob": "a429783552f7d45107e58d6aec89ca19163fab78",
+      "current_blob": "d21b82f249b59f71bc9ee41a7b21b09cadeb0239",
+      "disposition": "reviewed_extended",
+      "evidence": "Current code retains scan and adds BendSamplingGrid metadata and phase offsets; docstring narrows collision_free to finite-grid detection."
+    },
+    {
+      "branch": "codex/toroidal-bend-spacing-scan",
+      "path": "tests/test_toroidal_bend_spacing_scan.py",
+      "archived_blob": "e34bb4be4ab2409d0a15d60fcfc1f1d0b9b1628e",
+      "current_blob": "e34bb4be4ab2409d0a15d60fcfc1f1d0b9b1628e",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "codex/reorganize-architecture",
+      "path": "ARCHITECTURE.md",
+      "archived_blob": "4795bbbd974e27fe95bc95423137a7a7f79bf404",
+      "current_blob": "5bfb27c3d4f8894bf9853ce35d8199c3f018cb79",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "codex/reorganize-architecture",
+      "path": "tests/test_documentation_governance.py",
+      "archived_blob": "3460e723f6c51cac0d9242e323d4f0261b06228b",
+      "current_blob": "f4cea840195cc13d7a5dd3cfa838a4f70425de07",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "local-transition-kernel-v0.1",
+      "path": ".github/workflows/verification.yml",
+      "archived_blob": "18ae91aa75059be1cceea2eccc1532b1b309b93d",
+      "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "local-transition-kernel-v0.1",
+      "path": "ARCHITECTURE.md",
+      "archived_blob": "72f1e91e9fc40edb371b440a4099929f36bde2fb",
+      "current_blob": "5bfb27c3d4f8894bf9853ce35d8199c3f018cb79",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "local-transition-kernel-v0.1",
+      "path": "docs/DOCUMENTATION_STATUS.md",
+      "archived_blob": "a2d9fd20ebdc42533327dff92705962222c99f43",
+      "current_blob": "775d1b0992c41426f7a0a5309180bd353d284188",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "local-transition-kernel-v0.1",
+      "path": "docs/local_transition_kernel_v0.1.md",
+      "archived_blob": "b388864fa52531e62e546f6db9ed3468c07f7b35",
+      "current_blob": null,
+      "disposition": "documented_superseded_not_restored",
+      "evidence": "tasks.json REC-OLD-KERNEL; absence agrees with the prior closed_superseded disposition, not a new proof of equivalence"
+    },
+    {
+      "branch": "local-transition-kernel-v0.1",
+      "path": "docs/omniverse_design_questions_v0.1.md",
+      "archived_blob": "fdc666fcdff2faa95081af446add011f2b9b8e48",
+      "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "local-transition-kernel-v0.1",
+      "path": "src/local_transition_kernel.py",
+      "archived_blob": "d1789a3fc75ca48f2a0dc0e37c69a4212bc3db1e",
+      "current_blob": null,
+      "disposition": "documented_superseded_not_restored",
+      "evidence": "tasks.json REC-OLD-KERNEL; absence agrees with the prior closed_superseded disposition, not a new proof of equivalence"
+    },
+    {
+      "branch": "local-transition-kernel-v0.1",
+      "path": "tests/test_local_transition_kernel.py",
+      "archived_blob": "7929ce9334f1939440f6c6b1cbd8ae922deaa481",
+      "current_blob": null,
+      "disposition": "documented_superseded_not_restored",
+      "evidence": "tasks.json REC-OLD-KERNEL; absence agrees with the prior closed_superseded disposition, not a new proof of equivalence"
+    },
+    {
+      "branch": "matter-amplitude-modes-v0.1",
+      "path": ".github/workflows/verification.yml",
+      "archived_blob": "431b7245cd1f6a967ecb7bd2c3924f8ec1dd2731",
+      "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "matter-amplitude-modes-v0.1",
+      "path": "docs/matter_amplitude_modes_v0.1.md",
+      "archived_blob": "9cd1df977a0e60db1d7407262a19ddfab725960c",
+      "current_blob": "eaece18e62ec9c8ab18587ccb5889715386409ed",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "matter-amplitude-modes-v0.1",
+      "path": "docs/omniverse_design_questions_v0.1.md",
+      "archived_blob": "65de543b378aa51f229c066d69e450beb0ed9372",
+      "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "matter-amplitude-modes-v0.1",
+      "path": "docs/polarity_rotor_dispersion_v0.1.md",
+      "archived_blob": "8e04428b7069cf19a88804f96fffb40ca3d19c80",
+      "current_blob": "b29dd994d23f152b40dc15229a4ffd0de46a0739",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "matter-amplitude-modes-v0.1",
+      "path": "src/matrix_polarity_rotor_dispersion.py",
+      "archived_blob": "e59df1d007d81bb5ddc92a2646a141536a11234a",
+      "current_blob": "e59df1d007d81bb5ddc92a2646a141536a11234a",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "matter-amplitude-modes-v0.1",
+      "path": "src/matter_amplitude_modes.py",
+      "archived_blob": "1c7a0ce59f7a7ff6202268551627c9c68cd2ac52",
+      "current_blob": "1c7a0ce59f7a7ff6202268551627c9c68cd2ac52",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "matter-amplitude-modes-v0.1",
+      "path": "tests/test_matrix_polarity_rotor_dispersion.py",
+      "archived_blob": "81be54cfb413d2679ea6cd4d3ad425dc7adf268d",
+      "current_blob": "81be54cfb413d2679ea6cd4d3ad425dc7adf268d",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "matter-amplitude-modes-v0.1",
+      "path": "tests/test_matter_amplitude_modes.py",
+      "archived_blob": "d2b9031da75d5dfca24bbde0ea3efcd571e7fd5e",
+      "current_blob": "f209763a0d204b5f9f238f90f0139d3369960392",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "markdown-math-normalization-v0.1",
+      "path": "docs/canonical_polarity_clock_v0.1.md",
+      "archived_blob": "36047b15575450687557ff3ef2bfc31b2899d522",
+      "current_blob": "86addca40718f81cfd6b33852425610ceb9a82ec",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "markdown-math-normalization-v0.1",
+      "path": "docs/canonical_scale_transfer_v0.1.md",
+      "archived_blob": "12f6c5ccda981f0b7f7a06561f3a8269a940447a",
+      "current_blob": "1e68ec0eff2a743ee362f4c6079035e8ec22aa12",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "markdown-math-normalization-v0.1",
+      "path": "docs/classical_matter_dynamics_v0.1.md",
+      "archived_blob": "b915e420b9664125ed441ea0af24d84289135235",
+      "current_blob": "24e56f626bc46c20bd5717cbb6deb44e4d4b6dab",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "markdown-math-normalization-v0.1",
+      "path": "docs/clock_space_reciprocity_v0.1.md",
+      "archived_blob": "4984f7b566e61786feb355c44c3a9a4863182efe",
+      "current_blob": "e00f6339b73a0ce227ecd1a1e74eff28857fc42a",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "markdown-math-normalization-v0.1",
+      "path": "docs/comparative_theory_bridge_audit_v0.1.md",
+      "archived_blob": "56ddf1c68b54ced89ab40c64fc393a33b3f63af0",
+      "current_blob": "b9e26e40d167f23cc91f9342fac5416786ea2653",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "markdown-math-normalization-v0.1",
+      "path": "docs/content_clock_v0.1.md",
+      "archived_blob": "a615998e0e8ae10d34df0b6306c69ba2dfa5a15f",
+      "current_blob": "bb8b243b7d7e72f6174bee9ed9c73bd436e3fc3b",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    },
+    {
+      "branch": "qball-existence-window-v0.1",
+      "path": ".github/workflows/verification.yml",
+      "archived_blob": "a526819151eb3e1609d3ebe4796bf9476669c3b9",
+      "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "qball-existence-window-v0.1",
+      "path": "docs/matter_defect_structure_v0.1.md",
+      "archived_blob": "15e30d63db39b8ba54c19d47bcb7cdeca8f3c6bc",
+      "current_blob": "899a65e71568af93cd79517a7d876ebaae994052",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "qball-existence-window-v0.1",
+      "path": "docs/omniverse_design_questions_v0.1.md",
+      "archived_blob": "bec70dbf0747a98337e0cffc846e281715f10ede",
+      "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "qball-existence-window-v0.1",
+      "path": "docs/qball_existence_window_v0.1.md",
+      "archived_blob": "8dc4533986aaf24930ae6280cd3eef192e50136d",
+      "current_blob": "e432031da836d5a8d0fa1f57cb2ecf516061c6f6",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "qball-existence-window-v0.1",
+      "path": "src/matter_defect_structure.py",
+      "archived_blob": "4672e8b63fc2da12c14ca578c4af1075d1014676",
+      "current_blob": "4672e8b63fc2da12c14ca578c4af1075d1014676",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "qball-existence-window-v0.1",
+      "path": "src/qball_existence_window.py",
+      "archived_blob": "d456ef24c2a4190aa4d6eac8047f56f99d708335",
+      "current_blob": "d456ef24c2a4190aa4d6eac8047f56f99d708335",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "qball-existence-window-v0.1",
+      "path": "tests/test_matter_defect_structure.py",
+      "archived_blob": "8352a5137e9f71275ed08a2287e18edc94fe01fa",
+      "current_blob": "8352a5137e9f71275ed08a2287e18edc94fe01fa",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "qball-existence-window-v0.1",
+      "path": "tests/test_qball_existence_window.py",
+      "archived_blob": "9f20d57522a56b1b6fc50acf68e37e688be017e0",
+      "current_blob": "9f20d57522a56b1b6fc50acf68e37e688be017e0",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "matter-defect-structure-v0.1",
+      "path": ".github/workflows/verification.yml",
+      "archived_blob": "82020107fd4c72acc974be9eb1b610dbfb69534c",
+      "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "matter-defect-structure-v0.1",
+      "path": "docs/matter_amplitude_modes_v0.1.md",
+      "archived_blob": "9cd1df977a0e60db1d7407262a19ddfab725960c",
+      "current_blob": "eaece18e62ec9c8ab18587ccb5889715386409ed",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "matter-defect-structure-v0.1",
+      "path": "docs/matter_defect_structure_v0.1.md",
+      "archived_blob": "15e30d63db39b8ba54c19d47bcb7cdeca8f3c6bc",
+      "current_blob": "899a65e71568af93cd79517a7d876ebaae994052",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "matter-defect-structure-v0.1",
+      "path": "docs/omniverse_design_questions_v0.1.md",
+      "archived_blob": "cf2a3e83a16428332065627811bacd99625649e9",
+      "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "matter-defect-structure-v0.1",
+      "path": "src/matter_amplitude_modes.py",
+      "archived_blob": "1c7a0ce59f7a7ff6202268551627c9c68cd2ac52",
+      "current_blob": "1c7a0ce59f7a7ff6202268551627c9c68cd2ac52",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "matter-defect-structure-v0.1",
+      "path": "src/matter_defect_structure.py",
+      "archived_blob": "4672e8b63fc2da12c14ca578c4af1075d1014676",
+      "current_blob": "4672e8b63fc2da12c14ca578c4af1075d1014676",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "matter-defect-structure-v0.1",
+      "path": "tests/test_matter_amplitude_modes.py",
+      "archived_blob": "f209763a0d204b5f9f238f90f0139d3369960392",
+      "current_blob": "f209763a0d204b5f9f238f90f0139d3369960392",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "matter-defect-structure-v0.1",
+      "path": "tests/test_matter_defect_structure.py",
+      "archived_blob": "8352a5137e9f71275ed08a2287e18edc94fe01fa",
+      "current_blob": "8352a5137e9f71275ed08a2287e18edc94fe01fa",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "qball-mapping-convergence-v0.1",
+      "path": ".github/workflows/verification.yml",
+      "archived_blob": "094a0068718b66396e7a4dc71207f921b00e188c",
+      "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "qball-mapping-convergence-v0.1",
+      "path": "docs/DOCUMENTATION_STATUS.md",
+      "archived_blob": "97409b7471a37927f8ed36eb0101dae4de7af85f",
+      "current_blob": "775d1b0992c41426f7a0a5309180bd353d284188",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "qball-mapping-convergence-v0.1",
+      "path": "docs/omniverse_design_questions_v0.1.md",
+      "archived_blob": "6e75f5b19584cf9bda760026d8c398f47735bea0",
+      "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "qball-mapping-convergence-v0.1",
+      "path": "docs/qball_mapping_convergence_v0.1.md",
+      "archived_blob": "533615000ef1df5ae615797b5b4f74814ab2d712",
+      "current_blob": "533615000ef1df5ae615797b5b4f74814ab2d712",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "qball-mapping-convergence-v0.1",
+      "path": "docs/qball_threshold_persistence_scan_v0.1.md",
+      "archived_blob": "cbc46db615181a0716ec7a76d44b7fc17a56bb21",
+      "current_blob": "ee545e19646d27ae7b4dfc11c36b29319afa71a3",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "qball-mapping-convergence-v0.1",
+      "path": "src/qball_mapping_convergence.py",
+      "archived_blob": "d592921a9a2b3d0fc76479b563da3106dfc01b73",
+      "current_blob": "d592921a9a2b3d0fc76479b563da3106dfc01b73",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "qball-mapping-convergence-v0.1",
+      "path": "src/qball_threshold_persistence_scan.py",
+      "archived_blob": "7f5c69f7e08e90f13d0bb95f799ea08eec42df3a",
+      "current_blob": "7f5c69f7e08e90f13d0bb95f799ea08eec42df3a",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "qball-mapping-convergence-v0.1",
+      "path": "tests/test_qball_mapping_convergence.py",
+      "archived_blob": "4aa23dd31ee8636c8a9d553d68481915dfa330ce",
+      "current_blob": "4aa23dd31ee8636c8a9d553d68481915dfa330ce",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "qball-mapping-convergence-v0.1",
+      "path": "tests/test_qball_threshold_persistence_scan.py",
+      "archived_blob": "310fafeb694c3df8384d0d39d8ef2ce4ba590df8",
+      "current_blob": "310fafeb694c3df8384d0d39d8ef2ce4ba590df8",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "radial-matter-continuation-v0.1",
+      "path": ".github/workflows/verification.yml",
+      "archived_blob": "70c3258dbcf2671334fc8c96658feaa9384e618c",
+      "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "radial-matter-continuation-v0.1",
+      "path": "docs/omniverse_design_questions_v0.1.md",
+      "archived_blob": "45cfa3a47f0917c630e898866cf0427800dea6df",
+      "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "radial-matter-continuation-v0.1",
+      "path": "docs/qball_existence_window_v0.1.md",
+      "archived_blob": "8dc4533986aaf24930ae6280cd3eef192e50136d",
+      "current_blob": "e432031da836d5a8d0fa1f57cb2ecf516061c6f6",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "radial-matter-continuation-v0.1",
+      "path": "docs/radial_matter_continuation_v0.1.md",
+      "archived_blob": "37c8aeafa8b794c3170cc60018427ba4d69cbf3f",
+      "current_blob": "d066778b5eb768dec82018e680f8b2bce4cd54bd",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": true
+    },
+    {
+      "branch": "radial-matter-continuation-v0.1",
+      "path": "src/qball_existence_window.py",
+      "archived_blob": "d456ef24c2a4190aa4d6eac8047f56f99d708335",
+      "current_blob": "d456ef24c2a4190aa4d6eac8047f56f99d708335",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "radial-matter-continuation-v0.1",
+      "path": "src/radial_matter_continuation.py",
+      "archived_blob": "df7d5de547a3e0456f6bde07a9ffc6757925afc2",
+      "current_blob": "df7d5de547a3e0456f6bde07a9ffc6757925afc2",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "radial-matter-continuation-v0.1",
+      "path": "tests/test_qball_existence_window.py",
+      "archived_blob": "9f20d57522a56b1b6fc50acf68e37e688be017e0",
+      "current_blob": "9f20d57522a56b1b6fc50acf68e37e688be017e0",
+      "disposition": "identical_preserved"
+    },
+    {
+      "branch": "radial-matter-continuation-v0.1",
+      "path": "tests/test_radial_matter_continuation.py",
+      "archived_blob": "e7dbf82b173085a3f848d9a51d49cd4d7bde81ff",
+      "current_blob": "63f28e28badc98e3584fccc85be09f97cc398968",
+      "disposition": "different_requires_semantic_review",
+      "archived_object_available_locally": false
+    }
+  ],
+  "important_correction": "Published PR123 remains separate: its optional face-array solver is not present on the tracked recovery head. Earlier checkout-presence notes did not establish integration."
+}

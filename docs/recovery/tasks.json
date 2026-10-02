@@ -9,8 +9,8 @@
       "status": "in_progress",
       "scope_and_completion": "Inspect both known local repositories, their worktrees, uncommitted files, branches, stashes, reflogs and unreachable objects without cleanup or resets. Inspect current and older scratch directories, source-review folders, raw numerical results, test logs, manifests, viewer exports and packaged versions. Enumerate all remote branches and all PRs, including closed-unmerged attempts; distinguish work already incorporated by later commits from genuinely missing changes. Check issues and unfinished workflow runs. Use targeted interruption/session logs only to resolve artifacts whose purpose or final command outcome is unclear. Check additional project-linked checkouts discovered through worktree metadata; do not assume the two familiar folders are the entire history. Follow docs/DOCUMENTATION_STATUS.md: executable implementation/tests take precedence over stale inventories. **Recovery gate:** every discovered project location and work family has a disposition; each branch with unique changes is either preserved for review, proven superseded, or explicitly unresolved. Do not turn a keyword hit or an unreachable Git object into a new task without examining it.\n   Start with the existing G1–G8, W1–W3, A1–A2, P1, T1–T3, S1–S2, H1–H2, C1–C2, F1–F2, R1–R2 and V1 ledger. Link each record to its latest code, report, inputs, tests and publication status. Classify the 607 inventoried files by experiment family, deduplicate copies, and distinguish commitments from suggested follow-ons. Check older repository questions against current code before reopening them. Give every open task a next action, dependency, completion criterion and blocker. **Done when:** each recovered commitment has one current disposition and superseded status has an explicit replacement. This plan is the starting queue; detailed file-by-file reconciliation remains work.",
       "dependencies": [],
-      "latest_result": "PR #129 disposition is now reviewed and recorded; the broader historical branch census remains open.",
-      "next_action": "Finish the unresolved source/test branch comparisons using exception-file-comparison.json; give each unique item an explicit retained, superseded or unresolved disposition.",
+      "latest_result": "84 historical branch/file records checked against 05d12c3: 38 exact matches, one reviewed extension, three documented superseded-kernel absences and 42 unresolved semantic reviews (15 archived blobs unavailable locally). Published PR123 is not incorporated in tracked recovery, despite earlier local-checkout presence notes. Combined local #148/#149 tests pass 47 mechanics plus 11 viewer; adding #123 passes 41 related controls. See HISTORICAL_FILE_RECONCILIATION_2026-10-02.md.",
+      "next_action": "Resolve 42 remaining semantic-review records and unavailable archived objects using historical-file-reconciliation-2026-10-02.json; preserve PR123 as published work awaiting integration.",
       "blockers_or_limits": [
         "No new global census performed; remaining historical differences need file-level evidence."
       ],
@@ -23,6 +23,10 @@
         {
           "label": "Before integration and inertia continuation on 2026-10-02",
           "text": "Historical six-draft audit is retained as history. Live PR #119-144 inventory now finds nine open PRs in that range, including #129; this is not a new all-repository census. Published files and older local uncommitted work remain preserved."
+        },
+        {
+          "label": "Before 84-record historical refresh",
+          "text": "PR #129 disposition is now reviewed and recorded; the broader historical branch census remains open."
         }
       ]
     },
