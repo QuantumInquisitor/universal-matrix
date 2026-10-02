@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Exact recursive zero-thickness clearance has now been refined through merged PR #141 at 12eb201d094ddf24dc7a9c13f8bda1c003ed29dd. The finite-grid collision/free bracket is 14.9454706307 < boundary <= 14.9797492331, width 0.0342786024 after a 256x refinement, with no sampled re-entrant collision. The governing case is consistently root [] versus depth-3 [0,1,1], panel-0 versus panel-5, both at q=(1.1,0). The first free endpoint has only 0.00019594018 m (~0.196 mm) exact zero-thickness clearance.",
+      "latest_result": "Dense governing-state exact clearance is merged at 75787b0f73db0d7734486f0d74ea3b9f10149d95. The zero-thickness finite-grid collision/free bracket is now 14.963948939801849 < boundary <= 14.964082840592333, width 1.3390079e-4. The full 15-module broad-grid control is collision-free at the dense upper ratio with the same minimum clearance 1.102735519e-7 m. The limiter remains root panel-0 versus depth-3 [0,1,1] panel-5 at both scales 1.1 and child theta 0. Root theta 0 and 0.0025 tie exactly because panel-0 does not depend on the rotating ray; the limiting set is a state-edge family rather than a unique corner.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Densify only the governing root/depth-3 state neighborhood near scale=1.1 and theta=0 while sampling vessel ratios within the refined bracket. Determine whether the minimum lies exactly at the declared q-domain corner or at a nearby interior state. Keep all other module pairs as a control but do not repeat the entire broad grid. Do not add body thickness or manufacturing margin until the local state-space minimum is characterized."
+      "next_action": "Solve the identified root-panel0/depth3-panel5 contact ratio continuously/numerically at root scale=child scale=1.1, child theta=0, while confirming root-theta invariance. Then audit local monotonicity in root scale, child scale and child theta around the contact and rerun a full broad-grid assembly control at the resulting free ratio. Keep source geometry zero-thickness and do not introduce manufacturing margin yet."
     },
     {
       "id": "P11",
