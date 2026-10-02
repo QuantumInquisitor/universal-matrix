@@ -49,11 +49,7 @@ def transformed_panel(node, q, ratio, body_id):
     transform = exact_clearance.rotation(node["orientation_rad"])
     world = vertices.copy()
     world[:, :2] = vertices[:, :2] @ transform.T
-    world[:, :2] += (
-        ratio
-        * exact_clearance.BASE_MODULE_LENGTH_M
-        * node["center_normalized"]
-    )
+    world[:, :2] += ratio * exact_clearance.BASE_MODULE_LENGTH_M * node["center_normalized"]
     return world
 
 
@@ -146,18 +142,9 @@ def axis_audits(ratio):
     child_scales = np.linspace(*LOCAL_CHILD_SCALE_BOUNDS, 31)
     child_thetas = np.linspace(*LOCAL_CHILD_THETA_BOUNDS, 41)
 
-    root_distances = [
-        governing_distance(ratio, scale, 1.1, 0.0)
-        for scale in root_scales
-    ]
-    child_scale_distances = [
-        governing_distance(ratio, 1.1, scale, 0.0)
-        for scale in child_scales
-    ]
-    child_theta_distances = [
-        governing_distance(ratio, 1.1, 1.1, theta)
-        for theta in child_thetas
-    ]
+    root_distances = [governing_distance(ratio, scale, 1.1, 0.0) for scale in root_scales]
+    child_scale_distances = [governing_distance(ratio, 1.1, scale, 0.0) for scale in child_scales]
+    child_theta_distances = [governing_distance(ratio, 1.1, 1.1, theta) for theta in child_thetas]
 
     return {
         "root_scale": {
@@ -181,16 +168,11 @@ def axis_audits(ratio):
 def root_theta_invariance(ratio):
     samples = np.linspace(0.0, math.pi / 6, 13)
     reference = governing_distance(ratio, 1.1, 1.1, 0.0, root_theta=0.0)
-    distances = [
-        governing_distance(ratio, 1.1, 1.1, 0.0, root_theta=theta)
-        for theta in samples
-    ]
+    distances = [governing_distance(ratio, 1.1, 1.1, 0.0, root_theta=theta) for theta in samples]
     return {
         "theta_samples": samples.tolist(),
         "distances_m": distances,
-        "maximum_distance_difference_m": float(
-            np.max(np.abs(np.asarray(distances) - reference))
-        ),
+        "maximum_distance_difference_m": float(np.max(np.abs(np.asarray(distances) - reference))),
     }
 
 
