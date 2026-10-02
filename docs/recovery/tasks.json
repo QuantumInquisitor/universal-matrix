@@ -62,8 +62,8 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "PRs #119/#120/#121/#123/#124 and #152 are merged into recovery. Their exact-head full and focused checks passed; combined local geometry/boundary and wave/timing controls passed 109 and 105 tests. Recovery 851693c final integration CI 37067766522 is pending; PR #122 remains open against main. PR153, PR154 and PR155 have now passed their full CI and merged into recovery at 925100b. PR156 mechanical-energy viewer is published with focused CI green; full verification remains pending.",
-      "next_action": "Assess current recovery and PR156 full CI, integrate reviewed ready work, then review recovery-to-main; retain the broader census without reopening merged experiments.",
+      "latest_result": "PR119/120/121/123/124,152,153-160,117 and118 are integrated in recovery8bacd2b after their recorded reviews and checks. PR157 passed full verification37075234132. Previous recovery664e5fc passed all28 reported workflows. Exact current recovery verification remains separate; PR122 is draft against main. PR160 passed full verification37075570194 and focused37075570402. PR159 passed full verification37075947953 and its production sample artifact was audited. PR161 remains a reviewed proposal pending exact-head verification and integration.",
+      "next_action": "Assess exact current recovery CI and reviewed pending proposals, then perform the bounded recovery-to-main integration review. Preserve open scientific limitations and continue the wider census without reopening merged experiments.",
       "blockers_or_limits": [
         "Green listed CI is not completed scientific review, combined compatibility, or merge authorization."
       ],
@@ -96,6 +96,25 @@
             "latest_result": "PRs #119/#120/#121/#123/#124 and #152 are merged into recovery. Their exact-head full and focused checks passed; combined local geometry/boundary and wave/timing controls passed 109 and 105 tests. Recovery 851693c final integration CI 37067766522 is pending; PR #122 remains open against main.",
             "next_action": "Assess final recovery 851693c verification and review recovery-to-main integration; continue broader candidate/census work without reopening merged experiment drafts."
           }
+        },
+        {
+          "label": "Before current integration checkpoint refresh",
+          "fields": {
+            "latest_result": "PRs #119/#120/#121/#123/#124 and #152 are merged into recovery. Their exact-head full and focused checks passed; combined local geometry/boundary and wave/timing controls passed 109 and 105 tests. Recovery 851693c final integration CI 37067766522 is pending; PR #122 remains open against main.",
+            "next_action": "Assess final recovery 851693c verification and review recovery-to-main integration; continue broader candidate/census work without reopening merged experiment drafts."
+          }
+        },
+        {
+          "label": "Before paired-helix adapter integration",
+          "fields": {
+            "latest_result": "PR119/120/121/123/124,152,153-158,117 and118 are integrated in recovery9c2d137 after their recorded reviews and checks. PR157 passed full verification37075234132. Previous recovery664e5fc passed all28 reported workflows. Exact current recovery verification remains separate; PR122 is draft against main. PR159,160 and161 remain reviewed proposals pending exact-head verification and serial disposition."
+          }
+        },
+        {
+          "label": "Before Q-ball scalar export integration",
+          "fields": {
+            "latest_result": "PR119/120/121/123/124,152,153-158,160,117 and118 are integrated in recovery9744133 after their recorded reviews and checks. PR157 passed full verification37075234132. Previous recovery664e5fc passed all28 reported workflows. Exact current recovery verification remains separate; PR122 is draft against main. PR160 passed full verification37075570194 and focused37075570402. PR159 and161 remain reviewed proposals pending exact-head verification and serial disposition."
+          }
         }
       ]
     },
@@ -107,9 +126,9 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "The optional coupled-LC repository package now passes 105 tests, lint and report reproduction. Every original numerical report field is preserved; scalar/state invalid inputs and unrepresentable derived quantities reject explicitly. The source, independent tests, reproducible report and CI workflow are prepared for publication. Physical calibration and reciprocal piezoelectric attachment remain open. The optional coupled-LC reference is integrated through PR153 after full CI and review; physical calibration and coupling remain separate.",
+      "latest_result": "The optional coupled-LC reference is integrated through PR153 after full CI and review. Its original numerical report fields and independent controls remain preserved. The paired-helix clock adapter is integrated through PR160 with28 reproduced grouped controls, independent review and full/focused remote verification passed. Physical calibration and coupling remain separate.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
-      "next_action": "Select the next preserved local candidate using its inputs, provenance and independent controls; retain the integrated LC reference without repeating its promotion.",
+      "next_action": "Select the next preserved candidate by source, inputs and independent controls. Do not repeat completed LC or paired-helix promotion; physical calibration and coupling remain separate.",
       "blockers_or_limits": [
         "Candidate-specific geometry, parameters and source evidence must be identified before promotion."
       ],
@@ -134,6 +153,20 @@
           "fields": {
             "latest_result": "The optional coupled-LC repository package now passes 105 tests, lint and report reproduction. Every original numerical report field is preserved; scalar/state invalid inputs and unrepresentable derived quantities reject explicitly. The source, independent tests, reproducible report and CI workflow are prepared for publication. Physical calibration and reciprocal piezoelectric attachment remain open.",
             "next_action": "Review the published coupled-LC package and exact-head CI; then select the next preserved candidate. Keep physical calibration and coupling work separate."
+          }
+        },
+        {
+          "label": "Before current integration checkpoint refresh",
+          "fields": {
+            "latest_result": "The optional coupled-LC repository package now passes 105 tests, lint and report reproduction. Every original numerical report field is preserved; scalar/state invalid inputs and unrepresentable derived quantities reject explicitly. The source, independent tests, reproducible report and CI workflow are prepared for publication. Physical calibration and reciprocal piezoelectric attachment remain open.",
+            "next_action": "Review the published coupled-LC package and exact-head CI; then select the next preserved candidate. Keep physical calibration and coupling work separate."
+          }
+        },
+        {
+          "label": "Before accepted integration freshness correction",
+          "fields": {
+            "latest_result": "The optional coupled-LC reference is integrated through PR153 after full CI and review. Its original numerical report fields and independent controls remain preserved. The paired-helix clock adapter is published in PR160 with28 reproduced grouped controls and independent review; full remote verification is pending. Physical calibration and coupling remain separate.",
+            "next_action": "Finish review and integration disposition of the published paired-helix adapter; then select the next preserved candidate by source, inputs and independent controls. Do not repeat the completed LC promotion."
           }
         }
       ]
@@ -182,8 +215,8 @@
       "scope_and_completion": "Reuse PR120 nonlinear and two-mode wave controls, including seed, detuning, refinement, long duration and pump-off results. Third/fifth harmonic generation is now separately tested; broader wavelengths, phase/sine degrees, boundary conditions and mode-count/time/noise ensembles remain. Seed-independent orientation selection was not established. Reuse the eleven published W2 robustness cases: saturation, delays, refined delayed failure, deterministic measurement disturbance and stiffness mismatch. Expand stochastic noise, actuator bandwidth and operating/failure envelopes, then compare redesigns against those same cases. Resolve the saved Q-ball period question with an explicit observable and convergence protocol; leave unresolved if data do not identify a period. **Done when:** each question has a reproducible result and operating/failure range. W3 quantum bath/noise remains separate.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. W2 historical manifest now links original output to published model/reporter hashes; the inventory artifact has exactly equal parsed JSON across all 11 cases. Exact execution chronology remains unauthenticated. See docs/recovery/wave-source-provenance.json; no simulations were rerun for this provenance recovery. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI. An additive ideal-measurement actuator-bandwidth comparison now measures finite force response at 0, 0.1, 0.5 and 2 seconds over 20 revolutions, with refined timesteps and the unchanged final-five-period 0.05 m RMS criterion. Sampled 0.1 s passes; 0.5 and 2 s fail. The original controller and its 11 cases are unchanged; this is a synthetic mechanical-per-unit-mass ledger, not electrical supply accounting or a continuous stability boundary.",
-      "next_action": "Review the bounded actuator-bandwidth report, then select a separately declared stochastic-noise or combined-limit comparison with independent controls; broader convergence and Q-ball period work remain open.",
+      "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. W2 historical manifest now links original output to published model/reporter hashes; the inventory artifact has exactly equal parsed JSON across all 11 cases. Exact execution chronology remains unauthenticated. See docs/recovery/wave-source-provenance.json; no simulations were rerun for this provenance recovery. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI. An additive ideal-measurement actuator-bandwidth comparison now measures finite force response at 0, 0.1, 0.5 and 2 seconds over 20 revolutions, with refined timesteps and the unchanged final-five-period 0.05 m RMS criterion. Sampled 0.1 s passes; 0.5 and 2 s fail. The original controller and its 11 cases are unchanged; this is a synthetic mechanical-per-unit-mass ledger, not electrical supply accounting or a continuous stability boundary. PR157 passed full and focused CI and is integrated.",
+      "next_action": "Implement a separately declared combined measurement-delay and force-response comparison with independent zero-limit, refinement and mechanical-work controls; stochastic noise, broader convergence and Q-ball period work remain open.",
       "blockers_or_limits": [
         "Broader convergence and Q-ball period protocol remain unresolved; recovered W2 manifest linkage does not independently authenticate execution chronology or establish physical calibration."
       ],
@@ -210,6 +243,13 @@
           "fields": {
             "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. W2 historical manifest now links original output to published model/reporter hashes; the inventory artifact has exactly equal parsed JSON across all 11 cases. Exact execution chronology remains unauthenticated. See docs/recovery/wave-source-provenance.json; no simulations were rerun for this provenance recovery. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI.",
             "next_action": "Define one bounded stochastic-noise/actuator-bandwidth or wavelength/mode comparison with controls and acceptance criteria, retaining the recovered W2 manifest linkage and existing cases."
+          }
+        },
+        {
+          "label": "Before accepted integration freshness correction",
+          "fields": {
+            "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. W2 historical manifest now links original output to published model/reporter hashes; the inventory artifact has exactly equal parsed JSON across all 11 cases. Exact execution chronology remains unauthenticated. See docs/recovery/wave-source-provenance.json; no simulations were rerun for this provenance recovery. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI. An additive ideal-measurement actuator-bandwidth comparison now measures finite force response at 0, 0.1, 0.5 and 2 seconds over 20 revolutions, with refined timesteps and the unchanged final-five-period 0.05 m RMS criterion. Sampled 0.1 s passes; 0.5 and 2 s fail. The original controller and its 11 cases are unchanged; this is a synthetic mechanical-per-unit-mass ledger, not electrical supply accounting or a continuous stability boundary.",
+            "next_action": "Review the bounded actuator-bandwidth report, then select a separately declared stochastic-noise or combined-limit comparison with independent controls; broader convergence and Q-ball period work remain open."
           }
         }
       ]
@@ -370,8 +410,8 @@
       "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3–10. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "PR #149 is merged into recovery. Desktop computed-state replay, local-frame 3D rotation, sample playback, module selection, units, provenance and separate energy ledgers are implemented; visible desktop controls and 11 serial tests passed. Focused and integrated CI passed at 78e413f. Global attachment frames, mechanical-energy display, image correspondence and physical headset validation remain open. The viewer continuation now exports and displays existing per-module mechanical_j without recalculation or transfer double counting; source equality, independent energy evaluation, legacy absence and visible module/sample changes are checked. This uses the existing point-inertia powered model; no distributed-inertia upgrade or complete balance certificate is implied.",
-      "next_action": "Review and integrate the mechanical-energy display, then resolve physical assembly attachment frames and image correspondence and validate on a physical headset. Retain desktop replay and separate energy ownership.",
+      "latest_result": "PR #149 is merged into recovery. Desktop computed-state replay, local-frame 3D rotation, sample playback, module selection, units, provenance and separate energy ledgers are implemented; visible desktop controls and 11 serial tests passed. Focused and integrated CI passed at 78e413f. Global attachment frames, image correspondence and physical headset validation remain open. The viewer continuation now exports and displays existing per-module mechanical_j without recalculation or transfer double counting; source equality, independent energy evaluation, legacy absence and visible module/sample changes are checked. This uses the existing point-inertia powered model; no distributed-inertia upgrade or complete balance certificate is implied. PR156 mechanical-energy display passed full and focused CI and is integrated.",
+      "next_action": "Resolve physical assembly attachment frames and image correspondence and validate on a physical headset. Retain the integrated mechanical-energy display, desktop replay and separate energy ownership.",
       "blockers_or_limits": [
         "Global physical attachment frames, image correspondence and headset validation remain open. Displayed energy values alone do not certify a complete balance; physical calibration remains absent."
       ],
@@ -405,6 +445,13 @@
             "blockers_or_limits": [
               "No global physical attachment frame or full mechanical-energy display; image correspondence and physical headset verification remain unvalidated."
             ]
+          }
+        },
+        {
+          "label": "Before accepted integration freshness correction",
+          "fields": {
+            "latest_result": "PR #149 is merged into recovery. Desktop computed-state replay, local-frame 3D rotation, sample playback, module selection, units, provenance and separate energy ledgers are implemented; visible desktop controls and 11 serial tests passed. Focused and integrated CI passed at 78e413f. Global attachment frames, mechanical-energy display, image correspondence and physical headset validation remain open. The viewer continuation now exports and displays existing per-module mechanical_j without recalculation or transfer double counting; source equality, independent energy evaluation, legacy absence and visible module/sample changes are checked. This uses the existing point-inertia powered model; no distributed-inertia upgrade or complete balance certificate is implied.",
+            "next_action": "Review and integrate the mechanical-energy display, then resolve physical assembly attachment frames and image correspondence and validate on a physical headset. Retain desktop replay and separate energy ownership."
           }
         }
       ]
@@ -512,11 +559,23 @@
       "status": "queued_for_scope_review",
       "context": "Update the 20-record claim catalog with later evidence, retain edition distinctions, collate printed chart targets and authenticated course lessons, inspect the five pending page images, and track recordings/art coverage. Seek drawings, dimensions, wiring, loads, traces, gas controls and energy boundaries for apparatus proposals.",
       "completion": "Source-linked findings; explicit blockers where primary records are unavailable.",
-      "next_action": "Reconcile the 20-record Russell catalog and inspect the five pending page images with edition/source attribution.",
+      "next_action": "Collate remaining original chart/page images and edition witnesses; retain the completed WR008 reading and limited course recovery rather than repeating them as absent. Recover authenticated apparatus drawings, dimensions, wiring and measurements.",
       "blockers_or_limits": [
-        "Authenticated source and apparatus records remain incomplete."
+        "Only one saved chart was re-inspected. The five pending page images, original181/183, full edition/course collation and apparatus evidence remain open."
       ],
-      "review_phase": "scope_review_only"
+      "review_phase": "scope_review_only",
+      "latest_result": "Bounded reconciliation preserves all20 catalog IDs and original quantities/units. RCL005 adds the saved WR008 visual reading (ten octaves, ellipsoid note, no frequency calibration); RCL018 links the prior limited course-text witness without claiming fresh PDF inspection or edition authentication. Eighteen records are unchanged. See russell-claim-catalog-reconciled.json.",
+      "previous_result_snapshots": [
+        {
+          "label": "Before bounded source and normalization reconciliation",
+          "fields": {
+            "next_action": "Reconcile the 20-record Russell catalog and inspect the five pending page images with edition/source attribution.",
+            "blockers_or_limits": [
+              "Authenticated source and apparatus records remain incomplete."
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "R08",
@@ -596,11 +655,23 @@
       "status": "queued_for_scope_review",
       "context": "Dimensionless dynamics, conditional scale laws and nested polarity controls exist.",
       "completion": "Independently justify length, time, energy and charge scales, scale-transfer normalization, a physical layer/amplitude definition, and mapping phase rate to measured clocks. Separate practical calibration from a claim of fundamental derivation.",
-      "next_action": "Specify independent length/time/energy/charge normalization and phase-to-clock mapping requirements.",
+      "next_action": "Choose one justified subsystem pair and record independent length/time/energy/charge scales, source, uncertainty and validity range before cross-system conversion. Preserve synthetic, measured and unavailable statuses separately.",
       "blockers_or_limits": [
-        "No independently justified physical scale calibration supplied."
+        "Dimensional consistency is not calibration. Missing base scales and absolute reference values prevent physical cross-system conversion; no physical constants are selected by this audit."
       ],
-      "review_phase": "scope_review_only"
+      "review_phase": "scope_review_only",
+      "latest_result": "Six existing unit contracts are mapped with source hashes in physical-normalization-audit.json. Material and LC SI quantities are supplied inputs; canonical ticks and Q-ball model units have no shared measured calibration. Timing energy remains unknown. The audit includes explicitly identified unmerged Q-ball export evidence.",
+      "previous_result_snapshots": [
+        {
+          "label": "Before bounded source and normalization reconciliation",
+          "fields": {
+            "next_action": "Specify independent length/time/energy/charge normalization and phase-to-clock mapping requirements.",
+            "blockers_or_limits": [
+              "No independently justified physical scale calibration supplied."
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "R15",
@@ -618,9 +689,9 @@
       "id": "R16",
       "title": "Matter and particle interpretation",
       "status": "queued_for_scope_review",
-      "context": "Classical matter/gauge dynamics and finite Q-ball existence/persistence diagnostics exist. The saved t<=2.5 peak extrema already reject a consistent dominant breathing period: retained intervals 1.375 and 0.675 have relative spread about 0.683, above the unchanged 0.15 diagnostic limit. The mean 1.025 is not a physical period. Only one radius maximum is recorded.",
+      "context": "Classical matter/gauge dynamics and finite Q-ball existence/persistence diagnostics exist. The saved t<=2.5 peak extrema already reject a consistent dominant breathing period: retained intervals 1.375 and 0.675 have relative spread about 0.683, above the unchanged 0.15 diagnostic limit. The mean 1.025 is not a physical period. Only one radius maximum is recorded. PR159 is integrated. Production artifact11257640114 from run37075947953 preserves 101 finite samples per channel; all288 source hashes match CI merge91df9d1b4fe0df88f5b4fcaee5ae549c871dd56d. Applying the unchanged classifier to these full samples confirms inconsistent period candidates for both channels; no additional evolution was run.",
       "completion": "Establish stability and excitation observables beyond finite-time boundedness; assess independently constrained mass/charge identification. Recover unresolved stability/continuum questions from each subsystem rather than equating a Q-ball with an observed particle.",
-      "next_action": "Preserve complete direct/perturbed sampled observables and provenance during the existing evolution; then obtain additional repeated peak and radius extrema plus temporal/sampling/spatial convergence before assigning a period. Keep stability/excitation and particle identification separate from finite-time boundedness.",
+      "next_action": "Use the now-preserved direct/perturbed samples and provenance for further diagnostics; obtain additional repeated peak and radius extrema plus temporal/sampling/spatial convergence before assigning a period. Keep stability/excitation and particle identification separate from finite-time boundedness.",
       "blockers_or_limits": [
         "The preserved extrema do not establish a stable period. Complete sample export supports inspection but is not a restart checkpoint or complex-field phase measurement. Longer-window convergence, stability and independent particle identification remain open."
       ],
@@ -634,6 +705,13 @@
             "blockers_or_limits": [
               "Independent particle identification and continuum/stability evidence remain open."
             ]
+          }
+        },
+        {
+          "label": "Before production Q-ball sample artifact audit",
+          "fields": {
+            "context": "Classical matter/gauge dynamics and finite Q-ball existence/persistence diagnostics exist. The saved t<=2.5 peak extrema already reject a consistent dominant breathing period: retained intervals 1.375 and 0.675 have relative spread about 0.683, above the unchanged 0.15 diagnostic limit. The mean 1.025 is not a physical period. Only one radius maximum is recorded.",
+            "next_action": "Preserve complete direct/perturbed sampled observables and provenance during the existing evolution; then obtain additional repeated peak and radius extrema plus temporal/sampling/spatial convergence before assigning a period. Keep stability/excitation and particle identification separate from finite-time boundedness."
           }
         }
       ]
