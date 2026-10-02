@@ -62,8 +62,8 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "PRs #119/#120/#121/#123/#124 and #152 are merged into recovery. Their exact-head full and focused checks passed; combined local geometry/boundary and wave/timing controls passed 109 and 105 tests. Recovery 851693c final integration CI 37067766522 is pending; PR #122 remains open against main.",
-      "next_action": "Assess final recovery 851693c verification and review recovery-to-main integration; continue broader candidate/census work without reopening merged experiment drafts.",
+      "latest_result": "PRs #119/#120/#121/#123/#124 and #152 are merged into recovery. Their exact-head full and focused checks passed; combined local geometry/boundary and wave/timing controls passed 109 and 105 tests. Recovery 851693c final integration CI 37067766522 is pending; PR #122 remains open against main. Accepted PR153-156,158,117 and118 are integrated in recovery48432f71. Earlier recovery664e5fc passed all28 reported workflows; current-head verification remains separate. PR157,159,160 and161 are reviewed proposals awaiting their exact-head verification and serial disposition.",
+      "next_action": "Assess exact current recovery CI and reviewed pending proposals, then perform the bounded recovery-to-main integration review. Preserve open scientific limitations and continue the wider census without reopening merged experiments.",
       "blockers_or_limits": [
         "Green listed CI is not completed scientific review, combined compatibility, or merge authorization."
       ],
@@ -89,6 +89,13 @@
             "latest_result": "PRs #143-151 are merged into recovery, not main; #129 is closed as superseded. Integrated head 78e413f passed all 22 reported workflows and complete 3044-ID verification. PR123 is undergoing separate exact-head validation. PR119/120/121/124 remain open drafts; their 77 published added files are absent from this tracked recovery baseline, despite historical local-checkout presence notes.",
             "next_action": "Review remaining drafts #119-124, retaining fresh combined CI and source-level compatibility evidence."
           }
+        },
+        {
+          "label": "Before current integration checkpoint refresh",
+          "fields": {
+            "latest_result": "PRs #119/#120/#121/#123/#124 and #152 are merged into recovery. Their exact-head full and focused checks passed; combined local geometry/boundary and wave/timing controls passed 109 and 105 tests. Recovery 851693c final integration CI 37067766522 is pending; PR #122 remains open against main.",
+            "next_action": "Assess final recovery 851693c verification and review recovery-to-main integration; continue broader candidate/census work without reopening merged experiment drafts."
+          }
         }
       ]
     },
@@ -100,9 +107,9 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "The optional coupled-LC repository package now passes 105 tests, lint and report reproduction. Every original numerical report field is preserved; scalar/state invalid inputs and unrepresentable derived quantities reject explicitly. The source, independent tests, reproducible report and CI workflow are prepared for publication. Physical calibration and reciprocal piezoelectric attachment remain open.",
+      "latest_result": "The optional coupled-LC repository package now passes 105 tests, lint and report reproduction. Every original numerical report field is preserved; scalar/state invalid inputs and unrepresentable derived quantities reject explicitly. The source, independent tests, reproducible report and CI workflow are prepared for publication. Physical calibration and reciprocal piezoelectric attachment remain open. The optional LC reference is already integrated. The preserved paired-helix clock adapter is published in PR160 with28 reproduced grouped controls and independent review; its full remote verification remains pending.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
-      "next_action": "Review the published coupled-LC package and exact-head CI; then select the next preserved candidate. Keep physical calibration and coupling work separate.",
+      "next_action": "Finish review and integration disposition of the published paired-helix adapter; then select the next preserved candidate by source, inputs and independent controls. Do not repeat the completed LC promotion.",
       "blockers_or_limits": [
         "Candidate-specific geometry, parameters and source evidence must be identified before promotion."
       ],
@@ -120,6 +127,13 @@
           "fields": {
             "latest_result": "Preserved coupled-LC source and report hashes match the filesystem inventory. Fresh four-case and 13 recorded invalid-input controls passed in a copied workspace, but additional public-API probes found complex/nonfinite/bool state and complex scalar validation gaps. Original scratch is preserved; this reference is not yet promoted.",
             "next_action": "Harden and independently test the preserved coupled-LC public API before publication, retaining the valid passive-model controls and original hashes; physical calibration and piezoelectric coupling remain separate."
+          }
+        },
+        {
+          "label": "Before current integration checkpoint refresh",
+          "fields": {
+            "latest_result": "The optional coupled-LC repository package now passes 105 tests, lint and report reproduction. Every original numerical report field is preserved; scalar/state invalid inputs and unrepresentable derived quantities reject explicitly. The source, independent tests, reproducible report and CI workflow are prepared for publication. Physical calibration and reciprocal piezoelectric attachment remain open.",
+            "next_action": "Review the published coupled-LC package and exact-head CI; then select the next preserved candidate. Keep physical calibration and coupling work separate."
           }
         }
       ]

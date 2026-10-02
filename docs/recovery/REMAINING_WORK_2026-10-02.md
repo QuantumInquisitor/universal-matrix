@@ -2,7 +2,23 @@
 
 The master register retains **41 IDs**: 12 main workstreams, 24 research/source scope-review entries and five recovery records. These are not 41 active or wholly unimplemented experiments. Original scopes and dependencies are preserved; current statuses reflect bounded progress without closing whole workstreams.
 
-## Current checkpoint after published-draft integration
+## Current integration checkpoint
+
+Recovery `48432f71a6bfae99da2bdd017dc5c4e59582688f` includes accepted
+PR153-156,158,117 and118 in addition to the earlier recovered experiments.
+The LC reference, mechanical-energy viewer and conditional timing delivery
+comparison are integrated; they are not missing implementations. Previous
+recovery `664e5fc` passed all28 reported workflows. Current-head integration
+verification remains a separate gate; PR122 is still draft against main.
+
+PR157 (actuator bandwidth), PR159 (Q-ball scalar sample export), PR160
+(paired-helix clock adapter) and PR161 (these source/unit audit records) remain
+reviewed proposals pending exact-head CI and serial integration. Their local
+combined review preserves all41 original task contracts. Completing every
+physical or research workstream is not a prerequisite for bounded experimental
+integration; those limitations remain explicit in the rows below.
+
+## Earlier checkpoint after published-draft integration (superseded)
 
 PRs #119, #120, #121, #123, #124 and #152 are merged into recovery at
 `851693c40bb59a67c03bce4bad5411df6ca980ca`. Each candidate passed its full CI;
@@ -74,8 +90,8 @@ The timestamped [PR/CI evidence](register-reconciliation-2026-10-02.json) covers
 | ID | Workstream | Next action | Remaining limit |
 |---|---|---|---|
 | P01 | Recover surviving work from disk and Git before finalizing the task register. | Continue the broader location/work-family census and published-draft integration; use the completed 84-record inventory as evidence rather than repeating its reviewed comparisons. | The bounded 84-record inventory is dispositioned; broader location/work-family census and candidate provenance remain incomplete. |
-| P02 | Finish review and integration disposition of the published drafts. | Assess final recovery851693c verification and review recovery-to-main integration; continue broader candidate/census work without reopening merged experiment drafts. | Green listed CI is not completed scientific review, combined compatibility, or merge authorization. |
-| P03 | Promote the remaining validated local candidates in small groups. | Validate and review the optional coupled-LC repository package, retaining original report/source provenance and numerical-range limits; then select the next preserved candidate. | Candidate-specific geometry, parameters and source evidence must be identified before promotion. |
+| P02 | Finish review and integration disposition of the published drafts. | Assess exact current recovery CI and reviewed pending proposals, then perform the bounded recovery-to-main integration review. Preserve open scientific limitations and continue the wider census without reopening merged experiments. | Green listed CI is not completed scientific review, combined compatibility, or merge authorization. |
+| P03 | Promote the remaining validated local candidates in small groups. | Finish review and integration disposition of the published paired-helix adapter; then select the next preserved candidate by source, inputs and independent controls. Do not repeat the completed LC promotion. | Candidate-specific geometry, parameters and source evidence must be identified before promotion. |
 | P04 | Close the whole-assembly geometry and motion questions. | Specify the missing material-point/deformation correspondence between the 22-body specimen and 69-domain flow assembly; separate that from physical joint and finite-thickness work. | No validated relative-fold map between these assemblies; source-midsurface clearance does not supply thickness or joint geometry. |
 | P05 | Finish the wave and control experiments already started. | Define a bounded stochastic-noise/actuator-bandwidth or wavelength/mode comparison; preserve the recovered W2 manifest linkage and existing cases. | W2 manifest links original data/source hashes and equal parsed content; chronology remains unauthenticated. Broader convergence and Q-ball period protocol remain unresolved. |
 | P06 | Decide whether crystal components provide a useful engine capability. | Review the conditional acquisition/delivery contract; supply an independently justified physical acquisition/readout backend, loading and energy costs before claiming timing usefulness. Preserve existing signal and scheduling evidence; spatial claims still require coordinates. | No practical advantage established. Acquisition assumptions are asymmetric and explicitly conditional; hardware readout/backaction, energy, loading and absolute time remain uncalibrated. |
