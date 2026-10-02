@@ -1,0 +1,87 @@
+{
+  "source_sha256": "57203358215a7e4784e870df9acb1a14ccb8b319522bbda582fb52cd531b7df7",
+  "seed": 20260930,
+  "scope": "Finite dimensionless graph controls, not continuum or material validation",
+  "numerical_cases": [
+    {
+      "shape": [
+        2,
+        3,
+        4
+      ],
+      "potential_error": 4.440892098500626e-16,
+      "direct_solve_error": 3.788636071533347e-15,
+      "independent_gauss_residual": 1.7763568394002505e-15,
+      "energy_identity_error": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "shape": [
+        3,
+        4,
+        5
+      ],
+      "potential_error": 3.364974965336387e-12,
+      "direct_solve_error": 3.3681946121078e-12,
+      "independent_gauss_residual": 1.7687185049908294e-11,
+      "energy_identity_error": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "shape": [
+        4,
+        4,
+        4
+      ],
+      "potential_error": 8.881784197001252e-16,
+      "direct_solve_error": 9.603429163007604e-15,
+      "independent_gauss_residual": 5.329070518200751e-15,
+      "energy_identity_error": 0.0,
+      "passed": true
+    }
+  ],
+  "invalid_input_cases": [
+    {
+      "case": "nan_tolerance",
+      "rejected_at_input": false,
+      "exception": "RuntimeError",
+      "warnings": []
+    },
+    {
+      "case": "infinite_tolerance",
+      "rejected_at_input": false,
+      "exception": null,
+      "warnings": []
+    },
+    {
+      "case": "fractional_iteration_limit",
+      "rejected_at_input": false,
+      "exception": null,
+      "warnings": []
+    },
+    {
+      "case": "boolean_iteration_limit",
+      "rejected_at_input": false,
+      "exception": null,
+      "warnings": []
+    },
+    {
+      "case": "complex_source",
+      "rejected_at_input": false,
+      "exception": null,
+      "warnings": [
+        "Casting complex values to real discards the imaginary part"
+      ]
+    },
+    {
+      "case": "complex_face",
+      "rejected_at_input": false,
+      "exception": null,
+      "warnings": [
+        "Casting complex values to real discards the imaginary part"
+      ]
+    }
+  ],
+  "numerical_pass": true,
+  "input_rejection_pass": false
+}
