@@ -166,3 +166,31 @@ Current finite-grid bracket:
 This does not make 19.7444749617 a physical threshold. It is only the first free point on the coarse exact scan. The next gate is refinement inside this bracket with the same exact primitive-distance kernel and state coverage.
 
 The previous cross-generation bounding-sphere result is no longer used as the physical collision answer. It remains only an outer sufficient bound/pruning device.
+
+
+## Checkpoint addendum — refined exact recursive clearance
+
+PR #141 merged successfully.
+
+- Merge commit: `12eb201d094ddf24dc7a9c13f8bda1c003ed29dd`
+- Coarse bracket: `10.9691527565 < boundary <= 19.7444749617`
+- Refined finite-grid bracket: `14.9454706307 < boundary <= 14.9797492331`
+- Final width: `0.0342786023640258`
+- Width reduction: 256x
+- No sampled re-entrant collision or multiple transition across the four refinement stages
+
+Governing case on both sides:
+
+- root path `[]`
+- depth-3 path `[0,1,1]`
+- body pair: `panel-0` versus `panel-5`
+- root q: `(1.1,0)`
+- depth-3 q: `(1.1,0)`
+
+At the lower endpoint the panels intersect. At the upper collision-free endpoint the minimum exact zero-thickness clearance is `0.0001959401796354232 m` (about 0.196 mm).
+
+Current next gate:
+
+Densify the governing root/depth-3 state neighborhood near the declared q-domain corner `scale=1.1, theta=0` while sampling vessel ratios inside the refined bracket. Determine whether the worst case is exactly the corner or a nearby interior state before introducing body thickness or manufacturing margin.
+
+This remains a finite-grid zero-thickness geometry result, not a continuous collision theorem or a physical manufacturing tolerance.
