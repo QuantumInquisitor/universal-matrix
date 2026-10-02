@@ -5,14 +5,10 @@ import hashlib
 import json
 from pathlib import Path
 
-from .report_fold_recursive_exact_clearance import (
-    RECIPROCAL_RING_PAIRS,
-    candidate_nodes,
-    footprint_requirements,
-    local_geometry_cache,
-    pair_clearance_requirement,
-    scan_ratio,
-)
+try:
+    from . import report_fold_recursive_exact_clearance as exact_clearance
+except ImportError:
+    import report_fold_recursive_exact_clearance as exact_clearance
 
 
 SUBDIVISIONS = 4
@@ -46,21 +42,21 @@ def classify_mask(mask):
 
 
 def report():
-    footprint = footprint_requirements()
-    canonical_pair = RECIPROCAL_RING_PAIRS[0]
-    _, nodes = candidate_nodes(canonical_pair)
-    geometry_cache = local_geometry_cache(nodes)
+    footprint = exact_clearance.footprint_requirements()
+    canonical_pair = exact_clearance.RECIPROCAL_RING_PAIRS[0]
+    _, nodes = exact_clearance.candidate_nodes(canonical_pair)
+    geometry_cache = exact_clearance.local_geometry_cache(nodes)
 
     local_ratio = footprint["minimum_spherical_bound_per_module_length"]
     lower = local_ratio * 5.0
-    upper, _ = pair_clearance_requirement(nodes, local_ratio)
+    upper, _ = exact_clearance.pair_clearance_requirement(nodes, local_ratio)
 
     scan_cache = {}
 
     def scan(value):
         key = float(value)
         if key not in scan_cache:
-            scan_cache[key] = scan_ratio(geometry_cache, key)
+            scan_cache[key] = exact_clearance.scan_ratio(geometry_cache, key)
         return scan_cache[key]
 
     lower_row, upper_row = scan(lower), scan(upper)
