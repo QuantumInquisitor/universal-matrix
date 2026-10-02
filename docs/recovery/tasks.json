@@ -160,10 +160,10 @@
       "scope_and_completion": "Reuse PR120 nonlinear and two-mode wave controls, including seed, detuning, refinement, long duration and pump-off results. Third/fifth harmonic generation is now separately tested; broader wavelengths, phase/sine degrees, boundary conditions and mode-count/time/noise ensembles remain. Seed-independent orientation selection was not established. Reuse the eleven published W2 robustness cases: saturation, delays, refined delayed failure, deterministic measurement disturbance and stiffness mismatch. Expand stochastic noise, actuator bandwidth and operating/failure envelopes, then compare redesigns against those same cases. Resolve the saved Q-ball period question with an explicit observable and convergence protocol; leave unresolved if data do not identify a period. **Done when:** each question has a reproducible result and operating/failure range. W3 quantum bath/noise remains separate.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. Existing W2 artifact already has saturation/delay/disturbance/mismatch cases, but lacks source hash; do not repeat as never-run work. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI.",
-      "next_action": "Reconcile W2 artifact provenance, then define one bounded stochastic-noise/actuator-bandwidth or wavelength/mode comparison with controls and acceptance criteria.",
+      "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. W2 historical manifest now links original output to published model/reporter hashes; the inventory artifact has exactly equal parsed JSON across all 11 cases. Exact execution chronology remains unauthenticated. See docs/recovery/wave-source-provenance.json; no simulations were rerun for this provenance recovery. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI.",
+      "next_action": "Define one bounded stochastic-noise/actuator-bandwidth or wavelength/mode comparison with controls and acceptance criteria, retaining the recovered W2 manifest linkage and existing cases.",
       "blockers_or_limits": [
-        "W2 legacy artifact lacks source hashes; broader convergence and Q-ball period protocol remain unresolved."
+        "Broader convergence and Q-ball period protocol remain unresolved; recovered W2 manifest linkage does not independently authenticate execution chronology or establish physical calibration."
       ],
       "review_phase": "bounded_progress_with_remaining_scope",
       "previous_result_snapshots": [
@@ -171,6 +171,16 @@
           "label": "Before final experiment-draft integration and LC publication",
           "fields": {
             "latest_result": "Recovered W1 published sources in PR120; recorded source hashes reconcile with newline conventions. Existing W2 artifact already has saturation/delay/disturbance/mismatch cases, but lacks source hash; do not repeat as never-run work. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json."
+          }
+        },
+        {
+          "label": "Before W2 historical manifest recovery",
+          "fields": {
+            "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. Existing W2 artifact already has saturation/delay/disturbance/mismatch cases, but lacks source hash; do not repeat as never-run work. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI.",
+            "next_action": "Reconcile W2 artifact provenance, then define one bounded stochastic-noise/actuator-bandwidth or wavelength/mode comparison with controls and acceptance criteria.",
+            "blockers_or_limits": [
+              "W2 legacy artifact lacks source hashes; broader convergence and Q-ball period protocol remain unresolved."
+            ]
           }
         }
       ]

@@ -2,7 +2,7 @@
   "schema": 1,
   "published_pr": "https://github.com/QuantumInquisitor/universal-matrix/pull/120",
   "published_head": "615cee59c51df77406555ac56d40e8a1f1e73ec8",
-  "scope": "Read-only recovery; sources are published separately and absent from current tracked checkout. No legacy simulations rerun.",
+  "scope": "Provenance reconciliation of published and now integrated wave controls. Historical snapshots are preserved; this audit does not rerun simulations.",
   "w1": {
     "artifact": "artifacts/waves/multimode-wave-control.json",
     "normalized_artifact_sha256": "6bd193e98f7c3967314538c7bad2608c5519b9ee4b0c9d1993fe3726d0e6ec62",
@@ -47,6 +47,60 @@
       "stiffness_1.05",
       "combined"
     ],
-    "limitation": "Case labels and settings match the published reporter, but the saved artifact has no source hash; exact generation provenance is not established."
-  }
+    "limitation": "Recovered historical manifest links original data and published source hashes; the inventory artifact has exactly equal parsed content. Neither data artifact embeds source hashes, and exact execution chronology is not independently authenticated. This recovery does not establish broader controller stability or physical calibration.",
+    "previous_limitation": "Case labels and settings match the published reporter, but the saved artifact has no source hash; exact generation provenance is not established.",
+    "recovered_evidence": {
+      "date": "2026-10-02",
+      "kind": "historical manifest linkage and exact parsed-data correspondence",
+      "manifest_evidence_copy": "docs/recovery/evidence/wave-investigation-manifest.json",
+      "manifest_local_origin": "outputs/wave-investigation-manifest.json (project workspace, not repository)",
+      "manifest_raw_sha256": "2758d2c541ae53a4dcd163b86e80b5a20823a43f000fb8589cf496468b407b9e",
+      "historically_recorded_original_data_sha256": "e3188e4c7a4cd892209128563ffc819d3cae70d7a7a3f2fab6b8f0e9aea2670d",
+      "new_verification": {
+        "artifacts": [
+          {
+            "local_path": "outputs/mode-pair-robustness.json",
+            "raw_sha256": "e3188e4c7a4cd892209128563ffc819d3cae70d7a7a3f2fab6b8f0e9aea2670d",
+            "lf_normalized_sha256": "2423373f7552ab99cbab383075b0ee3ff88be056c9bdd5050b08f1b7896d6e2b"
+          },
+          {
+            "local_path": "work/universal-matrix-current/artifacts/waves/mode-pair-robustness.json",
+            "raw_sha256": "1180d5d8270b9eff1296a082f5ae82c99d8cb56786aa631c355bbe1631adda25",
+            "lf_normalized_sha256": "e24a17cfc0550c95071eda141dcd81e88413f2cada4f23bc8a111f746217ded5"
+          },
+          {
+            "local_path": "work/parallel-pr120-review/artifacts/waves/mode-pair-robustness.json",
+            "raw_sha256": "1180d5d8270b9eff1296a082f5ae82c99d8cb56786aa631c355bbe1631adda25",
+            "lf_normalized_sha256": "e24a17cfc0550c95071eda141dcd81e88413f2cada4f23bc8a111f746217ded5"
+          }
+        ],
+        "local_path_base": "Matrix Engine project workspace; not repository-relative",
+        "all_parsed_json_equal": true,
+        "canonical_json_sha256": "ee4497f4430aaa567415c5ae6665a5b6e5f4fbdea0fe1cf20e9f419888b263de",
+        "canonical_serialization": "UTF-8 json.dumps(sort_keys=True,separators=(comma,colon),ensure_ascii=False,allow_nan=False), no trailing newline",
+        "source_checks": [
+          {
+            "path": "src/proposed_mode_pair_control.py",
+            "historically_recorded_sha256": "e6c55142097168eb4ad2ca31c70772eed840ef79213b78aab9544c69ead5a5e9",
+            "verified_git_blob_sha256": "e6c55142097168eb4ad2ca31c70772eed840ef79213b78aab9544c69ead5a5e9",
+            "git_commit": "615cee59c51df77406555ac56d40e8a1f1e73ec8",
+            "current_normalized_text_matches": true
+          },
+          {
+            "path": "scripts/report_mode_pair_robustness.py",
+            "historically_recorded_sha256": "63b606ad5018a12ccac38c6b1443bfcd207793c0c9f9470f4a9ec273fdd5fa43",
+            "verified_git_blob_sha256": "63b606ad5018a12ccac38c6b1443bfcd207793c0c9f9470f4a9ec273fdd5fa43",
+            "git_commit": "615cee59c51df77406555ac56d40e8a1f1e73ec8",
+            "current_normalized_text_matches": true
+          }
+        ]
+      },
+      "limits": [
+        "Historical manifest is recovered evidence, not an independently authenticated execution trace.",
+        "Original data bytes and inventory data bytes differ in serialization; equality is parsed JSON equality.",
+        "No numerical rerun performed for this audit."
+      ]
+    }
+  },
+  "previous_scope": "Read-only recovery; sources are published separately and absent from current tracked checkout. No legacy simulations rerun."
 }
