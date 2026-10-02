@@ -575,13 +575,25 @@
       "id": "R16",
       "title": "Matter and particle interpretation",
       "status": "queued_for_scope_review",
-      "context": "Classical matter/gauge dynamics and finite Q-ball existence/persistence diagnostics exist.",
+      "context": "Classical matter/gauge dynamics and finite Q-ball existence/persistence diagnostics exist. The saved t<=2.5 peak extrema already reject a consistent dominant breathing period: retained intervals 1.375 and 0.675 have relative spread about 0.683, above the unchanged 0.15 diagnostic limit. The mean 1.025 is not a physical period. Only one radius maximum is recorded.",
       "completion": "Establish stability and excitation observables beyond finite-time boundedness; assess independently constrained mass/charge identification. Recover unresolved stability/continuum questions from each subsystem rather than equating a Q-ball with an observed particle.",
-      "next_action": "Define stability/excitation observables beyond finite-time boundedness for the existing matter/Q-ball models.",
+      "next_action": "Preserve complete direct/perturbed sampled observables and provenance during the existing evolution; then obtain additional repeated peak and radius extrema plus temporal/sampling/spatial convergence before assigning a period. Keep stability/excitation and particle identification separate from finite-time boundedness.",
       "blockers_or_limits": [
-        "Independent particle identification and continuum/stability evidence remain open."
+        "The preserved extrema do not establish a stable period. Complete sample export supports inspection but is not a restart checkpoint or complex-field phase measurement. Longer-window convergence, stability and independent particle identification remain open."
       ],
-      "review_phase": "scope_review_only"
+      "review_phase": "scope_review_only",
+      "previous_result_snapshots": [
+        {
+          "label": "Before saved Q-ball period disposition and sample-export work",
+          "fields": {
+            "context": "Classical matter/gauge dynamics and finite Q-ball existence/persistence diagnostics exist.",
+            "next_action": "Define stability/excitation observables beyond finite-time boundedness for the existing matter/Q-ball models.",
+            "blockers_or_limits": [
+              "Independent particle identification and continuum/stability evidence remain open."
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "R17",
