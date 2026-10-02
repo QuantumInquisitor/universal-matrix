@@ -230,8 +230,8 @@
       "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3–10. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Computed-state exporter and its tests exist on the recovery branch, with metre/local-frame geometry and explicit display normalization. Bounded restart and recursion checkpoints are available; those are no longer blanket reasons to defer direct viewer consumption. Actual integration, image correspondence and desktop/headset QA remain.",
-      "next_action": "Connect the existing computed-state export to the science viewer with local-frame replay, units, provenance and energy ledgers; label any placement display separately.",
+      "latest_result": "Direct desktop consumer implemented in docs/docs/material-viewer.html, linked from the historical viewer. Computed local-frame 3D rotation, original-sample playback, module selection, units, provenance and separate energy ledgers; visible browser controls checked. Physical headset and image correspondence remain unvalidated.",
+      "next_action": "Review the desktop replay; extend missing mechanical-energy display only through an explicit adapter change, then address image correspondence and physical headset validation.",
       "blockers_or_limits": [
         "No literal physical attachment frame; full image correspondence and visible desktop/headset verification still required."
       ],
@@ -240,6 +240,10 @@
         {
           "label": "Before 2026-10-02 reconciliation; may contain superseded next steps",
           "text": "The computed-state adapter is implemented and included in the green powered-material experimental gate at bb6b4aac. It preserves metre geometry, adds explicit display normalization, and does not invent global module placement."
+        },
+        {
+          "label": "Before direct desktop replay",
+          "text": "Computed-state exporter and its tests exist on the recovery branch, with metre/local-frame geometry and explicit display normalization. Bounded restart and recursion checkpoints are available; those are no longer blanket reasons to defer direct viewer consumption. Actual integration, image correspondence and desktop/headset QA remain."
         }
       ]
     },
