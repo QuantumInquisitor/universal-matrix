@@ -2,9 +2,13 @@
   "baseline": "05d12c31ebe41a4749318058e6faa4f710cc9c8c",
   "scope": "84 branch-file records from the existing 14-branch exception inventory; not a new repository-wide census",
   "counts": {
-    "different_requires_semantic_review": 42,
+    "preserved_in_published_pr_123": 2,
+    "reviewed_later_documentation": 3,
+    "reviewed_math_delimiters_only": 11,
+    "different_requires_semantic_review": 23,
     "identical_preserved": 38,
     "reviewed_extended": 1,
+    "reviewed_test_revision": 3,
     "documented_superseded_not_restored": 3
   },
   "rows": [
@@ -13,40 +17,50 @@
       "path": "src/open_boundary_solver.py",
       "archived_blob": "f78d5bdc35c05d5024fe2b99a7905937566b809b",
       "current_blob": "a56e6a90bdf4c562131031fc7172ee13dc5fe17d",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "disposition": "preserved_in_published_pr_123",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false,
+      "evidence": "Compared with b7add2892868d5e8150c3a4b148b3c3200642d57: original test blob retained exactly; source adds real/finite/integer input guards and formatting. Published implementation remains unmerged, with 41 combined controls passed in prior checkpoint."
     },
     {
       "branch": "codex/patterned-neumann-face-flux",
       "path": "tests/test_open_boundary_solver.py",
       "archived_blob": "a73281ba22640b14d166465b309bb872af1d8d13",
       "current_blob": "f488761faf107cb33ce15088a91d07ec463dc507",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "preserved_in_published_pr_123",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Compared with b7add2892868d5e8150c3a4b148b3c3200642d57: original test blob retained exactly; source adds real/finite/integer input guards and formatting. Published implementation remains unmerged, with 41 combined controls passed in prior checkpoint."
     },
     {
       "branch": "codex/readme-deployment-map-fix",
       "path": "README.md",
       "archived_blob": "de63e7edae64d9c35bf7aa6547f4e408a5d746d2",
       "current_blob": "1d236da1686886dcfdb08696ff8f82246cf9c89e",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_later_documentation",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Only difference is later spacing/frontier/bracket progress, links and narrowed sampled-clearance wording. Prior deployment/math content remains."
     },
     {
       "branch": "charged-matter-persistence-v0.1",
       "path": "docs/charged_matter_persistence_v0.1.md",
       "archived_blob": "b9009d256d211bf9fbbd0bf3b50dd78608345f2e",
       "current_blob": "a81e2f8ca88140d1e505ac3c26c698c49d32f1eb",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_math_delimiters_only",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Exact full-text equality after replacing LaTeX bracket/parenthesis delimiters with dollar delimiters; no other normalization."
     },
     {
       "branch": "charged-matter-persistence-v0.1",
       "path": "docs/matter_lattice_spacing_v0.1.md",
       "archived_blob": "dcceda817fe9865e5c14761171bef32078bf684e",
       "current_blob": "0c8fd7ac2d698118f67c6c34aa82d1173ccc70a0",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_math_delimiters_only",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Exact full-text equality after replacing LaTeX bracket/parenthesis delimiters with dollar delimiters; no other normalization."
     },
     {
       "branch": "charged-matter-persistence-v0.1",
@@ -54,7 +68,8 @@
       "archived_blob": "1440aef389ba7def02d58b882c36d4f98893a7b7",
       "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "charged-matter-persistence-v0.1",
@@ -103,8 +118,10 @@
       "path": "README.md",
       "archived_blob": "de63e7edae64d9c35bf7aa6547f4e408a5d746d2",
       "current_blob": "1d236da1686886dcfdb08696ff8f82246cf9c89e",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_later_documentation",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Only difference is later spacing/frontier/bracket progress, links and narrowed sampled-clearance wording. Prior deployment/math content remains."
     },
     {
       "branch": "codex/markdown-math-modernization-safe",
@@ -195,8 +212,10 @@
       "path": "docs/toroidal_bend_spacing_scan_v0.1.md",
       "archived_blob": "7e09d0f0af14c8678bb37b3b7a62a1cc32980854",
       "current_blob": "a563dcbc8d4c162faa382329838ca04235507b20",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_later_documentation",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Completed 25-point scan and finite-sampler limitations replace the earlier planned search; no continuous-clearance claim established."
     },
     {
       "branch": "codex/toroidal-bend-spacing-scan",
@@ -219,15 +238,18 @@
       "archived_blob": "4795bbbd974e27fe95bc95423137a7a7f79bf404",
       "current_blob": "5bfb27c3d4f8894bf9853ce35d8199c3f018cb79",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false
     },
     {
       "branch": "codex/reorganize-architecture",
       "path": "tests/test_documentation_governance.py",
       "archived_blob": "3460e723f6c51cac0d9242e323d4f0261b06228b",
       "current_blob": "f4cea840195cc13d7a5dd3cfa838a4f70425de07",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "disposition": "reviewed_test_revision",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false,
+      "evidence": "Named old heading-order checks replaced by sequential architecture numbering; work-queue authority, authority-list and white-paper sequencing checks added. Not identical test coverage."
     },
     {
       "branch": "local-transition-kernel-v0.1",
@@ -235,7 +257,8 @@
       "archived_blob": "18ae91aa75059be1cceea2eccc1532b1b309b93d",
       "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false
     },
     {
       "branch": "local-transition-kernel-v0.1",
@@ -243,7 +266,8 @@
       "archived_blob": "72f1e91e9fc40edb371b440a4099929f36bde2fb",
       "current_blob": "5bfb27c3d4f8894bf9853ce35d8199c3f018cb79",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false
     },
     {
       "branch": "local-transition-kernel-v0.1",
@@ -251,7 +275,8 @@
       "archived_blob": "a2d9fd20ebdc42533327dff92705962222c99f43",
       "current_blob": "775d1b0992c41426f7a0a5309180bd353d284188",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false
     },
     {
       "branch": "local-transition-kernel-v0.1",
@@ -267,7 +292,8 @@
       "archived_blob": "fdc666fcdff2faa95081af446add011f2b9b8e48",
       "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false
     },
     {
       "branch": "local-transition-kernel-v0.1",
@@ -291,15 +317,18 @@
       "archived_blob": "431b7245cd1f6a967ecb7bd2c3924f8ec1dd2731",
       "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "matter-amplitude-modes-v0.1",
       "path": "docs/matter_amplitude_modes_v0.1.md",
       "archived_blob": "9cd1df977a0e60db1d7407262a19ddfab725960c",
       "current_blob": "eaece18e62ec9c8ab18587ccb5889715386409ed",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_math_delimiters_only",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Exact full-text equality after replacing LaTeX bracket/parenthesis delimiters with dollar delimiters; no other normalization."
     },
     {
       "branch": "matter-amplitude-modes-v0.1",
@@ -307,15 +336,18 @@
       "archived_blob": "65de543b378aa51f229c066d69e450beb0ed9372",
       "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "matter-amplitude-modes-v0.1",
       "path": "docs/polarity_rotor_dispersion_v0.1.md",
       "archived_blob": "8e04428b7069cf19a88804f96fffb40ca3d19c80",
       "current_blob": "b29dd994d23f152b40dc15229a4ffd0de46a0739",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_math_delimiters_only",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Exact full-text equality after replacing LaTeX bracket/parenthesis delimiters with dollar delimiters; no other normalization."
     },
     {
       "branch": "matter-amplitude-modes-v0.1",
@@ -343,8 +375,10 @@
       "path": "tests/test_matter_amplitude_modes.py",
       "archived_blob": "d2b9031da75d5dfca24bbde0ea3efcd571e7fd5e",
       "current_blob": "f209763a0d204b5f9f238f90f0139d3369960392",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "disposition": "reviewed_test_revision",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false,
+      "evidence": "Broadcast profile before Boolean masking fixes dimensional mismatch; expected lattice dispersion and numerical thresholds unchanged."
     },
     {
       "branch": "markdown-math-normalization-v0.1",
@@ -352,7 +386,8 @@
       "archived_blob": "36047b15575450687557ff3ef2bfc31b2899d522",
       "current_blob": "86addca40718f81cfd6b33852425610ceb9a82ec",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false
     },
     {
       "branch": "markdown-math-normalization-v0.1",
@@ -360,7 +395,8 @@
       "archived_blob": "12f6c5ccda981f0b7f7a06561f3a8269a940447a",
       "current_blob": "1e68ec0eff2a743ee362f4c6079035e8ec22aa12",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false
     },
     {
       "branch": "markdown-math-normalization-v0.1",
@@ -368,7 +404,8 @@
       "archived_blob": "b915e420b9664125ed441ea0af24d84289135235",
       "current_blob": "24e56f626bc46c20bd5717cbb6deb44e4d4b6dab",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false
     },
     {
       "branch": "markdown-math-normalization-v0.1",
@@ -376,7 +413,8 @@
       "archived_blob": "4984f7b566e61786feb355c44c3a9a4863182efe",
       "current_blob": "e00f6339b73a0ce227ecd1a1e74eff28857fc42a",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false
     },
     {
       "branch": "markdown-math-normalization-v0.1",
@@ -384,7 +422,8 @@
       "archived_blob": "56ddf1c68b54ced89ab40c64fc393a33b3f63af0",
       "current_blob": "b9e26e40d167f23cc91f9342fac5416786ea2653",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false
     },
     {
       "branch": "markdown-math-normalization-v0.1",
@@ -392,7 +431,8 @@
       "archived_blob": "a615998e0e8ae10d34df0b6306c69ba2dfa5a15f",
       "current_blob": "bb8b243b7d7e72f6174bee9ed9c73bd436e3fc3b",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false
     },
     {
       "branch": "qball-existence-window-v0.1",
@@ -400,15 +440,18 @@
       "archived_blob": "a526819151eb3e1609d3ebe4796bf9476669c3b9",
       "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "qball-existence-window-v0.1",
       "path": "docs/matter_defect_structure_v0.1.md",
       "archived_blob": "15e30d63db39b8ba54c19d47bcb7cdeca8f3c6bc",
       "current_blob": "899a65e71568af93cd79517a7d876ebaae994052",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_math_delimiters_only",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Exact full-text equality after replacing LaTeX bracket/parenthesis delimiters with dollar delimiters; no other normalization."
     },
     {
       "branch": "qball-existence-window-v0.1",
@@ -416,15 +459,18 @@
       "archived_blob": "bec70dbf0747a98337e0cffc846e281715f10ede",
       "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "qball-existence-window-v0.1",
       "path": "docs/qball_existence_window_v0.1.md",
       "archived_blob": "8dc4533986aaf24930ae6280cd3eef192e50136d",
       "current_blob": "e432031da836d5a8d0fa1f57cb2ecf516061c6f6",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_math_delimiters_only",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Exact full-text equality after replacing LaTeX bracket/parenthesis delimiters with dollar delimiters; no other normalization."
     },
     {
       "branch": "qball-existence-window-v0.1",
@@ -460,23 +506,28 @@
       "archived_blob": "82020107fd4c72acc974be9eb1b610dbfb69534c",
       "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "matter-defect-structure-v0.1",
       "path": "docs/matter_amplitude_modes_v0.1.md",
       "archived_blob": "9cd1df977a0e60db1d7407262a19ddfab725960c",
       "current_blob": "eaece18e62ec9c8ab18587ccb5889715386409ed",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_math_delimiters_only",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Exact full-text equality after replacing LaTeX bracket/parenthesis delimiters with dollar delimiters; no other normalization."
     },
     {
       "branch": "matter-defect-structure-v0.1",
       "path": "docs/matter_defect_structure_v0.1.md",
       "archived_blob": "15e30d63db39b8ba54c19d47bcb7cdeca8f3c6bc",
       "current_blob": "899a65e71568af93cd79517a7d876ebaae994052",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_math_delimiters_only",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Exact full-text equality after replacing LaTeX bracket/parenthesis delimiters with dollar delimiters; no other normalization."
     },
     {
       "branch": "matter-defect-structure-v0.1",
@@ -484,7 +535,8 @@
       "archived_blob": "cf2a3e83a16428332065627811bacd99625649e9",
       "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "matter-defect-structure-v0.1",
@@ -520,7 +572,8 @@
       "archived_blob": "094a0068718b66396e7a4dc71207f921b00e188c",
       "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "qball-mapping-convergence-v0.1",
@@ -528,7 +581,8 @@
       "archived_blob": "97409b7471a37927f8ed36eb0101dae4de7af85f",
       "current_blob": "775d1b0992c41426f7a0a5309180bd353d284188",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "qball-mapping-convergence-v0.1",
@@ -536,7 +590,8 @@
       "archived_blob": "6e75f5b19584cf9bda760026d8c398f47735bea0",
       "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "qball-mapping-convergence-v0.1",
@@ -550,8 +605,10 @@
       "path": "docs/qball_threshold_persistence_scan_v0.1.md",
       "archived_blob": "cbc46db615181a0716ec7a76d44b7fc17a56bb21",
       "current_blob": "ee545e19646d27ae7b4dfc11c36b29319afa71a3",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_math_delimiters_only",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Exact full-text equality after replacing LaTeX bracket/parenthesis delimiters with dollar delimiters; no other normalization."
     },
     {
       "branch": "qball-mapping-convergence-v0.1",
@@ -587,7 +644,8 @@
       "archived_blob": "70c3258dbcf2671334fc8c96658feaa9384e618c",
       "current_blob": "647f11af8e25361ac49c31fa0aad960aa9357609",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "radial-matter-continuation-v0.1",
@@ -595,23 +653,28 @@
       "archived_blob": "45cfa3a47f0917c630e898866cf0427800dea6df",
       "current_blob": "4874538f814c8f2c532dfef0442e8da230cae4ca",
       "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true
     },
     {
       "branch": "radial-matter-continuation-v0.1",
       "path": "docs/qball_existence_window_v0.1.md",
       "archived_blob": "8dc4533986aaf24930ae6280cd3eef192e50136d",
       "current_blob": "e432031da836d5a8d0fa1f57cb2ecf516061c6f6",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_math_delimiters_only",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Exact full-text equality after replacing LaTeX bracket/parenthesis delimiters with dollar delimiters; no other normalization."
     },
     {
       "branch": "radial-matter-continuation-v0.1",
       "path": "docs/radial_matter_continuation_v0.1.md",
       "archived_blob": "37c8aeafa8b794c3170cc60018427ba4d69cbf3f",
       "current_blob": "d066778b5eb768dec82018e680f8b2bce4cd54bd",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": true
+      "disposition": "reviewed_math_delimiters_only",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": true,
+      "evidence": "Exact full-text equality after replacing LaTeX bracket/parenthesis delimiters with dollar delimiters; no other normalization."
     },
     {
       "branch": "radial-matter-continuation-v0.1",
@@ -639,9 +702,19 @@
       "path": "tests/test_radial_matter_continuation.py",
       "archived_blob": "e7dbf82b173085a3f848d9a51d49cd4d7bde81ff",
       "current_blob": "63f28e28badc98e3584fccc85be09f97cc398968",
-      "disposition": "different_requires_semantic_review",
-      "archived_object_available_locally": false
+      "disposition": "reviewed_test_revision",
+      "archived_object_available_locally": true,
+      "previous_archived_object_available_locally": false,
+      "evidence": "Shared six-amplitude fixture avoids repeated integrations; invalid strict zip removed for shifted arrays. Virial check now follows the six-point continuation rather than the old four-point solve; not trajectory-identical."
     }
   ],
-  "important_correction": "Published PR123 remains separate: its optional face-array solver is not present on the tracked recovery head. Earlier checkout-presence notes did not establish integration."
+  "important_correction": "Published PR123 remains separate: its optional face-array solver is not present on the tracked recovery head. Earlier checkout-presence notes did not establish integration.",
+  "previous_counts_before_historical_fetch": {
+    "different_requires_semantic_review": 42,
+    "identical_preserved": 38,
+    "reviewed_extended": 1,
+    "documented_superseded_not_restored": 3
+  },
+  "fetch_correction": "Default refspec fetched only main. Explicit refs/heads/* fetch recovered all 15 previously unavailable archived blobs; no objects remain unavailable in this inventory.",
+  "validation": "27 current amplitude, radial-continuation and documentation-governance tests pass; scientific sources untouched."
 }

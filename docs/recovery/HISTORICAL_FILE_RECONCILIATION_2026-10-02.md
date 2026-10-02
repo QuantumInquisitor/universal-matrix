@@ -13,12 +13,27 @@ preserves each archived blob, current blob and disposition:
 | Exact blob match, preserved | 38 |
 | Reviewed later extension | 1 |
 | Absent in agreement with documented superseded kernel | 3 |
-| Still requires semantic review | 42 |
+| Math delimiters only, exact normalized text match | 11 |
+| Later documentation updates reviewed | 3 |
+| Test revisions reviewed | 3 |
+| Preserved in published PR #123, not integrated | 2 |
+| Still requires semantic review | 23 |
 
-These are branch/file records, not unique files or experiments. Of the 42
-unresolved records, 15 archived objects are unavailable in this checkout even
-after refreshing the recovery and published boundary-solver heads. A missing
-local object is not proof that the historical content is lost or superseded.
+These are branch/file records, not unique files or experiments. The first
+snapshot left 42 unresolved records and 15 unavailable archived blobs. The
+checkout's configured fetch covered only main. An explicit historical-branch
+fetch recovered all 15 objects; none in this inventory is now unavailable.
+Previous availability and counts remain in the JSON as history.
+
+Eleven documents match exactly after converting only LaTeX math delimiters
+to dollar delimiters. Three small documentation differences record later
+spacing/clearance progress. The amplitude test fixes broadcast-mask shape;
+the radial tests share a six-point fixture and remove an invalid strict zip.
+The radial virial path changes from four to six continuation points, so it is
+not trajectory-identical. Governance tests follow the reorganized section
+numbering with added authority checks, not identical named-heading coverage.
+All 27 current amplitude, radial and governance tests pass. No scientific
+source or acceptance threshold was changed in this audit.
 
 The reviewed bend-spacing source retains the original scan and adds sampling
 metadata and phase offsets. Its updated wording correctly limits
@@ -47,8 +62,8 @@ still running. No server-side branch was merged during this audit.
 
 ## Next actions
 
-1. Resolve the 42 semantic-review records, starting with recoverable archived
-   source/test objects; keep unavailable objects explicitly unresolved.
+1. Resolve the remaining 23 workflow, architecture and research-documentation
+   records using the now available archived objects.
 2. Complete review and integration disposition of #123 using its preserved
    implementation and the fresh compatibility evidence.
 3. Integrate reviewed #148/#149 after the ongoing recovery verification has
