@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Durable checkpoint: docs/recovery/CHECKPOINT_2026-10-02_RECURSIVE_SPATIAL_PHASE.md at recovery commit 1b936367d8ffe8d8c50c518d3633f375b1d1918d. Merged recursive checkpoints #130–#137 include cascade attenuation localization, Seed/Vesica binary correspondence, explicit 22-body placement, spatial connector-frame audit, fixed port/body search, and modal phase/power diagnostics. Open green PR #138 searched all 1,653 relative-marker segments formed from 58 source markers: 980 fixed-linear matches, but zero scaled-orthogonal, zero unit-orthogonal and zero same-body scaled-orthogonal matches. Thus the current 22-body geometry still contains no literal rigid connector attachment frame; the connector port remains a reduced generalized coordinate.",
+      "latest_result": "Durable recovery checkpoint advanced through merged PR #139 at recovery commit 3bc5132953054985fa1f605508b3251676fe7916. Across the current 22-body source geometry, both attachment searches are now complete: 58 single markers yielded many fixed anisotropic linear readouts but zero scaled-orthogonal physical port matches; 1,653 real marker-to-marker segments yielded 980 fixed-linear matches but again zero scaled-orthogonal, zero unit-orthogonal and zero same-body scaled-orthogonal matches. Therefore the abstract two-component connector port remains a reduced generalized coordinate rather than a literal rigid body attachment.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "First preserve/document and merge green PR #138 if it remains mergeable against the checkpointed recovery head. Then continue the spatial lane with exact recursive body proximity/collision auditing over the bounded fold grid while keeping the abstract port reduced. In parallel, only as a separate adapter audit, compare the merged mechanical modal phase diagnostic against the existing gauge-invariant U(1) phase-current sector with zero fitted phase/sign offsets and explicit conservation/gauge-invariance checks. Do not call the mechanical power-flow result plasma or electrical current."
+      "next_action": "Run exact recursive body proximity/collision auditing on the explicit Seed-axis placement over the bounded fold-state grid. Use actual panel polygons, bridge segments and hub points and exact point/segment/polygon proximity, not cross-generation bounding spheres. Keep source midsurfaces/thickness zero unless a physical thickness is separately declared. Preserve the abstract connector port as reduced during this audit. After exact clearance is characterized, revisit whether any physical attachment geometry is needed or whether connector-to-flow correspondence supplies it."
     },
     {
       "id": "P11",
