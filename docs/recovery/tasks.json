@@ -127,8 +127,8 @@
         "P04"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged.",
-      "next_action": "Integrate distributed inertia into a separately validated trajectory experiment with independent energy controls; physical joints, thickness, hub rotation and calibration remain separate.",
+      "latest_result": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged. Bounded distributed-inertia trajectories now pass equilibrium, conservative, passive, driven, drive-off, reversal and independent power-quadrature controls through 0.4 s; 47 combined tests pass locally. See docs/fold_distributed_trajectories.md. Remote CI remains a separate gate.",
+      "next_action": "Scope distributed inertia in the recursive network after this bounded single-specimen result; physical joints, thickness, hub rotation and calibration remain separate.",
       "related_parallel_tasks": [
         "P05",
         "P06"
@@ -145,6 +145,10 @@
         {
           "label": "Before integration and inertia continuation on 2026-10-02",
           "text": "Membrane/axial constitutive laws, material dynamics, conditional size scaling and powered unequal-size reserves/supply are implemented on the recovery branch. The earlier instruction to add reserves/supply is superseded. Physical bending, hubs/joints/contact, distributed inertia and measured calibration remain open."
+        },
+        {
+          "label": "Before distributed trajectory validation",
+          "text": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged."
         }
       ]
     },
