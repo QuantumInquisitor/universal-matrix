@@ -618,13 +618,25 @@
       "id": "R16",
       "title": "Matter and particle interpretation",
       "status": "queued_for_scope_review",
-      "context": "Classical matter/gauge dynamics and finite Q-ball existence/persistence diagnostics exist.",
+      "context": "Classical matter/gauge dynamics and finite Q-ball existence/persistence diagnostics exist. The saved t<=2.5 peak extrema already reject a consistent dominant breathing period: retained intervals 1.375 and 0.675 have relative spread about 0.683, above the unchanged 0.15 diagnostic limit. The mean 1.025 is not a physical period. Only one radius maximum is recorded.",
       "completion": "Establish stability and excitation observables beyond finite-time boundedness; assess independently constrained mass/charge identification. Recover unresolved stability/continuum questions from each subsystem rather than equating a Q-ball with an observed particle.",
-      "next_action": "Define stability/excitation observables beyond finite-time boundedness for the existing matter/Q-ball models.",
+      "next_action": "Preserve complete direct/perturbed sampled observables and provenance during the existing evolution; then obtain additional repeated peak and radius extrema plus temporal/sampling/spatial convergence before assigning a period. Keep stability/excitation and particle identification separate from finite-time boundedness.",
       "blockers_or_limits": [
-        "Independent particle identification and continuum/stability evidence remain open."
+        "The preserved extrema do not establish a stable period. Complete sample export supports inspection but is not a restart checkpoint or complex-field phase measurement. Longer-window convergence, stability and independent particle identification remain open."
       ],
-      "review_phase": "scope_review_only"
+      "review_phase": "scope_review_only",
+      "previous_result_snapshots": [
+        {
+          "label": "Before saved Q-ball period disposition and sample-export work",
+          "fields": {
+            "context": "Classical matter/gauge dynamics and finite Q-ball existence/persistence diagnostics exist.",
+            "next_action": "Define stability/excitation observables beyond finite-time boundedness for the existing matter/Q-ball models.",
+            "blockers_or_limits": [
+              "Independent particle identification and continuum/stability evidence remain open."
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "R17",
@@ -716,9 +728,9 @@
       "status": "queued_for_scope_review",
       "context": "Repository has spatial/robotic/digital-twin contracts and broad verification infrastructure.",
       "completion": "Audit actual coverage versus product claims, optional external/hardware adapters, packaging and documentation freshness. Review dependency PRs 117/118 separately from scientific conclusions. Module names alone do not establish functioning hardware integration.",
-      "next_action": "Review software/hardware coverage separately. Rebase PR117 onto accepted recovery, align the stale workflow assertion and rerun verification. Before PR118 integration, run a non-publishing Buildx v4 builder/build smoke check with push disabled; do not treat skipped publication CI as execution evidence.",
+      "next_action": "Assess current recovery integration CI; retain completed dependency reviews and non-publishing Buildx execution evidence. Continue the separate audit of hardware adapters, packaging and documentation coverage against actual implementations.",
       "blockers_or_limits": [
-        "PR117 has an actual workflow-version assertion failure; PR118 lacks execution of its changed action. Hardware coverage and adapters still require independent evidence."
+        "Current recovery integration CI remains separate. Buildx smoke does not validate registry authentication/pushes, multi-platform output or published attestations. Hardware coverage and adapters still require independent evidence."
       ],
       "review_phase": "scope_review_only",
       "previous_result_snapshots": [
@@ -730,12 +742,25 @@
               "Hardware adapters and coverage require evidence; #117/#118 were not checked in this reconciliation."
             ]
           }
+        },
+        {
+          "label": "Before Buildx integration and setup-uv assertion repair",
+          "fields": {
+            "latest_result": "Read-only review: PR117 at 63fdacfb changes four setup-uv references and fails tests/test_phase_64.py because the test requires the old version; action setup itself passed. PR118 at d73f453 changes Buildx to v4 and listed CI passes, but the changed publish-container-image job is skipped on PR events. Both patches merge cleanly with recovery925100b; neither is integrated or fully validated for current recovery.",
+            "next_action": "Review software/hardware coverage separately. Rebase PR117 onto accepted recovery, align the stale workflow assertion and rerun verification. Before PR118 integration, run a non-publishing Buildx v4 builder/build smoke check with push disabled; do not treat skipped publication CI as execution evidence.",
+            "blockers_or_limits": [
+              "PR117 has an actual workflow-version assertion failure; PR118 lacks execution of its changed action. Hardware coverage and adapters still require independent evidence."
+            ]
+          }
         }
       ],
-      "latest_result": "Read-only review: PR117 at 63fdacfb changes four setup-uv references and fails tests/test_phase_64.py because the test requires the old version; action setup itself passed. PR118 at d73f453 changes Buildx to v4 and listed CI passes, but the changed publish-container-image job is skipped on PR events. Both patches merge cleanly with recovery925100b; neither is integrated or fully validated for current recovery.",
+      "latest_result": "PR118 at6d71cf6 passed hosted Buildx smoke37074292606 and full verification37074292483, then merged into recovery ate9daca07. Builder creation, actual API Dockerfile build/load, non-root import and localhost health executed without image publication. PR117 at291eb64 passed full verification37074140587 after aligning four setup-uv references and the stale version assertion; it merged at48432f71. Independent review and14 local workflow/documentation checks passed. No scientific code or solver criteria changed.",
       "evidence": [
         "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36463969192",
-        "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36463982730"
+        "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36463982730",
+        "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/37074292606",
+        "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/37074292483",
+        "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/37074140587"
       ]
     },
     {
