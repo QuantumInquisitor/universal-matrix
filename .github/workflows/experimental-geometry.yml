@@ -1,7 +1,7 @@
 name: Experimental geometry checkpoint
 on:
   pull_request:
-    branches: [main]
+    branches: [main, codex/recovery-plan-log]
     paths:
       - 'src/recursive_mirror_motion_control.py'
       - 'src/lynchpin_relative_motion_control.py'
@@ -40,20 +40,20 @@ jobs:
         with:
           version: latest-known
       - name: Install verification environment
-        run: uv sync --group test --group lint --extra scientific --extra visualization
+        run: uv sync --python 3.12 --group test --group lint --extra scientific --extra visualization
       - name: Check reference code
         run: |
-          uv run ruff check src/recursive_mirror_motion_control.py src/lynchpin_relative_motion_control.py src/lynchpin_finite_panel_control.py src/lynchpin_breathing_control.py src/lynchpin_connected_control.py tests/test_recursive_mirror_motion_control.py tests/test_lynchpin_relative_motion_control.py tests/test_lynchpin_finite_panel_control.py tests/test_lynchpin_breathing_control.py tests/test_lynchpin_connected_control.py scripts/report_recursive_mirror_motion.py scripts/report_lynchpin_relative_motion.py scripts/report_lynchpin_finite_panels.py scripts/report_lynchpin_breathing.py scripts/report_lynchpin_connected.py
-          uv run ruff format --check src/recursive_mirror_motion_control.py src/lynchpin_relative_motion_control.py src/lynchpin_finite_panel_control.py src/lynchpin_breathing_control.py src/lynchpin_connected_control.py tests/test_recursive_mirror_motion_control.py tests/test_lynchpin_relative_motion_control.py tests/test_lynchpin_finite_panel_control.py tests/test_lynchpin_breathing_control.py tests/test_lynchpin_connected_control.py scripts/report_recursive_mirror_motion.py scripts/report_lynchpin_relative_motion.py scripts/report_lynchpin_finite_panels.py scripts/report_lynchpin_breathing.py scripts/report_lynchpin_connected.py
-          uv run python -m pytest -q tests/test_recursive_mirror_motion_control.py tests/test_lynchpin_relative_motion_control.py tests/test_lynchpin_finite_panel_control.py tests/test_lynchpin_breathing_control.py tests/test_lynchpin_connected_control.py tests/test_lynchpin_geometry_audit.py tests/test_stella_octangula_register_bridge.py tests/test_recursive_omniverse_contract.py
+          .venv/bin/ruff check src/recursive_mirror_motion_control.py src/lynchpin_relative_motion_control.py src/lynchpin_finite_panel_control.py src/lynchpin_breathing_control.py src/lynchpin_connected_control.py tests/test_recursive_mirror_motion_control.py tests/test_lynchpin_relative_motion_control.py tests/test_lynchpin_finite_panel_control.py tests/test_lynchpin_breathing_control.py tests/test_lynchpin_connected_control.py scripts/report_recursive_mirror_motion.py scripts/report_lynchpin_relative_motion.py scripts/report_lynchpin_finite_panels.py scripts/report_lynchpin_breathing.py scripts/report_lynchpin_connected.py
+          .venv/bin/ruff format --check src/recursive_mirror_motion_control.py src/lynchpin_relative_motion_control.py src/lynchpin_finite_panel_control.py src/lynchpin_breathing_control.py src/lynchpin_connected_control.py tests/test_recursive_mirror_motion_control.py tests/test_lynchpin_relative_motion_control.py tests/test_lynchpin_finite_panel_control.py tests/test_lynchpin_breathing_control.py tests/test_lynchpin_connected_control.py scripts/report_recursive_mirror_motion.py scripts/report_lynchpin_relative_motion.py scripts/report_lynchpin_finite_panels.py scripts/report_lynchpin_breathing.py scripts/report_lynchpin_connected.py
+          .venv/bin/python -m pytest -q tests/test_recursive_mirror_motion_control.py tests/test_lynchpin_relative_motion_control.py tests/test_lynchpin_finite_panel_control.py tests/test_lynchpin_breathing_control.py tests/test_lynchpin_connected_control.py tests/test_lynchpin_geometry_audit.py tests/test_stella_octangula_register_bridge.py tests/test_recursive_omniverse_contract.py
       - name: Reproduce experiment reports
         env:
           MPLBACKEND: Agg
         run: |
-          uv run python scripts/report_recursive_mirror_motion.py artifacts/geometry/recursive-mirror-motion.json
-          uv run python scripts/report_lynchpin_relative_motion.py artifacts/geometry/lynchpin-relative-motion.json
-          uv run python scripts/report_lynchpin_finite_panels.py artifacts/geometry/finite-panel-surfaces.json
-          uv run python scripts/report_lynchpin_breathing.py artifacts/geometry/breathing-fold.json
-          uv run python scripts/report_lynchpin_connected.py --output artifacts/geometry --audit
+          .venv/bin/python scripts/report_recursive_mirror_motion.py artifacts/geometry/recursive-mirror-motion.json
+          .venv/bin/python scripts/report_lynchpin_relative_motion.py artifacts/geometry/lynchpin-relative-motion.json
+          .venv/bin/python scripts/report_lynchpin_finite_panels.py artifacts/geometry/finite-panel-surfaces.json
+          .venv/bin/python scripts/report_lynchpin_breathing.py artifacts/geometry/breathing-fold.json
+          .venv/bin/python scripts/report_lynchpin_connected.py --output artifacts/geometry --audit
       - name: Check bounded experiment acceptance
-        run: uv run python -c "import json; from pathlib import Path; results=[json.loads(Path(f'artifacts/geometry/connected-fold-{d}d.json').read_text()) for d in (3,4)]; assert all(x['accepted'] and x['pair_count']==231 for x in results)"
+        run: .venv/bin/python -c "import json; from pathlib import Path; results=[json.loads(Path(f'artifacts/geometry/connected-fold-{d}d.json').read_text()) for d in (3,4)]; assert all(x['accepted'] and x['pair_count']==231 for x in results)"
