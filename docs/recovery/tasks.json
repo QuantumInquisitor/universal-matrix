@@ -455,13 +455,25 @@
       "id": "R06",
       "title": "H1–H2 helix geometry",
       "status": "queued_for_scope_review",
-      "context": "Specify thickness, junctions, pitch/depth assumptions, flow law and physical time calibration.",
+      "context": "Specify thickness, junctions, pitch/depth assumptions, flow law and physical time calibration. A bounded optional paired-helix adapter now uses the unchanged canonical 36-tick phase. The chosen geometry distinguishes 36-tick labeled return from 18-tick unlabeled strand exchange, preserves independent signed pitch and has no axial translation from rotation. Historical source/result provenance is retained; no unique image reconstruction or physical clock rate is inferred.",
       "completion": "A chosen, testable adapter and mechanics where claimed; drawings alone do not uniquely determine geometry or biology.",
-      "next_action": "Choose an explicit helix geometry/flow adapter, including thickness, pitch, junctions and time calibration.",
+      "next_action": "Review the optional paired-helix adapter and preserved controls; specify independently justified thickness, pitch, junctions, flow coupling and physical time calibration before a physical geometry/flow implementation.",
       "blockers_or_limits": [
-        "Reference drawings underdetermine physical geometry and dynamics."
+        "The adapter is synthetic kinematics only. Physical thickness, flow/junction coupling, dynamics and tick duration remain unspecified; neither handedness nor physical geometry follows from the clock alone."
       ],
-      "review_phase": "scope_review_only"
+      "review_phase": "scope_review_only",
+      "previous_result_snapshots": [
+        {
+          "label": "Before optional paired-helix clock adapter promotion",
+          "fields": {
+            "context": "Specify thickness, junctions, pitch/depth assumptions, flow law and physical time calibration.",
+            "next_action": "Choose an explicit helix geometry/flow adapter, including thickness, pitch, junctions and time calibration.",
+            "blockers_or_limits": [
+              "Reference drawings underdetermine physical geometry and dynamics."
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "R07",
