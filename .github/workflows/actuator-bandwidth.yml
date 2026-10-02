@@ -1,0 +1,37 @@
+name: Synthetic actuator bandwidth
+on:
+  pull_request:
+    branches: [main, codex/recovery-plan-log]
+    paths:
+      - 'src/proposed_actuator_bandwidth.py'
+      - 'src/proposed_mode_pair_control.py'
+      - 'src/proposed_scalar_wave_control.py'
+      - 'scripts/report_actuator_bandwidth.py'
+      - 'tests/test_proposed_actuator_bandwidth.py'
+      - 'docs/actuator_bandwidth.md'
+      - 'docs/experiments/actuator-bandwidth-summary.json'
+      - '.github/workflows/actuator-bandwidth.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actuator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Check actuator and unchanged baseline
+        run: |
+          .venv/bin/ruff check src/proposed_actuator_bandwidth.py scripts/report_actuator_bandwidth.py tests/test_proposed_actuator_bandwidth.py
+          .venv/bin/ruff format --check src/proposed_actuator_bandwidth.py scripts/report_actuator_bandwidth.py tests/test_proposed_actuator_bandwidth.py
+          .venv/bin/python -m pytest -q tests/test_proposed_actuator_bandwidth.py tests/test_proposed_mode_pair_control.py
+          .venv/bin/python scripts/report_actuator_bandwidth.py --output artifacts/actuator-bandwidth.json --summary artifacts/actuator-bandwidth-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: actuator-bandwidth
+          path: artifacts/actuator-bandwidth*.json
