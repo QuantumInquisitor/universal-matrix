@@ -555,7 +555,7 @@
       "archived_object_available_locally": true,
       "previous_archived_object_available_locally": false,
       "evidence": "Text identical after removing backslashes; restore archived backslashes and use dollar math delimiters. Pre-existing unrelated malformed notation is not reconstructed.",
-      "repair_blob": "6ab07e5de34a6431595b21a29ff5c828e87a4ae3"
+      "repair_blob": "8d72a77001361ca52acf674ea9c6efba059bb9c1"
     },
     {
       "branch": "markdown-math-normalization-v0.1",
@@ -566,7 +566,7 @@
       "archived_object_available_locally": true,
       "previous_archived_object_available_locally": false,
       "evidence": "Text identical after removing backslashes; restore archived backslashes and use dollar math delimiters. Pre-existing unrelated malformed notation is not reconstructed.",
-      "repair_blob": "3610e1e34ead71fdfe9e4012772a38ce2f873c28"
+      "repair_blob": "263d76729c5c3f8312c8919a762205dedd674efa"
     },
     {
       "branch": "markdown-math-normalization-v0.1",
@@ -577,7 +577,7 @@
       "archived_object_available_locally": true,
       "previous_archived_object_available_locally": false,
       "evidence": "Text identical after removing backslashes; restore archived backslashes and use dollar math delimiters. Pre-existing unrelated malformed notation is not reconstructed.",
-      "repair_blob": "48f4c9e2666ea019f00e6bb9860d6b1676f2741b"
+      "repair_blob": "34732d22192cdd0ee7bf4affc89ea6a600b8ce4b"
     },
     {
       "branch": "markdown-math-normalization-v0.1",
@@ -588,7 +588,7 @@
       "archived_object_available_locally": true,
       "previous_archived_object_available_locally": false,
       "evidence": "Text identical after removing backslashes; restore archived backslashes and use dollar math delimiters. Pre-existing unrelated malformed notation is not reconstructed.",
-      "repair_blob": "c97cf99389630ef5ac440b91ce70b005dec86bd9"
+      "repair_blob": "22a9ae08b35893fde7d6effe5a0647b0994c828d"
     },
     {
       "branch": "markdown-math-normalization-v0.1",
@@ -599,7 +599,7 @@
       "archived_object_available_locally": true,
       "previous_archived_object_available_locally": false,
       "evidence": "Text identical after removing backslashes; restore archived backslashes and use dollar math delimiters. Pre-existing unrelated malformed notation is not reconstructed.",
-      "repair_blob": "4ffb5d99bcbfbc165a55452b3c961c19a44086a5"
+      "repair_blob": "c7af483dc851f6acb21cc01bf273faac84502c57"
     },
     {
       "branch": "markdown-math-normalization-v0.1",
