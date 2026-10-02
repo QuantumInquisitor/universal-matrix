@@ -131,9 +131,7 @@ def scan_governing_pair(module_a, module_b, ratio):
         "collision_free": collision_state_pairs == 0,
         "collision_state_pair_count": collision_state_pairs,
         "minimum_clearance_m": best,
-        "minimum_clearance_per_root_module_length": (
-            best / exact_clearance.BASE_MODULE_LENGTH_M
-        ),
+        "minimum_clearance_per_root_module_length": (best / exact_clearance.BASE_MODULE_LENGTH_M),
         "governing_case": governing,
         "minimum_interior_clearance_m": best_interior,
         "interior_governing_case": governing_interior,
@@ -188,9 +186,7 @@ def report():
                 "upper_before": upper,
                 "midpoint": midpoint,
                 "midpoint_collision_free": row["collision_free"],
-                "midpoint_collision_state_pair_count": row[
-                    "collision_state_pair_count"
-                ],
+                "midpoint_collision_state_pair_count": row["collision_state_pair_count"],
                 "midpoint_governing_case": row["governing_case"],
             }
         )
@@ -232,12 +228,8 @@ def report():
         "final_width": upper - lower,
         "final_lower_row": final_lower,
         "final_upper_row": final_upper,
-        "corner_is_governing_at_final_upper": bool(
-            final_upper["governing_case"]["corner_pair"]
-        ),
-        "interior_clearance_margin_at_final_upper_m": final_upper[
-            "corner_clearance_advantage_m"
-        ],
+        "corner_is_governing_at_final_upper": bool(final_upper["governing_case"]["corner_pair"]),
+        "interior_clearance_margin_at_final_upper_m": final_upper["corner_clearance_advantage_m"],
         "broad_grid_control_at_final_upper": broad_control,
         "unique_dense_ratio_scan_count": len(scan_cache),
         "sources": {
