@@ -9,7 +9,7 @@
       "status": "in_progress",
       "scope_and_completion": "Inspect both known local repositories, their worktrees, uncommitted files, branches, stashes, reflogs and unreachable objects without cleanup or resets. Inspect current and older scratch directories, source-review folders, raw numerical results, test logs, manifests, viewer exports and packaged versions. Enumerate all remote branches and all PRs, including closed-unmerged attempts; distinguish work already incorporated by later commits from genuinely missing changes. Check issues and unfinished workflow runs. Use targeted interruption/session logs only to resolve artifacts whose purpose or final command outcome is unclear. Check additional project-linked checkouts discovered through worktree metadata; do not assume the two familiar folders are the entire history. Follow docs/DOCUMENTATION_STATUS.md: executable implementation/tests take precedence over stale inventories. **Recovery gate:** every discovered project location and work family has a disposition; each branch with unique changes is either preserved for review, proven superseded, or explicitly unresolved. Do not turn a keyword hit or an unreachable Git object into a new task without examining it.\n   Start with the existing G1–G8, W1–W3, A1–A2, P1, T1–T3, S1–S2, H1–H2, C1–C2, F1–F2, R1–R2 and V1 ledger. Link each record to its latest code, report, inputs, tests and publication status. Classify the 607 inventoried files by experiment family, deduplicate copies, and distinguish commitments from suggested follow-ons. Check older repository questions against current code before reopening them. Give every open task a next action, dependency, completion criterion and blocker. **Done when:** each recovered commitment has one current disposition and superseded status has an explicit replacement. This plan is the starting queue; detailed file-by-file reconciliation remains work.",
       "dependencies": [],
-      "latest_result": "Historical six-draft audit is retained as history. Live PR #119-144 inventory now finds nine open PRs in that range, including #129; this is not a new all-repository census. Published files and older local uncommitted work remain preserved.",
+      "latest_result": "PR #129 disposition is now reviewed and recorded; the broader historical branch census remains open.",
       "next_action": "Finish the unresolved source/test branch comparisons using exception-file-comparison.json; give each unique item an explicit retained, superseded or unresolved disposition.",
       "blockers_or_limits": [
         "No new global census performed; remaining historical differences need file-level evidence."
@@ -19,6 +19,10 @@
         {
           "label": "Before 2026-10-02 reconciliation; may contain superseded next steps",
           "text": "Open-draft owner search complete: six visible drafts, all universal-matrix. Two known clones share this origin. Full draft file inventory and exact-head CI recorded; 49 PR119-121 files absent current checkout are published, not lost. PR123/124 local contents match. See docs/recovery/DRAFT_CAPABILITY_AUDIT.md; historical branch/source inventory reconciliation remains broader work."
+        },
+        {
+          "label": "Before integration and inertia continuation on 2026-10-02",
+          "text": "Historical six-draft audit is retained as history. Live PR #119-144 inventory now finds nine open PRs in that range, including #129; this is not a new all-repository census. Published files and older local uncommitted work remain preserved."
         }
       ]
     },
@@ -30,8 +34,8 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "All returned exact-head PR workflow runs for #119-124, #143 and #144 are successful. In particular #122 broad verification at 493bf950 is green (run 36948969776), replacing the old pending snapshot. #129 remains open with failed run 36933476591; compare with merged #130 before assigning superseded status. No PR merged in this reconciliation.",
-      "next_action": "Review and disposition open drafts #119-124, #143 and #144; check #129 against merged #130 before deciding whether it is superseded. Confirm compatibility and merge authorization separately.",
+      "latest_result": "PRs #143, #144, #145 and #146 merged into recovery, not main. PR #129 closed as superseded after confirming its mutable initial-work baseline defect and validating replacement energy/loss similarity.",
+      "next_action": "Review remaining drafts #119-124, retaining fresh combined CI and source-level compatibility evidence.",
       "blockers_or_limits": [
         "Green listed CI is not completed scientific review, combined compatibility, or merge authorization."
       ],
@@ -40,6 +44,10 @@
         {
           "label": "Before 2026-10-02 reconciliation; may contain superseded next steps",
           "text": "Six open drafts reviewed for capabilities and checkout presence. PR119/120/121/123/124 all listed workflows pass at pinned heads; PR122 broad verification remains running while experimental/container/CodeQL pass at 7dd38fb. No merges. Source-level lynchpin/material reference compatibility checked. See docs/recovery/draft-capability-audit.json."
+        },
+        {
+          "label": "Before integration and inertia continuation on 2026-10-02",
+          "text": "All returned exact-head PR workflow runs for #119-124, #143 and #144 are successful. In particular #122 broad verification at 493bf950 is green (run 36948969776), replacing the old pending snapshot. #129 remains open with failed run 36933476591; compare with merged #130 before assigning superseded status. No PR merged in this reconciliation."
         }
       ]
     },
@@ -119,8 +127,8 @@
         "P04"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Membrane/axial constitutive laws, material dynamics, conditional size scaling and powered unequal-size reserves/supply are implemented on the recovery branch. The earlier instruction to add reserves/supply is superseded. Physical bending, hubs/joints/contact, distributed inertia and measured calibration remain open.",
-      "next_action": "Choose and specify one missing joint/bending/contact or distributed-inertia law with explicit geometry and synthetic-versus-measured parameters before adding it.",
+      "latest_result": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged.",
+      "next_action": "Integrate distributed inertia into a separately validated trajectory experiment with independent energy controls; physical joints, thickness, hub rotation and calibration remain separate.",
       "related_parallel_tasks": [
         "P05",
         "P06"
@@ -133,6 +141,10 @@
         {
           "label": "Before 2026-10-02 reconciliation; may contain superseded next steps",
           "text": "Six source-backed panel membrane energies plus twelve optional axial bridge energies implemented with analytic generalized gradients and synthetic SI coefficients. 33 tests pass: original vertex replay, virtual work, objectivity, scale formula, stiffness and zero-law controls. Four hubs have no constitutive energy; bridges supply scale but no folding resistance in this axial model. No dynamics replacement or material calibration yet. See docs/fold_constitutive.md. Explicit constitutive dynamics now replace rather than add to the quadratic potential, preserving 22-body point inertia and geometric bias. Twelve new force/energy/refinement controls plus sixteen historical dynamics and thirty-three constitutive tests pass. See docs/fold_material_dynamics.md. Constitutive selection now propagates into the finite-reserve module and equal-size coupled pair. No double spring storage. See docs/fold_material_coupling.md. Added explicit homothetic material scaling: reference thickness scales with length, bridge EA with length squared, potential with volume and point inertia with length to the fifth power. Fixed-thickness/EA controls reject an unconditional similarity claim. See docs/fold_material_multiscale.md."
+        },
+        {
+          "label": "Before integration and inertia continuation on 2026-10-02",
+          "text": "Membrane/axial constitutive laws, material dynamics, conditional size scaling and powered unequal-size reserves/supply are implemented on the recovery branch. The earlier instruction to add reserves/supply is superseded. Physical bending, hubs/joints/contact, distributed inertia and measured calibration remain open."
         }
       ]
     },
@@ -184,14 +196,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Merged #125-128, #130-137 and #139-142 preserve bounded physical recursion, pair similarity, drive-history attenuation, Seed/placement/attachment and finite-grid clearance results. Bounded restart exists separately. Green unmerged #143 solves 14.964074019232122 < local boundary <= 14.964074019742913 at unchanged 1e-11 m tolerance; full broad-grid control passes. Green unmerged #144 preserves connector storage and tests gauge-current contracts without a physical bridge.",
+      "latest_result": "Local continuous contact #143 and phase/current contract #144 are merged into recovery. Geometry, collision tolerance and solver criteria are unchanged.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Review the green local contact solve in #143 and contract audit in #144; then scope broader state/depth coverage and physical connector realization without changing settled laws by default.",
+      "next_action": "Scope broader state/depth coverage and physical connector realization; retain the merged local-contact and phase/current limits.",
       "blockers_or_limits": [
         "Global continuous clearance, arbitrary-depth convergence, dormant-path rules and a physical attachment/phase-current adapter remain unvalidated."
       ],
@@ -200,6 +212,10 @@
         {
           "label": "Before 2026-10-02 reconciliation; may contain superseded next steps",
           "text": "Dense governing-state exact clearance is merged at 75787b0f73db0d7734486f0d74ea3b9f10149d95. The zero-thickness finite-grid collision/free bracket is now 14.963948939801849 < boundary <= 14.964082840592333, width 1.3390079e-4. The full 15-module broad-grid control is collision-free at the dense upper ratio with the same minimum clearance 1.102735519e-7 m. The limiter remains root panel-0 versus depth-3 [0,1,1] panel-5 at both scales 1.1 and child theta 0. Root theta 0 and 0.0025 tie exactly because panel-0 does not depend on the rotating ray; the limiting set is a state-edge family rather than a unique corner."
+        },
+        {
+          "label": "Before integration and inertia continuation on 2026-10-02",
+          "text": "Merged #125-128, #130-137 and #139-142 preserve bounded physical recursion, pair similarity, drive-history attenuation, Seed/placement/attachment and finite-grid clearance results. Bounded restart exists separately. Green unmerged #143 solves 14.964074019232122 < local boundary <= 14.964074019742913 at unchanged 1e-11 m tolerance; full broad-grid control passes. Green unmerged #144 preserves connector storage and tests gauge-current contracts without a physical bridge."
         }
       ]
     },
@@ -709,7 +725,7 @@
           "P04",
           "P10"
         ],
-        "status": "green_unmerged",
+        "status": "merged_into_recovery_not_main",
         "result": "Local numerical contact and broad-grid control; not global certification",
         "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/143"
       },
@@ -719,10 +735,33 @@
           "P08",
           "P10"
         ],
-        "status": "green_unmerged",
+        "status": "merged_into_recovery_not_main",
         "result": "Conservation/gauge contract audit; no physical adapter",
         "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/144"
+      },
+      {
+        "id": "distributed-inertia",
+        "tasks": [
+          "P07"
+        ],
+        "status": "merged_into_recovery_not_main",
+        "result": "Synthetic reference panel/bridge inertia; 34 tests and focused CI pass; no production trajectory change",
+        "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/146"
       }
     ]
+  },
+  "continuation_2026_10_02": {
+    "baseline_commit": "585593e0f69d6ad07d0e7bce1ad08c532b2809bd",
+    "evidence": "docs/recovery/pr129-disposition.json",
+    "merged_prs": [
+      143,
+      144,
+      145,
+      146
+    ],
+    "closed_superseded_prs": [
+      129
+    ],
+    "scope": "No workstream completion inferred; prior reconciliation remains a dated snapshot."
   }
 }
