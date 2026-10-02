@@ -1,0 +1,29 @@
+{
+  "status": "bounded_numerical_checkpoint",
+  "results": {
+    "3": {
+      "dimensions": 3,
+      "breathing_amplitude": 0.1,
+      "body_count": 22,
+      "pair_count": 231,
+      "interval_count": 1208,
+      "accepted": true,
+      "minimum_breathing_separation_bound": 3.773014616157734e-05,
+      "physical_material_validation": false,
+      "recursive_assembly_validation": false,
+      "arithmetic": "floating-point support and analytic velocity bounds; not interval arithmetic"
+    },
+    "4": {
+      "dimensions": 4,
+      "breathing_amplitude": 0.1,
+      "body_count": 22,
+      "pair_count": 231,
+      "interval_count": 1193,
+      "accepted": true,
+      "minimum_breathing_separation_bound": 0.00015314435529788402,
+      "physical_material_validation": false,
+      "recursive_assembly_validation": false,
+      "arithmetic": "floating-point support and analytic velocity bounds; not interval arithmetic"
+    }
+  }
+}
