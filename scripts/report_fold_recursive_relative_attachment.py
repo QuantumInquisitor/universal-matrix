@@ -74,14 +74,11 @@ def precompute():
     for q in all_q:
         for length_m in lengths:
             key = _grid_key(q, length_m)
-            points[key] = {
-                row["candidate_id"]: point(row, q, length_m) for row in markers
-            }
+            points[key] = {row["candidate_id"]: point(row, q, length_m) for row in markers}
         for length_m in VALIDATION_LENGTHS_M + (1.0,):
             key = _grid_key(q, length_m)
             jacobians[key] = {
-                row["candidate_id"]: point_jacobian(row, q, length_m)
-                for row in markers
+                row["candidate_id"]: point_jacobian(row, q, length_m) for row in markers
             }
     return points, jacobians
 
@@ -141,9 +138,7 @@ def reference_frame_metrics(candidate, point_cache):
     norm = float(np.linalg.norm(vector))
     return {
         "reference_segment_length_per_module_length": norm,
-        "reference_segment_unit_vector": (
-            None if norm <= 1e-15 else (vector / norm).tolist()
-        ),
+        "reference_segment_unit_vector": (None if norm <= 1e-15 else (vector / norm).tolist()),
     }
 
 
@@ -162,13 +157,9 @@ def evaluate(candidate, point_cache, jacobian_cache):
     )
     scaled_orthogonal = (
         exact_linear
-        and shape["scaled_orthogonal_relative_error"]
-        < PAIR_SCALED_ORTHOGONAL_TOLERANCE
+        and shape["scaled_orthogonal_relative_error"] < PAIR_SCALED_ORTHOGONAL_TOLERANCE
     )
-    unit_projection = (
-        scaled_orthogonal
-        and abs(shape["uniform_projection_scale"] - 1.0) < 1e-8
-    )
+    unit_projection = scaled_orthogonal and abs(shape["uniform_projection_scale"] - 1.0) < 1e-8
     return {
         **candidate,
         "fit_rank": fit_rank,
@@ -186,23 +177,12 @@ def evaluate(candidate, point_cache, jacobian_cache):
 
 def report():
     point_cache, jacobian_cache = precompute()
-    rows = [
-        evaluate(candidate, point_cache, jacobian_cache)
-        for candidate in pair_catalog()
-    ]
+    rows = [evaluate(candidate, point_cache, jacobian_cache) for candidate in pair_catalog()]
     rows.sort(key=lambda row: (row["score"], row["candidate_id"]))
-    exact_linear = [
-        row["candidate_id"] for row in rows if row["exact_fixed_linear_match"]
-    ]
-    exact_scaled = [
-        row["candidate_id"]
-        for row in rows
-        if row["exact_scaled_orthogonal_match"]
-    ]
+    exact_linear = [row["candidate_id"] for row in rows if row["exact_fixed_linear_match"]]
+    exact_scaled = [row["candidate_id"] for row in rows if row["exact_scaled_orthogonal_match"]]
     exact_unit = [
-        row["candidate_id"]
-        for row in rows
-        if row["exact_unit_orthogonal_projection_match"]
+        row["candidate_id"] for row in rows if row["exact_unit_orthogonal_projection_match"]
     ]
     same_body_scaled = [
         row["candidate_id"]
