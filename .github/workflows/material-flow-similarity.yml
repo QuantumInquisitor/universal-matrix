@@ -1,0 +1,36 @@
+name: Material flow similarity contract
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_material_flow_similarity.py'
+      - 'scripts/report_fold_kinematics.py'
+      - 'src/toroidal_assembly_breathing.py'
+      - 'tests/test_material_flow_similarity.py'
+      - 'docs/material_flow_similarity.md'
+      - 'docs/experiments/material-flow-similarity-summary.json'
+      - '.github/workflows/material-flow-similarity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  similarity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --group test --group lint
+      - name: Verify existing motion contract
+        run: |
+          .venv/bin/ruff check scripts/report_material_flow_similarity.py tests/test_material_flow_similarity.py
+          .venv/bin/ruff format --check scripts/report_material_flow_similarity.py tests/test_material_flow_similarity.py
+          .venv/bin/python -m pytest tests/test_material_flow_similarity.py tests/test_fold_kinematics.py tests/test_lynchpin_relative_motion_control.py
+          .venv/bin/python -m scripts.report_material_flow_similarity --output artifacts/material-flow-similarity.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: material-flow-similarity
+          path: artifacts/material-flow-similarity.json
+          if-no-files-found: error
