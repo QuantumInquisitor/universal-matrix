@@ -1,0 +1,78 @@
+name: Recursive exact clearance refinement
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_recursive_exact_clearance_refinement.py'
+      - 'tests/test_fold_recursive_exact_clearance_refinement.py'
+      - 'docs/fold_recursive_exact_clearance_refinement.md'
+      - '.github/workflows/recursive-exact-clearance-refinement.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recursive-exact-clearance-refinement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify clearance refinement controls
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_exact_clearance_refinement.py tests/test_fold_recursive_exact_clearance_refinement.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_exact_clearance_refinement.py tests/test_fold_recursive_exact_clearance_refinement.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_exact_clearance_refinement.py
+      - name: Refine exact recursive clearance bracket once
+        run: |
+          uv run --python 3.12 --extra scientific python -m scripts.report_fold_recursive_exact_clearance_refinement --output artifacts/fold-recursive-clearance/refinement.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-recursive-clearance/refinement.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert not r['final_lower_row']['collision_free']
+          assert r['final_upper_row']['collision_free']
+          assert r['final_lower_colliding_ratio'] < r['final_upper_collision_free_ratio']
+          assert r['final_width'] < r['coarse_width']
+          assert not r['continuous_clearance_theorem']
+          assert not r['body_geometry_changed']
+          assert not r['collision_tolerance_changed']
+          assert not r['q_state_grid_changed']
+          assert not r['physical_body_thickness_modeled']
+          assert not r['common_vessel_to_module_ratio_selected']
+          print(json.dumps({
+              'coarse_bracket': [
+                  r['coarse_lower_colliding_ratio'],
+                  r['coarse_upper_collision_free_ratio'],
+              ],
+              'final_bracket': [
+                  r['final_lower_colliding_ratio'],
+                  r['final_upper_collision_free_ratio'],
+              ],
+              'final_width': r['final_width'],
+              'unique_ratio_scan_count': r['unique_ratio_scan_count'],
+              'stopped_for_reentrant': r['stopped_for_reentrant_or_multiple_transition'],
+              'stages': [
+                  {
+                      'stage': row['stage'],
+                      'axis': row['axis'],
+                      'mask': [sample['collision_free'] for sample in row['rows']],
+                      'collision_pairs': [sample['colliding_module_pair_count'] for sample in row['rows']],
+                  }
+                  for row in r['stages']
+              ],
+              'lower_governing_case': r['final_lower_row']['governing_case'],
+              'upper_governing_case': r['final_upper_row']['governing_case'],
+              'upper_min_clearance': r['final_upper_row']['minimum_clearance_m'],
+          }, sort_keys=True))
+          PY
