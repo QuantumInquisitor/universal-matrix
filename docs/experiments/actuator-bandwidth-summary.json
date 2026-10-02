@@ -1,0 +1,152 @@
+{
+  "source_sha256": {
+    "src/proposed_actuator_bandwidth.py": "66fe591be70fbd063310fb383423ee8a2ade6209247482eca75e581d2d498dd1",
+    "src/proposed_mode_pair_control.py": "e6c55142097168eb4ad2ca31c70772eed840ef79213b78aab9544c69ead5a5e9",
+    "src/proposed_scalar_wave_control.py": "8b9c8d423b521cdaba0825acec918855ac57ab42b20c0e53327f43631e82fbc9",
+    "scripts/report_actuator_bandwidth.py": "cab75055a97f8f9c3c32547b74cb21c9765fb979f81bdb42514b3c32ebb04dd2"
+  },
+  "source_hash_convention": "UTF-8 text with universal newlines normalized to LF",
+  "scope": "Ideal instantaneous measurements, unit stiffness, synthetic first-order force actuator; unchanged 20 period/final 5 period/0.05 m criterion; no calibrated hardware or electrical energy claim.",
+  "cases": {
+    "0.0": {
+      "maximum_state_refinement_difference": 9.066422390624496e-09,
+      "coarse": {
+        "parameters": {
+          "actuator_time_constant_s": 0.0,
+          "force_limit": 10.0,
+          "periods": 20,
+          "steps_per_period": 256
+        },
+        "late_position_rms_m": 9.552800126929593e-09,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": true,
+        "max_energy_balance_residual_per_mass": 6.00571051556642e-07,
+        "maximum_sampled_force_per_mass": 0.26127679323689634,
+        "sampled_command_clipping_fraction": 0.0,
+        "sampled_applied_force_saturation_fraction": 0.0,
+        "startup": "Zero initial applied force for positive tau; instantaneous clipped command for tau=0."
+      },
+      "refined": {
+        "parameters": {
+          "actuator_time_constant_s": 0.0,
+          "force_limit": 10.0,
+          "periods": 20,
+          "steps_per_period": 512
+        },
+        "late_position_rms_m": 5.961773358485941e-10,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": true,
+        "max_energy_balance_residual_per_mass": 3.7913408412748595e-08,
+        "maximum_sampled_force_per_mass": 0.2612839676579388,
+        "sampled_command_clipping_fraction": 0.0,
+        "sampled_applied_force_saturation_fraction": 0.0,
+        "startup": "Zero initial applied force for positive tau; instantaneous clipped command for tau=0."
+      }
+    },
+    "0.1": {
+      "maximum_state_refinement_difference": 2.706690780951426e-07,
+      "coarse": {
+        "parameters": {
+          "actuator_time_constant_s": 0.1,
+          "force_limit": 10.0,
+          "periods": 20,
+          "steps_per_period": 256
+        },
+        "late_position_rms_m": 0.017262164546670806,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": true,
+        "max_energy_balance_residual_per_mass": 1.0543808404150923e-07,
+        "maximum_sampled_force_per_mass": 0.2507579428600194,
+        "sampled_command_clipping_fraction": 0.0,
+        "sampled_applied_force_saturation_fraction": 0.0,
+        "startup": "Zero initial applied force for positive tau; instantaneous clipped command for tau=0."
+      },
+      "refined": {
+        "parameters": {
+          "actuator_time_constant_s": 0.1,
+          "force_limit": 10.0,
+          "periods": 20,
+          "steps_per_period": 512
+        },
+        "late_position_rms_m": 0.017262160606786366,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": true,
+        "max_energy_balance_residual_per_mass": 7.817642533325397e-09,
+        "maximum_sampled_force_per_mass": 0.25079783977649833,
+        "sampled_command_clipping_fraction": 0.0,
+        "sampled_applied_force_saturation_fraction": 0.0,
+        "startup": "Zero initial applied force for positive tau; instantaneous clipped command for tau=0."
+      }
+    },
+    "0.5": {
+      "maximum_state_refinement_difference": 2.280051636383007e-08,
+      "coarse": {
+        "parameters": {
+          "actuator_time_constant_s": 0.5,
+          "force_limit": 10.0,
+          "periods": 20,
+          "steps_per_period": 256
+        },
+        "late_position_rms_m": 0.08557931239283097,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": false,
+        "max_energy_balance_residual_per_mass": 2.052633512050761e-07,
+        "maximum_sampled_force_per_mass": 0.19887381780906313,
+        "sampled_command_clipping_fraction": 0.0,
+        "sampled_applied_force_saturation_fraction": 0.0,
+        "startup": "Zero initial applied force for positive tau; instantaneous clipped command for tau=0."
+      },
+      "refined": {
+        "parameters": {
+          "actuator_time_constant_s": 0.5,
+          "force_limit": 10.0,
+          "periods": 20,
+          "steps_per_period": 512
+        },
+        "late_position_rms_m": 0.08557930730206369,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": false,
+        "max_energy_balance_residual_per_mass": 1.3653796315793443e-08,
+        "maximum_sampled_force_per_mass": 0.19889803856365865,
+        "sampled_command_clipping_fraction": 0.0,
+        "sampled_applied_force_saturation_fraction": 0.0,
+        "startup": "Zero initial applied force for positive tau; instantaneous clipped command for tau=0."
+      }
+    },
+    "2.0": {
+      "maximum_state_refinement_difference": 6.277179664948562e-08,
+      "coarse": {
+        "parameters": {
+          "actuator_time_constant_s": 2.0,
+          "force_limit": 10.0,
+          "periods": 20,
+          "steps_per_period": 256
+        },
+        "late_position_rms_m": 0.3736028351596662,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": false,
+        "max_energy_balance_residual_per_mass": 6.813153330398336e-08,
+        "maximum_sampled_force_per_mass": 0.20802030636798824,
+        "sampled_command_clipping_fraction": 0.0,
+        "sampled_applied_force_saturation_fraction": 0.0,
+        "startup": "Zero initial applied force for positive tau; instantaneous clipped command for tau=0."
+      },
+      "refined": {
+        "parameters": {
+          "actuator_time_constant_s": 2.0,
+          "force_limit": 10.0,
+          "periods": 20,
+          "steps_per_period": 512
+        },
+        "late_position_rms_m": 0.3736027870274442,
+        "diagnostic_limit_m": 0.05,
+        "meets_declared_tracking_target": false,
+        "max_energy_balance_residual_per_mass": 5.242295486596049e-09,
+        "maximum_sampled_force_per_mass": 0.20802029363507848,
+        "sampled_command_clipping_fraction": 0.0,
+        "sampled_applied_force_saturation_fraction": 0.0,
+        "startup": "Zero initial applied force for positive tau; instantaneous clipped command for tau=0."
+      }
+    }
+  }
+}

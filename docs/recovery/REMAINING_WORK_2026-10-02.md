@@ -4,19 +4,27 @@ The master register retains **41 IDs**: 12 main workstreams, 24 research/source 
 
 ## Current integration checkpoint
 
-Recovery `48432f71a6bfae99da2bdd017dc5c4e59582688f` includes accepted
-PR153-156,158,117 and118 in addition to the earlier recovered experiments.
+Recovery `9c2d1377407ded7c3df66e95b6a50ccb427597a5` includes accepted
+PR153-158,117 and118 in addition to the earlier recovered experiments.
 The LC reference, mechanical-energy viewer and conditional timing delivery
 comparison are integrated; they are not missing implementations. Previous
 recovery `664e5fc` passed all28 reported workflows. Current-head integration
 verification remains a separate gate; PR122 is still draft against main.
 
-PR157 (actuator bandwidth), PR159 (Q-ball scalar sample export), PR160
+PR157 actuator bandwidth passed full CI and is integrated. PR159 (Q-ball scalar sample export), PR160
 (paired-helix clock adapter) and PR161 (these source/unit audit records) remain
 reviewed proposals pending exact-head CI and serial integration. Their local
 combined review preserves all41 original task contracts. Completing every
 physical or research workstream is not a prerequisite for bounded experimental
 integration; those limitations remain explicit in the rows below.
+
+## Actuator comparison scope
+
+The additive actuator-bandwidth report preserves the original controller and
+tracking criterion. At the sampled synthetic response times, 0.1 s meets the
+0.05 m RMS target while 0.5 s and 2 s do not; refinement preserves these outcomes.
+See [the scope and controls](../actuator_bandwidth.md). This does not close P05,
+calibrate hardware, or establish a continuous stability boundary.
 
 ## Earlier checkpoint after published-draft integration (superseded)
 
@@ -93,7 +101,7 @@ The timestamped [PR/CI evidence](register-reconciliation-2026-10-02.json) covers
 | P02 | Finish review and integration disposition of the published drafts. | Assess exact current recovery CI and reviewed pending proposals, then perform the bounded recovery-to-main integration review. Preserve open scientific limitations and continue the wider census without reopening merged experiments. | Green listed CI is not completed scientific review, combined compatibility, or merge authorization. |
 | P03 | Promote the remaining validated local candidates in small groups. | Finish review and integration disposition of the published paired-helix adapter; then select the next preserved candidate by source, inputs and independent controls. Do not repeat the completed LC promotion. | Candidate-specific geometry, parameters and source evidence must be identified before promotion. |
 | P04 | Close the whole-assembly geometry and motion questions. | Specify the missing material-point/deformation correspondence between the 22-body specimen and 69-domain flow assembly; separate that from physical joint and finite-thickness work. | No validated relative-fold map between these assemblies; source-midsurface clearance does not supply thickness or joint geometry. |
-| P05 | Finish the wave and control experiments already started. | Define a bounded stochastic-noise/actuator-bandwidth or wavelength/mode comparison; preserve the recovered W2 manifest linkage and existing cases. | W2 manifest links original data/source hashes and equal parsed content; chronology remains unauthenticated. Broader convergence and Q-ball period protocol remain unresolved. |
+| P05 | Finish the wave and control experiments already started. | Review the bounded actuator-bandwidth report, then select a separately declared stochastic-noise or combined-limit comparison with independent controls; broader convergence and Q-ball period work remain open. | W2 manifest links original data/source hashes and equal parsed content; chronology remains unauthenticated. Broader convergence and Q-ball period protocol remain unresolved. |
 | P06 | Decide whether crystal components provide a useful engine capability. | Review the conditional acquisition/delivery contract; supply an independently justified physical acquisition/readout backend, loading and energy costs before claiming timing usefulness. Preserve existing signal and scheduling evidence; spatial claims still require coordinates. | No practical advantage established. Acquisition assumptions are asymmetric and explicitly conditional; hardware readout/backaction, energy, loading and absolute time remain uncalibrated. |
 | P07 | Define material forces for one explicit connected specimen. | Scope distributed inertia in the recursive network after this bounded single-specimen result; physical joints, thickness, hub rotation and calibration remain separate. | Physical joint/attachment geometry and measured calibration are absent; four hubs lack constitutive energy. |
 | P08 | Close the energy budget across the coupled specimen. | Retain validated powered-material/reserve/restart ledgers; extend independent work/energy/loss controls whenever a new joint, contact, electrical or flow coupling is introduced. | New physical interfaces and supply calibration are unspecified; no electromechanical or whole-flow energy closure claimed. |
