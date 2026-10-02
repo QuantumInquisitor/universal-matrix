@@ -1,0 +1,53 @@
+name: Recursive relative attachment frame
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_recursive_relative_attachment.py'
+      - 'tests/test_fold_recursive_relative_attachment.py'
+      - 'docs/fold_recursive_relative_attachment.md'
+      - '.github/workflows/recursive-relative-attachment.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recursive-relative-attachment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group lint
+      - name: Search relative-marker attachment frames once
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_relative_attachment.py tests/test_fold_recursive_relative_attachment.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_relative_attachment.py tests/test_fold_recursive_relative_attachment.py
+          uv run --python 3.12 --extra scientific python -m scripts.report_fold_recursive_relative_attachment --output artifacts/fold-relative-attachment/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-relative-attachment/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          assert r['marker_count'] == 58
+          assert r['pair_candidate_count'] == 1653
+          assert set(r['exact_scaled_orthogonal_candidates']) <= set(r['exact_fixed_linear_candidates'])
+          assert set(r['exact_unit_orthogonal_projection_candidates']) <= set(r['exact_scaled_orthogonal_candidates'])
+          assert not r['state_dependent_transform_used']
+          assert r['relative_physical_segment_searched']
+          assert not r['specific_physical_attachment_selected']
+          assert not r['anisotropic_linear_transform_counts_as_literal_frame']
+          print(json.dumps({
+              'exact_linear_count': len(r['exact_fixed_linear_candidates']),
+              'exact_scaled_orthogonal': r['exact_scaled_orthogonal_candidates'],
+              'exact_unit_orthogonal': r['exact_unit_orthogonal_projection_candidates'],
+              'same_body_scaled_orthogonal': r['same_body_scaled_orthogonal_candidates'],
+              'best_candidates': r['best_candidates'][:10],
+              'best_scaled_orthogonal': r['best_scaled_orthogonal_candidates'][:10],
+          }, sort_keys=True))
+          PY
