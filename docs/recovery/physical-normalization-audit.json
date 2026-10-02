@@ -1,0 +1,104 @@
+{
+  "scope": "R14 evidence audit, not a new physical calibration",
+  "source_checkout": "88cc7c35a9e7b2c95e0987e07396d4dabfcff09b",
+  "rows": [
+    {
+      "subsystem": "canonical_clock",
+      "source": "src/canonical_polarity_clock.py",
+      "existing": "Dimensionless phase;36 ticks per cycle",
+      "missing": [
+        "independent seconds per tick",
+        "physical oscillator synchronization"
+      ],
+      "calibration_status": "unavailable",
+      "source_sha256": "1ad6e30821c4283bd0f18df06d3ce0ace9b7182b2a21d8ae5f4725aa309e545a"
+    },
+    {
+      "subsystem": "material_geometry",
+      "source": "scripts/report_fold_kinematics.py",
+      "existing": "Declared synthetic length_m=0.1 and owned masses",
+      "missing": [
+        "measured geometry scale",
+        "mass/density and uncertainties"
+      ],
+      "calibration_status": "declared_synthetic",
+      "source_sha256": "83d4e3d337c78cbcd401c33890ae541b44465a91304db62f105f3f874ff6554f"
+    },
+    {
+      "subsystem": "material_dynamics",
+      "source": "docs/fold_dynamics.md",
+      "existing": "Consistent declared metre/second/kilogram/joule accounting",
+      "missing": [
+        "measured constitutive parameters",
+        "damping and drive calibration",
+        "mapping to canonical ticks"
+      ],
+      "calibration_status": "declared_synthetic",
+      "source_sha256": "113315583959d2d02681e89da698a2f7e116542e176cedf109c1c2ecf249a2b1"
+    },
+    {
+      "subsystem": "coupled_lc",
+      "source": "src/coupled_lc_reference.py",
+      "existing": "Supplied SI L/C/M/R, charge/current and conventional energy/power",
+      "missing": [
+        "measured or electromagnetically reduced parameters",
+        "winding/terminal conventions",
+        "justified mechanical/canonical coupling"
+      ],
+      "calibration_status": "declared_synthetic",
+      "source_sha256": "43bedad5fed64329bed306a00713c3d719848229c5365e0de6eaea7d4b45624a"
+    },
+    {
+      "subsystem": "timing_delivery",
+      "source": "src/timing_delivery_contract.py",
+      "existing": "Synthetic drive-period timing; energy_joules remains null",
+      "missing": [
+        "physical drive-period duration",
+        "preparation/readout latency and energy",
+        "loading/backaction"
+      ],
+      "calibration_status": "unavailable",
+      "source_sha256": "69049a13066239e03e881e4c4fe925574850ada9e7cd870fa8762fbab6774a2c"
+    },
+    {
+      "subsystem": "qball_samples",
+      "source": "src/qball_timeseries_export.py",
+      "existing": "Model-time samples and dimensionless drift/amplitude/radius ratios",
+      "missing": [
+        "model length/time/energy/charge base scales",
+        "field normalization",
+        "absolute initial references"
+      ],
+      "calibration_status": "unavailable",
+      "source_sha256": "d58f80dc7759be4f0ea5f2c958e967f2b145ba3fb636bef047f26cf43b2696cb"
+    }
+  ],
+  "proposed_contract": {
+    "base_scales": [
+      "length L",
+      "time T",
+      "energy E",
+      "charge Q"
+    ],
+    "required_fields": [
+      "value or null",
+      "unit",
+      "declared_synthetic / independently_measured / unavailable",
+      "source",
+      "uncertainty",
+      "validity range"
+    ],
+    "derived_dimensions": {
+      "speed": "L/T",
+      "mass": "E*T^2/L^2",
+      "voltage": "E/Q",
+      "current": "Q/T",
+      "capacitance": "Q^2/E",
+      "inductance": "E*T^2/Q^2",
+      "resistance": "E*T/Q^2"
+    },
+    "conversion_gate": "Missing or unrelated subsystem scales prevent physical cross-system conversion; no constants are selected by this audit."
+  },
+  "remaining": "Implement an inspectable normalization interface only after selecting an explicitly scoped subsystem pair and its independent inputs. Dimension consistency alone does not establish measured calibration.",
+  "publication_note": "Audit references combined local review commit88cc7c including unmerged PR159 Q-ball export. Its source hashes describe that reviewed snapshot, not a claim all modules are merged at the publication base."
+}

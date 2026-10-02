@@ -479,11 +479,23 @@
       "status": "queued_for_scope_review",
       "context": "Update the 20-record claim catalog with later evidence, retain edition distinctions, collate printed chart targets and authenticated course lessons, inspect the five pending page images, and track recordings/art coverage. Seek drawings, dimensions, wiring, loads, traces, gas controls and energy boundaries for apparatus proposals.",
       "completion": "Source-linked findings; explicit blockers where primary records are unavailable.",
-      "next_action": "Reconcile the 20-record Russell catalog and inspect the five pending page images with edition/source attribution.",
+      "next_action": "Collate remaining original chart/page images and edition witnesses; retain the completed WR008 reading and limited course recovery rather than repeating them as absent. Recover authenticated apparatus drawings, dimensions, wiring and measurements.",
       "blockers_or_limits": [
-        "Authenticated source and apparatus records remain incomplete."
+        "Only one saved chart was re-inspected. The five pending page images, original181/183, full edition/course collation and apparatus evidence remain open."
       ],
-      "review_phase": "scope_review_only"
+      "review_phase": "scope_review_only",
+      "previous_result_snapshots": [
+        {
+          "label": "Before bounded source and normalization reconciliation",
+          "fields": {
+            "next_action": "Reconcile the 20-record Russell catalog and inspect the five pending page images with edition/source attribution.",
+            "blockers_or_limits": [
+              "Authenticated source and apparatus records remain incomplete."
+            ]
+          }
+        }
+      ],
+      "latest_result": "Bounded reconciliation preserves all20 catalog IDs and original quantities/units. RCL005 adds the saved WR008 visual reading (ten octaves, ellipsoid note, no frequency calibration); RCL018 links the prior limited course-text witness without claiming fresh PDF inspection or edition authentication. Eighteen records are unchanged. See russell-claim-catalog-reconciled.json."
     },
     {
       "id": "R08",
@@ -563,11 +575,23 @@
       "status": "queued_for_scope_review",
       "context": "Dimensionless dynamics, conditional scale laws and nested polarity controls exist.",
       "completion": "Independently justify length, time, energy and charge scales, scale-transfer normalization, a physical layer/amplitude definition, and mapping phase rate to measured clocks. Separate practical calibration from a claim of fundamental derivation.",
-      "next_action": "Specify independent length/time/energy/charge normalization and phase-to-clock mapping requirements.",
+      "next_action": "Choose one justified subsystem pair and record independent length/time/energy/charge scales, source, uncertainty and validity range before cross-system conversion. Preserve synthetic, measured and unavailable statuses separately.",
       "blockers_or_limits": [
-        "No independently justified physical scale calibration supplied."
+        "Dimensional consistency is not calibration. Missing base scales and absolute reference values prevent physical cross-system conversion; no physical constants are selected by this audit."
       ],
-      "review_phase": "scope_review_only"
+      "review_phase": "scope_review_only",
+      "previous_result_snapshots": [
+        {
+          "label": "Before bounded source and normalization reconciliation",
+          "fields": {
+            "next_action": "Specify independent length/time/energy/charge normalization and phase-to-clock mapping requirements.",
+            "blockers_or_limits": [
+              "No independently justified physical scale calibration supplied."
+            ]
+          }
+        }
+      ],
+      "latest_result": "Six existing unit contracts are mapped with source hashes in physical-normalization-audit.json. Material and LC SI quantities are supplied inputs; canonical ticks and Q-ball model units have no shared measured calibration. Timing energy remains unknown. The audit includes explicitly identified unmerged Q-ball export evidence."
     },
     {
       "id": "R15",
