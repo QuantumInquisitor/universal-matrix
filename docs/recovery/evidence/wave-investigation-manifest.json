@@ -1,0 +1,60 @@
+{
+  "status": "completed_bounded_numerical_batch",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "source_sha256": {
+    "src/time_order_diagnostics.py": "f886df97f5bc9f810d3979713802b5da6a1bed8819c54b15c92b8ec2960346f1",
+    "src/proposed_nonlinear_wave_control.py": "8ae435d9a965d9040eaaf4ed3a5007865ad4413afe0575dbed60257f86684b14",
+    "src/proposed_mode_pair_control.py": "e6c55142097168eb4ad2ca31c70772eed840ef79213b78aab9544c69ead5a5e9",
+    "scripts/report_time_order_controls.py": "7c936500e8ef6729d79b2ee2b7d70ba52549171b47c301a848854d544cccb3ac",
+    "scripts/report_mode_pair_robustness.py": "63b606ad5018a12ccac38c6b1443bfcd207793c0c9f9470f4a9ec273fdd5fa43",
+    "tests/test_time_order_diagnostics.py": "a1a6d5d3b1518b01788f239d1373250542013241407d65438b873262dda28237",
+    "tests/test_proposed_nonlinear_wave_control.py": "6aca0c2a699fa97e07fe1df37db75e867a9590040a43457ef6db3bb976990976",
+    "tests/test_proposed_mode_pair_control.py": "c1ac64e7c3d541dd0b029e9ae738bc13082795c83c34d125627c2607cbe2d7a5"
+  },
+  "data_sha256": {
+    "time-order-controls.json": "f1b148c8453ad7f4b85b852d7c7c90390b4cb268c1d8fc269f117b05ded7856b",
+    "mode-pair-robustness.json": "e3188e4c7a4cd892209128563ffc819d3cae70d7a7a3f2fab6b8f0e9aea2670d"
+  },
+  "test_batches": {
+    "wave_and_diagnostics": 52,
+    "controller": 9
+  },
+  "wave_cases": [
+    "nonlinear",
+    "linear",
+    "drive_off",
+    "strong_damping",
+    "zero_seed",
+    "opposite_seed",
+    "velocity_seed",
+    "drive_1.8",
+    "drive_1.92",
+    "drive_2.08",
+    "drive_2.2",
+    "refined",
+    "longer",
+    "disturbed_restart"
+  ],
+  "controller_cases": [
+    "ideal",
+    "force_0.05",
+    "delay_0.1",
+    "delay_1",
+    "measurement_0.02",
+    "stiffness_1.2",
+    "combined",
+    "delay_2",
+    "stiffness_1.02",
+    "stiffness_1.05",
+    "delay_2_refined"
+  ],
+  "controller_integration": {
+    "periods": 20,
+    "steps_per_period": 256,
+    "delay_2_refined_steps_per_period": 512
+  },
+  "physical_material_validation": false,
+  "collective_time_crystal_established": false
+}
