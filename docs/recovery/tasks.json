@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Durable recovery checkpoint advanced through merged PR #139 at recovery commit 3bc5132953054985fa1f605508b3251676fe7916. Across the current 22-body source geometry, both attachment searches are now complete: 58 single markers yielded many fixed anisotropic linear readouts but zero scaled-orthogonal physical port matches; 1,653 real marker-to-marker segments yielded 980 fixed-linear matches but again zero scaled-orthogonal, zero unit-orthogonal and zero same-body scaled-orthogonal matches. Therefore the abstract two-component connector port remains a reduced generalized coordinate rather than a literal rigid body attachment.",
+      "latest_result": "Exact recursive zero-thickness body clearance is now merged at 20db2800cca4b49ef7767cef41ff687fe572e4ec. The audit replaces nested bounding-sphere collision assumptions with actual panel-polygon, bridge-segment and hub-point proximity over all 105 module pairs and all independent 9x9 q-state pairs. Coarse ratios 2.19383, 3.29075, 4.38766, 6.58149 and 10.96915 remain colliding; 19.7444749617 is the first sampled collision-free ratio with minimum exact clearance 0.0597550118 m. At 10.96915 only two module pairs / 114 state pairs still collide, governed by root-versus-depth-3 ancestor/descendant panel contact.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Run exact recursive body proximity/collision auditing on the explicit Seed-axis placement over the bounded fold-state grid. Use actual panel polygons, bridge segments and hub points and exact point/segment/polygon proximity, not cross-generation bounding spheres. Keep source midsurfaces/thickness zero unless a physical thickness is separately declared. Preserve the abstract connector port as reduced during this audit. After exact clearance is characterized, revisit whether any physical attachment geometry is needed or whether connector-to-flow correspondence supplies it."
+      "next_action": "Refine only the exact collision/free bracket 10.9691527565 to 19.7444749617 using the same zero-thickness primitive-distance kernel, independent q-state coverage and canonical Seed axis. Do not change body geometry, collision tolerance, or vessel/module interpretation. After the bracket narrows, inspect the governing root/depth-3 panel pair and state neighborhood more densely before introducing body thickness or manufacturing margin."
     },
     {
       "id": "P11",
