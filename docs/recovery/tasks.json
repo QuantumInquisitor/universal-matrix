@@ -12,7 +12,7 @@
       "latest_result": "All 84 records in the existing 14-branch exception inventory now have explicit dispositions. Final reviews identify architecture reorganization and intentionally superseded local-law documentation; different laws are not claimed equivalent. Broader repository/location census and unpublished candidate provenance remain open. See historical-file-reconciliation-2026-10-02.json.",
       "next_action": "Continue the broader location/work-family census and published-draft integration; use the completed 84-record inventory as evidence rather than repeating its reviewed comparisons.",
       "blockers_or_limits": [
-        "No new global census performed; remaining historical differences need file-level evidence."
+        "The bounded 84-record inventory is dispositioned; broader location/work-family census and candidate provenance remain incomplete."
       ],
       "review_phase": "bounded_progress_with_remaining_scope",
       "previous_result_snapshots": [
@@ -43,6 +43,14 @@
         {
           "label": "Before bounded 84-record inventory completion",
           "text": "Nine further documentation records reviewed: six preserve the complete original question section, two retain status-index content except the documented superseded-kernel entry, and one clarifies the unchanged experimental content-clock law. Three architecture/local-law records remain in the 84-record inventory. Later progress claims are not independently revalidated by this retention audit. Broader census remains open."
+        },
+        {
+          "label": "Before integrated recovery CI and parallel review refresh",
+          "fields": {
+            "blockers_or_limits": [
+              "No new global census performed; remaining historical differences need file-level evidence."
+            ]
+          }
         }
       ]
     },
@@ -54,7 +62,7 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "PRs #143, #144, #145 and #146 merged into recovery, not main. PR #129 closed as superseded after confirming its mutable initial-work baseline defect and validating replacement energy/loss similarity.",
+      "latest_result": "PRs #143-151 are merged into recovery, not main; #129 is closed as superseded. Integrated head 78e413f passed all 22 reported workflows and complete 3044-ID verification. PR123 is undergoing separate exact-head validation. PR119/120/121/124 remain open drafts; their 77 published added files are absent from this tracked recovery baseline, despite historical local-checkout presence notes.",
       "next_action": "Review remaining drafts #119-124, retaining fresh combined CI and source-level compatibility evidence.",
       "blockers_or_limits": [
         "Green listed CI is not completed scientific review, combined compatibility, or merge authorization."
@@ -68,6 +76,12 @@
         {
           "label": "Before integration and inertia continuation on 2026-10-02",
           "text": "All returned exact-head PR workflow runs for #119-124, #143 and #144 are successful. In particular #122 broad verification at 493bf950 is green (run 36948969776), replacing the old pending snapshot. #129 remains open with failed run 36933476591; compare with merged #130 before assigning superseded status. No PR merged in this reconciliation."
+        },
+        {
+          "label": "Before parallel draft and candidate review",
+          "fields": {
+            "latest_result": "PRs #143, #144, #145 and #146 merged into recovery, not main. PR #129 closed as superseded after confirming its mutable initial-work baseline defect and validating replacement energy/loss similarity."
+          }
         }
       ]
     },
@@ -79,13 +93,22 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "Aperture/inner/outer/fan-out reference validated and published in draft PR 124; other candidate families remain open.",
+      "latest_result": "Preserved coupled-LC source and report hashes match the filesystem inventory. Fresh four-case and 13 recorded invalid-input controls passed in a copied workspace, but additional public-API probes found complex/nonfinite/bool state and complex scalar validation gaps. Original scratch is preserved; this reference is not yet promoted.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
-      "next_action": "Select the next preserved Tesla/resonator or helix-clock candidate for source/provenance review; retain the published aperture work without repeating it.",
+      "next_action": "Harden and independently test the preserved coupled-LC public API before publication, retaining the valid passive-model controls and original hashes; physical calibration and piezoelectric coupling remain separate.",
       "blockers_or_limits": [
         "Candidate-specific geometry, parameters and source evidence must be identified before promotion."
       ],
-      "review_phase": "bounded_progress_with_remaining_scope"
+      "review_phase": "bounded_progress_with_remaining_scope",
+      "previous_result_snapshots": [
+        {
+          "label": "Before parallel draft and candidate review",
+          "fields": {
+            "latest_result": "Aperture/inner/outer/fan-out reference validated and published in draft PR 124; other candidate families remain open.",
+            "next_action": "Select the next preserved Tesla/resonator or helix-clock candidate for source/provenance review; retain the published aperture work without repeating it."
+          }
+        }
+      ]
     },
     {
       "id": "P04",
@@ -96,7 +119,7 @@
         "P03"
       ],
       "next_action": "Specify the missing material-point/deformation correspondence between the 22-body specimen and 69-domain flow assembly; separate that from physical joint and finite-thickness work.",
-      "latest_result": "Existing material/source replay and separate 69-domain assembly controls remain. Merged #134 establishes explicit recursive placement; #140-142 provide exact finite-grid zero-thickness clearance. Green unmerged #143 supplies a local continuous numerical contact bracket, not a global certificate or a 22-body-to-69-domain relative-fold mapping.",
+      "latest_result": "Existing material/source replay and separate 69-domain assembly controls remain. Merged #134 establishes explicit recursive placement; #140-142 provide exact finite-grid zero-thickness clearance. Merged #143 supplies a local continuous numerical contact bracket, not a global certificate or a 22-body-to-69-domain relative-fold mapping.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
       "blockers_or_limits": [
@@ -107,6 +130,12 @@
         {
           "label": "Before 2026-10-02 reconciliation; may contain superseded next steps",
           "text": "22-body (s,theta) kinematic reduction reproduces original-source markers at 9 phases. Original 3D clearance auditor rerun: 231 pairs,1208 intervals,accepted bound 3.773014616157734e-05 reference units. Rectangle inheritance conditional on scaling every occupied envelope/contact region. This is separate from 69-component flow folding. Constitutive adapter now replays all panel vertices, bridge endpoints and hub markers in 198 body vertex-set comparisons across nine original fixture phases, maximum error 2.776e-17 m. This remains the 22-body specimen, not the separate 69-domain flow assembly. Draft audit recovered existing 202-frame geometry exporter and surface metrics. New nine-frame material overlay independently rebases the old theta=0 reference to theta=pi/12; 54 stretch comparisons agree within 8.89e-16. No full-flow relative-fold correspondence yet."
+        },
+        {
+          "label": "Before integrated recovery CI and parallel review refresh",
+          "fields": {
+            "latest_result": "Existing material/source replay and separate 69-domain assembly controls remain. Merged #134 establishes explicit recursive placement; #140-142 provide exact finite-grid zero-thickness clearance. Green unmerged #143 supplies a local continuous numerical contact bracket, not a global certificate or a 22-body-to-69-domain relative-fold mapping."
+          }
         }
       ]
     },
@@ -147,7 +176,7 @@
         "P04"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged. Bounded distributed-inertia trajectories now pass equilibrium, conservative, passive, driven, drive-off, reversal and independent power-quadrature controls through 0.4 s; 47 combined tests pass locally. See docs/fold_distributed_trajectories.md. Remote CI remains a separate gate.",
+      "latest_result": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged. Bounded distributed-inertia trajectories now pass equilibrium, conservative, passive, driven, drive-off, reversal and independent power-quadrature controls through 0.4 s; 47 combined tests pass locally. See docs/fold_distributed_trajectories.md. PR #148 is merged into recovery. Focused and integrated-head CI passed at 78e413f, including the complete 3044-ID suite.",
       "next_action": "Scope distributed inertia in the recursive network after this bounded single-specimen result; physical joints, thickness, hub rotation and calibration remain separate.",
       "related_parallel_tasks": [
         "P05",
@@ -169,6 +198,12 @@
         {
           "label": "Before distributed trajectory validation",
           "text": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged."
+        },
+        {
+          "label": "Before integrated recovery CI and parallel review refresh",
+          "fields": {
+            "latest_result": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged. Bounded distributed-inertia trajectories now pass equilibrium, conservative, passive, driven, drive-off, reversal and independent power-quadrature controls through 0.4 s; 47 combined tests pass locally. See docs/fold_distributed_trajectories.md. Remote CI remains a separate gate."
+          }
         }
       ]
     },
@@ -181,7 +216,7 @@
         "P07"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Powered unequal-size material accounts and bounded 48-component restart are implemented and covered by the recovery branch experimental controls. Recursive node/edge/group accounting and phase/power findings are retained. Green unmerged #144 audits the distinct mechanical storage and U(1) current contracts; it does not implement a physical electrical adapter.",
+      "latest_result": "Powered unequal-size material accounts and bounded 48-component restart are implemented and covered by the recovery branch experimental controls. Recursive node/edge/group accounting and phase/power findings are retained. Merged #144 audits the distinct mechanical storage and U(1) current contracts; it does not implement a physical electrical adapter.",
       "next_action": "Retain validated powered-material/reserve/restart ledgers; extend independent work/energy/loss controls whenever a new joint, contact, electrical or flow coupling is introduced.",
       "blockers_or_limits": [
         "New physical interfaces and supply calibration are unspecified; no electromechanical or whole-flow energy closure claimed."
@@ -191,6 +226,12 @@
         {
           "label": "Before 2026-10-02 reconciliation; may contain superseded next steps",
           "text": "Accounted ideal replenishment now adds four external-input ledgers with capacity-limited charging. All powered/source-off/finer runs reached 20 seconds; source delivered 78.3829 microjoules, powered final mechanical energy 3.16379 versus 0.694234 microjoules. Root error <=6.794e-14 J, 18 tests passed. Motion remains a growing transient, not a demonstrated stable cycle. Physical supply/material calibration and longer stability/perturbation tests remain open. See docs/fold_supply.md and docs/experiments/fold-supply-summary.json; earlier results preserved in docs/RECOVERY_LOG.md. Separate single-specimen constitutive-motion checkpoint closes conservative/passive/driven accounts with independent gradient and energy-rate controls; this does not switch the older supply/network experiments to the new material law. Material-law pair accounts now close within 8.01e-15 J over .4 s; disconnected single/pair states agree exactly. Wrong reaction and omitted debit fail clearly. 43 pair/reservoir tests pass. Replenishing supply and larger material-law graphs remain separate next steps. Four unequal-size passive material modules now close node/edge/group accounts: maximum reference group error 2.17e-16 J over .2 s; faulty connector localized. Active reserves/supply on this material graph remain open."
+        },
+        {
+          "label": "Before integrated recovery CI and parallel review refresh",
+          "fields": {
+            "latest_result": "Powered unequal-size material accounts and bounded 48-component restart are implemented and covered by the recovery branch experimental controls. Recursive node/edge/group accounting and phase/power findings are retained. Green unmerged #144 audits the distinct mechanical storage and U(1) current contracts; it does not implement a physical electrical adapter."
+          }
         }
       ]
     },
@@ -246,16 +287,16 @@
     {
       "id": "P11",
       "title": "Use the viewer to inspect the same computed engine state.",
-      "status": "queued",
+      "status": "in_progress",
       "scope_and_completion": "Add model coverage and object-to-test/witness links incrementally during steps 3–10. Display source revision, input hashes, units, original dimensional coordinates, projection choices, uncertainty, failed constraints and unrepresented modules. Provide synchronized plots/replay, sections, full-structure framing and recursion navigation. Finish the 64-tetra reference-image correspondence with explicit reconstruction assumptions; keep the 64-address register distinct. Validate desktop behavior and performance, then a named headset/browser/runtime. Participant input, persistent feedback, collaboration and interchange follow verified state contracts. **Done when:** a reviewer can trace a visible result or failure to the actual model/run, inspect all declared components, and reproduce it. Headset completion requires hardware evidence.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Direct desktop consumer implemented in docs/docs/material-viewer.html, linked from the historical viewer. Computed local-frame 3D rotation, original-sample playback, module selection, units, provenance and separate energy ledgers; visible browser controls checked. Physical headset and image correspondence remain unvalidated.",
-      "next_action": "Review the desktop replay; extend missing mechanical-energy display only through an explicit adapter change, then address image correspondence and physical headset validation.",
+      "latest_result": "PR #149 is merged into recovery. Desktop computed-state replay, local-frame 3D rotation, sample playback, module selection, units, provenance and separate energy ledgers are implemented; visible desktop controls and 11 serial tests passed. Focused and integrated CI passed at 78e413f. Global attachment frames, mechanical-energy display, image correspondence and physical headset validation remain open.",
+      "next_action": "Extend the missing mechanical-energy display through an explicit adapter change; resolve assembly attachment frames and image correspondence, then validate on a physical headset. Preserve tested desktop replay.",
       "blockers_or_limits": [
-        "No literal physical attachment frame; full image correspondence and visible desktop/headset verification still required."
+        "No global physical attachment frame or full mechanical-energy display; image correspondence and physical headset verification remain unvalidated."
       ],
-      "review_phase": "ready_for_direct_consumer_work",
+      "review_phase": "bounded_progress_with_remaining_scope",
       "previous_result_snapshots": [
         {
           "label": "Before 2026-10-02 reconciliation; may contain superseded next steps",
@@ -264,6 +305,18 @@
         {
           "label": "Before direct desktop replay",
           "text": "Computed-state exporter and its tests exist on the recovery branch, with metre/local-frame geometry and explicit display normalization. Bounded restart and recursion checkpoints are available; those are no longer blanket reasons to defer direct viewer consumption. Actual integration, image correspondence and desktop/headset QA remain."
+        },
+        {
+          "label": "Before integrated recovery CI and parallel review refresh",
+          "fields": {
+            "status": "queued",
+            "review_phase": "ready_for_direct_consumer_work",
+            "latest_result": "Direct desktop consumer implemented in docs/docs/material-viewer.html, linked from the historical viewer. Computed local-frame 3D rotation, original-sample playback, module selection, units, provenance and separate energy ledgers; visible browser controls checked. Physical headset and image correspondence remain unvalidated.",
+            "next_action": "Review the desktop replay; extend missing mechanical-energy display only through an explicit adapter change, then address image correspondence and physical headset validation.",
+            "blockers_or_limits": [
+              "No literal physical attachment frame; full image correspondence and visible desktop/headset verification still required."
+            ]
+          }
         }
       ]
     },
@@ -573,7 +626,7 @@
       "title": "Recover patterned face-flux boundary solver candidate",
       "status": "validated_published_draft_review_pending",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/123",
-      "next_action": "Review #123's supported numerical scope and compatibility for integration; retain passing controls.",
+      "next_action": "Inspect exact-head full verification 37061360258, then finish integration disposition without modifying the validated solver criteria.",
       "validation": {
         "solver_related_tests_passed": 29,
         "documentation_tests_passed": 12,
@@ -584,7 +637,16 @@
         "PR remains open; physical/whole-network validation separate."
       ],
       "review_phase": "bounded_progress_with_remaining_scope",
-      "latest_result": "PR #123 remains open at b7add289; all returned exact-head verification/container/CodeQL runs pass. Previously recorded solver and invalid-input controls remain preserved."
+      "latest_result": "PR #123 now targets recovery at 9f98b02cb6c54d1e71181b54c1879bb2c7ff4a6a. Its tree exactly matches the tested combined checkout; 41 fresh solver/manufactured/property/governance checks pass. Full run 37061360258 is in progress; the PR remains draft and unmerged.",
+      "previous_result_snapshots": [
+        {
+          "label": "Before integrated recovery CI and parallel review refresh",
+          "fields": {
+            "latest_result": "PR #123 remains open at b7add289; all returned exact-head verification/container/CodeQL runs pass. Previously recorded solver and invalid-input controls remain preserved.",
+            "next_action": "Review #123's supported numerical scope and compatibility for integration; retain passing controls."
+          }
+        }
+      ]
     },
     {
       "id": "REC-OLD-KERNEL",
@@ -605,13 +667,21 @@
       "next_action": "Continue the broader location/work-family census and published-draft integration; use the completed 84-record inventory as evidence rather than repeating its reviewed comparisons.",
       "latest_result": "All 84 records in the existing 14-branch exception inventory now have explicit dispositions. Final reviews identify architecture reorganization and intentionally superseded local-law documentation; different laws are not claimed equivalent. Broader repository/location census and unpublished candidate provenance remain open. See historical-file-reconciliation-2026-10-02.json.",
       "blockers_or_limits": [
-        "Remaining file-level equivalence/disposition evidence is incomplete."
+        "All 84 inventoried branch/file records have dispositions; broader repository/location census and unpublished candidates still require evidence."
       ],
       "review_phase": "bounded_progress_with_remaining_scope",
       "previous_result_snapshots": [
         {
           "label": "Before bounded 84-record inventory completion",
           "text": "Bend-spacing source/document exception reviewed: current baseline preserves scan and adds sampling provenance and finite-grid qualifications. Historical version superseded; other exceptions remain open. See docs/recovery/bend-spacing-disposition.json."
+        },
+        {
+          "label": "Before integrated recovery CI and parallel review refresh",
+          "fields": {
+            "blockers_or_limits": [
+              "Remaining file-level equivalence/disposition evidence is incomplete."
+            ]
+          }
         }
       ]
     },
@@ -688,10 +758,10 @@
     "breathing_is_global_gate": false,
     "dependency_interpretation": "Dependencies describe required interfaces/evidence for integration, not a requirement to close every upstream task before incremental work.",
     "immediate_actions": [
-      "Review/disposition green #143 and #144 and unresolved #129; do not infer merge authorization from green CI.",
+      "Finish PR #123 verification and disposition remaining published drafts #119-124; retain merged #143-151 milestones and closed #129.",
       "P04/P07: specify missing physical interfaces and the 22-body/69-domain mapping.",
       "P08/P10: maintain owned-energy controls and scope unresolved state/depth/attachment requirements.",
-      "P11: connect the existing computed-state export directly to the viewer with explicit local frames.",
+      "P11: extend the merged desktop replay with explicit missing energy/frame adapters, image correspondence and physical-headset validation.",
       "P05/P06/P12: continue bounded independent experiments/source triage without a breathing gate.",
       "P09: retest emergent motion after relevant model changes."
     ]
@@ -797,5 +867,20 @@
       129
     ],
     "scope": "No workstream completion inferred; prior reconciliation remains a dated snapshot."
+  },
+  "integration_checkpoint_2026_10_02": {
+    "head": "78e413f84debd1eadd78b6409bd73932aa5a65bc",
+    "merged_into_recovery": [
+      148,
+      149,
+      150,
+      151
+    ],
+    "verification_run": 37059311350,
+    "workflow_results": "All 22 reported workflows passed",
+    "aggregate_verified_test_ids": 3044,
+    "main_integration": "PR122 remains open; not merged into main",
+    "pending_neumann_head": "9f98b02cb6c54d1e71181b54c1879bb2c7ff4a6a",
+    "pending_neumann_run": 37061360258
   }
 }

@@ -1,12 +1,33 @@
 # Remaining work — reconciled 2026-10-02
 
-The master register retains **41 IDs**: 12 main workstreams, 24 research/source scope-review entries and five recovery records. These are not 41 active or wholly unimplemented experiments. Original scopes, dependencies and statuses are preserved; completed bounded milestones and current next actions are added separately.
+The master register retains **41 IDs**: 12 main workstreams, 24 research/source scope-review entries and five recovery records. These are not 41 active or wholly unimplemented experiments. Original scopes and dependencies are preserved; current statuses reflect bounded progress without closing whole workstreams.
+
+## Current integrated checkpoint and parallel work
+
+Recovery head `78e413f84debd1eadd78b6409bd73932aa5a65bc` has all 22 reported
+workflows passed. The full-suite aggregate verified 3,044 collected tests.
+PRs #148-151 are merged into recovery; PR #122 remains open against main.
+All 84 records in the bounded historical inventory have dispositions; the
+broader census remains open. Desktop replay is implemented and checked;
+physical-headset, image, attachment-frame and full mechanical-energy work remain.
+
+PR #123 is separately undergoing full CI at `9f98b02`; 41 focused checks pass.
+PRs #119/#120/#121/#124 remain published drafts with individually green CI.
+Their 77 added files are absent from tracked recovery at this head; historical
+local-checkout presence is not integration evidence. Independent staging of
+#119 and #124 is in progress. Keep final integration serial and verify the
+combined result.
+
+The preserved coupled-LC candidate passes its original controls when rerun,
+but extra API probes expose invalid-input gaps. Harden it before promotion;
+no physical calibration or whole-system electrical closure is claimed.
+The current next actions below supersede earlier dated snapshots.
 
 ## Distributed trajectory continuation
 
 The isolated 0.4 s trajectory/energy experiment passes 47 combined local tests. See [the report and limits](../fold_distributed_trajectories.md). Existing production dynamics and all workstream completion criteria remain unchanged. Remote CI is a separate gate.
 
-## Current continuation — integration and inertia
+## Earlier integration and inertia snapshot (superseded)
 
 PRs #143, #144, #145 and #146 are merged into recovery, not main. Recovery head after these merges is `585593e0f69d6ad07d0e7bce1ad08c532b2809bd`. PR #129 is closed as superseded after review; its archived head and replacement energy/loss comparisons are preserved in [the disposition evidence](pr129-disposition.json). No geometry, collision tolerance or governing-contact solver criteria changed.
 
@@ -26,7 +47,7 @@ Immediate order: finish remaining draft dispositions; advance direct computed-st
 
 The timestamped [PR/CI evidence](register-reconciliation-2026-10-02.json) covers #119-144 and first-page PR workflow listings for nine open heads. It is not an exhaustive branch census or proof of merge readiness. The [master register](tasks.json) preserves earlier result text in labeled historical snapshots.
 
-## Working order
+## Earlier working order (superseded by current checkpoint)
 
 1. Review/disposition green #143 and #144 and unresolved #129; do not infer merge authorization from green CI.
 2. P04/P07: specify missing physical interfaces and the 22-body/69-domain mapping.
@@ -39,9 +60,9 @@ The timestamped [PR/CI evidence](register-reconciliation-2026-10-02.json) covers
 
 | ID | Workstream | Next action | Remaining limit |
 |---|---|---|---|
-| P01 | Recover surviving work from disk and Git before finalizing the task register. | Finish the unresolved source/test branch comparisons using exception-file-comparison.json; give each unique item an explicit retained, superseded or unresolved disposition. | No new global census performed; remaining historical differences need file-level evidence. |
+| P01 | Recover surviving work from disk and Git before finalizing the task register. | Continue the broader location/work-family census and published-draft integration; use the completed 84-record inventory as evidence rather than repeating its reviewed comparisons. | The bounded 84-record inventory is dispositioned; broader location/work-family census and candidate provenance remain incomplete. |
 | P02 | Finish review and integration disposition of the published drafts. | Review remaining drafts #119-124, retaining fresh combined CI and source-level compatibility evidence. | Green listed CI is not completed scientific review, combined compatibility, or merge authorization. |
-| P03 | Promote the remaining validated local candidates in small groups. | Select the next preserved Tesla/resonator or helix-clock candidate for source/provenance review; retain the published aperture work without repeating it. | Candidate-specific geometry, parameters and source evidence must be identified before promotion. |
+| P03 | Promote the remaining validated local candidates in small groups. | Harden and independently test the preserved coupled-LC public API before publication, retaining the valid passive-model controls and original hashes; physical calibration and piezoelectric coupling remain separate. | Candidate-specific geometry, parameters and source evidence must be identified before promotion. |
 | P04 | Close the whole-assembly geometry and motion questions. | Specify the missing material-point/deformation correspondence between the 22-body specimen and 69-domain flow assembly; separate that from physical joint and finite-thickness work. | No validated relative-fold map between these assemblies; source-midsurface clearance does not supply thickness or joint geometry. |
 | P05 | Finish the wave and control experiments already started. | Reconcile W2 artifact provenance, then define one bounded stochastic-noise/actuator-bandwidth or wavelength/mode comparison with controls and acceptance criteria. | W2 legacy artifact lacks source hashes; broader convergence and Q-ball period protocol remain unresolved. |
 | P06 | Decide whether crystal components provide a useful engine capability. | Define a timing-component use case and matched ordinary-divider comparison including load, latency, readout and energy; retain the existing 168-run evidence. | No established practical advantage or matched hardware cost/calibration. Spatial crystal tests require explicit coordinates. |
@@ -49,7 +70,7 @@ The timestamped [PR/CI evidence](register-reconciliation-2026-10-02.json) covers
 | P08 | Close the energy budget across the coupled specimen. | Retain validated powered-material/reserve/restart ledgers; extend independent work/energy/loss controls whenever a new joint, contact, electrical or flow coupling is introduced. | New physical interfaces and supply calibration are unspecified; no electromechanical or whole-flow energy closure claimed. |
 | P09 | Test whether breathing and folding emerge from the equations. | Rerun the existing emergent-motion controls after a relevant material/joint/supply change; define stability and perturbation criteria before longer runs. | No sustained stable cycle established; do not tune a prescribed outcome or make breathing a global gate. |
 | P10 | Extend to recursive coupling and persistent state. | Scope broader state/depth coverage and physical connector realization; retain the merged local-contact and phase/current limits. | Global continuous clearance, arbitrary-depth convergence, dormant-path rules and a physical attachment/phase-current adapter remain unvalidated. |
-| P11 | Use the viewer to inspect the same computed engine state. | Review the desktop replay; extend missing mechanical-energy display only through an explicit adapter change, then address image correspondence and physical headset validation. | No literal physical attachment frame; full image correspondence and visible desktop/headset verification still required. |
+| P11 | Use the viewer to inspect the same computed engine state. | Extend the missing mechanical-energy display through an explicit adapter change; resolve assembly attachment frames and image correspondence, then validate on a physical headset. Preserve tested desktop replay. | No global physical attachment frame or full mechanical-energy display; image correspondence and physical headset verification remain unvalidated. |
 | P12 | Close the remaining independent experiment and source queues. | Triage R01-R24 one bounded item at a time into executable, evidence-blocked or explicitly deferred work; preserve each item's existing completion criterion. | Source/input gaps vary by item; queued suggestions are not 24 active experiments. |
 
 ## Detailed independent queue — scope review, not newly launched experiments
@@ -83,9 +104,9 @@ The timestamped [PR/CI evidence](register-reconciliation-2026-10-02.json) covers
 
 ## Recovery records
 
-- **REC-NEUMANN — validated_published_draft_review_pending:** Review #123's supported numerical scope and compatibility for integration; retain passing controls.
+- **REC-NEUMANN — validated_published_draft_review_pending:** Inspect exact-head full verification 37061360258, then finish integration disposition without modifying the validated solver criteria.
 - **REC-OLD-KERNEL — closed_superseded:** Keep the closed/superseded disposition; do not restore the old polarity-gradient channel without new justification.
-- **REC-BRANCH-DIFFS — in_progress:** Finish unresolved source/test and historical documentation comparisons after the recorded E8 and bend-spacing dispositions.
+- **REC-BRANCH-DIFFS — in_progress:** Continue the broader location/work-family census and published-draft integration; use the completed 84-record inventory as evidence rather than repeating its reviewed comparisons.
 - **REC-APERTURE — validated_published_draft_review_pending:** Review #124 integration; advance only the missing relative-fold/material correspondence rather than repeat its static/common-scaling inventory.
 - **REC-IMAGES-8 — reviewed_controls_passed_published_draft:** Retain the reviewed image controls; pursue only source-backed material/flow correspondence or timing follow-ons.
 
