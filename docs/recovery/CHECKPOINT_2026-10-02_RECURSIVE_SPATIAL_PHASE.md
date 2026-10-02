@@ -110,3 +110,27 @@ The current 22-body source geometry contains many fixed anisotropic reduced-coor
 Do not restart from PR #88, #92, #96, #97, the old `e311df0` main head, or the early depth-3 experiments.
 
 The current scientific lane is post-PR #137 with PR #138 as the active unmerged spatial gate.
+
+
+## Checkpoint addendum — relative-marker attachment search merged
+
+PR #138 became stale after the recovery checkpoint advanced. Its exact four files were recreated on a fresh branch from the checkpointed recovery head and revalidated as PR #139.
+
+- PR #139 merged successfully.
+- Recovery branch merge commit: `3bc5132953054985fa1f605508b3251676fe7916`
+- PR #138 was closed as superseded after #139 merged.
+- Scientific result is unchanged:
+  - 58 source geometry markers
+  - 1,653 unordered relative-marker segments
+  - 980 fixed-linear matches
+  - 0 scaled-orthogonal matches
+  - 0 unit-orthogonal matches
+  - 0 same-body scaled-orthogonal matches
+
+This closes the searched single-marker and relative-marker rigid attachment-frame lanes. The current 22-body source geometry does not contain a literal rigid/scaled-orthogonal realization of the abstract connector port under the tested candidate classes.
+
+### Current next gate
+
+Proceed to exact recursive body proximity/collision auditing on the explicit Seed-axis placement using actual panel polygons, bridge segments and hub points over the bounded fold-state grid. Use exact point/segment/polygon proximity rather than cross-generation bounding spheres. Keep body thickness at zero/source-midsurface unless a physical thickness is explicitly declared.
+
+The abstract connector port remains a reduced generalized coordinate during this collision audit.
