@@ -17,7 +17,9 @@ preserves each archived blob, current blob and disposition:
 | Later documentation updates reviewed | 3 |
 | Test revisions reviewed | 3 |
 | Preserved in published PR #123, not integrated | 2 |
-| Still requires semantic review | 23 |
+| Workflow evolution reviewed | 6 |
+| Markup regressions repaired from archived evidence | 5 |
+| Still requires semantic review | 12 |
 
 These are branch/file records, not unique files or experiments. The first
 snapshot left 42 unresolved records and 15 unavailable archived blobs. The
@@ -34,6 +36,18 @@ not trajectory-identical. Governance tests follow the reorganized section
 numbering with added authority checks, not identical named-heading coverage.
 All 27 current amplitude, radial and governance tests pass. No scientific
 source or acceptance threshold was changed in this audit.
+
+Six workflow comparisons retain historical explicit test/report targets except
+the documented superseded local-kernel test. The current workflow adds
+changed-file numerical gating, pins Python environments and separates long
+Q-ball work; the full suite remains unconditional. Changed scheduling is not
+claimed to be identical execution coverage.
+
+Five older notes had doubled delimiters and missing backslashes in math
+commands. Their text is otherwise identical to the archived blobs when
+backslashes are removed. The repair restores only the archived backslashes
+and converts math delimiters to dollar syntax. Other pre-existing malformed
+notation is not reconstructed. Twelve documentation-governance tests pass.
 
 The reviewed bend-spacing source retains the original scan and adds sampling
 metadata and phase offsets. Its updated wording correctly limits
@@ -62,7 +76,7 @@ still running. No server-side branch was merged during this audit.
 
 ## Next actions
 
-1. Resolve the remaining 23 workflow, architecture and research-documentation
+1. Resolve the remaining 12 architecture and research-documentation
    records using the now available archived objects.
 2. Complete review and integration disposition of #123 using its preserved
    implementation and the fresh compatibility evidence.
