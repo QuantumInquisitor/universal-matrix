@@ -77,8 +77,8 @@ class PairedHelixClock:
             with np.errstate(over="raise", invalid="raise"):
                 points = np.stack(
                     (
-                        self.radius * np.cos(u + label * math.pi),
-                        self.radius * np.sin(u + label * math.pi),
+                        (1 if label == 0 else -1) * self.radius * np.cos(u),
+                        (1 if label == 0 else -1) * self.radius * np.sin(u),
                         (self.pitch / (2 * math.pi)) * u,
                     ),
                     axis=-1,

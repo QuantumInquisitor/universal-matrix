@@ -32,6 +32,15 @@ def test_wrapping_signed_and_large_elapsed_ticks():
         np.testing.assert_array_equal(clock_rotation(tick), clock_rotation(int(tick) % 36))
 
 
+def test_large_material_parameter_does_not_collapse_opposite_strands():
+    # u+pi rounds to u at this finite value. Test relative strand geometry,
+    # without claiming any precision for an externally intended huge phase.
+    adapter = PairedHelixClock(pitch=0, tilt_rad=0, azimuth_rad=0)
+    first, second = adapter.frame(0, 1e17)
+    np.testing.assert_array_equal(second[:2], -first[:2])
+    assert np.linalg.norm(first - second) == pytest.approx(0.8, rel=2e-15)
+
+
 @pytest.mark.parametrize("pitch", [0.3, -0.3])
 def test_tilted_frame_preserves_material_distances_axis_and_signed_rise(pitch):
     adapter = PairedHelixClock(pitch=pitch)

@@ -34,7 +34,7 @@
   "cases": [
     {
       "pitch_per_turn": 0.3,
-      "half_swap_max_error": 3.608224830031759e-16,
+      "half_swap_max_error": 3.3306690738754696e-16,
       "full_labeled_return_max_error": 0.0,
       "quarter_rotation_max_error": 3.3306690738754696e-16,
       "axial_displacement_max_error": 1.6653345369377348e-16,
@@ -54,10 +54,10 @@
     },
     {
       "pitch_per_turn": -0.3,
-      "half_swap_max_error": 3.608224830031759e-16,
+      "half_swap_max_error": 3.3306690738754696e-16,
       "full_labeled_return_max_error": 0.0,
-      "quarter_rotation_max_error": 3.885780586188048e-16,
-      "axial_displacement_max_error": 1.1102230246251565e-16,
+      "quarter_rotation_max_error": 3.3306690738754696e-16,
+      "axial_displacement_max_error": 1.6653345369377348e-16,
       "half_material_distance_max_error": 3.3306690738754696e-16,
       "labeled_return_ticks": [
         36
@@ -120,11 +120,12 @@
     "preserved_note_sha256_raw": "67829dd1fbb962c9d65e33a0ede09225e6ebd25206ad7b3f7a7793b3351856dc",
     "preserved_clock_sha256_raw": "1ad6e30821c4283bd0f18df06d3ce0ace9b7182b2a21d8ae5f4725aa309e545a",
     "preserved_clock_sha256_utf8_lf": "e1a2f869cb62c2a9694a4bd941b217f18aaa511b5eedd49ba059a2894198c055",
+    "representation_hardening": "Opposite radial coordinates use exact sign reversal instead of adding pi to the material parameter; this prevents strand collapse when a large finite parameter absorbs the pi offset. Original bounded tolerances and inputs are unchanged.",
     "current_source_sha256_utf8_lf": {
       "src/canonical_polarity_clock.py": "e1a2f869cb62c2a9694a4bd941b217f18aaa511b5eedd49ba059a2894198c055",
       "src/canonical_kernel.py": "5e53471a1ad075962c2d0b62b364430e128f60b144b8617c30ed4fae8a3a5fb4",
-      "src/paired_helix_clock.py": "850e91542f8ceb6d207a81685f1eae5525a0f9ee1aa4bf5089c11ebbe5816619",
-      "scripts/report_paired_helix_clock.py": "335d9f5cfcb28790bc8a8cc3cc5504d3d65695ca4c39866fac2c653905f88f2d"
+      "src/paired_helix_clock.py": "2e7c7332b21e59a26c3030d1cf7337a321f1092f4a5a69ee849f27de24abbe76",
+      "scripts/report_paired_helix_clock.py": "8f785d7ff27bede754c21120fa569c8b0b71da77519a5496a02d2f1e75bb8565"
     },
     "hash_convention": "Preserved raw hashes retain original line endings; current UTF-8/LF hashes normalize universal newlines."
   }

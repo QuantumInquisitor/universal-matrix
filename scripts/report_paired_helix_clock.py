@@ -189,6 +189,7 @@ def build_report():
         "preserved_note_sha256_raw": "67829dd1fbb962c9d65e33a0ede09225e6ebd25206ad7b3f7a7793b3351856dc",
         "preserved_clock_sha256_raw": "1ad6e30821c4283bd0f18df06d3ce0ace9b7182b2a21d8ae5f4725aa309e545a",
         "preserved_clock_sha256_utf8_lf": "e1a2f869cb62c2a9694a4bd941b217f18aaa511b5eedd49ba059a2894198c055",
+        "representation_hardening": "Opposite radial coordinates use exact sign reversal instead of adding pi to the material parameter; this prevents strand collapse when a large finite parameter absorbs the pi offset. Original bounded tolerances and inputs are unchanged.",
         "current_source_sha256_utf8_lf": {
             p.relative_to(ROOT).as_posix(): hashlib.sha256(
                 p.read_text(encoding="utf-8").encode("utf-8")

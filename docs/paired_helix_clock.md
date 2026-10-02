@@ -55,6 +55,10 @@ Complex, nonfinite and boolean inputs, malformed parameter shapes and noninteger
 ticks reject explicitly. Unrepresentable coordinate arithmetic raises an error.
 The model does not claim reliable geometric resolution for arbitrarily extreme
 finite scales or angles.
+The second strand uses the equivalent radial sign reversal rather than adding
+pi to a large material parameter. This preserves diametric pairing even when
+floating-point addition would absorb that offset; it does not restore phase
+information already lost in an externally supplied large value.
 
 ## Reproduction and provenance
 
@@ -71,9 +75,11 @@ cardinal coordinates, preservation of distances/axial coordinates and signed
 rise, wrapping, malformed inputs, and failure of the preserved audit when the
 adapter is deliberately changed to the wrong 108-tick action.
 
-The local promotion run passed all 28 controls and 52 focused tests. Every
-original numerical result field and original check name matched exactly on
-that run. The committed summary stores the reproduction evidence; remote
+The local promotion run passed all 28 controls and 53 focused tests. Original
+inputs, thresholds and check names are preserved. The equivalent radial-sign
+construction changes some roundoff-level residuals from the archived report;
+bounded results agree within the original tolerances. The committed summary
+stores the reproduction evidence; remote
 platform execution remains a separate validation step.
 
 Preserved scratch files remain unchanged. Original raw SHA256 values:
