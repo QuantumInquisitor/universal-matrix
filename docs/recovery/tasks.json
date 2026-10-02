@@ -118,9 +118,9 @@
       "dependencies": [
         "P03"
       ],
-      "next_action": "Specify the missing material-point/deformation correspondence between the 22-body specimen and 69-domain flow assembly; separate that from physical joint and finite-thickness work.",
-      "latest_result": "Existing material/source replay and separate 69-domain assembly controls remain. Merged #134 establishes explicit recursive placement; #140-142 provide exact finite-grid zero-thickness clearance. Merged #143 supplies a local continuous numerical contact bracket, not a global certificate or a 22-body-to-69-domain relative-fold mapping.",
-      "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
+      "next_action": "Declare and justify material-to-flow identity, coordinate, SI-length, clock and attachment contracts before implementing a nonuniform relative-fold map. Then test the actual finite domains, host cuts, thickness, ports, flux and clearance under that declared map.",
+      "latest_result": "PR119 and PR124 are integrated into recovery. The material-flow similarity report compares the existing 22-owner adapter with the existing common-scaling flow law using normalized labeled pair distances. This is a cross-adapter regression witness for the already-established relative-fold distinction, not a new rigidity theorem or a physical 22-to-69 map. Recursive placement and local continuous contact results remain preserved.",
+      "evidence": "docs/material_flow_similarity.md",
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
       "blockers_or_limits": [
         "No validated relative-fold map between these assemblies; source-midsurface clearance does not supply thickness or joint geometry."
@@ -135,6 +135,14 @@
           "label": "Before integrated recovery CI and parallel review refresh",
           "fields": {
             "latest_result": "Existing material/source replay and separate 69-domain assembly controls remain. Merged #134 establishes explicit recursive placement; #140-142 provide exact finite-grid zero-thickness clearance. Green unmerged #143 supplies a local continuous numerical contact bracket, not a global certificate or a 22-body-to-69-domain relative-fold mapping."
+          }
+        },
+        {
+          "label": "Before cross-adapter similarity regression",
+          "fields": {
+            "latest_result": "Existing material/source replay and separate 69-domain assembly controls remain. Merged #134 establishes explicit recursive placement; #140-142 provide exact finite-grid zero-thickness clearance. Merged #143 supplies a local continuous numerical contact bracket, not a global certificate or a 22-body-to-69-domain relative-fold mapping.",
+            "next_action": "Specify the missing material-point/deformation correspondence between the 22-body specimen and 69-domain flow assembly; separate that from physical joint and finite-thickness work.",
+            "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124"
           }
         }
       ]
