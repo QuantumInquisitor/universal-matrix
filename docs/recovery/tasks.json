@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Exact recursive zero-thickness body clearance is now merged at 20db2800cca4b49ef7767cef41ff687fe572e4ec. The audit replaces nested bounding-sphere collision assumptions with actual panel-polygon, bridge-segment and hub-point proximity over all 105 module pairs and all independent 9x9 q-state pairs. Coarse ratios 2.19383, 3.29075, 4.38766, 6.58149 and 10.96915 remain colliding; 19.7444749617 is the first sampled collision-free ratio with minimum exact clearance 0.0597550118 m. At 10.96915 only two module pairs / 114 state pairs still collide, governed by root-versus-depth-3 ancestor/descendant panel contact.",
+      "latest_result": "Exact recursive zero-thickness clearance has now been refined through merged PR #141 at 12eb201d094ddf24dc7a9c13f8bda1c003ed29dd. The finite-grid collision/free bracket is 14.9454706307 < boundary <= 14.9797492331, width 0.0342786024 after a 256x refinement, with no sampled re-entrant collision. The governing case is consistently root [] versus depth-3 [0,1,1], panel-0 versus panel-5, both at q=(1.1,0). The first free endpoint has only 0.00019594018 m (~0.196 mm) exact zero-thickness clearance.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Refine only the exact collision/free bracket 10.9691527565 to 19.7444749617 using the same zero-thickness primitive-distance kernel, independent q-state coverage and canonical Seed axis. Do not change body geometry, collision tolerance, or vessel/module interpretation. After the bracket narrows, inspect the governing root/depth-3 panel pair and state neighborhood more densely before introducing body thickness or manufacturing margin."
+      "next_action": "Densify only the governing root/depth-3 state neighborhood near scale=1.1 and theta=0 while sampling vessel ratios within the refined bracket. Determine whether the minimum lies exactly at the declared q-domain corner or at a nearby interior state. Keep all other module pairs as a control but do not repeat the entire broad grid. Do not add body thickness or manufacturing margin until the local state-space minimum is characterized."
     },
     {
       "id": "P11",
