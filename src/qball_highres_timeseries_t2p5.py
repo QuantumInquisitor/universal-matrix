@@ -204,12 +204,18 @@ def format_high_resolution_timeseries_t2p5_report(
     return "\n".join(lines)
 
 
-def main() -> None:
-    print(
-        format_high_resolution_timeseries_t2p5_report(
-            run_high_resolution_timeseries_t2p5()
-        )
-    )
+def main(argv=None) -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--samples-json", help="Export the same run's full scalar sample arrays")
+    args = parser.parse_args(argv)
+    run = run_high_resolution_timeseries_t2p5()
+    print(format_high_resolution_timeseries_t2p5_report(run))
+    if args.samples_json:
+        from .qball_timeseries_export import export_t2p5_samples
+
+        export_t2p5_samples(run, args.samples_json)
 
 
 if __name__ == "__main__":
