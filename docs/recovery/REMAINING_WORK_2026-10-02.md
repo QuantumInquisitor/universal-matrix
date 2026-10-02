@@ -4,15 +4,14 @@ The master register retains **41 IDs**: 12 main workstreams, 24 research/source 
 
 ## Current integration checkpoint
 
-Recovery `9c2d1377407ded7c3df66e95b6a50ccb427597a5` includes accepted
-PR153-158,117 and118 in addition to the earlier recovered experiments.
+Recovery `9744133ce2c4ed9a90bfa425c9e593850e0d37d0` includes accepted
+PR153-158,160,117 and118 in addition to the earlier recovered experiments.
 The LC reference, mechanical-energy viewer and conditional timing delivery
 comparison are integrated; they are not missing implementations. Previous
 recovery `664e5fc` passed all28 reported workflows. Current-head integration
 verification remains a separate gate; PR122 is still draft against main.
 
-PR157 actuator bandwidth passed full CI and is integrated. PR159 (Q-ball scalar sample export), PR160
-(paired-helix clock adapter) and PR161 (these source/unit audit records) remain
+PR157 actuator bandwidth and PR160 paired-helix clock adapter passed their full and focused CI and are integrated. PR159 (Q-ball scalar sample export) and PR161 (these source/unit audit records) remain
 reviewed proposals pending exact-head CI and serial integration. Their local
 combined review preserves all41 original task contracts. Completing every
 physical or research workstream is not a prerequisite for bounded experimental
@@ -119,7 +118,7 @@ The timestamped [PR/CI evidence](register-reconciliation-2026-10-02.json) covers
 | R03 | P1 and T1–T2 electromechanics | Inventory ring geometry, material tensors/poling, supports, electrodes and losses; specify one reciprocal electrical/piezoelectric coupling. | Physical component data and measured response required for calibration. |
 | R04 | T3 wider Tesla mechanisms | Triage the proposed Tesla mechanisms and select or explicitly defer each before starting a bounded test. | Proposals lack selected scope/inputs; archive and patent access gaps remain. |
 | R05 | W3 quantum mode pair | Specify bath/noise, observables and coupling for the quantum-mode comparison. | Open-system model and measurement protocol not specified. |
-| R06 | H1–H2 helix geometry | Choose an explicit helix geometry/flow adapter, including thickness, pitch, junctions and time calibration. | Reference drawings underdetermine physical geometry and dynamics. |
+| R06 | H1–H2 helix geometry | Review the optional paired-helix adapter and preserved controls; specify independently justified thickness, pitch, junctions, flow coupling and physical time calibration before a physical geometry/flow implementation. | The adapter is synthetic kinematics only. Physical thickness, flow/junction coupling, dynamics and tick duration remain unspecified; neither handedness nor physical geometry follows from the clock alone. |
 | R07 | R1 Russell corpus and apparatus | Collate remaining original chart/page images and edition witnesses; retain the completed WR008 reading and limited course recovery rather than repeating them as absent. Recover authenticated apparatus drawings, dimensions, wiring and measurements. | Only one saved chart was re-inspected. The five pending page images, original181/183, full edition/course collation and apparatus evidence remain open. |
 | R08 | R2 Watts and spectral matching | Resolve the iron-table medium and original readings; compare modern line identities with uncertainty, retaining 7817.2 as unresolved. | Original-source/medium evidence and unmatched line identification remain missing. |
 | R09 | F1 frequency and conventional controls | Resolve the 12 instrument settings where evidence permits and bound the next species/transition dataset. | Catalog labels are not resonance predictions; provenance/settings remain incomplete. |
