@@ -1,0 +1,44 @@
+name: Paired helix clock adapter
+
+on:
+  pull_request:
+    branches: [main, codex/recovery-plan-log]
+    paths:
+      - 'src/paired_helix_clock.py'
+      - 'src/canonical_polarity_clock.py'
+      - 'src/canonical_kernel.py'
+      - 'scripts/report_paired_helix_clock.py'
+      - 'tests/test_paired_helix_clock.py'
+      - 'tests/test_canonical_polarity_clock.py'
+      - 'docs/paired_helix_clock.md'
+      - 'docs/experiments/paired-helix-clock-summary.json'
+      - '.github/workflows/paired-helix-clock.yml'
+      - 'pyproject.toml'
+      - 'uv.lock'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  paired-helix-clock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --group test --group lint
+      - name: Check the declared action and preserved controls
+        run: |
+          .venv/bin/ruff check src/paired_helix_clock.py scripts/report_paired_helix_clock.py tests/test_paired_helix_clock.py
+          .venv/bin/ruff format --check src/paired_helix_clock.py scripts/report_paired_helix_clock.py tests/test_paired_helix_clock.py
+          .venv/bin/python -m pytest -q tests/test_paired_helix_clock.py tests/test_canonical_polarity_clock.py
+          .venv/bin/python -m scripts.report_paired_helix_clock --output artifacts/paired-helix-clock.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paired-helix-clock
+          path: artifacts/paired-helix-clock.json
+          if-no-files-found: error
