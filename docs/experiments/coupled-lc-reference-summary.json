@@ -1,0 +1,249 @@
+{
+  "scope": "Declared synthetic two-loop passive LC reference; not measured apparatus or a geometry calibration.",
+  "provenance": {
+    "preserved_source_sha256": "bf1fa88fe6dad993f15e13aea911fdc10fc918963509c290b06e2d712d5d20af",
+    "preserved_report_sha256": "515884f60a7edb70e5da307740c934ff3ca51776737485b75b108a62717c7191",
+    "hardening_review_source_sha256": "189e258d948ebe9909791b8757044719e1247415d7206ef93565c5ba722cbb86",
+    "scope": "Recovered local synthetic controls; external historical claims are not republished."
+  },
+  "all_checks": "passed",
+  "case_count": 4,
+  "invalid_input_cases_rejected": 13,
+  "symmetric_bare_frequency_hz": 50329.21210448704,
+  "symmetric_split_hz": 16013.275110897011,
+  "cases": [
+    {
+      "name": "symmetric_synthetic",
+      "parameters": {
+        "L1_h": 0.001,
+        "L2_h": 0.001,
+        "C1_f": 1e-08,
+        "C2_f": 1e-08,
+        "M_h": 0.0003,
+        "R1_ohm": 0.0,
+        "R2_ohm": 0.0,
+        "parameter_source": "synthetic numerical control; not measured apparatus"
+      },
+      "signed_coupling_k": 0.30000000000000004,
+      "lossless_frequency_hz": [
+        44141.63908164477,
+        60154.91419254178
+      ],
+      "lossless_omega_squared_analytic": [
+        76923076923.07692,
+        142857142857.1429
+      ],
+      "mode_vectors_columns_L_normalized": [
+        [
+          19.6116135138184,
+          26.726124191242448
+        ],
+        [
+          19.61161351381841,
+          -26.726124191242437
+        ]
+      ],
+      "analytic_eigen_max_relative_residual": 3.96728515625e-16,
+      "modal_equation_relative_residual": 1.798046008229059e-16,
+      "global_energy_matrix_relative_residual": 2.945100572117027e-17,
+      "sampled_power_balance_max_absolute_residual_w": 1.1102230246251565e-16,
+      "state_poles_per_s": [
+        [
+          -8.310612137301409e-12,
+          377964.47300922725
+        ],
+        [
+          -8.310612137301409e-12,
+          -377964.47300922725
+        ],
+        [
+          -1.3517260661483066e-11,
+          277350.0981126146
+        ],
+        [
+          -1.3517260661483066e-11,
+          -277350.0981126146
+        ]
+      ],
+      "maximum_passive_growth_per_s": -8.310612137301409e-12,
+      "winding_reversal_frequency_and_state_covariance": "passed"
+    },
+    {
+      "name": "detuned_synthetic",
+      "parameters": {
+        "L1_h": 0.001,
+        "L2_h": 0.004,
+        "C1_f": 1e-08,
+        "C2_f": 4e-09,
+        "M_h": 0.0005,
+        "R1_ohm": 0.0,
+        "R2_ohm": 0.0,
+        "parameter_source": "synthetic numerical control; not measured apparatus"
+      },
+      "signed_coupling_k": 0.25000000000000006,
+      "lossless_frequency_hz": [
+        38199.62013365915,
+        54142.16144693013
+      ],
+      "lossless_omega_squared_analytic": [
+        57607340376.395515,
+        115725992956.93782
+      ],
+      "mode_vectors_columns_L_normalized": [
+        [
+          9.476088214566554,
+          31.254926312765793
+        ],
+        [
+          13.946715110214418,
+          -8.494457269371804
+        ]
+      ],
+      "analytic_eigen_max_relative_residual": 2.6370547657651754e-16,
+      "modal_equation_relative_residual": 1.4777073929452968e-16,
+      "global_energy_matrix_relative_residual": 5.534152334244605e-17,
+      "sampled_power_balance_max_absolute_residual_w": 1.1102230246251565e-16,
+      "state_poles_per_s": [
+        [
+          -3.303631441039907e-12,
+          340185.23330229614
+        ],
+        [
+          -3.303631441039907e-12,
+          -340185.23330229614
+        ],
+        [
+          0.0,
+          240015.2919636487
+        ],
+        [
+          0.0,
+          -240015.2919636487
+        ]
+      ],
+      "maximum_passive_growth_per_s": 0.0,
+      "winding_reversal_frequency_and_state_covariance": "passed"
+    },
+    {
+      "name": "detuned_passive_losses",
+      "parameters": {
+        "L1_h": 0.001,
+        "L2_h": 0.004,
+        "C1_f": 1e-08,
+        "C2_f": 4e-09,
+        "M_h": 0.0005,
+        "R1_ohm": 2.0,
+        "R2_ohm": 5.0,
+        "parameter_source": "synthetic numerical control; not measured apparatus"
+      },
+      "signed_coupling_k": 0.25000000000000006,
+      "lossless_frequency_hz": [
+        38199.62013365915,
+        54142.16144693013
+      ],
+      "lossless_omega_squared_analytic": [
+        57607340376.395515,
+        115725992956.93782
+      ],
+      "mode_vectors_columns_L_normalized": [
+        [
+          9.476088214566554,
+          31.254926312765793
+        ],
+        [
+          13.946715110214418,
+          -8.494457269371804
+        ]
+      ],
+      "analytic_eigen_max_relative_residual": 2.6370547657651754e-16,
+      "modal_equation_relative_residual": 1.4777073929452968e-16,
+      "global_energy_matrix_relative_residual": 5.5341522559798794e-17,
+      "sampled_power_balance_max_absolute_residual_w": 1.5612511283791264e-16,
+      "state_poles_per_s": [
+        [
+          -1157.2599295693753,
+          340183.26488290564
+        ],
+        [
+          -1157.2599295693753,
+          -340183.26488290564
+        ],
+        [
+          -576.0734037639559,
+          240014.60063052183
+        ],
+        [
+          -576.0734037639559,
+          -240014.60063052183
+        ]
+      ],
+      "maximum_passive_growth_per_s": -576.0734037639559,
+      "winding_reversal_frequency_and_state_covariance": "passed"
+    },
+    {
+      "name": "detuned_decoupled",
+      "parameters": {
+        "L1_h": 0.001,
+        "L2_h": 0.004,
+        "C1_f": 1e-08,
+        "C2_f": 4e-09,
+        "M_h": 0.0,
+        "R1_ohm": 0.0,
+        "R2_ohm": 0.0,
+        "parameter_source": "synthetic numerical control; not measured apparatus"
+      },
+      "signed_coupling_k": 0.0,
+      "lossless_frequency_hz": [
+        39788.735772973836,
+        50329.212104487044
+      ],
+      "lossless_omega_squared_analytic": [
+        62500000000.00001,
+        100000000000.0
+      ],
+      "mode_vectors_columns_L_normalized": [
+        [
+          0.0,
+          31.622776601683796
+        ],
+        [
+          15.811388300841898,
+          0.0
+        ]
+      ],
+      "analytic_eigen_max_relative_residual": 3.0517578125e-16,
+      "modal_equation_relative_residual": 1.332150069750935e-16,
+      "global_energy_matrix_relative_residual": 0.0,
+      "sampled_power_balance_max_absolute_residual_w": 0.0,
+      "state_poles_per_s": [
+        [
+          0.0,
+          316227.76601683785
+        ],
+        [
+          0.0,
+          -316227.76601683785
+        ],
+        [
+          0.0,
+          249999.99999999994
+        ],
+        [
+          -0.0,
+          -249999.99999999994
+        ]
+      ],
+      "maximum_passive_growth_per_s": 0.0,
+      "winding_reversal_frequency_and_state_covariance": "passed"
+    }
+  ],
+  "no_time_integrator": true,
+  "needed_to_apply": [
+    "L1 and L2 in henries",
+    "C1 and C2 in farads",
+    "signed M in henries and winding convention",
+    "loss/load model, here series R1/R2 in ohms",
+    "circuit connection and drive boundary conditions",
+    "material/geometry reduction or measurements establishing those parameters"
+  ]
+}
