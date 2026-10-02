@@ -194,3 +194,29 @@ Current next gate:
 Densify the governing root/depth-3 state neighborhood near the declared q-domain corner `scale=1.1, theta=0` while sampling vessel ratios inside the refined bracket. Determine whether the worst case is exactly the corner or a nearby interior state before introducing body thickness or manufacturing margin.
 
 This remains a finite-grid zero-thickness geometry result, not a continuous collision theorem or a physical manufacturing tolerance.
+
+
+## Checkpoint addendum — dense governing-state recursive clearance
+
+PR #142 merged successfully.
+
+- Merge commit: `75787b0f73db0d7734486f0d74ea3b9f10149d95`
+- Dense governing-state grid: 30 states per module, 900 independent root/depth-3 state pairs
+- Starting refined bracket: `14.9454706307 < boundary <= 14.9797492331`
+- Dense bracket: `14.963948939801849 < boundary <= 14.964082840592333`
+- Dense bracket width: `0.00013390079048392067`
+- Full 15-module broad-grid control remains collision-free at the dense upper ratio
+- Upper minimum exact zero-thickness clearance: `1.1027355190096344e-07 m`
+
+The governing body relation is unchanged:
+
+- root path `[]`, body `panel-0`
+- depth-3 path `[0,1,1]`, body `panel-5`
+- both scale coordinates = 1.1
+- child theta = 0
+
+The root theta coordinate is not uniquely governing. Root q=(1.1,0) and root q=(1.1,0.0025) tie exactly because root panel-0 uses only nonrotating rays 0 and 1. The limiter is therefore a state-edge family with root theta freedom, not a unique q-domain corner.
+
+### Current next gate
+
+Solve the fixed governing panel-pair contact ratio continuously/numerically at the identified boundary state, then test local child scale/theta and root-scale monotonicity near that contact. Preserve the full assembly broad-grid control. Do not introduce body thickness or manufacturing margin until the zero-thickness fixed-feature boundary and local state dependence are characterized.
