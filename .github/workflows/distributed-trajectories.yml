@@ -25,7 +25,7 @@ jobs:
       - run: uv sync --python 3.12 --extra scientific --group test --group lint
       - name: Verify trajectories and ledgers
         run: |
-          uv run ruff check scripts/report_fold_distributed_trajectories.py tests/test_fold_distributed_trajectories.py
-          uv run ruff format --check scripts/report_fold_distributed_trajectories.py tests/test_fold_distributed_trajectories.py
-          uv run python -m pytest tests/test_fold_distributed_trajectories.py tests/test_fold_distributed_inertia.py tests/test_fold_kinematics.py
-          uv run python -m scripts.report_fold_distributed_trajectories --output artifacts/distributed-trajectories.json
+          .venv/bin/ruff check scripts/report_fold_distributed_trajectories.py tests/test_fold_distributed_trajectories.py
+          .venv/bin/ruff format --check scripts/report_fold_distributed_trajectories.py tests/test_fold_distributed_trajectories.py
+          .venv/bin/python -m pytest tests/test_fold_distributed_trajectories.py tests/test_fold_distributed_inertia.py tests/test_fold_kinematics.py
+          .venv/bin/python -m scripts.report_fold_distributed_trajectories --output artifacts/distributed-trajectories.json
