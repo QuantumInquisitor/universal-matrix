@@ -113,14 +113,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Recursive spatial placement, connector-frame translation and fixed port-to-body correspondence are now audited. The 22-body module fits a local Seed-axis vessel at a common radius/module-length ratio of about 2.19 for planar/3D containment and conservative sibling separation, with three Seed axes rigidly equivalent. A spatial rest-offset and mirrored-branch frame adapter are required. The abstract two-component connector port was then searched against all 58 panel vertices, bridge endpoints and hub markers. Twenty-four points reproduce the port under a fixed state-independent anisotropic 2x3 linear map, best panel-2:vertex-1 with ~1.01e-11 displacement and ~1.23e-10 Jacobian error, but zero candidates are scaled-orthogonal or unit-orthogonal matches. Thus no searched marker is justified as a literal rigid physical attachment point.",
+      "latest_result": "Durable checkpoint: docs/recovery/CHECKPOINT_2026-10-02_RECURSIVE_SPATIAL_PHASE.md at recovery commit 1b936367d8ffe8d8c50c518d3633f375b1d1918d. Merged recursive checkpoints #130–#137 include cascade attenuation localization, Seed/Vesica binary correspondence, explicit 22-body placement, spatial connector-frame audit, fixed port/body search, and modal phase/power diagnostics. Open green PR #138 searched all 1,653 relative-marker segments formed from 58 source markers: 980 fixed-linear matches, but zero scaled-orthogonal, zero unit-orthogonal and zero same-body scaled-orthogonal matches. Thus the current 22-body geometry still contains no literal rigid connector attachment frame; the connector port remains a reduced generalized coordinate.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Search geometry-derived relative attachment frames rather than arbitrary single-point linear readouts. Evaluate directed pairs of existing panel vertices, bridge endpoints and hub markers as physical segment candidates; derive fixed orthonormal/scaled-orthogonal frames from their reference geometry and test port displacement/Jacobian across the full q and scale grids. If no relative geometric frame matches, keep the port explicitly reduced and proceed to exact body proximity/collision auditing without inventing an attachment."
+      "next_action": "First preserve/document and merge green PR #138 if it remains mergeable against the checkpointed recovery head. Then continue the spatial lane with exact recursive body proximity/collision auditing over the bounded fold grid while keeping the abstract port reduced. In parallel, only as a separate adapter audit, compare the merged mechanical modal phase diagnostic against the existing gauge-invariant U(1) phase-current sector with zero fitted phase/sign offsets and explicit conservation/gauge-invariance checks. Do not call the mechanical power-flow result plasma or electrical current."
     },
     {
       "id": "P11",
