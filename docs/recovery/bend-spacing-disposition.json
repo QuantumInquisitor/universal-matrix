@@ -1,0 +1,28 @@
+{
+  "scope": "Semantic review of the saved bend-spacing branch exception; no source changes required",
+  "baseline": "a78576f83854a5b75c90815db121b1ca40a4f606",
+  "branch": "codex/toroidal-bend-spacing-scan",
+  "files": [
+    {
+      "path": "src/toroidal_bend_spacing_scan.py",
+      "historical_blob": "a429783552f7d45107e58d6aec89ca19163fab78",
+      "baseline_blob": "d21b82f249b59f71bc9ee41a7b21b09cadeb0239",
+      "finding": "Baseline retains the scan and adds BendSamplingGrid provenance plus sample-offset inputs forwarded to the audit. It qualifies collision_free as finite-sampler detection rather than continuous clearance. No older capability was found missing in the inspected diff.",
+      "disposition": "superseded_by_sampling_provenance_and_scope_correction"
+    },
+    {
+      "path": "docs/toroidal_bend_spacing_scan_v0.1.md",
+      "historical_blob": "7e09d0f0af14c8678bb37b3b7a62a1cc32980854",
+      "baseline_blob": "a563dcbc8d4c162faa382329838ca04235507b20",
+      "finding": "Baseline replaces future search language with a completed 25-point scan and explicitly records the coarse sampler missing the known gap-3 collision. It links the sampling reliability follow-up. Historical source should not replace this more qualified account.",
+      "disposition": "superseded_by_completed_finite_scan_report"
+    },
+    {
+      "path": "tests/test_toroidal_bend_spacing_scan.py",
+      "finding": "Saved exact-blob comparison reports identical tests in branch and baseline.",
+      "disposition": "already_present"
+    }
+  ],
+  "evidence": "exception-file-comparison.json plus direct raw branch source/document comparison to the current local baseline files; local source blob rechecked",
+  "remaining": "Other exception branches still require their own semantic review. This disposition neither proves continuous clearance nor closes whole-network folding."
+}

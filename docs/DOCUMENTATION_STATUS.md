@@ -25,6 +25,9 @@ A historical file never overrides the current canonical specification or tested 
 
 | File | Role |
 | --- | --- |
+| `docs/RECOVERY_PLAN.md` | Cross-project catch-up sequence, completion criteria and independent research queues. |
+| `docs/RECOVERY_LOG.md` | Dated execution evidence, limitations and exact resume actions. |
+| `docs/recovery/tasks.json` | Machine-readable catch-up task dispositions; queued work is not an implemented capability. |
 | `README.md` | Current repository overview, capabilities, licensing, and usage entry point. |
 | `white_paper.md` | Current scientific and mathematical preprint, Version 0.6. |
 | `ARCHITECTURE.md` | Current software and subsystem architecture. |

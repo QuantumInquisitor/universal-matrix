@@ -1,0 +1,59 @@
+name: Recursive pair versus embedded dynamics
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_recursive_pair_dynamics.py'
+      - 'tests/test_fold_recursive_pair_dynamics.py'
+      - 'docs/fold_recursive_pair_dynamics.md'
+      - '.github/workflows/recursive-pair-embedded.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recursive-pair-embedded:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify isolated versus embedded recursive dynamics
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_pair_dynamics.py tests/test_fold_recursive_pair_dynamics.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_pair_dynamics.py tests/test_fold_recursive_pair_dynamics.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_pair_dynamics.py
+          uv run --python 3.12 --extra scientific python scripts/report_fold_recursive_pair_dynamics.py --output artifacts/fold-recursive-pair/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-recursive-pair/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          for row in r['pairs'].values():
+              assert row['max_module_residual_j'] < 1e-10
+              assert row['max_connector_residual_j'] < 1e-10
+              assert row['max_total_residual_j'] < 1e-10
+          for row in r['pair_similarity'].values():
+              assert row['coordinate_max_difference'] < 1e-10
+              assert row['rescaled_rate_max_difference'] < 1e-9
+              assert row['rescaled_energy_max_difference_j'] < 1e-10
+              assert row['rescaled_work_max_difference_j'] < 1e-10
+          assert r['quarter_to_eighth_refinement_max_state_difference'] < 1e-6
+          assert not r['connector_coefficients_changed']
+          assert not r['material_scaling_law_changed']
+          assert not r['production_scale_guard_changed']
+          assert not r['embedded_loading_equated_with_isolated_pair']
+          print(json.dumps({
+              'isolated_samples': r['isolated_samples'],
+              'embedded_comparison': r['embedded_comparison'],
+          }, sort_keys=True))
+          PY

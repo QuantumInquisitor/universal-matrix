@@ -1,0 +1,469 @@
+{
+  "schema": 1,
+  "baseline_commit": "493bf95089ab6f48df4b91d66eb52a3053bb0d54",
+  "scope": "Finite source-contract controls; not a trajectory or physical adapter",
+  "mechanical_cases": [
+    {
+      "parent_scale": 1.0,
+      "child_scale": 0.5,
+      "case": "both_moving",
+      "potential_j": 2.20708263240029e-06,
+      "parent_power_w": -3.322840433328069e-05,
+      "child_power_w": -1.36185117433478e-05,
+      "transport_w": 9.804946294966445e-06,
+      "storage_rate_w": 4.684691607662849e-05,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 4.684691607811555e-05,
+          "balance_residual_w": 1.4870595125291222e-15,
+          "wrong_child_sign_residual_w": 2.7237023488182662e-05
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 4.6846916071741635e-05,
+          "balance_residual_w": -4.88685663929591e-15,
+          "wrong_child_sign_residual_w": 2.7237023481808746e-05
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 4.684691611345801e-05,
+          "balance_residual_w": 3.682951601297838e-14,
+          "wrong_child_sign_residual_w": 2.7237023523525118e-05
+        }
+      ]
+    },
+    {
+      "parent_scale": 1.0,
+      "child_scale": 0.5,
+      "case": "parent_stationary",
+      "potential_j": 2.20708263240029e-06,
+      "parent_power_w": 0.0,
+      "child_power_w": -1.36185117433478e-05,
+      "transport_w": -6.8092558716739e-06,
+      "storage_rate_w": 1.36185117433478e-05,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 1.3618511743019084e-05,
+          "balance_residual_w": -3.287165461704489e-16,
+          "wrong_child_sign_residual_w": 2.7237023486366884e-05
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 1.361851174157913e-05,
+          "balance_residual_w": -1.768670862436865e-15,
+          "wrong_child_sign_residual_w": 2.723702348492693e-05
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 1.3618511753225832e-05,
+          "balance_residual_w": 9.878032162309765e-15,
+          "wrong_child_sign_residual_w": 2.7237023496573634e-05
+        }
+      ]
+    },
+    {
+      "parent_scale": 1.0,
+      "child_scale": 0.5,
+      "case": "child_stationary",
+      "potential_j": 2.20708263240029e-06,
+      "parent_power_w": -3.322840433328069e-05,
+      "child_power_w": 0.0,
+      "transport_w": 1.6614202166640346e-05,
+      "storage_rate_w": 3.322840433328069e-05,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 3.3228404334376494e-05,
+          "balance_residual_w": 1.0958031357310993e-15,
+          "wrong_child_sign_residual_w": 1.0958031357310993e-15
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 3.322840432995075e-05,
+          "balance_residual_w": -3.32994401367262e-15,
+          "wrong_child_sign_residual_w": -3.32994401367262e-15
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 3.322840435811459e-05,
+          "balance_residual_w": 2.4833901482532866e-14,
+          "wrong_child_sign_residual_w": 2.4833901482532866e-14
+        }
+      ]
+    },
+    {
+      "parent_scale": 1.0,
+      "child_scale": 0.5,
+      "case": "both_stationary",
+      "potential_j": 2.20708263240029e-06,
+      "parent_power_w": 0.0,
+      "child_power_w": 0.0,
+      "transport_w": 0.0,
+      "storage_rate_w": -0.0,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 0.0,
+          "balance_residual_w": 0.0,
+          "wrong_child_sign_residual_w": 0.0
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 0.0,
+          "balance_residual_w": 0.0,
+          "wrong_child_sign_residual_w": 0.0
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 0.0,
+          "balance_residual_w": 0.0,
+          "wrong_child_sign_residual_w": 0.0
+        }
+      ]
+    },
+    {
+      "parent_scale": 0.5,
+      "child_scale": 0.25,
+      "case": "both_moving",
+      "potential_j": 2.7588532905003626e-07,
+      "parent_power_w": -4.153550541660086e-06,
+      "child_power_w": -1.702313967918475e-06,
+      "transport_w": 1.2256182868708056e-06,
+      "storage_rate_w": 5.855864509578562e-06,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 5.855864509764444e-06,
+          "balance_residual_w": 1.8588243906614028e-16,
+          "wrong_child_sign_residual_w": 3.4046279360228327e-06
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 5.855864508967704e-06,
+          "balance_residual_w": -6.108570799119887e-16,
+          "wrong_child_sign_residual_w": 3.404627935226093e-06
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 5.855864514182251e-06,
+          "balance_residual_w": 4.603689501622298e-15,
+          "wrong_child_sign_residual_w": 3.4046279404406398e-06
+        }
+      ]
+    },
+    {
+      "parent_scale": 0.5,
+      "child_scale": 0.25,
+      "case": "parent_stationary",
+      "potential_j": 2.7588532905003626e-07,
+      "parent_power_w": 0.0,
+      "child_power_w": -1.702313967918475e-06,
+      "transport_w": -8.511569839592375e-07,
+      "storage_rate_w": 1.702313967918475e-06,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 1.7023139678773855e-06,
+          "balance_residual_w": -4.108956827130611e-17,
+          "wrong_child_sign_residual_w": 3.4046279357958605e-06
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 1.7023139676973912e-06,
+          "balance_residual_w": -2.2108385780460812e-16,
+          "wrong_child_sign_residual_w": 3.4046279356158664e-06
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 1.702313969153229e-06,
+          "balance_residual_w": 1.2347540202887206e-15,
+          "wrong_child_sign_residual_w": 3.4046279370717043e-06
+        }
+      ]
+    },
+    {
+      "parent_scale": 0.5,
+      "child_scale": 0.25,
+      "case": "child_stationary",
+      "potential_j": 2.7588532905003626e-07,
+      "parent_power_w": -4.153550541660086e-06,
+      "child_power_w": 0.0,
+      "transport_w": 2.076775270830043e-06,
+      "storage_rate_w": 4.153550541660086e-06,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 4.153550541797062e-06,
+          "balance_residual_w": 1.3697539196638742e-16,
+          "wrong_child_sign_residual_w": 1.3697539196638742e-16
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 4.153550541243843e-06,
+          "balance_residual_w": -4.162430017090775e-16,
+          "wrong_child_sign_residual_w": -4.162430017090775e-16
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 4.153550544764324e-06,
+          "balance_residual_w": 3.1042376853166083e-15,
+          "wrong_child_sign_residual_w": 3.1042376853166083e-15
+        }
+      ]
+    },
+    {
+      "parent_scale": 0.5,
+      "child_scale": 0.25,
+      "case": "both_stationary",
+      "potential_j": 2.7588532905003626e-07,
+      "parent_power_w": 0.0,
+      "child_power_w": 0.0,
+      "transport_w": 0.0,
+      "storage_rate_w": -0.0,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 0.0,
+          "balance_residual_w": 0.0,
+          "wrong_child_sign_residual_w": 0.0
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 0.0,
+          "balance_residual_w": 0.0,
+          "wrong_child_sign_residual_w": 0.0
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 0.0,
+          "balance_residual_w": 0.0,
+          "wrong_child_sign_residual_w": 0.0
+        }
+      ]
+    },
+    {
+      "parent_scale": 0.25,
+      "child_scale": 0.125,
+      "case": "both_moving",
+      "potential_j": 3.448566613125453e-08,
+      "parent_power_w": -5.191938177075108e-07,
+      "child_power_w": -2.1278924598980938e-07,
+      "transport_w": 1.532022858588507e-07,
+      "storage_rate_w": 7.319830636973202e-07,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 7.319830637205555e-07,
+          "balance_residual_w": 2.3235304883267535e-17,
+          "wrong_child_sign_residual_w": 4.255784920028541e-07
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 7.31983063620963e-07,
+          "balance_residual_w": -7.635713498899859e-17,
+          "wrong_child_sign_residual_w": 4.2557849190326165e-07
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 7.319830642727814e-07,
+          "balance_residual_w": 5.754611877027872e-16,
+          "wrong_child_sign_residual_w": 4.2557849255507997e-07
+        }
+      ]
+    },
+    {
+      "parent_scale": 0.25,
+      "child_scale": 0.125,
+      "case": "parent_stationary",
+      "potential_j": 3.448566613125453e-08,
+      "parent_power_w": 0.0,
+      "child_power_w": -2.1278924598980938e-07,
+      "transport_w": -1.0639462299490469e-07,
+      "storage_rate_w": 2.1278924598980938e-07,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 2.1278924598467318e-07,
+          "balance_residual_w": -5.136196033913264e-18,
+          "wrong_child_sign_residual_w": 4.2557849197448256e-07
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 2.127892459621739e-07,
+          "balance_residual_w": -2.7635482225576015e-17,
+          "wrong_child_sign_residual_w": 4.255784919519833e-07
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 2.1278924614415363e-07,
+          "balance_residual_w": 1.5434425253609007e-16,
+          "wrong_child_sign_residual_w": 4.2557849213396304e-07
+        }
+      ]
+    },
+    {
+      "parent_scale": 0.25,
+      "child_scale": 0.125,
+      "case": "child_stationary",
+      "potential_j": 3.448566613125453e-08,
+      "parent_power_w": -5.191938177075108e-07,
+      "child_power_w": 0.0,
+      "transport_w": 2.595969088537554e-07,
+      "storage_rate_w": 5.191938177075108e-07,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 5.191938177246327e-07,
+          "balance_residual_w": 1.7121923995798427e-17,
+          "wrong_child_sign_residual_w": 1.7121923995798427e-17
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 5.191938176554804e-07,
+          "balance_residual_w": -5.2030375213634687e-17,
+          "wrong_child_sign_residual_w": -5.2030375213634687e-17
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 5.191938180955405e-07,
+          "balance_residual_w": 3.8802971066457604e-16,
+          "wrong_child_sign_residual_w": 3.8802971066457604e-16
+        }
+      ]
+    },
+    {
+      "parent_scale": 0.25,
+      "child_scale": 0.125,
+      "case": "both_stationary",
+      "potential_j": 3.448566613125453e-08,
+      "parent_power_w": 0.0,
+      "child_power_w": 0.0,
+      "transport_w": 0.0,
+      "storage_rate_w": -0.0,
+      "storage_derivatives": [
+        {
+          "epsilon_s": 1e-05,
+          "derivative_w": 0.0,
+          "balance_residual_w": 0.0,
+          "wrong_child_sign_residual_w": 0.0
+        },
+        {
+          "epsilon_s": 1e-06,
+          "derivative_w": 0.0,
+          "balance_residual_w": 0.0,
+          "wrong_child_sign_residual_w": 0.0
+        },
+        {
+          "epsilon_s": 1e-07,
+          "derivative_w": 0.0,
+          "balance_residual_w": 0.0,
+          "wrong_child_sign_residual_w": 0.0
+        }
+      ]
+    }
+  ],
+  "gauge_cases": [
+    {
+      "target_polarity": -1,
+      "phase_difference_rad": -2.1,
+      "current_model_units": 0.4635904716770287,
+      "gauge_error": 0.0,
+      "reversal_error": 5.551115123125783e-17,
+      "missing_link_transform_error": 0.24540234697682506
+    },
+    {
+      "target_polarity": -1,
+      "phase_difference_rad": -0.7,
+      "current_model_units": 0.23486958784785916,
+      "gauge_error": 0.0,
+      "reversal_error": 0.0,
+      "missing_link_transform_error": 0.23446041679255253
+    },
+    {
+      "target_polarity": -1,
+      "phase_difference_rad": 0.0,
+      "current_model_units": -0.09732769759762021,
+      "gauge_error": 0.0,
+      "reversal_error": 0.0,
+      "missing_link_transform_error": 0.36580349999189044
+    },
+    {
+      "target_polarity": -1,
+      "phase_difference_rad": 0.8,
+      "current_model_units": -0.41223490922732037,
+      "gauge_error": 0.0,
+      "reversal_error": 0.0,
+      "missing_link_transform_error": 0.3053246645657146
+    },
+    {
+      "target_polarity": -1,
+      "phase_difference_rad": 2.4,
+      "current_model_units": -0.25254306453346687,
+      "gauge_error": 0.0,
+      "reversal_error": 1.1102230246251565e-16,
+      "missing_link_transform_error": 0.22222150963257697
+    },
+    {
+      "target_polarity": 1,
+      "phase_difference_rad": -2.1,
+      "current_model_units": -0.4635904716770287,
+      "gauge_error": 0.0,
+      "reversal_error": 5.551115123125783e-17,
+      "missing_link_transform_error": 0.24540234697682506
+    },
+    {
+      "target_polarity": 1,
+      "phase_difference_rad": -0.7,
+      "current_model_units": -0.23486958784785916,
+      "gauge_error": 0.0,
+      "reversal_error": 0.0,
+      "missing_link_transform_error": 0.23446041679255253
+    },
+    {
+      "target_polarity": 1,
+      "phase_difference_rad": 0.0,
+      "current_model_units": 0.09732769759762021,
+      "gauge_error": 0.0,
+      "reversal_error": 0.0,
+      "missing_link_transform_error": 0.36580349999189044
+    },
+    {
+      "target_polarity": 1,
+      "phase_difference_rad": 0.8,
+      "current_model_units": 0.41223490922732037,
+      "gauge_error": 0.0,
+      "reversal_error": 0.0,
+      "missing_link_transform_error": 0.3053246645657146
+    },
+    {
+      "target_polarity": 1,
+      "phase_difference_rad": 2.4,
+      "current_model_units": 0.25254306453346687,
+      "gauge_error": 0.0,
+      "reversal_error": 1.1102230246251565e-16,
+      "missing_link_transform_error": 0.22222150963257697
+    }
+  ],
+  "storage_allocation": "equal endpoint shares; bookkeeping convention only",
+  "mechanical_units": {
+    "energy": "J",
+    "power": "W"
+  },
+  "gauge_current_units": "model charge per model time; no SI calibration supplied",
+  "physical_conversion_factor": null,
+  "fitted_parameter_count": 0,
+  "cross_sector_adapter_validated": false,
+  "plasma_modeled": false,
+  "source_hash_encoding": "UTF-8 with LF newlines",
+  "sources": {
+    "scripts/report_phase_current_contract.py": "05eaca8659b004af10ab538014e56d14b133780a17ec6f1fbeb3fbc3c70d1193",
+    "scripts/report_fold_recursive_phase_power.py": "8c2620ba2224bee362fff517c5f0e1d64469026f9e7d14a4acc01350b27a8db9",
+    "scripts/report_fold_scale_extension.py": "cd0fefe07b06bf86824d0a3f982ae5054203bb108990c59824ff0138496f14bb",
+    "scripts/report_fold_mapped.py": "83be1741ba4c5212341701cf7f27e89320c80caad15e0479d2f638d7a2788387",
+    "scripts/report_fold_dynamics.py": "1959b1c054b92b5034ff22e2708482d2e271dcc971528aa3793078be9f2368ce",
+    "src/gauge_matter.py": "896c78952bfcd285e72ab563bd869cced05e6d4be24121a09172bdfabc913ace",
+    "src/gauge_dynamics.py": "68762862cf235f89f34a092cebc57e83daa8e5e2d9c922cdce22c26767377055"
+  }
+}

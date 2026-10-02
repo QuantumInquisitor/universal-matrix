@@ -1,0 +1,144 @@
+{
+  "scope": "Literal-image algebra controls and explicitly conditional examples; no claimed image device validated",
+  "optical_frequency": {
+    "frequency_Hz": 613000000000000.0,
+    "vacuum_wavelength_nm": 489.0578433931484,
+    "quantum_energy_eV": 2.5351642982143257
+  },
+  "phase_offset": {
+    "displayed_decimal": "0.018451",
+    "exact_fraction": "18451/1000000",
+    "return_steps_if_exact_turns_per_update": 1000000,
+    "actual_image_units": "unspecified"
+  },
+  "orientation": {
+    "identity_to_reflection_linear_path": [
+      {
+        "phase": 0.0,
+        "determinant": 1.0
+      },
+      {
+        "phase": 0.25,
+        "determinant": 0.5
+      },
+      {
+        "phase": 0.5,
+        "determinant": 0.0
+      },
+      {
+        "phase": 0.75,
+        "determinant": -0.5
+      },
+      {
+        "phase": 1.0,
+        "determinant": -1.0
+      }
+    ],
+    "proper_rotation_direction_reversal": [
+      {
+        "phase": 0.0,
+        "determinant": 1.0,
+        "direction": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "phase": 0.25,
+        "determinant": 1.0,
+        "direction": [
+          0.0,
+          -0.7071067811865476,
+          0.7071067811865476
+        ]
+      },
+      {
+        "phase": 0.5,
+        "determinant": 1.0,
+        "direction": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ]
+      },
+      {
+        "phase": 0.75,
+        "determinant": 1.0,
+        "direction": [
+          0.0,
+          -0.7071067811865476,
+          -0.7071067811865475
+        ]
+      },
+      {
+        "phase": 1.0,
+        "determinant": 1.0,
+        "direction": [
+          0.0,
+          -1.2246467991473532e-16,
+          -1.0
+        ]
+      }
+    ],
+    "limit": "A_b is undefined in image; deformation interpretation is conditional"
+  },
+  "lattice": {
+    "literal_azimuths_degrees": [
+      0,
+      30,
+      60,
+      90
+    ],
+    "all_possible_undirected_nonself_pairs": 120,
+    "claimed_links": 64,
+    "adjacency_supplied": false,
+    "claimed_octave_formula_12_step_ratio": 12.0,
+    "actual_octave_12_step_ratio": 2.0
+  },
+  "coupling": {
+    "hermitian_error_symmetric_R": 3.1401849173675503e-16,
+    "hermitian_error_asymmetric_R": 3.5418985784519617,
+    "phase_decoration_eigenvalue_error": 5.329070518200751e-15,
+    "seed": 743
+  },
+  "phase_pattern": {
+    "sixteen_node_traveling_pattern_common_phase_order": 5.82608599711065e-17,
+    "target_relative_alignment": 1.0,
+    "dynamical_stability_tested": false
+  },
+  "conditional_measurement": {
+    "success_probability": 0.010000000000000002,
+    "conditional_target_probability": 1.0,
+    "failure_probability": 0.99,
+    "mechanism": "two-outcome projective measurement toy example, not material synthesis"
+  },
+  "blueprint_accounting": {
+    "displayed_mass_kg": 4200,
+    "assumed_standard_gravity_m_s2": 9.80665,
+    "required_hover_force_N": 41187.93,
+    "displayed_stored_energy_J": 5000000.0,
+    "storage_duration_at_assumed_1MW_s": 5.0,
+    "power_W_if_thrust_only_from_one_way_photons": 12347830774631.94,
+    "limit": "No thrust mechanism or power demand is derived from the picture; examples do not bound other propulsion mechanisms"
+  },
+  "position_not_state": {
+    "same_position": [
+      1,
+      0,
+      0
+    ],
+    "first_velocity": [
+      0,
+      1,
+      0
+    ],
+    "second_velocity": [
+      0,
+      -1,
+      0
+    ],
+    "position_return_error": 0,
+    "velocity_return_error": 2
+  }
+}

@@ -1,0 +1,64 @@
+name: Recursive port body correspondence
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_recursive_port_body_correspondence.py'
+      - 'tests/test_fold_recursive_port_body_correspondence.py'
+      - 'docs/fold_recursive_port_body_correspondence.md'
+      - '.github/workflows/recursive-port-body-correspondence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recursive-port-body:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify fixed port-to-body correspondence search
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_port_body_correspondence.py tests/test_fold_recursive_port_body_correspondence.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_port_body_correspondence.py tests/test_fold_recursive_port_body_correspondence.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_port_body_correspondence.py
+          uv run --python 3.12 --extra scientific python -m scripts.report_fold_recursive_port_body_correspondence --output artifacts/fold-recursive-port-body/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-recursive-port-body/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          assert r['candidate_count'] > 22
+          assert not r['state_dependent_transform_used']
+          assert not r['specific_physical_attachment_selected']
+          assert set(r['exact_scaled_orthogonal_candidates']) <= set(r['exact_fixed_linear_candidates'])
+          assert set(r['exact_unit_orthogonal_projection_candidates']) <= set(r['exact_scaled_orthogonal_candidates'])
+          print(json.dumps({
+              'candidate_count': r['candidate_count'],
+              'exact_fixed_linear_candidates': r['exact_fixed_linear_candidates'],
+              'exact_scaled_orthogonal_candidates': r['exact_scaled_orthogonal_candidates'],
+              'exact_unit_orthogonal_projection_candidates': r['exact_unit_orthogonal_projection_candidates'],
+              'best_candidates': [
+                  {
+                      'candidate_id': row['candidate_id'],
+                      'score': row['score'],
+                      'displacement_error': row['maximum_normalized_displacement_error'],
+                      'jacobian_error': row['maximum_normalized_jacobian_error'],
+                      'projection_scale': row['uniform_projection_scale'],
+                      'scaled_orthogonal_error': row['scaled_orthogonal_relative_error'],
+                      'condition_number': row['condition_number'],
+                  }
+                  for row in r['best_candidates']
+              ],
+          }, sort_keys=True))
+          PY
