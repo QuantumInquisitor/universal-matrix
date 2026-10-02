@@ -1,0 +1,267 @@
+{
+  "schema": 1,
+  "original_specimen_commit": "60a7fd60f57d73b89ea5397db58a3ff5d291556c",
+  "scope": "Cross-adapter regression of existing motion laws, not a new rigidity theorem",
+  "point_ids": [
+    "panel-0",
+    "panel-1",
+    "panel-2",
+    "panel-3",
+    "panel-4",
+    "panel-5",
+    "hub-0",
+    "hub-1",
+    "hub-2",
+    "hub-3",
+    "bridge-0-0",
+    "bridge-0-1",
+    "bridge-1-0",
+    "bridge-1-2",
+    "bridge-2-0",
+    "bridge-2-3",
+    "bridge-3-1",
+    "bridge-3-2",
+    "bridge-4-1",
+    "bridge-4-3",
+    "bridge-5-2",
+    "bridge-5-3"
+  ],
+  "labeled_pair_count": 231,
+  "point_policy": "Existing 22 body owner markers; panels use vertex means, not centroids",
+  "flow_action_policy": "Apply existing uniform-scale operator to material reference points; these are not flow-component anchors",
+  "roundoff_regression_tolerance": 1e-12,
+  "rigid_control_error": 2.0816681711721685e-17,
+  "samples": [
+    {
+      "phase": 0.0,
+      "q": [
+        1.0,
+        0.0
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.0,
+      "material_scale_only_error": 0.0,
+      "flow_common_scale_error": 0.0,
+      "hub_squared_distance_ratio": 1.0,
+      "analytic_hub_squared_distance_ratio": 1.0
+    },
+    {
+      "phase": 0.0625,
+      "q": [
+        1.038268343236509,
+        0.01992829178753018
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.0002019528311637299,
+      "material_scale_only_error": 3.469446951953614e-18,
+      "flow_common_scale_error": 3.469446951953614e-18,
+      "hub_squared_distance_ratio": 0.988428969628284,
+      "analytic_hub_squared_distance_ratio": 0.9884289696282839
+    },
+    {
+      "phase": 0.125,
+      "q": [
+        1.0707106781186548,
+        0.07667926537588417
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.0007784431548118927,
+      "material_scale_only_error": 3.469446951953614e-18,
+      "flow_common_scale_error": 1.734723475976807e-18,
+      "hub_squared_distance_ratio": 0.9547931044140445,
+      "analytic_hub_squared_distance_ratio": 0.9547931044140449
+    },
+    {
+      "phase": 0.1875,
+      "q": [
+        1.0923879532511287,
+        0.1616130994850917
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.0016422481995624592,
+      "material_scale_only_error": 3.469446951953614e-18,
+      "flow_common_scale_error": 5.204170427930421e-18,
+      "hub_squared_distance_ratio": 0.9027546170190311,
+      "analytic_hub_squared_distance_ratio": 0.9027546170190311
+    },
+    {
+      "phase": 0.25,
+      "q": [
+        1.1,
+        0.26179938779914946
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.0026563245471691865,
+      "material_scale_only_error": 3.469446951953614e-18,
+      "flow_common_scale_error": 3.469446951953614e-18,
+      "hub_squared_distance_ratio": 0.8392126967350138,
+      "analytic_hub_squared_distance_ratio": 0.8392126967350139
+    },
+    {
+      "phase": 0.3125,
+      "q": [
+        1.0923879532511287,
+        0.36198567611320714
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.0036569305515867165,
+      "material_scale_only_error": 3.469446951953614e-18,
+      "flow_common_scale_error": 5.204170427930421e-18,
+      "hub_squared_distance_ratio": 0.7739403296439895,
+      "analytic_hub_squared_distance_ratio": 0.7739403296439896
+    },
+    {
+      "phase": 0.375,
+      "q": [
+        1.0707106781186548,
+        0.4469195102224146
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.004488229814421457,
+      "material_scale_only_error": 3.469446951953614e-18,
+      "flow_common_scale_error": 1.734723475976807e-18,
+      "hub_squared_distance_ratio": 0.7177360969952519,
+      "analytic_hub_squared_distance_ratio": 0.7177360969952519
+    },
+    {
+      "phase": 0.4375,
+      "q": [
+        1.038268343236509,
+        0.5036704838107686
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.005032235428242601,
+      "material_scale_only_error": 3.469446951953614e-18,
+      "flow_common_scale_error": 3.469446951953614e-18,
+      "hub_squared_distance_ratio": 0.6799513151804482,
+      "analytic_hub_squared_distance_ratio": 0.679951315180448
+    },
+    {
+      "phase": 0.5,
+      "q": [
+        1.0,
+        0.5235987755982988
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.0052207389879115225,
+      "material_scale_only_error": 0.0,
+      "flow_common_scale_error": 0.0,
+      "hub_squared_distance_ratio": 0.6666666666666667,
+      "analytic_hub_squared_distance_ratio": 0.6666666666666669
+    },
+    {
+      "phase": 0.5625,
+      "q": [
+        0.961731656763491,
+        0.5036704838107686
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.005032235428242597,
+      "material_scale_only_error": 3.469446951953614e-18,
+      "flow_common_scale_error": 3.469446951953614e-18,
+      "hub_squared_distance_ratio": 0.679951315180448,
+      "analytic_hub_squared_distance_ratio": 0.679951315180448
+    },
+    {
+      "phase": 0.625,
+      "q": [
+        0.9292893218813453,
+        0.4469195102224146
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.00448822981442145,
+      "material_scale_only_error": 6.938893903907228e-18,
+      "flow_common_scale_error": 3.469446951953614e-18,
+      "hub_squared_distance_ratio": 0.717736096995252,
+      "analytic_hub_squared_distance_ratio": 0.7177360969952519
+    },
+    {
+      "phase": 0.6875,
+      "q": [
+        0.9076120467488713,
+        0.3619856761132072
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.00365693055158672,
+      "material_scale_only_error": 6.938893903907228e-18,
+      "flow_common_scale_error": 3.469446951953614e-18,
+      "hub_squared_distance_ratio": 0.7739403296439896,
+      "analytic_hub_squared_distance_ratio": 0.7739403296439896
+    },
+    {
+      "phase": 0.75,
+      "q": [
+        0.9,
+        0.26179938779914946
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.0026563245471691935,
+      "material_scale_only_error": 3.469446951953614e-18,
+      "flow_common_scale_error": 3.469446951953614e-18,
+      "hub_squared_distance_ratio": 0.8392126967350139,
+      "analytic_hub_squared_distance_ratio": 0.8392126967350139
+    },
+    {
+      "phase": 0.8125,
+      "q": [
+        0.9076120467488713,
+        0.1616130994850917
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.0016422481995624592,
+      "material_scale_only_error": 6.938893903907228e-18,
+      "flow_common_scale_error": 3.469446951953614e-18,
+      "hub_squared_distance_ratio": 0.9027546170190313,
+      "analytic_hub_squared_distance_ratio": 0.9027546170190311
+    },
+    {
+      "phase": 0.875,
+      "q": [
+        0.9292893218813453,
+        0.07667926537588421
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.0007784431548118927,
+      "material_scale_only_error": 6.938893903907228e-18,
+      "flow_common_scale_error": 3.469446951953614e-18,
+      "hub_squared_distance_ratio": 0.9547931044140449,
+      "analytic_hub_squared_distance_ratio": 0.9547931044140446
+    },
+    {
+      "phase": 0.9375,
+      "q": [
+        0.9617316567634909,
+        0.019928291787530254
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.00020195283116373336,
+      "material_scale_only_error": 3.469446951953614e-18,
+      "flow_common_scale_error": 3.469446951953614e-18,
+      "hub_squared_distance_ratio": 0.988428969628284,
+      "analytic_hub_squared_distance_ratio": 0.9884289696282839
+    },
+    {
+      "phase": 1.0,
+      "q": [
+        1.0,
+        0.0
+      ],
+      "common_scale_difference": 0.0,
+      "material_shape_change": 0.0,
+      "material_scale_only_error": 0.0,
+      "flow_common_scale_error": 0.0,
+      "hub_squared_distance_ratio": 1.0,
+      "analytic_hub_squared_distance_ratio": 1.0
+    }
+  ],
+  "conclusion": "Existing common similarity cannot reproduce the labeled relative-fold marker trajectory",
+  "actual_material_to_flow_correspondence": false,
+  "arbitrary_nonlinear_correspondence_ruled_out": false,
+  "clearance_audited": false,
+  "physical_attachment_validated": false,
+  "source_sha256_normalized_text": {
+    "scripts/report_material_flow_similarity.py": "35c9b366e289bc0bfb1cdd0c6b52a90183c578f2ccb1c0984cbb49e4ea041a3b",
+    "scripts/report_fold_kinematics.py": "710febbd4b891f1bf963bb876b39912811d80a2a5b968fa3c3baf653edefd62b",
+    "src/toroidal_assembly_breathing.py": "1b5032b531886ce3715aca48820377049c6bc2528552177f521d2892770c909b"
+  }
+}
