@@ -62,8 +62,8 @@
       "dependencies": [
         "P01"
       ],
-      "latest_result": "PR119/120/121/123/124,152,153-160,117 and118 are integrated in recovery8bacd2b after their recorded reviews and checks. PR157 passed full verification37075234132. Previous recovery664e5fc passed all28 reported workflows. Exact current recovery verification remains separate; PR122 is draft against main. PR160 passed full verification37075570194 and focused37075570402. PR159 passed full verification37075947953 and its production sample artifact was audited. PR161 remains a reviewed proposal pending exact-head verification and integration.",
-      "next_action": "Assess exact current recovery CI and reviewed pending proposals, then perform the bounded recovery-to-main integration review. Preserve open scientific limitations and continue the wider census without reopening merged experiments.",
+      "latest_result": "PR119/120/121/123/124,152,153-163,117 and118 are integrated in recovery 58042ea after recorded review and exact-head checks. PR161 full37078292154, PR162 full37078728719 and focused37078728758, and PR163 full37078853299/focused37078853356/Buildx37078853274 passed. The local combined controller/inertia/baseline/documentation review passed 89 tests. Current recovery verification remains a separate gate; PR122 remains draft against main. PR164 is a reviewed documentation-only chiral audit pending CI and integration.",
+      "next_action": "Assess current recovery CI and pending documentation audits, then complete the bounded recovery-to-main integration review. Preserve the wider physical and research queue without reopening accepted implementations.",
       "blockers_or_limits": [
         "Green listed CI is not completed scientific review, combined compatibility, or merge authorization."
       ],
@@ -114,6 +114,13 @@
           "label": "Before Q-ball scalar export integration",
           "fields": {
             "latest_result": "PR119/120/121/123/124,152,153-158,160,117 and118 are integrated in recovery9744133 after their recorded reviews and checks. PR157 passed full verification37075234132. Previous recovery664e5fc passed all28 reported workflows. Exact current recovery verification remains separate; PR122 is draft against main. PR160 passed full verification37075570194 and focused37075570402. PR159 and161 remain reviewed proposals pending exact-head verification and serial disposition."
+          }
+        },
+        {
+          "label": "Before accepted PR161-163 batch checkpoint",
+          "fields": {
+            "latest_result": "PR119/120/121/123/124,152,153-160,117 and118 are integrated in recovery8bacd2b after their recorded reviews and checks. PR157 passed full verification37075234132. Previous recovery664e5fc passed all28 reported workflows. Exact current recovery verification remains separate; PR122 is draft against main. PR160 passed full verification37075570194 and focused37075570402. PR159 passed full verification37075947953 and its production sample artifact was audited. PR161 remains a reviewed proposal pending exact-head verification and integration.",
+            "next_action": "Assess exact current recovery CI and reviewed pending proposals, then perform the bounded recovery-to-main integration review. Preserve open scientific limitations and continue the wider census without reopening merged experiments."
           }
         }
       ]
@@ -215,8 +222,8 @@
       "scope_and_completion": "Reuse PR120 nonlinear and two-mode wave controls, including seed, detuning, refinement, long duration and pump-off results. Third/fifth harmonic generation is now separately tested; broader wavelengths, phase/sine degrees, boundary conditions and mode-count/time/noise ensembles remain. Seed-independent orientation selection was not established. Reuse the eleven published W2 robustness cases: saturation, delays, refined delayed failure, deterministic measurement disturbance and stiffness mismatch. Expand stochastic noise, actuator bandwidth and operating/failure envelopes, then compare redesigns against those same cases. Resolve the saved Q-ball period question with an explicit observable and convergence protocol; leave unresolved if data do not identify a period. **Done when:** each question has a reproducible result and operating/failure range. W3 quantum bath/noise remains separate.",
       "dependencies": [],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. W2 historical manifest now links original output to published model/reporter hashes; the inventory artifact has exactly equal parsed JSON across all 11 cases. Exact execution chronology remains unauthenticated. See docs/recovery/wave-source-provenance.json; no simulations were rerun for this provenance recovery. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI. An additive ideal-measurement actuator-bandwidth comparison now measures finite force response at 0, 0.1, 0.5 and 2 seconds over 20 revolutions, with refined timesteps and the unchanged final-five-period 0.05 m RMS criterion. Sampled 0.1 s passes; 0.5 and 2 s fail. The original controller and its 11 cases are unchanged; this is a synthetic mechanical-per-unit-mass ledger, not electrical supply accounting or a continuous stability boundary. PR157 passed full and focused CI and is integrated.",
-      "next_action": "Implement a separately declared combined measurement-delay and force-response comparison with independent zero-limit, refinement and mechanical-work controls; stochastic noise, broader convergence and Q-ball period work remain open.",
+      "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. W2 historical manifest now links original output to published model/reporter hashes; the inventory artifact has exactly equal parsed JSON across all 11 cases. Exact execution chronology remains unauthenticated. See docs/recovery/wave-source-provenance.json; no simulations were rerun for this provenance recovery. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI. An additive ideal-measurement actuator-bandwidth comparison now measures finite force response at 0, 0.1, 0.5 and 2 seconds over 20 revolutions, with refined timesteps and the unchanged final-five-period 0.05 m RMS criterion. Sampled 0.1 s passes; 0.5 and 2 s fail. The original controller and its 11 cases are unchanged; this is a synthetic mechanical-per-unit-mass ledger, not electrical supply accounting or a continuous stability boundary. PR157 passed full and focused CI and is integrated. PR163 now integrates the optional combined measurement-delay and actuator-lag comparison after full and focused CI. All seven cases retain their pass/fail classifications across three resolutions with decreasing common-time state differences; tau 0.1 s/delay 0.2 s passes and tau 0.5 s/delay 0.2 s fails the unchanged 0.05 m criterion. CI report source hashes match and numerical differences from the reviewed report are at most 3.41e-13. These remain synthetic finite-run controls, not a continuous stability boundary.",
+      "next_action": "Specify the next separately bounded stochastic-noise or broader-limit study with independent controls. Preserve integrated combined delay/lag results; hardware calibration, wider convergence and Q-ball period requirements remain open.",
       "blockers_or_limits": [
         "Broader convergence and Q-ball period protocol remain unresolved; recovered W2 manifest linkage does not independently authenticate execution chronology or establish physical calibration."
       ],
@@ -250,6 +257,13 @@
           "fields": {
             "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. W2 historical manifest now links original output to published model/reporter hashes; the inventory artifact has exactly equal parsed JSON across all 11 cases. Exact execution chronology remains unauthenticated. See docs/recovery/wave-source-provenance.json; no simulations were rerun for this provenance recovery. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI. An additive ideal-measurement actuator-bandwidth comparison now measures finite force response at 0, 0.1, 0.5 and 2 seconds over 20 revolutions, with refined timesteps and the unchanged final-five-period 0.05 m RMS criterion. Sampled 0.1 s passes; 0.5 and 2 s fail. The original controller and its 11 cases are unchanged; this is a synthetic mechanical-per-unit-mass ledger, not electrical supply accounting or a continuous stability boundary.",
             "next_action": "Review the bounded actuator-bandwidth report, then select a separately declared stochastic-noise or combined-limit comparison with independent controls; broader convergence and Q-ball period work remain open."
+          }
+        },
+        {
+          "label": "Before accepted PR161-163 batch checkpoint",
+          "fields": {
+            "latest_result": "Recovered W1 published sources in PR #120; recorded source hashes reconcile with newline conventions. W2 historical manifest now links original output to published model/reporter hashes; the inventory artifact has exactly equal parsed JSON across all 11 cases. Exact execution chronology remains unauthenticated. See docs/recovery/wave-source-provenance.json; no simulations were rerun for this provenance recovery. New odd-cosine harmonic experiment generates third/fifth harmonics from zero initial values, compares 1/3/5 truncations and finer integration over 20 periods. 24 tests pass; maximum energy residual 1.52e-13 model units. See docs/wave_harmonics.md and docs/recovery/wave-source-provenance.json. PR #120 is now merged into recovery; fresh 73 focused tests and all 14/11/8 report cases passed unchanged acceptance controls and remote full CI. An additive ideal-measurement actuator-bandwidth comparison now measures finite force response at 0, 0.1, 0.5 and 2 seconds over 20 revolutions, with refined timesteps and the unchanged final-five-period 0.05 m RMS criterion. Sampled 0.1 s passes; 0.5 and 2 s fail. The original controller and its 11 cases are unchanged; this is a synthetic mechanical-per-unit-mass ledger, not electrical supply accounting or a continuous stability boundary. PR157 passed full and focused CI and is integrated.",
+            "next_action": "Implement a separately declared combined measurement-delay and force-response comparison with independent zero-limit, refinement and mechanical-work controls; stochastic noise, broader convergence and Q-ball period work remain open."
           }
         }
       ]
@@ -295,8 +309,8 @@
         "P04"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged. Bounded distributed-inertia trajectories now pass equilibrium, conservative, passive, driven, drive-off, reversal and independent power-quadrature controls through 0.4 s; 47 combined tests pass locally. See docs/fold_distributed_trajectories.md. PR #148 is merged into recovery. Focused and integrated-head CI passed at 78e413f, including the complete 3044-ID suite.",
-      "next_action": "Scope distributed inertia in the recursive network after this bounded single-specimen result; physical joints, thickness, hub rotation and calibration remain separate.",
+      "latest_result": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged. Bounded distributed-inertia trajectories now pass equilibrium, conservative, passive, driven, drive-off, reversal and independent power-quadrature controls through 0.4 s; 47 combined tests pass locally. See docs/fold_distributed_trajectories.md. PR #148 is merged into recovery. Focused and integrated-head CI passed at 78e413f, including the complete 3044-ID suite. PR162 now integrates an optional instantaneous distributed-inertia graph adapter after full and focused CI. It uses consistent distributed matrices/bias for node and connector forces, Cartesian kinetic energy and unchanged constitutive/edge ledgers. 31 focused controls passed, including independent energy-rate and deliberate-defect checks. No recursive trajectory evolution is added.",
+      "next_action": "Validate a separately bounded distributed-inertia graph trajectory comparison with matched initial conditions before expanding depth or duration. Physical joints, finite thickness, hub rotation and measured calibration remain open.",
       "related_parallel_tasks": [
         "P05",
         "P06"
@@ -322,6 +336,13 @@
           "label": "Before integrated recovery CI and parallel review refresh",
           "fields": {
             "latest_result": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged. Bounded distributed-inertia trajectories now pass equilibrium, conservative, passive, driven, drive-off, reversal and independent power-quadrature controls through 0.4 s; 47 combined tests pass locally. See docs/fold_distributed_trajectories.md. Remote CI remains a separate gate."
+          }
+        },
+        {
+          "label": "Before accepted PR161-163 batch checkpoint",
+          "fields": {
+            "latest_result": "PR #146 adds validated distributed reference-panel/bridge inertia: 22 mass owners, 82 quadrature points, 0.74 kg; 34 tests and focused CI pass. Historical production dynamics unchanged. Bounded distributed-inertia trajectories now pass equilibrium, conservative, passive, driven, drive-off, reversal and independent power-quadrature controls through 0.4 s; 47 combined tests pass locally. See docs/fold_distributed_trajectories.md. PR #148 is merged into recovery. Focused and integrated-head CI passed at 78e413f, including the complete 3044-ID suite.",
+            "next_action": "Scope distributed inertia in the recursive network after this bounded single-specimen result; physical joints, thickness, hub rotation and calibration remain separate."
           }
         }
       ]
@@ -380,14 +401,14 @@
         "P08"
       ],
       "image_review": "docs/eight_image_research_review_2026-09-30.md",
-      "latest_result": "Local continuous contact #143 and phase/current contract #144 are merged into recovery. Geometry, collision tolerance and solver criteria are unchanged.",
+      "latest_result": "Local continuous contact #143 and phase/current contract #144 are merged into recovery. Geometry, collision tolerance and solver criteria are unchanged. PR162 adds a reviewed instantaneous distributed-inertia graph contract with one-node equivalence, disconnected independence, homothetic scaling and reciprocal connector/energy controls. This is not depth convergence, a physical connector realization or a powered restart adaptation.",
       "evidence": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
       "related_parallel_tasks": [
         "P07",
         "P09",
         "P11"
       ],
-      "next_action": "Scope broader state/depth coverage and physical connector realization; retain the merged local-contact and phase/current limits.",
+      "next_action": "Assess bounded distributed graph trajectories and broader state/depth coverage under the preserved scale guards; keep physical connector realization, powered persistence adaptation and remaining pathway rules separate from the validated instantaneous contract.",
       "blockers_or_limits": [
         "Global continuous clearance, arbitrary-depth convergence, dormant-path rules and a physical attachment/phase-current adapter remain unvalidated."
       ],
@@ -400,6 +421,13 @@
         {
           "label": "Before integration and inertia continuation on 2026-10-02",
           "text": "Merged #125-128, #130-137 and #139-142 preserve bounded physical recursion, pair similarity, drive-history attenuation, Seed/placement/attachment and finite-grid clearance results. Bounded restart exists separately. Green unmerged #143 solves 14.964074019232122 < local boundary <= 14.964074019742913 at unchanged 1e-11 m tolerance; full broad-grid control passes. Green unmerged #144 preserves connector storage and tests gauge-current contracts without a physical bridge."
+        },
+        {
+          "label": "Before accepted PR161-163 batch checkpoint",
+          "fields": {
+            "latest_result": "Local continuous contact #143 and phase/current contract #144 are merged into recovery. Geometry, collision tolerance and solver criteria are unchanged.",
+            "next_action": "Scope broader state/depth coverage and physical connector realization; retain the merged local-contact and phase/current limits."
+          }
         }
       ]
     },
@@ -413,7 +441,7 @@
       "latest_result": "PR #149 is merged into recovery. Desktop computed-state replay, local-frame 3D rotation, sample playback, module selection, units, provenance and separate energy ledgers are implemented; visible desktop controls and 11 serial tests passed. Focused and integrated CI passed at 78e413f. Global attachment frames, image correspondence and physical headset validation remain open. The viewer continuation now exports and displays existing per-module mechanical_j without recalculation or transfer double counting; source equality, independent energy evaluation, legacy absence and visible module/sample changes are checked. This uses the existing point-inertia powered model; no distributed-inertia upgrade or complete balance certificate is implied. PR156 mechanical-energy display passed full and focused CI and is integrated.",
       "next_action": "Resolve physical assembly attachment frames and image correspondence and validate on a physical headset. Retain the integrated mechanical-energy display, desktop replay and separate energy ownership.",
       "blockers_or_limits": [
-        "Global physical attachment frames, image correspondence and headset validation remain open. Displayed energy values alone do not certify a complete balance; physical calibration remains absent."
+        "Global physical attachment frames, image correspondence and physical headset validation remain open. The integrated mechanical-energy display uses the existing point-inertia model; it does not certify whole-assembly energy closure or distributed-inertia replay."
       ],
       "review_phase": "bounded_progress_with_remaining_scope",
       "previous_result_snapshots": [
@@ -452,6 +480,14 @@
           "fields": {
             "latest_result": "PR #149 is merged into recovery. Desktop computed-state replay, local-frame 3D rotation, sample playback, module selection, units, provenance and separate energy ledgers are implemented; visible desktop controls and 11 serial tests passed. Focused and integrated CI passed at 78e413f. Global attachment frames, mechanical-energy display, image correspondence and physical headset validation remain open. The viewer continuation now exports and displays existing per-module mechanical_j without recalculation or transfer double counting; source equality, independent energy evaluation, legacy absence and visible module/sample changes are checked. This uses the existing point-inertia powered model; no distributed-inertia upgrade or complete balance certificate is implied.",
             "next_action": "Review and integrate the mechanical-energy display, then resolve physical assembly attachment frames and image correspondence and validate on a physical headset. Retain desktop replay and separate energy ownership."
+          }
+        },
+        {
+          "label": "Before mechanical-energy display limitation clarification",
+          "fields": {
+            "blockers_or_limits": [
+              "Global physical attachment frames, image correspondence and headset validation remain open. Displayed energy values alone do not certify a complete balance; physical calibration remains absent."
+            ]
           }
         }
       ]
