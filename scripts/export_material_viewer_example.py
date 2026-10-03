@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 from scripts.export_fold_material_viewer_frames import export
+from scripts.material_model_identity import point_powered_identity
 from scripts.report_fold_material_supply import simulate
 
 if __name__ == "__main__":
@@ -22,6 +23,7 @@ if __name__ == "__main__":
         json.dumps(
             dict(
                 schema=1,
+                model_identity=point_powered_identity(),
                 cases=dict(powered=case),
                 sources=sources,
                 scope="0.4 s synthetic material supply example; not calibrated",

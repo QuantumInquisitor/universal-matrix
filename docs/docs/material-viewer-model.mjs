@@ -1,8 +1,24 @@
 const fail = message => { throw new Error(message); };
 const finite = x => typeof x === 'number' && Number.isFinite(x);
 const vector = (x, n) => Array.isArray(x) && x.length === n && x.every(finite);
+export const pointPoweredIdentity = Object.freeze({
+  inertia_model: 'material-body-point-inertia-v1',
+  state_layout: 'material-powered-node9-edge2-input1-v1',
+  energy_ownership: 'material-powered-node-edge-group-ledgers-v1',
+});
+const validateIdentity = data => {
+  // Absence alone retains historical v1 point-model compatibility.
+  if (!Object.hasOwn(data, 'model_identity')) return;
+  const value = data.model_identity;
+  if (!value || typeof value !== 'object' || Array.isArray(value) ||
+      Object.keys(value).length !== Object.keys(pointPoweredIdentity).length ||
+      Object.entries(pointPoweredIdentity).some(([key, expected]) => value[key] !== expected)) {
+    fail('Unsupported inertia, state layout or energy ownership.');
+  }
+};
 export function validate(data) {
   if (data?.schema !== 'matrix-science-viewer-timeseries-v1') fail('Unsupported frame schema.');
+  validateIdentity(data);
   if (!Array.isArray(data.frames) || !data.frames.length || data.frames.length !== data.frame_count) fail('Invalid frame count.');
   if (!Number.isInteger(data.module_count) || data.module_count < 1) fail('Invalid module count.');
   const u = data.units;

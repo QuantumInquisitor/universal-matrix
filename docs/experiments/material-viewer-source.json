@@ -1,5 +1,10 @@
 {
   "schema": 1,
+  "model_identity": {
+    "inertia_model": "material-body-point-inertia-v1",
+    "state_layout": "material-powered-node9-edge2-input1-v1",
+    "energy_ownership": "material-powered-node-edge-group-ledgers-v1"
+  },
   "cases": {
     "powered": {
       "settings": {
@@ -1510,10 +1515,11 @@
     }
   },
   "sources": {
-    "export_material_viewer_example.py": "504bd8851e4fbab63127aa50c6a86f986ea6dc91314c9799a8b4929fb48f20e3",
+    "export_material_viewer_example.py": "d38a17f4fb587c2adb155ba0af36c72b460ff9a2764c3eb2c58616161527ecab",
+    "material_model_identity.py": "c5cdd9d8b378dc9c811ca292baa998896f4c33f57da97345bc7e90cccb500a90",
     "report_fold_kinematics.py": "710febbd4b891f1bf963bb876b39912811d80a2a5b968fa3c3baf653edefd62b",
     "report_fold_constitutive.py": "33f1f6e584ac854c8c27f32987be4211f17573b1599fb45368404f0b1e4fb0d6",
-    "export_fold_material_viewer_frames.py": "e418e690f5860564c2134ec2f5fdc9572f4dc777782521eed9d9b9f3529c9fce",
+    "export_fold_material_viewer_frames.py": "e16257dce3458da9fb020e853416e7e1dd1c46f1b676efbb9797510cf846882c",
     "report_fold_dynamics.py": "1959b1c054b92b5034ff22e2708482d2e271dcc971528aa3793078be9f2368ce",
     "report_fold_reservoir.py": "5099e68a2638f338e0bccb8ebdcd4b3840eac1ee1cff8d4ddd8c41fb298a606d",
     "report_fold_coupling.py": "9e0d22cd32234f7a8c3c1607009f3b732439f1b4ddeae84050a6ea689f8503fc",
@@ -1528,5 +1534,9 @@
     "report_fold_material_supply.py": "5ce7ef989d8c55b55d3887b0bb2d992bc8361af166288ad709e612271e094c41"
   },
   "scope": "0.4 s synthetic material supply example; not calibrated",
-  "source_hash_encoding": "UTF-8/LF"
+  "source_hash_encoding": "UTF-8/LF",
+  "adapter_refresh": {
+    "previous_report_sha256_normalized_text": "511fb6d768a4e383b9ab34a5d00adab4aed30e6452d91aba42376feedaa2dfc5",
+    "method": "Re-executed the revised adapter on unchanged saved computed cases; no numerical evolution rerun for this input-validation-only update."
+  }
 }

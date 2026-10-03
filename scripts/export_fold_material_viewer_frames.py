@@ -8,9 +8,11 @@ from pathlib import Path
 import numpy as np
 
 try:
+    from .material_model_identity import point_powered_identity, require_point_powered_identity
     from .report_fold_constitutive import geometry
     from .report_fold_kinematics import scalar
 except ImportError:
+    from material_model_identity import point_powered_identity, require_point_powered_identity
     from report_fold_constitutive import geometry
     from report_fold_kinematics import scalar
 
@@ -26,12 +28,18 @@ def adapt(report, *, case="powered", display_m_per_unit=0.1):
     display_m_per_unit = scalar(display_m_per_unit, "display_m_per_unit")
     if not 1e-9 <= display_m_per_unit <= 1e9:
         raise ValueError("display_m_per_unit outside supported range")
-    if not isinstance(report, dict) or report.get("schema") != 1:
+    if (
+        not isinstance(report, dict)
+        or type(report.get("schema")) is not int
+        or report["schema"] != 1
+    ):
         raise ValueError("powered material report schema 1 required")
+    identity_basis = require_point_powered_identity(report, allow_legacy=True)
     cases = report.get("cases")
     if not isinstance(cases, dict) or case not in cases:
         raise ValueError("requested powered material case is unavailable")
     source = cases[case]
+    require_point_powered_identity(source, allow_legacy=True)
     settings = source.get("settings", {})
     sizes = settings.get("sizes")
     edges = settings.get("edges")
@@ -110,6 +118,8 @@ def adapt(report, *, case="powered", display_m_per_unit=0.1):
 
     return dict(
         schema="matrix-science-viewer-timeseries-v1",
+        model_identity=point_powered_identity(),
+        source_identity_basis=identity_basis,
         case=case,
         frame_count=len(frames),
         module_count=module_count,

@@ -8,6 +8,7 @@ import numpy as np
 from scipy.integrate import RK45
 
 try:
+    from .material_model_identity import point_powered_identity, require_point_powered_identity
     from .report_fold_dynamics import vector
     from .report_fold_hierarchy import compile_hierarchy
     from .report_fold_kinematics import scalar
@@ -21,6 +22,7 @@ try:
     )
     from .report_fold_multiscale import configuration
 except ImportError:
+    from material_model_identity import point_powered_identity, require_point_powered_identity
     from report_fold_dynamics import vector
     from report_fold_hierarchy import compile_hierarchy
     from report_fold_kinematics import scalar
@@ -31,8 +33,32 @@ except ImportError:
 STATE_SIZE = 48
 
 
+def checkpoint(state):
+    """Package an explicitly point-powered state without rebasing any ledger."""
+    return {
+        "schema": "material-point-powered-checkpoint-v1",
+        "model_identity": point_powered_identity(),
+        "sizes": list(BASE_SIZES),
+        "edges": [list(edge) for edge in EDGES],
+        "state": vector(state, STATE_SIZE, "saved powered material state").tolist(),
+    }
+
+
+def restore_checkpoint(saved):
+    """Validate identity and fixed topology before interpreting numeric slots."""
+    if not isinstance(saved, dict) or saved.get("schema") != "material-point-powered-checkpoint-v1":
+        raise ValueError("point-powered checkpoint schema required")
+    require_point_powered_identity(saved)
+    sizes, edges = configuration(saved.get("sizes"), saved.get("edges"))
+    if sizes != tuple(BASE_SIZES) or edges != tuple(EDGES):
+        raise ValueError("checkpoint topology does not match the powered model")
+    return vector(saved.get("state"), STATE_SIZE, "saved powered material state").copy()
+
+
 def advance(initial, duration, *, power_density=6e-6, max_step=0.002, rtol=1e-9):
     """Advance a saved powered-material state while retaining cumulative ledgers."""
+    if isinstance(initial, dict):
+        initial = restore_checkpoint(initial)
     duration = scalar(duration, "duration")
     max_step = scalar(max_step, "max_step")
     rtol = scalar(rtol, "rtol")
@@ -115,6 +141,8 @@ def advance(initial, duration, *, power_density=6e-6, max_step=0.002, rtol=1e-9)
         audit(y)
 
     return {
+        "model_identity": point_powered_identity(),
+        "checkpoint": checkpoint(y),
         "duration_s": duration,
         "power_density_w": power_density,
         "max_step_s": max_step,
@@ -178,7 +206,7 @@ def hierarchy_audit(state):
 def report():
     start = initial_state()
     first = advance(start, 0.4)
-    saved_text = json.dumps(first["final_state"], allow_nan=False)
+    saved_text = json.dumps(first["checkpoint"], allow_nan=False)
     restored = json.loads(saved_text)
     second = advance(restored, 0.4)
     continuous = advance(start, 0.8)
@@ -195,6 +223,7 @@ def report():
     )
     return {
         "schema": 1,
+        "model_identity": point_powered_identity(),
         "scope": (
             "0.8 second restart persistence and bookkeeping-depth controls for the "
             "four-module powered material graph"
@@ -208,7 +237,7 @@ def report():
             "source_off_continuous": source_off_continuous,
         },
         "restart": {
-            "serialization": "JSON finite-number round trip of the complete 48-component state",
+            "serialization": "JSON typed point-powered checkpoint of the complete 48-component state",
             "powered_maximum_absolute_state_difference": float(np.max(powered_difference)),
             "powered_absolute_state_differences": powered_difference.tolist(),
             "source_off_maximum_absolute_state_difference": float(np.max(source_off_difference)),

@@ -28,6 +28,8 @@ on:
       - 'tests/test_fold_material_supply.py'
       - 'scripts/export_fold_material_viewer_frames.py'
       - 'tests/test_fold_material_viewer_frames.py'
+      - 'scripts/material_model_identity.py'
+      - 'tests/test_material_model_identity.py'
       - 'scripts/report_fold_material_persistence.py'
       - 'tests/test_fold_material_persistence.py'
       - 'scripts/report_fold_material_recursive_tree.py'
@@ -962,9 +964,9 @@ jobs:
       - run: uv sync --python 3.12 --extra scientific --group test --group lint
       - name: Verify powered unequal-size material energy accounts
         run: |
-          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_supply.py tests/test_fold_material_supply.py scripts/export_fold_material_viewer_frames.py tests/test_fold_material_viewer_frames.py scripts/report_fold_material_persistence.py tests/test_fold_material_persistence.py
-          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_material_supply.py tests/test_fold_material_supply.py scripts/export_fold_material_viewer_frames.py tests/test_fold_material_viewer_frames.py scripts/report_fold_material_persistence.py tests/test_fold_material_persistence.py
-          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_material_supply.py tests/test_fold_material_viewer_frames.py tests/test_fold_material_persistence.py
+          uv run --python 3.12 --extra scientific ruff check scripts/material_model_identity.py tests/test_material_model_identity.py scripts/report_fold_material_supply.py tests/test_fold_material_supply.py scripts/export_fold_material_viewer_frames.py tests/test_fold_material_viewer_frames.py scripts/report_fold_material_persistence.py tests/test_fold_material_persistence.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/material_model_identity.py tests/test_material_model_identity.py scripts/report_fold_material_supply.py tests/test_fold_material_supply.py scripts/export_fold_material_viewer_frames.py tests/test_fold_material_viewer_frames.py scripts/report_fold_material_persistence.py tests/test_fold_material_persistence.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_material_model_identity.py tests/test_fold_material_supply.py tests/test_fold_material_viewer_frames.py tests/test_fold_material_persistence.py
           uv run --python 3.12 --extra scientific python scripts/report_fold_material_supply.py --output artifacts/fold-material-supply/report.json
           uv run --python 3.12 --extra scientific python scripts/export_fold_material_viewer_frames.py --input artifacts/fold-material-supply/report.json --output artifacts/fold-material-supply/viewer.json
           uv run --python 3.12 --extra scientific python scripts/report_fold_material_persistence.py --output artifacts/fold-material-supply/persistence.json
