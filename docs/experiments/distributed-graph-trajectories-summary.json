@@ -1,0 +1,268 @@
+{
+  "schema": "fold-distributed-graph-trajectories-v1",
+  "common_time_refinement_max_abs": {
+    "0": 1.5543122344752192e-15,
+    "1": 2.5335202685772273e-14
+  },
+  "dop853_common_time_max_abs": 1.7763568394002505e-15,
+  "connected_root_common_time_response": 0.0007542999286751385,
+  "dop853_max_balance_residual_j": 5.510749619131869e-20,
+  "wrong_endpoint_work_sign_signal_j": 4.992177532069341e-09,
+  "source_hash_encoding": "UTF-8/LF",
+  "sources": {
+    "report_fold_distributed_graph_trajectories.py": "65e91f0692ba749c71230061a607d02210844ae768588958009c22af73e70043",
+    "fold_distributed_graph.py": "88202bd9160ca3413864fa8ea481d7a755e23953a040fcece0a2b56bd5b1a51a",
+    "fold_material_multiscale.py": "292a21f038afdd07b2729d1639d887644bef2552756b453f5b5f10f401897ea9",
+    "report_fold_distributed_trajectories.py": "89635e75341f23911c43925db9ecdae7731fb1b24300f81c9b964fb0cc6b6fa1",
+    "report_fold_distributed_inertia.py": "49b37f0c943633e87dee5aadcfe285e9916861b9db00490a193d13592d72de34",
+    "report_fold_constitutive.py": "33f1f6e584ac854c8c27f32987be4211f17573b1599fb45368404f0b1e4fb0d6",
+    "report_fold_dynamics.py": "1959b1c054b92b5034ff22e2708482d2e271dcc971528aa3793078be9f2368ce",
+    "report_fold_kinematics.py": "710febbd4b891f1bf963bb876b39912811d80a2a5b968fa3c3baf653edefd62b",
+    "report_fold_material_recursive_tree.py": "571ca15e0ea7c47d772c49da9c104b6200c3139c9bd4f1fd16b82babb4522a25",
+    "report_fold_multiscale.py": "450acc6f349861ef18a1fe88ae5f9b954c6772d98e80a49c5ecbebb4d9a09b7e",
+    "report_fold_hierarchy.py": "5e93ee5983ac2e00f8db02c0478f1203b69dbd1c216a4d791705ac58f1ff295d",
+    "report_fold_scaling.py": "be318438221d4f9ad570a11b2e25102bb064f8d1604ee828bba6f04787cf2a30",
+    "report_fold_mapped.py": "83be1741ba4c5212341701cf7f27e89320c80caad15e0479d2f638d7a2788387"
+  },
+  "depths_tested": [
+    0,
+    1
+  ],
+  "duration_s": 0.1,
+  "physical_attachments_validated": false,
+  "depth_convergence_validated": false,
+  "powered_persistence_validated": false,
+  "stable_breathing_established": false,
+  "physical_calibration": false,
+  "production_dynamics_changed": false,
+  "artifact_sha256": "32d5c23f2f5645cb24cc7680cf409d4aa8aa20b75801878c106c151463e81d62",
+  "artifact_path": "artifacts/distributed-graph-trajectories.json",
+  "cases": {
+    "passive_depth_0_r1": {
+      "settings": {
+        "depth": 0,
+        "sizes": [
+          1.0
+        ],
+        "levels": [
+          0
+        ],
+        "edges": [],
+        "tree": [
+          0
+        ],
+        "connected": true,
+        "dt_s": 0.001,
+        "duration_s": 0.1,
+        "steps": 100,
+        "refinement": 1,
+        "damping": 1
+      },
+      "max_node_residual_j": 1.852294688944455e-19,
+      "max_edge_residual_j": 0,
+      "max_group_residual_j": 1.851825780934714e-19,
+      "max_energy_sample_increase_j": -1.9466384899068312e-12,
+      "sampled_loss_error_j": 7.592213227246083e-15,
+      "sampled_work_error_j": 0.0
+    },
+    "passive_depth_0_r2": {
+      "settings": {
+        "depth": 0,
+        "sizes": [
+          1.0
+        ],
+        "levels": [
+          0
+        ],
+        "edges": [],
+        "tree": [
+          0
+        ],
+        "connected": true,
+        "dt_s": 0.0005,
+        "duration_s": 0.1,
+        "steps": 200,
+        "refinement": 2,
+        "damping": 1
+      },
+      "max_node_residual_j": 3.9850131698202193e-19,
+      "max_edge_residual_j": 0,
+      "max_group_residual_j": 3.985290016831483e-19,
+      "max_energy_sample_increase_j": -9.732958384684677e-13,
+      "sampled_loss_error_j": 1.8980517469169066e-15,
+      "sampled_work_error_j": 0.0
+    },
+    "passive_depth_1_r1": {
+      "settings": {
+        "depth": 1,
+        "sizes": [
+          1.0,
+          0.5,
+          0.5
+        ],
+        "levels": [
+          0,
+          1,
+          1
+        ],
+        "edges": [
+          [
+            0,
+            1,
+            1.0
+          ],
+          [
+            0,
+            2,
+            1.0
+          ]
+        ],
+        "tree": [
+          0,
+          1,
+          2
+        ],
+        "connected": true,
+        "dt_s": 0.001,
+        "duration_s": 0.1,
+        "steps": 100,
+        "refinement": 1,
+        "damping": 1
+      },
+      "max_node_residual_j": 1.1630407566679335e-19,
+      "max_edge_residual_j": 2.0193133113644512e-20,
+      "max_group_residual_j": 1.3245477712689122e-19,
+      "max_energy_sample_increase_j": -2.36673730692928e-12,
+      "sampled_loss_error_j": 9.931341064274108e-15,
+      "sampled_work_error_j": 1.1215572485929827e-14
+    },
+    "passive_depth_1_r2": {
+      "settings": {
+        "depth": 1,
+        "sizes": [
+          1.0,
+          0.5,
+          0.5
+        ],
+        "levels": [
+          0,
+          1,
+          1
+        ],
+        "edges": [
+          [
+            0,
+            1,
+            1.0
+          ],
+          [
+            0,
+            2,
+            1.0
+          ]
+        ],
+        "tree": [
+          0,
+          1,
+          2
+        ],
+        "connected": true,
+        "dt_s": 0.0005,
+        "duration_s": 0.1,
+        "steps": 200,
+        "refinement": 2,
+        "damping": 1
+      },
+      "max_node_residual_j": 2.048744397559088e-19,
+      "max_edge_residual_j": 2.4732700315335527e-20,
+      "max_group_residual_j": 2.5442752153151046e-19,
+      "max_energy_sample_increase_j": -1.183316251665479e-12,
+      "sampled_loss_error_j": 2.482832820302251e-15,
+      "sampled_work_error_j": 2.8038917156890057e-15
+    },
+    "conservative_depth_1": {
+      "settings": {
+        "depth": 1,
+        "sizes": [
+          1.0,
+          0.5,
+          0.5
+        ],
+        "levels": [
+          0,
+          1,
+          1
+        ],
+        "edges": [
+          [
+            0,
+            1,
+            1.0
+          ],
+          [
+            0,
+            2,
+            1.0
+          ]
+        ],
+        "tree": [
+          0,
+          1,
+          2
+        ],
+        "connected": true,
+        "dt_s": 0.0005,
+        "duration_s": 0.1,
+        "steps": 200,
+        "refinement": 2,
+        "damping": 0
+      },
+      "max_node_residual_j": 1.578688674718173e-19,
+      "max_edge_residual_j": 1.1517662849188357e-20,
+      "max_group_residual_j": 1.6368911705689354e-19,
+      "max_energy_sample_increase_j": 4.521038355969828e-20,
+      "sampled_loss_error_j": 0.0,
+      "sampled_work_error_j": 2.7085818466875068e-15
+    },
+    "disconnected_depth_1": {
+      "settings": {
+        "depth": 1,
+        "sizes": [
+          1.0,
+          0.5,
+          0.5
+        ],
+        "levels": [
+          0,
+          1,
+          1
+        ],
+        "edges": [],
+        "tree": [
+          0,
+          1,
+          2
+        ],
+        "connected": false,
+        "dt_s": 0.001,
+        "duration_s": 0.1,
+        "steps": 100,
+        "refinement": 1,
+        "damping": 1
+      },
+      "max_node_residual_j": 1.852294688944455e-19,
+      "max_edge_residual_j": 0,
+      "max_group_residual_j": 1.851825780934714e-19,
+      "max_energy_sample_increase_j": -1.9466384899068312e-12,
+      "sampled_loss_error_j": 7.592213227246083e-15,
+      "sampled_work_error_j": 0.0
+    }
+  },
+  "limitations": [
+    "Synthetic homothetic material and abstract mapped-port connectors only.",
+    "No spatial attachment, solid overlap, finite-thickness inertia, or measured calibration validation.",
+    "No depth convergence, powered restart compatibility, or stable breathing established.",
+    "Wrong endpoint sign is a saved-ledger sensitivity check, not faulty dynamics.",
+    "State differences are componentwise numerical comparisons with mixed units, not physical norms."
+  ]
+}
