@@ -1,0 +1,35 @@
+name: Finite spatial descriptor
+on:
+  pull_request:
+    branches: [main, codex/recovery-plan-log]
+    paths:
+      - 'src/finite_spatial_descriptor.py'
+      - 'scripts/report_finite_spatial_descriptor.py'
+      - 'tests/test_finite_spatial_descriptor.py'
+      - 'docs/finite_spatial_descriptor.md'
+      - 'docs/experiments/finite-spatial-descriptor*'
+      - '.github/workflows/finite-spatial-descriptor.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  descriptor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.2.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - run: |
+          .venv/bin/ruff check src/finite_spatial_descriptor.py scripts/report_finite_spatial_descriptor.py tests/test_finite_spatial_descriptor.py
+          .venv/bin/ruff format --check src/finite_spatial_descriptor.py scripts/report_finite_spatial_descriptor.py tests/test_finite_spatial_descriptor.py
+          .venv/bin/python -m pytest -q tests/test_finite_spatial_descriptor.py
+          .venv/bin/python scripts/report_finite_spatial_descriptor.py --output artifacts/finite-spatial-descriptor.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: finite-spatial-descriptor
+          path: artifacts/finite-spatial-descriptor.json
+          if-no-files-found: error
