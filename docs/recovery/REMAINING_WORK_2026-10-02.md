@@ -2,20 +2,28 @@
 
 The master register retains **41 IDs**: 12 main workstreams, 24 research/source scope-review entries and five recovery records. These are not 41 active or wholly unimplemented experiments. Original scopes and dependencies are preserved; current statuses reflect bounded progress without closing whole workstreams.
 
-## Current integration checkpoint
+## Accepted integration checkpoint through PR163
 
-Recovery `8bacd2bf5bb2a0609d57679d2f9e996b3e1236e3` includes accepted
-PR153-160,117 and118 in addition to the earlier recovered experiments.
-The LC reference, mechanical-energy viewer and conditional timing delivery
-comparison are integrated; they are not missing implementations. Previous
-recovery `664e5fc` passed all28 reported workflows. Current-head integration
-verification remains a separate gate; PR122 is still draft against main.
+This dated checkpoint records recovery `58042ea16dff339008a4b0fd177409c2e16f202e`.
+PR153-163, 117 and 118 are integrated in addition to the earlier recovered
+experiments. PR161's source audits, PR162's instantaneous distributed-inertia
+graph contract and PR163's combined delay/actuator comparison passed their
+reviewed-head full verification; the two code additions also passed focused checks. The local combined review passed 89
+controller, inertia, baseline and documentation checks.
 
-PR157 actuator bandwidth and PR160 paired-helix clock adapter passed their full and focused CI and are integrated. PR159 scalar sample export also passed full CI and is integrated; its production artifact contains 101 samples per channel with all288 source hashes verified. PR161 (these source/unit audit records) remains
-a reviewed proposal pending exact-head CI and integration. The local
-combined review preserves all41 original task contracts. Completing every
-physical or research workstream is not a prerequisite for bounded experimental
-integration; those limitations remain explicit in the rows below.
+The LC reference, mechanical-energy viewer, conditional timing delivery,
+paired-helix adapter and Q-ball scalar export are implemented. Their stated
+physical and numerical limits remain in force. The Q-ball artifact contains 101
+samples per channel with all 288 source hashes verified; no stable period is
+established. The graph adapter adds no recursive trajectory or depth-convergence
+claim, and the combined controller does not establish hardware limits.
+
+Current recovery integration CI is a separate gate; PR122 remains draft against
+main. PR164's documentation-only chiral audit is separately reviewed and awaits
+its own CI and integration. All 41 original task contracts remain intact.
+Completing every physical or research workstream is not a prerequisite for
+bounded experimental integration. This checkpoint is historical evidence of the
+listed accepted batch; live PR/CI state must be verified before further merges.
 
 ## Actuator comparison scope
 
@@ -97,16 +105,16 @@ The timestamped [PR/CI evidence](register-reconciliation-2026-10-02.json) covers
 | ID | Workstream | Next action | Remaining limit |
 |---|---|---|---|
 | P01 | Recover surviving work from disk and Git before finalizing the task register. | Continue the broader location/work-family census and published-draft integration; use the completed 84-record inventory as evidence rather than repeating its reviewed comparisons. | The bounded 84-record inventory is dispositioned; broader location/work-family census and candidate provenance remain incomplete. |
-| P02 | Finish review and integration disposition of the published drafts. | Assess exact current recovery CI and reviewed pending proposals, then perform the bounded recovery-to-main integration review. Preserve open scientific limitations and continue the wider census without reopening merged experiments. | Green listed CI is not completed scientific review, combined compatibility, or merge authorization. |
+| P02 | Finish review and integration disposition of the published drafts. | Assess current recovery CI and pending documentation audits, then complete the bounded recovery-to-main integration review. Preserve the wider physical and research queue without reopening accepted implementations. | Green listed CI is not completed scientific review, combined compatibility, or merge authorization. |
 | P03 | Promote the remaining validated local candidates in small groups. | Select the next preserved candidate by source, inputs and independent controls. Do not repeat completed LC or paired-helix promotion; physical calibration and coupling remain separate. | Candidate-specific geometry, parameters and source evidence must be identified before promotion. |
 | P04 | Close the whole-assembly geometry and motion questions. | Specify the missing material-point/deformation correspondence between the 22-body specimen and 69-domain flow assembly; separate that from physical joint and finite-thickness work. | No validated relative-fold map between these assemblies; source-midsurface clearance does not supply thickness or joint geometry. |
-| P05 | Finish the wave and control experiments already started. | Implement a separately declared combined measurement-delay and force-response comparison with independent zero-limit, refinement and mechanical-work controls; stochastic noise, broader convergence and Q-ball period work remain open. | W2 manifest links original data/source hashes and equal parsed content; chronology remains unauthenticated. Broader convergence and Q-ball period protocol remain unresolved. |
+| P05 | Finish the wave and control experiments already started. | Specify the next separately bounded stochastic-noise or broader-limit study with independent controls. Preserve integrated combined delay/lag results; hardware calibration, wider convergence and Q-ball period requirements remain open. | W2 manifest links original data/source hashes and equal parsed content; chronology remains unauthenticated. Broader convergence and Q-ball period protocol remain unresolved. |
 | P06 | Decide whether crystal components provide a useful engine capability. | Review the conditional acquisition/delivery contract; supply an independently justified physical acquisition/readout backend, loading and energy costs before claiming timing usefulness. Preserve existing signal and scheduling evidence; spatial claims still require coordinates. | No practical advantage established. Acquisition assumptions are asymmetric and explicitly conditional; hardware readout/backaction, energy, loading and absolute time remain uncalibrated. |
-| P07 | Define material forces for one explicit connected specimen. | Scope distributed inertia in the recursive network after this bounded single-specimen result; physical joints, thickness, hub rotation and calibration remain separate. | Physical joint/attachment geometry and measured calibration are absent; four hubs lack constitutive energy. |
+| P07 | Define material forces for one explicit connected specimen. | Validate a separately bounded distributed-inertia graph trajectory comparison with matched initial conditions before expanding depth or duration. Physical joints, finite thickness, hub rotation and measured calibration remain open. | Physical joint/attachment geometry and measured calibration are absent; four hubs lack constitutive energy. |
 | P08 | Close the energy budget across the coupled specimen. | Retain validated powered-material/reserve/restart ledgers; extend independent work/energy/loss controls whenever a new joint, contact, electrical or flow coupling is introduced. | New physical interfaces and supply calibration are unspecified; no electromechanical or whole-flow energy closure claimed. |
 | P09 | Test whether breathing and folding emerge from the equations. | Rerun the existing emergent-motion controls after a relevant material/joint/supply change; define stability and perturbation criteria before longer runs. | No sustained stable cycle established; do not tune a prescribed outcome or make breathing a global gate. |
-| P10 | Extend to recursive coupling and persistent state. | Scope broader state/depth coverage and physical connector realization; retain the merged local-contact and phase/current limits. | Global continuous clearance, arbitrary-depth convergence, dormant-path rules and a physical attachment/phase-current adapter remain unvalidated. |
-| P11 | Use the viewer to inspect the same computed engine state. | Resolve physical assembly attachment frames and image correspondence and validate on a physical headset. Retain the integrated mechanical-energy display, desktop replay and separate energy ownership. | No global physical attachment frame or full mechanical-energy display; image correspondence and physical headset verification remain unvalidated. |
+| P10 | Extend to recursive coupling and persistent state. | Assess bounded distributed graph trajectories and broader state/depth coverage under the preserved scale guards; keep physical connector realization, powered persistence adaptation and remaining pathway rules separate from the validated instantaneous contract. | Global continuous clearance, arbitrary-depth convergence, dormant-path rules and a physical attachment/phase-current adapter remain unvalidated. |
+| P11 | Use the viewer to inspect the same computed engine state. | Resolve physical assembly attachment frames and image correspondence and validate on a physical headset. Retain the integrated mechanical-energy display, desktop replay and separate energy ownership. | Global physical attachment frames, image correspondence and physical headset validation remain open. The integrated mechanical-energy display uses the existing point-inertia model; it does not certify whole-assembly energy closure or distributed-inertia replay. |
 | P12 | Close the remaining independent experiment and source queues. | Triage R01-R24 one bounded item at a time into executable, evidence-blocked or explicitly deferred work; preserve each item's existing completion criterion. | Source/input gaps vary by item; queued suggestions are not 24 active experiments. |
 
 ## Detailed independent queue — scope review, not newly launched experiments
