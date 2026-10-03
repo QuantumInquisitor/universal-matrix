@@ -26,6 +26,8 @@ on:
       - 'tests/test_fold_material_multiscale.py'
       - 'scripts/report_fold_material_supply.py'
       - 'tests/test_fold_material_supply.py'
+      - 'tests/test_fold_material_supply_recovered.py'
+      - 'docs/fold_material_supply_recovered_controls.md'
       - 'scripts/export_fold_material_viewer_frames.py'
       - 'tests/test_fold_material_viewer_frames.py'
       - 'scripts/report_fold_material_persistence.py'
@@ -960,6 +962,11 @@ jobs:
           python-version: '3.12'
       - uses: astral-sh/setup-uv@v10.1.0
       - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify recovered instantaneous material-supply controls
+        run: |
+          uv run ruff check tests/test_fold_material_supply_recovered.py
+          uv run ruff format --check tests/test_fold_material_supply_recovered.py
+          uv run python -m pytest -q tests/test_fold_material_supply_recovered.py
       - name: Verify powered unequal-size material energy accounts
         run: |
           uv run --python 3.12 --extra scientific ruff check scripts/report_fold_material_supply.py tests/test_fold_material_supply.py scripts/export_fold_material_viewer_frames.py tests/test_fold_material_viewer_frames.py scripts/report_fold_material_persistence.py tests/test_fold_material_persistence.py
