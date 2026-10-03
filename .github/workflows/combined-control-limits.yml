@@ -1,0 +1,38 @@
+name: Synthetic combined control limits
+on:
+  pull_request:
+    branches: [main, codex/recovery-plan-log]
+    paths:
+      - 'src/proposed_combined_control_limits.py'
+      - 'src/proposed_actuator_bandwidth.py'
+      - 'src/proposed_mode_pair_control.py'
+      - 'src/proposed_scalar_wave_control.py'
+      - 'scripts/report_combined_control_limits.py'
+      - 'tests/test_combined_control_limits.py'
+      - 'docs/combined_control_limits.md'
+      - 'docs/experiments/combined-control-limits-summary.json'
+      - '.github/workflows/combined-control-limits.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  combined:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.2.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Check combined limits and preserved baselines
+        run: |
+          .venv/bin/ruff check src/proposed_combined_control_limits.py scripts/report_combined_control_limits.py tests/test_combined_control_limits.py
+          .venv/bin/ruff format --check src/proposed_combined_control_limits.py scripts/report_combined_control_limits.py tests/test_combined_control_limits.py
+          .venv/bin/python -m pytest -q tests/test_combined_control_limits.py tests/test_proposed_actuator_bandwidth.py tests/test_proposed_mode_pair_control.py
+          .venv/bin/python scripts/report_combined_control_limits.py --output artifacts/combined-control-limits-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: combined-control-limits
+          path: artifacts/combined-control-limits-summary.json
