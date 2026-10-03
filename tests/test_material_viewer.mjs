@@ -36,3 +36,12 @@ test('mechanical display preserves values and legacy absence',()=>{
 for(const value of [undefined,NaN,Infinity,'0'])test(`reject partial or invalid mechanical energy ${value}`,()=>{
  const d=read();d.frames[1].modules[0].mechanical_j=value;assert.throws(()=>validate(d));
 });
+
+test('explicit point identity is accepted; foreign or malformed identity cannot fall back',()=>{
+ const identity={inertia_model:'material-body-point-inertia-v1',state_layout:'material-powered-node9-edge2-input1-v1',energy_ownership:'material-powered-node-edge-group-ledgers-v1'};
+ const legacy=read();delete legacy.model_identity;validate(legacy);
+ const good=read();good.model_identity=identity;validate(good);
+ for(const value of [null,{},'point', {...identity,inertia_model:'distributed-reference-quadrature-v1'}, {...identity,state_layout:'material-passive-node5-edge2-v1'}, {...identity,energy_ownership:'shared-storage'}, {...identity,extra:'unknown'}]){
+  const d=read();d.model_identity=value;assert.throws(()=>validate(d),/inertia/);
+ }
+});

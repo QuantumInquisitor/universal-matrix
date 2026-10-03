@@ -1,5 +1,11 @@
 {
   "schema": "matrix-science-viewer-timeseries-v1",
+  "model_identity": {
+    "inertia_model": "material-body-point-inertia-v1",
+    "state_layout": "material-powered-node9-edge2-input1-v1",
+    "energy_ownership": "material-powered-node-edge-group-ledgers-v1"
+  },
+  "source_identity_basis": "explicit-point-identity",
   "case": "powered",
   "frame_count": 9,
   "module_count": 4,
@@ -28358,6 +28364,6 @@
   ],
   "source_report": {
     "path": "../experiments/material-viewer-source.json",
-    "sha256_normalized_text": "97b34d823afa26edb3f3d7d2c06e6c1a0a1589bcfc3d21adde32b528b5a71114"
+    "sha256_normalized_text": "056bd9cfadd9b426a6ae1d74183f53187aa3ca0524e9000143d1cddddf0d650b"
   }
 }

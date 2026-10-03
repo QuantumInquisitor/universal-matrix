@@ -35,3 +35,27 @@ by this desktop replay. No 69-component flow correspondence is inferred.
 Validation: `node --test --test-concurrency=1 tests/test_material_viewer.mjs`
 checks the computed example, invalid inputs, physical-time replay and 3D
 projection. Visible browser checks are recorded separately in the PR.
+
+## Explicit model identity and legacy compatibility
+
+New point-powered exports include `model_identity` with three independent tags:
+`material-body-point-inertia-v1`, `material-powered-node9-edge2-input1-v1`, and
+`material-powered-node-edge-group-ledgers-v1`. These identify inertia, numerical
+state layout and energy ownership respectively. The exporter and desktop parser
+reject an explicit unsupported, incomplete or malformed descriptor; they never
+fall back from a contradictory tag to legacy interpretation.
+
+Untagged historical schema-1 powered reports and v1 viewer exports remain
+readable under their existing point-model contract. New exports from such reports
+record `source_identity_basis: legacy-point-assumption`; this is a compatibility
+assumption, not authentication of the source equations. The existing source hash
+is still separate provenance evidence. Removing labels from foreign data is not
+an authenticated conversion, and a numeric array alone cannot reveal its physics.
+
+The distributed graph trajectory report has a different schema and state/ledger
+layout and is not accepted by this powered adapter. No distributed replay, model
+conversion, physical attachment placement or full energy certificate is added.
+
+The source identity basis records the top-level report declaration. A matching
+case-level declaration is also checked when present, but does not upgrade an
+untagged top-level report from the conservative legacy-assumption label.
