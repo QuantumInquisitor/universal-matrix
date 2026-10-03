@@ -1050,12 +1050,27 @@
     "breathing_is_global_gate": false,
     "dependency_interpretation": "Dependencies describe required interfaces/evidence for integration, not a requirement to close every upstream task before incremental work.",
     "immediate_actions": [
-      "Assess final recovery851693c CI and recovery-to-main review; PR119/120/121/123/124 integration into recovery is completed.",
+      "P02: Verify the exact current accepted recovery head and complete its bounded recovery-to-main review. Keep separately proposed changes behind their own review and CI gates; retain the accepted draft-integration evidence.",
       "P04/P07: specify missing physical interfaces and the 22-body/69-domain mapping.",
       "P08/P10: maintain owned-energy controls and scope unresolved state/depth/attachment requirements.",
-      "P11: extend the merged desktop replay with explicit missing energy/frame adapters, image correspondence and physical-headset validation.",
+      "P11: Retain the implemented point-inertia mechanical-energy display and desktop replay. Resolve global physical attachment frames, separately specified distributed-inertia replay, image correspondence and physical-headset validation.",
       "P05/P06/P12: continue bounded independent experiments/source triage without a breathing gate.",
       "P09: retest emergent motion after relevant model changes."
+    ],
+    "previous_immediate_action_snapshots": [
+      {
+        "label": "Before evergreen continuation-policy correction on 2026-10-03 UTC; superseded active actions preserved verbatim",
+        "source_commit": "dd468ba6926a4b96b70417fd18c089ee5c5a3f03",
+        "reason": "The active actions retained recovery851693c and implied missing energy display after P11 recorded integrated PR156. Historical actions remain preserved; original task criteria and states are unchanged.",
+        "immediate_actions": [
+          "Assess final recovery851693c CI and recovery-to-main review; PR119/120/121/123/124 integration into recovery is completed.",
+          "P04/P07: specify missing physical interfaces and the 22-body/69-domain mapping.",
+          "P08/P10: maintain owned-energy controls and scope unresolved state/depth/attachment requirements.",
+          "P11: extend the merged desktop replay with explicit missing energy/frame adapters, image correspondence and physical-headset validation.",
+          "P05/P06/P12: continue bounded independent experiments/source triage without a breathing gate.",
+          "P09: retest emergent motion after relevant model changes."
+        ]
+      }
     ]
   },
   "reconciliation": {

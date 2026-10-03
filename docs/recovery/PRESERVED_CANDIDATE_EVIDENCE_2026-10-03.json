@@ -1,0 +1,94 @@
+{
+  "schema": "preserved-candidate-evidence-v1",
+  "checked_utc": "2026-10-03",
+  "location_alias": "older-referenced-workspace",
+  "scope": "Ten explicitly inspected older candidate/evidence files plus six original-current-checkout supply paths. Hashes establish saved bytes only, not fresh execution, scientific validity or publication. Raw files remain locally preserved; this manifest does not upload or back them up.",
+  "files": [
+    {
+      "relative_path": "work/specialist-solutions/astrophysics_shell_formulation.md",
+      "bytes": 14980,
+      "sha256": "7fdda030781682be6006b5493ae8140342db38488ecde12c740218886a1e087c"
+    },
+    {
+      "relative_path": "work/specialist-solutions/astrophysics_shell_probe.py",
+      "bytes": 15638,
+      "sha256": "9dccf857090ce54c0f4014f825c3cb1e9c943059d8f17469b0bfa6c9ef2aaffe"
+    },
+    {
+      "relative_path": "work/specialist-solutions/astrophysics_shell_result.json",
+      "bytes": 10439,
+      "sha256": "594bb50328c93f983885545150c1f3d963734b7a75d195bc029b98e7b1b64bc3"
+    },
+    {
+      "relative_path": "work/tesla-research/egg_of_columbus_phase_probe.py",
+      "bytes": 8783,
+      "sha256": "a17525f8fbd23800738d6bb10af7f42119731a1d7569804cebca77568ec6e656"
+    },
+    {
+      "relative_path": "work/tesla-research/egg_of_columbus_phase_probe.json",
+      "bytes": 10658,
+      "sha256": "1574142e7fd6d8d990e75e7bf7974e71f8beb7fa5669608f9e388e56593a3404"
+    },
+    {
+      "relative_path": "work/tesla-research/egg_of_columbus_source_and_model_audit.md",
+      "bytes": 13459,
+      "sha256": "d1fe43c41e97b203bc5d6d6c88e565906b9b56a56626677fb90b08936cd0b3e5"
+    },
+    {
+      "relative_path": "work/specialist-solutions/quantum_mode_pair_probe.py",
+      "bytes": 11534,
+      "sha256": "e57a38d960e37ac5cbcc12135ef549351bae0ea3acbe2ff3f73f502e9ea37ec0"
+    },
+    {
+      "relative_path": "work/specialist-solutions/quantum_mode_pair_probe.json",
+      "bytes": 15246,
+      "sha256": "9e33cdfac92e74eeb17a4052b55ab907a67322eb13ac98b8a8b795a7a919f067"
+    },
+    {
+      "relative_path": "work/specialist-solutions/quantum_mode_pair_solution.md",
+      "bytes": 12825,
+      "sha256": "d8bd1c0df4ddbb7df596503df445943f416519e9a6d12b3e1d34a4709740f2b2"
+    },
+    {
+      "relative_path": "work/molecular-xr/final-data-tests.log",
+      "bytes": 9555,
+      "sha256": "c0935de5ab17f49cb786a6bcd043ded2e5901732198b68246894a8c571d65f45"
+    }
+  ],
+  "powered_supply_scratch": {
+    "location_alias": "original-current-checkout",
+    "scope": "One modified workflow plus five untracked files; preserve as an unpromoted validation candidate, not a replacement for accepted powered supply.",
+    "files": [
+      {
+        "relative_path": ".github/workflows/experimental-control-baselines.yml",
+        "bytes": 61162,
+        "sha256": "a0483cd485a65820707d4bf2353be8ca417677e9b21a7cbf021521a152db8e04"
+      },
+      {
+        "relative_path": "docs/experiments/fold-material-supply-summary.json",
+        "bytes": 333099,
+        "sha256": "a493879dc3baea8fc3286026388f82afd175205270b265b3f661ffa24e0bb8ed"
+      },
+      {
+        "relative_path": "docs/fold_material_supply.md",
+        "bytes": 2082,
+        "sha256": "25c6281e8e93d511bccbb5ea43e862b1537962a9210be7e1d9b5335caac026a3"
+      },
+      {
+        "relative_path": "scripts/fold_material_supply.py",
+        "bytes": 10037,
+        "sha256": "c8cb1c531548fdff188b69abb3250762f1a9dc06075df0a68b44d518a43ae11a"
+      },
+      {
+        "relative_path": "scripts/report_fold_material_supply.py",
+        "bytes": 3552,
+        "sha256": "8005b78b80d1f8b212ed9ca2b7c3101e4462db10d03f127613dd1f880f7c0882"
+      },
+      {
+        "relative_path": "tests/test_fold_material_supply.py",
+        "bytes": 8284,
+        "sha256": "b9aa86129e677a177cc743153eb9c2ffdf843cfa8fa188126e7cf16926e1f410"
+      }
+    ]
+  }
+}
