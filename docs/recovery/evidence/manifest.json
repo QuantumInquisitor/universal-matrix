@@ -1,0 +1,59 @@
+{
+  "schema": "numerical-evidence-backup-v1",
+  "recorded_utc": "2026-10-03",
+  "scope": "Three reviewed original GitHub Actions ZIP artifacts copied byte-for-byte into Git. This is not an archive of every experiment or supplied source image.",
+  "authority": "Original ZIP and member bytes, not reserialized JSON or exploratory results. Reproduction is a separate experiment and may differ numerically.",
+  "artifacts": [
+    {
+      "archive": "qball-t2p5-samples-pr159.zip",
+      "bytes": 23569,
+      "sha256": "bac5833004ea5fded0ee9000b07aa235307579f054b147804a4a5d71265a7133",
+      "members": [
+        {
+          "name": "qball-t2p5-samples.json",
+          "bytes": 82263,
+          "sha256": "c374258653850af2b8f2b756cb273c77ed3db080be5eaef3feabf9d6f611559e"
+        }
+      ],
+      "artifact_id": 11257640114,
+      "workflow_run_id": 37075947953,
+      "reviewed_head": "7573bdbcd03db32d06e0dc030a23ea7ef669fa15",
+      "original_hosted_expiry_utc": "2026-12-31T23:06:21Z",
+      "reproduction_entry_point": "python -m src.qball_highres_timeseries_t2p5 --samples-json artifacts/qball-t2p5-samples.json"
+    },
+    {
+      "archive": "graph-trajectories-pr166.zip",
+      "bytes": 132041,
+      "sha256": "17e59bda632934a5d72a9487ae0da8f2db5e3cbe5b5db47f1d7203dcb4f2cb36",
+      "members": [
+        {
+          "name": "distributed-graph-trajectories.json",
+          "bytes": 701887,
+          "sha256": "717ad8738d73516f1897107dbd866df7543646bcf0fb353fc35a56ec4d6a8fb4"
+        }
+      ],
+      "artifact_id": 11258463073,
+      "workflow_run_id": 37081984336,
+      "reviewed_head": "4572d197a53af38ecbcd316a31bb91bd3cd702f2",
+      "original_hosted_expiry_utc": "2027-01-01T00:25:13Z",
+      "reproduction_entry_point": "python -m scripts.report_fold_distributed_graph_trajectories --output artifacts/distributed-graph-trajectories.json"
+    },
+    {
+      "archive": "combined-control-limits-pr163.zip",
+      "bytes": 2038,
+      "sha256": "688166365706e883656308b639908767437b77b7ba7de3432766f3c703839229",
+      "members": [
+        {
+          "name": "combined-control-limits-summary.json",
+          "bytes": 13640,
+          "sha256": "e3995c98f056eca87207988ed41407568cb55d8716c3e29ce1cc3bd63cf90d0a"
+        }
+      ],
+      "artifact_id": 11257981975,
+      "workflow_run_id": 37078853356,
+      "reviewed_head": "60bd1d31dd6815f226fdd38e6fe1575ec295c3f6",
+      "original_hosted_expiry_utc": "2026-12-31T23:42:42Z",
+      "reproduction_entry_point": "python scripts/report_combined_control_limits.py --output artifacts/combined-control-limits-summary.json"
+    }
+  ]
+}
