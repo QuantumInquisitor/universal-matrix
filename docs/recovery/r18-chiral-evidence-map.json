@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "task": "R18",
+  "source_commit": "84be1a0510be5f3ca3bbf8ed3f7d3b304ace06c9",
+  "identity_convention": "Git blob SHA-1 at source_commit; no raw-working-tree byte hash or line-ending dependence.",
+  "scope": "Source-to-requirement audit only; no new physics, source implementation, criterion or global measure construction.",
+  "capabilities": [
+    {
+      "id": "overlap",
+      "capability_and_limit": "Existing U(1), SU(2), SU(3) and product-representation overlap operators; no global measure prescription.",
+      "evidence": [
+        {
+          "path": "src/u1_overlap_dirac_lattice.py",
+          "git_blob_sha1": "4400f7a58ef0645410439b38e5d2fda1a363d9b7"
+        },
+        {
+          "path": "tests/test_u1_overlap_dirac_lattice.py",
+          "git_blob_sha1": "94cfa1ebdff49be3ef81ea1efaf494a65613e509"
+        },
+        {
+          "path": "src/nonabelian_overlap_dirac_lattice.py",
+          "git_blob_sha1": "7469275820869cf6abea05878b1a01c92905d948"
+        },
+        {
+          "path": "tests/test_nonabelian_overlap_dirac_lattice.py",
+          "git_blob_sha1": "648e9ce6b10673f6c3e8b48fc6f1c78870b39255"
+        },
+        {
+          "path": "src/product_group_overlap_dirac.py",
+          "git_blob_sha1": "e0977b6b4efef84f764dbcdea4b0de1d33a996d4"
+        },
+        {
+          "path": "tests/test_product_group_overlap_dirac.py",
+          "git_blob_sha1": "267ab5aa3464ae789cbad6ff4094cadb9a036717"
+        }
+      ],
+      "verification": "source and test inventory inspected; not rerun in this audit"
+    },
+    {
+      "id": "curvature",
+      "capability_and_limit": "Projector curvature, gauge covariance and basis reconstruction; local geometry is not a global measure.",
+      "evidence": [
+        {
+          "path": "src/weyl_measure_curvature.py",
+          "git_blob_sha1": "e761c43e922eba3f15f842daf0f3fa500b16b3df"
+        },
+        {
+          "path": "tests/test_weyl_measure_curvature.py",
+          "git_blob_sha1": "1e3a506c0eb1ccf36e2817d5601f6bab4aabfd27"
+        }
+      ],
+      "verification": "existing focused tests passed in this audit"
+    },
+    {
+      "id": "holonomy",
+      "capability_and_limit": "Basis-invariant closed-loop phase, orientation and local Stokes comparison; not anomaly cancellation.",
+      "evidence": [
+        {
+          "path": "src/weyl_measure_holonomy.py",
+          "git_blob_sha1": "51d672ad2503416b02eef1bc2fbdb41d55761dca"
+        },
+        {
+          "path": "tests/test_weyl_measure_holonomy.py",
+          "git_blob_sha1": "4b7b2578d8b17a2709fd3f59658833630fb279ed"
+        },
+        {
+          "path": "src/weyl_measure_stokes.py",
+          "git_blob_sha1": "2336e080c21fc6f3cc9e49e4f66055fc8cad5781"
+        },
+        {
+          "path": "tests/test_weyl_measure_stokes.py",
+          "git_blob_sha1": "b58d371815fa5d2b2094a2806194669099844f81"
+        }
+      ],
+      "verification": "existing focused tests passed in this audit"
+    },
+    {
+      "id": "determinant",
+      "capability_and_limit": "Square Weyl blocks and basis-phase covariance; rectangular blocks rejected, no global phase choice.",
+      "evidence": [
+        {
+          "path": "src/weyl_determinant.py",
+          "git_blob_sha1": "03a2c52c9c3c3cf5071050930717bdd6acce3805"
+        },
+        {
+          "path": "tests/test_weyl_determinant.py",
+          "git_blob_sha1": "33afdd3ec2f934faf14e5c25939bbd8ca6592a4d"
+        }
+      ],
+      "verification": "existing focused tests passed in this audit"
+    },
+    {
+      "id": "gauge_response",
+      "capability_and_limit": "Charged U(1) gauge-orbit phase and symmetric response; response test establishes finiteness, not a density identity.",
+      "evidence": [
+        {
+          "path": "src/u1_weyl_gauge_orbit.py",
+          "git_blob_sha1": "04dde41333d763d552b790be5dd5f661a5a21587"
+        },
+        {
+          "path": "tests/test_u1_weyl_gauge_orbit.py",
+          "git_blob_sha1": "47a11d551653e43557dc71e9aaaea20630bf57f3"
+        }
+      ],
+      "verification": "existing focused tests passed in this audit"
+    },
+    {
+      "id": "u1_density",
+      "capability_and_limit": "Local index density and covariant anomaly candidate, distinguished from a consistent measure anomaly.",
+      "evidence": [
+        {
+          "path": "src/u1_chiral_anomaly_ledger.py",
+          "git_blob_sha1": "3b32501e394bb4e7b6e2e52963c175d1f451007b"
+        },
+        {
+          "path": "tests/test_u1_chiral_anomaly_ledger.py",
+          "git_blob_sha1": "c50e0bce7625ddeef5ea8575b6e9c821e38e8fdb"
+        }
+      ],
+      "verification": "existing focused tests passed in this audit"
+    },
+    {
+      "id": "representation_ledger",
+      "capability_and_limit": "Supplied-spectrum local coefficients and supported SU(2) fundamental-doublet parity; spectrum is not derived.",
+      "evidence": [
+        {
+          "path": "src/product_group_anomaly_ledger.py",
+          "git_blob_sha1": "1dd9cbd967ca116cb81c82ddec0a488b908cc6a3"
+        },
+        {
+          "path": "tests/test_product_group_anomaly_ledger.py",
+          "git_blob_sha1": "bbceba4b4c89cb7ae495547d93249500bfa62a4c"
+        }
+      ],
+      "verification": "existing focused tests passed in this audit"
+    }
+  ],
+  "remaining_obligations": [
+    "Globally compatible measure and phase prescription, including transitions between patches and nontrivial sectors.",
+    "Quantitative gauge-response/local-density relation under a declared measure convention, including consistent versus covariant distinction and continuum normalization.",
+    "Non-Abelian local measure/anomaly treatment and global consistency beyond the supported fundamental SU(2) parity ledger.",
+    "Complete representation assumptions and their consistency, kept separate from derivation of the physical spectrum."
+  ],
+  "current_checks": {
+    "weyl_and_u1_tests": 41,
+    "product_group_ledger_tests": 8,
+    "documentation_tests": 12,
+    "fresh_full_ci": false
+  },
+  "absence_statement_scope": "Targeted inspection/search of current src and tests found no quantitative comparison invoking infinitesimal_gauge_measure_response with local_overlap_index_density; not a proof about all historical branches."
+}

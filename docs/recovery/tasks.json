@@ -734,11 +734,18 @@
       "status": "queued_for_scope_review",
       "context": "U(1), SU(2), SU(3) overlap tools, Weyl geometry, determinants and representation-level anomaly ledgers exist.",
       "completion": "Complete the global fermion-measure prescription and its gauge variation, and local/global anomaly consistency. Older requests merely to add SU(2)/SU(3) overlap are superseded.",
-      "next_action": "Audit the remaining global fermion-measure and gauge-variation requirements against existing overlap/anomaly tools.",
+      "next_action": "Declare a precise measure convention and derive the expected gauge-response/local-density relation before a bounded comparison; separately retain global patch/sector and non-Abelian measure obligations. Do not repeat implemented overlap, Stokes or supported SU(2) parity work.",
       "blockers_or_limits": [
         "Global measure prescription and anomaly consistency remain incomplete."
       ],
-      "review_phase": "scope_review_only"
+      "review_phase": "scope_review_only",
+      "latest_result": "Source-to-requirement audit maps existing overlap, Weyl geometry, determinant, gauge-orbit and representation-ledger capabilities to exact Git blobs. 49 existing focused tests and 12 documentation checks passed locally. Local Stokes consistency and supported SU(2) parity already exist; neither supplies a globally consistent measure. See CHIRAL_CONSISTENCY_AUDIT.md and r18-chiral-evidence-map.json.",
+      "previous_result_snapshots": [
+        {
+          "label": "Before the R18 source-to-requirement audit",
+          "text": "Audit the remaining global fermion-measure and gauge-variation requirements against existing overlap/anomaly tools."
+        }
+      ]
     },
     {
       "id": "R19",
