@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "archive_path": "docs/experiments/control-noise-report.json.gz",
+  "archive_bytes": 33534780,
+  "archive_sha256": "721a8d43b90141a2a2e989a6094f8cfebec2475868d3158cc09ac92728d9ded5",
+  "restored_filename": "control-noise-report.json",
+  "restored_bytes": 138586366,
+  "restored_sha256": "381722ba18c1dfd4f63efeb5eb1d5615485fe915cabe25b5e8844d77e9c5b9a0",
+  "compression": "gzip level9,mtime0",
+  "run_count": 30,
+  "case_groups": 14,
+  "summary_equals_full_report_without_traces": true,
+  "source_hashes_verified": 7,
+  "restoration": "gzip.decompress(Path(archive_path).read_bytes()); write bytes without newline conversion; verify restored SHA256",
+  "scope": "Original completed frozen run, not a new numerical execution. Runtime and raw newlines preserved."
+}

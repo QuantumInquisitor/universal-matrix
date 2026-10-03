@@ -1,0 +1,40 @@
+name: Synthetic finite-band control noise
+on:
+  pull_request:
+    branches: [main, codex/recovery-plan-log]
+    paths:
+      - 'src/proposed_noisy_control.py'
+      - 'src/proposed_measurement_noise.py'
+      - 'src/proposed_combined_control_limits.py'
+      - 'src/proposed_mode_pair_control.py'
+      - 'src/proposed_scalar_wave_control.py'
+      - 'scripts/report_control_noise.py'
+      - 'tests/test_proposed_noisy_control.py'
+      - 'tests/fixtures/control_noise_coefficients.json'
+      - 'docs/control_noise_comparison.md'
+      - 'docs/experiments/control-noise-summary.json'
+      - '.github/workflows/control-noise-comparison.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  noise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.2.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify controls and preserve all finite-run outcomes
+        run: |
+          .venv/bin/ruff check src/proposed_noisy_control.py src/proposed_measurement_noise.py scripts/report_control_noise.py tests/test_proposed_noisy_control.py
+          .venv/bin/ruff format --check src/proposed_noisy_control.py src/proposed_measurement_noise.py scripts/report_control_noise.py tests/test_proposed_noisy_control.py
+          .venv/bin/python -m pytest -q tests/test_proposed_noisy_control.py tests/test_combined_control_limits.py
+          .venv/bin/python scripts/report_control_noise.py --output artifacts/control-noise-report.json --summary artifacts/control-noise-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: control-noise-comparison
+          path: artifacts/control-noise-*.json
