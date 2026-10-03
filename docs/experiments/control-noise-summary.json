@@ -1,0 +1,1885 @@
+{
+  "schema": 1,
+  "run_count": 30,
+  "elapsed_seconds": 227.3882855999982,
+  "noise_fixture": {
+    "generator": "NumPy PCG64",
+    "frequencies_rad_s": [
+      0.5,
+      1.0,
+      2.0,
+      3.0,
+      5.0,
+      7.0,
+      11.0,
+      13.0
+    ],
+    "coefficient_layout": "channel(qx,qy,vx,vy),frequency,cosine/sine",
+    "seeds": {
+      "7": [
+        [
+          [
+            0.0012301533574825742,
+            0.2987455375084699
+          ],
+          [
+            -0.2741378553622176,
+            -0.8905918387572742
+          ],
+          [
+            -0.45467078517172255,
+            -0.9916465549964624
+          ],
+          [
+            0.060143602597438485,
+            1.3402152455545335
+          ],
+          [
+            -0.49220651855132963,
+            -0.6204748998199404
+          ],
+          [
+            0.4898420501851982,
+            0.35688700816006075
+          ],
+          [
+            0.10541424899789856,
+            -0.9304680447082047
+          ],
+          [
+            -0.02925182246327349,
+            0.6953031944582878
+          ]
+        ],
+        [
+          [
+            -1.344214547285082,
+            -0.45761576104021817
+          ],
+          [
+            -1.901222739800844,
+            -1.289537739784976
+          ],
+          [
+            -1.8417350377917323,
+            -0.23509113107468127
+          ],
+          [
+            -1.2674464814437032,
+            0.2712643588217015
+          ],
+          [
+            0.15675108662422516,
+            -0.18693094462995438
+          ],
+          [
+            -2.516759710820513,
+            -0.5386928958466366
+          ],
+          [
+            -0.048500945401071985,
+            0.11330898600330756
+          ],
+          [
+            -1.5301357655053935,
+            -0.47775327603393064
+          ]
+        ],
+        [
+          [
+            -0.9785190780566395,
+            -0.8088372394255993
+          ],
+          [
+            1.0608986233860787,
+            -0.8075346753318965
+          ],
+          [
+            -0.0325217049455206,
+            0.8843898673831739
+          ],
+          [
+            -0.583600432743302,
+            -0.11170194958415963
+          ],
+          [
+            0.11046414324948059,
+            0.06378177425506196
+          ],
+          [
+            -1.2250558264176934,
+            0.0761402303770081
+          ],
+          [
+            1.3588234217415376,
+            -1.5471446781284823
+          ],
+          [
+            0.8593826880215982,
+            0.11935402569658124
+          ]
+        ],
+        [
+          [
+            -0.6414703941072214,
+            2.000416546342423
+          ],
+          [
+            0.7622597120847118,
+            -1.1992889021052233
+          ],
+          [
+            0.07451622877146342,
+            0.5766895836701853
+          ],
+          [
+            -0.1887821253507493,
+            0.682910267195206
+          ],
+          [
+            -0.06651732014941557,
+            0.6672475608343279
+          ],
+          [
+            1.438522591656152,
+            -0.6756622510056528
+          ],
+          [
+            0.20313861038960904,
+            -0.46330757653841514
+          ],
+          [
+            0.12726841122583082,
+            -1.18719452785014
+          ]
+        ]
+      ],
+      "19": [
+        [
+          [
+            -0.3700247693240037,
+            0.994078692032213
+          ],
+          [
+            0.41585748064632017,
+            -0.6181637087164065
+          ],
+          [
+            0.6721408015696635,
+            -1.450049505885249
+          ],
+          [
+            0.5934846357693563,
+            -0.5618297235440954
+          ],
+          [
+            0.631453096950567,
+            0.4390906518766011
+          ],
+          [
+            -0.76724880591175,
+            0.5283687488069336
+          ],
+          [
+            0.3419276735141769,
+            -0.6461430903975194
+          ],
+          [
+            2.001150555213166,
+            0.80195993578643
+          ]
+        ],
+        [
+          [
+            -1.1820652577744168,
+            -0.9879819159784637
+          ],
+          [
+            0.3168316854272728,
+            0.3120442520839395
+          ],
+          [
+            -0.7268560483413962,
+            1.2158778403220516
+          ],
+          [
+            0.09701711609506954,
+            -0.8626833404289537
+          ],
+          [
+            -0.3745977101286351,
+            -0.17879339436774003
+          ],
+          [
+            -1.5533105934432883,
+            -0.8322121471805926
+          ],
+          [
+            -1.809912000528707,
+            -0.29355617314731525
+          ],
+          [
+            0.612639535701211,
+            -1.2858506769982023
+          ]
+        ],
+        [
+          [
+            0.32208625997571905,
+            -1.1826669740084903
+          ],
+          [
+            -0.16362570180203553,
+            -0.5161660210815051
+          ],
+          [
+            -1.212183196659453,
+            -0.5490984987838816
+          ],
+          [
+            -1.2254692506871665,
+            0.2935107219230474
+          ],
+          [
+            0.04617552533742384,
+            1.199963415268209
+          ],
+          [
+            -1.463253289545785,
+            1.0927759442700036
+          ],
+          [
+            -0.07875734069918894,
+            0.4053617273724596
+          ],
+          [
+            -0.18846678911157366,
+            1.5469678237589886
+          ]
+        ],
+        [
+          [
+            1.3860177942471807,
+            1.0685069539798961
+          ],
+          [
+            0.2594567645115784,
+            -2.3378152457678594
+          ],
+          [
+            0.5563281397304826,
+            -0.03275917922956447
+          ],
+          [
+            -0.1339695891109679,
+            0.43455966825756104
+          ],
+          [
+            1.1934595796502443,
+            0.26727027849946766
+          ],
+          [
+            -0.4664258685088374,
+            -0.7777408134163687
+          ],
+          [
+            0.37007088635135027,
+            1.0985695969740756
+          ],
+          [
+            0.5479772180217485,
+            0.45783840692823724
+          ]
+        ]
+      ],
+      "41": [
+        [
+          [
+            -1.2316649689147774,
+            0.2671189477208684
+          ],
+          [
+            -0.006926123563646536,
+            0.5015352951547885
+          ],
+          [
+            -1.3267282928093849,
+            1.107768166657506
+          ],
+          [
+            0.0937548811679036,
+            -1.1708180763562224
+          ],
+          [
+            -1.3582403949601034,
+            -1.3065640246645707
+          ],
+          [
+            -0.7176152818724516,
+            1.1856213579293313
+          ],
+          [
+            0.8945337459684365,
+            -0.5440478173910653
+          ],
+          [
+            -0.5465879239818061,
+            1.9295877402585404
+          ]
+        ],
+        [
+          [
+            0.9027885949894684,
+            -0.8033905796046447
+          ],
+          [
+            -0.14971196448317786,
+            -0.43029158025002134
+          ],
+          [
+            0.15154145753356082,
+            0.8791498586600328
+          ],
+          [
+            -0.27489147947244597,
+            0.36928102698558257
+          ],
+          [
+            0.5682654605670364,
+            0.7835076560925684
+          ],
+          [
+            -0.6304340955306936,
+            -0.221796455744778
+          ],
+          [
+            1.9723534034631014,
+            -0.18596806121184997
+          ],
+          [
+            0.029913094799628087,
+            0.44094825078674765
+          ]
+        ],
+        [
+          [
+            -0.5772605523613432,
+            -0.3897476006393902
+          ],
+          [
+            1.6782279840043126,
+            1.2964559909835798
+          ],
+          [
+            -1.1034374089422054,
+            0.0651657951870844
+          ],
+          [
+            -1.2894297037907945,
+            -1.5317475242426173
+          ],
+          [
+            0.0027364725013915097,
+            1.524554203577688
+          ],
+          [
+            -0.08182613481761292,
+            1.4702009910257487
+          ],
+          [
+            -1.0568504078749414,
+            0.13626829105665683
+          ],
+          [
+            0.08094594493870162,
+            0.08619597103012647
+          ]
+        ],
+        [
+          [
+            0.9934001102540754,
+            0.5733787615494427
+          ],
+          [
+            -0.5490205679347314,
+            -1.3512770677788306
+          ],
+          [
+            -0.5538102761652128,
+            -0.020585458484185266
+          ],
+          [
+            -0.5506707019933543,
+            -1.5250804770169624
+          ],
+          [
+            -1.763631886148366,
+            0.8112818236152496
+          ],
+          [
+            0.25643114886432494,
+            -0.5855581432194162
+          ],
+          [
+            0.4408157005034306,
+            0.49441833246945965
+          ],
+          [
+            -0.21350892697386348,
+            -0.42714517140046665
+          ]
+        ]
+      ]
+    }
+  },
+  "source_sha256": {
+    "tests/fixtures/control_noise_coefficients.json": "2d90cb5b0144409990a2341735a27b2cc44ac17d18a707eb4e5b309d22198e9c",
+    "scripts/report_control_noise.py": "afd543c69cee8f033d0e1b86597a66a51476073407829acdc5fc8b8c1639e161",
+    "src/proposed_noisy_control.py": "4b12fbab2ef783d80196687ccedb827c4c9b854bdc7d5f211705b140f9a54ef5",
+    "src/proposed_measurement_noise.py": "7a80e62f9568142be1dd007e52d670b917fd459870da4206ca27ebab96547010",
+    "src/proposed_combined_control_limits.py": "b49db1757abf92e5e6196f59aab40554246e6cfccace85955909405cb2835c3f",
+    "src/proposed_mode_pair_control.py": "e6c55142097168eb4ad2ca31c70772eed840ef79213b78aab9544c69ead5a5e9",
+    "src/proposed_scalar_wave_control.py": "8b9c8d423b521cdaba0825acec918855ac57ab42b20c0e53327f43631e82fbc9"
+  },
+  "hash_convention": "UTF-8 normalized LF text",
+  "numpy_version": "2.5.3",
+  "scope": "Finite synthetic known-reference tracking; all30 preregistered integrations retained. No hardware, stability-boundary, population-reliability or quantum-noise claim.",
+  "gate_thresholds": {
+    "position_difference_m": 0.0005,
+    "velocity_difference_m_s": 0.0005,
+    "late_rms_difference_m": 0.0001,
+    "integrated_balance_per_mass": 1e-05,
+    "tracking_m": 0.05,
+    "tracking_borderline_band_m": 0.0001
+  },
+  "cases": {
+    "ideal:sigma=0.0:seed=7": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 9.552800126929593e-09,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.26127679323689634,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sampled_noise_rms": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 6.00571051556642e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.6309335348352327e-05,
+          "sampled_actual_force_rms_per_mass": 0.1473118274064411,
+          "minimum_sampled_damping_increment": 0.0009799171352069536,
+          "command_work_substitution_error_per_mass": 5.637020667137449e-06,
+          "final_actuator_work_per_mass": 4.798554736941717,
+          "final_pump_work_per_mass": -0.07630389744358437,
+          "final_damping_loss_per_mass": 5.0597514246763335
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 5.961773358485941e-10,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.2612839676579388,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sampled_noise_rms": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 3.7913408412748595e-08,
+          "sampled_power_quadrature_residual_per_mass": 4.195838473108893e-06,
+          "sampled_actual_force_rms_per_mass": 0.14730157586577083,
+          "minimum_sampled_damping_increment": 0.0004899540374219691,
+          "command_work_substitution_error_per_mass": 1.411378987015155e-06,
+          "final_actuator_work_per_mass": 4.798555234877115,
+          "final_pump_work_per_mass": -0.07630389765626784,
+          "final_damping_loss_per_mass": 5.059751374165262
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 8.998455536257666e-09,
+          "maximum_velocity_difference_m_s": 9.066422390624496e-09,
+          "late_rms_difference_m": 8.956622791080999e-09
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "meets_finite_run_target",
+      "configuration": "ideal",
+      "seed": 7,
+      "position_sigma_m": 0.0,
+      "velocity_sigma_m_s": 0.0,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.0,
+        "512": 0.0
+      }
+    },
+    "ideal:sigma=0.01:seed=7": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.007709313977475524,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.2646091149704792,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -4.0984641303140114e-07,
+            -7.106460530116649e-06,
+            3.9343901424844623e-07,
+            1.1798477175819806e-06
+          ],
+          "sampled_noise_rms": [
+            0.006275996047592345,
+            0.011653010160919334,
+            0.00830634070269429,
+            0.008634408615718328
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 5.982195316889261e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.613296542590792e-05,
+          "sampled_actual_force_rms_per_mass": 0.14630337547693562,
+          "minimum_sampled_damping_increment": 0.0009596574964274573,
+          "command_work_substitution_error_per_mass": 5.383633379985042e-06,
+          "final_actuator_work_per_mass": 4.645017095548709,
+          "final_pump_work_per_mass": 0.028681820733319475,
+          "final_damping_loss_per_mass": 5.019716250323615
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.0077106125335726985,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.26460911465091436,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -2.0494321659295544e-07,
+            -3.5535772263160063e-06,
+            1.9673871613836082e-07,
+            5.899814629174217e-07
+          ],
+          "sampled_noise_rms": [
+            0.006276268188253224,
+            0.011648029149970113,
+            0.008306722376712287,
+            0.008634623751604105
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 3.775517942727902e-08,
+          "sampled_power_quadrature_residual_per_mass": 4.150920188572549e-06,
+          "sampled_actual_force_rms_per_mass": 0.14629340860359005,
+          "minimum_sampled_damping_increment": 0.000479827120594134,
+          "command_work_substitution_error_per_mass": 1.3478606506467372e-06,
+          "final_actuator_work_per_mass": 4.645017592455677,
+          "final_pump_work_per_mass": 0.028681820522046812,
+          "final_damping_loss_per_mass": 5.019716200043182
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 9.279683466090205e-09,
+          "maximum_velocity_difference_m_s": 9.79796632716301e-09,
+          "late_rms_difference_m": 1.2985560971746565e-06
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "meets_finite_run_target",
+      "configuration": "ideal",
+      "seed": 7,
+      "position_sigma_m": 0.01,
+      "velocity_sigma_m_s": 0.01,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.007709304424675397,
+        "512": 0.007710611937395363
+      }
+    },
+    "ideal:sigma=0.01:seed=19": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.006714910325734822,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.2631292647111097,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            2.429335469519547e-06,
+            -3.189818805050562e-06,
+            -2.736392629646573e-06,
+            2.5633932057807176e-06
+          ],
+          "sampled_noise_rms": [
+            0.008495066952007873,
+            0.009355945415488549,
+            0.008851064301655479,
+            0.0091130126806509
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 6.007147144160285e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.6379220435402964e-05,
+          "sampled_actual_force_rms_per_mass": 0.14772935031258425,
+          "minimum_sampled_damping_increment": 0.0009676871716801649,
+          "command_work_substitution_error_per_mass": 5.5533515137540235e-06,
+          "final_actuator_work_per_mass": 4.709036841087209,
+          "final_pump_work_per_mass": -0.005830419938159838,
+          "final_damping_loss_per_mass": 5.048887866046915
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.006713793682397371,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.2631292648865528,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            1.2147863430722294e-06,
+            -1.5950651401877478e-06,
+            -1.3683299146964855e-06,
+            1.2818217563515228e-06
+          ],
+          "sampled_noise_rms": [
+            0.00849459219762999,
+            0.009355009701175868,
+            0.008850413241657272,
+            0.009112534374974265
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 3.7911009442836985e-08,
+          "sampled_power_quadrature_residual_per_mass": 4.213045836309881e-06,
+          "sampled_actual_force_rms_per_mass": 0.14771799344800277,
+          "minimum_sampled_damping_increment": 0.0004838388784533798,
+          "command_work_substitution_error_per_mass": 1.3901826383388993e-06,
+          "final_actuator_work_per_mass": 4.709037339566782,
+          "final_pump_work_per_mass": -0.0058304216161991764,
+          "final_damping_loss_per_mass": 5.048887815734511
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 9.302563608315495e-09,
+          "maximum_velocity_difference_m_s": 9.860155247842783e-09,
+          "late_rms_difference_m": 1.1166433374508108e-06
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "meets_finite_run_target",
+      "configuration": "ideal",
+      "seed": 19,
+      "position_sigma_m": 0.01,
+      "velocity_sigma_m_s": 0.01,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.006714900772934695,
+        "512": 0.0067137930862200355
+      }
+    },
+    "ideal:sigma=0.01:seed=41": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.007235197194332111,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.2613446221045511,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -2.8993134120696463e-06,
+            1.7742045601590661e-06,
+            -1.62029342431985e-06,
+            -1.3393711213856846e-06
+          ],
+          "sampled_noise_rms": [
+            0.010247362292407676,
+            0.0071503304801264775,
+            0.009954295148643781,
+            0.008375005495723816
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 6.062707944565204e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.5658141548358095e-05,
+          "sampled_actual_force_rms_per_mass": 0.1495354828132042,
+          "minimum_sampled_damping_increment": 0.0009704876425340458,
+          "command_work_substitution_error_per_mass": 5.246459291008421e-06,
+          "final_actuator_work_per_mass": 4.708656149765704,
+          "final_pump_work_per_mass": 0.05355289137764104,
+          "final_damping_loss_per_mass": 5.093644208213585
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.007234290474641449,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.2614488705698482,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -1.4497982602470405e-06,
+            8.871889027023055e-07,
+            -8.102258203240068e-07,
+            -6.697509532869364e-07
+          ],
+          "sampled_noise_rms": [
+            0.010246812283287327,
+            0.007150115918434961,
+            0.009954443462899431,
+            0.008375140135906584
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 3.8265564938910757e-08,
+          "sampled_power_quadrature_residual_per_mass": 4.033936067626698e-06,
+          "sampled_actual_force_rms_per_mass": 0.14952491862816567,
+          "minimum_sampled_damping_increment": 0.0004852396927024216,
+          "command_work_substitution_error_per_mass": 1.3136854137840714e-06,
+          "final_actuator_work_per_mass": 4.708656652793976,
+          "final_pump_work_per_mass": 0.0535528910288539,
+          "final_damping_loss_per_mass": 5.093644157312257
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 9.044583304529397e-09,
+          "maximum_velocity_difference_m_s": 9.959140623294616e-09,
+          "late_rms_difference_m": 9.067196906614033e-07
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "meets_finite_run_target",
+      "configuration": "ideal",
+      "seed": 41,
+      "position_sigma_m": 0.01,
+      "velocity_sigma_m_s": 0.01,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.0072351876415319835,
+        "512": 0.007234289878464114
+      }
+    },
+    "ideal:sigma=0.1:seed=7": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.07709316588274144,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.307268790876619,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -4.098464130314756e-06,
+            -7.106460530116849e-05,
+            3.9343901424859504e-06,
+            1.1798477175825464e-05
+          ],
+          "sampled_noise_rms": [
+            0.06275996047592336,
+            0.11653010160919328,
+            0.08306340702694313,
+            0.0863440861571834
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 7.62440963697486e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.312393073304996e-05,
+          "sampled_actual_force_rms_per_mass": 0.15138964586424333,
+          "minimum_sampled_damping_increment": 0.0007721741741413268,
+          "command_work_substitution_error_per_mass": 1.8856540386913423e-06,
+          "final_actuator_work_per_mass": 3.3187298901025373,
+          "final_pump_work_per_mass": 0.9385222509540678,
+          "final_damping_loss_per_mass": 4.678047988755072
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.0771061269898446,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.30780513492465383,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -2.049432165932528e-06,
+            -3.5535772263163416e-05,
+            1.967387161388041e-06,
+            5.899814629171241e-06
+          ],
+          "sampled_noise_rms": [
+            0.06276268188253227,
+            0.11648029149970111,
+            0.08306722376712254,
+            0.08634623751604084
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 4.708410905607252e-08,
+          "sampled_power_quadrature_residual_per_mass": 3.39480607769449e-06,
+          "sampled_actual_force_rms_per_mass": 0.15138175314490365,
+          "minimum_sampled_damping_increment": 0.0003860681661558285,
+          "command_work_substitution_error_per_mass": 4.409691292117657e-07,
+          "final_actuator_work_per_mass": 3.3187305451567988,
+          "final_pump_work_per_mass": 0.938522251179785,
+          "final_damping_loss_per_mass": 4.678047934194332
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 1024
+          },
+          "late_position_rms_m": 0.07711259804389065,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.3078051347790106,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -1.024766115483864e-06,
+            -1.77687536617827e-05,
+            9.837416102620933e-07,
+            2.9500513459808675e-06
+          ],
+          "sampled_noise_rms": [
+            0.06276404274089084,
+            0.11645537480610839,
+            0.08306913235097031,
+            0.08634731333292718
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 2.9242270827012362e-09,
+          "sampled_power_quadrature_residual_per_mass": 8.55850091907584e-07,
+          "sampled_actual_force_rms_per_mass": 0.1513777903467544,
+          "minimum_sampled_damping_increment": 0.00019303296896278077,
+          "command_work_substitution_error_per_mass": 1.0850413145746529e-07,
+          "final_actuator_work_per_mass": 3.3187305855026117,
+          "final_pump_work_per_mass": 0.9385222511843836,
+          "final_damping_loss_per_mass": 4.678047930737275
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 1.2026872053816362e-08,
+          "maximum_velocity_difference_m_s": 1.7430366594517466e-08,
+          "late_rms_difference_m": 1.2961107103165448e-05
+        },
+        {
+          "maximum_position_difference_m": 7.515262856472305e-10,
+          "maximum_velocity_difference_m_s": 1.0875944589372466e-09,
+          "late_rms_difference_m": 6.471054046039426e-06
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "fails_finite_run_target",
+      "configuration": "ideal",
+      "seed": 7,
+      "position_sigma_m": 0.1,
+      "velocity_sigma_m_s": 0.1,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.07709315632994132,
+        "512": 0.07710612639366728
+      }
+    },
+    "ideal:sigma=0.1:seed=19": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.06714906824413035,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.3659982220375638,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            2.429335469519698e-05,
+            -3.1898188050505925e-05,
+            -2.7363926296461567e-05,
+            2.5633932057803818e-05
+          ],
+          "sampled_noise_rms": [
+            0.08495066952007868,
+            0.09355945415488542,
+            0.08851064301655509,
+            0.09113012680650906
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 7.952666249977369e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.520875949040379e-05,
+          "sampled_actual_force_rms_per_mass": 0.16588851044078393,
+          "minimum_sampled_damping_increment": 0.0008472449846175234,
+          "command_work_substitution_error_per_mass": 3.3888715145202752e-06,
+          "final_actuator_work_per_mass": 3.926714929673153,
+          "final_pump_work_per_mass": 0.6268240934722258,
+          "final_damping_loss_per_mass": 4.966281405335508
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.06713793466788176,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.3659982220375638,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            1.2147863430725439e-05,
+            -1.5950651401880547e-05,
+            -1.3683299146966709e-05,
+            1.2818217563524323e-05
+          ],
+          "sampled_noise_rms": [
+            0.0849459219762998,
+            0.09355009701175872,
+            0.08850413241657294,
+            0.09112534374974253
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 4.908212503096365e-08,
+          "sampled_power_quadrature_residual_per_mass": 3.9214854453129e-06,
+          "sampled_actual_force_rms_per_mass": 0.165864960802891,
+          "minimum_sampled_damping_increment": 0.00042361493799636385,
+          "command_work_substitution_error_per_mass": 8.141164444808169e-07,
+          "final_actuator_work_per_mass": 3.926715607678089,
+          "final_pump_work_per_mass": 0.6268240792761204,
+          "final_damping_loss_per_mass": 4.966281350225463
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 1.214409406369299e-08,
+          "maximum_velocity_difference_m_s": 1.9416688368245616e-08,
+          "late_rms_difference_m": 1.1133576248587018e-05
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "fails_finite_run_target",
+      "configuration": "ideal",
+      "seed": 19,
+      "position_sigma_m": 0.1,
+      "velocity_sigma_m_s": 0.1,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.06714905869133023,
+        "512": 0.06713793407170443
+      }
+    },
+    "ideal:sigma=0.1:seed=41": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.07235194594816416,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.31589714330248575,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -2.8993134120697958e-05,
+            1.774204560158745e-05,
+            -1.620293424319609e-05,
+            -1.3393711213852028e-05
+          ],
+          "sampled_noise_rms": [
+            0.10247362292407663,
+            0.07150330480126489,
+            0.09954295148643795,
+            0.08375005495723835
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 7.528394823097528e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.015635420908989e-05,
+          "sampled_actual_force_rms_per_mass": 0.17978503755430772,
+          "minimum_sampled_damping_increment": 0.0008721225928942644,
+          "command_work_substitution_error_per_mass": 2.3360234360225718e-06,
+          "final_actuator_work_per_mass": 3.8836821206760925,
+          "final_pump_work_per_mass": 1.2645852222638243,
+          "final_damping_loss_per_mass": 5.419680284722116
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.0,
+            "delay_s": 0.0,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.0723429031028684,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.3158971370478848,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -1.4497982602472373e-05,
+            8.871889027032974e-06,
+            -8.102258203243588e-06,
+            -6.697509532873854e-06
+          ],
+          "sampled_noise_rms": [
+            0.1024681228328732,
+            0.07150115918434956,
+            0.09954443462899425,
+            0.08375140135906592
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 4.71172185712021e-08,
+          "sampled_power_quadrature_residual_per_mass": 2.668588520715609e-06,
+          "sampled_actual_force_rms_per_mass": 0.1797727729110631,
+          "minimum_sampled_damping_increment": 0.0004360272276899835,
+          "command_work_substitution_error_per_mass": 5.702208931701591e-07,
+          "final_actuator_work_per_mass": 3.8836827552066073,
+          "final_pump_work_per_mass": 1.2645852211187507,
+          "final_damping_loss_per_mass": 5.419680226930279
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 1.1011246692227417e-08,
+          "maximum_velocity_difference_m_s": 1.802390914296126e-08,
+          "late_rms_difference_m": 9.042845295764712e-06
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "fails_finite_run_target",
+      "configuration": "ideal",
+      "seed": 41,
+      "position_sigma_m": 0.1,
+      "velocity_sigma_m_s": 0.1,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.07235193639536404,
+        "512": 0.07234290250669106
+      }
+    },
+    "lag_delay:sigma=0.0:seed=7": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.017570375748387768,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.22376760386140454,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sampled_noise_rms": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 1.729356071678012e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.225265001536524e-05,
+          "sampled_actual_force_rms_per_mass": 0.1484899752523495,
+          "minimum_sampled_damping_increment": 0.0009401710552923159,
+          "command_work_substitution_error_per_mass": 0.04205886294515526,
+          "final_actuator_work_per_mass": 4.740865833617739,
+          "final_pump_work_per_mass": -0.0077399335809549006,
+          "final_damping_loss_per_mass": 5.06944260558395
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.01756665011674409,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.22389039026069715,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sampled_noise_rms": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 9.686863755575814e-09,
+          "sampled_power_quadrature_residual_per_mass": 1.9629775629970148e-06,
+          "sampled_actual_force_rms_per_mass": 0.14849117141369841,
+          "minimum_sampled_damping_increment": 0.0004700422364998236,
+          "command_work_substitution_error_per_mass": 0.040380893665446393,
+          "final_actuator_work_per_mass": 4.740534442073219,
+          "final_pump_work_per_mass": -0.00792014761590967,
+          "final_damping_loss_per_mass": 5.069027308435638
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 4.4497571063617514e-05,
+          "maximum_velocity_difference_m_s": 4.858750974356951e-05,
+          "late_rms_difference_m": 3.7256316436778958e-06
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "meets_finite_run_target",
+      "configuration": "lag_delay",
+      "seed": 7,
+      "position_sigma_m": 0.0,
+      "velocity_sigma_m_s": 0.0,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.0,
+        "512": 0.0
+      }
+    },
+    "lag_delay:sigma=0.01:seed=7": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.018043759599945156,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.22308976000921715,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -3.5586289922867374e-07,
+            -2.667381033463617e-06,
+            -7.660761108928841e-07,
+            3.5963537645503183e-07
+          ],
+          "sampled_noise_rms": [
+            0.0062759791833132805,
+            0.011643472922716142,
+            0.008306473893443892,
+            0.008634034157968129
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 1.7094457849253786e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.3501121788772608e-05,
+          "sampled_actual_force_rms_per_mass": 0.14749496727460581,
+          "minimum_sampled_damping_increment": 0.0009340870571943327,
+          "command_work_substitution_error_per_mass": 0.040556502148952234,
+          "final_actuator_work_per_mass": 4.59023253484805,
+          "final_pump_work_per_mass": 0.09716527974124134,
+          "final_damping_loss_per_mass": 5.030889348460452
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.01804892856551143,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.22318949510876887,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -1.779488240357309e-07,
+            -1.3338207472282487e-06,
+            -3.8307545785387597e-07,
+            1.7983524683412058e-07
+          ],
+          "sampled_noise_rms": [
+            0.0062762597556616385,
+            0.011643259001523036,
+            0.008306788975796677,
+            0.00863443651114207
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 9.57391321776413e-09,
+          "sampled_power_quadrature_residual_per_mass": 2.289759340468045e-06,
+          "sampled_actual_force_rms_per_mass": 0.14749583325242613,
+          "minimum_sampled_damping_increment": 0.00046700054322967866,
+          "command_work_substitution_error_per_mass": 0.03888857557338188,
+          "final_actuator_work_per_mass": 4.589911760737119,
+          "final_pump_work_per_mass": 0.09697780806314622,
+          "final_damping_loss_per_mass": 5.030476611087037
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 4.450908407738208e-05,
+          "maximum_velocity_difference_m_s": 4.830056879367994e-05,
+          "late_rms_difference_m": 5.168965566276079e-06
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "meets_finite_run_target",
+      "configuration": "lag_delay",
+      "seed": 7,
+      "position_sigma_m": 0.01,
+      "velocity_sigma_m_s": 0.01,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.00047338385155738794,
+        "512": 0.0004822784487673419
+      }
+    },
+    "lag_delay:sigma=0.01:seed=19": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.020427424017697038,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.22730184494227737,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -2.986766720404165e-07,
+            3.7262556337354144e-07,
+            -3.401464342316051e-06,
+            1.0051617256763174e-06
+          ],
+          "sampled_noise_rms": [
+            0.008493314835546825,
+            0.00935319837163794,
+            0.00885224512670111,
+            0.009111450164916112
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 1.76096428994299e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.0270784647881115e-05,
+          "sampled_actual_force_rms_per_mass": 0.14894327502527607,
+          "minimum_sampled_damping_increment": 0.0009329709490231153,
+          "command_work_substitution_error_per_mass": 0.044740449748344346,
+          "final_actuator_work_per_mass": 4.649313755062204,
+          "final_pump_work_per_mass": 0.06491572687662087,
+          "final_damping_loss_per_mass": 5.058148366029636
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.020424033316786428,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.22732567404025547,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -1.4935291841825512e-07,
+            1.8633097451720188e-07,
+            -1.7008982420645584e-06,
+            5.02629938207309e-07
+          ],
+          "sampled_noise_rms": [
+            0.008493716050062593,
+            0.009353636008560026,
+            0.008851003774957556,
+            0.009111753033298009
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 9.877997086960022e-09,
+          "sampled_power_quadrature_residual_per_mass": 1.4810507471541001e-06,
+          "sampled_actual_force_rms_per_mass": 0.14894429278062835,
+          "minimum_sampled_damping_increment": 0.0004664378771219724,
+          "command_work_substitution_error_per_mass": 0.04306515180656323,
+          "final_actuator_work_per_mass": 4.648988977728501,
+          "final_pump_work_per_mass": 0.06472978806144045,
+          "final_damping_loss_per_mass": 5.057733686710743
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 4.460408440043473e-05,
+          "maximum_velocity_difference_m_s": 4.87032599099102e-05,
+          "late_rms_difference_m": 3.3907009106097508e-06
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "meets_finite_run_target",
+      "configuration": "lag_delay",
+      "seed": 19,
+      "position_sigma_m": 0.01,
+      "velocity_sigma_m_s": 0.01,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.0028570482693092702,
+        "512": 0.0028573832000423384
+      }
+    },
+    "lag_delay:sigma=0.01:seed=41": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.01682848819372031,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.22633135671283824,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -2.6312466746686207e-06,
+            -8.458030559696981e-07,
+            -1.8885227877548827e-06,
+            -4.866031685124023e-07
+          ],
+          "sampled_noise_rms": [
+            0.010246991839862262,
+            0.007149459389161269,
+            0.009954537238128173,
+            0.008374529418337665
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 1.873058677048789e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.2103438211341633e-05,
+          "sampled_actual_force_rms_per_mass": 0.1507291278810757,
+          "minimum_sampled_damping_increment": 0.0009505083849790097,
+          "command_work_substitution_error_per_mass": 0.043999192602349524,
+          "final_actuator_work_per_mass": 4.644245251463964,
+          "final_pump_work_per_mass": 0.12750823703051217,
+          "final_damping_loss_per_mass": 5.103889427069006
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.016813760089251322,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": true,
+          "maximum_sampled_force_per_mass": 0.2263542996507246,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -1.315751803629867e-06,
+            -4.229428229290355e-07,
+            -9.443535978987522e-07,
+            -2.4332534185612477e-07
+          ],
+          "sampled_noise_rms": [
+            0.010246627030658637,
+            0.007149680330617103,
+            0.009954564518393565,
+            0.008374902081179901
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 1.0550331275283042e-08,
+          "sampled_power_quadrature_residual_per_mass": 1.939930105776533e-06,
+          "sampled_actual_force_rms_per_mass": 0.15073046773512777,
+          "minimum_sampled_damping_increment": 0.0004752083513173133,
+          "command_work_substitution_error_per_mass": 0.04230903558222199,
+          "final_actuator_work_per_mass": 4.643922140452555,
+          "final_pump_work_per_mass": 0.1273158644326273,
+          "final_damping_loss_per_mass": 5.103471060283702
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 4.460084465818248e-05,
+          "maximum_velocity_difference_m_s": 4.8878943977426204e-05,
+          "late_rms_difference_m": 1.472810446898759e-05
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "meets_finite_run_target",
+      "configuration": "lag_delay",
+      "seed": 41,
+      "position_sigma_m": 0.01,
+      "velocity_sigma_m_s": 0.01,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": -0.0007418875546674579,
+        "512": -0.0007528900274927676
+      }
+    },
+    "lag_delay:sigma=0.1:seed=7": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.07427699131162607,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.24937049632981198,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -3.5586289922845013e-06,
+            -2.667381033464007e-05,
+            -7.660761108930493e-06,
+            3.5963537645529236e-06
+          ],
+          "sampled_noise_rms": [
+            0.0627597918331326,
+            0.11643472922716187,
+            0.08306473893443918,
+            0.08634034157968136
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 1.3738817461472763e-07,
+          "sampled_power_quadrature_residual_per_mass": 2.328112156724238e-05,
+          "sampled_actual_force_rms_per_mass": 0.1491411436268071,
+          "minimum_sampled_damping_increment": 0.0008027542720214775,
+          "command_work_substitution_error_per_mass": 0.05114759670251923,
+          "final_actuator_work_per_mass": 3.286316470051448,
+          "final_pump_work_per_mass": 1.0091298641045665,
+          "final_damping_loss_per_mass": 4.7022821322963235
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.07430941807706733,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.24966933354758417,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -1.7794882403580709e-06,
+            -1.333820747227908e-05,
+            -3.830754578531435e-06,
+            1.7983524683491452e-06
+          ],
+          "sampled_noise_rms": [
+            0.06276259755661637,
+            0.1164325900152299,
+            0.08306788975796678,
+            0.08634436511142084
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 8.254310124300446e-09,
+          "sampled_power_quadrature_residual_per_mass": 4.888907296218825e-06,
+          "sampled_actual_force_rms_per_mass": 0.1491405314023917,
+          "minimum_sampled_damping_increment": 0.0004013403781062408,
+          "command_work_substitution_error_per_mass": 0.049569384996442256,
+          "final_actuator_work_per_mass": 3.2860876128123384,
+          "final_pump_work_per_mass": 1.008879565306546,
+          "final_damping_loss_per_mass": 4.7018914952138084
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 1024
+          },
+          "late_position_rms_m": 0.07432125790225141,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.2496722274491557,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -8.897875625918001e-07,
+            -6.669429360074753e-06,
+            -1.9154708089762005e-06,
+            8.992201371003208e-07
+          ],
+          "sampled_noise_rms": [
+            0.06276400057680258,
+            0.11643152023784963,
+            0.08306946535566719,
+            0.0863463771016471
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 5.377076561785543e-10,
+          "sampled_power_quadrature_residual_per_mass": 1.2242338650603202e-06,
+          "sampled_actual_force_rms_per_mass": 0.14913986419350356,
+          "minimum_sampled_damping_increment": 0.00020066607174373807,
+          "command_work_substitution_error_per_mass": 0.04960274283144628,
+          "final_actuator_work_per_mass": 3.286033054121231,
+          "final_pump_work_per_mass": 1.0088198111381246,
+          "final_damping_loss_per_mass": 4.701798301245436
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 4.462998649756855e-05,
+          "maximum_velocity_difference_m_s": 4.714103782244017e-05,
+          "late_rms_difference_m": 3.242676544125411e-05
+        },
+        {
+          "maximum_position_difference_m": 1.064540034867445e-05,
+          "maximum_velocity_difference_m_s": 1.1246589585067746e-05,
+          "late_rms_difference_m": 1.1839825184087327e-05
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "fails_finite_run_target",
+      "configuration": "lag_delay",
+      "seed": 7,
+      "position_sigma_m": 0.1,
+      "velocity_sigma_m_s": 0.1,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.056706615563238305,
+        "512": 0.05674276796032324
+      }
+    },
+    "lag_delay:sigma=0.1:seed=19": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.07383918091984512,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.3637797352498361,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -2.9867667204062123e-06,
+            3.7262556337360446e-06,
+            -3.401464342315308e-05,
+            1.0051617256764027e-05
+          ],
+          "sampled_noise_rms": [
+            0.08493314835546835,
+            0.09353198371637918,
+            0.08852245126701115,
+            0.09111450164916107
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 1.8521445710462103e-07,
+          "sampled_power_quadrature_residual_per_mass": 7.5825642120719294e-06,
+          "sampled_actual_force_rms_per_mass": 0.16544935512659223,
+          "minimum_sampled_damping_increment": 0.0008706514608860516,
+          "command_work_substitution_error_per_mass": 0.10742530757653013,
+          "final_actuator_work_per_mass": 3.847860687730867,
+          "final_pump_work_per_mass": 0.717866655068871,
+          "final_damping_loss_per_mass": 4.972551027893522
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.07382861762695248,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.36391934509053875,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -1.4935291841865035e-06,
+            1.8633097451710004e-06,
+            -1.7008982420656375e-05,
+            5.026299382076679e-06
+          ],
+          "sampled_noise_rms": [
+            0.08493716050062576,
+            0.09353636008560044,
+            0.08851003774957557,
+            0.09111753033297983
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 1.102959412691007e-08,
+          "sampled_power_quadrature_residual_per_mass": 2.8402782259462356e-06,
+          "sampled_actual_force_rms_per_mass": 0.1654512028591531,
+          "minimum_sampled_damping_increment": 0.00043525879304739945,
+          "command_work_substitution_error_per_mass": 0.10577382399300683,
+          "final_actuator_work_per_mass": 3.8475948875633272,
+          "final_pump_work_per_mass": 0.7176285855182336,
+          "final_damping_loss_per_mass": 4.97214106129259
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 4.566353018620184e-05,
+          "maximum_velocity_difference_m_s": 4.986496638714755e-05,
+          "late_rms_difference_m": 1.0563292892645793e-05
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "fails_finite_run_target",
+      "configuration": "lag_delay",
+      "seed": 19,
+      "position_sigma_m": 0.1,
+      "velocity_sigma_m_s": 0.1,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.05626880517145735,
+        "512": 0.056261967510208385
+      }
+    },
+    "lag_delay:sigma=0.1:seed=41": {
+      "runs": [
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 256
+          },
+          "late_position_rms_m": 0.06830644352504085,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.2979683667566757,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -2.6312466746687068e-05,
+            -8.458030559695583e-06,
+            -1.8885227877545846e-05,
+            -4.866031685126782e-06
+          ],
+          "sampled_noise_rms": [
+            0.10246991839862278,
+            0.07149459389161268,
+            0.09954537238128174,
+            0.08374529418337677
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 3.12244117672833e-07,
+          "sampled_power_quadrature_residual_per_mass": 1.1337536181044161e-05,
+          "sampled_actual_force_rms_per_mass": 0.1816432844637819,
+          "minimum_sampled_damping_increment": 0.0009421575399313209,
+          "command_work_substitution_error_per_mass": 0.11351039572192168,
+          "final_actuator_work_per_mass": 3.7612114875641414,
+          "final_pump_work_per_mass": 1.3857186706996878,
+          "final_damping_loss_per_mass": 5.435301293200029
+        },
+        {
+          "parameters": {
+            "actuator_time_constant_s": 0.1,
+            "delay_s": 0.2,
+            "force_limit": 10.0,
+            "periods": 20,
+            "steps_per_period": 512
+          },
+          "late_position_rms_m": 0.0682689231886354,
+          "diagnostic_limit_m": 0.05,
+          "meets_declared_tracking_target": false,
+          "maximum_sampled_force_per_mass": 0.2979694097732719,
+          "sampled_command_clipping_fraction": 0.0,
+          "sampled_applied_force_saturation_fraction": 0.0,
+          "sampled_noise_mean": [
+            -1.315751803629242e-05,
+            -4.229428229292591e-06,
+            -9.443535978991024e-06,
+            -2.433253418563549e-06
+          ],
+          "sampled_noise_rms": [
+            0.10246627030658627,
+            0.07149680330617117,
+            0.09954564518393579,
+            0.08374902081179914
+          ],
+          "noise_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive, evaluated at t-delay; channels qx,qy,vx,vy in m,m,m/s,m/s.",
+          "clipping_statistics_convention": "Equal-weight output samples from t=0 through final time inclusive; raw command norm >= force limit.",
+          "max_energy_balance_residual_per_mass": 1.8259029843648023e-08,
+          "sampled_power_quadrature_residual_per_mass": 1.886254612615268e-06,
+          "sampled_actual_force_rms_per_mass": 0.1816483079328829,
+          "minimum_sampled_damping_increment": 0.00047101505267987953,
+          "command_work_substitution_error_per_mass": 0.11170788300820478,
+          "final_actuator_work_per_mass": 3.7609642840342796,
+          "final_pump_work_per_mass": 1.3854135964389191,
+          "final_damping_loss_per_mass": 5.434853898541961
+        }
+      ],
+      "refinement_errors": [
+        {
+          "maximum_position_difference_m": 4.569650671359948e-05,
+          "maximum_velocity_difference_m_s": 5.161364762407139e-05,
+          "late_rms_difference_m": 3.7520336405458266e-05
+        }
+      ],
+      "numerical_gate_failures": [],
+      "tracking_borderline": false,
+      "classification": "fails_finite_run_target",
+      "configuration": "lag_delay",
+      "seed": 41,
+      "position_sigma_m": 0.1,
+      "velocity_sigma_m_s": 0.1,
+      "paired_late_rms_differences_from_zero_m": {
+        "256": 0.050736067776653085,
+        "512": 0.050702273071891305
+      }
+    }
+  }
+}
