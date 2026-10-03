@@ -1,0 +1,63 @@
+name: Recursive phase and power flow
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_recursive_phase_power.py'
+      - 'tests/test_fold_recursive_phase_power.py'
+      - 'docs/fold_recursive_phase_power.md'
+      - '.github/workflows/recursive-phase-power.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recursive-phase-power:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify recursive modal phase and power flow
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_phase_power.py tests/test_fold_recursive_phase_power.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_phase_power.py tests/test_fold_recursive_phase_power.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_phase_power.py
+          uv run --python 3.12 --extra scientific python -m scripts.report_fold_recursive_phase_power --output artifacts/fold-recursive-phase/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-recursive-phase/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          full = r['full_tree_energy']
+          assert max(full['max_node_residual_j']) < 1e-10
+          assert max(full['max_edge_residual_j']) < 1e-10
+          assert max(full['max_group_residual_j'].values()) < 1e-10
+          assert set(r['edges']) == {'1', '2', '3'}
+          for edge in r['edges'].values():
+              assert len(edge['rows']) > 100
+              assert set(edge['mode_phase_power_summary']) == {'0', '1'}
+              for summary in edge['mode_phase_power_summary'].values():
+                  assert summary['defined_sample_count'] > 0
+          assert r['phase_is_state_space_diagnostic']
+          assert r['mechanical_energy_current_is_signed_power']
+          assert not r['electrical_current_modeled']
+          assert not r['charged_particles_modeled']
+          assert not r['plasma_modeled']
+          assert not r['electromagnetic_fields_modeled']
+          assert not r['connector_coefficients_changed']
+          assert not r['new_recursive_coupling_introduced']
+          print(json.dumps({
+              level: edge['mode_phase_power_summary']
+              for level, edge in r['edges'].items()
+          }, sort_keys=True))
+          PY

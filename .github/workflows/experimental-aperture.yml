@@ -1,0 +1,117 @@
+name: Experimental aperture and fanout
+
+on:
+  pull_request:
+    paths:
+      - 'src/toroidal_*.py'
+      - 'src/declared_state_recurrence.py'
+      - 'src/canonical_polarity_clock.py'
+      - 'src/canonical_kernel.py'
+      - 'tests/test_declared_state_recurrence.py'
+      - 'tests/test_canonical_polarity_clock.py'
+      - 'scripts/report_assembly_recurrence.py'
+      - 'docs/declared_state_recurrence_v0.1.md'
+      - 'docs/experiments/assembly-recurrence-summary.json'
+      - 'tests/test_toroidal_*.py'
+      - 'scripts/report_aperture_integration.py'
+      - 'scripts/report_combined_aperture.py'
+      - 'scripts/report_assembly_breathing.py'
+      - 'docs/toroidal_assembly_breathing_v0.1.md'
+      - 'docs/experiments/assembly-breathing-summary.json'
+      - 'docs/toroidal_combined_aperture_v0.1.md'
+      - 'docs/experiments/combined-aperture-summary.json'
+      - 'docs/toroidal_aperture_integration_v0.1.md'
+      - 'docs/experiments/aperture-summary.json'
+      - '.github/workflows/experimental-aperture.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  aperture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --group test --group lint
+      - name: Check optional source and tests
+        run: |
+          .venv/bin/ruff check src/toroidal_aperture_local.py src/toroidal_aperture_attachment.py src/toroidal_outer_attachment.py src/toroidal_retained_collision.py src/toroidal_aperture_fanout.py tests/test_toroidal_aperture_attachment.py tests/test_toroidal_outer_attachment.py tests/test_toroidal_aperture_fanout.py scripts/report_aperture_integration.py
+          .venv/bin/ruff format --check src/toroidal_aperture_local.py src/toroidal_aperture_attachment.py src/toroidal_outer_attachment.py src/toroidal_retained_collision.py src/toroidal_aperture_fanout.py tests/test_toroidal_aperture_attachment.py tests/test_toroidal_outer_attachment.py tests/test_toroidal_aperture_fanout.py scripts/report_aperture_integration.py
+      - name: Verify geometry fields and rejection controls
+        run: .venv/bin/python -m pytest tests/test_toroidal_aperture_attachment.py tests/test_toroidal_outer_attachment.py tests/test_toroidal_aperture_fanout.py tests/test_toroidal_bore_downstream.py tests/test_toroidal_bore_downstream_adversarial.py
+      - name: Reproduce all six signed cases
+        run: .venv/bin/python scripts/report_aperture_integration.py --output-dir artifacts/aperture
+      - name: Check combined inventory and rejection controls
+        run: |
+          .venv/bin/ruff check src/toroidal_combined_aperture.py tests/test_toroidal_combined_aperture.py scripts/report_combined_aperture.py
+          .venv/bin/ruff format --check src/toroidal_combined_aperture.py tests/test_toroidal_combined_aperture.py scripts/report_combined_aperture.py
+          .venv/bin/python -m pytest tests/test_toroidal_combined_aperture.py
+          .venv/bin/python scripts/report_combined_aperture.py --output-dir artifacts/combined-aperture
+      - name: Check report acceptance and scope
+        # All three scopes remain separately inspectable.
+        run: |
+          .venv/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          rows = json.loads(Path('artifacts/aperture/summary.json').read_text())['cases']
+          assert len(rows) == 6
+          assert {r['current'] for r in rows} == {1, -1, 2e-8, -2e-8, 7, -7}
+          for r in rows:
+              assert (r['inner_pairs'], r['aperture_pairs'], r['outer_pairs'], r['replacement_pairs']) == (117, 56, 508, 861)
+              assert r['outer_pass'] and r['replacement_pass']
+              assert r['replacement_interfaces'] == 13
+              assert r['outer_cut_flux_relative_error'] < 1e-10
+              assert not r['full_network_certified'] and not r['motion_certified']
+          rows = json.loads(Path('artifacts/combined-aperture/summary.json').read_text())['cases']
+          assert {r['current'] for r in rows} == {1, -1, 2e-8, -2e-8, 7, -7}
+          assert len(rows) == 6
+          for r in rows:
+              assert (r['component_count'], r['pair_count'], r['port_count'], r['interface_count']) == (69, 2346, 8, 62)
+              assert r['static_pair_clearance_complete']
+              assert r['maximum_port_relative_residual'] < 1e-10
+              assert not r['motion_certified'] and not r['material_dynamics_validated']
+          PY
+      - name: Check prescribed common assembly breathing
+        run: |
+          .venv/bin/ruff check src/toroidal_assembly_breathing.py tests/test_toroidal_assembly_breathing.py scripts/report_assembly_breathing.py
+          .venv/bin/ruff format --check src/toroidal_assembly_breathing.py tests/test_toroidal_assembly_breathing.py scripts/report_assembly_breathing.py
+          .venv/bin/python -m pytest tests/test_toroidal_assembly_breathing.py
+          .venv/bin/python scripts/report_assembly_breathing.py --output-dir artifacts/assembly-breathing
+          .venv/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          rows = json.loads(Path('artifacts/assembly-breathing/summary.json').read_text())['cases']
+          assert len(rows) == 6
+          assert {r['current'] for r in rows} == {1, -1, 2e-8, -2e-8, 7, -7}
+          for r in rows:
+              assert (r['component_count'], r['pair_count'], r['interface_count'], r['port_count']) == (69, 2346, 62, 8)
+              assert r['continuous_common_similarity_clearance']
+              assert r['minimum_scale'] == 0.9 and r['minimum_deformation_determinant'] > 0.728
+              assert r['maximum_relative_cut_error'] < 1e-10
+              assert not r['relative_folding_validated']
+              assert not r['emergent_motion_validated'] and not r['material_energy_validated']
+          PY
+      - name: Check declared state recurrence and persistent history
+        run: |
+          .venv/bin/ruff check src/declared_state_recurrence.py tests/test_declared_state_recurrence.py scripts/report_assembly_recurrence.py
+          .venv/bin/ruff format --check src/declared_state_recurrence.py tests/test_declared_state_recurrence.py scripts/report_assembly_recurrence.py
+          .venv/bin/python -m pytest tests/test_declared_state_recurrence.py tests/test_canonical_polarity_clock.py
+          .venv/bin/python scripts/report_assembly_recurrence.py --output-dir artifacts/assembly-recurrence
+          .venv/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          rows = json.loads(Path('artifacts/assembly-recurrence/summary.json').read_text())['cases']
+          assert len(rows) == 2 and {r['current'] for r in rows} == {1, -1}
+          for r in rows:
+              assert r['component_count'] == r['history_changed_components'] == 69
+              assert r['half_cycle_position_returns'] and not r['half_cycle_declared_state_returns']
+              assert r['full_cycle_declared_state_returns'] and not r['full_cycle_history_returns']
+              assert not r['winding_coupled_policy_returns'] and not r['changed_internal_returns']
+              assert r['save_resume_exact'] and r['prescribed_clock_replay_exact']
+          PY

@@ -1,0 +1,31 @@
+name: Distributed inertia trajectories
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_distributed_trajectories.py'
+      - 'tests/test_fold_distributed_trajectories.py'
+      - 'scripts/report_fold_distributed_inertia.py'
+      - 'scripts/report_fold_constitutive.py'
+      - 'scripts/report_fold_dynamics.py'
+      - 'scripts/report_fold_kinematics.py'
+      - '.github/workflows/distributed-trajectories.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  trajectories:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify trajectories and ledgers
+        run: |
+          .venv/bin/ruff check scripts/report_fold_distributed_trajectories.py tests/test_fold_distributed_trajectories.py
+          .venv/bin/ruff format --check scripts/report_fold_distributed_trajectories.py tests/test_fold_distributed_trajectories.py
+          .venv/bin/python -m pytest tests/test_fold_distributed_trajectories.py tests/test_fold_distributed_inertia.py tests/test_fold_kinematics.py
+          .venv/bin/python -m scripts.report_fold_distributed_trajectories --output artifacts/distributed-trajectories.json

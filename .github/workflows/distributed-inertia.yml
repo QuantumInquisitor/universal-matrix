@@ -1,0 +1,30 @@
+name: Distributed material inertia
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_distributed_inertia.py'
+      - 'tests/test_fold_distributed_inertia.py'
+      - 'docs/fold_distributed_inertia.md'
+      - '.github/workflows/distributed-inertia.yml'
+      - 'scripts/report_fold_kinematics.py'
+      - 'scripts/report_fold_constitutive.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  distributed-inertia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify distributed inertia
+        run: |
+          uv run ruff check scripts/report_fold_distributed_inertia.py tests/test_fold_distributed_inertia.py
+          uv run ruff format --check scripts/report_fold_distributed_inertia.py tests/test_fold_distributed_inertia.py
+          uv run python -m pytest tests/test_fold_distributed_inertia.py tests/test_fold_kinematics.py
+          uv run python -m scripts.report_fold_distributed_inertia --output artifacts/distributed-inertia/report.json

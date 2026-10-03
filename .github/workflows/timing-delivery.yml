@@ -1,0 +1,36 @@
+name: Synthetic timing delivery contract
+on:
+  pull_request:
+    branches: [main, codex/recovery-plan-log]
+    paths:
+      - 'src/timing_delivery_contract.py'
+      - 'src/time_crystal_clock_subsystem.py'
+      - 'scripts/report_timing_delivery.py'
+      - 'tests/test_timing_delivery_contract.py'
+      - 'tests/fixtures/timing_delivery_signals.json'
+      - 'docs/timing_delivery_contract.md'
+      - 'docs/experiments/timing-delivery-summary.json'
+      - '.github/workflows/timing-delivery.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  delivery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - run: |
+          .venv/bin/ruff check src/timing_delivery_contract.py scripts/report_timing_delivery.py tests/test_timing_delivery_contract.py
+          .venv/bin/ruff format --check src/timing_delivery_contract.py scripts/report_timing_delivery.py tests/test_timing_delivery_contract.py
+          .venv/bin/python -m pytest -q tests/test_timing_delivery_contract.py tests/test_time_crystal_clock_subsystem.py
+          .venv/bin/python scripts/report_timing_delivery.py --output artifacts/timing-delivery-summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: timing-delivery
+          path: artifacts/timing-delivery-summary.json

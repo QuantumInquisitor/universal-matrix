@@ -1,0 +1,66 @@
+name: Recursive spatial connector adapter
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/report_fold_recursive_spatial_connector.py'
+      - 'tests/test_fold_recursive_spatial_connector.py'
+      - 'docs/fold_recursive_spatial_connector.md'
+      - '.github/workflows/recursive-spatial-connector.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recursive-spatial-connector:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify recursive spatial connector adapter
+        run: |
+          uv run --python 3.12 --extra scientific ruff check scripts/report_fold_recursive_spatial_connector.py tests/test_fold_recursive_spatial_connector.py
+          uv run --python 3.12 --extra scientific ruff format --check scripts/report_fold_recursive_spatial_connector.py tests/test_fold_recursive_spatial_connector.py
+          uv run --python 3.12 --extra scientific python -m pytest tests/test_fold_recursive_spatial_connector.py
+          uv run --python 3.12 --extra scientific python -m scripts.report_fold_recursive_spatial_connector --output artifacts/fold-recursive-spatial-connector/report.json
+          uv run --python 3.12 --extra scientific python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/fold-recursive-spatial-connector/report.json').read_text(encoding='utf-8'))
+          json.dumps(r, allow_nan=False)
+          for name, digest in r['sources'].items():
+              assert digest == hashlib.sha256(Path('scripts', name).read_bytes()).hexdigest()
+          for mode in ('parent_aligned', 'body_following'):
+              for child_bit in ('0','1'):
+                  case = r['cases'][mode][child_bit]
+                  assert case['maximum_scale_similarity_error'] < 1e-12
+                  assert case['maximum_vessel_ratio_invariance_error'] < 1e-14
+                  for row in case['per_scale'].values():
+                      assert row['max_translation_cancellation_error_m'] < 1e-14
+                      for gradient in row['gradient_errors'].values():
+                          assert gradient['parent_force_gradient_error'] < 1e-9
+                          assert gradient['child_force_gradient_error'] < 1e-9
+          for child_bit in ('0','1'):
+              for row in r['cases']['parent_aligned'][child_bit]['per_scale'].values():
+                  assert row['max_abs_energy_difference_j'] < 1e-14
+                  assert row['max_abs_parent_force_difference'] < 1e-13
+                  assert row['max_abs_child_force_difference'] < 1e-13
+          assert max(
+              row['max_abs_energy_difference_j']
+              for row in r['cases']['body_following']['1']['per_scale'].values()
+          ) > 1e-8
+          assert not r['physical_attachment_convention_selected']
+          assert not r['abstract_port_mapped_to_specific_body_site']
+          print(json.dumps({
+              'parent_aligned': r['cases']['parent_aligned'],
+              'body_following_mirrored': r['cases']['body_following']['1'],
+          }, sort_keys=True))
+          PY

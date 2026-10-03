@@ -1,0 +1,38 @@
+name: Bounded distributed graph trajectories
+on:
+  pull_request:
+    branches: [main, codex/recovery-plan-log]
+    paths:
+      - 'scripts/report_fold_distributed_graph_trajectories.py'
+      - 'scripts/fold_distributed_graph.py'
+      - 'scripts/fold_material_multiscale.py'
+      - 'scripts/report_fold_*.py'
+      - 'tests/test_fold_distributed_graph_trajectories.py'
+      - 'docs/fold_distributed_graph_trajectories.md'
+      - 'docs/experiments/distributed-graph-trajectories-summary.json'
+      - '.github/workflows/distributed-graph-trajectories.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  trajectories:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10.2.0
+      - run: uv sync --python 3.12 --extra scientific --group test --group lint
+      - name: Verify short controls and unchanged instantaneous adapter
+        run: |
+          .venv/bin/ruff check scripts/report_fold_distributed_graph_trajectories.py tests/test_fold_distributed_graph_trajectories.py
+          .venv/bin/ruff format --check scripts/report_fold_distributed_graph_trajectories.py tests/test_fold_distributed_graph_trajectories.py
+          .venv/bin/python -m pytest -q tests/test_fold_distributed_graph_trajectories.py tests/test_fold_distributed_graph.py
+      - name: Run bounded report once
+        run: .venv/bin/python -m scripts.report_fold_distributed_graph_trajectories --output artifacts/distributed-graph-trajectories.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: distributed-graph-trajectories
+          path: artifacts/distributed-graph-trajectories.json

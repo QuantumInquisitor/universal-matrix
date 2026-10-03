@@ -1,0 +1,1869 @@
+{
+  "scope": "All six open drafts visible in owner-scoped GitHub search for QuantumInquisitor; all in universal-matrix. Search complete, total_count=6. Non-draft dependency PR117/118 excluded from scientific audit.",
+  "pull_requests": [
+    {
+      "number": 124,
+      "title": "Integrate aperture assembly, common breathing and state recurrence checks",
+      "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/124",
+      "head": "3efe05db6ac3d247ac1e7bdec83a8a906d700036",
+      "base": "a78576f83854a5b75c90815db121b1ca40a4f606",
+      "draft": true,
+      "files": [
+        {
+          "path": ".github/workflows/experimental-aperture.yml",
+          "status": "added",
+          "sha": "49bc73ac9aec71aa66f579ca7eae64846be80044",
+          "local_status": "matching",
+          "local_raw_blob_sha": "49bc73ac9aec71aa66f579ca7eae64846be80044",
+          "local_lf_blob_sha": "49bc73ac9aec71aa66f579ca7eae64846be80044"
+        },
+        {
+          "path": "docs/declared_state_recurrence_v0.1.md",
+          "status": "added",
+          "sha": "43f4465973fc81a10fe7b0828a6b7c7010b38ca5",
+          "local_status": "matching",
+          "local_raw_blob_sha": "43f4465973fc81a10fe7b0828a6b7c7010b38ca5",
+          "local_lf_blob_sha": "43f4465973fc81a10fe7b0828a6b7c7010b38ca5"
+        },
+        {
+          "path": "docs/experiments/aperture-integration-provenance.json",
+          "status": "added",
+          "sha": "822eed6a47c5d5b5294b5457e4e18973057b562e",
+          "local_status": "matching",
+          "local_raw_blob_sha": "25e18508a55eebdc99d08d24f3ba7ae7e903803f",
+          "local_lf_blob_sha": "822eed6a47c5d5b5294b5457e4e18973057b562e"
+        },
+        {
+          "path": "docs/experiments/aperture-summary.json",
+          "status": "added",
+          "sha": "d02ff4d22403106f4bdf8c7f581858282dc51516",
+          "local_status": "matching",
+          "local_raw_blob_sha": "08195efdaae5bb73e90d2e7566f6f3374f461d85",
+          "local_lf_blob_sha": "d02ff4d22403106f4bdf8c7f581858282dc51516"
+        },
+        {
+          "path": "docs/experiments/assembly-breathing-summary.json",
+          "status": "added",
+          "sha": "972e09801cdf320850034a6fdc84b0396defcf7f",
+          "local_status": "matching",
+          "local_raw_blob_sha": "500ea9151a77bc66c250e8db8c4606d869e6769e",
+          "local_lf_blob_sha": "972e09801cdf320850034a6fdc84b0396defcf7f"
+        },
+        {
+          "path": "docs/experiments/assembly-recurrence-summary.json",
+          "status": "added",
+          "sha": "eb8fadde92e822241df82f4b269d70d4c9347a75",
+          "local_status": "matching",
+          "local_raw_blob_sha": "a9750ea365e4c8f0c0595a575d0ecd0dd7b2ae5a",
+          "local_lf_blob_sha": "eb8fadde92e822241df82f4b269d70d4c9347a75"
+        },
+        {
+          "path": "docs/experiments/combined-aperture-summary.json",
+          "status": "added",
+          "sha": "e96768a648eaefc5da42b25eacebfce407737e5e",
+          "local_status": "matching",
+          "local_raw_blob_sha": "30d7b6dda760cfa1f00d06e14460208e8daaeb1e",
+          "local_lf_blob_sha": "e96768a648eaefc5da42b25eacebfce407737e5e"
+        },
+        {
+          "path": "docs/toroidal_aperture_integration_v0.1.md",
+          "status": "added",
+          "sha": "b66a5056cab3c21f2dd04799d1f7e3f13d758d43",
+          "local_status": "matching",
+          "local_raw_blob_sha": "b66a5056cab3c21f2dd04799d1f7e3f13d758d43",
+          "local_lf_blob_sha": "b66a5056cab3c21f2dd04799d1f7e3f13d758d43"
+        },
+        {
+          "path": "docs/toroidal_assembly_breathing_v0.1.md",
+          "status": "added",
+          "sha": "754a9da70548bac03d129c7004ab5443b45103a8",
+          "local_status": "matching",
+          "local_raw_blob_sha": "754a9da70548bac03d129c7004ab5443b45103a8",
+          "local_lf_blob_sha": "754a9da70548bac03d129c7004ab5443b45103a8"
+        },
+        {
+          "path": "docs/toroidal_combined_aperture_v0.1.md",
+          "status": "added",
+          "sha": "73f616afd586f9ef400681e41bca5ba00b0387a8",
+          "local_status": "matching",
+          "local_raw_blob_sha": "73f616afd586f9ef400681e41bca5ba00b0387a8",
+          "local_lf_blob_sha": "73f616afd586f9ef400681e41bca5ba00b0387a8"
+        },
+        {
+          "path": "scripts/report_aperture_integration.py",
+          "status": "added",
+          "sha": "4ecc78640a42d6bdbf67f115ce38db3d84f48989",
+          "local_status": "matching",
+          "local_raw_blob_sha": "4ecc78640a42d6bdbf67f115ce38db3d84f48989",
+          "local_lf_blob_sha": "4ecc78640a42d6bdbf67f115ce38db3d84f48989"
+        },
+        {
+          "path": "scripts/report_assembly_breathing.py",
+          "status": "added",
+          "sha": "5b813ed765ea07fef3e2623d3c57937285fe0d64",
+          "local_status": "matching",
+          "local_raw_blob_sha": "5b813ed765ea07fef3e2623d3c57937285fe0d64",
+          "local_lf_blob_sha": "5b813ed765ea07fef3e2623d3c57937285fe0d64"
+        },
+        {
+          "path": "scripts/report_assembly_recurrence.py",
+          "status": "added",
+          "sha": "7d8276fdb28b52c371737470a125399e008f9540",
+          "local_status": "matching",
+          "local_raw_blob_sha": "7d8276fdb28b52c371737470a125399e008f9540",
+          "local_lf_blob_sha": "7d8276fdb28b52c371737470a125399e008f9540"
+        },
+        {
+          "path": "scripts/report_combined_aperture.py",
+          "status": "added",
+          "sha": "df63133ed1b96da7652c4acc7a1e2292492f2973",
+          "local_status": "matching",
+          "local_raw_blob_sha": "df63133ed1b96da7652c4acc7a1e2292492f2973",
+          "local_lf_blob_sha": "df63133ed1b96da7652c4acc7a1e2292492f2973"
+        },
+        {
+          "path": "src/declared_state_recurrence.py",
+          "status": "added",
+          "sha": "54592e57979e48ab1e566410e3a9bea8de20ed7d",
+          "local_status": "matching",
+          "local_raw_blob_sha": "54592e57979e48ab1e566410e3a9bea8de20ed7d",
+          "local_lf_blob_sha": "54592e57979e48ab1e566410e3a9bea8de20ed7d"
+        },
+        {
+          "path": "src/toroidal_aperture_attachment.py",
+          "status": "added",
+          "sha": "2d94aad4dcc879cfc227ac2c3e82fea764252ffd",
+          "local_status": "matching",
+          "local_raw_blob_sha": "c5832d20e7623732db9655277b25aab09d0e16e9",
+          "local_lf_blob_sha": "2d94aad4dcc879cfc227ac2c3e82fea764252ffd"
+        },
+        {
+          "path": "src/toroidal_aperture_fanout.py",
+          "status": "added",
+          "sha": "6b072593ba5cac597e4c071796f91dc38575b3d0",
+          "local_status": "matching",
+          "local_raw_blob_sha": "3a1f5eb896be750275a518310371def65e4d7024",
+          "local_lf_blob_sha": "6b072593ba5cac597e4c071796f91dc38575b3d0"
+        },
+        {
+          "path": "src/toroidal_aperture_local.py",
+          "status": "added",
+          "sha": "adcd05d9a322c3268f9c6e7607d861def3243cf5",
+          "local_status": "matching",
+          "local_raw_blob_sha": "49146c3a99f7921ce1d27f1c899255e15fede3f0",
+          "local_lf_blob_sha": "adcd05d9a322c3268f9c6e7607d861def3243cf5"
+        },
+        {
+          "path": "src/toroidal_assembly_breathing.py",
+          "status": "added",
+          "sha": "9054cc8d6bf6e2904495ce1ef288ab8616ca9adf",
+          "local_status": "matching",
+          "local_raw_blob_sha": "9054cc8d6bf6e2904495ce1ef288ab8616ca9adf",
+          "local_lf_blob_sha": "9054cc8d6bf6e2904495ce1ef288ab8616ca9adf"
+        },
+        {
+          "path": "src/toroidal_combined_aperture.py",
+          "status": "added",
+          "sha": "05c380a7bd14688749dfa4b2e650b3a864d2cadc",
+          "local_status": "matching",
+          "local_raw_blob_sha": "05c380a7bd14688749dfa4b2e650b3a864d2cadc",
+          "local_lf_blob_sha": "05c380a7bd14688749dfa4b2e650b3a864d2cadc"
+        },
+        {
+          "path": "src/toroidal_outer_attachment.py",
+          "status": "added",
+          "sha": "964bbf886bc88b3b8cbcdd0fb894f59bd61f4bef",
+          "local_status": "matching",
+          "local_raw_blob_sha": "f735bbe73bb9083a84b7dac93385433e840fa09e",
+          "local_lf_blob_sha": "964bbf886bc88b3b8cbcdd0fb894f59bd61f4bef"
+        },
+        {
+          "path": "src/toroidal_retained_collision.py",
+          "status": "added",
+          "sha": "6b6a1ecfe79094c6f9cb57a4cf039826696ca1ae",
+          "local_status": "matching",
+          "local_raw_blob_sha": "8af721353d68874ea5b19973c472bc9c9cc74bcd",
+          "local_lf_blob_sha": "6b6a1ecfe79094c6f9cb57a4cf039826696ca1ae"
+        },
+        {
+          "path": "tests/test_declared_state_recurrence.py",
+          "status": "added",
+          "sha": "8a7628228c3b5911ecdc6b3fb9ceb80216a16f6d",
+          "local_status": "matching",
+          "local_raw_blob_sha": "8a7628228c3b5911ecdc6b3fb9ceb80216a16f6d",
+          "local_lf_blob_sha": "8a7628228c3b5911ecdc6b3fb9ceb80216a16f6d"
+        },
+        {
+          "path": "tests/test_toroidal_aperture_attachment.py",
+          "status": "added",
+          "sha": "cda6bf77cf83b7fc825d350df444d2bd38732a6d",
+          "local_status": "matching",
+          "local_raw_blob_sha": "996e8f4ea13b738daad96b6d881612afd8e5fdc8",
+          "local_lf_blob_sha": "cda6bf77cf83b7fc825d350df444d2bd38732a6d"
+        },
+        {
+          "path": "tests/test_toroidal_aperture_fanout.py",
+          "status": "added",
+          "sha": "dd11c42243bf1492fb05e14158b581c8c1e49aaa",
+          "local_status": "matching",
+          "local_raw_blob_sha": "d020b368d3d097295b7e19d1a157a0ea6aeda89b",
+          "local_lf_blob_sha": "dd11c42243bf1492fb05e14158b581c8c1e49aaa"
+        },
+        {
+          "path": "tests/test_toroidal_assembly_breathing.py",
+          "status": "added",
+          "sha": "ddb79a9a67beec9fbbe4c00db6a0e568669b1c3a",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ddb79a9a67beec9fbbe4c00db6a0e568669b1c3a",
+          "local_lf_blob_sha": "ddb79a9a67beec9fbbe4c00db6a0e568669b1c3a"
+        },
+        {
+          "path": "tests/test_toroidal_combined_aperture.py",
+          "status": "added",
+          "sha": "85a8defd5811c8f26e60ce2519ca0995d4d4a5b6",
+          "local_status": "matching",
+          "local_raw_blob_sha": "85a8defd5811c8f26e60ce2519ca0995d4d4a5b6",
+          "local_lf_blob_sha": "85a8defd5811c8f26e60ce2519ca0995d4d4a5b6"
+        },
+        {
+          "path": "tests/test_toroidal_outer_attachment.py",
+          "status": "added",
+          "sha": "c375d405bd2ce5da537cc90b0eebeb945709449d",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ef0e2b0fa521a4947b776d1133d28f1a3c95df23",
+          "local_lf_blob_sha": "c375d405bd2ce5da537cc90b0eebeb945709449d"
+        }
+      ],
+      "local_content_counts": {
+        "matching": 28,
+        "different": 0,
+        "absent": 0
+      }
+    },
+    {
+      "number": 123,
+      "title": "Recover spatial boundary-flux solver and reject invalid inputs",
+      "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/123",
+      "head": "b7add2892868d5e8150c3a4b148b3c3200642d57",
+      "base": "a78576f83854a5b75c90815db121b1ca40a4f606",
+      "draft": true,
+      "files": [
+        {
+          "path": "docs/patterned_neumann_recovery_v0.1.md",
+          "status": "added",
+          "sha": "fc4bceb62c73d773b9ce9eb5a108158d8a26ab4e",
+          "local_status": "matching",
+          "local_raw_blob_sha": "fc4bceb62c73d773b9ce9eb5a108158d8a26ab4e",
+          "local_lf_blob_sha": "fc4bceb62c73d773b9ce9eb5a108158d8a26ab4e"
+        },
+        {
+          "path": "docs/recovery/neumann-corrected-audit.json",
+          "status": "added",
+          "sha": "96f76c5c85af963e70aa274c5c998168919decf4",
+          "local_status": "matching",
+          "local_raw_blob_sha": "0e7ed3bc7b7f82ff68643a1c8b19fdf1f668d76e",
+          "local_lf_blob_sha": "96f76c5c85af963e70aa274c5c998168919decf4"
+        },
+        {
+          "path": "docs/recovery/neumann-independent-audit.json",
+          "status": "added",
+          "sha": "90330a226596cb76a534eeeeea346c09260efd58",
+          "local_status": "matching",
+          "local_raw_blob_sha": "b016c46c54d7b2c0433dc4493430b21ebbc19d3f",
+          "local_lf_blob_sha": "90330a226596cb76a534eeeeea346c09260efd58"
+        },
+        {
+          "path": "scripts/audit_recovered_neumann.py",
+          "status": "added",
+          "sha": "de3aff00e46ebfc33ded150e8951980a05e916f0",
+          "local_status": "matching",
+          "local_raw_blob_sha": "de3aff00e46ebfc33ded150e8951980a05e916f0",
+          "local_lf_blob_sha": "de3aff00e46ebfc33ded150e8951980a05e916f0"
+        },
+        {
+          "path": "src/open_boundary_solver.py",
+          "status": "modified",
+          "sha": "bc34bd580efba11f9709814a4cec1321ac58bc8a",
+          "local_status": "matching",
+          "local_raw_blob_sha": "bc34bd580efba11f9709814a4cec1321ac58bc8a",
+          "local_lf_blob_sha": "bc34bd580efba11f9709814a4cec1321ac58bc8a"
+        },
+        {
+          "path": "tests/test_open_boundary_solver.py",
+          "status": "modified",
+          "sha": "a73281ba22640b14d166465b309bb872af1d8d13",
+          "local_status": "matching",
+          "local_raw_blob_sha": "a73281ba22640b14d166465b309bb872af1d8d13",
+          "local_lf_blob_sha": "a73281ba22640b14d166465b309bb872af1d8d13"
+        },
+        {
+          "path": "tests/test_patterned_neumann_independent.py",
+          "status": "added",
+          "sha": "4c2d7054a685c352570091e4474807d32509dfa2",
+          "local_status": "matching",
+          "local_raw_blob_sha": "4c2d7054a685c352570091e4474807d32509dfa2",
+          "local_lf_blob_sha": "4c2d7054a685c352570091e4474807d32509dfa2"
+        }
+      ],
+      "local_content_counts": {
+        "matching": 7,
+        "different": 0,
+        "absent": 0
+      }
+    },
+    {
+      "number": 122,
+      "title": "Preserve experiment recovery and extend mechanics and wave controls",
+      "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/122",
+      "head": "7dd38fb994fa09902ab68ce6a0e586906ae21e0f",
+      "base": "a78576f83854a5b75c90815db121b1ca40a4f606",
+      "draft": true,
+      "files": [
+        {
+          "path": ".github/workflows/experimental-control-baselines.yml",
+          "status": "added",
+          "sha": "63ee5b88487c95df716d81afb6bd4eae843e1ced",
+          "local_status": "matching",
+          "local_raw_blob_sha": "d79cc3eefc83970254f3b981a63b77b5844e3582",
+          "local_lf_blob_sha": "63ee5b88487c95df716d81afb6bd4eae843e1ced"
+        },
+        {
+          "path": "docs/DOCUMENTATION_STATUS.md",
+          "status": "modified",
+          "sha": "775d1b0992c41426f7a0a5309180bd353d284188",
+          "local_status": "matching",
+          "local_raw_blob_sha": "bea3fe153c1cf50eb2d51793460f9a9909d974f8",
+          "local_lf_blob_sha": "775d1b0992c41426f7a0a5309180bd353d284188"
+        },
+        {
+          "path": "docs/MATRIX_ENGINE_WORK_QUEUE.md",
+          "status": "modified",
+          "sha": "f88aa69ce5ca5d592d1199c04dd301422e5dde29",
+          "local_status": "matching",
+          "local_raw_blob_sha": "3bc339108c7f5ffb92fa4379cac949c1eb82dfb7",
+          "local_lf_blob_sha": "f88aa69ce5ca5d592d1199c04dd301422e5dde29"
+        },
+        {
+          "path": "docs/RECOVERY_LOG.md",
+          "status": "added",
+          "sha": "5dc4009b83dac89f3f18fc30158d82a6fe05bdf9",
+          "local_status": "different",
+          "local_raw_blob_sha": "2a2d2e915d8b8f877fb0966fa6149a59cf0c02fb",
+          "local_lf_blob_sha": "10556838c745b7ff3df0b8cca357ad240e97f18a"
+        },
+        {
+          "path": "docs/RECOVERY_PLAN.md",
+          "status": "added",
+          "sha": "971656828ff83f26b8520a01ad7aaa9615ac5e30",
+          "local_status": "different",
+          "local_raw_blob_sha": "9d3f5cd726a8a4d53ca150f314e24fa8d15082f9",
+          "local_lf_blob_sha": "db36f56b6ddb7441668969e21df49e34c5ac14a6"
+        },
+        {
+          "path": "docs/chiral_phase_controls.md",
+          "status": "added",
+          "sha": "e27d3068a6fb1461fc54632a9de0d2518ba570df",
+          "local_status": "matching",
+          "local_raw_blob_sha": "486ef142d014ce12fdc60853d2ea1594f1d9dae7",
+          "local_lf_blob_sha": "e27d3068a6fb1461fc54632a9de0d2518ba570df"
+        },
+        {
+          "path": "docs/eight_image_research_review_2026-09-30.md",
+          "status": "added",
+          "sha": "ecf7412eeb7c8d4f78f797c0f8b2bd93ad18772f",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ecf7412eeb7c8d4f78f797c0f8b2bd93ad18772f",
+          "local_lf_blob_sha": "ecf7412eeb7c8d4f78f797c0f8b2bd93ad18772f"
+        },
+        {
+          "path": "docs/experiments/chiral-phase-controls-summary.json",
+          "status": "added",
+          "sha": "e96ea5cc928cdeab0bf7d141fd299fe03d513f63",
+          "local_status": "matching",
+          "local_raw_blob_sha": "12ef9cdf8885373c708473bb1c9fa47f5034e3ca",
+          "local_lf_blob_sha": "e96ea5cc928cdeab0bf7d141fd299fe03d513f63"
+        },
+        {
+          "path": "docs/experiments/eight-image-manifest.json",
+          "status": "added",
+          "sha": "f2fed7944c02290eb00096de1bff85c55a7c5070",
+          "local_status": "matching",
+          "local_raw_blob_sha": "2b2dff11565a955a89b3dc39f1e95fe202f1f068",
+          "local_lf_blob_sha": "f2fed7944c02290eb00096de1bff85c55a7c5070"
+        },
+        {
+          "path": "docs/experiments/fold-active-multiscale-summary.json",
+          "status": "added",
+          "sha": "1bd2fbd2283942b170d231af17f9b5f80494cbeb",
+          "local_status": "matching",
+          "local_raw_blob_sha": "40ecb9a18296b5b5397b9a50c65b8f4088f60ad6",
+          "local_lf_blob_sha": "1bd2fbd2283942b170d231af17f9b5f80494cbeb"
+        },
+        {
+          "path": "docs/experiments/fold-constitutive-summary.json",
+          "status": "added",
+          "sha": "8cc66036b536cdf9cd89e6ad4e5df0a6e4f8d115",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ee2d390ad970a24583f72650d0409cc586a2ff53",
+          "local_lf_blob_sha": "8cc66036b536cdf9cd89e6ad4e5df0a6e4f8d115"
+        },
+        {
+          "path": "docs/experiments/fold-coupling-summary.json",
+          "status": "added",
+          "sha": "751b4c2891c47f6716411e38258163402c4dcad8",
+          "local_status": "matching",
+          "local_raw_blob_sha": "aa0d955e38348eb372d81e1dfe4243918c58978e",
+          "local_lf_blob_sha": "751b4c2891c47f6716411e38258163402c4dcad8"
+        },
+        {
+          "path": "docs/experiments/fold-duration-summary.json",
+          "status": "added",
+          "sha": "3634ef96afe756331f67b8e286f4a6b6a508ccdd",
+          "local_status": "matching",
+          "local_raw_blob_sha": "d02d5a309a6cb9f3076cd34e42b0ca8c993774a0",
+          "local_lf_blob_sha": "3634ef96afe756331f67b8e286f4a6b6a508ccdd"
+        },
+        {
+          "path": "docs/experiments/fold-dynamics-summary.json",
+          "status": "added",
+          "sha": "c3b30ffea6ea652fb48f3c21164e5480bba587ea",
+          "local_status": "matching",
+          "local_raw_blob_sha": "3092e8e070b1a6ae0744c2454e97288085fde145",
+          "local_lf_blob_sha": "c3b30ffea6ea652fb48f3c21164e5480bba587ea"
+        },
+        {
+          "path": "docs/experiments/fold-hierarchy-summary.json",
+          "status": "added",
+          "sha": "2c504922cfbb95fb1ff3d5678e470ebd852df150",
+          "local_status": "matching",
+          "local_raw_blob_sha": "25834119956d6a834eba66eb7219d27307e71741",
+          "local_lf_blob_sha": "2c504922cfbb95fb1ff3d5678e470ebd852df150"
+        },
+        {
+          "path": "docs/experiments/fold-kinematics-summary.json",
+          "status": "added",
+          "sha": "ced711e7ac285972c27762809dd39a038c19c68f",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ef3daa8b9ff7c373c70060fcf2fda768a589692b",
+          "local_lf_blob_sha": "ced711e7ac285972c27762809dd39a038c19c68f"
+        },
+        {
+          "path": "docs/experiments/fold-mapped-summary.json",
+          "status": "added",
+          "sha": "24f46c0e702bfbb3a440fd668652ab41c274c82d",
+          "local_status": "matching",
+          "local_raw_blob_sha": "be146e852f57d89e080c4dea75a9c1886fa87573",
+          "local_lf_blob_sha": "24f46c0e702bfbb3a440fd668652ab41c274c82d"
+        },
+        {
+          "path": "docs/experiments/fold-modes-summary.json",
+          "status": "added",
+          "sha": "1dae2238943f753045243b5963858b04656a2990",
+          "local_status": "matching",
+          "local_raw_blob_sha": "108d699e72b3372bbc17561d5039a81fef0b1dda",
+          "local_lf_blob_sha": "1dae2238943f753045243b5963858b04656a2990"
+        },
+        {
+          "path": "docs/experiments/fold-multiscale-summary.json",
+          "status": "added",
+          "sha": "57fa2c2f8ee595447e65027540835f0dae0765bc",
+          "local_status": "matching",
+          "local_raw_blob_sha": "4e9e4158d902488bac1ac7151811af8fb051076a",
+          "local_lf_blob_sha": "57fa2c2f8ee595447e65027540835f0dae0765bc"
+        },
+        {
+          "path": "docs/experiments/fold-network-summary.json",
+          "status": "added",
+          "sha": "9a540afd76955905bc5914a4b696a34a4b7d4a1e",
+          "local_status": "matching",
+          "local_raw_blob_sha": "458bb7f6e264ff1c4eaa115a244348e375c7bb10",
+          "local_lf_blob_sha": "9a540afd76955905bc5914a4b696a34a4b7d4a1e"
+        },
+        {
+          "path": "docs/experiments/fold-original-source-fixture.json",
+          "status": "added",
+          "sha": "7f126c1258984955b9c5977f2db2ddefa05b93f9",
+          "local_status": "matching",
+          "local_raw_blob_sha": "a833270252a7fd093ee30eabc096b6229fcd0d2c",
+          "local_lf_blob_sha": "7f126c1258984955b9c5977f2db2ddefa05b93f9"
+        },
+        {
+          "path": "docs/experiments/fold-reservoir-summary.json",
+          "status": "added",
+          "sha": "3d694ba592eec2bfdd0123ef1192fe9946670bb7",
+          "local_status": "matching",
+          "local_raw_blob_sha": "44c6210062577341d43a75cc2ae54d9e6e990f60",
+          "local_lf_blob_sha": "3d694ba592eec2bfdd0123ef1192fe9946670bb7"
+        },
+        {
+          "path": "docs/experiments/fold-robustness-summary.json",
+          "status": "added",
+          "sha": "48918f898b0640e8bd6a3c6049e989f8239a6753",
+          "local_status": "matching",
+          "local_raw_blob_sha": "c743ee4c97b5fcc51d4d8de4ef0653fd2a1561a0",
+          "local_lf_blob_sha": "48918f898b0640e8bd6a3c6049e989f8239a6753"
+        },
+        {
+          "path": "docs/experiments/fold-scaled-pair-summary.json",
+          "status": "added",
+          "sha": "d67c83e2fda7da6b57c324c61be882d54cd5e1d5",
+          "local_status": "matching",
+          "local_raw_blob_sha": "fa512d0950fe1ddf9e4b8b48182c24ee1d118bbb",
+          "local_lf_blob_sha": "d67c83e2fda7da6b57c324c61be882d54cd5e1d5"
+        },
+        {
+          "path": "docs/experiments/fold-scaling-summary.json",
+          "status": "added",
+          "sha": "ffd63311e5f78f6636f0c72d9d01315fb891d57e",
+          "local_status": "matching",
+          "local_raw_blob_sha": "639d070a6ec44e06512849230824097ec6b35cef",
+          "local_lf_blob_sha": "ffd63311e5f78f6636f0c72d9d01315fb891d57e"
+        },
+        {
+          "path": "docs/experiments/fold-stability-summary.json",
+          "status": "added",
+          "sha": "12e29a1af6d8c4d29b7e98fc32ff5690fa1d032b",
+          "local_status": "matching",
+          "local_raw_blob_sha": "8cbc39ac76f9abc8073f295a8d95e287b03e965b",
+          "local_lf_blob_sha": "12e29a1af6d8c4d29b7e98fc32ff5690fa1d032b"
+        },
+        {
+          "path": "docs/experiments/fold-supply-summary.json",
+          "status": "added",
+          "sha": "2b7e77a8e6eb934140f2d3769890dbe9aa2a46c4",
+          "local_status": "matching",
+          "local_raw_blob_sha": "b2efe4b80c6422b42da03506aa64d12a7b23a586",
+          "local_lf_blob_sha": "2b7e77a8e6eb934140f2d3769890dbe9aa2a46c4"
+        },
+        {
+          "path": "docs/experiments/fold-threshold-summary.json",
+          "status": "added",
+          "sha": "3996342ad5dc4d6754fe0469336d0933f8cf4146",
+          "local_status": "matching",
+          "local_raw_blob_sha": "289b49af171f4bc4d27b874cae29d1e59f698f89",
+          "local_lf_blob_sha": "3996342ad5dc4d6754fe0469336d0933f8cf4146"
+        },
+        {
+          "path": "docs/experiments/image-claim-controls.json",
+          "status": "added",
+          "sha": "4f02d7eededdf64a83178c111c3bd03a63eeb431",
+          "local_status": "matching",
+          "local_raw_blob_sha": "a7bdcdd5f44470eb7b75d0db1581503ab822961b",
+          "local_lf_blob_sha": "4f02d7eededdf64a83178c111c3bd03a63eeb431"
+        },
+        {
+          "path": "docs/experiments/material-restart-summary.json",
+          "status": "added",
+          "sha": "b0340cdc8f602dd5e317fbbc6ed83d0d25332051",
+          "local_status": "matching",
+          "local_raw_blob_sha": "02a7af8b25c096c7609e97c72c1e96acff01f19e",
+          "local_lf_blob_sha": "b0340cdc8f602dd5e317fbbc6ed83d0d25332051"
+        },
+        {
+          "path": "docs/experiments/material-specimen-summary.json",
+          "status": "added",
+          "sha": "167f02bee46b1a5148c3e73c7410920ebdb612f7",
+          "local_status": "matching",
+          "local_raw_blob_sha": "e0461893e83b58bab3b98d136ef3674cfeb9f4a3",
+          "local_lf_blob_sha": "167f02bee46b1a5148c3e73c7410920ebdb612f7"
+        },
+        {
+          "path": "docs/experiments/phase-delay-controls-summary.json",
+          "status": "added",
+          "sha": "a9cd5f6c4a52681e0d0ca44798ac88affd83d40a",
+          "local_status": "matching",
+          "local_raw_blob_sha": "2e42ab61b12b550da32100ff56f96ffbd5a57915",
+          "local_lf_blob_sha": "a9cd5f6c4a52681e0d0ca44798ac88affd83d40a"
+        },
+        {
+          "path": "docs/experiments/phase-pattern-controls-summary.json",
+          "status": "added",
+          "sha": "ad3ad4f0f8c1127035de0b06eb6e9cea646bfeb8",
+          "local_status": "matching",
+          "local_raw_blob_sha": "b7dbd26475ee9fb40cae5a26e28b23981ad112fa",
+          "local_lf_blob_sha": "ad3ad4f0f8c1127035de0b06eb6e9cea646bfeb8"
+        },
+        {
+          "path": "docs/experiments/wave-harmonics-summary.json",
+          "status": "added",
+          "sha": "ef960ecf6e5ca0f73014012c3f50bc967b977de2",
+          "local_status": "matching",
+          "local_raw_blob_sha": "40f7eed2b1b19ba8e63617be49799803d36a97ac",
+          "local_lf_blob_sha": "ef960ecf6e5ca0f73014012c3f50bc967b977de2"
+        },
+        {
+          "path": "docs/fold_active_multiscale.md",
+          "status": "added",
+          "sha": "f19800334b6a1cabaa94e30bc31371300bbfa635",
+          "local_status": "matching",
+          "local_raw_blob_sha": "fef6b871e35078ea095504464acd34f951f2bc1c",
+          "local_lf_blob_sha": "f19800334b6a1cabaa94e30bc31371300bbfa635"
+        },
+        {
+          "path": "docs/fold_constitutive.md",
+          "status": "added",
+          "sha": "f8cecc22699c37797122dbe70091a0866c8a757c",
+          "local_status": "matching",
+          "local_raw_blob_sha": "f8cecc22699c37797122dbe70091a0866c8a757c",
+          "local_lf_blob_sha": "f8cecc22699c37797122dbe70091a0866c8a757c"
+        },
+        {
+          "path": "docs/fold_coupling.md",
+          "status": "added",
+          "sha": "f4267f0b4c1aa4ae7db594c2e2edf89af7912af9",
+          "local_status": "matching",
+          "local_raw_blob_sha": "f4267f0b4c1aa4ae7db594c2e2edf89af7912af9",
+          "local_lf_blob_sha": "f4267f0b4c1aa4ae7db594c2e2edf89af7912af9"
+        },
+        {
+          "path": "docs/fold_domain_inheritance.md",
+          "status": "added",
+          "sha": "2af7e1aa26a253e6feeadefe19ed658847746414",
+          "local_status": "matching",
+          "local_raw_blob_sha": "2af7e1aa26a253e6feeadefe19ed658847746414",
+          "local_lf_blob_sha": "2af7e1aa26a253e6feeadefe19ed658847746414"
+        },
+        {
+          "path": "docs/fold_duration.md",
+          "status": "added",
+          "sha": "626e5485fd643e23df1e6cbdac4e2cca9a34a973",
+          "local_status": "matching",
+          "local_raw_blob_sha": "1d3218b36b0469fde574b6cc82f6952a2201e40d",
+          "local_lf_blob_sha": "626e5485fd643e23df1e6cbdac4e2cca9a34a973"
+        },
+        {
+          "path": "docs/fold_dynamics.md",
+          "status": "added",
+          "sha": "2e0dd05ad582b15663ef629c863781c2ea017de8",
+          "local_status": "matching",
+          "local_raw_blob_sha": "2e0dd05ad582b15663ef629c863781c2ea017de8",
+          "local_lf_blob_sha": "2e0dd05ad582b15663ef629c863781c2ea017de8"
+        },
+        {
+          "path": "docs/fold_hierarchy.md",
+          "status": "added",
+          "sha": "8542d9638479859d5a16a1372974dcbad924ac60",
+          "local_status": "matching",
+          "local_raw_blob_sha": "8542d9638479859d5a16a1372974dcbad924ac60",
+          "local_lf_blob_sha": "8542d9638479859d5a16a1372974dcbad924ac60"
+        },
+        {
+          "path": "docs/fold_kinematics.md",
+          "status": "added",
+          "sha": "06f9e8ac358ff34dd011fae99a50e773713be4c4",
+          "local_status": "matching",
+          "local_raw_blob_sha": "06f9e8ac358ff34dd011fae99a50e773713be4c4",
+          "local_lf_blob_sha": "06f9e8ac358ff34dd011fae99a50e773713be4c4"
+        },
+        {
+          "path": "docs/fold_mapped.md",
+          "status": "added",
+          "sha": "af7d59f621a32f237723490fca96ee72301f9f5e",
+          "local_status": "matching",
+          "local_raw_blob_sha": "af7d59f621a32f237723490fca96ee72301f9f5e",
+          "local_lf_blob_sha": "af7d59f621a32f237723490fca96ee72301f9f5e"
+        },
+        {
+          "path": "docs/fold_material_mapping_audit.md",
+          "status": "added",
+          "sha": "743cb51d117a6809c921a0686ef0e9b6df054e4d",
+          "local_status": "matching",
+          "local_raw_blob_sha": "e550f309c382f3cc6516ac1ff7ed426bdb0f0052",
+          "local_lf_blob_sha": "743cb51d117a6809c921a0686ef0e9b6df054e4d"
+        },
+        {
+          "path": "docs/fold_modes.md",
+          "status": "added",
+          "sha": "a132ec9714bdeba26f3ea48e14465a10c6cac3d9",
+          "local_status": "matching",
+          "local_raw_blob_sha": "a132ec9714bdeba26f3ea48e14465a10c6cac3d9",
+          "local_lf_blob_sha": "a132ec9714bdeba26f3ea48e14465a10c6cac3d9"
+        },
+        {
+          "path": "docs/fold_multiscale.md",
+          "status": "added",
+          "sha": "84343f3bf1a745d328aa373354ce5d51c326efc8",
+          "local_status": "matching",
+          "local_raw_blob_sha": "84343f3bf1a745d328aa373354ce5d51c326efc8",
+          "local_lf_blob_sha": "84343f3bf1a745d328aa373354ce5d51c326efc8"
+        },
+        {
+          "path": "docs/fold_network.md",
+          "status": "added",
+          "sha": "777906fc473f5193e894e7e63f388e0e94f00a67",
+          "local_status": "matching",
+          "local_raw_blob_sha": "777906fc473f5193e894e7e63f388e0e94f00a67",
+          "local_lf_blob_sha": "777906fc473f5193e894e7e63f388e0e94f00a67"
+        },
+        {
+          "path": "docs/fold_reservoir.md",
+          "status": "added",
+          "sha": "d710808896f6ae254d7468afe82c1e2f560228bb",
+          "local_status": "matching",
+          "local_raw_blob_sha": "d710808896f6ae254d7468afe82c1e2f560228bb",
+          "local_lf_blob_sha": "d710808896f6ae254d7468afe82c1e2f560228bb"
+        },
+        {
+          "path": "docs/fold_robustness.md",
+          "status": "added",
+          "sha": "1d8027855a3c45376a40d9416d0f4e2cbda38dad",
+          "local_status": "matching",
+          "local_raw_blob_sha": "1d8027855a3c45376a40d9416d0f4e2cbda38dad",
+          "local_lf_blob_sha": "1d8027855a3c45376a40d9416d0f4e2cbda38dad"
+        },
+        {
+          "path": "docs/fold_scaled_pair.md",
+          "status": "added",
+          "sha": "9e35093899b70799ef136ac9c901f6d498c05eae",
+          "local_status": "matching",
+          "local_raw_blob_sha": "9e35093899b70799ef136ac9c901f6d498c05eae",
+          "local_lf_blob_sha": "9e35093899b70799ef136ac9c901f6d498c05eae"
+        },
+        {
+          "path": "docs/fold_scaling.md",
+          "status": "added",
+          "sha": "14ea4aa918c3e00baa19f83968df1ec5f560031a",
+          "local_status": "matching",
+          "local_raw_blob_sha": "14ea4aa918c3e00baa19f83968df1ec5f560031a",
+          "local_lf_blob_sha": "14ea4aa918c3e00baa19f83968df1ec5f560031a"
+        },
+        {
+          "path": "docs/fold_stability.md",
+          "status": "added",
+          "sha": "a1a72511dcc399d9f3e1432cbab7101fd323e2e5",
+          "local_status": "matching",
+          "local_raw_blob_sha": "cfc11b9b604f38992000009b88618bafa8a37f3c",
+          "local_lf_blob_sha": "a1a72511dcc399d9f3e1432cbab7101fd323e2e5"
+        },
+        {
+          "path": "docs/fold_supply.md",
+          "status": "added",
+          "sha": "d5e1b83c34fa99d82278ca5ff17e08414f6f58ed",
+          "local_status": "matching",
+          "local_raw_blob_sha": "7cd64eaebcc29ba8cf1f8ae5e2aa930db090ee90",
+          "local_lf_blob_sha": "d5e1b83c34fa99d82278ca5ff17e08414f6f58ed"
+        },
+        {
+          "path": "docs/fold_threshold.md",
+          "status": "added",
+          "sha": "d01281f7e1592ab30f3fb70aa499d98a6dd146ee",
+          "local_status": "matching",
+          "local_raw_blob_sha": "e5428870c1fa3dd93e1e72e3614a18a488e8ebf9",
+          "local_lf_blob_sha": "d01281f7e1592ab30f3fb70aa499d98a6dd146ee"
+        },
+        {
+          "path": "docs/material_restart.md",
+          "status": "added",
+          "sha": "4d382057255790be3cf4345766e594864d24bffb",
+          "local_status": "different",
+          "local_raw_blob_sha": "9838c20727f7782b1044d544e1649450e3c8c983",
+          "local_lf_blob_sha": "9838c20727f7782b1044d544e1649450e3c8c983"
+        },
+        {
+          "path": "docs/material_specimen.md",
+          "status": "added",
+          "sha": "d57e167ab1b40a65b8a9e4f111fc5918c7e1a783",
+          "local_status": "different",
+          "local_raw_blob_sha": "5d5526bb82d750fd86580fd491232a0c55d9aa21",
+          "local_lf_blob_sha": "b7ef0bd7b7541ce7c8911c23eb4977000adf21ae"
+        },
+        {
+          "path": "docs/passive_material_motion_limits.md",
+          "status": "added",
+          "sha": "f27ae608866287c8ca3f28b38770eaed76ddf615",
+          "local_status": "matching",
+          "local_raw_blob_sha": "f27ae608866287c8ca3f28b38770eaed76ddf615",
+          "local_lf_blob_sha": "f27ae608866287c8ca3f28b38770eaed76ddf615"
+        },
+        {
+          "path": "docs/phase_delay_controls.md",
+          "status": "added",
+          "sha": "8311dda8f17ca4b64a8e45d09228cede8ee72284",
+          "local_status": "different",
+          "local_raw_blob_sha": "d335e59c4dde3131981d43fefa0b3dec8676efe7",
+          "local_lf_blob_sha": "d335e59c4dde3131981d43fefa0b3dec8676efe7"
+        },
+        {
+          "path": "docs/phase_pattern_and_time_hypotheses.md",
+          "status": "added",
+          "sha": "0391886bc7da1624f1bb246bbe5cd5439b44811e",
+          "local_status": "matching",
+          "local_raw_blob_sha": "0391886bc7da1624f1bb246bbe5cd5439b44811e",
+          "local_lf_blob_sha": "0391886bc7da1624f1bb246bbe5cd5439b44811e"
+        },
+        {
+          "path": "docs/recovery/bend-spacing-disposition.json",
+          "status": "added",
+          "sha": "01bb8eb1b37a0d8623158a33784911e863843f7a",
+          "local_status": "matching",
+          "local_raw_blob_sha": "01bb8eb1b37a0d8623158a33784911e863843f7a",
+          "local_lf_blob_sha": "01bb8eb1b37a0d8623158a33784911e863843f7a"
+        },
+        {
+          "path": "docs/recovery/branch-reconciliation.json",
+          "status": "added",
+          "sha": "daead79ce1cdb74453f407c0f6830a9aefdc7ac3",
+          "local_status": "matching",
+          "local_raw_blob_sha": "86e0ccc165488d525ab38f9fdbb1e0ffd94ce362",
+          "local_lf_blob_sha": "daead79ce1cdb74453f407c0f6830a9aefdc7ac3"
+        },
+        {
+          "path": "docs/recovery/e8-tip-comparison.json",
+          "status": "added",
+          "sha": "3661293218ed2b3194442f1f7102e70f3777a3dd",
+          "local_status": "matching",
+          "local_raw_blob_sha": "3661293218ed2b3194442f1f7102e70f3777a3dd",
+          "local_lf_blob_sha": "3661293218ed2b3194442f1f7102e70f3777a3dd"
+        },
+        {
+          "path": "docs/recovery/exception-file-comparison.json",
+          "status": "added",
+          "sha": "e5c0d2a5b064ce0e3bce7af1afbae55abb6bb927",
+          "local_status": "matching",
+          "local_raw_blob_sha": "e5c0d2a5b064ce0e3bce7af1afbae55abb6bb927",
+          "local_lf_blob_sha": "e5c0d2a5b064ce0e3bce7af1afbae55abb6bb927"
+        },
+        {
+          "path": "docs/recovery/parallel-checkpoint-ci.json",
+          "status": "added",
+          "sha": "1480193d19f3d7a289f5fe6022ac0c5166942864",
+          "local_status": "matching",
+          "local_raw_blob_sha": "1480193d19f3d7a289f5fe6022ac0c5166942864",
+          "local_lf_blob_sha": "1480193d19f3d7a289f5fe6022ac0c5166942864"
+        },
+        {
+          "path": "docs/recovery/tasks.json",
+          "status": "added",
+          "sha": "07339cf31d5aad6120f25735d5c59a93fd6bd015",
+          "local_status": "matching",
+          "local_raw_blob_sha": "f6598cdd1878d2a2376d19bf48b18ff50474a3f4",
+          "local_lf_blob_sha": "07339cf31d5aad6120f25735d5c59a93fd6bd015"
+        },
+        {
+          "path": "docs/recovery/wave-source-provenance.json",
+          "status": "added",
+          "sha": "a4fc7d975f4ea48a46b403ab05fe48564bb4c59f",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ce380dd78c04e9a3a4e6bbbf7ea26e8bdb9cebe9",
+          "local_lf_blob_sha": "a4fc7d975f4ea48a46b403ab05fe48564bb4c59f"
+        },
+        {
+          "path": "docs/wave_harmonics.md",
+          "status": "added",
+          "sha": "5f8dd37f22303939bbb95b0512e4b32c7987caed",
+          "local_status": "matching",
+          "local_raw_blob_sha": "5f8dd37f22303939bbb95b0512e4b32c7987caed",
+          "local_lf_blob_sha": "5f8dd37f22303939bbb95b0512e4b32c7987caed"
+        },
+        {
+          "path": "scripts/export_fold_reference_fixture.py",
+          "status": "added",
+          "sha": "ecd3d69612767021ff21012f7e4bdc1dfb48665e",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ecd3d69612767021ff21012f7e4bdc1dfb48665e",
+          "local_lf_blob_sha": "ecd3d69612767021ff21012f7e4bdc1dfb48665e"
+        },
+        {
+          "path": "scripts/plot_fold_active_multiscale.py",
+          "status": "added",
+          "sha": "8156823622690af82b731faed52ee909650b7597",
+          "local_status": "matching",
+          "local_raw_blob_sha": "748a0b4ec2ab39dc8b49f624f8a427d2a7ab930f",
+          "local_lf_blob_sha": "8156823622690af82b731faed52ee909650b7597"
+        },
+        {
+          "path": "scripts/plot_fold_constitutive.py",
+          "status": "added",
+          "sha": "2156aa8a031aecbb91e2d74ae5ce7c0b7fe08bb2",
+          "local_status": "matching",
+          "local_raw_blob_sha": "2156aa8a031aecbb91e2d74ae5ce7c0b7fe08bb2",
+          "local_lf_blob_sha": "2156aa8a031aecbb91e2d74ae5ce7c0b7fe08bb2"
+        },
+        {
+          "path": "scripts/plot_fold_duration.py",
+          "status": "added",
+          "sha": "1947857bc5b04b5184eb926cffddd74d3a804617",
+          "local_status": "matching",
+          "local_raw_blob_sha": "c34680138683728cd348bb2a2e6e7fe1deb3c0f6",
+          "local_lf_blob_sha": "1947857bc5b04b5184eb926cffddd74d3a804617"
+        },
+        {
+          "path": "scripts/plot_fold_dynamics.py",
+          "status": "added",
+          "sha": "ed08ce7d63113f4fdbd1ccdd9c1d035a77026d81",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ed08ce7d63113f4fdbd1ccdd9c1d035a77026d81",
+          "local_lf_blob_sha": "ed08ce7d63113f4fdbd1ccdd9c1d035a77026d81"
+        },
+        {
+          "path": "scripts/plot_fold_multiscale.py",
+          "status": "added",
+          "sha": "b1b3edd52f6546af714e6b3521bed1122e4b7b4b",
+          "local_status": "matching",
+          "local_raw_blob_sha": "b1b3edd52f6546af714e6b3521bed1122e4b7b4b",
+          "local_lf_blob_sha": "b1b3edd52f6546af714e6b3521bed1122e4b7b4b"
+        },
+        {
+          "path": "scripts/plot_fold_stability.py",
+          "status": "added",
+          "sha": "a0dc330f0488e629ea51bcba003b31753c5a5fde",
+          "local_status": "matching",
+          "local_raw_blob_sha": "f2466de1242964eb7e23c5b26ca41169a8e029db",
+          "local_lf_blob_sha": "a0dc330f0488e629ea51bcba003b31753c5a5fde"
+        },
+        {
+          "path": "scripts/plot_fold_supply.py",
+          "status": "added",
+          "sha": "2054710d910431b6bdfee9a2cd64f2c606c8a756",
+          "local_status": "matching",
+          "local_raw_blob_sha": "0dd507be8192e75466c5ed52e5a8f41ec562596b",
+          "local_lf_blob_sha": "2054710d910431b6bdfee9a2cd64f2c606c8a756"
+        },
+        {
+          "path": "scripts/plot_fold_threshold.py",
+          "status": "added",
+          "sha": "058c924e9200cf48bbe99fd769ce5362a68dee0f",
+          "local_status": "matching",
+          "local_raw_blob_sha": "058c924e9200cf48bbe99fd769ce5362a68dee0f",
+          "local_lf_blob_sha": "058c924e9200cf48bbe99fd769ce5362a68dee0f"
+        },
+        {
+          "path": "scripts/report_chiral_phase_controls.py",
+          "status": "added",
+          "sha": "2712967b2c9c5677ba80196446d90a6fe114bf9a",
+          "local_status": "matching",
+          "local_raw_blob_sha": "2712967b2c9c5677ba80196446d90a6fe114bf9a",
+          "local_lf_blob_sha": "2712967b2c9c5677ba80196446d90a6fe114bf9a"
+        },
+        {
+          "path": "scripts/report_fold_active_multiscale.py",
+          "status": "added",
+          "sha": "ad4ed27520ed80793d54bb58b895ba7ddc8566e7",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ad4ed27520ed80793d54bb58b895ba7ddc8566e7",
+          "local_lf_blob_sha": "ad4ed27520ed80793d54bb58b895ba7ddc8566e7"
+        },
+        {
+          "path": "scripts/report_fold_constitutive.py",
+          "status": "added",
+          "sha": "81ebd72a03f8decfdd689a714ba1bf16b0e0ac59",
+          "local_status": "matching",
+          "local_raw_blob_sha": "81ebd72a03f8decfdd689a714ba1bf16b0e0ac59",
+          "local_lf_blob_sha": "81ebd72a03f8decfdd689a714ba1bf16b0e0ac59"
+        },
+        {
+          "path": "scripts/report_fold_coupling.py",
+          "status": "added",
+          "sha": "67a0064108ad23182e2fab1e853ed1e70af3c6bf",
+          "local_status": "matching",
+          "local_raw_blob_sha": "67a0064108ad23182e2fab1e853ed1e70af3c6bf",
+          "local_lf_blob_sha": "67a0064108ad23182e2fab1e853ed1e70af3c6bf"
+        },
+        {
+          "path": "scripts/report_fold_duration.py",
+          "status": "added",
+          "sha": "e6ec86f73752c749978f0d74a37ae296621bde27",
+          "local_status": "matching",
+          "local_raw_blob_sha": "52348355543fd285acb37640088800e24a02388f",
+          "local_lf_blob_sha": "e6ec86f73752c749978f0d74a37ae296621bde27"
+        },
+        {
+          "path": "scripts/report_fold_dynamics.py",
+          "status": "added",
+          "sha": "c1cc64f15d982ba16a4bf181be5a635e54d30f30",
+          "local_status": "matching",
+          "local_raw_blob_sha": "c1cc64f15d982ba16a4bf181be5a635e54d30f30",
+          "local_lf_blob_sha": "c1cc64f15d982ba16a4bf181be5a635e54d30f30"
+        },
+        {
+          "path": "scripts/report_fold_hierarchy.py",
+          "status": "added",
+          "sha": "2a3a6d350245527b0ad184a60ef07968039b803f",
+          "local_status": "matching",
+          "local_raw_blob_sha": "2a3a6d350245527b0ad184a60ef07968039b803f",
+          "local_lf_blob_sha": "2a3a6d350245527b0ad184a60ef07968039b803f"
+        },
+        {
+          "path": "scripts/report_fold_kinematics.py",
+          "status": "added",
+          "sha": "e4577cd10a63d37de91d123526823691278f4170",
+          "local_status": "matching",
+          "local_raw_blob_sha": "e4577cd10a63d37de91d123526823691278f4170",
+          "local_lf_blob_sha": "e4577cd10a63d37de91d123526823691278f4170"
+        },
+        {
+          "path": "scripts/report_fold_mapped.py",
+          "status": "added",
+          "sha": "3abfeb6e51cba49df0a5507f5b00e9fbd6fb26d4",
+          "local_status": "matching",
+          "local_raw_blob_sha": "3abfeb6e51cba49df0a5507f5b00e9fbd6fb26d4",
+          "local_lf_blob_sha": "3abfeb6e51cba49df0a5507f5b00e9fbd6fb26d4"
+        },
+        {
+          "path": "scripts/report_fold_modes.py",
+          "status": "added",
+          "sha": "8f4a7a4a36528a9851686b127c865a22a672df8c",
+          "local_status": "matching",
+          "local_raw_blob_sha": "8f4a7a4a36528a9851686b127c865a22a672df8c",
+          "local_lf_blob_sha": "8f4a7a4a36528a9851686b127c865a22a672df8c"
+        },
+        {
+          "path": "scripts/report_fold_multiscale.py",
+          "status": "added",
+          "sha": "6b21b46d384fd3d9a920299f602a6acbcb42a0f3",
+          "local_status": "matching",
+          "local_raw_blob_sha": "6b21b46d384fd3d9a920299f602a6acbcb42a0f3",
+          "local_lf_blob_sha": "6b21b46d384fd3d9a920299f602a6acbcb42a0f3"
+        },
+        {
+          "path": "scripts/report_fold_network.py",
+          "status": "added",
+          "sha": "f7f16f6e95f293f165f246fbf5e8b233d6250ed2",
+          "local_status": "matching",
+          "local_raw_blob_sha": "f7f16f6e95f293f165f246fbf5e8b233d6250ed2",
+          "local_lf_blob_sha": "f7f16f6e95f293f165f246fbf5e8b233d6250ed2"
+        },
+        {
+          "path": "scripts/report_fold_reservoir.py",
+          "status": "added",
+          "sha": "254ccd8c3aa563a1413d3328d0fb6fe833fe3b29",
+          "local_status": "matching",
+          "local_raw_blob_sha": "254ccd8c3aa563a1413d3328d0fb6fe833fe3b29",
+          "local_lf_blob_sha": "254ccd8c3aa563a1413d3328d0fb6fe833fe3b29"
+        },
+        {
+          "path": "scripts/report_fold_robustness.py",
+          "status": "added",
+          "sha": "739dd67253739fe068c77af2f8e92257022c4714",
+          "local_status": "matching",
+          "local_raw_blob_sha": "739dd67253739fe068c77af2f8e92257022c4714",
+          "local_lf_blob_sha": "739dd67253739fe068c77af2f8e92257022c4714"
+        },
+        {
+          "path": "scripts/report_fold_scaled_pair.py",
+          "status": "added",
+          "sha": "3623fce1b464f2b3c492dd7626cc7d2ad69cab57",
+          "local_status": "matching",
+          "local_raw_blob_sha": "3623fce1b464f2b3c492dd7626cc7d2ad69cab57",
+          "local_lf_blob_sha": "3623fce1b464f2b3c492dd7626cc7d2ad69cab57"
+        },
+        {
+          "path": "scripts/report_fold_scaling.py",
+          "status": "added",
+          "sha": "f774eb7a020cfa20a52c34f27029726adb00c108",
+          "local_status": "matching",
+          "local_raw_blob_sha": "f774eb7a020cfa20a52c34f27029726adb00c108",
+          "local_lf_blob_sha": "f774eb7a020cfa20a52c34f27029726adb00c108"
+        },
+        {
+          "path": "scripts/report_fold_stability.py",
+          "status": "added",
+          "sha": "c56153b0f52a4bd980279b057d1a261a5a7e1e68",
+          "local_status": "matching",
+          "local_raw_blob_sha": "977899d886be1ce719cc1c911c42fcf2ea760634",
+          "local_lf_blob_sha": "c56153b0f52a4bd980279b057d1a261a5a7e1e68"
+        },
+        {
+          "path": "scripts/report_fold_supply.py",
+          "status": "added",
+          "sha": "2dbe736d7b98d25de51725cd066560538eee5ff5",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ff8fe9726a168931d7cb941865a55bcdd99021d8",
+          "local_lf_blob_sha": "2dbe736d7b98d25de51725cd066560538eee5ff5"
+        },
+        {
+          "path": "scripts/report_fold_threshold.py",
+          "status": "added",
+          "sha": "3e3d34e84e1a397dcacc80231c458efe377055d0",
+          "local_status": "matching",
+          "local_raw_blob_sha": "3e3d34e84e1a397dcacc80231c458efe377055d0",
+          "local_lf_blob_sha": "3e3d34e84e1a397dcacc80231c458efe377055d0"
+        },
+        {
+          "path": "scripts/report_image_claim_controls.py",
+          "status": "added",
+          "sha": "1c3f2bb14dac030e69fc079bd581b5c48182c2a0",
+          "local_status": "matching",
+          "local_raw_blob_sha": "1c3f2bb14dac030e69fc079bd581b5c48182c2a0",
+          "local_lf_blob_sha": "1c3f2bb14dac030e69fc079bd581b5c48182c2a0"
+        },
+        {
+          "path": "scripts/report_material_restart.py",
+          "status": "added",
+          "sha": "603f1f2c43e0321fcf748662a8e25ee08b29c79b",
+          "local_status": "matching",
+          "local_raw_blob_sha": "603f1f2c43e0321fcf748662a8e25ee08b29c79b",
+          "local_lf_blob_sha": "603f1f2c43e0321fcf748662a8e25ee08b29c79b"
+        },
+        {
+          "path": "scripts/report_material_specimen.py",
+          "status": "added",
+          "sha": "307b6b7b23e72f10f26a2153056d4416c0d40507",
+          "local_status": "matching",
+          "local_raw_blob_sha": "307b6b7b23e72f10f26a2153056d4416c0d40507",
+          "local_lf_blob_sha": "307b6b7b23e72f10f26a2153056d4416c0d40507"
+        },
+        {
+          "path": "scripts/report_phase_delay_controls.py",
+          "status": "added",
+          "sha": "c9aa65b8a237b896ef43679870e88ac3f9c4a925",
+          "local_status": "matching",
+          "local_raw_blob_sha": "c9aa65b8a237b896ef43679870e88ac3f9c4a925",
+          "local_lf_blob_sha": "c9aa65b8a237b896ef43679870e88ac3f9c4a925"
+        },
+        {
+          "path": "scripts/report_phase_pattern_controls.py",
+          "status": "added",
+          "sha": "a95ad4a3b16d39631476a201f19dd49557231b3d",
+          "local_status": "matching",
+          "local_raw_blob_sha": "a95ad4a3b16d39631476a201f19dd49557231b3d",
+          "local_lf_blob_sha": "a95ad4a3b16d39631476a201f19dd49557231b3d"
+        },
+        {
+          "path": "scripts/report_wave_harmonics.py",
+          "status": "added",
+          "sha": "3a663b18c35978b1dfa746ba2f17afb6cbdaa6db",
+          "local_status": "matching",
+          "local_raw_blob_sha": "9c6bcbe9f8319ce44d5fb715c8202f7b0e30a2a2",
+          "local_lf_blob_sha": "3a663b18c35978b1dfa746ba2f17afb6cbdaa6db"
+        },
+        {
+          "path": "tests/test_chiral_phase_controls.py",
+          "status": "added",
+          "sha": "798087f7b659f2d5265ab99fdf15c466d61e05a2",
+          "local_status": "matching",
+          "local_raw_blob_sha": "798087f7b659f2d5265ab99fdf15c466d61e05a2",
+          "local_lf_blob_sha": "798087f7b659f2d5265ab99fdf15c466d61e05a2"
+        },
+        {
+          "path": "tests/test_fold_active_multiscale.py",
+          "status": "added",
+          "sha": "099b34e1e720c40e09621a2b526bee0b18f2b8ef",
+          "local_status": "matching",
+          "local_raw_blob_sha": "099b34e1e720c40e09621a2b526bee0b18f2b8ef",
+          "local_lf_blob_sha": "099b34e1e720c40e09621a2b526bee0b18f2b8ef"
+        },
+        {
+          "path": "tests/test_fold_constitutive.py",
+          "status": "added",
+          "sha": "261faed73c2740ae7683c80b1de1668f941ccc20",
+          "local_status": "matching",
+          "local_raw_blob_sha": "261faed73c2740ae7683c80b1de1668f941ccc20",
+          "local_lf_blob_sha": "261faed73c2740ae7683c80b1de1668f941ccc20"
+        },
+        {
+          "path": "tests/test_fold_coupling.py",
+          "status": "added",
+          "sha": "842075c403edf9ee6f9daa9125e2a4f91e40ae5c",
+          "local_status": "matching",
+          "local_raw_blob_sha": "842075c403edf9ee6f9daa9125e2a4f91e40ae5c",
+          "local_lf_blob_sha": "842075c403edf9ee6f9daa9125e2a4f91e40ae5c"
+        },
+        {
+          "path": "tests/test_fold_duration.py",
+          "status": "added",
+          "sha": "df4f28be4a150d6bc14802862153b5f4cf4647b0",
+          "local_status": "matching",
+          "local_raw_blob_sha": "df4f28be4a150d6bc14802862153b5f4cf4647b0",
+          "local_lf_blob_sha": "df4f28be4a150d6bc14802862153b5f4cf4647b0"
+        },
+        {
+          "path": "tests/test_fold_dynamics.py",
+          "status": "added",
+          "sha": "43d37e7694e00409f2ac4c49cc35c3890eaa2689",
+          "local_status": "matching",
+          "local_raw_blob_sha": "43d37e7694e00409f2ac4c49cc35c3890eaa2689",
+          "local_lf_blob_sha": "43d37e7694e00409f2ac4c49cc35c3890eaa2689"
+        },
+        {
+          "path": "tests/test_fold_hierarchy.py",
+          "status": "added",
+          "sha": "faf969fedc1a56f4682387bd0b7e853e2a1b5460",
+          "local_status": "matching",
+          "local_raw_blob_sha": "faf969fedc1a56f4682387bd0b7e853e2a1b5460",
+          "local_lf_blob_sha": "faf969fedc1a56f4682387bd0b7e853e2a1b5460"
+        },
+        {
+          "path": "tests/test_fold_kinematics.py",
+          "status": "added",
+          "sha": "651700290f7f1ebfdecbbf0004a15a1d713be893",
+          "local_status": "matching",
+          "local_raw_blob_sha": "651700290f7f1ebfdecbbf0004a15a1d713be893",
+          "local_lf_blob_sha": "651700290f7f1ebfdecbbf0004a15a1d713be893"
+        },
+        {
+          "path": "tests/test_fold_mapped.py",
+          "status": "added",
+          "sha": "c1acb01359a6c2729de37f485a3e293efa2977fc",
+          "local_status": "matching",
+          "local_raw_blob_sha": "c1acb01359a6c2729de37f485a3e293efa2977fc",
+          "local_lf_blob_sha": "c1acb01359a6c2729de37f485a3e293efa2977fc"
+        },
+        {
+          "path": "tests/test_fold_modes.py",
+          "status": "added",
+          "sha": "f0ca3d1e21b77054b0816b46fcef56adb5e84b80",
+          "local_status": "matching",
+          "local_raw_blob_sha": "f0ca3d1e21b77054b0816b46fcef56adb5e84b80",
+          "local_lf_blob_sha": "f0ca3d1e21b77054b0816b46fcef56adb5e84b80"
+        },
+        {
+          "path": "tests/test_fold_multiscale.py",
+          "status": "added",
+          "sha": "d66cf44691ad4427a837127efa962801da462349",
+          "local_status": "matching",
+          "local_raw_blob_sha": "d66cf44691ad4427a837127efa962801da462349",
+          "local_lf_blob_sha": "d66cf44691ad4427a837127efa962801da462349"
+        },
+        {
+          "path": "tests/test_fold_network.py",
+          "status": "added",
+          "sha": "96578ad864e4cf035837edfa1032e3529768f81a",
+          "local_status": "matching",
+          "local_raw_blob_sha": "96578ad864e4cf035837edfa1032e3529768f81a",
+          "local_lf_blob_sha": "96578ad864e4cf035837edfa1032e3529768f81a"
+        },
+        {
+          "path": "tests/test_fold_reservoir.py",
+          "status": "added",
+          "sha": "4556d73b4c67c23d618a25d030778bc5405714bf",
+          "local_status": "matching",
+          "local_raw_blob_sha": "4556d73b4c67c23d618a25d030778bc5405714bf",
+          "local_lf_blob_sha": "4556d73b4c67c23d618a25d030778bc5405714bf"
+        },
+        {
+          "path": "tests/test_fold_robustness.py",
+          "status": "added",
+          "sha": "1ef6db8e0621a5f27db1834e4fd0b906bc9b92eb",
+          "local_status": "matching",
+          "local_raw_blob_sha": "1ef6db8e0621a5f27db1834e4fd0b906bc9b92eb",
+          "local_lf_blob_sha": "1ef6db8e0621a5f27db1834e4fd0b906bc9b92eb"
+        },
+        {
+          "path": "tests/test_fold_scaled_pair.py",
+          "status": "added",
+          "sha": "7a876d71549147c09cdc22c22196470810516ec7",
+          "local_status": "matching",
+          "local_raw_blob_sha": "7a876d71549147c09cdc22c22196470810516ec7",
+          "local_lf_blob_sha": "7a876d71549147c09cdc22c22196470810516ec7"
+        },
+        {
+          "path": "tests/test_fold_scaling.py",
+          "status": "added",
+          "sha": "a9d728e7ef6309b7bb41b1e8d68da6344afadec8",
+          "local_status": "matching",
+          "local_raw_blob_sha": "a9d728e7ef6309b7bb41b1e8d68da6344afadec8",
+          "local_lf_blob_sha": "a9d728e7ef6309b7bb41b1e8d68da6344afadec8"
+        },
+        {
+          "path": "tests/test_fold_source_fixture.py",
+          "status": "added",
+          "sha": "18c606f20cda888f64b3da27b4a51f897218c158",
+          "local_status": "matching",
+          "local_raw_blob_sha": "18c606f20cda888f64b3da27b4a51f897218c158",
+          "local_lf_blob_sha": "18c606f20cda888f64b3da27b4a51f897218c158"
+        },
+        {
+          "path": "tests/test_fold_stability.py",
+          "status": "added",
+          "sha": "5e8db7d559e83d1f2a0326bf94615a6cec98c276",
+          "local_status": "matching",
+          "local_raw_blob_sha": "15765343e3739c10656a582302d16c8cfae6ed1c",
+          "local_lf_blob_sha": "5e8db7d559e83d1f2a0326bf94615a6cec98c276"
+        },
+        {
+          "path": "tests/test_fold_supply.py",
+          "status": "added",
+          "sha": "949e45cdedad11dd3f79ec50405d0dc0d9502be3",
+          "local_status": "matching",
+          "local_raw_blob_sha": "540588c8d6fae4d76997130281dba697c831935f",
+          "local_lf_blob_sha": "949e45cdedad11dd3f79ec50405d0dc0d9502be3"
+        },
+        {
+          "path": "tests/test_fold_threshold.py",
+          "status": "added",
+          "sha": "ddd5228a089b282ce9aaa17e4635bbea6e9f1667",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ddd5228a089b282ce9aaa17e4635bbea6e9f1667",
+          "local_lf_blob_sha": "ddd5228a089b282ce9aaa17e4635bbea6e9f1667"
+        },
+        {
+          "path": "tests/test_material_restart.py",
+          "status": "added",
+          "sha": "77619dcbdf6dabd5f1edbfe24c8c6049f7d8f4fb",
+          "local_status": "matching",
+          "local_raw_blob_sha": "77619dcbdf6dabd5f1edbfe24c8c6049f7d8f4fb",
+          "local_lf_blob_sha": "77619dcbdf6dabd5f1edbfe24c8c6049f7d8f4fb"
+        },
+        {
+          "path": "tests/test_material_specimen.py",
+          "status": "added",
+          "sha": "ab8608f3237c02757e61c45362718440e31b1179",
+          "local_status": "matching",
+          "local_raw_blob_sha": "ab8608f3237c02757e61c45362718440e31b1179",
+          "local_lf_blob_sha": "ab8608f3237c02757e61c45362718440e31b1179"
+        },
+        {
+          "path": "tests/test_phase_delay_controls.py",
+          "status": "added",
+          "sha": "48daa4ef6d1dc7067241518240a319aec78376fb",
+          "local_status": "matching",
+          "local_raw_blob_sha": "48daa4ef6d1dc7067241518240a319aec78376fb",
+          "local_lf_blob_sha": "48daa4ef6d1dc7067241518240a319aec78376fb"
+        },
+        {
+          "path": "tests/test_phase_pattern_controls.py",
+          "status": "added",
+          "sha": "c8e97c5387a20d49d1fa100bbf4712a19aad9dea",
+          "local_status": "matching",
+          "local_raw_blob_sha": "c8e97c5387a20d49d1fa100bbf4712a19aad9dea",
+          "local_lf_blob_sha": "c8e97c5387a20d49d1fa100bbf4712a19aad9dea"
+        },
+        {
+          "path": "tests/test_wave_harmonics.py",
+          "status": "added",
+          "sha": "49faed156cff12e39802ea97613635333de76da9",
+          "local_status": "matching",
+          "local_raw_blob_sha": "35c3a435719680e5f2d9fc6efb342a68ad371704",
+          "local_lf_blob_sha": "49faed156cff12e39802ea97613635333de76da9"
+        }
+      ],
+      "local_content_counts": {
+        "matching": 121,
+        "different": 5,
+        "absent": 0
+      }
+    },
+    {
+      "number": 121,
+      "title": "Add optional time-crystal timing subsystem comparison",
+      "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/121",
+      "head": "ec6489c56953ea0f2de1c78a7ed2adc8a298a710",
+      "base": "a78576f83854a5b75c90815db121b1ca40a4f606",
+      "draft": true,
+      "files": [
+        {
+          "path": ".github/workflows/experimental-time-crystal.yml",
+          "status": "added",
+          "sha": "58177ecd351948f576dc7a68948e3ebdf3106897",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/crystal-research-fit.md",
+          "status": "added",
+          "sha": "011c4a79959d41f12acc8b35ba7fd6ebe4fbb01f",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/experiments/time-crystal-summary.json",
+          "status": "added",
+          "sha": "6c51562f50bf83a804b2aaf5a3adbbfa9b0b6e44",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/experiments/time-crystal.md",
+          "status": "added",
+          "sha": "7d7606a8edbd700d21f1b75d7fc9a761686258a6",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/time_crystal_clock_subsystem_v0.1.md",
+          "status": "added",
+          "sha": "214315f1cf170bef47225ac06e40dad4b7a62717",
+          "local_status": "absent"
+        },
+        {
+          "path": "scripts/report_time_crystal_subsystem.py",
+          "status": "added",
+          "sha": "caf76361c86528b0ae860c2b0e9a94963afe3ae6",
+          "local_status": "absent"
+        },
+        {
+          "path": "src/time_crystal_clock_subsystem.py",
+          "status": "added",
+          "sha": "173122df3a76d78dcdc1e1aa1f3e8e62c8bcf302",
+          "local_status": "absent"
+        },
+        {
+          "path": "tests/test_time_crystal_clock_subsystem.py",
+          "status": "added",
+          "sha": "923ff6ef7a56190b2572bdea613758666889b0b1",
+          "local_status": "absent"
+        }
+      ],
+      "local_content_counts": {
+        "matching": 0,
+        "different": 0,
+        "absent": 8
+      }
+    },
+    {
+      "number": 120,
+      "title": "Add nonlinear wave and controller comparison experiments",
+      "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/120",
+      "head": "615cee59c51df77406555ac56d40e8a1f1e73ec8",
+      "base": "a78576f83854a5b75c90815db121b1ca40a4f606",
+      "draft": true,
+      "files": [
+        {
+          "path": ".github/workflows/experimental-waves.yml",
+          "status": "added",
+          "sha": "fc902ee2b0f0d594556529c1617374e1cbcf7071",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/experiments/waves-summary.json",
+          "status": "added",
+          "sha": "7fcdb1d8a5eb79e3157e8dd663f78923167a413d",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/experiments/waves.md",
+          "status": "added",
+          "sha": "b8596580449cefa2b84c00bca633e995bc77f35f",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/mode_pair_robustness_v0.1.md",
+          "status": "added",
+          "sha": "b18107bf19b7534bd8b80fd65a67bec35f434fd9",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/multimode_wave_control_v0.1.md",
+          "status": "added",
+          "sha": "42c0c0fcbf2b49d05cf1c0376418eb5a71639d12",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/time_order_and_wave_controls_v0.1.md",
+          "status": "added",
+          "sha": "a928c21bf3bb46a7d2848efd0340bb2c61135d81",
+          "local_status": "absent"
+        },
+        {
+          "path": "scripts/report_mode_pair_robustness.py",
+          "status": "added",
+          "sha": "c4e268705967a2d54f4e6b101ed493376b313f7f",
+          "local_status": "absent"
+        },
+        {
+          "path": "scripts/report_multimode_wave_control.py",
+          "status": "added",
+          "sha": "8bcca100d2ec83010b7a1410b6832aea331f9d03",
+          "local_status": "absent"
+        },
+        {
+          "path": "scripts/report_time_order_controls.py",
+          "status": "added",
+          "sha": "eb16a9fb52443cc53bb384bceb09e5db992802ac",
+          "local_status": "absent"
+        },
+        {
+          "path": "src/proposed_mode_pair_control.py",
+          "status": "added",
+          "sha": "3c7bd2ea0f50c8955c154c06935f31e4f8a076ac",
+          "local_status": "absent"
+        },
+        {
+          "path": "src/proposed_multimode_wave_control.py",
+          "status": "added",
+          "sha": "d7579e05d1ae1204a0a9ba225b3ab0675b7f4bb4",
+          "local_status": "absent"
+        },
+        {
+          "path": "src/proposed_nonlinear_wave_control.py",
+          "status": "added",
+          "sha": "1643c3bccdf53ee957b11733d26ba6bcad8558c0",
+          "local_status": "absent"
+        },
+        {
+          "path": "src/time_order_diagnostics.py",
+          "status": "added",
+          "sha": "152d5f5be5eb157b47638b17823be375018e4372",
+          "local_status": "absent"
+        },
+        {
+          "path": "tests/test_proposed_mode_pair_control.py",
+          "status": "added",
+          "sha": "fe74fe7bc79c07823d16b23ca25a3f16ef33c260",
+          "local_status": "absent"
+        },
+        {
+          "path": "tests/test_proposed_multimode_wave_control.py",
+          "status": "added",
+          "sha": "b6a358b0f5f7b5943920b17fc48791547804a19a",
+          "local_status": "absent"
+        },
+        {
+          "path": "tests/test_proposed_nonlinear_wave_control.py",
+          "status": "added",
+          "sha": "c6ed3260cbd917db5026d1b7ff87998358956110",
+          "local_status": "absent"
+        },
+        {
+          "path": "tests/test_time_order_diagnostics.py",
+          "status": "added",
+          "sha": "4c80e87be6cf4a36ac826b7d5d660e950d25c58e",
+          "local_status": "absent"
+        }
+      ],
+      "local_content_counts": {
+        "matching": 0,
+        "different": 0,
+        "absent": 17
+      }
+    },
+    {
+      "number": 119,
+      "title": "Add bounded folding and breathing geometry controls",
+      "url": "https://github.com/QuantumInquisitor/universal-matrix/pull/119",
+      "head": "60a7fd60f57d73b89ea5397db58a3ff5d291556c",
+      "base": "a78576f83854a5b75c90815db121b1ca40a4f606",
+      "draft": true,
+      "files": [
+        {
+          "path": ".github/workflows/experimental-geometry.yml",
+          "status": "added",
+          "sha": "bdaedc309511f95edba5952b55b5bce039be950d",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/experiments/geometry-summary.json",
+          "status": "added",
+          "sha": "03bc77da4df018dd158b55d612e02aa98722fd4a",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/experiments/geometry.md",
+          "status": "added",
+          "sha": "98c3fe710d085519f7770f4e8eb00e805682aad6",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/experiments/local-work-inventory.json",
+          "status": "added",
+          "sha": "c1740237bd336b952c3c27e8157a8e4b2c5a30b0",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/lynchpin_breathing_control_v0.1.md",
+          "status": "added",
+          "sha": "9f9dacab28352ceda7364da71467319cfb385628",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/lynchpin_connected_control_v0.1.md",
+          "status": "added",
+          "sha": "67aa329b8af2d57095c8bf185039617d59111307",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/lynchpin_finite_panel_control_v0.1.md",
+          "status": "added",
+          "sha": "f82e5ca3e44091ae54787885c1a65588564d8f7d",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/lynchpin_relative_motion_control_v0.1.md",
+          "status": "added",
+          "sha": "5999e64a6bfca0338c8a61dda58abf7c55093e25",
+          "local_status": "absent"
+        },
+        {
+          "path": "docs/recursive_mirror_motion_control_v0.1.md",
+          "status": "added",
+          "sha": "949c40e475fcc444d94f0ef015b8e1e0315c668c",
+          "local_status": "absent"
+        },
+        {
+          "path": "scripts/report_lynchpin_breathing.py",
+          "status": "added",
+          "sha": "309516f6d02c7db9cb3d5615d02e0174d86173d7",
+          "local_status": "absent"
+        },
+        {
+          "path": "scripts/report_lynchpin_connected.py",
+          "status": "added",
+          "sha": "b22b235b9a0af406b6e3fdb5f30625eddc767483",
+          "local_status": "absent"
+        },
+        {
+          "path": "scripts/report_lynchpin_finite_panels.py",
+          "status": "added",
+          "sha": "9cfa6dcb6f14a0ce8e91a52a8b7f34bcd3dec1d0",
+          "local_status": "absent"
+        },
+        {
+          "path": "scripts/report_lynchpin_relative_motion.py",
+          "status": "added",
+          "sha": "56a059ee77d57180dfa9f5c23a8b8f80792f5bbd",
+          "local_status": "absent"
+        },
+        {
+          "path": "scripts/report_recursive_mirror_motion.py",
+          "status": "added",
+          "sha": "c19cee7b3ecbdd946894012216e160560823879f",
+          "local_status": "absent"
+        },
+        {
+          "path": "src/lynchpin_breathing_control.py",
+          "status": "added",
+          "sha": "b2be9fb9fec2418cdd83d97024d2cb9ec58c38fd",
+          "local_status": "absent"
+        },
+        {
+          "path": "src/lynchpin_connected_control.py",
+          "status": "added",
+          "sha": "10f81c2cbe3cc9e00fecdfa0c33f141af10465db",
+          "local_status": "absent"
+        },
+        {
+          "path": "src/lynchpin_finite_panel_control.py",
+          "status": "added",
+          "sha": "db24c35be9aa14c77e5f9bda95c7741a02ecf2a0",
+          "local_status": "absent"
+        },
+        {
+          "path": "src/lynchpin_relative_motion_control.py",
+          "status": "added",
+          "sha": "e6f9d2458fea0f6cc0e010d19a44e528bd8959b5",
+          "local_status": "absent"
+        },
+        {
+          "path": "src/recursive_mirror_motion_control.py",
+          "status": "added",
+          "sha": "5c4be76f9ba9af98537c16a8485a069cee60c7bc",
+          "local_status": "absent"
+        },
+        {
+          "path": "tests/test_lynchpin_breathing_control.py",
+          "status": "added",
+          "sha": "adcbeb6001b6b7643ae42a959190abdf1f959785",
+          "local_status": "absent"
+        },
+        {
+          "path": "tests/test_lynchpin_connected_control.py",
+          "status": "added",
+          "sha": "7a86a4388ee21709f31404465f526565fa5d4655",
+          "local_status": "absent"
+        },
+        {
+          "path": "tests/test_lynchpin_finite_panel_control.py",
+          "status": "added",
+          "sha": "c25b77748a36d17ff1467efe49fad2b80dd31555",
+          "local_status": "absent"
+        },
+        {
+          "path": "tests/test_lynchpin_relative_motion_control.py",
+          "status": "added",
+          "sha": "4abf9f1d27f72d3ac389253e87c40214556653a3",
+          "local_status": "absent"
+        },
+        {
+          "path": "tests/test_recursive_mirror_motion_control.py",
+          "status": "added",
+          "sha": "e4be6d1da0b10b918d6879a25197f83a8870d141",
+          "local_status": "absent"
+        }
+      ],
+      "local_content_counts": {
+        "matching": 0,
+        "different": 0,
+        "absent": 24
+      }
+    }
+  ],
+  "ci": [
+    {
+      "number": 124,
+      "head": "3efe05db6ac3d247ac1e7bdec83a8a906d700036",
+      "runs": [
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36790733426"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36790733491"
+        },
+        {
+          "name": "Experimental aperture and fanout",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36790733433"
+        },
+        {
+          "name": "Universal Matrix Verification",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36790733483"
+        }
+      ]
+    },
+    {
+      "number": 123,
+      "head": "b7add2892868d5e8150c3a4b148b3c3200642d57",
+      "runs": [
+        {
+          "name": "Universal Matrix Verification",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36785862936"
+        },
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36785862956"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36785862999"
+        }
+      ]
+    },
+    {
+      "number": 122,
+      "head": "7dd38fb994fa09902ab68ce6a0e586906ae21e0f",
+      "runs": [
+        {
+          "name": "Universal Matrix Verification",
+          "status": "in_progress",
+          "conclusion": null,
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36817222978"
+        },
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36817222865"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36817222840"
+        },
+        {
+          "name": "Experimental control baselines",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36817222911"
+        }
+      ]
+    },
+    {
+      "number": 121,
+      "head": "ec6489c56953ea0f2de1c78a7ed2adc8a298a710",
+      "runs": [
+        {
+          "name": "Universal Matrix Verification",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779581931"
+        },
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779582084"
+        },
+        {
+          "name": "Experimental time-crystal checkpoint",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779582105"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779581997"
+        }
+      ]
+    },
+    {
+      "number": 120,
+      "head": "615cee59c51df77406555ac56d40e8a1f1e73ec8",
+      "runs": [
+        {
+          "name": "Universal Matrix Verification",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779529688"
+        },
+        {
+          "name": "Experimental waves checkpoint",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779529934"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779529849"
+        },
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779529791"
+        }
+      ]
+    },
+    {
+      "number": 119,
+      "head": "60a7fd60f57d73b89ea5397db58a3ff5d291556c",
+      "runs": [
+        {
+          "name": "Universal Matrix Verification",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779423445"
+        },
+        {
+          "name": "Universal Matrix Container Pipeline",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779423476"
+        },
+        {
+          "name": "Experimental geometry checkpoint",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779423675"
+        },
+        {
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/QuantumInquisitor/universal-matrix/actions/runs/36779423413"
+        }
+      ]
+    }
+  ],
+  "local_comparison": "Local file bytes and CRLF-to-LF variant compared to each PR file blob SHA; differing content is not automatically a regression, and match does not mean merged to main.",
+  "known_local_repositories": [
+    {
+      "path": "C:/Users/water/Documents/Codex/2026-09-23/referenced-chatgpt-conversation-this-is-an/work/universal-matrix",
+      "head": "19bfa98a0072221ab8b5b82fd61878ffe1232f8e",
+      "working_tree": "clean at inspection",
+      "origin": "https://github.com/QuantumInquisitor/universal-matrix.git"
+    },
+    {
+      "path": "C:\\Users\\water\\.codex\\.chatgpt-projects\\g-p-6ab1ed3203a88191a031ef278a656211\\work\\universal-matrix-current",
+      "head_before_audit": "5c888bf",
+      "origin": "https://github.com/QuantumInquisitor/universal-matrix.git"
+    }
+  ],
+  "documentation_difference_disposition": "Five initial PR122 text differences inspected: encoding drift, including mathematical symbols; local UTF-8 copies selected for publication, fourteen corrupted range dashes repaired in older plan. Snapshot file hashes retained as inspected, before fixes.",
+  "integration_finding": "PR119 theta-zero reference must be rebased to material theta=pi/12; new source-vertex overlay verifies this without claiming motion or viewer integration."
+}

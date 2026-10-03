@@ -1,0 +1,1209 @@
+{
+  "schema_version": 1,
+  "catalog_id": "russell_claim_catalog_v0.1",
+  "created_on": "2026-09-24",
+  "scope": "First bounded batch of versioned historical claims and separately declared comparators; not a complete corpus or validated cosmology.",
+  "workspace_root": "C:/Users/water/Documents/Codex/2026-09-23/referenced-chatgpt-conversation-this-is-an",
+  "path_convention": "Local paths in audit_refs and formulation.test_refs are relative to workspace_root, not to this JSON file.",
+  "evidence_kind_vocabulary": [
+    "visual",
+    "text",
+    "catalog",
+    "inaccessible"
+  ],
+  "evidence_rules": [
+    "Text evidence may be an original indexed passage, publisher transcription, later reformatted mirror, or an attributed excerpt. The subtype is explicit.",
+    "A bibliographic work year does not authenticate every passage as present in that first edition.",
+    "Source terms and quantities are distinct from modern variable definitions, equations and synthetic inputs.",
+    "Unknown units, medium, uncertainty, image correspondence and dates remain null.",
+    "Source access failures are not claims that material is absent from every archive.",
+    "No historical term or number is a calibration of a legacy mapper or the canonical Matrix clock."
+  ],
+  "preserved_authoritative_numeric_records": {
+    "path": "work/universal-matrix/src/reference_data/universal_one_numeric_leads.json",
+    "output_copy": "outputs/universal_one_numeric_leads.json",
+    "sha256_before_and_after": "6ba484dc64c15ab4bcc3f636a971661ffb18f5bd3a6a9ae0650153beb51108e5",
+    "record_ids": [
+      "russell-pulse",
+      "russell-revolution",
+      "russell-wavelength-1",
+      "russell-wavelength-2",
+      "russell-wavelength-3"
+    ],
+    "modified": false,
+    "relationship": "The new catalog cross-references these five records; it does not replace or silently correct them."
+  },
+  "deferred_external_followup": {
+    "work": "W. Marshall Watts, An Introduction to the Study of Spectrum Analysis, 1904",
+    "url": "https://archive.org/details/introductiontost00wattrich",
+    "status": "Root research lane owns newly recovered visual rows/headings and unresolved absolute-unit review; no Watts row is imported in this batch.",
+    "historical_wavelength_units_upgraded_here": false
+  },
+  "records": [
+    {
+      "id": "RCL-001",
+      "revision": 1,
+      "work": "The Russell Genero-Radiative Concept",
+      "author": "Walter Russell",
+      "work_year": 1930,
+      "edition": "Undated USP web transcription of the 1930 work; not an original-page facsimile",
+      "inspected_location": {
+        "description": "Opening force definitions, before The Solar Gravitational Experiment",
+        "original_printed_page": null
+      },
+      "source_url": "https://www.philosophy.org/archives/the-russ",
+      "evidence_kind": "text",
+      "evidence_detail": "publisher-hosted authored transcription",
+      "literal_terms": [
+        "electricity",
+        "gravitation",
+        "magnetism",
+        "radiation"
+      ],
+      "claim_summary": "The text pairs electricity with gravitation and magnetism with radiation as opposing generating and dispersing effects.",
+      "source_quantities": [],
+      "source_units": null,
+      "modern_mapping": "Any mapping to E, B or a gravitational field is an additional operational definition, not supplied by the equality of names.",
+      "status": "historical_terminology_verified_in_transcription_physical_law_unspecified",
+      "known_conflicts": [
+        {
+          "with": "RCL-002",
+          "detail": "1939 uses two electric signs for the paired processes."
+        },
+        {
+          "with": "RCL-003",
+          "detail": "Later magnetic Light is assigned a still controlling role."
+        }
+      ],
+      "formulation": {
+        "proposal": "Specify a force law before comparing signed particle deflection or field work; use velocity reversal to separate qE from q(v cross B).",
+        "modern_units": {
+          "E": "V/m",
+          "B": "T",
+          "force": "N"
+        },
+        "test_status": "proposed_not_executed_for_this_claim",
+        "test_refs": [
+          "outputs/russell_physical_claims.md"
+        ]
+      },
+      "audit_refs": [
+        "work/russell-corpus/course_apparatus_access_followup.md",
+        "outputs/russell_physical_claims.md"
+      ]
+    },
+    {
+      "id": "RCL-002",
+      "revision": 1,
+      "work": "Space and the Hydrogen Age",
+      "author": "Walter Russell",
+      "work_year": 1939,
+      "edition": "USP web transcription of address attributed to May 13, 1939; not a recording or original facsimile",
+      "inspected_location": {
+        "description": "Sections concerning the nature of space and balance",
+        "original_printed_page": null
+      },
+      "source_url": "https://www.philosophy.org/archives/space-and-the-hydrogen-age",
+      "evidence_kind": "text",
+      "evidence_detail": "displayed publisher-hosted address; later editorial footnote kept separate",
+      "literal_terms": [
+        "positive electricity",
+        "negative electricity",
+        "centripetal",
+        "centrifugal"
+      ],
+      "claim_summary": "The inward generating and outward radiating processes are assigned positive and negative electric labels.",
+      "source_quantities": [],
+      "source_units": null,
+      "modern_mapping": "A proposed pair of signed processes; polarity labels alone do not define charge density, voltage or a field equation.",
+      "status": "historical_terminology_verified_in_transcription",
+      "known_conflicts": [
+        {
+          "with": "RCL-001",
+          "detail": "Older text uses electricity/magnetism for its pair; preserve both versions."
+        }
+      ],
+      "formulation": {
+        "proposal": "Declare the two state variables and reciprocal exchange law, then test a complete storage/transfer balance.",
+        "modern_units": null,
+        "test_status": "operational_definition_still_required",
+        "test_refs": [
+          "work/russell-corpus/pressure_exchange_formulation.md"
+        ]
+      },
+      "audit_refs": [
+        "work/russell-corpus/course_apparatus_access_followup.md"
+      ]
+    },
+    {
+      "id": "RCL-003",
+      "revision": 1,
+      "work": "A New Concept of the Universe",
+      "author": "Walter Russell; Lao's epilogue separately attributed",
+      "work_year": 1953,
+      "edition": "126-page reformatted mirror with 1953/1989 front-matter copyrights; individual passages not authenticated against the 1953 first edition",
+      "inspected_location": {
+        "description": "Reproduction page label17, Misconception of Electro-Magnetism",
+        "reproduction_page_label": 17,
+        "original_printed_page": null
+      },
+      "source_url": "https://www.giurfa.com/the_new_concept.pdf#page=18",
+      "evidence_kind": "text",
+      "evidence_detail": "selected authored text in later-edition surrogate",
+      "literal_terms": [
+        "magnetic Light",
+        "electricity"
+      ],
+      "claim_summary": "Moving effects are treated as electric; magnetic Light is assigned still control without work.",
+      "source_quantities": [],
+      "source_units": null,
+      "modern_mapping": "Do not equate the metaphysical magnetic label with the measured B field without an explicit prediction map.",
+      "status": "versioned_terminology_physical_comparator_not_yet_defined",
+      "known_conflicts": [
+        {
+          "with": "RCL-001",
+          "detail": "Magnetism no longer has the same stated moving/radiative role."
+        }
+      ],
+      "formulation": {
+        "proposal": "Compare force and weak-field Zeeman observables after specifying an alternative law, quantum labels and measured fields.",
+        "modern_units": {
+          "field": "T",
+          "frequency_shift": "Hz",
+          "energy_shift": "J"
+        },
+        "test_status": "proposed_not_executed_for_this_claim",
+        "test_refs": [
+          "outputs/russell_physical_claims.md"
+        ]
+      },
+      "audit_refs": [
+        "outputs/russell_physical_claims.md",
+        "work/russell-corpus/course_apparatus_access_followup.md"
+      ]
+    },
+    {
+      "id": "RCL-004",
+      "revision": 1,
+      "work": "The Universal One",
+      "author": "Walter Russell",
+      "work_year": 1926,
+      "edition": "Copyright1926 LOC witness, LCCN27004508",
+      "inspected_location": {
+        "description": "Book II, XVI; selected original indexed body text",
+        "original_printed_page": 182,
+        "verified_image_index": null
+      },
+      "source_url": "https://tile.loc.gov/storage-services/service/gdc/gdclccn/27/00/45/08/27004508/27004508.pdf",
+      "evidence_kind": "text",
+      "evidence_detail": "original indexed passage; chart image not inspected in this catalog lane",
+      "literal_terms": [
+        "wave",
+        "crest",
+        "trough"
+      ],
+      "claim_summary": "A wave is described between adjacent crest and trough turning points.",
+      "source_quantities": [],
+      "source_units": null,
+      "modern_mapping": "For a declared sinusoid, adjacent crest/trough span pi radians; a full same-phase cycle spans2pi. Do not assign the same period to both conventions.",
+      "status": "phase_convention_requires_explicit_translation",
+      "known_conflicts": [
+        {
+          "with": "unqualified_modern_full_cycle_use_of_wave",
+          "detail": "Potential factor-of-two mismatch, not a source-derived frequency."
+        }
+      ],
+      "formulation": {
+        "proposal": "Annotate full-period versus half-period convention before using u=A*cos(k*x-omega*t).",
+        "modern_units": {
+          "phase": "rad",
+          "wavenumber": "1/m",
+          "angular_frequency": "rad/s"
+        },
+        "test_status": "analytic_translation; no new run in this batch",
+        "test_refs": [
+          "outputs/russell_geometry_wave_audit.md",
+          "work/universal-matrix/docs/proposed_scalar_wave_control_v0.1.md"
+        ]
+      },
+      "audit_refs": [
+        "outputs/russell_geometry_wave_audit.md"
+      ]
+    },
+    {
+      "id": "RCL-005",
+      "revision": 2,
+      "work": "The Universal One",
+      "author": "Walter Russell",
+      "work_year": 1926,
+      "edition": "Original1926 contents and selected body; later-preface matter excluded",
+      "inspected_location": {
+        "description": "Book II, VI, The Ten Octave Cycle of the Elements of Matter",
+        "original_chapter_start_page": 88,
+        "complete_chart_images_inspected": false,
+        "additional_chart": {
+          "asset": "russell-1926-octave-chart-WR008.webp",
+          "publisher_identifier": "WR008",
+          "publisher_reported_scan": 31,
+          "printed_page": null,
+          "frequency_hz": null
+        }
+      },
+      "source_url": "https://www.loc.gov/item/27004508/",
+      "evidence_kind": "visual",
+      "evidence_detail": "Saved WR008 chart visually re-inspected 2026-10-02: ten labeled octaves, ellipsoid note, dot/star legend. Publisher attribution to1926/LOCscan31 is retained from prior audit, not newly authenticated. No visible printed page or frequency calibration.",
+      "literal_terms": [
+        "Ten Octave Cycle"
+      ],
+      "claim_summary": "The original work organizes its element discussion using ten octaves.",
+      "source_quantities": [
+        {
+          "quantity": "classification_count",
+          "value": "10",
+          "unit": "count",
+          "frequency_hz": null
+        }
+      ],
+      "source_units": "count",
+      "modern_mapping": "Historical classification metadata; octave count is not a measured frequency or a modulo-clock derivation.",
+      "status": "one_chart_visually_verified_full_edition_collation_pending",
+      "known_conflicts": [
+        {
+          "with": "RCL-006",
+          "detail": "Later nine-octave presentation must not overwrite the1926 count."
+        }
+      ],
+      "formulation": {
+        "proposal": "Collate dated chart rows and incidence separately for each edition; compare only after aligning definitions.",
+        "modern_units": null,
+        "test_status": "source_collation_pending",
+        "test_refs": [
+          "outputs/universal_one_source_audit_v0.1.md"
+        ]
+      },
+      "audit_refs": [
+        "outputs/universal_one_source_audit_v0.1.md",
+        "outputs/russell-original-octave-verification.md",
+        "outputs/russell-next-source-gate.md"
+      ],
+      "previous_revisions": [
+        {
+          "id": "RCL-005",
+          "revision": 1,
+          "work": "The Universal One",
+          "author": "Walter Russell",
+          "work_year": 1926,
+          "edition": "Original1926 contents and selected body; later-preface matter excluded",
+          "inspected_location": {
+            "description": "Book II, VI, The Ten Octave Cycle of the Elements of Matter",
+            "original_chapter_start_page": 88,
+            "complete_chart_images_inspected": false
+          },
+          "source_url": "https://www.loc.gov/item/27004508/",
+          "evidence_kind": "text",
+          "evidence_detail": "original contents and selected indexed text in prior audit",
+          "literal_terms": [
+            "Ten Octave Cycle"
+          ],
+          "claim_summary": "The original work organizes its element discussion using ten octaves.",
+          "source_quantities": [
+            {
+              "quantity": "classification_count",
+              "value": "10",
+              "unit": "count",
+              "frequency_hz": null
+            }
+          ],
+          "source_units": "count",
+          "modern_mapping": "Historical classification metadata; octave count is not a measured frequency or a modulo-clock derivation.",
+          "status": "historical_count_preserved_full_visual_chart_pending",
+          "known_conflicts": [
+            {
+              "with": "RCL-006",
+              "detail": "Later nine-octave presentation must not overwrite the1926 count."
+            }
+          ],
+          "formulation": {
+            "proposal": "Collate dated chart rows and incidence separately for each edition; compare only after aligning definitions.",
+            "modern_units": null,
+            "test_status": "source_collation_pending",
+            "test_refs": [
+              "outputs/universal_one_source_audit_v0.1.md"
+            ]
+          },
+          "audit_refs": [
+            "outputs/universal_one_source_audit_v0.1.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "RCL-006",
+      "revision": 1,
+      "work": "The Secret of Light",
+      "author": "Walter Russell; later prefaces/editorial matter distinguished",
+      "work_year": 1947,
+      "edition": "150-page third-edition reproduction including1971/1994 prefaces; not authenticated first-edition scan",
+      "inspected_location": {
+        "description": "Selected later octave/carbon discussion",
+        "pdf_pages_1_based": [
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139
+        ],
+        "original_1947_printed_page": null
+      },
+      "source_url": "https://william-warren.com/wp-content/uploads/2025/04/Walter-Russell-The-Secret-of-Light.pdf",
+      "evidence_kind": "text",
+      "evidence_detail": "selected extracted passages; every intervening diagram not visually inspected",
+      "literal_terms": [
+        "nine octaves"
+      ],
+      "claim_summary": "Later classification uses nine octaves and a carbon midpoint.",
+      "source_quantities": [
+        {
+          "quantity": "classification_count",
+          "value": "9",
+          "unit": "count",
+          "frequency_hz": null
+        }
+      ],
+      "source_units": "count",
+      "modern_mapping": "Versioned ordinal classification; numerical resemblance to mod9 does not establish a physical or structural identity.",
+      "status": "later_classification_kept_separate",
+      "known_conflicts": [
+        {
+          "with": "RCL-005",
+          "detail": "Original1926 classification is ten octaves."
+        }
+      ],
+      "formulation": {
+        "proposal": "Extract one complete dated diagram with row labels before testing an explicit finite mapping.",
+        "modern_units": null,
+        "test_status": "visual_row_collation_pending",
+        "test_refs": [
+          "outputs/russell_geometry_wave_audit.md"
+        ]
+      },
+      "audit_refs": [
+        "outputs/russell_geometry_wave_audit.md"
+      ]
+    },
+    {
+      "id": "RCL-007",
+      "revision": 1,
+      "work": "The Secret of Light",
+      "author": "Walter Russell; later-edition presentation",
+      "work_year": 1947,
+      "edition": "Same150-page third-edition reproduction;1971/1994 prefaces present",
+      "inspected_location": {
+        "description": "Ordered numeric, musical and color-row passage",
+        "pdf_page_1_based": 143,
+        "original_1947_printed_page": null
+      },
+      "source_url": "https://william-warren.com/wp-content/uploads/2025/04/Walter-Russell-The-Secret-of-Light.pdf",
+      "evidence_kind": "text",
+      "evidence_detail": "extracted numeric sequence; visual musical/color alignment pending",
+      "literal_terms": [],
+      "claim_summary": "An ordered eleven-entry sequence returns through a distinct middle zero.",
+      "source_quantities": [
+        {
+          "quantity": "ordered_labels",
+          "values": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            0,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "unit": null,
+          "frequency_hz": null
+        }
+      ],
+      "source_units": null,
+      "modern_mapping": "Retain occurrence index. Reversal j->10-j differs from a half-cycle shift after deliberately identifying endpoints into a ten-step cycle.",
+      "status": "finite_sequence_lead_without_temporal_calibration",
+      "known_conflicts": [
+        {
+          "with": "collapse_equal_labels_into_one_state",
+          "detail": "Collapsing zeros or equating reversal with half-shift loses phase information."
+        }
+      ],
+      "formulation": {
+        "proposal": "Test occurrence-index reversal and an explicitly chosen cyclic closure without assigning seconds or hertz.",
+        "modern_units": {
+          "index": "dimensionless"
+        },
+        "test_status": "analytic candidate; implementation owned separately",
+        "test_refs": [
+          "outputs/russell_geometry_wave_audit.md"
+        ]
+      },
+      "audit_refs": [
+        "outputs/russell_geometry_wave_leads.json",
+        "outputs/russell_geometry_wave_audit.md"
+      ]
+    },
+    {
+      "id": "RCL-008",
+      "revision": 1,
+      "work": "The Universal One",
+      "author": "Walter Russell",
+      "work_year": 1926,
+      "edition": "Older-work passage read through later text surrogate; original spectral page image not verified here",
+      "inspected_location": {
+        "description": "Book II, XIX, Color; original chapter begins p202, surrogate p251",
+        "original_chapter_start_page": 202,
+        "surrogate_page_label": 251,
+        "original_row_page_verified": null
+      },
+      "source_url": "https://pdfcoffee.com/the-universal-one-pdf-free.html",
+      "evidence_kind": "text",
+      "evidence_detail": "cross-reference to existing authoritative three wavelength leads",
+      "literal_terms": [
+        "wavelength"
+      ],
+      "claim_summary": "Three older-work wavelength labels are retained as unresolved-unit leads.",
+      "source_quantities": [
+        {
+          "quantity": "wavelength_labels",
+          "values": [
+            "7817.2",
+            "7392.3",
+            "6944.8"
+          ],
+          "unit": null,
+          "medium": null,
+          "uncertainty": null,
+          "frequency_hz": null,
+          "authoritative_record_ids": [
+            "russell-wavelength-1",
+            "russell-wavelength-2",
+            "russell-wavelength-3"
+          ]
+        }
+      ],
+      "source_units": null,
+      "modern_mapping": "No conversion to nm or Hz is authorized until unit, medium and intended line identification are established.",
+      "status": "unresolved_units_existing_records_unchanged",
+      "known_conflicts": [
+        {
+          "with": "RCL-009",
+          "detail": "First two later-work numbers differ; no silent correction."
+        }
+      ],
+      "formulation": {
+        "proposal": "Visually match the original row, heading and unit/reference definition; root owns the Watts follow-up.",
+        "modern_units": null,
+        "test_status": "source_match_pending",
+        "test_refs": [
+          "work/universal-matrix/docs/spectral_reference_catalog_v0.1.md",
+          "outputs/russell_geometry_wave_audit.md"
+        ]
+      },
+      "audit_refs": [
+        "work/universal-matrix/src/reference_data/universal_one_numeric_leads.json",
+        "outputs/universal_one_source_audit_v0.1.md"
+      ]
+    },
+    {
+      "id": "RCL-009",
+      "revision": 1,
+      "work": "The Secret of Light",
+      "author": "Walter Russell; later editorial Watts attribution separately tracked",
+      "work_year": 1947,
+      "edition": "150-page third-edition reproduction with later prefaces; second textual witness used for first number",
+      "inspected_location": {
+        "description": "Later wavelength passage; source-attribution note separately at PDF149",
+        "pdf_page_1_based": 140,
+        "original_1947_printed_page": null
+      },
+      "source_url": "https://william-warren.com/wp-content/uploads/2025/04/Walter-Russell-The-Secret-of-Light.pdf",
+      "corroborating_url": "https://becomingborealis.com/wp-content/uploads/2018/01/WalterRussell_TheSecretOfLight.pdf",
+      "evidence_kind": "text",
+      "evidence_detail": "candidate reading from textual witnesses; no visual row imported here",
+      "literal_terms": [
+        "wavelength"
+      ],
+      "claim_summary": "Later numerical readings differ from the older-work wavelength group.",
+      "source_quantities": [
+        {
+          "quantity": "wavelength_labels",
+          "values": [
+            "7181.8",
+            "6916.8",
+            "6944.8"
+          ],
+          "first_raw_ocr": "718L8",
+          "unit": null,
+          "medium": null,
+          "uncertainty": null,
+          "frequency_hz": null
+        }
+      ],
+      "source_units": null,
+      "modern_mapping": "Later editor's Watts citation is a source lead, not itself proof of units or a line match.",
+      "status": "unresolved_units_later_group_preserved",
+      "known_conflicts": [
+        {
+          "with": "RCL-008",
+          "detail": "Older values7817.2 and7392.3 remain unchanged; shared6944.8 does not settle units."
+        }
+      ],
+      "formulation": {
+        "proposal": "Match species, row and units in both source books before applying any optical conversion.",
+        "modern_units": null,
+        "test_status": "root_visual_source_review_pending_catalog_append",
+        "test_refs": [
+          "outputs/russell_geometry_wave_audit.md",
+          "work/universal-matrix/docs/spectral_reference_catalog_v0.1.md"
+        ]
+      },
+      "audit_refs": [
+        "outputs/russell_geometry_wave_leads.json"
+      ]
+    },
+    {
+      "id": "RCL-010",
+      "revision": 1,
+      "work": "The Universal One",
+      "author": "Walter Russell",
+      "work_year": 1926,
+      "edition": "Older-work selected passages through later reproduction; preserve original hypothetical qualifiers",
+      "inspected_location": {
+        "description": "Book II,VIII and IX; chapter starts p106/p112; surrogate p148/p153",
+        "original_chapter_start_pages": [
+          106,
+          112
+        ],
+        "surrogate_page_labels": [
+          148,
+          153
+        ]
+      },
+      "source_url": "https://pdfcoffee.com/the-universal-one-pdf-free.html",
+      "evidence_kind": "text",
+      "evidence_detail": "cross-reference to existing hypothetical-rate records, not a new measurement",
+      "literal_terms": [
+        "may",
+        "probably"
+      ],
+      "claim_summary": "The selected pulse and revolution rates are qualified hypothetical examples.",
+      "source_quantities": [
+        {
+          "quantity": "hypothetical_pulse_rate",
+          "value": "30000000000000",
+          "unit": "s^-1",
+          "qualifier": "may",
+          "uncertainty": null,
+          "authoritative_record_id": "russell-pulse"
+        },
+        {
+          "quantity": "hypothetical_revolution_rate",
+          "value": "30000000",
+          "unit": "s^-1",
+          "qualifier": "probably",
+          "uncertainty": null,
+          "authoritative_record_id": "russell-revolution"
+        }
+      ],
+      "source_units": "s^-1",
+      "modern_mapping": "A dimensionally stated rate can remain hypothetical. Neither number calibrates a device, element line or Matrix clock.",
+      "status": "hypothetical_existing_records_unchanged",
+      "known_conflicts": [],
+      "formulation": {
+        "proposal": "Require an operational period and independent observation before any measured-frequency comparison.",
+        "modern_units": null,
+        "test_status": "no_measurement_claim_or_fit",
+        "test_refs": [
+          "work/universal-matrix/docs/spectral_reference_catalog_v0.1.md"
+        ]
+      },
+      "audit_refs": [
+        "work/universal-matrix/src/reference_data/universal_one_numeric_leads.json",
+        "outputs/universal_one_source_audit_v0.1.md"
+      ]
+    },
+    {
+      "id": "RCL-011",
+      "revision": 1,
+      "work": "The Russell Genero-Radiative Concept",
+      "author": "Walter Russell",
+      "work_year": 1930,
+      "edition": "USP authored-text transcription",
+      "inspected_location": {
+        "description": "Pressure-tank compression, outlet release, sequential transfer and equalization passage",
+        "original_printed_page": null
+      },
+      "source_url": "https://www.philosophy.org/archives/the-russ",
+      "evidence_kind": "text",
+      "evidence_detail": "tank analogy inspected in prior pressure formulation",
+      "literal_terms": [
+        "pressure",
+        "energy"
+      ],
+      "claim_summary": "The passage links stored compression, transfer and loss of work capacity when pressures equalize.",
+      "source_quantities": [],
+      "source_units": null,
+      "modern_mapping": "Declared linear fluid compliance/conductance model, not a large-compression ideal-gas or cosmic field derivation.",
+      "status": "bounded_synthetic_comparator_previously_executed",
+      "known_conflicts": [],
+      "formulation": {
+        "proposal": "C*p_dot=-B*diag(G)*B^T*p+s; E=0.5*p^T*C*p; E_dot=p^T*s-sum(G*delta_p^2).",
+        "modern_units": {
+          "p": "Pa",
+          "C": "m^3/Pa",
+          "G": "m^3/(Pa*s)",
+          "E": "J",
+          "s": "m^3/s"
+        },
+        "test_status": "previously_executed_scratch; not rerun in catalog batch",
+        "bounded_result": "Synthetic three-node control equilibrates at26000Pa; available internal equalization energy0.722J; not observed apparatus performance.",
+        "test_refs": [
+          "work/russell-corpus/pressure_exchange_formulation.md",
+          "work/russell-corpus/pressure_exchange_probe.py",
+          "work/russell-corpus/pressure_exchange_probe.json"
+        ]
+      },
+      "audit_refs": [
+        "work/russell-corpus/pressure_exchange_formulation.md"
+      ]
+    },
+    {
+      "id": "RCL-012",
+      "revision": 1,
+      "work": "The Russell Genero-Radiative Concept",
+      "author": "Walter Russell",
+      "work_year": 1930,
+      "edition": "USP authored-text transcription; figure not visually reconstructed",
+      "inspected_location": {
+        "description": "The Solar Gravitational Experiment: suspended magnets and hand-turned central magnet",
+        "original_printed_page": null
+      },
+      "source_url": "https://www.philosophy.org/archives/the-russ",
+      "evidence_kind": "text",
+      "evidence_detail": "apparatus description; no measured trajectory or torque data",
+      "literal_terms": [
+        "Solar Gravitational Experiment"
+      ],
+      "claim_summary": "Supported magnets follow a manually turned central magnet in an analogy to a planetary system.",
+      "source_quantities": [],
+      "source_units": null,
+      "modern_mapping": "A constrained driven magnetic/mechanical setup; supports and crank work must remain in the model.",
+      "status": "reconstruction_parameters_missing",
+      "known_conflicts": [
+        {
+          "with": "free_orbital_interpretation",
+          "detail": "Removing suspension and external drive changes the experiment."
+        }
+      ],
+      "formulation": {
+        "proposal": "I_j*theta_ddot+c_j*theta_dot+partial_theta_j(U)=tau_j, with support constraints and drive-work ledger.",
+        "modern_units": {
+          "inertia": "kg*m^2",
+          "torque": "N*m",
+          "angle": "rad"
+        },
+        "test_status": "proposed_not_executed",
+        "test_refs": [
+          "outputs/russell_physical_claims.md"
+        ]
+      },
+      "audit_refs": [
+        "outputs/russell_physical_claims.md"
+      ]
+    },
+    {
+      "id": "RCL-013",
+      "revision": 1,
+      "work": "A New Concept of the Universe",
+      "author": "Walter Russell",
+      "work_year": 1953,
+      "edition": "126-page later reformatted mirror with1953/1989 copyrights",
+      "inspected_location": {
+        "description": "Organ-pipe analogy in transmutation discussion",
+        "reproduction_page_label": 85,
+        "original_printed_page": null
+      },
+      "source_url": "https://www.giurfa.com/the_new_concept.pdf#page=86",
+      "evidence_kind": "text",
+      "evidence_detail": "selected pipe statement; actual pipe shape/excitation unspecified",
+      "literal_terms": [
+        "octave"
+      ],
+      "claim_summary": "Covering an organ pipe is described as raising its tone an octave.",
+      "source_quantities": [
+        {
+          "quantity": "asserted_tone_change",
+          "value": "1",
+          "unit": "octave",
+          "direction": "upward",
+          "absolute_frequency_hz": null
+        }
+      ],
+      "source_units": "octave_relation",
+      "modern_mapping": "Test one initially open cylindrical pipe, unchanged length/sound speed, fundamental mode, ideal closure of one end.",
+      "status": "disagrees_with_declared_pipe_control_not_whole_theory_falsification",
+      "known_conflicts": [
+        {
+          "with": "fixed_cylindrical_fundamental_control",
+          "detail": "Control gives a downward octave, ratio1/2, not the asserted upward ratio2. Different bores/modes remain outside this test."
+        }
+      ],
+      "formulation": {
+        "proposal": "Open/open f1=c/(2L); closed/open f1=c/(4L). Independent finite elements converge toward their1/2ratio.",
+        "modern_units": {
+          "L": "m",
+          "c": "m/s",
+          "frequency": "Hz"
+        },
+        "test_status": "previously_executed_scratch; not rerun in catalog batch",
+        "test_refs": [
+          "outputs/russell_physical_claims.md",
+          "work/russell-corpus/russell_pipe_probe.py",
+          "work/russell-corpus/russell_pipe_probe.json"
+        ],
+        "primary_comparator_url": "https://www.phys.unsw.edu.au/jw/pipes.html"
+      },
+      "audit_refs": [
+        "outputs/russell_physical_claims.md"
+      ]
+    },
+    {
+      "id": "RCL-014",
+      "revision": 1,
+      "work": "A New Concept of the Universe",
+      "author": "Walter Russell",
+      "work_year": 1953,
+      "edition": "Later reformatted mirror; reported experiment dated1927 within the passage",
+      "inspected_location": {
+        "description": "Heated-water/adjustable-solenoid discussion, sample5",
+        "reproduction_page_label": 87,
+        "original_printed_page": null
+      },
+      "source_url": "https://www.giurfa.com/the_new_concept.pdf#page=88",
+      "evidence_kind": "text",
+      "evidence_detail": "reported sample composition in narrative; original lab report not inspected",
+      "literal_terms": [
+        "oxygen",
+        "hydrogen",
+        "nitrogen"
+      ],
+      "claim_summary": "A1927 experiment is reported to change gas composition as paired-solenoid conditions change.",
+      "source_quantities": [
+        {
+          "quantity": "sample5_composition_entries",
+          "species": [
+            "oxygen",
+            "hydrogen",
+            "nitrogen"
+          ],
+          "values": [
+            "14.9",
+            "16.0",
+            "69.1"
+          ],
+          "unit": null,
+          "basis": null,
+          "uncertainty": null
+        }
+      ],
+      "source_units": null,
+      "modern_mapping": "Keep species amounts and boundary flows explicit. The numerical composition basis and original analytical calibration remain unresolved here.",
+      "status": "reported_experiment_missing_reconstructable_controls_and_data",
+      "known_conflicts": [],
+      "formulation": {
+        "proposal": "n_dot=S*r+inlet-outlet; test ordinary elemental conservation A*S=0. Any nuclear alternative needs explicit isotope channels and mass/energy/charge bookkeeping.",
+        "modern_units": {
+          "species_amount": "mol",
+          "rate": "mol/s"
+        },
+        "test_status": "proposed_not_executed",
+        "test_refs": [
+          "outputs/russell_physical_claims.md",
+          "work/russell-corpus/course_apparatus_access_followup.md"
+        ]
+      },
+      "audit_refs": [
+        "outputs/russell_physical_claims.md"
+      ]
+    },
+    {
+      "id": "RCL-015",
+      "revision": 1,
+      "work": "A New Concept of the Universe",
+      "author": "Walter Russell",
+      "work_year": 1953,
+      "edition": "Later reformatted mirror with1953/1989 copyrights",
+      "inspected_location": {
+        "description": "Tungsten and helium/inert-gas emission statement",
+        "reproduction_page_label": 79,
+        "original_printed_page": null
+      },
+      "source_url": "https://www.giurfa.com/the_new_concept.pdf#page=80",
+      "evidence_kind": "text",
+      "evidence_detail": "selected assertion; particle identity and conditions not fixed by inspected passage",
+      "literal_terms": [],
+      "claim_summary": "An emission speed of approximately half light speed is asserted in a tungsten/inert-gas discussion.",
+      "source_quantities": [
+        {
+          "quantity": "asserted_speed_fraction",
+          "value": "0.5",
+          "unit": "fraction_of_light_speed",
+          "approximate": true,
+          "uncertainty": null,
+          "particle_identity": null
+        }
+      ],
+      "source_units": "fraction_of_light_speed",
+      "modern_mapping": "First distinguish particle speed, signal propagation and spectroscopic terminology. No optical frequency follows directly from this speed fraction.",
+      "status": "operational_observable_and_species_missing",
+      "known_conflicts": [],
+      "formulation": {
+        "proposal": "For a particle interpretation, identify species/charge and measure time of flight plus kinetic-energy distribution.",
+        "modern_units": {
+          "speed": "m/s",
+          "kinetic_energy": "J"
+        },
+        "test_status": "proposed_not_executed",
+        "test_refs": [
+          "outputs/russell_physical_claims.md"
+        ]
+      },
+      "audit_refs": [
+        "outputs/russell_physical_claims.md"
+      ]
+    },
+    {
+      "id": "RCL-016",
+      "revision": 1,
+      "work": "Optic Dynamo-Generator memo excerpt",
+      "author": "Walter Russell, as attributed by USP",
+      "work_year": 1961,
+      "edition": "Undated institutional archive page quoting an attributed1961 memo; original memo unavailable",
+      "inspected_location": {
+        "description": "Opening memo excerpt in generator archive",
+        "original_printed_page": null,
+        "memo_date_authenticated": false
+      },
+      "source_url": "https://www.philosophy.org/archives/russell-optic-dynamo-generator",
+      "evidence_kind": "text",
+      "evidence_detail": "attributed excerpt, separate from institutional narrative",
+      "attachment_evidence_kind": "inaccessible",
+      "attachment_status": "linked memo redirected to Microsoft sign-in; no login attempted",
+      "literal_terms": [
+        "power multiplication"
+      ],
+      "claim_summary": "The memo excerpt invokes natural growth as a principle for a new power/light generator.",
+      "source_quantities": [],
+      "source_units": null,
+      "modern_mapping": "Growth analogy does not supply a source term, conversion efficiency or measured net output.",
+      "status": "attributed_claim_original_packet_unretrieved",
+      "known_conflicts": [],
+      "formulation": {
+        "proposal": "Specify every input and storage mechanism before comparing integrated load energy and depletion.",
+        "modern_units": {
+          "power": "W",
+          "stored_energy": "J"
+        },
+        "test_status": "apparatus_test_not_executed",
+        "test_refs": [
+          "outputs/russell_physical_claims.md",
+          "work/russell-corpus/course_apparatus_access_followup.md"
+        ]
+      },
+      "audit_refs": [
+        "work/russell-corpus/course_apparatus_access_followup.json"
+      ]
+    },
+    {
+      "id": "RCL-017",
+      "revision": 1,
+      "work": "Optic Dynamo-Generator joint statement",
+      "author": "Walter and Lao Russell, as attributed by USP",
+      "work_year": null,
+      "edition": "Undated joint-statement excerpt in current institutional archive; nearby narrative dates do not date the statement itself",
+      "inspected_location": {
+        "description": "Joint reactor/surplus-power statement below institutional prototype narrative",
+        "original_printed_page": null
+      },
+      "source_url": "https://www.philosophy.org/archives/russell-optic-dynamo-generator",
+      "evidence_kind": "text",
+      "evidence_detail": "joint attributed excerpt; neither instrument traces nor original test report inspected",
+      "attachment_evidence_kind": "inaccessible",
+      "attachment_status": "linked generator PDF retrieval failed",
+      "literal_terms": [
+        "surplus"
+      ],
+      "claim_summary": "The statement claims generator surplus can sustain the reactor's operation.",
+      "source_quantities": [],
+      "source_units": null,
+      "modern_mapping": "No gain value is assigned. Include electrical, thermal, mechanical and material inputs plus stored energy.",
+      "status": "performance_claim_unverified_missing_applicable_packet",
+      "known_conflicts": [
+        {
+          "with": "passive_amplitude_gain_as_net_energy_gain",
+          "detail": "Resonant amplitude growth alone does not establish sustained surplus energy."
+        }
+      ],
+      "formulation": {
+        "proposal": "dE_stored/dt=P_electrical_in+P_other_in-P_load_out-P_loss; use time-aligned averages of instantaneous v(t)*i(t).",
+        "modern_units": {
+          "power": "W",
+          "energy": "J",
+          "voltage": "V",
+          "current": "A"
+        },
+        "test_status": "apparatus_test_not_executed",
+        "test_refs": [
+          "outputs/russell_physical_claims.md",
+          "work/russell-corpus/course_apparatus_access_followup.md"
+        ]
+      },
+      "audit_refs": [
+        "work/russell-corpus/course_apparatus_access_followup.json"
+      ]
+    },
+    {
+      "id": "RCL-018",
+      "revision": 2,
+      "work": "Home Study Course in Universal Law, Natural Science and Living Philosophy",
+      "author": "Walter and Lao Russell",
+      "work_year": 1950,
+      "edition": "Current binder product URL names special third edition; collector presentation separately listed; no lesson/copyright-page collation",
+      "inspected_location": {
+        "description": "Current product descriptions only",
+        "unit_number": null,
+        "lesson_number": null,
+        "page_number": null
+      },
+      "source_url": "https://philosophy-org.myshopify.com/products/home-study-course-special-3rd-edition-financing-available",
+      "additional_source_url": "https://philosophy-org.myshopify.com/products/collectors-edition-home-study-course",
+      "evidence_kind": "catalog",
+      "evidence_detail": "publisher product descriptions; promotional copy and reviews are not lesson evidence",
+      "literal_terms": [],
+      "claim_summary": "The current course is advertised as a12-book binder,934pages; the collector presentation has three volumes and color pictures.",
+      "source_quantities": [
+        {
+          "quantity": "advertised_binder_books",
+          "value": "12",
+          "unit": "count"
+        },
+        {
+          "quantity": "advertised_binder_pages",
+          "value": "934",
+          "unit": "page_count"
+        },
+        {
+          "quantity": "collector_volumes",
+          "value": "3",
+          "unit": "count"
+        }
+      ],
+      "source_units": "bibliographic_counts",
+      "modern_mapping": "Coverage metadata only; no physical variable or exact lesson-to-equation mapping.",
+      "status": "catalog_record_with_later_limited_course_witness_recovered_in_prior_audit",
+      "known_conflicts": [
+        {
+          "with": "cross_edition_page_count_or_wording_identity",
+          "detail": "No matched1950/1957/1962 lesson comparison; present format does not establish unchanged content."
+        }
+      ],
+      "formulation": {
+        "proposal": "Compare one authenticated lesson across dated editions before changing an interpretation record.",
+        "modern_units": null,
+        "test_status": "source_access_pending",
+        "test_refs": [
+          "work/russell-corpus/russell_bibliography.md",
+          "work/russell-corpus/course_apparatus_access_followup.md"
+        ]
+      },
+      "audit_refs": [
+        "work/russell-corpus/course_apparatus_access_followup.json",
+        "outputs/russell-next-source-gate.md"
+      ],
+      "previous_revisions": [
+        {
+          "id": "RCL-018",
+          "revision": 1,
+          "work": "Home Study Course in Universal Law, Natural Science and Living Philosophy",
+          "author": "Walter and Lao Russell",
+          "work_year": 1950,
+          "edition": "Current binder product URL names special third edition; collector presentation separately listed; no lesson/copyright-page collation",
+          "inspected_location": {
+            "description": "Current product descriptions only",
+            "unit_number": null,
+            "lesson_number": null,
+            "page_number": null
+          },
+          "source_url": "https://philosophy-org.myshopify.com/products/home-study-course-special-3rd-edition-financing-available",
+          "additional_source_url": "https://philosophy-org.myshopify.com/products/collectors-edition-home-study-course",
+          "evidence_kind": "catalog",
+          "evidence_detail": "publisher product descriptions; promotional copy and reviews are not lesson evidence",
+          "literal_terms": [],
+          "claim_summary": "The current course is advertised as a12-book binder,934pages; the collector presentation has three volumes and color pictures.",
+          "source_quantities": [
+            {
+              "quantity": "advertised_binder_books",
+              "value": "12",
+              "unit": "count"
+            },
+            {
+              "quantity": "advertised_binder_pages",
+              "value": "934",
+              "unit": "page_count"
+            },
+            {
+              "quantity": "collector_volumes",
+              "value": "3",
+              "unit": "count"
+            }
+          ],
+          "source_units": "bibliographic_counts",
+          "modern_mapping": "Coverage metadata only; no physical variable or exact lesson-to-equation mapping.",
+          "status": "catalog_verified_zero_course_lessons_inspected_in_this_followup",
+          "known_conflicts": [
+            {
+              "with": "cross_edition_page_count_or_wording_identity",
+              "detail": "No matched1950/1957/1962 lesson comparison; present format does not establish unchanged content."
+            }
+          ],
+          "formulation": {
+            "proposal": "Compare one authenticated lesson across dated editions before changing an interpretation record.",
+            "modern_units": null,
+            "test_status": "source_access_pending",
+            "test_refs": [
+              "work/russell-corpus/russell_bibliography.md",
+              "work/russell-corpus/course_apparatus_access_followup.md"
+            ]
+          },
+          "audit_refs": [
+            "work/russell-corpus/course_apparatus_access_followup.json"
+          ]
+        }
+      ],
+      "supplementary_evidence": {
+        "audit": "outputs/russell-next-source-gate.md",
+        "kind": "prior_text_recovery_not_fresh_page_inspection",
+        "witness": "1588-page electronic reproduction labeled Third Edition; third-party hosted; not authenticated1962printscan",
+        "zero_based_pdf_indices": {
+          "title": 1,
+          "copyright": 709,
+          "joint_attribution": 800,
+          "lesson23": 801,
+          "selected_definition": 809
+        },
+        "finding": "Prior audit records inward/outward spiral definitions and cube-sphere language. No velocity, pitch, pressure law, SI scale or element-transition rule established.",
+        "limits": "Do not replace original product counts or infer edition identity. No course page images inspected in this reconciliation."
+      }
+    },
+    {
+      "id": "RCL-019",
+      "revision": 1,
+      "work": "The Electric Nature of the Universe",
+      "author": "Walter Russell; publisher description separately identified",
+      "work_year": 1936,
+      "edition": "Current18-page booklet; publisher dates source talk to June1936, not booklet publication",
+      "inspected_location": {
+        "description": "Product description and one attributed quotation; no full talk or page-level text",
+        "original_printed_page": null
+      },
+      "source_url": "https://philosophy-org.myshopify.com/products/the-electric-nature-of-the-universe",
+      "evidence_kind": "catalog",
+      "evidence_detail": "publisher description-to-later-authored-text comparison only",
+      "literal_terms": [
+        "thought-wave universe"
+      ],
+      "claim_summary": "The publisher uses the thought-wave phrase in describing the1936 talk; later New Concept contains related authored exposition.",
+      "source_quantities": [],
+      "source_units": null,
+      "modern_mapping": "Shared description is not a verified original1936 verbatim passage or a wave equation.",
+      "status": "original_talk_phrase_match_unverified",
+      "known_conflicts": [],
+      "formulation": {
+        "proposal": "Retrieve the actual booklet passage before comparing its exact definitions with New Concept.",
+        "modern_units": null,
+        "test_status": "source_access_pending",
+        "test_refs": [
+          "work/russell-corpus/course_apparatus_access_followup.md"
+        ]
+      },
+      "audit_refs": [
+        "work/russell-corpus/course_apparatus_access_followup.json"
+      ]
+    },
+    {
+      "id": "RCL-020",
+      "revision": 1,
+      "work": "Space and the Hydrogen Age",
+      "author": "Walter Russell; later editorial footnote excluded from1939 attribution",
+      "work_year": 1939,
+      "edition": "Publisher web transcription attributed to May13,1939; original facsimile not authenticated",
+      "inspected_location": {
+        "description": "Element permanence, pressure and condition-replacement sections",
+        "original_printed_page": null
+      },
+      "source_url": "https://www.philosophy.org/archives/space-and-the-hydrogen-age",
+      "evidence_kind": "text",
+      "evidence_detail": "authored web passage; not laboratory data",
+      "literal_terms": [
+        "voided",
+        "conditions"
+      ],
+      "claim_summary": "Elemental appearances are described as conditions that disappear and are replaced, rather than enduring substances becoming other substances.",
+      "source_quantities": [],
+      "source_units": null,
+      "modern_mapping": "Distinguish a philosophical relabeling of chemical states from a proposed change of nuclei; require explicit species and conserved inventory.",
+      "status": "historical_claim_requires_operational_reaction_definition",
+      "known_conflicts": [
+        {
+          "with": "unqualified_transmutation_label",
+          "detail": "The source's own condition-replacement distinction must remain visible; modern nuclear transmutation is not established by the wording."
+        }
+      ],
+      "formulation": {
+        "proposal": "Define initial/final elemental and isotope amounts, reaction channels and boundary flows; use blank, thermal and field-reversal controls.",
+        "modern_units": {
+          "species_amount": "mol"
+        },
+        "test_status": "proposed_not_executed",
+        "test_refs": [
+          "outputs/russell_physical_claims.md",
+          "work/russell-corpus/course_apparatus_access_followup.md"
+        ]
+      },
+      "audit_refs": [
+        "work/russell-corpus/course_apparatus_access_followup.json"
+      ]
+    }
+  ],
+  "publication_note": "Preserved historical workspace paths are provenance, not portable file links. Original source URLs remain in each record. WR008 reinspection and the prior limited course witness update only two records; other image and edition gaps remain open.",
+  "reconciliation": {
+    "date": "2026-10-02",
+    "kind": "bounded_local_evidence_reconciliation",
+    "original_catalog_sha256": "11954bef140e91ff7e5819bce4bddc04e08ee9070724cfb539acf7d0a7a065f6",
+    "evidence_root": "C:\\Users\\water\\Documents\\Codex\\2026-09-23\\referenced-chatgpt-conversation-this-is-an\\outputs",
+    "evidence_sha256": {
+      "russell_claim_catalog_v0.1.json": "11954bef140e91ff7e5819bce4bddc04e08ee9070724cfb539acf7d0a7a065f6",
+      "russell-next-source-gate.md": "391d865c3bf0504e3c320921de29254fdc35772d9644acceccc13f41b43d905b",
+      "russell-original-octave-verification.md": "fd3f5e323a483f2ed253946f5b8c4a1a59082e7551f41a56f38f3f4cb3d4c634",
+      "russell-1926-octave-chart-WR008.webp": "33646d2c70a1f5fd00df8f3e321d7d5036e8594067593a6d8b5daaa8b05d1b90"
+    },
+    "revised_record_ids": [
+      "RCL-005",
+      "RCL-018"
+    ],
+    "remote_sources_refetched": false,
+    "limits": "Only saved WR008 image re-inspected now. Course recovery is attributed to preserved audit, not a fresh PDF or edition authentication. Other pending page images remain uninspected."
+  }
+}
